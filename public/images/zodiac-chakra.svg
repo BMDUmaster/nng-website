@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Brand Yellow / Radiant Gold Gradients -->
+    <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF0CD"/>
+      <stop offset="30%" stop-color="#E5C270"/>
+      <stop offset="70%" stop-color="#C59A45"/>
+      <stop offset="100%" stop-color="#A6782B"/>
+    </linearGradient>
+
+    <linearGradient id="softGoldFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF0CD" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C59A45" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <linearGradient id="amberBackdrop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C6028" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#6B3A12" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Star decoration -->
+    <g id="chakraStar">
+      <path d="M0 -5 Q0 0 5 0 Q0 0 0 5 Q0 0 -5 0 Q0 0 0 -5 Z" fill="#FDF0CD"/>
+      <circle cx="0" cy="0" r="1" fill="#C59A45"/>
+    </g>
+
+    <!-- =========================================================================
+         12 ACCURATE ZODIAC LINE ART FIGURES (Exact match to reference image)
+         ========================================================================= -->
+
+    <!-- 1. ARIES (Ram with prominent curled horns) -->
+    <g id="figAries">
+      <!-- Head -->
+      <path d="M-5 12 C-8 4 -4 -4 0 -6 C4 -4 8 4 5 12 C3 16 -3 16 -5 12 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="-2" cy="2" r="1.2" fill="#FDF0CD"/>
+      <circle cx="2" cy="2" r="1.2" fill="#FDF0CD"/>
+      <path d="M-2 10 L0 12 L2 10" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/>
+      <!-- Big Curled Horns -->
+      <path d="M-3 -4 C-14 -16 -24 -2 -14 6 C-8 10 -4 4 -2 -1" fill="none" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M3 -4 C14 -16 24 -2 14 6 C8 10 4 4 2 -1" fill="none" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Inner horn ridges -->
+      <path d="M-10 -7 C-16 -1 -12 4 -8 4" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+      <path d="M10 -7 C16 -1 12 4 8 4" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+    </g>
+
+    <!-- 2. PISCES (Two swimming fish in curved symmetry) -->
+    <g id="figPisces">
+      <!-- Top/Left Fish -->
+      <path d="M-16 -8 C-8 -18 6 -16 12 -8 C6 0 -8 -2 -16 -8 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <path d="M-16 -8 L-22 -14 M-16 -8 L-22 -2" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="8" cy="-8" r="1.2" fill="#FDF0CD"/>
+      <path d="M0 -11 C-2 -8 0 -5 2 -7" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+      <!-- Bottom/Right Fish -->
+      <path d="M16 8 C8 18 -6 16 -12 8 C-6 0 8 2 16 8 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <path d="M16 8 L22 14 M16 8 L22 2" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="-8" cy="8" r="1.2" fill="#FDF0CD"/>
+      <path d="M0 11 C2 8 0 5 -2 7" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+      <!-- Celestial Ribbon -->
+      <path d="M-10 0 C-4 -6 4 6 10 0" fill="none" stroke="#FDF0CD" stroke-width="1.2" stroke-dasharray="2 3"/>
+    </g>
+
+    <!-- 3. AQUARIUS (Water Bearer Urn & Flowing Streams) -->
+    <g id="figAquarius">
+      <!-- Urn Pot -->
+      <ellipse cx="0" cy="-10" rx="8" ry="3" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <path d="M-7 -10 L-5 -3 C-10 2 -8 11 0 12 C8 11 10 2 5 -3 L7 -10" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M-6 -2 C-12 0 -11 6 -5 8 M6 -2 C12 0 11 6 5 8" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/>
+      <!-- Cascading Waves -->
+      <path d="M-16 16 Q-8 11 0 16 Q8 21 16 16" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M-16 21 Q-8 16 0 21 Q8 26 16 21" fill="none" stroke="#FDF0CD" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- 4. CAPRICORN (Sea Goat with curved horns and curled tail) -->
+    <g id="figCapricorn">
+      <!-- Goat Face -->
+      <path d="M-8 0 C-10 -8 -4 -10 0 -6 C4 -10 10 -8 8 0 C6 6 0 10 -8 0 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <!-- Horns sweeping back -->
+      <path d="M-2 -8 C-6 -20 12 -22 14 -12 C15 -4 9 0 4 2" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M0 -7 C-2 -16 10 -18 11 -10" fill="none" stroke="#FDF0CD" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Fishtail loop -->
+      <path d="M0 8 C8 12 16 8 14 0 C13 -6 6 -4 6 4 C6 14 16 16 18 10" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M16 10 L20 8 M16 10 L18 14" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/>
+    </g>
+
+    <!-- 5. SAGITTARIUS (Archer's Drawn Bow and Arrow) -->
+    <g id="figSagittarius">
+      <!-- Curved Bow -->
+      <path d="M-14 14 C-4 -4 4 -4 14 -14" fill="none" stroke="#FDF0CD" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <path d="M-16 12 C-8 -8 8 -8 12 -16" fill="none" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Arrow -->
+      <line x1="-12" y1="12" x2="16" y2="-16" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Arrowhead -->
+      <path d="M6 -16 L16 -16 L16 -6" fill="none" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Arrow fletching -->
+      <line x1="-14" y1="10" x2="-10" y2="14" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <line x1="-10" y1="6" x2="-6" y2="10" stroke="url(#goldStroke)" stroke-width="1.8"/>
+    </g>
+
+    <!-- 6. SCORPIO (Scorpion with pincers, body & tail) -->
+    <g id="figScorpio">
+      <!-- Segmented Body -->
+      <ellipse cx="0" cy="2" rx="4.5" ry="7" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="url(#goldStroke)" stroke-width="1.4"/>
+      <line x1="-4" y1="4" x2="4" y2="4" stroke="url(#goldStroke)" stroke-width="1.4"/>
+      <!-- Pincers -->
+      <path d="M-4 -3 C-10 -8 -16 -4 -14 2 C-12 6 -8 4 -6 1" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M4 -3 C10 -8 16 -4 14 2 C12 6 8 4 6 1" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Tail & Stinger -->
+      <path d="M0 9 C0 16 8 18 10 12 C11 7 8 4 6 6" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M5 5 L8 2 L10 6 Z" fill="#FDF0CD"/>
+    </g>
+
+    <!-- 7. LIBRA (Scales of Justice with central pillar) -->
+    <g id="figLibra">
+      <!-- Central Pillar & Top Beam -->
+      <line x1="-16" y1="-6" x2="16" y2="-6" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="0" cy="-6" r="2.5" fill="#FDF0CD"/>
+      <line x1="0" y1="-6" x2="0" y2="14" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <line x1="-8" y1="14" x2="8" y2="14" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Left Pan -->
+      <path d="M-14 -6 L-18 4 L-10 4 Z" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <path d="M-19 4 C-19 9 -9 9 -9 4 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.6"/>
+      <!-- Right Pan -->
+      <path d="M14 -6 L10 4 L18 4 Z" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <path d="M9 4 C9 9 19 9 19 4 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.6"/>
+    </g>
+
+    <!-- 8. VIRGO (Maiden with Flowing Hair & Star) -->
+    <g id="figVirgo">
+      <!-- Maiden Face Silhouette -->
+      <path d="M-4 -1 C-4 -6 0 -8 0 -8 C0 -8 4 -6 4 -1 C4 4 0 7 0 7 C0 7 -4 4 -4 -1 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.6"/>
+      <!-- Flowing Hair waves -->
+      <path d="M0 -8 C-8 -14 -16 -4 -14 8 C-13 14 -8 16 -6 10" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M0 -8 C8 -14 16 -4 14 8 C13 14 8 16 6 10" fill="none" stroke="url(#goldStroke)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M-10 2 C-6 10 -4 16 0 18 C4 16 6 10 10 2" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+      <!-- Celestial Wing / Sheaf of Wheat -->
+      <circle cx="0" cy="-14" r="2" fill="#FDF0CD"/>
+    </g>
+
+    <!-- 9. LEO (Majestic Lion Head & Radiating Mane) -->
+    <g id="figLeo">
+      <!-- Muzzle / Nose -->
+      <circle cx="-2.5" cy="4" r="2.2" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/>
+      <circle cx="2.5" cy="4" r="2.2" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/>
+      <path d="M-2 1 L0 3 L2 1" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <!-- Eyes -->
+      <circle cx="-4" cy="-2" r="1.2" fill="#FDF0CD"/>
+      <circle cx="4" cy="-2" r="1.2" fill="#FDF0CD"/>
+      <!-- Forehead & Ears -->
+      <path d="M-7 -4 C-10 -10 -4 -10 -3 -5" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <path d="M7 -4 C10 -10 4 -10 3 -5" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <!-- Majestic Outer Mane Arcs -->
+      <path d="M-10 8 C-18 6 -16 -8 -10 -12 C-4 -16 4 -16 10 -12 C16 -8 18 6 10 8 C6 14 -6 14 -10 8 Z" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-14 -2 C-18 4 -10 12 -4 14 M14 -2 C18 4 10 12 4 14" fill="none" stroke="#FDF0CD" stroke-width="1.3"/>
+    </g>
+
+    <!-- 10. CANCER (Crab with two big claws & legs) -->
+    <g id="figCancer">
+      <!-- Central Body -->
+      <ellipse cx="0" cy="0" rx="7" ry="5.5" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <circle cx="-3" cy="-2" r="1" fill="#FDF0CD"/>
+      <circle cx="3" cy="-2" r="1" fill="#FDF0CD"/>
+      <!-- Left Claw -->
+      <path d="M-6 -2 C-14 -8 -16 2 -10 4 C-6 6 -4 -1 -6 -2" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-12 -2 C-16 -5 -12 2 -9 1" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <!-- Right Claw -->
+      <path d="M6 -2 C14 -8 16 2 10 4 C6 6 4 -1 6 -2" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 -2 C16 -5 12 2 9 1" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <!-- Legs -->
+      <path d="M-5 4 L-9 8 M-6 2 L-11 5 M-6 0 L-10 1" stroke="url(#goldStroke)" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M5 4 L9 8 M6 2 L11 5 M6 0 L10 1" stroke="url(#goldStroke)" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
+
+    <!-- 11. GEMINI (Twin Profiles / Heavenly Twins) -->
+    <g id="figGemini">
+      <!-- Roman Number II Foundation -->
+      <line x1="-12" y1="-14" x2="12" y2="-14" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-12" y1="14" x2="12" y2="14" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Left Twin Profile -->
+      <path d="M-6 -14 C-12 -6 -12 6 -6 14" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-9 -6 C-14 -4 -14 4 -9 6" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <!-- Right Twin Profile -->
+      <path d="M6 -14 C12 -6 12 6 6 14" fill="none" stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M9 -6 C14 -4 14 4 9 6" fill="none" stroke="#FDF0CD" stroke-width="1.4"/>
+      <circle cx="-3" cy="0" r="1.2" fill="#FDF0CD"/>
+      <circle cx="3" cy="0" r="1.2" fill="#FDF0CD"/>
+    </g>
+
+    <!-- 12. TAURUS (Bull Head with massive curved horns) -->
+    <g id="figTaurus">
+      <!-- Bull Face -->
+      <path d="M-6 2 C-8 8 -4 14 0 14 C4 14 8 8 6 2 C4 -2 -4 -2 -6 2 Z" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+      <!-- Nostrils / Ring -->
+      <circle cx="0" cy="10" r="2.5" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+      <circle cx="-3" cy="4" r="1.2" fill="#FDF0CD"/>
+      <circle cx="3" cy="4" r="1.2" fill="#FDF0CD"/>
+      <!-- Upward Sweeping Horns -->
+      <path d="M-5 1 C-14 -4 -16 -16 -8 -16 C-4 -16 -2 -8 -1 -1" fill="none" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M5 1 C14 -4 16 -16 8 -16 C4 -16 2 -8 1 -1" fill="none" stroke="url(#goldStroke)" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M-10 -10 C-6 -13 -3 -8 -2 -2" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+      <path d="M10 -10 C6 -13 3 -8 2 -2" fill="none" stroke="#FDF0CD" stroke-width="1.2"/>
+    </g>
+  </defs>
+
+  <!-- Outer Ambient Disc with Warm Aura -->
+  <circle cx="300" cy="300" r="294" fill="url(#amberBackdrop)" stroke="url(#goldStroke)" stroke-width="1.5" opacity="0.95"/>
+  <circle cx="300" cy="300" r="286" fill="none" stroke="#FDF0CD" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.65"/>
+
+  <!-- Outer Double Rings (Containing the Zodiac Names) -->
+  <circle cx="300" cy="300" r="278" fill="none" stroke="url(#goldStroke)" stroke-width="2.2"/>
+  <circle cx="300" cy="300" r="236" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+
+  <!-- Mid & Inner Celestial Rings (Containing the Line Art Figures) -->
+  <circle cx="300" cy="300" r="142" fill="none" stroke="url(#goldStroke)" stroke-width="1.8"/>
+  <circle cx="300" cy="300" r="134" fill="none" stroke="#FDF0CD" stroke-width="1" stroke-dasharray="2 3" opacity="0.75"/>
+  <circle cx="300" cy="300" r="68" fill="none" stroke="url(#goldStroke)" stroke-width="1.4" opacity="0.85"/>
+
+  <!-- 12 Radial Sector Divider Lines from Outer Ring to Inner Ring -->
+  <g stroke="url(#goldStroke)" stroke-width="1.6" opacity="0.9">
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(15 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(45 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(75 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(105 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(135 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(165 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(195 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(225 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(255 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(285 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(315 300 300)"/>
+    <line x1="300" y1="22" x2="300" y2="142" transform="rotate(345 300 300)"/>
+  </g>
+
+  <!-- =========================================================================
+       12 ZODIAC HOUSES: Curved Outer Names + Detailed Illustrations (Exact Reference Order)
+       0° Top = ARIES, 30° = PISCES, 60° = AQUARIUS, 90° = CAPRICORN, 120° = SAGITTARIUS,
+       150° = SCORPIO, 180° = LIBRA, 210° = VIRGO, 240° = LEO, 270° = CANCER, 300° = GEMINI, 330° = TAURUS
+       ========================================================================= -->
+
+  <!-- 1. ARIES (0° Top) -->
+  <g transform="rotate(0 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="12.5" letter-spacing="3" fill="#FAF6F0">ARIES</text>
+    <use href="#figAries" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 2. PISCES (30°) -->
+  <g transform="rotate(30 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="12" letter-spacing="2.8" fill="#FAF6F0">PISCES</text>
+    <use href="#figPisces" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 3. AQUARIUS (60°) -->
+  <g transform="rotate(60 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#FAF6F0">AQUARIUS</text>
+    <use href="#figAquarius" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 4. CAPRICORN (90°) -->
+  <g transform="rotate(90 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#FAF6F0">CAPRICORN</text>
+    <use href="#figCapricorn" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 5. SAGITTARIUS (120°) -->
+  <g transform="rotate(120 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="10.2" letter-spacing="1.8" fill="#FAF6F0">SAGITTARIUS</text>
+    <use href="#figSagittarius" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 6. SCORPIO (150°) -->
+  <g transform="rotate(150 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="11.8" letter-spacing="2.5" fill="#FAF6F0">SCORPIO</text>
+    <use href="#figScorpio" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 7. LIBRA (180° Bottom) -->
+  <g transform="rotate(180 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="12.5" letter-spacing="3" fill="#FAF6F0">LIBRA</text>
+    <use href="#figLibra" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 8. VIRGO (210°) -->
+  <g transform="rotate(210 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="12" letter-spacing="2.8" fill="#FAF6F0">VIRGO</text>
+    <use href="#figVirgo" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 9. LEO (240°) -->
+  <g transform="rotate(240 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="13" letter-spacing="3.5" fill="#FAF6F0">LEO</text>
+    <use href="#figLeo" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 10. CANCER (270°) -->
+  <g transform="rotate(270 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="11.8" letter-spacing="2.5" fill="#FAF6F0">CANCER</text>
+    <use href="#figCancer" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 11. GEMINI (300°) -->
+  <g transform="rotate(300 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="12" letter-spacing="2.8" fill="#FAF6F0">GEMINI</text>
+    <use href="#figGemini" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- 12. TAURUS (330°) -->
+  <g transform="rotate(330 300 300)">
+    <text x="300" y="258" text-anchor="middle" font-family="'Cinzel', 'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" font-size="11.8" letter-spacing="2.5" fill="#FAF6F0">TAURUS</text>
+    <use href="#figTaurus" x="300" y="190"/>
+    <use href="#chakraStar" x="300" y="152"/>
+  </g>
+
+  <!-- Center Rays Accent -->
+  <g stroke="url(#goldStroke)" stroke-width="1.2" opacity="0.75">
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(0 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(30 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(60 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(90 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(120 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(150 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(180 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(210 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(240 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(270 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(300 300 300)"/>
+    <line x1="300" y1="108" x2="300" y2="134" transform="rotate(330 300 300)"/>
+  </g>
+</svg>
