@@ -9982,3 +9982,265 @@ body.menu-open {
     max-height: 260px;
   }
 }
+
+/* ============================================================
+   MOBILE SPECIFIC RESPONSIVE FIXES (User Feedback 30 Sept 2026)
+   ============================================================ */
+@media (max-width: 680px) {
+
+  /* 1. Instagram Section Spacing & Text Meta Fix */
+  .social-section {
+    padding-block: 28px !important;
+  }
+  .social-section .transformation-head {
+    margin-bottom: 10px !important;
+    gap: 8px !important;
+  }
+  .social-post-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    flex-wrap: wrap !important;
+    margin-top: 8px !important;
+  }
+  .social-post-meta span {
+    white-space: nowrap !important;
+  }
+  .social-post h3 {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-top: 4px !important;
+  }
+  .social-source-note {
+    margin-top: 10px !important;
+    font-size: 10.5px !important;
+  }
+
+  /* 2. Approach / Mind Section Fix */
+  .approach-quote {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+    margin-top: 18px !important;
+    background: transparent !important;
+  }
+  .approach-portrait {
+    width: 75px !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    border-radius: 40px 40px 8px 8px !important;
+    overflow: hidden !important;
+  }
+  .approach-portrait img {
+    height: 95px !important;
+    border-radius: 40px 40px 8px 8px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .approach-portrait::before {
+    display: none !important;
+  }
+  .approach-quote .method-quote {
+    margin-top: 0 !important;
+    flex: 1 !important;
+  }
+  .approach-quote .method-quote p {
+    font-size: 0.92rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 4px !important;
+    max-width: 100% !important;
+  }
+  .approach-quote .method-quote span {
+    font-size: 0.8rem !important;
+  }
+  .approach-quote .method-quote small {
+    font-size: 0.75rem !important;
+  }
+
+  /* 3. Hero Zodiac Chakra Visibility & Control Button Fix (Image 1 Match) */
+  .hero-portrait-stage {
+    height: 380px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 10px !important;
+    overflow: visible !important;
+  }
+  .zodiac-wheel-layer {
+    width: 440px !important;
+    height: 440px !important;
+    top: 48% !important;
+    left: 50% !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+  }
+  .zodiac-chakra {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 14px rgba(184, 138, 69, 0.45)) !important;
+  }
+  .arch-portrait-frame {
+    width: 215px !important;
+    height: 295px !important;
+    max-width: 215px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    margin-inline: auto !important;
+  }
+  .arch-portrait-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .chakra-control-btn, .orbit-control {
+    width: 26px !important;
+    height: 26px !important;
+    top: 6px !important;
+    right: 12px !important;
+    padding: 0 !important;
+    z-index: 3 !important;
+  }
+  .chakra-control-btn svg, .orbit-control svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* 4. Section Spacing & Breathing Room on Mobile */
+  .section-space {
+    padding-block: 38px !important;
+  }
+  .band {
+    padding-block: 36px !important;
+  }
+
+  /* 5. Headings Font Size Reduction on Mobile */
+  h1, .hero-copy h1, .pitra-title {
+    font-size: clamp(23px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.4px !important;
+  }
+  h2, .section-heading h2, .experience-main-title, #trust-stats-title, #one-call-title {
+    font-size: clamp(19px, 5.2vw, 23px) !important;
+    line-height: 1.28 !important;
+    letter-spacing: -0.3px !important;
+  }
+  h3, .experience-card-title, .one-call-card-title {
+    font-size: clamp(15px, 4vw, 17px) !important;
+    line-height: 1.3 !important;
+  }
+
+  /* 6. Button Sizes, Text Spans & Icons Reduction on Mobile */
+  .button,
+  .button-primary,
+  .button-secondary,
+  .button-ghost,
+  .button-light,
+  a.button-secondary,
+  .about-banner-gold-btn,
+  .about-banner-glass-btn,
+  .intro-cta-button,
+  .schedule-call-btn,
+  .pitra-calc-btn,
+  [data-enquiry] {
+    min-height: 38px !important;
+    padding: 7px 16px !important;
+    font-size: 0.81rem !important;
+    gap: 6px !important;
+    border-radius: 9999px !important;
+  }
+  .button span,
+  .button-primary span,
+  .button-secondary span,
+  a.button-secondary span,
+  .about-banner-gold-btn span,
+  .about-banner-glass-btn span,
+  .intro-cta-button span,
+  .schedule-call-btn span,
+  .pitra-calc-btn span,
+  .cta-btn span {
+    font-size: 0.81rem !important;
+    line-height: 1.2 !important;
+  }
+  .button svg,
+  .button-primary svg,
+  .button-secondary svg,
+  a.button-secondary svg,
+  .about-banner-gold-btn svg,
+  .about-banner-glass-btn svg,
+  .intro-cta-button svg,
+  .schedule-call-btn svg,
+  .pitra-calc-btn svg,
+  .whatsapp-btn-icon {
+    width: 12px !important;
+    height: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 7. Hand Holding Program Page "Guidance that Stays" Responsiveness */
+  .stays-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+  .stays-left-narrative {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .stays-extended-desc {
+    padding: 16px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 14px !important;
+  }
+  .stays-extended-desc > p {
+    font-size: 0.88rem !important;
+    line-height: 1.48 !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+  .stays-key-takeaways {
+    gap: 10px !important;
+    margin-top: 12px !important;
+  }
+  .stays-key-takeaways li {
+    font-size: 0.81rem !important;
+    line-height: 1.45 !important;
+    padding-left: 16px !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+  .stays-grid .quote-band {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .quote-band .quote {
+    font-size: 0.98rem !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* 8. About Page Story Portrait Size Fix */
+  .story-portrait,
+  .story-grid .story-portrait,
+  .story-grid .portrait-frame {
+    width: 150px !important;
+    max-width: 150px !important;
+    margin-inline: auto !important;
+    margin-bottom: 16px !important;
+  }
+  .story-portrait img,
+  .story-grid .story-portrait img,
+  .story-grid .portrait-frame img {
+    height: 210px !important;
+    max-height: 210px !important;
+    border-radius: 75px 75px 12px 12px !important;
+    object-fit: cover !important;
+  }
+}

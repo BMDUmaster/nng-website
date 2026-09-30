@@ -7,19 +7,14 @@ use Illuminate\Support\Facades\Artisan;
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/about/', [PageController::class, 'about']);
 
 Route::get('/services', [PageController::class, 'services'])->name('services');
-Route::get('/services/', [PageController::class, 'services']);
 
 Route::get('/hand-holding-program', [PageController::class, 'handHoldingProgram'])->name('hand-holding-program');
-Route::get('/hand-holding-program/', [PageController::class, 'handHoldingProgram']);
 
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/contact/', [PageController::class, 'contact']);
 
 Route::get('/consultation', [PageController::class, 'consultation'])->name('consultation');
-Route::get('/consultation/', [PageController::class, 'consultation']);
 
 // Web-based Artisan command triggers for live server environment
 Route::get('/run-setup', function () {

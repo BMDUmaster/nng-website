@@ -137,29 +137,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Quick Experience Stats Banner */}
-          <div className="experience-stats-strip">
-            <div className="exp-stat-item">
-              <strong>10+</strong>
-              <span>Years Corporate Acumen</span>
-            </div>
-            <div className="exp-stat-item">
-              <strong>8+</strong>
-              <span>Years Vedic Practice</span>
-            </div>
-            <div className="exp-stat-item">
-              <strong>1,200+</strong>
-              <span>Lives Transformed</span>
-            </div>
-            <div className="exp-stat-item">
-              <strong>100%</strong>
-              <span>Confidential Guidance</span>
-            </div>
-            <div className="exp-stat-item">
-              <strong>5+</strong>
-              <span>Countries Consulted</span>
-            </div>
-          </div>
+
         </div>
       </section>
 
