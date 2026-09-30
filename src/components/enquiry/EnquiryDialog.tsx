@@ -2,9 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EVENTS, track } from "@/lib/analytics";
-import { asset } from "@/lib/assets";
 import { enquiryMessage, isPreviewNumber, whatsappUrl } from "@/lib/whatsapp";
-import { enquiryTopics } from "@/content/site";
+import { enquiryTopics, site } from "@/content/site";
 import { TopicOptions } from "./TopicOptions";
 
 type Region = "India" | "outside India";
@@ -89,7 +88,6 @@ export function EnquiryDialog() {
   }, []);
 
   const message = enquiryMessage(topic, region);
-  const callbackHref = asset(`/contact/?topic=${encodeURIComponent(topic)}#callback`);
 
   return (
     <dialog ref={dialog} className="enquiry" aria-labelledby="enquiry-title">
@@ -123,8 +121,8 @@ export function EnquiryDialog() {
           Continue on WhatsApp <span aria-hidden="true">↗</span>
         </a>
         <div className="dialog-alt">
-          <a href={callbackHref} onClick={() => dialog.current?.close()}>
-            Prefer a call? Leave your number
+          <a href={`mailto:${site.email}?subject=${encodeURIComponent("Consultation enquiry")}`} onClick={() => dialog.current?.close()}>
+            Prefer email? Write to the team
           </a>
         </div>
         <p className="dialog-note">

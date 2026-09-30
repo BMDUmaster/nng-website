@@ -14,7 +14,9 @@
     "lint:copy": "node scripts/copy-lint.mjs",
     "nosync": "node scripts/nosync.mjs",
     "typecheck": "tsc --noEmit",
-    "export": "NEXT_EXPORT=1 next build && node scripts/after-export.mjs"
+    "export": "node scripts/export-next.mjs",
+    "sync:laravel": "node scripts/build-blade-views.mjs",
+    "build:laravel": "npm run export && npm run sync:laravel"
   },
   "dependencies": {
     "next": "16.3.5",

@@ -23,14 +23,14 @@ export const services: Service[] = [
     slug: "mind-training",
     name: "Mind Training",
     topic: "Mind Training",
-    card: "The habits behind the patterns that keep coming back. Where she starts.",
-    lead: "The habits, beliefs and reactions behind the patterns that keep coming back. Every consultation begins here.",
+    card: "The beliefs and habits behind a recurring concern. Where she starts.",
+    lead: "A look at the beliefs, habits and reactions that shape how you respond to the question you bring.",
     quote: "Couldn’t Krishna have fixed the vastu and ended the war between the brothers? He didn’t. He worked on Arjuna’s mind.",
     look: [
       "The patterns that keep returning in health, relationships, career or money",
       "How you respond under pressure, and what you tell yourself",
       "Practices from her book: breathwork, affirmations, Ho’oponopono and EFT tapping",
-      "Small daily habits that hold a change in place",
+      "Daily habits you can practise between conversations",
     ],
   },
   {
@@ -38,7 +38,7 @@ export const services: Service[] = [
     name: "Numerology",
     topic: "Numerology",
     card: "Your date of birth, your name and its spelling, your mobile number.",
-    lead: "Your date of birth, your name and its spelling, and the numbers you live with every day, read as a starting point for reflection.",
+    lead: "A reading of your date of birth, name and the numbers you use regularly, considered alongside your question.",
     look: [
       "Your date of birth, and what it points to",
       "Your name and the way it is spelt",
@@ -50,8 +50,7 @@ export const services: Service[] = [
     name: "Vastu",
     topic: "Vastu",
     card: "Your home, office or shop, and where things belong in it.",
-    lead: "Your home, office or shop, and the way you live and work in it.",
-    quote: "Vastu does not depend on direction. Every direction belongs to God. It depends on the mind.",
+    lead: "A look at how your home or workplace is arranged and used by the people in it.",
     look: [
       "The layout of your home, office or shop",
       "Where things belong, from the home mandir to family photographs",
@@ -63,7 +62,7 @@ export const services: Service[] = [
     name: "Astrology",
     topic: "Astrology",
     card: "Your birth chart, read around the question you bring.",
-    lead: "Your birth chart, read around the question you bring, for the larger decisions: career, marriage, property and business.",
+    lead: "Your birth chart, read in relation to the concern or decision you bring.",
     look: [
       "Your birth chart, read around the question you bring",
       "The larger decisions: career, marriage, property, business",
@@ -76,17 +75,17 @@ export const services: Service[] = [
 export const method = [
   {
     word: "Mind",
-    text: "Understand the thoughts and habits that keep bringing you back to the same place.",
+    text: "Notice the thoughts and habits that recur in the situation you bring.",
     services: ["mind-training"],
   },
   {
     word: "Direction",
-    text: "Get clear about what matters to you and the next step you want to take.",
+    text: "Work out what matters now and the next step you can take.",
     services: ["numerology", "astrology"],
   },
   {
     word: "Alignment",
-    text: "Bring your daily choices, habits and surroundings into line with that direction.",
+    text: "Bring that step into your routines and surroundings.",
     services: ["vastu"],
   },
 ] as const;

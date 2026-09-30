@@ -6,10 +6,13 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    # Next's static client navigation requests route payloads at their page
+    # URLs. Keep physical page directories absent so Laravel owns the routes.
+    RewriteRule ^((?:about|services|hand-holding-program|contact|consultation|_not-found)/)?((?:__next[^/]*|index)\.txt)$ _rsc/$1$2 [L]
+
+    # Match the trailing-slash canonicals emitted by Next's static export.
+    # Only page URLs redirect; route payload .txt requests must stay intact.
+    RewriteRule ^(about|services|hand-holding-program|contact|consultation)$ $1/ [L,R=301]
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

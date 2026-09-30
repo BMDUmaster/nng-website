@@ -1,37 +1,17 @@
-# NNG Codex Build
+# NNG website
 
-Transformation with NNG website for Narayani Garg, The Life Strategist.
+Narayani Garg's website at [nngarg.com](https://nngarg.com/) is served by Laravel on Hostinger. The editable frontend is in `src/`; Laravel serves the generated Blade views in `resources/views/` with matching assets in `public/`. Editing the Next.js source alone does not update the live site.
 
-**Mind. Direction. Alignment.**
+## Development and checks
 
-Published preview: https://deoxysaryan.github.io/NNG_Codex_Build/
+Use Node 20.9 or newer. Run `npm ci`. Before publishing, run `npm run typecheck`, `npm run lint`, and `npm run lint:copy`. In this combined Laravel checkout, root `npm run dev` currently selects Laravel's `app/` instead of Next's `src/app/`, so it is not a valid visual preview. Use a static `npm run export` preview served from `out/` until a separate Next-only development workspace is provided.
 
-Ads landing page: https://deoxysaryan.github.io/NNG_Codex_Build/consultation/
-
-Start with [DEVELOPER_HANDOFF.md](DEVELOPER_HANDOFF.md) for the current implementation, deployment steps and launch gaps.
-
-## Status
-
-WhatsApp enquiry links are connected to the approved business number. The callback form is a clearly labelled prototype: it validates entries but does not send or save leads. Search indexing remains disabled until production launch.
-
-## Development
-
-Node 20.9 or newer. Run `npm ci` then `npm run dev`.
-
-Checks: `npm run typecheck`, `npm run lint`, `npm run lint:copy`.
-
-## GitHub Pages
-
-Source is on `main`. The published static export is on `gh-pages`.
-
-Build with:
+## Production build
 
 ```sh
-NEXT_PUBLIC_BASE_PATH=/NNG_Codex_Build NEXT_PUBLIC_SITE_URL=https://deoxysaryan.github.io/NNG_Codex_Build NEXT_PUBLIC_PREVIEW_NOTE='Design preview for review. WhatsApp is active; the callback form is not connected yet.' npm run export
+NEXT_PUBLIC_SITE_URL=https://nngarg.com SITE_INDEXABLE=true NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_PREVIEW_NOTE= NEXT_PUBLIC_WHATSAPP_NUMBER=919205511101 npm run build:laravel
 ```
 
-Deploy the contents of `out/` to the root of `gh-pages`, including `.nojekyll`.
+This stages a clean Next export outside the Laravel application, validates the production metadata and source images, and synchronizes six Blade views, `_next` assets, route payloads, and SEO files. Source images already live in `public/images` and must be deployed with those generated files. The consultation landing page deliberately remains `noindex`; the other five routes must be indexable. A previous `out/` export is retained in a uniquely named sibling backup. Do not deploy `out/` directly over the Laravel web root or treat a successful local build as a live deployment.
 
-## Brand
-
-Marcellus, Manrope and Noto Devanagari. Pearl, Plum, Champagne, Brass, Verdigris and Saffron. Platform logos retain their own colours. Social selections are dated public-view snapshots, not live analytics rankings.
+See [DEVELOPER_HANDOFF.md](DEVELOPER_HANDOFF.md) for route and conversion details and [HOSTINGER_DEPLOYMENT_SECURITY.md](HOSTINGER_DEPLOYMENT_SECURITY.md) for deployment, private environment setup, and the required server-side application-key rotation.

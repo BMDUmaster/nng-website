@@ -1,0 +1,10 @@
+:HL["/_next/static/media/575c227f41d6e305-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/b69ff29fd08fb8ec-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/ef413a9eff181b96-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/dc64cec23294c7a2.css","style"]
+:HL["/_next/static/css/a78003b611c5f3b8.css","style"]
+:HL["/images/narayani-portrait-480.avif","image",{"type":"image/avif","fetchPriority":"high","imageSrcSet":"/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w","imageSizes":"(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px"}]
+:HL["/images/narayani-cover-portrait-480.webp","image"]
+:HL["/images/zodiac-chakra.png","image"]
+:HL["/images/social/instagram-logo.svg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"RupQJ8Puo16P1RCdvBsz-"}

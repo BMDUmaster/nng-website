@@ -1,59 +1,38 @@
 # Developer handoff
 
-Updated 25 September 2026.
+Updated 30 September 2026.
 
-## Published routes
+## What serves the live domain
 
-- Website: https://deoxysaryan.github.io/NNG_Codex_Build/
-- Paid-traffic landing page: https://deoxysaryan.github.io/NNG_Codex_Build/consultation/
-- Consultation process: /services/#how
+[nngarg.com](https://nngarg.com/) runs the Laravel application in this repository. `routes/web.php` maps six pages to Blade views in `resources/views/`. The editable React/Next frontend is in `src/`. A frontend edit is not published until a new export and Blade/static-asset sync are deployed to Hostinger.
 
-## Source and deployment
+The organic routes are `/`, `/about`, `/services`, `/hand-holding-program`, and `/contact`. `/consultation` is the paid-traffic landing page and remains `noindex` by design.
 
-`main` holds editable Next.js source. `gh-pages` holds the compiled static site. Updating main alone does not redeploy Pages.
+## Reproducible production build
 
-Use Node 20.9 or newer, `npm ci`, `npm run dev`. Run `npm run typecheck`, `npm run lint:copy` and `npm run lint` before export. Native image optimisation lint warnings are non-blocking; local image variants are already supplied where needed.
-
-Build for this project URL:
+With Node 20.9 or newer, run `npm ci`, `npm run typecheck`, `npm run lint`, and `npm run lint:copy`. Then run:
 
 ```sh
-NEXT_PUBLIC_BASE_PATH=/NNG_Codex_Build NEXT_PUBLIC_SITE_URL=https://deoxysaryan.github.io/NNG_Codex_Build NEXT_PUBLIC_PREVIEW_NOTE='Website preview for review. WhatsApp enquiries are active.' npm run export
+NEXT_PUBLIC_SITE_URL=https://nngarg.com SITE_INDEXABLE=true NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_PREVIEW_NOTE= NEXT_PUBLIC_WHATSAPP_NUMBER=919205511101 npm run build:laravel
 ```
 
-Publish the contents of `out/` to `gh-pages`, retaining `.nojekyll`. At a root domain, omit NEXT_PUBLIC_BASE_PATH and set the final domain. Keep noindex until launch approval; the ads page explicitly remains noindex.
+`npm run export` builds in a temporary Next-only workspace because Laravel's root `app/` would otherwise hide Next's `src/app/`. It stages source/images locally and installs locked dependencies there to avoid cloud-backed filesystem stalls. It validates all six exported routes before replacing `out/`, retaining the prior export in a unique sibling backup. `npm run sync:laravel` then validates metadata and key images before writing the six views, public `_next` assets, route payloads, `robots.txt`, `sitemap.xml`, and `icon.svg`. Source images remain in `public/images` and must be deployed alongside these files. The generator never uses old Blade content as input. Generic preview exports are permitted, but the Laravel sync rejects preview URLs, base paths, and `noindex` on organic routes.
 
-## Key files
+Root `npm run dev` is not a valid frontend preview in this combined checkout because Next sees Laravel's root `app/` first. Use an exported static preview from `out/` or a separate Next-only development workspace; do not judge a 404 from root `npm run dev` as the published Laravel site.
 
-- `src/app/consultation/page.tsx`: standalone ads page, based on the approved visual system.
-- `src/components/contact/AdsEnquiry.tsx`: optional first name and meeting format prepare a WhatsApp message. No server submission or lead storage.
-- `src/components/contact/AdsSticky.tsx`: hides the floating CTA when the hero CTA or enquiry section is visible.
-- `src/app/services/page.tsx`: connected four-step consultation flow and unboxed meeting formats.
-- `src/app/globals.css`: locked brand styling and responsive layouts.
-- `src/content/`: editable website copy, testimonials, social selections and approved WhatsApp number.
+Deploy the Laravel application, generated views, and matching public assets together. Do not upload `out/` as the web root, deploy only `src/`, or run the removed legacy conversion scripts. The full Hostinger, environment, and key-rotation checklist is in [HOSTINGER_DEPLOYMENT_SECURITY.md](HOSTINGER_DEPLOYMENT_SECURITY.md). The previously exposed Laravel application key still requires server-side rotation; a code push cannot complete that operation.
 
-## Conversion implementation
+## Conversion and measurement limits
 
-The ads page sends visitors to the approved business WhatsApp number. They must press Send inside WhatsApp; opening the link is not proof of a submitted enquiry or booking. `whatsapp_click` is an intent event, not a confirmed lead.
+The site prepares a WhatsApp enquiry. A visitor must press Send within WhatsApp; a click alone is not a received enquiry or confirmed booking. There is no verified Meta pixel, Google Ads conversion tag, CRM receiver, or confirmed-lead reporting integration in this repository. Do not count client-side intent events as sales conversions, and do not send sensitive enquiry details to analytics.
 
-No Google Ads conversion ID, Meta pixel, GA ID or CRM endpoint has been supplied or configured in this deployment. Do not treat dataLayer events as installed conversion tracking. Add appropriate consent and measurement configuration after the owner provides account details. Avoid sending names, message text, health topics or other sensitive data to analytics.
+Before paid traffic, test every enquiry path on physical iOS and Android devices, verify receipt of a deliberately sent message, secure permission for each testimonial, approve the offer/privacy wording, and configure consent-aware attribution and lead-quality reporting. Platform review and conversion performance cannot be guaranteed by the code build.
 
-The general site's callback form remains a prototype and is labelled accordingly. It fires `callback_preview_validated`, not a successful submission event. Connect it to the chosen CRM/inbox with server validation, delivery/error handling, spam protection and an approved privacy notice before using it to capture leads.
+## Primary edit points
 
-## Ads launch checks still needed
-
-- Align each ad's promise with the landing page; develop variants only for approved offers.
-- Owner approval of copy, testimonial permissions and business privacy/data retention terms.
-- Test WhatsApp handoff on physical iOS and Android devices and verify the team receives a deliberately sent test enquiry.
-- Configure and test analytics/consent, campaign attribution and confirmed-lead reporting with the team's chosen systems.
-- Confirm platform approval for the actual creatives and targeting. No conversion-rate or ad-approval guarantee is implied.
-- Replace the review notice only after launch approval.
-
-Google destination guidance: https://support.google.com/adspolicy/answer/6368661
-
-## Copy and visual review
-
-Copy lint passed with no em dashes or en dashes in scanned source copy. Client quotes and the locked identity line remain intact. Generic social headings were replaced with direct labels. An unsupported privacy guarantee was removed. Fees, booking steps and prototype limits are explicit; no scarcity devices or outcome guarantees were added.
-
-The four-step service flow uses connected numbered markers with a vertical mobile layout. Online and in-person choices no longer sit inside boxes. The ads page omits social feeds and full-site navigation, retains real client media, uses one enquiry goal and avoids repeated card containers. Full mobile and desktop landing-page captures were reviewed; mobile DOM checks found no horizontal overflow at 390px. A generic "anti-AI score" is not a reliable quality measure and was not invented.
-
-Build, type and copy checks passed. These checks are not a substitute for real-device QA or campaign conversion testing.
+- `src/app/`: route pages, layout, metadata, responsive CSS, and SEO files.
+- `src/content/`: website copy and testimonial/source data.
+- `src/components/`: forms, navigation, CTA behavior, and section rendering.
+- `scripts/export-next.mjs`: isolated static export.
+- `scripts/build-blade-views.mjs`: validated Next-export-to-Laravel sync.
+- `public/.htaccess`: static/route-payload requests and Laravel front-controller rules.

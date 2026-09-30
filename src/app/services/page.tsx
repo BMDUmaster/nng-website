@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AlignmentArt, DirectionArt, InPersonArt, MindArt, OnlineArt, serviceArt } from "@/components/art/Art";
+import { AlignmentArt, DirectionArt, InPersonArt, MindArt, OnlineArt } from "@/components/art/Art";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { FaqSection, PageHero } from "@/components/sections/Sections";
 import { SectionChips } from "@/components/sections/SectionChips";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { QuoteBand } from "@/components/voices/QuoteCard";
 import { faqs } from "@/content/faq";
 import { method, services } from "@/content/services";
 import { voices } from "@/content/voices";
@@ -24,26 +23,26 @@ const methodArt = { Mind: MindArt, Direction: DirectionArt, Alignment: Alignment
 const serviceMeta: Record<string, { img: string; tag: string; subtitle: string; num: string }> = {
   "mind-training": {
     img: "/images/service-mind-training.jpg",
-    tag: "Mind & Neural Rewiring",
-    subtitle: "Internal Habits & Thought Mastery",
+    tag: "Mind Training",
+    subtitle: "Thought patterns and habits",
     num: "01",
   },
   numerology: {
     img: "/images/service-numerology.jpg",
-    tag: "Sacred Numerology",
-    subtitle: "Name Vibrations & Destiny Numbers",
+    tag: "Numerology",
+    subtitle: "Date of birth and name",
     num: "02",
   },
   vastu: {
     img: "/images/service-vastu.jpg",
-    tag: "Vastu Shastra & Direction",
-    subtitle: "Residential & Spatial Harmony",
+    tag: "Vastu",
+    subtitle: "The spaces you live and work in",
     num: "03",
   },
   astrology: {
     img: "/images/service-astrology.jpg",
-    tag: "Vedic Astrology",
-    subtitle: "Planetary Alignment & Birth Chart",
+    tag: "Astrology",
+    subtitle: "Your birth chart and your question",
     num: "04",
   },
 };
@@ -56,7 +55,7 @@ export default function ServicesPage() {
       <PageHero
         crumb="Services"
         title="Mind training, numerology, vastu and astrology"
-        lead="Start with what is on your mind. Narayani brings these practices together around your circumstances and the changes you want to make."
+        lead="Start with the question you are facing. Narayani considers your thought patterns and circumstances, then draws on numerology, Vastu or astrology where relevant."
         visualLate
         visual={
           <nav className="service-mosaic" aria-label="The four services on this page">
@@ -102,7 +101,7 @@ export default function ServicesPage() {
         <div className="section-wrap section-space">
           <div className="section-heading">
             <h2 id="method-title">Mind. Direction. Alignment.</h2>
-            <p>Her approach begins with how you think, then connects that understanding to the decisions and habits of everyday life.</p>
+            <p>She starts with how you think and respond. The other practices add context to the choice in front of you.</p>
           </div>
           <div className="triad">
             {method.map((step) => {
@@ -210,7 +209,7 @@ export default function ServicesPage() {
             <li>
               <span className="list-number">1</span>
               <h3>Reach out</h3>
-              <p>Send a WhatsApp message, call, or leave your number for a call back.</p>
+              <p>Send a WhatsApp message, call or email the team.</p>
             </li>
             <li>
               <span className="list-number">2</span>
@@ -268,7 +267,7 @@ export default function ServicesPage() {
           <div className="service-quote-body">
             <span className="quote-mark-icon" aria-hidden="true">“</span>
             <blockquote className="service-quote-text">
-              “She taught me more than numerology, vastu and remedies. She taught me to believe in myself, and to understand my intuition.”
+              “{voices.deepa.quote}”
             </blockquote>
             <div className="service-quote-author">
               <strong>Deepa K.</strong>
