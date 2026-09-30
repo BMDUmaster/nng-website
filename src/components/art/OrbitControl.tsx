@@ -50,8 +50,8 @@ export function OrbitControl() {
       type="button"
       className="chakra-control-btn orbit-control"
       aria-pressed={paused}
-      aria-label={paused ? "Resume rotating zodiac chakra" : "Pause rotating zodiac chakra"}
-      title={paused ? "Resume rotating zodiac chakra" : "Pause rotating zodiac chakra"}
+      aria-label={paused ? "Resume orbit animation" : "Pause orbit animation"}
+      title={paused ? "Resume orbit animation" : "Pause orbit animation"}
       onClick={() => write(!paused)}
     >
       <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">

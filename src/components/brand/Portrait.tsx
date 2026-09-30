@@ -3,8 +3,7 @@ import { asset, assetSet } from "@/lib/assets";
 
 /**
  * The arch portrait from the hero and inner pages.
- * Supports the rotating astrological zodiac chakra wheel with running dual neon border beams
- * and floating badge when `orbit` is enabled (matching Reference Image 1).
+ * Supports a quiet rotating zodiac wheel behind the portrait when `orbit` is enabled.
  */
 const photos = {
   gold: {
@@ -36,7 +35,7 @@ export function Portrait({
   priority?: boolean;
   sizes?: string;
   className?: string;
-  /** Draw the astrological zodiac chakra wheel behind the arch (matching Image 1). */
+  /** Draw the zodiac wheel behind the portrait. */
   orbit?: boolean;
 }) {
   const p = photos[photo];
@@ -44,22 +43,19 @@ export function Portrait({
   if (orbit) {
     return (
       <div className={`hero-portrait-stage ${className}`}>
-        {/* Rotating Astrological Zodiac Wheel (Matches User Reference Image 1) */}
         <div className="zodiac-wheel-layer" aria-hidden="true">
           <img
             src={asset("/images/zodiac-chakra.png")}
             className="zodiac-chakra"
             alt=""
-            width={630}
-            height={630}
+            width={1000}
+            height={1000}
             loading="eager"
           />
         </div>
 
-        {/* Chakra Play/Pause Toggle */}
         <OrbitControl />
 
-        {/* Arched Portrait Frame */}
         <div className="arch-portrait-frame">
           <picture>
             {p.avif && <source type="image/avif" srcSet={assetSet(p.avif)} sizes={sizes} />}
@@ -75,52 +71,6 @@ export function Portrait({
             />
           </picture>
 
-          {/* Running Yellow & Purple Dual Border SVG */}
-          <svg className="running-border-svg" viewBox="0 0 330 450" aria-hidden="true">
-            <defs>
-              <filter id="yellowNeonGlow" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="3.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-              <filter id="purpleNeonGlow" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="3.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-            <path
-              className="running-border-base"
-              d="M 12,434 L 12,165 A 153,153 0 0,1 318,165 L 318,434 A 14,14 0 0,1 304,448 L 26,448 A 14,14 0 0,1 12,434 Z"
-              fill="none"
-              stroke="rgba(226, 136, 34, 0.45)"
-              strokeWidth="2.5"
-            />
-            <path
-              className="running-border-path-yellow"
-              d="M 12,434 L 12,165 A 153,153 0 0,1 318,165 L 318,434 A 14,14 0 0,1 304,448 L 26,448 A 14,14 0 0,1 12,434 Z"
-              fill="none"
-              stroke="#F59E0B"
-              strokeWidth="3.5"
-              strokeDasharray="130 490"
-              filter="url(#yellowNeonGlow)"
-            />
-            <path
-              className="running-border-path-purple"
-              d="M 12,434 L 12,165 A 153,153 0 0,1 318,165 L 318,434 A 14,14 0 0,1 304,448 L 26,448 A 14,14 0 0,1 12,434 Z"
-              fill="none"
-              stroke="#D7B86B"
-              strokeWidth="3.5"
-              strokeDasharray="130 490"
-              filter="url(#yellowNeonGlow)"
-            />
-          </svg>
-
-          {/* Floating Portrait Badge */}
           <div className="portrait-badge">
             <span>{name ?? "Narayani Garg"}</span>
             <small>{note ?? "The Life Strategist"}</small>

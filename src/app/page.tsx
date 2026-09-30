@@ -6,10 +6,8 @@ import { Portrait } from "@/components/brand/Portrait";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { AreasRibbon, FaqSection, ProgramPanel, QuoteTrack, ServiceCards } from "@/components/sections/Sections";
 import { BlogSection } from "@/components/sections/BlogSection";
-import { FounderIntroSection } from "@/components/sections/FounderIntroSection";
 import { StoryRail } from "@/components/voices/StoryRail";
 import { SocialSection } from "@/components/sections/SocialSection";
-import { TrustStatsSection, OneCallConsultationSection } from "@/components/sections/TrustAndConsultation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
 import { figures, site } from "@/content/site";
@@ -33,28 +31,22 @@ export default function HomePage() {
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), faqSchema(faqs.home)] }} />
 
-      {/* Hero Section matching User Reference Image 1 */}
       <section className="hero section-wrap" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="kicker">NARAYANI GARG · NUMEROLOGY, VASTU & ASTROLOGY</p>
+          <p className="kicker">ASTROLOGY · NUMEROLOGY · VASTU</p>
+          <div className="hero-human-cue">
+            <img src={asset("/images/narayani-cover-portrait-480.webp")} width={52} height={52} alt="" />
+            <span>Personal guidance with <strong>Dr. Narayani Garg</strong></span>
+          </div>
           <h1 id="hero-title">
             Change begins <span className="highlight">with the mind.</span>
           </h1>
-          <p className="hero-description">
-            She begins with how you think, then reads your numbers, your home and your chart.
+          <p className="hero-description">For questions about relationships, career, health or money, Narayani brings astrology, numerology and vastu into a conversation about the patterns behind your choices.</p>
+          <p className="hero-proof" aria-label="Narayani's experience">
+            {figures.map((figure) => (
+              <span key={figure.label}><strong>{figure.value}</strong> {figure.label}</span>
+            ))}
           </p>
-
-          <div className="hero-figures">
-            <div className="stats" aria-label="Her practice in figures">
-              {figures.map((figure) => (
-                <div key={figure.label}>
-                  <strong>{figure.value}</strong>
-                  <span>{figure.label}</span>
-                </div>
-              ))}
-            </div>
-            <p className="stats-source">Figures from the practice, September 2026</p>
-          </div>
 
           <div className="hero-actions">
             <EnquiryTrigger source="hero" primary>
@@ -178,8 +170,6 @@ export default function HomePage() {
       </section>
 
       <FaqSection items={faqs.home} source="home-faq" />
-      <TrustStatsSection />
-      <OneCallConsultationSection />
       <SocialSection platform="instagram" />
     </>
   );

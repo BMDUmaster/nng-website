@@ -103,7 +103,8 @@ export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
       <OrbitBackdrop className="on-feature" />
       <div className="program-main">
         <Heading id={asHero ? "page-title" : "program-title"}>Personalised Hand Holding Program</Heading>
-        <p>Knowing what to change is one part of it. Following through takes time. Work with Narayani over six months, with space to ask, reflect and try again.</p>
+        {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-480.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Dr. Narayani Garg</strong></span></div>}
+        <p>Knowing what to change is one part of it. This six-month program brings astrology, numerology and vastu together with brain training and direct guidance.</p>
         <div className="cta-row">
           <EnquiryTrigger
             className="button button-light"
@@ -127,9 +128,9 @@ export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
           <span>months of personal guidance</span>
         </div>
         <ul>
-          <li>Calls and messages through the six months</li>
-          <li>Space to revisit, reflect and ask</li>
-          <li>All four areas, together</li>
+          <li>Astrology, numerology and vastu assessment</li>
+          <li>Brain training for recurring patterns</li>
+          <li>Direct handholding across all four life areas</li>
         </ul>
         <div className="program-domains">
           {areas.map((area) => (
