@@ -2,22 +2,19 @@ import type { Metadata } from "next";
 import { CallArt, LetterArt, WhatsAppArt } from "@/components/art/Art";
 import { VastuBackdrop } from "@/components/art/Sky";
 import { Portrait } from "@/components/brand/Portrait";
-import { CallbackForm } from "@/components/contact/CallbackForm";
 import { CallLink } from "@/components/contact/CallLink";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { FaqSection, PageHero } from "@/components/sections/Sections";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { QuoteBand } from "@/components/voices/QuoteCard";
 import { faqs } from "@/content/faq";
 import { site } from "@/content/site";
-import { voices } from "@/content/voices";
 import { asset } from "@/lib/assets";
 import { faqSchema, personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Enquire about a consultation or the six-month program with Narayani Garg: message on WhatsApp, call, or leave your number for a call back.",
+    "Enquire about a consultation or the six-month program with Narayani Garg on WhatsApp, by phone or email.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -37,29 +34,12 @@ export default function ContactPage() {
           <EnquiryTrigger source="contact-hero" primary>
             Message on WhatsApp
           </EnquiryTrigger>
-          <a className="text-link" href="#callback">
-            Request a call back
-          </a>
-        </div>
-
-        <div className="hero-feature-pills">
-          <div className="feature-pill">
-            <span className="pill-dot">✦</span>
-            <span><strong>Replies within 2 hours</strong> on WhatsApp</span>
-          </div>
-          <div className="feature-pill">
-            <span className="pill-dot">✦</span>
-            <span><strong>100% Confidential</strong> &amp; Private guidance</span>
-          </div>
-          <div className="feature-pill">
-            <span className="pill-dot">✦</span>
-            <span><strong>Online &amp; In-person</strong> across India &amp; Worldwide</span>
-          </div>
+          <a className="text-link" href="#ways-title">Other ways to reach us</a>
         </div>
       </PageHero>
 
       <section className="band" aria-labelledby="ways-title">
-        <div className="section-wrap section-space contact-grid">
+        <div className="section-wrap section-space contact-grid contact-grid--single">
           <div>
             <h2 id="ways-title">Ways to reach the team</h2>
             <ul className="ways">
@@ -93,11 +73,6 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-          <div className="form-panel" id="callback">
-            <h2>Request a call back</h2>
-            <p>This callback form is a preview and does not send enquiries yet. For a reply from the team, please use WhatsApp or email.</p>
-            <CallbackForm />
-          </div>
         </div>
       </section>
 
@@ -109,7 +84,7 @@ export default function ContactPage() {
           <li>
             <span className="list-number">1</span>
             <h3>We get in touch</h3>
-            <p>By call or on WhatsApp, at the number you give.</p>
+            <p>The team responds through the channel you use to enquire.</p>
           </li>
           <li>
             <span className="list-number">2</span>
@@ -126,7 +101,7 @@ export default function ContactPage() {
           <div className="contact-quote-image-wrap">
             <img
               src={asset("/images/testimonials/client-1.webp")}
-              alt="Manish G. and his wife - Client experience"
+              alt="Manish G. and another person in a client video"
               className="contact-quote-img"
               width={380}
               height={320}
@@ -142,8 +117,8 @@ export default function ContactPage() {
               “Whenever we talk to her, it feels as if one of our own is lovingly showing us the right way, and trying to understand things from our side.”
             </blockquote>
             <div className="contact-quote-author">
-              <strong>Manish G. and his wife</strong>
-              <span>On their relationship · Translated from Hindi</span>
+              <strong>Manish G.</strong>
+              <span>On his experience · Translated from Hindi</span>
             </div>
           </div>
         </div>

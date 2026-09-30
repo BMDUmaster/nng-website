@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Narayani Garg, Transformation with NNG",
   },
   description,
+  alternates: { canonical: "/" },
   // The site stays out of search until SITE_INDEXABLE=true is set at launch.
   robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: {

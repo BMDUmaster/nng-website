@@ -18,18 +18,18 @@ export const story = [
   {
     step: "The practice",
     title: "Numerology, vastu and astrology, with the mind first.",
-    text: "Consultations by word of mouth: more than 10,000 clients, in India and abroad.",
+    text: "Her consultations grew by word of mouth, in India and abroad.",
   },
   {
     step: "The book",
     title: "A 21-day practice for inner change, set down in her book.",
-    text: "The mind and its habits, energy and the chakras, and the four areas of life, one practice a day.",
+    text: "A daily practice that explores habits, energy and the chakras.",
   },
   {
     step: "Today",
     // copy-lint-allow: the brand name, not an abstract noun.
     title: "Transformation with NNG.",
-    text: "Her consultations, and since August 2026 her channel on YouTube and Instagram.",
+    text: "Her consultations and content on YouTube and Instagram.",
   },
 ] as const;
 
@@ -39,11 +39,11 @@ export const beliefs = [
     text: "“No remedy works when the mindset is not right.” Her words, and where every consultation begins.",
   },
   {
-    title: "No fear, ever.",
-    text: "“I have never sold fear to anyone.” She explains her guidance so you can decide what feels right for you.",
+    title: "Guidance without fear.",
+    text: "“I have never sold fear to anyone.” She explains her reasoning and leaves the decision with you.",
   },
   {
     title: "One life, four areas.",
-    text: "Health, relationship, career and money, looked at together, because they move together.",
+    text: "A question in one area often touches another. She looks at the circumstances together.",
   },
 ] as const;
