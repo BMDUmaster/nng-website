@@ -22,7 +22,7 @@ export const story = [
   },
   {
     step: "The book",
-    title: "A 21-day practice for inner change, set down in her book.",
+    title: "A practice for inner change, set down across 21 days in her book.",
     text: "A daily practice that explores habits, energy and the chakras.",
   },
   {

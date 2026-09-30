@@ -12,7 +12,7 @@ const disclaimer: Faq = {
 
 const fees: Faq = {
   q: "What are the consultation and program fees?",
-  a: "Please ask for the current fees when you enquire. The consultation and the six-month program are separate options, and the team explains the scope and the fee before you decide.",
+  a: "Please ask for the current fees when you enquire. The consultation and the program lasting six months are separate options. The team explains the scope and fee before you decide.",
 };
 
 export const faqs = {

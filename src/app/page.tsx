@@ -123,7 +123,7 @@ export default function HomePage() {
         <div className="transformation-head">
           <div>
             <h2 id="transformation-title">Hear the whole story</h2>
-            <p>Conversations about family, self-belief and finding a way through.</p>
+            <p>Conversations about family, belief in oneself and finding a way through.</p>
           </div>
           <EnquiryTrigger className="text-link" source="home-films">
             Start your own enquiry
@@ -144,7 +144,7 @@ export default function HomePage() {
             </div>
             <p>
               An MBA and a decade running a manufacturing business came before numerology, vastu and astrology. Her book,{" "}
-              <em>{bookTitle}</em>, sets out her 21-day practice for inner change.
+              <em>{bookTitle}</em>, sets out her practice for inner change across 21 days.
             </p>
             <div className="cta-row">
               <Link prefetch={false} className="text-link" href="/about/">
@@ -152,6 +152,55 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section-wrap section-space founder-film" aria-labelledby="founder-film-title">
+        <div className="founder-film-copy">
+          <p className="kicker">IN HER OWN WORDS</p>
+          <h2 id="founder-film-title">Meet the person behind the guidance</h2>
+          <p>Hear Dr. Narayani Garg speak about the way she approaches her work, in her own voice.</p>
+          <Link prefetch={false} className="text-link" href="/about/">Get to know Narayani</Link>
+        </div>
+        <video
+          className="founder-film-video"
+          controls
+          playsInline
+          preload="none"
+          poster={asset("/images/narayani-about-authentic.webp")}
+          aria-label="Introduction to Dr. Narayani Garg"
+        >
+          <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+      </section>
+
+      <section className="section-wrap section-space spiritual-gallery" aria-labelledby="spiritual-gallery-title">
+        <div className="section-heading">
+          <p className="kicker">IN PERSON</p>
+          <h2 id="spiritual-gallery-title">Moments from her journey</h2>
+          <p>Photographs from Narayani’s meetings with spiritual teachers.</p>
+        </div>
+        <div className="spiritual-gallery-track" aria-label="Photographs of Narayani with spiritual teachers">
+          {[
+            { photo: "celeb-acharyapramod.jpg", name: "Acharya Pramod Krishnam" },
+            { photo: "celeb-devkinandan.jpg", name: "Shri Aniruddhacharya Ji Maharaj" },
+            { photo: "celeb-jaya-kishori.jpg", name: "Devi Krishna Priya Ji" },
+            { photo: "celeb-sadhvi.jpg", name: "Sadhvi Satyapriyaji Giri" },
+            { photo: "celeb-swing.jpg", name: "Manish Krishna Ji Maharaj" },
+          ].map(({ photo, name }) => (
+            <figure className="spiritual-gallery-photo" key={photo}>
+              <img
+                src={asset(`/images/celebrities/${photo}`)}
+                alt={`Dr. Narayani Garg with ${name}`}
+                loading="lazy"
+                decoding="async"
+                width={650}
+                height={1000}
+              />
+              <figcaption>{name}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

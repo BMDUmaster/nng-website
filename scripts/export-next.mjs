@@ -41,7 +41,8 @@ try {
 
   // Laravel's root app/ shadows Next's src/app/. Build from a minimal staged
   // root so neither application has to be moved or exposed during deployment.
-  for (const name of ["package.json", "package-lock.json", "next.config.ts", "tsconfig.json", "postcss.config.mjs", "next-env.d.ts"]) {
+  // Next generates next-env.d.ts during the build; fresh clones do not contain it.
+  for (const name of ["package.json", "package-lock.json", "next.config.ts", "tsconfig.json", "postcss.config.mjs"]) {
     const source = path.join(root, name);
     if (!fs.existsSync(source)) fail(`required build input ${name} is missing`);
     await fs.promises.copyFile(source, path.join(stage, name));
@@ -55,6 +56,8 @@ try {
   }
   await copyTree(path.join(root, "public", "images"), path.join(stage, "public", "images"));
   console.log("Next export: public images staged locally");
+  await copyTree(path.join(root, "public", "videos"), path.join(stage, "public", "videos"));
+  console.log("Next export: public videos staged locally");
 
   // A local install avoids slow or unavailable cloud-backed node_modules.
   // npm uses its normal cache first and fails clearly if packages are absent.

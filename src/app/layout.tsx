@@ -27,10 +27,17 @@ export const metadata: Metadata = {
   robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: {
     type: "website",
+    url: site.url,
     siteName: site.name,
-    title: "Narayani Garg | Transformation with NNG",
+    title: "Dr. Narayani Garg | Transformation with NNG",
     description,
-    images: [{ url: "/images/og-narayani-garg.jpg", width: 1200, height: 630, alt: "Narayani Garg, The Life Strategist" }],
+    images: [{ url: "/images/og-narayani-garg.jpg", width: 1200, height: 630, alt: "Dr. Narayani Garg, The Life Strategist" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Narayani Garg | Transformation with NNG",
+    description,
+    images: ["/images/og-narayani-garg.jpg"],
   },
   verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } : undefined,
 };

@@ -104,7 +104,7 @@ export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
       <div className="program-main">
         <Heading id={asHero ? "page-title" : "program-title"}>Personalised Hand Holding Program</Heading>
         {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-480.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Dr. Narayani Garg</strong></span></div>}
-        <p>Knowing what to change is one part of it. This six-month program brings astrology, numerology and vastu together with brain training and direct guidance.</p>
+        <p>Knowing what to change is one part of it. Over six months, the program brings astrology, numerology and vastu together with brain training and direct guidance.</p>
         <div className="cta-row">
           <EnquiryTrigger
             className="button button-light"

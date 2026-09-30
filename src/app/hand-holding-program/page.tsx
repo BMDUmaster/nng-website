@@ -79,7 +79,7 @@ export default function ProgramPage() {
         <div className="section-wrap section-space split">
           <div>
             <h2 id="how-title">How the six months work</h2>
-            <p>The program combines practice-based assessment with work on the thinking patterns behind recurring questions. The team explains the personal format before you commit.</p>
+            <p>The program combines an assessment of your circumstances with work on the thinking patterns behind recurring questions. The team explains the personal format before you commit.</p>
             <div className="figure-box">
               <AreasFigure />
             </div>

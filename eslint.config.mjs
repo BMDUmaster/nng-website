@@ -11,6 +11,8 @@ const eslintConfig = defineConfig([
     "node_modules/**",
     "node_modules.nosync/**",
     "out/**",
+    "public/_next/**",
+    "public/_rsc/**",
     "_archive/**",
     "build/**",
     "next-env.d.ts",

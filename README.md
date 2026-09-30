@@ -4,7 +4,7 @@ Narayani Garg's website at [nngarg.com](https://nngarg.com/) is served by Larave
 
 ## Development and checks
 
-Use Node 20.9 or newer. Run `npm ci`. Before publishing, run `npm run typecheck`, `npm run lint`, and `npm run lint:copy`. In this combined Laravel checkout, root `npm run dev` currently selects Laravel's `app/` instead of Next's `src/app/`, so it is not a valid visual preview. Use a static `npm run export` preview served from `out/` until a separate Next-only development workspace is provided.
+Use Node 20.9 or newer. Run `npm ci`. Before publishing, run `npm run typecheck`, `npm run lint`, and `npm run lint:copy`. In this combined Laravel repository, root `npm run dev` currently selects Laravel's `app/` instead of Next's `src/app/`, so it is not a valid visual preview. Use a static `npm run export` preview served from `out/` until a separate Next-only development workspace is provided.
 
 ## Production build
 

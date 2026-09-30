@@ -254,7 +254,7 @@ export default function ServicesPage() {
           <div className="service-quote-image-wrap">
             <img
               src={asset("/images/testimonials/client-0.webp")}
-              alt="Deepa K. - Client experience with Narayani Garg"
+              alt="Deepa K., sharing her experience with Narayani Garg"
               className="service-quote-img"
               width={380}
               height={320}
@@ -275,7 +275,7 @@ export default function ServicesPage() {
             </div>
             <div className="service-quote-link-wrap">
               <Link prefetch={false} className="text-link" href="/hand-holding-program/">
-                Need more than one conversation? Read about the six-month program →
+                Need more than one conversation? Read about the program lasting six months →
               </Link>
             </div>
           </div>

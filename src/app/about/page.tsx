@@ -113,6 +113,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="section-wrap section-space founder-film" aria-labelledby="about-founder-film-title">
+        <div className="founder-film-copy">
+          <p className="kicker">IN HER OWN WORDS</p>
+          <h2 id="about-founder-film-title">Hear from Narayani</h2>
+          <p>A short introduction to the person and perspective behind the practice.</p>
+        </div>
+        <video
+          className="founder-film-video"
+          controls
+          playsInline
+          preload="none"
+          poster={asset("/images/narayani-about-authentic.webp")}
+          aria-label="Introduction to Dr. Narayani Garg"
+        >
+          <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+      </section>
+
       {/* Story Timeline Section */}
       <section className="band has-backdrop" aria-labelledby="story-title">
         <KundliBackdrop className="in-story" />
@@ -159,7 +178,7 @@ export default function AboutPage() {
           <h2 id="book-title">
             <em>{bookTitle}</em>
           </h2>
-          <p>Her 21-day book explores the mind, daily habits, energy and the chakras through a practice for each day.</p>
+          <p>Her book explores the mind, daily habits, energy and the chakras through a practice for each of its 21 days.</p>
           <div className="method-quote">
             <p>“When you change your mind, you change your world.”</p>
             <span>From the book</span>

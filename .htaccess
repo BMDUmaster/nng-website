@@ -2,6 +2,10 @@
     RewriteEngine On
     RewriteBase /
 
+    # Keep externally requested URLs canonical even on root document setups.
+    RewriteCond %{THE_REQUEST} \s/+public/([^\s?]*) [NC]
+    RewriteRule ^public/(.*)$ /$1 [R=301,L]
+
     # When the repository root is the document root, expose only public/.
     # Never serve an existing repository file (including composer.json or source).
     RewriteRule ^public(?:/|$) - [L]

@@ -69,7 +69,7 @@ export const voices = {
   },
   navleen: {
     poster: "/images/testimonials/client-3.webp",
-    hook: "Before a life-changing decision",
+    hook: "Before a decision that would change her life",
     id: "navleen",
     name: "Navleen S.",
     context: "Family, after 12 years in Australia",
@@ -95,9 +95,9 @@ export const voices = {
     id: "vanshika",
     name: "Vanshika S.",
     context: "Grade 10 student",
-    headline: "She never sugar-coated anything.",
+    headline: "She never sugarcoated anything.",
     quote:
-      "I used to be very anxious, even for my class tests. She never sugar-coated anything, which really helped me prepare for my exams. Thank you for transforming my anxiety into confidence.",
+      "I used to be very anxious, even for my class tests. She never sugarcoated anything, which really helped me prepare for my exams. Thank you for transforming my anxiety into confidence.",
     film: { driveId: "1s44lpBIgQGOnORc7o3oTjx4bgFkQldzS", duration: "0:43", label: "Exams, without the fear" },
   },
   shashi: {

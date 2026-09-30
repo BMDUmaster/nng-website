@@ -11,7 +11,7 @@ import { bookTitle } from "@/content/about";
 import { asset } from "@/lib/assets";
 import { whatsappUrl } from "@/lib/whatsapp";
 
-export const metadata: Metadata = { title: "Personal consultation with Narayani Garg", description: "Personal guidance with Narayani Garg, The Life Strategist. Explore consultations and six-month mentorship. Ask the team about fees and availability.", alternates: { canonical: "/consultation/" }, robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Personal consultation with Narayani Garg", description: "Personal guidance with Narayani Garg, The Life Strategist. Explore consultations and mentorship lasting six months. Ask the team about fees and availability.", alternates: { canonical: "/consultation/" }, robots: { index: false, follow: false } };
 
 export default function ConsultationLandingPage() {
   return <div className="ads-landing">

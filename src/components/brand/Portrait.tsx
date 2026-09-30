@@ -10,7 +10,7 @@ const photos = {
     avif: "/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w",
     webp: "/images/narayani-portrait-480.webp 480w, /images/narayani-portrait-684.webp 684w",
     src: "/images/narayani-portrait-gold.png",
-    alt: "Narayani Garg - The Life Strategist",
+    alt: "Narayani Garg, The Life Strategist",
   },
   book: {
     avif: "/images/narayani-cover-portrait-480.avif 480w, /images/narayani-cover-portrait-560.avif 560w, /images/narayani-cover-portrait-684.avif 684w",
@@ -48,10 +48,43 @@ export function Portrait({
             src={asset("/images/zodiac-chakra.png")}
             className="zodiac-chakra"
             alt=""
-            width={1000}
-            height={1000}
+            width={630}
+            height={630}
             loading="eager"
           />
+          <svg className="zodiac-outer-ring" viewBox="0 0 1000 1000" focusable="false" aria-hidden="true">
+            <path
+              d="M500 10 A490 490 0 1 1 500 990 A490 490 0 1 1 500 10 Z M500 92 A408 408 0 1 0 500 908 A408 408 0 1 0 500 92 Z"
+              fill="#faf3e8"
+              fillRule="evenodd"
+            />
+            {[490, 473, 421, 408].map((radius) => (
+              <circle key={radius} cx="500" cy="500" r={radius} fill="none" stroke="#ba851f" strokeWidth={radius === 490 || radius === 408 ? 3 : 2} />
+            ))}
+            {Array.from({ length: 12 }, (_, index) => (
+              <line key={index} x1="500" y1="10" x2="500" y2="92" transform={`rotate(${index * 30} 500 500)`} stroke="#ba851f" strokeWidth="2.5" />
+            ))}
+            {[
+              "TAURUS", "ARIES", "PISCES", "AQUARIUS", "CAPRICORN", "SAGITTARIUS",
+              "SCORPIO", "LIBRA", "VIRGO", "LEO", "CANCER", "GEMINI",
+            ].map((sign, index) => (
+              <text
+                key={sign}
+                x="500"
+                y="58"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                transform={`rotate(${index * 30 - 15} 500 500)`}
+                fill="#a9781c"
+                fontFamily="Georgia, serif"
+                fontSize={sign.length > 9 ? 22 : 26}
+                fontWeight="600"
+                letterSpacing="2"
+              >
+                {sign}
+              </text>
+            ))}
+          </svg>
         </div>
 
         <OrbitControl />

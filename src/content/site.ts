@@ -31,6 +31,7 @@ export const site = {
 export const figures = [
   { value: "10,000+", label: "Clients guided" },
   { value: "15+", label: "Years of professional experience" },
+  { value: "5+", label: "Countries served" },
 ] as const;
 
 export type NavItem = { label: string; href: string; short?: string };

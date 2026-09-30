@@ -14,7 +14,7 @@ import { faqSchema, personSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Enquire about a consultation or the six-month program with Narayani Garg on WhatsApp, by phone or email.",
+    "Enquire about a consultation or the program lasting six months with Narayani Garg on WhatsApp, by phone or email.",
   alternates: { canonical: "/contact/" },
 };
 
