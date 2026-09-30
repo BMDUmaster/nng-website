@@ -13,7 +13,7 @@ export const site = {
   method: "Mind. Direction. Alignment.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3400",
   /** Business enquiry number approved by Aryan on 25 September 2026. */
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919711311149",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919205511101",
   email: "enquiry@nngarg.com",
   indexable: process.env.SITE_INDEXABLE === "true",
   /** Set on a copy that is shared for review, so nobody mistakes it for the live site. */

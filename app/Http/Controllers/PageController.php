@@ -35,4 +35,9 @@ class PageController extends Controller
     {
         return view('consultation');
     }
+
+    public function nngLanding()
+    {
+        return view('nng');
+    }
 }
