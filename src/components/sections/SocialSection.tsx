@@ -14,7 +14,7 @@ export function SocialSection({ platform }: { platform: "youtube" | "instagram" 
         <div className="transformation-head">
           <div><span className="social-eyebrow">{name}</span>
             <h2 id={`${platform}-title`}>{youtube ? "Watch Narayani on YouTube" : "From Narayani’s Instagram"}</h2>
-            <p>{youtube ? "Five of her most-watched videos." : "Her five most-watched Instagram reels."}</p>
+            <p>{youtube ? "Five of her videos with the most views." : "Her five Instagram reels with the most views."}</p>
           </div>
           <a className="text-link social-profile-link" href={site.social[platform]} target="_blank" rel="noopener noreferrer"><SocialLogo platform={platform} /> Visit her {name} <span aria-hidden="true">↗</span></a>
         </div>

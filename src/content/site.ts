@@ -2,17 +2,18 @@
  * Site-wide facts. One place to change a name, a link or a number.
  *
  * Sources: the Codex homepage Aryan chose (21 Sept 2026), his answers of 23 Sept 2026 (identity line,
- * figures, Codex type and colour), and Narayani's voice note of 21 Sept 2026 (WhatsApp message or call,
- * or a short form so the team can call back; no packages or prices on the site until January).
+ * Codex type and colour), the 21 Sept voice note (WhatsApp/call enquiry preference), and his
+ * 30 Sept 2026 confirmation of the 10,000+ and 15+ figures. Recheck changing contact details.
  */
 export const site = {
   name: "Transformation with NNG",
-  person: "Narayani Garg",
+  /** Display name confirmed by Aryan on 30 September 2026; no degree detail is asserted. */
+  person: "Dr. Narayani Garg",
   /** Approved by Aryan on 23 Sept 2026 as the identity lock-up. */
   title: "The Life Strategist",
   method: "Mind. Direction. Alignment.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3400",
-  /** Business enquiry number approved by Aryan on 25 September 2026. */
+  /** Business enquiry number selected from the NNG packages PDF by Aryan on 30 September 2026. */
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919205511101",
   email: "enquiry@nngarg.com",
   indexable: process.env.SITE_INDEXABLE === "true",
@@ -21,18 +22,16 @@ export const site = {
   social: {
     youtube: "https://www.youtube.com/@transformationwithnng",
     instagram: "https://www.instagram.com/transformationwithnng/",
+    /** Aryan supplied the official share URL on 30 September 2026; it redirects here. */
+    facebook: "https://www.facebook.com/transformationwithnng/",
   },
 } as const;
 
-/**
- * Figures confirmed by Aryan on 24 Sept 2026: 15 years of experience, 10,000+ clients, 5 countries.
- * Shown with a plus, as a floor. "Years of experience" is deliberate: it counts her working life, not
- * only the years in this practice.
- */
+/** Confirmed by Aryan on 30 September 2026. Experience means total professional experience. */
 export const figures = [
-  { value: "15+", label: "Years of experience" },
   { value: "10,000+", label: "Clients guided" },
-  { value: "5+", label: "Countries" },
+  { value: "15+", label: "Years of professional experience" },
+  { value: "5+", label: "Countries served" },
 ] as const;
 
 export type NavItem = { label: string; href: string; short?: string };
@@ -50,7 +49,7 @@ export const nav: NavItem[] = [
 export const areas = ["Health", "Relationship", "Career", "Money"] as const;
 
 /**
- * Options for the enquiry dialog and the call-back form, in three groups. The value goes into the
+ * Options for the WhatsApp enquiry dialog, in three groups. The value goes into the
  * prepared message ("I would like to enquire about <value> with Narayani Garg").
  */
 export const enquiryTopics = [

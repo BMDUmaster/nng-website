@@ -110,7 +110,7 @@ export function Track({
       {autoAdvanceMobile && autoEligible && <div className="quote-auto-control">
         <span>Take your time with their stories.</span>
         <button type="button" aria-pressed={autoPaused} onClick={() => setAutoPaused(value => !value)}>
-          {autoPaused ? "Resume" : "Pause"}<span className="visually-hidden"> testimonial auto-scroll</span>
+          {autoPaused ? "Resume" : "Pause"}<span className="visually-hidden"> testimonial scrolling</span>
         </button>
       </div>}
       <div ref={track} className={className} tabIndex={0} role="region" aria-label={label}

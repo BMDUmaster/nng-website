@@ -6,10 +6,8 @@ import { Portrait } from "@/components/brand/Portrait";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { AreasRibbon, FaqSection, ProgramPanel, QuoteTrack, ServiceCards } from "@/components/sections/Sections";
 import { BlogSection } from "@/components/sections/BlogSection";
-import { FounderIntroSection } from "@/components/sections/FounderIntroSection";
 import { StoryRail } from "@/components/voices/StoryRail";
 import { SocialSection } from "@/components/sections/SocialSection";
-import { TrustStatsSection, OneCallConsultationSection } from "@/components/sections/TrustAndConsultation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
 import { figures, site } from "@/content/site";
@@ -33,28 +31,22 @@ export default function HomePage() {
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), faqSchema(faqs.home)] }} />
 
-      {/* Hero Section matching User Reference Image 1 */}
       <section className="hero section-wrap" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="kicker">NARAYANI GARG · NUMEROLOGY, VASTU & ASTROLOGY</p>
+          <p className="kicker">ASTROLOGY · NUMEROLOGY · VASTU</p>
+          <div className="hero-human-cue">
+            <img src={asset("/images/narayani-cover-portrait-480.webp")} width={52} height={52} alt="" />
+            <span>Personal guidance with <strong>Dr. Narayani Garg</strong></span>
+          </div>
           <h1 id="hero-title">
             Change begins <span className="highlight">with the mind.</span>
           </h1>
-          <p className="hero-description">
-            She begins with how you think, then reads your numbers, your home and your chart.
+          <p className="hero-description">For questions about relationships, career, health or money, Narayani brings astrology, numerology and vastu into a conversation about the patterns behind your choices.</p>
+          <p className="hero-proof" aria-label="Narayani's experience">
+            {figures.map((figure) => (
+              <span key={figure.label}><strong>{figure.value}</strong> {figure.label}</span>
+            ))}
           </p>
-
-          <div className="hero-figures">
-            <div className="stats" aria-label="Her practice in figures">
-              {figures.map((figure) => (
-                <div key={figure.label}>
-                  <strong>{figure.value}</strong>
-                  <span>{figure.label}</span>
-                </div>
-              ))}
-            </div>
-            <p className="stats-source">Figures from the practice, September 2026</p>
-          </div>
 
           <div className="hero-actions">
             <EnquiryTrigger source="hero" primary>
@@ -131,7 +123,7 @@ export default function HomePage() {
         <div className="transformation-head">
           <div>
             <h2 id="transformation-title">Hear the whole story</h2>
-            <p>Conversations about family, self-belief and finding a way through.</p>
+            <p>Conversations about family, belief in oneself and finding a way through.</p>
           </div>
           <EnquiryTrigger className="text-link" source="home-films">
             Start your own enquiry
@@ -152,7 +144,7 @@ export default function HomePage() {
             </div>
             <p>
               An MBA and a decade running a manufacturing business came before numerology, vastu and astrology. Her book,{" "}
-              <em>{bookTitle}</em>, sets out her 21-day practice for inner change.
+              <em>{bookTitle}</em>, sets out her practice for inner change across 21 days.
             </p>
             <div className="cta-row">
               <Link prefetch={false} className="text-link" href="/about/">
@@ -160,6 +152,55 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section-wrap section-space founder-film" aria-labelledby="founder-film-title">
+        <div className="founder-film-copy">
+          <p className="kicker">IN HER OWN WORDS</p>
+          <h2 id="founder-film-title">Meet the person behind the guidance</h2>
+          <p>Hear Dr. Narayani Garg speak about the way she approaches her work, in her own voice.</p>
+          <Link prefetch={false} className="text-link" href="/about/">Get to know Narayani</Link>
+        </div>
+        <video
+          className="founder-film-video"
+          controls
+          playsInline
+          preload="none"
+          poster={asset("/images/narayani-about-authentic.webp")}
+          aria-label="Introduction to Dr. Narayani Garg"
+        >
+          <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+      </section>
+
+      <section className="section-wrap section-space spiritual-gallery" aria-labelledby="spiritual-gallery-title">
+        <div className="section-heading">
+          <p className="kicker">IN PERSON</p>
+          <h2 id="spiritual-gallery-title">Moments from her journey</h2>
+          <p>Photographs from Narayani’s meetings with spiritual teachers.</p>
+        </div>
+        <div className="spiritual-gallery-track" aria-label="Photographs of Narayani with spiritual teachers">
+          {[
+            { photo: "celeb-acharyapramod.jpg", name: "Acharya Pramod Krishnam" },
+            { photo: "celeb-devkinandan.jpg", name: "Shri Aniruddhacharya Ji Maharaj" },
+            { photo: "celeb-jaya-kishori.jpg", name: "Devi Krishna Priya Ji" },
+            { photo: "celeb-sadhvi.jpg", name: "Sadhvi Satyapriyaji Giri" },
+            { photo: "celeb-swing.jpg", name: "Manish Krishna Ji Maharaj" },
+          ].map(({ photo, name }) => (
+            <figure className="spiritual-gallery-photo" key={photo}>
+              <img
+                src={asset(`/images/celebrities/${photo}`)}
+                alt={`Dr. Narayani Garg with ${name}`}
+                loading="lazy"
+                decoding="async"
+                width={650}
+                height={1000}
+              />
+              <figcaption>{name}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
@@ -178,8 +219,6 @@ export default function HomePage() {
       </section>
 
       <FaqSection items={faqs.home} source="home-faq" />
-      <TrustStatsSection />
-      <OneCallConsultationSection />
       <SocialSection platform="instagram" />
     </>
   );

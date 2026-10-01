@@ -39,7 +39,7 @@ export function Footer() {
               loading="lazy"
             />
             <p>
-              <strong>Narayani Garg, The Life Strategist</strong>
+              <strong>Dr. Narayani Garg, The Life Strategist</strong>
               Mind. Direction. Alignment.
             </p>
           </div>
@@ -95,7 +95,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={"https://www.facebook.com/transformationwithnng/"}
+                  href={site.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link social-facebook"

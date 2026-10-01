@@ -17,7 +17,7 @@ export function personSchema() {
     name: site.person,
     jobTitle: site.title,
     description:
-      "Narayani Garg offers personal guidance in numerology, vastu and astrology, beginning with the mind, and a six-month hand holding program.",
+      "Narayani Garg offers personal guidance in numerology, vastu and astrology, beginning with the mind, and a hand holding program lasting six months.",
     url: site.url,
     image: `${site.url}/images/narayani-portrait-684.webp`,
     knowsAbout: ["Numerology", "Vastu", "Astrology", "Mind training"],

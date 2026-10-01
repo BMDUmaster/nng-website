@@ -9,8 +9,9 @@
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, extname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const SCAN = [join(ROOT, "src"), join(ROOT, "README.md")];
 const EXT = new Set([".ts", ".tsx", ".css", ".md", ".mdx"]);
 
@@ -84,13 +85,8 @@ function walk(path, out = []) {
   return out;
 }
 
-const files = SCAN.flatMap((p) => {
-  try {
-    return walk(p);
-  } catch {
-    return [];
-  }
-});
+const files = SCAN.flatMap((p) => walk(p));
+if (files.length === 0) throw new Error("Copy lint found no source files to check.");
 
 let hits = 0;
 for (const file of files) {

@@ -59,3 +59,4 @@ Route::get('/clear-cache', function () {
         return "Error clearing cache: " . $e->getMessage();
     }
 });
+Route::get('/consultation/', [PageController::class, 'consultation']);
