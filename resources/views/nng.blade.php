@@ -392,7 +392,522 @@
             .nav-links { display: none; }
         }
     </style>
-</head>
+<style id="mobile-responsive-overrides">
+/* DESKTOP SCREEN ONLY (min-width: 769px) */
+@media (min-width: 769px) {
+  .section-wrap, .container, .program-panel, .header-inner, .site-header .header-inner, main, footer {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: clamp(20px, 4vw, 60px) !important;
+    padding-right: clamp(20px, 4vw, 60px) !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-proof {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-proof > span {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #faf4e8 !important;
+    border: 1px solid #e2c992 !important;
+    border-radius: 50px !important;
+    padding: 10px 20px !important;
+    font-size: 13.5px !important;
+    color: #444444 !important;
+    box-shadow: 0 2px 10px rgba(186, 133, 31, 0.08) !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-proof > span strong {
+    font-size: 16.5px !important;
+    font-weight: 800 !important;
+    color: #7a5410 !important;
+  }
+
+  .founder-film {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px) !important;
+    gap: clamp(32px, 5vw, 64px) !important;
+    align-items: center !important;
+  }
+
+  .founder-film-copy {
+    max-width: 100% !important;
+  }
+
+  .founder-film-pillars {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .film-pillar-card {
+    background: #faf4e8 !important;
+    border: 1px solid #e5d3b0 !important;
+    border-radius: 14px !important;
+    padding: 16px 14px !important;
+    box-shadow: 0 4px 12px rgba(186, 133, 31, 0.06) !important;
+  }
+
+  .film-pillar-card h4 {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #3c183d !important;
+    margin-bottom: 4px !important;
+  }
+
+  .film-pillar-card p {
+    font-size: 12px !important;
+    color: #555555 !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  .founder-film-quote {
+    display: block !important;
+    background: linear-gradient(135deg, rgba(60,24,61,0.03), rgba(197,154,69,0.08)) !important;
+    border-left: 4px solid #c59a45 !important;
+    padding: 14px 18px !important;
+    border-radius: 0 12px 12px 0 !important;
+    margin-top: 20px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .founder-film-quote p {
+    font-family: Georgia, serif !important;
+    font-style: italic !important;
+    font-size: 14.5px !important;
+    color: #3c183d !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .founder-film-quote cite {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #8b6214 !important;
+    font-style: normal !important;
+  }
+}
+
+/* MOBILE SCREEN ONLY (<= 768px) */
+@media (max-width: 768px) {
+  /* Smaller Headings for Mobile */
+  h1 { font-size: clamp(22px, 5.8vw, 27px) !important; line-height: 1.25 !important; }
+  h2 { font-size: clamp(19px, 5vw, 23px) !important; line-height: 1.3 !important; }
+  h3 { font-size: clamp(16px, 4.2vw, 19px) !important; line-height: 1.3 !important; }
+
+  /* Global Container Adjustments */
+  .section-wrap, .container, .program-panel, .header-inner, main, footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reduce excessive vertical space between sections on Mobile */
+  .section-space, .faq-wrap, .faq-wrap.has-backdrop, section.faq-wrap, #faq, .faq, .ads-faq {
+    padding-top: 12px !important;
+    padding-bottom: 16px !important;
+    margin-top: 0 !important;
+  }
+
+  .service-quote-link-wrap {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .faq-intro {
+    margin-bottom: 10px !important;
+    padding-top: 0 !important;
+  }
+
+  .faq-intro h2 {
+    margin-bottom: 4px !important;
+  }
+
+  /* Header Controls on Mobile */
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .header-enquiry {
+    padding: 5px 12px !important;
+    min-height: 30px !important;
+    height: 30px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: none !important;
+  }
+
+  .header-enquiry svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .menu-toggle {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3.5px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 6px 4px !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .menu-toggle .dot {
+    display: block !important;
+    width: 4.5px !important;
+    height: 4.5px !important;
+    border-radius: 50% !important;
+    background-color: #3C183D !important;
+  }
+
+  /* Mobile Side Navigation Drawer Font Size (15px) */
+  .mobile-side-drawer a, .mobile-side-drawer .drawer-nav-item, .mobile-side-drawer nav a, .drawer-nav-link, #mobile-nav a {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    padding: 8px 12px !important;
+    margin-bottom: 2px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Buttons Side-by-Side in 1 Row (Single Span) on Mobile */
+  .hero-actions, .about-hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-actions > a, .hero-actions > button,
+  .hero-actions .button, .hero-actions .button-secondary,
+  .about-hero-actions > a, .about-hero-actions > button,
+  .about-hero-actions .button, .about-hero-actions .button-secondary {
+    flex: 1 1 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    min-width: 0 !important;
+    padding: 9px 6px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 50px !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-actions > a span, .hero-actions .button span, .hero-actions .button-secondary span,
+  .about-hero-actions > a span, .about-hero-actions .button span {
+    white-space: normal !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .hero-actions svg, .about-hero-actions svg {
+    width: 12px !important;
+    height: 12px !important;
+    margin-left: 3px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Single Column Layout For Most Grids Except Service Mosaic & Footer */
+  .hero, .experience-grid, .stats-card-grid, .trust-stats-grid,
+  .one-call-grid, .triad, .steps, .formats, .testimonial-grid,
+  .beliefs, .approach-grid, .meet, .founder-intro-card,
+  .about-hero-grid, .story-grid, .faq, .footer-cta-box, .reel-track,
+  .consultation-journey, .service-card-luxury, .compare, .stays-grid,
+  .ads-option-columns, .ads-enquiry-grid, .contact-grid {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .hero > *, .experience-grid > *, .stats-card-grid > *,
+  .trust-stats-grid > *, .one-call-grid > *, .triad > *,
+  .steps > *, .formats > *, .testimonial-grid > *, .beliefs > *,
+  .approach-grid > *, .meet > *, .founder-intro-card > *,
+  .about-hero-grid > *, .story-grid > *, .faq > *, .footer-cta-box > *,
+  .consultation-journey > *, .service-card-luxury > *, .compare > *,
+  .stays-grid > *, .ads-option-columns > *, .ads-enquiry-grid > *, .contact-grid > * {
+    grid-column: span 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Card Spacing under "How she works with you" on Mobile */
+  .service-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .service-card {
+    margin-bottom: 16px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 14px rgba(60, 24, 61, 0.05) !important;
+    padding: 16px !important;
+    background: #ffffff !important;
+  }
+
+  /* Service Page 2x2 Grid UI on Mobile */
+  .service-mosaic {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .service-mosaic-card {
+    grid-column: span 1 !important;
+    width: 100% !important;
+    height: 140px !important;
+    min-height: 140px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+  }
+
+  .mosaic-card-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .mosaic-card-bg img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .mosaic-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%) !important;
+  }
+
+  .mosaic-card-content {
+    position: absolute !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+    z-index: 2 !important;
+    color: #ffffff !important;
+  }
+
+  .mosaic-num {
+    display: block !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #f7d686 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .mosaic-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    display: block !important;
+  }
+
+  /* Pretty Mobile Footer Styling */
+  .site-footer {
+    background: #2a122b !important;
+    padding-top: 24px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .footer-cta-box {
+    padding: 16px !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(215,208,189,0.15) !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+  }
+
+  .footer-cta-text h2 {
+    font-size: 18px !important;
+    margin-bottom: 4px !important;
+    color: #ffffff !important;
+  }
+
+  .footer-cta-text p {
+    font-size: 12.5px !important;
+    color: #d7d0bd !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-cta-btn {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    font-size: 12.5px !important;
+    border-radius: 50px !important;
+    justify-content: center !important;
+  }
+
+  .footer-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+
+  .footer-col-title {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    color: #e5d8ba !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  .footer-nav a {
+    font-size: 13px !important;
+    color: #faf6f0 !important;
+    padding: 5px 0 !important;
+    display: block !important;
+  }
+
+  .footer-social-list li {
+    margin-bottom: 8px !important;
+  }
+
+  .social-link {
+    font-size: 13px !important;
+    color: #faf6f0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .footer-bottom-bar {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-top: 16px !important;
+    padding-top: 14px !important;
+    border-top: 1px solid rgba(215,208,189,0.15) !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    color: #a59c8a !important;
+    text-align: center !important;
+  }
+
+  .hero-proof {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-top: 18px !important;
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-proof > span {
+    flex: 1 1 0px !important;
+    width: 32% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: #faf4e8 !important;
+    border: 1px solid #e2c992 !important;
+    border-radius: 10px !important;
+    padding: 8px 4px !important;
+    box-shadow: 0 2px 6px rgba(186, 133, 31, 0.08) !important;
+    box-sizing: border-box !important;
+    font-size: 10.5px !important;
+    line-height: 1.2 !important;
+    color: #555555 !important;
+    font-weight: 500 !important;
+  }
+
+  .hero-proof > span strong {
+    display: block !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    color: #7a5410 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .founder-film-pillars, .founder-film-quote {
+    display: none !important;
+  }
+
+  .hero-portrait-stage, .zodiac-wheel-layer, .book-cover-stage {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+</style></head>
 <body>
 
     <!-- Header / Branding Navigation -->
