@@ -72,7 +72,7 @@ export default function HomePage() {
         </div>
 
         <div className="hero-visual">
-          <Portrait name="Narayani Garg" note="THE LIFE STRATEGIST" priority orbit sizes="(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px" />
+          <Portrait name="Narayani Garg" note="PSYCHIC - SPIRITUAL MENTOR" priority orbit sizes="(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px" />
         </div>
       </section>
 
