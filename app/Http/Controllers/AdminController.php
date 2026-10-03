@@ -81,6 +81,42 @@ class AdminController extends Controller
     }
 
     /**
+     * Show full Customer Enquiries module.
+     */
+    public function enquiries(Request $request)
+    {
+        $search = $request->input('search');
+        $statusFilter = $request->input('status');
+
+        $query = Enquiry::latest();
+
+        if (!empty($search)) {
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('phone', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%")
+                  ->orWhere('guidance_with', 'like', "%{$search}%")
+                  ->orWhere('based_in', 'like', "%{$search}%");
+            });
+        }
+
+        if (!empty($statusFilter) && in_array($statusFilter, ['new', 'contacted', 'resolved'])) {
+            $query->where('status', $statusFilter);
+        }
+
+        $enquiries = $query->paginate(20)->withQueryString();
+
+        $stats = [
+            'total' => Enquiry::count(),
+            'new' => Enquiry::where('status', 'new')->count(),
+            'contacted' => Enquiry::where('status', 'contacted')->count(),
+            'resolved' => Enquiry::where('status', 'resolved')->count(),
+        ];
+
+        return view('admin.enquiries', compact('enquiries', 'stats', 'search', 'statusFilter'));
+    }
+
+    /**
      * Update enquiry status.
      */
     public function updateStatus(Request $request, $id)

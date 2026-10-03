@@ -183,11 +183,11 @@ export default function HomePage() {
         </div>
         <div className="spiritual-gallery-track" aria-label="Photographs of Narayani with spiritual teachers">
           {[
-            { photo: "celeb-acharyapramod.jpg", name: "Acharya Pramod Krishnam" },
-            { photo: "celeb-devkinandan.jpg", name: "Shri Aniruddhacharya Ji Maharaj" },
+            { photo: "celeb-acharyapramod.jpg", name: "Shri Shri 1008 Mahamandaleshwar Kalki Dham Peethadhishwar Acharya Pramod Krishnam Ji" },
+            { photo: "celeb-devkinandan.jpg", name: "Pujya Shri Aniruddhacharya Ji" },
+            { photo: "celeb-sadhvi.jpg", name: "Mahamandaleshwar Shri Sadhvi Satpriya Giri Maharaj Ji (Vatsalya)" },
+            { photo: "celeb-manishkrishna.jpg", name: "Acharya Shri Shantanu Maharaj Ji" },
             { photo: "celeb-jaya-kishori.jpg", name: "Devi Krishna Priya Ji" },
-            { photo: "celeb-sadhvi.jpg", name: "Sadhvi Satyapriyaji Giri" },
-            { photo: "celeb-swing.jpg", name: "Manish Krishna Ji Maharaj" },
           ].map(({ photo, name }) => (
             <figure className="spiritual-gallery-photo" key={photo}>
               <img

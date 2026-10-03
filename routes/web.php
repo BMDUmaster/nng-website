@@ -27,6 +27,7 @@ Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.logi
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/enquiries', [AdminController::class, 'enquiries'])->name('admin.enquiries');
     Route::post('/admin/enquiry/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.enquiry.status');
     Route::delete('/admin/enquiry/{id}', [AdminController::class, 'destroy'])->name('admin.enquiry.delete');
     Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');

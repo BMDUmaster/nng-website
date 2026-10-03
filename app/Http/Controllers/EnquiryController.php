@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Enquiry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EnquiryController extends Controller
 {
@@ -12,9 +13,9 @@ class EnquiryController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'phone' => 'required|string|min:8|max:20',
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|min:2|max:255',
+            'phone' => 'required|string|min:10|max:15|regex:/^[0-9+\s\-()]{10,15}$/',
             'email' => 'nullable|email|max:255',
             'guidance_with' => 'nullable|string|max:255',
             'based_in' => 'nullable|string|max:255',
@@ -22,10 +23,25 @@ class EnquiryController extends Controller
             'source_page' => 'nullable|string|max:100',
         ], [
             'name.required' => 'Please enter your full name.',
-            'phone.required' => 'Please enter a valid phone or WhatsApp number.',
-            'phone.min' => 'Phone number must be at least 8 digits.',
-            'email.email' => 'Please enter a valid email address.',
+            'name.min' => 'Full name must be at least 2 characters.',
+            'phone.required' => 'Please enter your phone or WhatsApp number.',
+            'phone.min' => 'Phone number must be at least 10 digits.',
+            'phone.regex' => 'Please enter a valid 10-digit phone or WhatsApp number.',
+            'email.email' => 'Please enter a valid email address (e.g. name@example.com).',
         ]);
+
+        if ($validator->fails()) {
+            if ($request->wantsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'errors' => $validator->errors(),
+                    'message' => $validator->errors()->first(),
+                ], 422);
+            }
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $validated = $validator->validated();
 
         $enquiry = Enquiry::create([
             'name' => $validated['name'],

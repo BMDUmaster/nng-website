@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Transformation with NNG</title>
+    <title>Customer Enquiries Module - NNG Admin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -237,130 +237,98 @@
             color: var(--text-muted);
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .live-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background-color: #F1F5F9;
-            color: #334155;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .live-btn:hover {
-            background-color: #E2E8F0;
-            color: #0F172A;
-        }
-
         .content-area {
             padding: 32px;
             flex: 1;
         }
 
-        /* Metrics Cards Grid */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 32px;
-        }
-
-        .metric-card {
+        /* Filter Controls Bar */
+        .filter-bar {
             background-color: var(--card-bg);
             border-radius: 16px;
-            padding: 24px;
+            padding: 18px 24px;
             border: 1px solid var(--border-subtle);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
-        .metric-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        }
-
-        .metric-info p {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .metric-info h3 {
-            font-size: 30px;
-            font-weight: 700;
-            color: var(--text-heading);
-            line-height: 1;
-        }
-
-        .metric-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+        .search-box {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 8px 14px;
+            flex: 1;
+            min-width: 280px;
         }
 
-        .metric-icon.total { background: #EEF2FF; color: #4F46E5; }
-        .metric-icon.new { background: #FEF3C7; color: #D97706; }
-        .metric-icon.contacted { background: #DBEAFE; color: #2563EB; }
-        .metric-icon.resolved { background: #D1FAE5; color: #059669; }
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            color: var(--text-heading);
+        }
 
-        /* Dashboard Section Box */
+        .filter-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .filter-select {
+            padding: 9px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border-subtle);
+            font-size: 13px;
+            font-weight: 600;
+            background: #FFFFFF;
+            color: var(--text-body);
+            outline: none;
+        }
+
+        .btn-filter {
+            padding: 9px 18px;
+            background: #3C183D;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-filter:hover {
+            background: #5B235D;
+        }
+
+        .btn-reset {
+            padding: 9px 16px;
+            background: #F1F5F9;
+            color: #475569;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Table Styling */
         .dashboard-card {
             background-color: var(--card-bg);
             border-radius: 16px;
             border: 1px solid var(--border-subtle);
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-            margin-bottom: 32px;
             overflow: hidden;
         }
 
-        .card-header {
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .card-header h2 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-heading);
-        }
-
-        .view-all-link {
-            font-size: 13px;
-            font-weight: 600;
-            color: #3C183D;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .view-all-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Table Styling */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -458,7 +426,37 @@
             cursor: pointer;
         }
 
-        /* Alert Notification */
+        .btn-delete {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-delete:hover {
+            background: #EF4444;
+            color: #FFFFFF;
+        }
+
+        .message-snippet {
+            max-width: 250px;
+            font-size: 13px;
+            color: var(--text-body);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .pagination-container {
+            padding: 20px 24px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: flex-end;
+        }
+
         .alert-toast {
             padding: 14px 20px;
             background: #D1FAE5;
@@ -484,11 +482,11 @@
 
         <nav class="sidebar-nav">
             <div class="sidebar-label">Main Menu</div>
-            <a href="{{ route('admin.dashboard') }}" class="nav-item active">
+            <a href="{{ route('admin.dashboard') }}" class="nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                 <span>Dashboard Overview</span>
             </a>
-            <a href="{{ route('admin.enquiries') }}" class="nav-item">
+            <a href="{{ route('admin.enquiries') }}" class="nav-item active">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/></svg>
                 <span>Customer Enquiries</span>
                 @if(($stats['new'] ?? 0) > 0)
@@ -524,14 +522,8 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div class="header-title">
-                <h1>Dashboard Overview</h1>
-                <p>Welcome back! Here is a summary of your customer enquiries.</p>
-            </div>
-            <div class="header-actions">
-                <a href="{{ route('admin.enquiries') }}" class="live-btn" style="background:#3C183D; color:#FFF;">
-                    <span>View All Enquiries</span>
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
+                <h1>Customer Enquiries Module</h1>
+                <p>View, manage, and respond to all customer enquiries in real-time.</p>
             </div>
         </header>
 
@@ -542,73 +534,45 @@
                 </div>
             @endif
 
-            <!-- Key Metric Cards -->
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-info">
-                        <p>Total Enquiries</p>
-                        <h3>{{ $stats['total'] ?? 0 }}</h3>
-                    </div>
-                    <div class="metric-icon total">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                    </div>
+            <!-- Search and Filter Bar -->
+            <form action="{{ route('admin.enquiries') }}" method="GET" class="filter-bar">
+                <div class="search-box">
+                    <svg width="18" height="18" fill="none" stroke="#64748B" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" name="search" value="{{ $search }}" placeholder="Search by name, phone, email, service or location...">
                 </div>
 
-                <div class="metric-card">
-                    <div class="metric-info">
-                        <p>New Enquiries</p>
-                        <h3>{{ $stats['new'] ?? 0 }}</h3>
-                    </div>
-                    <div class="metric-icon new">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                    </div>
-                </div>
+                <div class="filter-actions">
+                    <select name="status" class="filter-select">
+                        <option value="">All Statuses</option>
+                        <option value="new" {{ $statusFilter == 'new' ? 'selected' : '' }}>New</option>
+                        <option value="contacted" {{ $statusFilter == 'contacted' ? 'selected' : '' }}>Contacted</option>
+                        <option value="resolved" {{ $statusFilter == 'resolved' ? 'selected' : '' }}>Resolved</option>
+                    </select>
 
-                <div class="metric-card">
-                    <div class="metric-info">
-                        <p>In Touch / Contacted</p>
-                        <h3>{{ $stats['contacted'] ?? 0 }}</h3>
-                    </div>
-                    <div class="metric-icon contacted">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                    </div>
+                    <button type="submit" class="btn-filter">Filter Results</button>
+                    @if(!empty($search) || !empty($statusFilter))
+                        <a href="{{ route('admin.enquiries') }}" class="btn-reset">Reset</a>
+                    @endif
                 </div>
+            </form>
 
-                <div class="metric-card">
-                    <div class="metric-info">
-                        <p>Resolved</p>
-                        <h3>{{ $stats['resolved'] ?? 0 }}</h3>
-                    </div>
-                    <div class="metric-icon resolved">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Customer Enquiries Table -->
+            <!-- Customer Enquiries Table -->
             <div class="dashboard-card">
-                <div class="card-header">
-                    <h2>Recent Customer Enquiries</h2>
-                    <a href="{{ route('admin.enquiries') }}" class="view-all-link">
-                        <span>Go to Enquiries Module</span>
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
                                 <th>Customer Name</th>
-                                <th>Contact Details</th>
+                                <th>Contact Info</th>
                                 <th>Guidance / Service</th>
                                 <th>Location</th>
+                                <th>Message</th>
                                 <th>Status</th>
-                                <th>Quick Action</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($enquiries->take(5) as $enquiry)
+                            @forelse($enquiries as $enquiry)
                                 @php
                                     $cleanPhone = preg_replace('/[^0-9]/', '', $enquiry->phone);
                                     if (strlen($cleanPhone) == 10) {
@@ -643,9 +607,9 @@
                                         <span style="color: #64748B;">{{ $enquiry->based_in ?? 'N/A' }}</span>
                                     </td>
                                     <td>
-                                        <span class="badge-status badge-{{ $enquiry->status }}">
-                                            {{ ucfirst($enquiry->status) }}
-                                        </span>
+                                        <div class="message-snippet" title="{{ $enquiry->message }}">
+                                            {{ $enquiry->message ?? 'No message provided' }}
+                                        </div>
                                     </td>
                                     <td>
                                         <form action="{{ route('admin.enquiry.status', $enquiry->id) }}" method="POST">
@@ -657,17 +621,32 @@
                                             </select>
                                         </form>
                                     </td>
+                                    <td>
+                                        <form action="{{ route('admin.enquiry.delete', $enquiry->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this enquiry?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn-delete" title="Delete Enquiry">
+                                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-muted);">
-                                        No customer enquiries found yet.
+                                    <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                                        No customer enquiries found.
                                     </td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
+
+                @if($enquiries->hasPages())
+                    <div class="pagination-container">
+                        {{ $enquiries->links() }}
+                    </div>
+                @endif
             </div>
         </main>
     </div>

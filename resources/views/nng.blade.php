@@ -391,8 +391,186 @@
             .hero-meta-bar { gap: 20px; }
             .nav-links { display: none; }
         }
-    </style>
+    
+      .faq-wrap, .faq-wrap.has-backdrop, section.faq-wrap, #faq, .faq, .ads-faq, .faq-intro {
+        padding-top: 48px !important;
+      }
+    
+
+  .faq-wrap, .faq-wrap.has-backdrop, section.faq-wrap, #faq, .faq, .ads-faq {
+    padding-top: 16px !important;
+    padding-bottom: 24px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .faq-intro {
+    padding-top: 10px !important;
+    margin-bottom: 16px !important;
+  }
+
+
+  /* Pretty UI for IN THEIR OWN WORDS section */
+  #testimonials {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .testimonial-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 24px !important;
+    margin-top: 30px !important;
+  }
+  .testimonial {
+    background: linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 20px !important;
+    padding: 24px !important;
+    box-shadow: 0 10px 25px rgba(60, 24, 61, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .testimonial:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 16px 35px rgba(60, 24, 61, 0.12) !important;
+    border-color: rgba(212, 175, 55, 0.6) !important;
+  }
+  .testimonial-tag {
+    display: inline-block !important;
+    background: rgba(184, 134, 11, 0.1) !important;
+    color: #8b6b14 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    align-self: flex-start !important;
+    margin-bottom: 14px !important;
+  }
+  .testimonial blockquote {
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+  }
+  .testimonial blockquote p {
+    font-family: var(--font-serif, Georgia, serif) !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    color: #2d152e !important;
+    font-style: italic !important;
+  }
+  .testimonial .client {
+    margin-bottom: 16px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+  .testimonial .client div {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #3c183d !important;
+  }
+  .testimonial .client small {
+    display: block !important;
+    font-size: 12px !important;
+    color: #7a6b7b !important;
+    font-weight: 400 !important;
+    margin-top: 2px !important;
+  }
+  .voice-preview {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.3s ease !important;
+  }
+  .voice-preview:hover {
+    transform: scale(1.02) !important;
+  }
+
+
+  
+  
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    color: #523c53 !important;
+    margin-bottom: 14px !important;
+  }
+  
+  
+  
+  
+  /* Hide desktop extra content on mobile devices */
+  @media (max-width: 768px) {
+    
+  }
+
+</style>
 <style id="mobile-responsive-overrides">
+
+/* MOBILE SPECIFIC UI FIXES (AS REQUESTED) */
+@media (max-width: 768px) {
+  /* 1. Hide Resume button next to "Take your time with their stories" (Image 1) */
+  .quote-auto-control button {
+    display: none !important;
+  }
+
+  /* 2. Hide "In their own words" pagination & arrow controls (Image 2) */
+  #testimonials .track-controls,
+  .track-controls {
+    display: none !important;
+  }
+
+  /* 3. Hide Resume motion / Pause motion & Orbit control buttons on Mobile (Image 3) */
+  .story-rail-controls button,
+  .orbit-control,
+  .chakra-control-btn,
+  button[aria-pressed],
+  button[aria-label*="Pause"],
+  button[aria-label*="Resume"],
+  button[title*="Pause"],
+  button[title*="Resume"] {
+    display: none !important;
+  }
+
+  /* 5. Reduce vertical space/gap in 6 Months Personal Guidance Card on Mobile (Image 5) */
+  .program-details {
+    padding: 16px 14px !important;
+    margin-top: 14px !important;
+    gap: 12px !important;
+  }
+  .program-details ul {
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+    padding-left: 16px !important;
+  }
+  .program-details li {
+    margin-bottom: 6px !important;
+    padding-bottom: 6px !important;
+    font-size: 13.5px !important;
+    line-height: 1.35 !important;
+  }
+  .program-domains {
+    margin-top: 12px !important;
+    gap: 8px !important;
+  }
+  .program-domains span {
+    padding: 6px 14px !important;
+    font-size: 12.5px !important;
+  }
+  .program-duration {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* 4. Remove extra right arrow from "Visit her Instagram" button (Image 4) */
+.social-profile-link::after,
+a.social-profile-link::after {
+  content: "" !important;
+  display: none !important;
+}
+
 /* DESKTOP SCREEN ONLY (min-width: 769px) */
 @media (min-width: 769px) {
   .section-wrap, .container, .program-panel, .header-inner, .site-header .header-inner, main, footer {
@@ -519,7 +697,7 @@
 
   /* Reduce excessive vertical space between sections on Mobile */
   .section-space, .faq-wrap, .faq-wrap.has-backdrop, section.faq-wrap, #faq, .faq, .ads-faq {
-    padding-top: 12px !important;
+    padding-top: 48px !important;
     padding-bottom: 16px !important;
     margin-top: 0 !important;
   }
@@ -531,7 +709,7 @@
 
   .faq-intro {
     margin-bottom: 10px !important;
-    padding-top: 0 !important;
+    padding-top: 20px !important;
   }
 
   .faq-intro h2 {
