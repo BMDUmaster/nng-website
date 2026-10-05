@@ -6,15 +6,10 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Next's static client navigation requests route payloads at their page
-    # URLs. Keep physical page directories absent so Laravel owns the routes.
-    RewriteRule ^((?:about|services|hand-holding-program|contact|consultation|_not-found)/)?((?:__next[^/]*|index)\.txt)$ _rsc/$1$2 [L]
-
-    # Match the trailing-slash canonicals emitted by Next's static export.
-    # Only page URLs redirect; route payload .txt requests must stay intact.
+    # Match trailing-slash canonicals
     RewriteRule ^(about|services|hand-holding-program|contact|consultation)$ $1/ [L,R=301]
 
-    # Send Requests To Front Controller...
+    # Send Requests To Front Controller (Laravel owns all routes & views)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
@@ -22,4 +17,13 @@
 
 <IfModule mod_dir.c>
     DirectoryIndex index.php
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Prevent browser caching of HTML/PHP dynamic pages so live changes show instantly
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
 </IfModule>

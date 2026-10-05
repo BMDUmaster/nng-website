@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.addEventListener('click', function(e){var a = e.target.closest('a'); if(a && a.href && a.href.startsWith(window.location.origin) && !a.hasAttribute('download') && a.target !== '_blank'){ e.stopPropagation(); }}, true);</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transformation with NNG - Life Strategy & Subconscious Alignment by Narayani Garg</title>
