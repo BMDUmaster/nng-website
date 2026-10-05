@@ -40,4 +40,14 @@ class PageController extends Controller
     {
         return view('nng');
     }
+
+    public function privacyPolicy()
+    {
+        return view('privacy-policy');
+    }
+
+    public function termsConditions()
+    {
+        return view('terms-conditions');
+    }
 }

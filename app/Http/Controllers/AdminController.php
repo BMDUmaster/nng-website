@@ -77,7 +77,28 @@ class AdminController extends Controller
             'resolved' => Enquiry::where('status', 'resolved')->count(),
         ];
 
-        return view('admin.dashboard', compact('enquiries', 'stats', 'search', 'statusFilter'));
+        // Analytics chart data
+        $currentYear = date('Y');
+        $monthLabels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+        $monthlyCounts = [];
+        for ($m = 1; $m <= 12; $m++) {
+            $monthlyCounts[] = Enquiry::whereYear('created_at', $currentYear)
+                ->whereMonth('created_at', $m)
+                ->count();
+        }
+
+        // Guidance / Category topic distribution
+        $topicDistribution = Enquiry::select('guidance_with', \DB::raw('count(*) as count'))
+            ->whereNotNull('guidance_with')
+            ->where('guidance_with', '!=', '')
+            ->groupBy('guidance_with')
+            ->orderByDesc('count')
+            ->get();
+
+        return view('admin.dashboard', compact(
+            'enquiries', 'stats', 'search', 'statusFilter', 
+            'currentYear', 'monthLabels', 'monthlyCounts', 'topicDistribution'
+        ));
     }
 
     /**

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --bg-body: #F8FAFC;
@@ -265,6 +266,20 @@
         .content-area {
             padding: 32px;
             flex: 1;
+        }
+
+        /* Analytics Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 992px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Metrics Cards Grid */
@@ -585,6 +600,36 @@
                 </div>
             </div>
 
+            <!-- Analytics Charts Row -->
+            <div class="charts-grid">
+                <!-- Left Chart: Monthly Enquiry Analytics -->
+                <div class="dashboard-card" style="margin-bottom: 0;">
+                    <div class="card-header" style="display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <h2>Booking analytics</h2>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Monthly booking growth and customer activity</p>
+                        </div>
+                        <span style="font-size: 12px; font-weight: 700; color: #4F46E5; background: #EEF2FF; padding: 4px 12px; border-radius: 6px;">{{ $currentYear }}</span>
+                    </div>
+                    <div style="padding: 24px; position: relative; height: 320px;">
+                        <canvas id="monthlyEnquiryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Right Chart: Cases by Service Distribution -->
+                <div class="dashboard-card" style="margin-bottom: 0;">
+                    <div class="card-header">
+                        <div>
+                            <h2>Cases by service</h2>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Current booking distribution</p>
+                        </div>
+                    </div>
+                    <div style="padding: 20px; position: relative; height: 320px; display: flex; align-items: center; justify-content: center;">
+                        <canvas id="topicDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
             <!-- Recent Customer Enquiries Table -->
             <div class="dashboard-card">
                 <div class="card-header">
@@ -673,5 +718,102 @@
         </main>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Monthly Booking Analytics Bar Chart
+            const monthlyCtx = document.getElementById('monthlyEnquiryChart').getContext('2d');
+            const monthlyLabels = @json($monthLabels ?? []);
+            const monthlyCounts = @json($monthlyCounts ?? []);
+
+            new Chart(monthlyCtx, {
+                type: 'bar',
+                data: {
+                    labels: monthlyLabels,
+                    datasets: [{
+                        label: 'Enquiries',
+                        data: monthlyCounts,
+                        backgroundColor: '#5B8DEF',
+                        hoverBackgroundColor: '#3B82F6',
+                        borderRadius: 6,
+                        barThickness: 22,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1E1B2E',
+                            padding: 10,
+                            cornerRadius: 8,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#64748B', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } }
+                        },
+                        y: {
+                            grid: { color: '#F1F5F9' },
+                            ticks: { color: '#64748B', precision: 0, font: { family: 'Plus Jakarta Sans', size: 11 } },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // 2. Cases by Service Donut Chart
+            const topicCtx = document.getElementById('topicDistributionChart').getContext('2d');
+            const topicDataRaw = @json($topicDistribution ?? []);
+            
+            let topicLabels = topicDataRaw.map(item => item.guidance_with || 'General');
+            let topicCounts = topicDataRaw.map(item => item.count);
+
+            // If empty, demo placeholder counts matching design pattern
+            if (topicLabels.length === 0) {
+                topicLabels = ['Personal Consultation', 'Health', 'Career', 'Relationship', 'Money'];
+                topicCounts = [42, 28, 17, 13, 8];
+            }
+
+            const colors = ['#10B981', '#3B82F6', '#F59E0B', '#8B5CF6', '#EC4899', '#6366F1', '#14B8A6'];
+
+            new Chart(topicCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: topicLabels,
+                    datasets: [{
+                        data: topicCounts,
+                        backgroundColor: colors.slice(0, topicLabels.length),
+                        borderWidth: 3,
+                        borderColor: '#FFFFFF',
+                        hoverOffset: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '68%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                                padding: 14,
+                                font: { family: 'Plus Jakarta Sans', size: 12, weight: '500' },
+                                color: '#334155'
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1E1B2E',
+                            padding: 10,
+                            cornerRadius: 8
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>document.addEventListener('click', function(e){var a = e.target.closest('a'); if(a && a.href && a.href.startsWith(window.location.origin) && !a.hasAttribute('download') && a.target !== '_blank'){ e.stopPropagation(); }}, true);</script>
+    <script>(function(){document.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&a.href){var raw=a.getAttribute('href')||a.href;if(raw.indexOf('mailto:')===0||a.href.indexOf('mailto:')===0){e.preventDefault();e.stopPropagation();var mc=raw.replace(/^mailto:/,''),parts=mc.split('?'),email=decodeURIComponent(parts[0]),su='',body='';if(parts.length>1){var p=new URLSearchParams(parts[1]);su=p.get('subject')||'';body=p.get('body')||'';}var gUrl='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(email);if(su)gUrl+='&su='+encodeURIComponent(su);if(body)gUrl+='&body='+encodeURIComponent(body);window.open(gUrl,'_blank');return;}if(a.origin===window.location.origin){var href=a.getAttribute('href');if(href&&!href.startsWith('#')&&!href.startsWith('javascript:')&&!a.hasAttribute('data-enquiry')&&a.target!=='_blank'){e.stopPropagation();}}}},true);})();</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transformation with NNG - Life Strategy & Subconscious Alignment by Narayani Garg</title>
@@ -1128,11 +1128,8 @@ a.social-profile-link::after,
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/services') }}">Services</a></li>
-                    <li><a href="{{ url('/hand-holding-program') }}">Program</a></li>
-                    <li><a href="{{ url('/about') }}">About Narayani</a></li>
-                    <li><a href="{{ url('/consultation') }}">Consultation</a></li>
+                    <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ url('/terms-conditions') }}">Terms &amp; Conditions</a></li>
                 </ul>
             </nav>
         </div>
@@ -1252,13 +1249,8 @@ a.social-profile-link::after,
     <footer class="footer">
         <div class="container">
             <nav class="footer-nav">
-                <a href="{{ url('/') }}">Home</a>
-                <a href="{{ url('/services') }}">Services</a>
-                <a href="{{ url('/hand-holding-program') }}">Hand Holding Program</a>
-                <a href="{{ url('/about') }}">About Narayani</a>
-                <a href="{{ url('/consultation') }}">Consultation</a>
-                <a href="{{ url('/nng') }}">SEO Landing Page</a>
-                <a href="{{ url('/admin/login') }}">Admin Login</a>
+                <a href="{{ url('/privacy-policy') }}">Privacy Policy</a>
+                <a href="{{ url('/terms-conditions') }}">Terms &amp; Conditions</a>
             </nav>
             <p>© 2026 Transformation with NNG. All Rights Reserved. Designed for Search Engine Optimization.</p>
         </div>

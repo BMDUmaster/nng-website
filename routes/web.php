@@ -17,6 +17,10 @@ Route::get('/consultation', [PageController::class, 'consultation'])->name('cons
 // SEO Landing Page Route
 Route::get('/nng', [PageController::class, 'nngLanding'])->name('nng.landing');
 
+// Legal & Policy Pages
+Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy.policy');
+Route::get('/terms-conditions', [PageController::class, 'termsConditions'])->name('terms.conditions');
+
 // Public Customer Enquiry Form Submission Route
 Route::post('/enquiry/store', [EnquiryController::class, 'store'])->name('enquiry.store');
 

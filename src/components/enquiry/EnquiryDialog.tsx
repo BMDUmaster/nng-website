@@ -121,7 +121,12 @@ export function EnquiryDialog() {
           Continue on WhatsApp <span aria-hidden="true">↗</span>
         </a>
         <div className="dialog-alt">
-          <a href={`mailto:${site.email}?subject=${encodeURIComponent("Consultation enquiry")}`} onClick={() => dialog.current?.close()}>
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent("Consultation enquiry")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => dialog.current?.close()}
+          >
             Prefer email? Write to the team
           </a>
         </div>
