@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Artisan;
 
 // Public Website Routes
@@ -13,6 +14,10 @@ Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/hand-holding-program', [PageController::class, 'handHoldingProgram'])->name('hand-holding-program');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/consultation', [PageController::class, 'consultation'])->name('consultation');
+
+// Public Blog Routes
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 // SEO Landing Page Route
 Route::get('/nng', [PageController::class, 'nngLanding'])->name('nng.landing');
@@ -34,6 +39,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/enquiries', [AdminController::class, 'enquiries'])->name('admin.enquiries');
     Route::post('/admin/enquiry/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.enquiry.status');
     Route::delete('/admin/enquiry/{id}', [AdminController::class, 'destroy'])->name('admin.enquiry.delete');
+
+    // Admin Blog Module Routes
+    Route::get('/admin/blogs', [BlogController::class, 'adminIndex'])->name('admin.blogs.index');
+    Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('admin.blogs.create');
+    Route::post('/admin/blogs', [BlogController::class, 'store'])->name('admin.blogs.store');
+    Route::get('/admin/blogs/{id}/edit', [BlogController::class, 'edit'])->name('admin.blogs.edit');
+    Route::put('/admin/blogs/{id}', [BlogController::class, 'update'])->name('admin.blogs.update');
+    Route::delete('/admin/blogs/{id}', [BlogController::class, 'destroy'])->name('admin.blogs.destroy');
+
     Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 });
 

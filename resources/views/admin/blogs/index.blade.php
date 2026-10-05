@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Enquiries Module - NNG Admin</title>
+    <title>Manage Blogs - Admin Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -14,18 +14,11 @@
             --sidebar-hover: #2D2845;
             --sidebar-active: #3C183D;
             --gold-accent: #D4AF37;
-            --gold-light: #F4E8C1;
             --card-bg: #FFFFFF;
             --text-heading: #0F172A;
             --text-body: #334155;
             --text-muted: #64748B;
             --border-subtle: #E2E8F0;
-            --status-new-bg: #FEF3C7;
-            --status-new-text: #92400E;
-            --status-contacted-bg: #DBEAFE;
-            --status-contacted-text: #1E40AF;
-            --status-resolved-bg: #D1FAE5;
-            --status-resolved-text: #065F46;
         }
 
         * {
@@ -83,19 +76,16 @@
             font-size: 15px;
             font-weight: 700;
             color: #FFFFFF;
-            line-height: 1.2;
         }
 
         .sidebar-brand-text p {
             font-size: 11px;
-            color: var(--gold-light);
-            letter-spacing: 0.5px;
+            color: #F4E8C1;
         }
 
         .sidebar-nav {
             padding: 20px 12px;
             flex: 1;
-
             display: flex;
             flex-direction: column;
             gap: 6px;
@@ -214,113 +204,86 @@
             min-width: 0;
         }
 
-        .top-header {
-            background-color: var(--card-bg);
-            padding: 16px 32px;
-            border-bottom: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 90;
-        }
-
-        .header-title h1 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-heading);
-        }
-
-        .header-title p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
         .content-area {
             padding: 32px;
             flex: 1;
         }
 
-        /* Filter Controls Bar */
-        .filter-bar {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 18px 24px;
-            border: 1px solid var(--border-subtle);
-            margin-bottom: 24px;
+        /* Page Top Actions */
+        .page-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
+            margin-bottom: 24px;
         }
 
-        .search-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #F8FAFC;
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 8px 14px;
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .search-box input {
-            border: none;
-            background: transparent;
-            outline: none;
-            width: 100%;
-            font-size: 14px;
+        .page-header h1 {
+            font-size: 24px;
+            font-weight: 700;
             color: var(--text-heading);
         }
 
-        .filter-actions {
+        .btn-primary {
+            background: linear-gradient(135deg, #3C183D 0%, #5B235D 100%);
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(60, 24, 61, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Filter Box (Image 5 replica) */
+        .filter-card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            border: 1px solid var(--border-subtle);
+            padding: 18px 24px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
+        }
+
+        .filter-input {
+            padding: 10px 16px;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            min-width: 240px;
         }
 
         .filter-select {
-            padding: 9px 14px;
-            border-radius: 10px;
+            padding: 10px 16px;
             border: 1px solid var(--border-subtle);
-            font-size: 13px;
-            font-weight: 600;
-            background: #FFFFFF;
-            color: var(--text-body);
+            border-radius: 8px;
+            font-size: 14px;
             outline: none;
+            background: #FFFFFF;
         }
 
         .btn-filter {
-            padding: 9px 18px;
-            background: #3C183D;
-            color: #FFFFFF;
-            border: none;
-            border-radius: 10px;
-            font-size: 13px;
+            padding: 10px 20px;
+            background: #F1F5F9;
+            color: var(--text-body);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
+            font-size: 13.5px;
         }
 
-        .btn-filter:hover {
-            background: #5B235D;
-        }
-
-        .btn-reset {
-            padding: 9px 16px;
-            background: #F1F5F9;
-            color: #475569;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        /* Table Styling */
+        /* Manage Blogs Table (Image 5 replica) */
         .dashboard-card {
             background-color: var(--card-bg);
             border-radius: 16px;
@@ -342,7 +305,7 @@
 
         th {
             background-color: #F8FAFC;
-            padding: 14px 24px;
+            padding: 14px 20px;
             font-size: 12px;
             font-weight: 700;
             color: var(--text-muted);
@@ -352,125 +315,87 @@
         }
 
         td {
-            padding: 16px 24px;
+            padding: 16px 20px;
             font-size: 14px;
             border-bottom: 1px solid var(--border-subtle);
             vertical-align: middle;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
         }
 
         tr:hover td {
             background-color: #F8FAFC;
         }
 
-        .customer-name {
+        .blog-thumb {
+            width: 54px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .blog-title-cell {
             font-weight: 700;
             color: var(--text-heading);
-        }
-
-        .customer-date {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: var(--text-body);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-link.wa {
-            color: #059669;
-            font-weight: 600;
-        }
-
-        .contact-link.wa:hover {
-            text-decoration: underline;
+            max-width: 320px;
         }
 
         .badge-status {
             display: inline-block;
             padding: 4px 10px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             text-transform: capitalize;
         }
 
-        .badge-new { background: var(--status-new-bg); color: var(--status-new-text); }
-        .badge-contacted { background: var(--status-contacted-bg); color: var(--status-contacted-text); }
-        .badge-resolved { background: var(--status-resolved-bg); color: var(--status-resolved-text); }
+        .badge-published { background: #D1FAE5; color: #065F46; }
+        .badge-draft { background: #FEF3C7; color: #92400E; }
+        .badge-archived { background: #F3F4F6; color: #4B5563; }
 
-        .status-select {
-            padding: 6px 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border-subtle);
-            font-size: 13px;
-            font-weight: 600;
-            background: #FFFFFF;
-            color: var(--text-body);
-            cursor: pointer;
+        .action-btns {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .btn-delete {
-            background: rgba(239, 68, 68, 0.1);
-            color: #EF4444;
-            border: none;
-            padding: 6px 10px;
+        .action-btn {
+            width: 34px;
+            height: 34px;
             border-radius: 8px;
-            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-subtle);
+            background: #FFFFFF;
+            color: var(--text-body);
+            text-decoration: none;
             transition: all 0.2s ease;
         }
 
-        .btn-delete:hover {
-            background: #EF4444;
-            color: #FFFFFF;
+        .action-btn:hover {
+            background: #F1F5F9;
+            color: #3C183D;
         }
 
-        .message-snippet {
-            max-width: 250px;
-            font-size: 13px;
-            color: var(--text-body);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .action-btn.delete:hover {
+            background: #FEE2E2;
+            color: #DC2626;
+            border-color: #FCA5A5;
         }
 
-        .pagination-container {
-            padding: 20px 24px;
-            border-top: 1px solid var(--border-subtle);
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .alert-toast {
-            padding: 14px 20px;
+        .toast-success {
             background: #D1FAE5;
             color: #065F46;
+            padding: 14px 20px;
             border-radius: 10px;
-            margin-bottom: 24px;
-            font-size: 14px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-    <!-- Left Sidebar -->
+    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-brand">
             <div class="sidebar-brand-icon">N</div>
@@ -490,9 +415,6 @@
             <a href="{{ route('admin.enquiries') }}" class="nav-item {{ request()->routeIs('admin.enquiries') ? 'active' : '' }}">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/></svg>
                 <span>Customer Enquiries</span>
-                @if(isset($stats['new']) && $stats['new'] > 0)
-                    <span class="nav-badge">{{ $stats['new'] }}</span>
-                @endif
             </a>
 
             <a href="{{ route('admin.blogs.index') }}" class="nav-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
@@ -524,136 +446,114 @@
         </div>
     </aside>
 
-    <!-- Main Content Area -->
+    <!-- Main Content -->
     <div class="main-wrapper">
-        <header class="top-header">
-            <div class="header-title">
-                <h1>Customer Enquiries Module</h1>
-                <p>View, manage, and respond to all customer enquiries in real-time.</p>
-            </div>
-        </header>
-
         <main class="content-area">
+            
             @if(session('success'))
-                <div class="alert-toast">
+                <div class="toast-success">
                     {{ session('success') }}
                 </div>
             @endif
 
-            <!-- Search and Filter Bar -->
-            <form action="{{ route('admin.enquiries') }}" method="GET" class="filter-bar">
-                <div class="search-box">
-                    <svg width="18" height="18" fill="none" stroke="#64748B" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                    <input type="text" name="search" value="{{ $search }}" placeholder="Search by name, phone, email, service or location...">
-                </div>
+            <div class="page-header">
+                <h1>Manage Blogs</h1>
+                <a href="{{ route('admin.blogs.create') }}" class="btn-primary">
+                    <span>+ Add New Blog</span>
+                </a>
+            </div>
 
-                <div class="filter-actions">
-                    <select name="status" class="filter-select">
-                        <option value="">All Statuses</option>
-                        <option value="new" {{ $statusFilter == 'new' ? 'selected' : '' }}>New</option>
-                        <option value="contacted" {{ $statusFilter == 'contacted' ? 'selected' : '' }}>Contacted</option>
-                        <option value="resolved" {{ $statusFilter == 'resolved' ? 'selected' : '' }}>Resolved</option>
-                    </select>
+            <!-- Filter Card (Image 5 replica) -->
+            <form action="{{ route('admin.blogs.index') }}" method="GET" class="filter-card">
+                <input type="text" name="search" value="{{ $search ?? '' }}" class="filter-input" placeholder="Search by title...">
+                
+                <select name="status" class="filter-select">
+                    <option value="">All Status</option>
+                    <option value="published" {{ ($statusFilter ?? '') == 'published' ? 'selected' : '' }}>Published</option>
+                    <option value="draft" {{ ($statusFilter ?? '') == 'draft' ? 'selected' : '' }}>Draft</option>
+                    <option value="archived" {{ ($statusFilter ?? '') == 'archived' ? 'selected' : '' }}>Archived</option>
+                </select>
 
-                    <button type="submit" class="btn-filter">Filter Results</button>
-                    @if(!empty($search) || !empty($statusFilter))
-                        <a href="{{ route('admin.enquiries') }}" class="btn-reset">Reset</a>
-                    @endif
-                </div>
+                <button type="submit" class="btn-filter">Filter</button>
             </form>
 
-            <!-- Customer Enquiries Table -->
+            <!-- Table (Image 5 replica) -->
             <div class="dashboard-card">
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
-                                <th>Customer Name</th>
-                                <th>Contact Info</th>
-                                <th>Guidance / Service</th>
-                                <th>Location</th>
-                                <th>Message</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th>COVER</th>
+                                <th>TITLE</th>
+                                <th>CATEGORY</th>
+                                <th>STATUS</th>
+                                <th>VIEWS</th>
+                                <th>CREATED</th>
+                                <th>ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($enquiries as $enquiry)
-                                @php
-                                    $cleanPhone = preg_replace('/[^0-9]/', '', $enquiry->phone);
-                                    if (strlen($cleanPhone) == 10) {
-                                        $waPhone = '91' . $cleanPhone;
-                                    } else {
-                                        $waPhone = $cleanPhone;
-                                    }
-                                @endphp
+                            @forelse($blogs as $blog)
                                 <tr>
                                     <td>
-                                        <div class="customer-name">{{ $enquiry->name }}</div>
-                                        <div class="customer-date">{{ $enquiry->created_at->format('M d, Y • h:i A') }}</div>
+                                        <img src="{{ $blog->image ? $blog->image : '/images/narayani-portrait-684.webp' }}" alt="" class="blog-thumb">
                                     </td>
                                     <td>
-                                        <div class="contact-links">
-                                            <a href="https://wa.me/{{ $waPhone }}?text=Hello%20{{ urlencode($enquiry->name) }},%20thank%20you%20for%20reaching%20out%20to%20Transformation%20with%20NNG." target="_blank" class="contact-link wa" title="Chat on WhatsApp">
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#059669"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
-                                                {{ $enquiry->phone }}
+                                        <div class="blog-title-cell">{{ $blog->title }}</div>
+                                    </td>
+                                    <td>
+                                        {{ $blog->category ?? '—' }}
+                                    </td>
+                                    <td>
+                                        <span class="badge-status badge-{{ $blog->status }}">
+                                            {{ ucfirst($blog->status) }}
+                                        </span>
+                                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                                            {{ $blog->published_at ? $blog->published_at->format('d M Y, h:i A') : '' }}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong>{{ $blog->views }}</strong>
+                                    </td>
+                                    <td>
+                                        {{ $blog->created_at->format('d M Y') }}
+                                    </td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <a href="{{ route('blog.show', $blog->slug) }}" target="_blank" class="action-btn" title="View Blog">
+                                                👁️
                                             </a>
-                                            @if($enquiry->email)
-                                                <a href="mailto:{{ $enquiry->email }}" class="contact-link" style="color:#64748B;">
-                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                                    {{ $enquiry->email }}
-                                                </a>
-                                            @endif
+                                            <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="action-btn" title="Edit Blog">
+                                                ✏️
+                                            </a>
+                                            <form action="{{ route('admin.blogs.destroy', $blog->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this blog?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="action-btn delete" title="Delete Blog">
+                                                    🗑️
+                                                </button>
+                                            </form>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <span style="font-weight: 600; color: #3C183D;">{{ $enquiry->guidance_with ?? 'General Consultation' }}</span>
-                                    </td>
-                                    <td>
-                                        <span style="color: #64748B;">{{ $enquiry->based_in ?? 'N/A' }}</span>
-                                    </td>
-                                    <td>
-                                        <div class="message-snippet" title="{{ $enquiry->message }}">
-                                            {{ $enquiry->message ?? 'No message provided' }}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('admin.enquiry.status', $enquiry->id) }}" method="POST">
-                                            @csrf
-                                            <select name="status" class="status-select" onchange="this.form.submit()">
-                                                <option value="new" {{ $enquiry->status == 'new' ? 'selected' : '' }}>New</option>
-                                                <option value="contacted" {{ $enquiry->status == 'contacted' ? 'selected' : '' }}>Contacted</option>
-                                                <option value="resolved" {{ $enquiry->status == 'resolved' ? 'selected' : '' }}>Resolved</option>
-                                            </select>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('admin.enquiry.delete', $enquiry->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this enquiry?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn-delete" title="Delete Enquiry">
-                                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
-                                        No customer enquiries found.
+                                        No blogs found. Click "+ Add New Blog" to create your first article!
                                     </td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
-
-                @if($enquiries->hasPages())
-                    <div class="pagination-container">
-                        {{ $enquiries->links() }}
-                    </div>
-                @endif
             </div>
+
+            @if($blogs->hasPages())
+                <div style="margin-top: 24px;">
+                    {{ $blogs->links() }}
+                </div>
+            @endif
+
         </main>
     </div>
 
