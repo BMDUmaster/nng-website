@@ -508,6 +508,11 @@
 
 </style>
 <style id="mobile-responsive-overrides">
+#testimonials .track-controls,
+.track-controls,
+.track-controls button {
+  display: none !important;
+}
 
 /* MOBILE SPECIFIC UI FIXES (AS REQUESTED) */
 @media (max-width: 768px) {
@@ -564,9 +569,11 @@
   }
 }
 
-/* 4. Remove extra right arrow from "Visit her Instagram" button (Image 4) */
+/* 4. Remove extra right arrow from "Visit her Instagram" button */
 .social-profile-link::after,
-a.social-profile-link::after {
+a.social-profile-link::after,
+.social-section .transformation-head .text-link::after,
+.social-section .text-link::after {
   content: "" !important;
   display: none !important;
 }

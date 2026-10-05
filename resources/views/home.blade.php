@@ -1,5 +1,12 @@
 @verbatim
 <!DOCTYPE html><html lang="en" class="__variable_bd32c6 __variable_41ff09 __variable_83ba67 __variable_df5f45"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/575c227f41d6e305-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/b69ff29fd08fb8ec-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/ef413a9eff181b96-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" as="image" type="image/avif" fetchPriority="high" imageSrcSet="/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w" imageSizes="(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px"/><link rel="preload" as="image" imageSrcSet="/images/nng-logo-200.webp 200w, /images/nng-logo-400.webp 400w, /images/nng-logo.webp 800w" imageSizes="94px"/><link rel="preload" as="image" href="/images/nng-logo-200.webp"/><link rel="preload" href="/images/narayani-cover-portrait-480.webp" as="image"/><link rel="preload" href="/images/zodiac-chakra.png" as="image"/><link rel="preload" href="/images/social/instagram-logo.svg" as="image"/><link rel="stylesheet" href="/_next/static/css/86d550901dc1a7f6.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/a78003b611c5f3b8.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-5c425e5241164006.js"/><script src="/_next/static/chunks/4bd1b696-92152b0f5947070d.js" async=""></script><script src="/_next/static/chunks/794-bd75e607e02db8a4.js" async=""></script><script src="/_next/static/chunks/main-app-94e4e27003b188e3.js" async=""></script><script src="/_next/static/chunks/500-b13bb91f5a6311b6.js" async=""></script><script src="/_next/static/chunks/app/layout-795cdb2dcb18e8ef.js" async=""></script><script src="/_next/static/chunks/84-e7ea3bd64f0b1f3a.js" async=""></script><script src="/_next/static/chunks/app/page-aaca4706a6d2d157.js" async=""></script><meta name="theme-color" content="#FAF6F0"/><title>Narayani Garg | Transformation with NNG</title><meta name="description" content="Narayani Garg, The Life Strategist. Mind. Direction. Alignment. Personal guidance for the patterns, decisions and changes you are working through."/><meta name="robots" content="index, follow"/><link rel="canonical" href="https://nngarg.com/"/><meta property="og:title" content="Dr. Narayani Garg | Transformation with NNG"/><meta property="og:description" content="Narayani Garg, The Life Strategist. Mind. Direction. Alignment. Personal guidance for the patterns, decisions and changes you are working through."/><meta property="og:url" content="https://nngarg.com/"/><meta property="og:site_name" content="Transformation with NNG"/><meta property="og:image" content="https://nngarg.com/images/og-narayani-garg.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Dr. Narayani Garg, The Life Strategist"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dr. Narayani Garg | Transformation with NNG"/><meta name="twitter:description" content="Narayani Garg, The Life Strategist. Mind. Direction. Alignment. Personal guidance for the patterns, decisions and changes you are working through."/><meta name="twitter:image" content="https://nngarg.com/images/og-narayani-garg.jpg"/><link rel="icon" href="/icon.svg?c3099d23d63d85b5" type="image/svg+xml" sizes="any"/><meta name="next-size-adjust" content=""/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script><style id="mobile-responsive-overrides">
+/* Hide testimonial track controls / arrows (Image 1) */
+.track-controls,
+#testimonials .track-controls,
+.track-controls button {
+  display: none !important;
+}
+
 /* DESKTOP SCREEN ONLY (min-width: 769px) */
 @media (min-width: 769px) {
   .section-wrap, .container, .program-panel, .header-inner, .site-header .header-inner, main, footer {
@@ -110,6 +117,20 @@
 
 /* MOBILE SCREEN ONLY (<= 768px) */
 @media (max-width: 768px) {
+  /* Hide Pause & Resume Buttons on Mobile Screen */
+  .orbit-control,
+  .chakra-control-btn,
+  .quote-auto-control,
+  .quote-auto-control button,
+  .story-rail-controls button[aria-pressed],
+  button[aria-pressed],
+  button[aria-label*="Pause"],
+  button[aria-label*="Resume"],
+  button[title*="Pause"],
+  button[title*="Resume"] {
+    display: none !important;
+  }
+
   /* Smaller Headings for Mobile */
   h1 { font-size: clamp(22px, 5.8vw, 27px) !important; line-height: 1.25 !important; }
   h2 { font-size: clamp(19px, 5vw, 23px) !important; line-height: 1.3 !important; }
@@ -552,6 +573,261 @@
     box-sizing: border-box !important;
     left: 0 !important;
     right: 0 !important;
+  }
+
+  /* 4. Remove extra right arrow from "Visit her Instagram" button (Image 2) */
+  .social-profile-link::after,
+  a.social-profile-link::after,
+  .social-section .transformation-head .text-link::after,
+  .social-section .text-link::after {
+    content: "" !important;
+    display: none !important;
+  }
+
+  /* 5. PRETTY TESTIMONIALS SECTION & RESPONSIVE GRID (Image 1 "In their own words") */
+  #testimonials {
+    background: linear-gradient(180deg, rgba(250, 248, 245, 0.75) 0%, rgba(245, 238, 226, 0.45) 100%) !important;
+    padding: 48px 24px 56px !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(215, 183, 107, 0.25) !important;
+    margin-top: 24px !important;
+  }
+
+  #testimonials .section-heading h2 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(26px, 3.2vw, 40px) !important;
+    color: #3C183D !important;
+    margin-bottom: 8px !important;
+  }
+
+  @media (min-width: 1025px) {
+    .testimonial-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+      margin-top: 36px !important;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    #testimonials {
+      padding: 36px 20px 44px !important;
+    }
+    .testimonial-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+      margin-top: 28px !important;
+    }
+    .testimonial {
+      padding: 22px 18px 18px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #testimonials {
+      padding: 28px 16px 36px !important;
+      border-radius: 18px !important;
+      margin-top: 16px !important;
+    }
+    #testimonials .section-heading h2 {
+      font-size: 24px !important;
+      margin-bottom: 6px !important;
+    }
+    #testimonials .section-heading p {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+    }
+    .testimonial-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+      margin-top: 24px !important;
+      width: 100% !important;
+    }
+    .testimonial {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 20px 16px 16px !important;
+      border-radius: 16px !important;
+      border-width: 1px !important;
+    }
+    .testimonial::before {
+      font-size: 65px !important;
+      top: 2px !important;
+      right: 12px !important;
+    }
+    .testimonial-tag {
+      font-size: 10.5px !important;
+      padding: 4px 12px !important;
+    }
+    .testimonial blockquote p {
+      font-size: 15px !important;
+      line-height: 1.55 !important;
+      margin: 12px 0 14px !important;
+    }
+    .testimonial footer, .testimonial .client {
+      padding-top: 10px !important;
+      font-size: 13px !important;
+    }
+    .voice-preview {
+      margin-top: 14px !important;
+      aspect-ratio: 16 / 9 !important;
+      border-radius: 12px !important;
+    }
+    .voice-preview-copy {
+      inset: auto 12px 12px !important;
+      gap: 8px !important;
+    }
+    .voice-preview-hook {
+      font-size: 18px !important;
+      line-height: 1.2 !important;
+    }
+    .voice-preview-action {
+      font-size: 11px !important;
+    }
+    .thumbnail-play {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 10px !important;
+    }
+  }
+
+  .testimonial {
+    background: linear-gradient(145deg, #FFFFFF 0%, #FAF6F0 100%) !important;
+    border: 1.5px solid rgba(215, 183, 107, 0.35) !important;
+    border-radius: 20px !important;
+    padding: 26px 22px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 10px 28px rgba(60, 24, 61, 0.05), 0 2px 6px rgba(184, 134, 11, 0.08) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .testimonial:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(215, 183, 107, 0.75) !important;
+    box-shadow: 0 18px 38px rgba(184, 134, 11, 0.18), 0 4px 12px rgba(60, 24, 61, 0.08) !important;
+  }
+
+  .testimonial-tag {
+    align-self: flex-start !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    color: #8A6405 !important;
+    background: rgba(215, 183, 107, 0.14) !important;
+    border: 1px solid rgba(215, 183, 107, 0.3) !important;
+    padding: 5px 14px !important;
+    border-radius: 50px !important;
+  }
+
+  .testimonial blockquote p {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic !important;
+    font-size: clamp(15px, 1.2vw, 17px) !important;
+    line-height: 1.65 !important;
+    margin: 16px 0 18px !important;
+    color: #2D2738 !important;
+  }
+
+  .testimonial footer, .testimonial .client {
+    margin-top: auto !important;
+    padding-top: 12px !important;
+    border-top: 1px dashed rgba(184, 134, 11, 0.25) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .testimonial footer div, .testimonial .client div {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #1E1B2E !important;
+  }
+
+  .testimonial footer small, .testimonial .client small {
+    display: block !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: #8C8598 !important;
+    margin-top: 2px !important;
+  }
+
+  .voice-preview {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 11 !important;
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+    background: #1E1B2E !important;
+    margin-top: 18px !important;
+    border: 1px solid rgba(215, 183, 107, 0.2) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  }
+
+  .testimonial:hover .voice-preview {
+    box-shadow: 0 10px 24px rgba(184, 134, 11, 0.25) !important;
+    border-color: rgba(215, 183, 107, 0.6) !important;
+  }
+
+  /* 6. PRETTY INSTAGRAM SECTION (Image 2 "From Narayani's Instagram") */
+  .social-section {
+    background: linear-gradient(180deg, #FAF8F5 0%, #FFFFFF 100%) !important;
+    border-radius: 24px !important;
+    padding: 48px 24px !important;
+    margin-top: 30px !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .social-eyebrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(245, 96, 64, 0.1)) !important;
+    color: #E1306C !important;
+    border: 1px solid rgba(225, 48, 108, 0.25) !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    padding: 5px 16px !important;
+    border-radius: 50px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .social-profile-link,
+  .social-section .transformation-head .text-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 10px 22px !important;
+    border-radius: 9999px !important;
+    background: #FFFFFF !important;
+    border: 1.5px solid rgba(225, 48, 108, 0.35) !important;
+    color: #3C183D !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(225, 48, 108, 0.08) !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .social-profile-link:hover,
+  .social-section .transformation-head .text-link:hover {
+    background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%) !important;
+    color: #FFFFFF !important;
+    border-color: transparent !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 10px 24px rgba(225, 48, 108, 0.35) !important;
   }
 
 </style></head><body><div hidden=""><!--$--><!--/$--></div><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" aria-label="Transformation with NNG, home" href="/"><img src="/images/nng-logo-200.webp" srcSet="/images/nng-logo-200.webp 200w, /images/nng-logo-400.webp 400w, /images/nng-logo.webp 800w" sizes="94px" width="800" height="422" alt="Transformation with NNG"/></a><nav class="desktop-nav" aria-label="Main navigation"><a aria-current="page" href="/">Home</a><a href="/services/">Services</a><a href="/hand-holding-program/">Hand Holding Program</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><div class="header-actions"><a href="/contact/" class="header-enquiry" data-enquiry="" data-source="header" aria-haspopup="dialog"><span>Enquire</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a><button type="button" class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span></button></div></div></header><div class="mobile-drawer-backdrop" aria-hidden="true"></div><nav id="mobile-nav" class="mobile-side-drawer" aria-label="Mobile navigation"><div class="drawer-header"><a class="drawer-brand" aria-label="Transformation with NNG" href="/"><img src="/images/nng-logo-200.webp" width="84" height="44" alt="Transformation with NNG"/></a><button type="button" class="drawer-close-btn" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div><div class="drawer-links"><a aria-current="page" href="/"><span>Home</span><span class="drawer-link-arrow" aria-hidden="true">→</span></a><a href="/services/"><span>Services</span><span class="drawer-link-arrow" aria-hidden="true">→</span></a><a href="/hand-holding-program/"><span>Hand Holding Program</span><span class="drawer-link-arrow" aria-hidden="true">→</span></a><a href="/about/"><span>About</span><span class="drawer-link-arrow" aria-hidden="true">→</span></a><a href="/contact/"><span>Contact</span><span class="drawer-link-arrow" aria-hidden="true">→</span></a></div><div class="drawer-footer"><p class="kicker">Begin with a conversation</p><div><a href="/contact/" class="drawer-enquiry-btn button button-primary" data-enquiry="" data-source="mobile-drawer" aria-haspopup="dialog">Enquire about a consultation</a></div><p class="drawer-contact-links"><a href="mailto:enquiry@nngarg.com">enquiry@nngarg.com</a><a href="https://www.instagram.com/transformationwithnng/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.youtube.com/@transformationwithnng" target="_blank" rel="noopener noreferrer">YouTube ↗</a></p></div></nav><main id="main"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nngarg.com/#narayani-garg","name":"Dr. Narayani Garg","jobTitle":"The Life Strategist","description":"Narayani Garg offers personal guidance in numerology, vastu and astrology, beginning with the mind, and a hand holding program lasting six months.","url":"https://nngarg.com","image":"https://nngarg.com/images/narayani-portrait-684.webp","knowsAbout":["Numerology","Vastu","Astrology","Mind training"],"worksFor":{"@type":"Organization","@id":"https://nngarg.com/#organization","name":"Transformation with NNG","url":"https://nngarg.com","sameAs":["https://www.youtube.com/@transformationwithnng","https://www.instagram.com/transformationwithnng/","https://www.facebook.com/transformationwithnng/"]},"sameAs":["https://www.youtube.com/@transformationwithnng","https://www.instagram.com/transformationwithnng/","https://www.facebook.com/transformationwithnng/"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where should I begin?","acceptedAnswer":{"@type":"Answer","text":"With the question on your mind, not with a service. Message the team on WhatsApp, call or email. They explain the options, fees and next steps before you book."}},{"@type":"Question","name":"How is a consultation different from the program?","acceptedAnswer":{"@type":"Answer","text":"A consultation focuses on a question or concern. The Personalised Hand Holding Program offers continued guidance over six months. Ask the team about its scope and how contact works."}},{"@type":"Question","name":"Can I enquire if I live outside India?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mention your country and time zone when you enquire so the team can arrange an online consultation that suits you."}},{"@type":"Question","name":"What are the consultation and program fees?","acceptedAnswer":{"@type":"Answer","text":"Please ask for the current fees when you enquire. The consultation and the program lasting six months are separate options. The team explains the scope and fee before you decide."}},{"@type":"Question","name":"Does this replace medical or professional advice?","acceptedAnswer":{"@type":"Answer","text":"No. This is personal and spiritual guidance. It does not replace medical care, mental health treatment, legal advice or financial advice from qualified professionals."}}]}]}</script><section class="hero section-wrap" aria-labelledby="hero-title"><div class="hero-copy"><p class="kicker">ASTROLOGY · NUMEROLOGY · VASTU</p><div class="hero-human-cue"><img src="/images/narayani-cover-portrait-480.webp" width="52" height="52" alt=""/><span>Personal guidance with <strong>Dr. Narayani Garg</strong></span></div><h1 id="hero-title">Change begins <span class="highlight">with the mind.</span></h1><p class="hero-description">For questions about relationships, career, health or money, Narayani brings astrology, numerology and vastu into a conversation about the patterns behind your choices.</p><p class="hero-proof" aria-label="Narayani&#x27;s experience"><span><strong>10,000+</strong> <!-- -->Clients guided</span><span><strong>15+</strong> <!-- -->Years of professional experience</span><span><strong>5+</strong> <!-- -->Countries served</span></p><div class="hero-actions"><a href="/contact/" class="button" data-enquiry="" data-source="hero" aria-haspopup="dialog" data-primary-cta=""><span>Enquire about a consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a><a class="button-secondary" href="#approach"><span>How she works</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a></div><p class="cta-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>Pick a topic; WhatsApp opens with your message written.</p></div><div class="hero-visual"><div class="hero-portrait-stage "><div class="zodiac-wheel-layer" aria-hidden="true"><img src="/images/zodiac-chakra.png" class="zodiac-chakra" alt="" width="630" height="630" loading="eager"/><svg class="zodiac-outer-ring" viewBox="0 0 1000 1000" focusable="false" aria-hidden="true"><path d="M500 10 A490 490 0 1 1 500 990 A490 490 0 1 1 500 10 Z M500 92 A408 408 0 1 0 500 908 A408 408 0 1 0 500 92 Z" fill="#faf3e8" fill-rule="evenodd"></path><circle cx="500" cy="500" r="490" fill="none" stroke="#ba851f" stroke-width="3"></circle><circle cx="500" cy="500" r="473" fill="none" stroke="#ba851f" stroke-width="2"></circle><circle cx="500" cy="500" r="421" fill="none" stroke="#ba851f" stroke-width="2"></circle><circle cx="500" cy="500" r="408" fill="none" stroke="#ba851f" stroke-width="3"></circle><line x1="500" y1="10" x2="500" y2="92" transform="rotate(0 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(30 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(60 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(90 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(120 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(150 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(180 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(210 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(240 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(270 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(300 500 500)" stroke="#ba851f" stroke-width="2.5"></line><line x1="500" y1="10" x2="500" y2="92" transform="rotate(330 500 500)" stroke="#ba851f" stroke-width="2.5"></line><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(-15 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">TAURUS</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(15 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">ARIES</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(45 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">PISCES</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(75 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">AQUARIUS</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(105 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">CAPRICORN</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(135 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="22" font-weight="600" letter-spacing="2">SAGITTARIUS</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(165 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">SCORPIO</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(195 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">LIBRA</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(225 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">VIRGO</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(255 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">LEO</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(285 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">CANCER</text><text x="500" y="58" text-anchor="middle" dominant-baseline="middle" transform="rotate(315 500 500)" fill="#a9781c" font-family="Georgia, serif" font-size="26" font-weight="600" letter-spacing="2">GEMINI</text></svg></div><button type="button" class="chakra-control-btn orbit-control" aria-pressed="false" aria-label="Pause orbit animation" title="Pause orbit animation"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 1.5h2.4v9H2.5zM7.1 1.5h2.4v9H7.1z"></path></svg></button><div class="arch-portrait-frame"><picture><source type="image/avif" srcSet="/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w" sizes="(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px"/><source type="image/webp" srcSet="/images/narayani-portrait-480.webp 480w, /images/narayani-portrait-684.webp 684w" sizes="(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px"/><img src="/images/narayani-portrait-gold.png" alt="Narayani Garg, The Life Strategist" width="330" height="450" loading="eager" fetchPriority="high" decoding="sync"/></picture><div class="portrait-badge"><span>Narayani Garg</span><small>PSYCHIC - SPIRITUAL MENTOR</small></div></div></div></div></section><nav class="hrmc-ribbon" aria-label="Enquire about an area of life"><a href="/contact/?topic=a%20consultation%20on%20my%20health" class="ribbon-link" data-enquiry="" data-topic="a consultation on my health" data-source="ribbon-health" aria-haspopup="dialog">Health</a><i aria-hidden="true"></i><a href="/contact/?topic=a%20consultation%20on%20a%20relationship" class="ribbon-link" data-enquiry="" data-topic="a consultation on a relationship" data-source="ribbon-relationship" aria-haspopup="dialog">Relationship</a><i aria-hidden="true"></i><a href="/contact/?topic=a%20consultation%20on%20my%20career" class="ribbon-link" data-enquiry="" data-topic="a consultation on my career" data-source="ribbon-career" aria-haspopup="dialog">Career</a><i aria-hidden="true"></i><a href="/contact/?topic=a%20consultation%20on%20money" class="ribbon-link" data-enquiry="" data-topic="a consultation on money" data-source="ribbon-money" aria-haspopup="dialog">Money</a></nav><section class="section-wrap section-space" id="testimonials" aria-labelledby="testimonial-title"><div class="section-heading centered"><h2 id="testimonial-title">In their own words</h2><p>What her guidance has meant to the people who know her.</p></div><div class="testimonial-grid" tabindex="0" role="region" aria-label="Client testimonials"><article class="testimonial"><span class="testimonial-tag">Client since 2020</span><blockquote><p>“<!-- -->She only made me aware of the potential that was already inside me. She taught me to believe in myself, and to understand my intuition.<!-- -->”</p></blockquote><footer class="client"><div>Deepa K.<small>Translated from Hindi</small></div></footer><button type="button" class="voice-preview"><img src="/images/testimonials/client-0.webp" alt="" loading="lazy" decoding="async"/><span class="voice-preview-shade" aria-hidden="true"></span><span class="voice-preview-copy"><span class="voice-preview-hook">The belief I had lost</span><span class="voice-preview-action"><span class="thumbnail-play" aria-hidden="true">▶</span> Watch their story <span>1:51</span></span></span><span class="visually-hidden">: <!-- -->Deepa K.</span></button></article><article class="testimonial"><span class="testimonial-tag">On his experience</span><blockquote><p>“<!-- -->Whenever we talk to her, it feels as if one of our own is lovingly showing us the right way, and trying to understand things from our side.<!-- -->”</p></blockquote><footer class="client"><div>Manish G.<small>Translated from Hindi</small></div></footer><button type="button" class="voice-preview"><img src="/images/testimonials/client-1.webp" alt="" loading="lazy" decoding="async"/><span class="voice-preview-shade" aria-hidden="true"></span><span class="voice-preview-copy"><span class="voice-preview-hook">It never felt like a lecture</span><span class="voice-preview-action"><span class="thumbnail-play" aria-hidden="true">▶</span> Watch their story <span>1:20</span></span></span><span class="visually-hidden">: <!-- -->Manish G.</span></button></article><article class="testimonial"><span class="testimonial-tag">Through a difficult year</span><blockquote><p>“<!-- -->Whenever a problem came up, we messaged her and she replied at once. When we lost confidence, she helped us steady ourselves.<!-- -->”</p></blockquote><footer class="client"><div>Renu S.<small>Translated from Hindi</small></div></footer><button type="button" class="voice-preview"><img src="/images/testimonials/client-2.webp" alt="" loading="lazy" decoding="async"/><span class="voice-preview-shade" aria-hidden="true"></span><span class="voice-preview-copy"><span class="voice-preview-hook">When our confidence broke</span><span class="voice-preview-action"><span class="thumbnail-play" aria-hidden="true">▶</span> Watch their story <span>1:01</span></span></span><span class="visually-hidden">: <!-- -->Renu S.</span></button></article></div><div class="track-controls"><div class="track-progress" aria-hidden="true"><i class="is-current"></i><i></i><i></i></div><button type="button" aria-label="Previous testimonial" disabled="">←</button><span aria-live="polite">1<!-- --> / <!-- -->3</span><button type="button" aria-label="Next testimonial">→</button></div></section><section class="band" id="approach" aria-labelledby="approach-title"><div class="section-wrap section-space approach-grid"><div class="approach-intro"><h2 id="approach-title">Why she starts with the mind</h2><p>You may know what needs to change and still find yourself falling into old habits. Her work starts there. Astrology, numerology and vastu support the guidance, alongside the choices you make every day.</p><div class="approach-quote"><figure class="portrait-frame approach-portrait"><picture><source type="image/avif" srcSet="/images/narayani-cover-portrait-480.avif 480w, /images/narayani-cover-portrait-560.avif 560w, /images/narayani-cover-portrait-684.avif 684w" sizes="120px"/><source type="image/webp" srcSet="/images/narayani-cover-portrait-480.webp 480w, /images/narayani-cover-portrait-684.webp 684w" sizes="120px"/><img src="/images/narayani-portrait-gold.png" alt="Narayani Garg, The Life Strategist" width="684" height="1000" loading="lazy" decoding="async"/></picture></figure><div class="method-quote"><p lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p><span>Narayani Garg</span><small>A remedy works when the mind works.</small></div></div></div><div class="method-explainer"><dl class="method-steps"><div class="method-step"><dt><svg viewBox="0 0 160 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-draw="" data-art="mind"><path pathLength="1" d="M14 34C52 34 70 66 98 66" opacity=".45"></path><path pathLength="1" d="M14 50C52 50 70 66 98 66" opacity=".7"></path><path pathLength="1" d="M14 66C52 66 70 66 98 66"></path><path pathLength="1" d="M14 82C52 82 70 66 98 66" opacity=".7"></path><path pathLength="1" d="M14 98C52 98 70 66 98 66" opacity=".45"></path><path pathLength="1" d="M98 66H148" stroke-linecap="round"></path></svg>Mind</dt><dd>Notice the thoughts and habits that recur in the situation you bring.</dd></div><div class="method-step"><dt><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-draw="" data-art="direction"><circle pathLength="1" cx="60" cy="62" r="44"></circle><circle pathLength="1" cx="60" cy="62" r="34" opacity=".5"></circle><path pathLength="1" d="M60 24L68 62L60 100L52 62Z"></path><path pathLength="1" d="M60 24L68 62H52Z" opacity=".35"></path><path pathLength="1" d="M60 10v8M60 106v8M8 62h8M104 62h8"></path><circle pathLength="1" cx="60" cy="62" r="3"></circle><path pathLength="1" d="M56 4l4-6 4 6" transform="translate(0 2)"></path></svg>Direction</dt><dd>Work out what matters now and the next step you can take.</dd></div><div class="method-step"><dt><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-draw="" data-art="alignment"><path pathLength="1" d="M20 96 100 16M86 16h14v14"></path><circle pathLength="1" cx="34" cy="82" r="13"></circle><circle pathLength="1" cx="60" cy="56" r="13"></circle><circle pathLength="1" cx="86" cy="30" r="13"></circle></svg>Alignment</dt><dd>Bring that step into your routines and surroundings.</dd></div></dl><a href="/contact/" class="text-link" data-enquiry="" data-source="home-who-for" aria-haspopup="dialog">Tell her team what is on your mind</a></div></div></section><section class="section-wrap section-space" id="transformation" aria-labelledby="transformation-title"><div class="transformation-head"><div><h2 id="transformation-title">Hear the whole story</h2><p>Conversations about family, belief in oneself and finding a way through.</p></div><a href="/contact/" class="text-link" data-enquiry="" data-source="home-films" aria-haspopup="dialog">Start your own enquiry</a></div><div class="story-rail-shell"><div class="story-rail" role="region" aria-label="All client testimonial videos" tabindex="0"><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-3.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">2:22</span><button type="button" class="reel-play" aria-label="Before a decision that would change her life. Watch their story: Navleen S., 2:22" data-title="Navleen S.: A family’s move home"><span class="reel-hook">Before a decision that would change her life</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>A family’s move home</strong><span>Navleen S.<!-- --> · <!-- -->Family, after 12 years in Australia</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-4.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:20</span><button type="button" class="reel-play" aria-label="I was all over the place. Watch their story: A client in London, 1:20" data-title="A client in London: From London"><span class="reel-hook">I was all over the place</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>From London</strong><span>A client in London<!-- --> · <!-- -->London, about seven years</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-0.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:51</span><button type="button" class="reel-play" aria-label="The belief I had lost. Watch their story: Deepa K., 1:51" data-title="Deepa K.: Belief in herself"><span class="reel-hook">The belief I had lost</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Belief in herself</strong><span>Deepa K.<!-- --> · <!-- -->Client since 2020</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-6.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:18</span><button type="button" class="reel-play" aria-label="I came for my daughter. Watch their story: A mother, 0:18" data-title="A mother: For her daughter"><span class="reel-hook">I came for my daughter</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>For her daughter</strong><span>A mother<!-- --> · <!-- -->On her daughter</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-1.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:36</span><button type="button" class="reel-play" aria-label="I was completely lost. Watch their story: A client&#x27;s reflection, 1:36" data-title="A client&#x27;s reflection: Finding her own direction"><span class="reel-hook">I was completely lost</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Finding her own direction</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Three years of guidance</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-2.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:46</span><button type="button" class="reel-play" aria-label="Through the best and worst. Watch their story: A client&#x27;s reflection, 0:46" data-title="A client&#x27;s reflection: Someone to turn to"><span class="reel-hook">Through the best and worst</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Someone to turn to</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Five years of guidance</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-4.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:56</span><button type="button" class="reel-play" aria-label="Before the big decisions. Watch their story: A client&#x27;s reflection, 0:56" data-title="A client&#x27;s reflection: Guidance for him and his family"><span class="reel-hook">Before the big decisions</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Guidance for him and his family</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Two years of guidance</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-5.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:05</span><button type="button" class="reel-play" aria-label="We couldn&#x27;t see a way forward. Watch their story: A client&#x27;s reflection, 1:05" data-title="A client&#x27;s reflection: Finding a way through"><span class="reel-hook">We couldn&#x27;t see a way forward</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Finding a way through</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Through a difficult time</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-0.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">3:02</span><button type="button" class="reel-play" aria-label="Why I reached out. Watch their story: Neha, 3:02" data-title="Neha: Her personal experience"><span class="reel-hook">Why I reached out</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Her personal experience</strong><span>Neha<!-- --> · <!-- -->Melbourne</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-1.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:20</span><button type="button" class="reel-play" aria-label="It never felt like a lecture. Watch their story: Manish G., 1:20" data-title="Manish G.: Patience, and each other"><span class="reel-hook">It never felt like a lecture</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Patience, and each other</strong><span>Manish G.<!-- --> · <!-- -->On his experience</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-2.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:01</span><button type="button" class="reel-play" aria-label="When our confidence broke. Watch their story: Renu S., 1:01" data-title="Renu S.: A way out of a hard year"><span class="reel-hook">When our confidence broke</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>A way out of a hard year</strong><span>Renu S.<!-- --> · <!-- -->Through a difficult year</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-5.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:43</span><button type="button" class="reel-play" aria-label="From exam fear to confidence. Watch their story: Vanshika S., 0:43" data-title="Vanshika S.: Exams, without the fear"><span class="reel-hook">From exam fear to confidence</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Exams, without the fear</strong><span>Vanshika S.<!-- --> · <!-- -->Grade 10 student</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-3.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">2:22</span><button type="button" class="reel-play" aria-label="Before a decision that would change her life. Watch their story: Navleen S., 2:22" data-title="Navleen S.: A family’s move home"><span class="reel-hook">Before a decision that would change her life</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>A family’s move home</strong><span>Navleen S.<!-- --> · <!-- -->Family, after 12 years in Australia</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-4.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:20</span><button type="button" class="reel-play" aria-label="I was all over the place. Watch their story: A client in London, 1:20" data-title="A client in London: From London"><span class="reel-hook">I was all over the place</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>From London</strong><span>A client in London<!-- --> · <!-- -->London, about seven years</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-0.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:51</span><button type="button" class="reel-play" aria-label="The belief I had lost. Watch their story: Deepa K., 1:51" data-title="Deepa K.: Belief in herself"><span class="reel-hook">The belief I had lost</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Belief in herself</strong><span>Deepa K.<!-- --> · <!-- -->Client since 2020</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-6.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:18</span><button type="button" class="reel-play" aria-label="I came for my daughter. Watch their story: A mother, 0:18" data-title="A mother: For her daughter"><span class="reel-hook">I came for my daughter</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>For her daughter</strong><span>A mother<!-- --> · <!-- -->On her daughter</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-1.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:36</span><button type="button" class="reel-play" aria-label="I was completely lost. Watch their story: A client&#x27;s reflection, 1:36" data-title="A client&#x27;s reflection: Finding her own direction"><span class="reel-hook">I was completely lost</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Finding her own direction</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Three years of guidance</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-2.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:46</span><button type="button" class="reel-play" aria-label="Through the best and worst. Watch their story: A client&#x27;s reflection, 0:46" data-title="A client&#x27;s reflection: Someone to turn to"><span class="reel-hook">Through the best and worst</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Someone to turn to</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Five years of guidance</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-4.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:56</span><button type="button" class="reel-play" aria-label="Before the big decisions. Watch their story: A client&#x27;s reflection, 0:56" data-title="A client&#x27;s reflection: Guidance for him and his family"><span class="reel-hook">Before the big decisions</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Guidance for him and his family</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Two years of guidance</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-5.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:05</span><button type="button" class="reel-play" aria-label="We couldn&#x27;t see a way forward. Watch their story: A client&#x27;s reflection, 1:05" data-title="A client&#x27;s reflection: Finding a way through"><span class="reel-hook">We couldn&#x27;t see a way forward</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Finding a way through</strong><span>A client&#x27;s reflection<!-- --> · <!-- -->Through a difficult time</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/new-0.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">3:02</span><button type="button" class="reel-play" aria-label="Why I reached out. Watch their story: Neha, 3:02" data-title="Neha: Her personal experience"><span class="reel-hook">Why I reached out</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Her personal experience</strong><span>Neha<!-- --> · <!-- -->Melbourne</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-1.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:20</span><button type="button" class="reel-play" aria-label="It never felt like a lecture. Watch their story: Manish G., 1:20" data-title="Manish G.: Patience, and each other"><span class="reel-hook">It never felt like a lecture</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Patience, and each other</strong><span>Manish G.<!-- --> · <!-- -->On his experience</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-2.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">1:01</span><button type="button" class="reel-play" aria-label="When our confidence broke. Watch their story: Renu S., 1:01" data-title="Renu S.: A way out of a hard year"><span class="reel-hook">When our confidence broke</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>A way out of a hard year</strong><span>Renu S.<!-- --> · <!-- -->Through a difficult year</span></figcaption></figure><figure class="reel"><div class="reel-frame"><img src="/images/testimonials/client-5.webp" alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span class="reel-duration">0:43</span><button type="button" class="reel-play" aria-label="From exam fear to confidence. Watch their story: Vanshika S., 0:43" data-title="Vanshika S.: Exams, without the fear"><span class="reel-hook">From exam fear to confidence</span><span class="reel-play-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"></path></svg></span><span>Watch their story</span></button></div><figcaption><strong>Exams, without the fear</strong><span>Vanshika S.<!-- --> · <!-- -->Grade 10 student</span></figcaption></figure></div><div class="story-rail-controls"><span>12<!-- --> <!-- -->personal stories</span><button type="button" aria-pressed="false">Pause motion</button><button type="button" aria-label="Previous personal stories">←</button><button type="button" aria-label="Next personal stories">→</button></div></div><p class="stories-note">These are personal experiences, not promises of the same outcome.</p></section><section class="band" id="meet" aria-labelledby="meet-title"><div class="section-wrap section-space meet"><div class="book-cover-stage book-cover"><div class="book-cover-inner"><img src="/images/book-cover-660.webp" srcSet="/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w" sizes="(max-width: 680px) 75vw, 420px" width="660" height="934" alt="The cover of Change Your Mind, Transform Your Life, by Narayani Garg" loading="lazy" decoding="async"/></div></div><div class="meet-copy"><h2 id="meet-title">Meet Narayani Garg</h2><div class="lockup"><strong>The Life Strategist</strong><span>Mind. Direction. Alignment.</span></div><p>An MBA and a decade running a manufacturing business came before numerology, vastu and astrology. Her book,<!-- --> <em>Change Your Mind, Transform Your Life</em>, sets out her practice for inner change across 21 days.</p><div class="cta-row"><a class="text-link" href="/about/">Read her story</a></div></div></div></section><section class="section-wrap section-space founder-film" aria-labelledby="founder-film-title">
