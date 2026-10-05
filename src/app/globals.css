@@ -17,6 +17,10 @@
   dialog and page transition, breakpoints (1190, 960, 680, 360), reduced motion, print export.
 */
 
+.service-quote-showcase {
+  display: none !important;
+}
+
 /* ---------------------------------------------------------------- tokens */
 :root {
   --brand-pearl: #FAF6F0;
@@ -351,20 +355,27 @@ video:focus-visible,
   color: #3C183D !important;
 }
 
-.button-ghost {
-  background: transparent;
-  color: var(--text-accent);
-  box-shadow: none;
+.button-ghost,
+.button.button-ghost,
+.compare .button-ghost {
+  background: rgba(60, 24, 61, 0.06) !important;
+  color: #3c183d !important;
+  border: 1.5px solid #3c183d !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 0.25s ease !important;
 }
 
 .button-ghost:hover,
-.button-ghost:active {
-  transform: none;
-  box-shadow: none;
-}
-
-.button-ghost:hover {
-  background: var(--surface-soft);
+.button.button-ghost:hover,
+.compare .button-ghost:hover {
+  background: #3c183d !important;
+  color: #ffffff !important;
+  border-color: #3c183d !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(60, 24, 61, 0.25) !important;
 }
 
 .button[aria-disabled="true"] {

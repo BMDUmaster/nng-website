@@ -508,6 +508,28 @@
 
 </style>
 <style id="mobile-responsive-overrides">
+.button-ghost,
+.button.button-ghost,
+.compare .button-ghost {
+  background: rgba(60, 24, 61, 0.06) !important;
+  color: #3c183d !important;
+  border: 1.5px solid #3c183d !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 0.25s ease !important;
+}
+.button-ghost:hover,
+.button.button-ghost:hover,
+.compare .button-ghost:hover {
+  background: #3c183d !important;
+  color: #ffffff !important;
+  border-color: #3c183d !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(60, 24, 61, 0.25) !important;
+}
+
 #testimonials .track-controls,
 .track-controls,
 .track-controls button {

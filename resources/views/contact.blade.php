@@ -1,5 +1,27 @@
 @verbatim
 <!DOCTYPE html><html lang="en" class="__variable_bd32c6 __variable_41ff09 __variable_83ba67 __variable_df5f45"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/575c227f41d6e305-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/b69ff29fd08fb8ec-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/ef413a9eff181b96-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" as="image" imageSrcSet="/images/nng-logo-200.webp 200w, /images/nng-logo-400.webp 400w, /images/nng-logo.webp 800w" imageSizes="94px"/><link rel="preload" as="image" href="/images/nng-logo-200.webp"/><link rel="stylesheet" href="/_next/static/css/86d550901dc1a7f6.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/a78003b611c5f3b8.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-5c425e5241164006.js"/><script src="/_next/static/chunks/4bd1b696-92152b0f5947070d.js" async=""></script><script src="/_next/static/chunks/794-bd75e607e02db8a4.js" async=""></script><script src="/_next/static/chunks/main-app-94e4e27003b188e3.js" async=""></script><script src="/_next/static/chunks/500-b13bb91f5a6311b6.js" async=""></script><script src="/_next/static/chunks/app/layout-795cdb2dcb18e8ef.js" async=""></script><script src="/_next/static/chunks/84-e7ea3bd64f0b1f3a.js" async=""></script><script src="/_next/static/chunks/app/contact/page-ba0c8a3d646792ad.js" async=""></script><meta name="theme-color" content="#FAF6F0"/><title>Contact | Narayani Garg, Transformation with NNG</title><meta name="description" content="Enquire about a consultation or the program lasting six months with Narayani Garg on WhatsApp, by phone or email."/><meta name="robots" content="index, follow"/><link rel="canonical" href="https://nngarg.com/contact/"/><meta property="og:title" content="Dr. Narayani Garg | Transformation with NNG"/><meta property="og:description" content="Narayani Garg, The Life Strategist. Mind. Direction. Alignment. Personal guidance for the patterns, decisions and changes you are working through."/><meta property="og:url" content="https://nngarg.com/"/><meta property="og:site_name" content="Transformation with NNG"/><meta property="og:image" content="https://nngarg.com/images/og-narayani-garg.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Dr. Narayani Garg, The Life Strategist"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dr. Narayani Garg | Transformation with NNG"/><meta name="twitter:description" content="Narayani Garg, The Life Strategist. Mind. Direction. Alignment. Personal guidance for the patterns, decisions and changes you are working through."/><meta name="twitter:image" content="https://nngarg.com/images/og-narayani-garg.jpg"/><link rel="icon" href="/icon.svg?c3099d23d63d85b5" type="image/svg+xml" sizes="any"/><meta name="next-size-adjust" content=""/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script><style id="mobile-responsive-overrides">
+.button-ghost,
+.button.button-ghost,
+.compare .button-ghost {
+  background: rgba(60, 24, 61, 0.06) !important;
+  color: #3c183d !important;
+  border: 1.5px solid #3c183d !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 0.25s ease !important;
+}
+.button-ghost:hover,
+.button.button-ghost:hover,
+.compare .button-ghost:hover {
+  background: #3c183d !important;
+  color: #ffffff !important;
+  border-color: #3c183d !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(60, 24, 61, 0.25) !important;
+}
+
 #testimonials .track-controls,
 .track-controls,
 .track-controls button {

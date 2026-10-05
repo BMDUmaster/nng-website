@@ -249,39 +249,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-wrap section-space" aria-label="A client’s words">
-        <div className="service-quote-showcase">
-          <div className="service-quote-image-wrap">
-            <img
-              src={asset("/images/testimonials/client-0.webp")}
-              alt="Deepa K., sharing her experience with Narayani Garg"
-              className="service-quote-img"
-              width={380}
-              height={320}
-              loading="lazy"
-            />
-            <div className="service-quote-badge">
-              <span>Client Experience</span>
-            </div>
-          </div>
-          <div className="service-quote-body">
-            <span className="quote-mark-icon" aria-hidden="true">“</span>
-            <blockquote className="service-quote-text">
-              “{voices.deepa.quote}”
-            </blockquote>
-            <div className="service-quote-author">
-              <strong>Deepa K.</strong>
-              <span>Client since 2020 · Translated from Hindi</span>
-            </div>
-            <div className="service-quote-link-wrap">
-              <Link prefetch={false} className="text-link" href="/hand-holding-program/">
-                Need more than one conversation? Read about the program lasting six months →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <FaqSection items={faqs.services} source="services-faq" />
     </>
   );
