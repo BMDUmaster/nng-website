@@ -39,8 +39,8 @@ export default function ContactPage() {
       </PageHero>
 
       <section className="band" aria-labelledby="ways-title">
-        <div className="section-wrap section-space contact-grid contact-grid--single">
-          <div>
+        <div className="section-wrap section-space contact-grid-two-col">
+          <div className="contact-info-col">
             <h2 id="ways-title">Ways to reach the team</h2>
             <ul className="ways">
               <li>
@@ -73,6 +73,62 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
+
+          <div className="contact-form-col">
+            <div className="contact-form-card">
+              <div className="form-header">
+                <h2 style={{ fontFamily: "var(--font-serif, Georgia, serif)", fontSize: "26px", color: "#3c183d", marginBottom: "6px" }}>Send an Enquiry</h2>
+                <p style={{ color: "#665267", fontSize: "14.5px", marginBottom: "20px" }}>Fill in your details below and our team will connect with you.</p>
+              </div>
+
+              <form action="/enquiry/store" method="POST" id="contactPageForm" className="contact-form-body">
+                <input type="hidden" name="source_page" value="contact_page" />
+
+                <div className="form-group">
+                  <label htmlFor="c_name">Full Name <span className="req">*</span></label>
+                  <input type="text" id="c_name" name="name" required placeholder="Enter your full name" className="form-ctrl" />
+                </div>
+
+                <div className="form-row-2">
+                  <div className="form-group">
+                    <label htmlFor="c_phone">Phone / WhatsApp <span className="req">*</span></label>
+                    <input type="tel" id="c_phone" name="phone" required placeholder="e.g. 9876543210" className="form-ctrl" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="c_email">Email Address</label>
+                    <input type="email" id="c_email" name="email" placeholder="e.g. name@example.com" className="form-ctrl" />
+                  </div>
+                </div>
+
+                <div className="form-row-2">
+                  <div className="form-group">
+                    <label htmlFor="c_guidance">Guidance / Service</label>
+                    <select id="c_guidance" name="guidance_with" className="form-ctrl form-select-ctrl">
+                      <option value="General Consultation">General Consultation</option>
+                      <option value="Mind Training & Guidance">Mind Training & Guidance</option>
+                      <option value="Numerology & Vastu">Numerology & Vastu</option>
+                      <option value="Astrology Assessment">Astrology Assessment</option>
+                      <option value="Personalised Hand Holding Program">Personalised Hand Holding Program</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="c_location">Your Location</label>
+                    <input type="text" id="c_location" name="based_in" placeholder="e.g. Delhi, India" className="form-ctrl" />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="c_message">Your Message</label>
+                  <textarea id="c_message" name="message" rows={3} placeholder="Write your question or thoughts..." className="form-ctrl form-textarea-ctrl"></textarea>
+                </div>
+
+                <button type="submit" className="button button-primary contact-submit-btn" style={{ width: "100%", borderRadius: "30px", justifyContent: "center", fontWeight: 700 }}>
+                  <span>Send Message</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -97,31 +153,6 @@ export default function ContactPage() {
             <p>The right consultation or the program, with fees and availability.</p>
           </li>
         </ol>
-        <div className="contact-quote-showcase">
-          <div className="contact-quote-image-wrap">
-            <img
-              src={asset("/images/testimonials/client-1.webp")}
-              alt="Manish G. and another person in a client video"
-              className="contact-quote-img"
-              width={380}
-              height={320}
-              loading="lazy"
-            />
-            <div className="contact-quote-badge">
-              <span>Client Experience</span>
-            </div>
-          </div>
-          <div className="contact-quote-body">
-            <span className="quote-mark-icon" aria-hidden="true">“</span>
-            <blockquote className="contact-quote-text">
-              “Whenever we talk to her, it feels as if one of our own is lovingly showing us the right way, and trying to understand things from our side.”
-            </blockquote>
-            <div className="contact-quote-author">
-              <strong>Manish G.</strong>
-              <span>On his experience · Translated from Hindi</span>
-            </div>
-          </div>
-        </div>
       </section>
 
       <FaqSection
