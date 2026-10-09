@@ -1,0 +1,6 @@
+numc-thought-column	request	The thought line: the left column of a three by three grid highlighted
+numc-will-column	request	The will line: the middle column of a three by three grid highlighted
+numc-action-column	request	The action line: the right column of a three by three grid highlighted
+numc-diagonal-down	request	The diagonal from top left to bottom right of a three by three grid highlighted
+numc-diagonal-up	request	The diagonal from top right to bottom left of a three by three grid highlighted
+numc-two-layouts	request	Two layouts of the same nine numbers: two small three by three grids side by side with different numbers

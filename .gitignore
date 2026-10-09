@@ -1,0 +1,15 @@
+node_modules/
+.next/
+*.tsbuildinfo
+out/
+dist-review/
+landing-pages/dist/
+.env
+.env.*
+!.env.example
+*.private.*
+*.pem
+*.key
+.DS_Store
+qa-local/
+*.log

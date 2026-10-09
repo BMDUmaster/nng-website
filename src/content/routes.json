@@ -1,0 +1,4748 @@
+[
+  {
+    "path": "/resources/",
+    "view": "resources",
+    "indexable": false,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/resources/blogs/",
+    "view": "resource-blogs",
+    "indexable": false,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/articles/natural-lab-grown-and-imitation-gemstones/",
+    "view": "stone-article-identification",
+    "indexable": false,
+    "priority": 0.4,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/articles/understanding-a-gemstone-report/",
+    "view": "stone-article-report",
+    "indexable": false,
+    "priority": 0.4,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/articles/crystal-care-without-the-confusion/",
+    "view": "stone-article-care",
+    "indexable": false,
+    "priority": 0.4,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/articles/rudraksha-mukhi-and-mala-explained/",
+    "view": "stone-article-rudraksha",
+    "indexable": false,
+    "priority": 0.4,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/articles/five-questions-before-buying-a-stone-or-bead/",
+    "view": "stone-article-buying",
+    "indexable": false,
+    "priority": 0.4,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/",
+    "view": "home",
+    "indexable": true,
+    "priority": 1,
+    "changeFrequency": "monthly",
+    "controller": true
+  },
+  {
+    "path": "/about/",
+    "view": "about",
+    "indexable": true,
+    "priority": 0.7,
+    "changeFrequency": "yearly",
+    "controller": true
+  },
+  {
+    "path": "/services/",
+    "view": "services",
+    "indexable": true,
+    "priority": 0.9,
+    "changeFrequency": "monthly",
+    "controller": true
+  },
+  {
+    "path": "/hand-holding-program/",
+    "view": "hand-holding-program",
+    "indexable": true,
+    "priority": 0.9,
+    "changeFrequency": "monthly",
+    "controller": true
+  },
+  {
+    "path": "/contact/",
+    "view": "contact",
+    "indexable": true,
+    "priority": 0.7,
+    "changeFrequency": "yearly",
+    "controller": true
+  },
+  {
+    "path": "/consultation/",
+    "view": "consultation",
+    "indexable": false,
+    "priority": 0,
+    "changeFrequency": "yearly",
+    "controller": true
+  },
+  {
+    "path": "/consultations/",
+    "view": "consultations",
+    "indexable": true,
+    "priority": 0.9,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/",
+    "view": "services-astrology",
+    "indexable": true,
+    "priority": 0.8,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/birth-chart-reading/",
+    "view": "services-astrology-birth-chart-reading",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/dashas-and-transits/",
+    "view": "services-astrology-dashas-and-transits",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/nakshatras/",
+    "view": "services-astrology-nakshatras",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/marriage/",
+    "view": "services-astrology-marriage",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/kundali-matching/",
+    "view": "services-astrology-kundali-matching",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/career-and-business/",
+    "view": "services-astrology-career-and-business",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/education/",
+    "view": "services-astrology-education",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/health-and-wellbeing/",
+    "view": "services-astrology-health-and-wellbeing",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/property-and-big-decisions/",
+    "view": "services-astrology-property-and-big-decisions",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/specific-issue-reading/",
+    "view": "services-astrology-specific-issue-reading",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/reading-without-birth-details/",
+    "view": "services-astrology-reading-without-birth-details",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/astrology-remedies/",
+    "view": "services-astrology-astrology-remedies",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/career-growth/",
+    "view": "services-astrology-career-growth",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/legal-matters/",
+    "view": "services-astrology-legal-matters",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/astrology/intuitive-consult/",
+    "view": "services-astrology-intuitive-consult",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/",
+    "view": "services-numerology",
+    "indexable": true,
+    "priority": 0.8,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/personal-numbers/",
+    "view": "services-numerology-personal-numbers",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/name-numerology/",
+    "view": "services-numerology-name-numerology",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/mobile-and-house-numbers/",
+    "view": "services-numerology-mobile-and-house-numbers",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/signature/",
+    "view": "services-numerology-signature",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/lo-shu-grid/",
+    "view": "services-numerology-lo-shu-grid",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/business-name/",
+    "view": "services-numerology-business-name",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/astro-numerology/",
+    "view": "services-numerology-astro-numerology",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/numerology-systems/",
+    "view": "services-numerology-numerology-systems",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/business-astro-numerology/",
+    "view": "services-numerology-business-astro-numerology",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/numerology/business-logo/",
+    "view": "services-numerology-business-logo",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/",
+    "view": "services-vastu",
+    "indexable": true,
+    "priority": 0.8,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/directions-and-elements/",
+    "view": "services-vastu-directions-and-elements",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/home/",
+    "view": "services-vastu-home",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/office-and-shop/",
+    "view": "services-vastu-office-and-shop",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/property-and-land/",
+    "view": "services-vastu-property-and-land",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/real-estate-and-developers/",
+    "view": "services-vastu-real-estate-and-developers",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/specialised-spaces/",
+    "view": "services-vastu-specialised-spaces",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/astro-vastu/",
+    "view": "services-vastu-astro-vastu",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/vastu-remedies/",
+    "view": "services-vastu-vastu-remedies",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/ongoing-guidance/",
+    "view": "services-vastu-ongoing-guidance",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/vastu/energy-balancing/",
+    "view": "services-vastu-energy-balancing",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/brain-training/",
+    "view": "services-brain-training",
+    "indexable": true,
+    "priority": 0.8,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/brain-training/nlp/",
+    "view": "services-brain-training-nlp",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/brain-training/eft-tapping/",
+    "view": "services-brain-training-eft-tapping",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/brain-training/hooponopono/",
+    "view": "services-brain-training-hooponopono",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/brain-training/discovery-session/",
+    "view": "services-brain-training-discovery-session",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/",
+    "view": "services-stones-and-rudraksh",
+    "indexable": true,
+    "priority": 0.8,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/gemstones/",
+    "view": "services-stones-and-rudraksh-gemstones",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/services/stones-and-rudraksh/rudraksha/",
+    "view": "services-stones-and-rudraksh-rudraksha",
+    "indexable": true,
+    "priority": 0.6,
+    "changeFrequency": "monthly"
+  },
+  {
+    "path": "/shop/",
+    "view": "shop",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/cart/",
+    "view": "shop-cart",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-crystal-pyramid-059356/",
+    "view": "shop-product-pyrite-crystal-pyramid-059356",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-crystal-pyramid-428380/",
+    "view": "shop-product-rose-quartz-crystal-pyramid-428380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sunstone-crystal-pyramid-123420/",
+    "view": "shop-product-sunstone-crystal-pyramid-123420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-crystal-ring-295068/",
+    "view": "shop-product-rose-quartz-crystal-ring-295068",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/turquoise-crystal-charm-324636/",
+    "view": "shop-product-turquoise-crystal-charm-324636",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-love-spell-bracelet-325724/",
+    "view": "shop-product-the-love-spell-bracelet-325724",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-raw-piece-625628/",
+    "view": "shop-product-malachite-raw-piece-625628",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-cluster-bottle-ornament-895772/",
+    "view": "shop-product-clear-quartz-cluster-bottle-ornament-895772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/flower-agate-bracelet-924380/",
+    "view": "shop-product-flower-agate-bracelet-924380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-empath-protection-bracelet-843036/",
+    "view": "shop-product-the-empath-protection-bracelet-843036",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/shri-laxmi-narayan-shaligram-pendant-in-german-silver-366492/",
+    "view": "shop-product-shri-laxmi-narayan-shaligram-pendant-in-german-silver-366492",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-pisces-keychain-zodiac-love-charm-with-blue-stone-486748/",
+    "view": "shop-product-the-pisces-keychain-zodiac-love-charm-with-blue-stone-486748",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-libra-keychain-zodiac-luck-charm-with-pink-stone-976284/",
+    "view": "shop-product-the-libra-keychain-zodiac-luck-charm-with-pink-stone-976284",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-cancer-keychain-zodiac-strength-charm-with-red-stone-828572/",
+    "view": "shop-product-the-cancer-keychain-zodiac-strength-charm-with-red-stone-828572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-scorpio-keychain-zodiac-luck-charm-with-yellow-stone-358108/",
+    "view": "shop-product-the-scorpio-keychain-zodiac-luck-charm-with-yellow-stone-358108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-gemini-keychain-zodiac-luck-charm-with-light-brown-stone-914652/",
+    "view": "shop-product-the-gemini-keychain-zodiac-luck-charm-with-light-brown-stone-914652",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-aquarius-keychain-zodiac-luck-charm-with-blood-red-corundum-822236/",
+    "view": "shop-product-the-aquarius-keychain-zodiac-luck-charm-with-blood-red-corundum-822236",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-aries-keychain-zodiac-luck-charm-with-white-corundum-103644/",
+    "view": "shop-product-the-aries-keychain-zodiac-luck-charm-with-white-corundum-103644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/howlite-palmstone-592924/",
+    "view": "shop-product-howlite-palmstone-592924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-ring-in-brass-887452/",
+    "view": "shop-product-malachite-ring-in-brass-887452",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-taurus-keychain-zodiac-luck-charm-with-blue-corundum-861212/",
+    "view": "shop-product-the-taurus-keychain-zodiac-luck-charm-with-blue-corundum-861212",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-virgo-keychain-zodiac-luck-charm-with-blue-corundum-467996/",
+    "view": "shop-product-the-virgo-keychain-zodiac-luck-charm-with-blue-corundum-467996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-sagittarius-keychain-zodiac-luck-charm-with-blue-corundum-517724/",
+    "view": "shop-product-the-sagittarius-keychain-zodiac-luck-charm-with-blue-corundum-517724",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-leo-keychain-zodiac-luck-charm-with-green-corundum-731292/",
+    "view": "shop-product-the-leo-keychain-zodiac-luck-charm-with-green-corundum-731292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-crystal-charm-411292/",
+    "view": "shop-product-green-aventurine-crystal-charm-411292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/unakite-heart-keychain-981468/",
+    "view": "shop-product-unakite-heart-keychain-981468",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-heart-keychain-055836/",
+    "view": "shop-product-rose-quartz-heart-keychain-055836",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-heart-keychain-964380/",
+    "view": "shop-product-green-aventurine-heart-keychain-964380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-9-chakra-bracelet-852188/",
+    "view": "shop-product-the-9-chakra-bracelet-852188",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/the-healer-s-bracelet-698268/",
+    "view": "shop-product-the-healer-s-bracelet-698268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rudraksha-mala-268444/",
+    "view": "shop-product-rudraksha-mala-268444",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-apple-pendant-392284/",
+    "view": "shop-product-green-aventurine-apple-pendant-392284",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-apple-pendant-995804/",
+    "view": "shop-product-amethyst-apple-pendant-995804",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-wish-bottle-pendant-694172/",
+    "view": "shop-product-amethyst-wish-bottle-pendant-694172",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-charm-209884/",
+    "view": "shop-product-citrine-charm-209884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-wish-bottle-pendant-867676/",
+    "view": "shop-product-citrine-wish-bottle-pendant-867676",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-hematite-crystal-rakhi-510748/",
+    "view": "shop-product-tiger-eye-hematite-crystal-rakhi-510748",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rainbow-selenite-bracelet-8mm-627292/",
+    "view": "shop-product-rainbow-selenite-bracelet-8mm-627292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/student-success-bracelet-612636/",
+    "view": "shop-product-student-success-bracelet-612636",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-bracelet-216156/",
+    "view": "shop-product-7-bracelet-216156",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-black-tourmaline-036892/",
+    "view": "shop-product-lord-ganesh-in-black-tourmaline-036892",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-yellow-aventurine-290140/",
+    "view": "shop-product-lord-ganesh-in-yellow-aventurine-290140",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-ring-in-brass-435804/",
+    "view": "shop-product-tiger-eye-ring-in-brass-435804",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/turquoise-brass-bracelet-565788/",
+    "view": "shop-product-turquoise-brass-bracelet-565788",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-teardrop-pendant-in-925-sterling-silver-517468/",
+    "view": "shop-product-malachite-teardrop-pendant-in-925-sterling-silver-517468",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/garnet-crystal-bracelet-in-brass-222812/",
+    "view": "shop-product-garnet-crystal-bracelet-in-brass-222812",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/dhanyog-bracelet-878748/",
+    "view": "shop-product-dhanyog-bracelet-878748",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-crystal-bracelet-in-brass-300252/",
+    "view": "shop-product-malachite-crystal-bracelet-in-brass-300252",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-crystal-bracelet-in-brass-234716/",
+    "view": "shop-product-lapis-lazuli-crystal-bracelet-in-brass-234716",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-silver-hook-earrings-609308/",
+    "view": "shop-product-rose-quartz-silver-hook-earrings-609308",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pearl-925-silver-pendant-662492/",
+    "view": "shop-product-pearl-925-silver-pendant-662492",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/handcrafted-brass-cuff-bracelet-with-carnelian-stone-461468/",
+    "view": "shop-product-handcrafted-brass-cuff-bracelet-with-carnelian-stone-461468",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/multi-moonstone-bracelet-10mm-388636/",
+    "view": "shop-product-multi-moonstone-bracelet-10mm-388636",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-bracelet-in-brass-160412/",
+    "view": "shop-product-tiger-eye-bracelet-in-brass-160412",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/astrophyllite-raw-piece-394396/",
+    "view": "shop-product-astrophyllite-raw-piece-394396",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/dhanyog-money-magnet-bracelet-212124/",
+    "view": "shop-product-dhanyog-money-magnet-bracelet-212124",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-shree-sampurna-vyapar-vridhi-yantra-plate-373852/",
+    "view": "shop-product-selenite-shree-sampurna-vyapar-vridhi-yantra-plate-373852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/meteorite-raw-piece-860764/",
+    "view": "shop-product-meteorite-raw-piece-860764",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/dhanyog-bracelet-053852/",
+    "view": "shop-product-dhanyog-bracelet-053852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/dhanyog-bracelet-277852/",
+    "view": "shop-product-dhanyog-bracelet-277852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/bumble-bee-jasper-bat-402268/",
+    "view": "shop-product-bumble-bee-jasper-bat-402268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aragonite-raw-crystal-piece-206812/",
+    "view": "shop-product-aragonite-raw-crystal-piece-206812",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/iolite-bracelet-131548/",
+    "view": "shop-product-iolite-bracelet-131548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-tree-203932/",
+    "view": "shop-product-clear-quartz-tree-203932",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-onyx-diamond-cut-bracelet-8mm-290204/",
+    "view": "shop-product-red-onyx-diamond-cut-bracelet-8mm-290204",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-pendant-276380/",
+    "view": "shop-product-pyrite-pendant-276380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-protection-pendant-806940/",
+    "view": "shop-product-black-tourmaline-protection-pendant-806940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-fluorite-lord-ganesha-343388/",
+    "view": "shop-product-green-fluorite-lord-ganesha-343388",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/peru-pyrite-cube-138588/",
+    "view": "shop-product-peru-pyrite-cube-138588",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-door-hanging-744860/",
+    "view": "shop-product-7-chakra-door-hanging-744860",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-angel-279324/",
+    "view": "shop-product-amethyst-angel-279324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-angel-991388/",
+    "view": "shop-product-green-aventurine-angel-991388",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/crystal-duck-bird-fluorite-aragonite-calcite-chrysocolla-170076/",
+    "view": "shop-product-crystal-duck-bird-fluorite-aragonite-calcite-chrysocolla-170076",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-lord-ganesha-small-size-541916/",
+    "view": "shop-product-rose-quartz-lord-ganesha-small-size-541916",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-raw-pendant-729436/",
+    "view": "shop-product-pyrite-raw-pendant-729436",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/hematite-bracelet-930460/",
+    "view": "shop-product-hematite-bracelet-930460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/navgraha-harmony-bracelet-088220/",
+    "view": "shop-product-navgraha-harmony-bracelet-088220",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-shree-yantra-723100/",
+    "view": "shop-product-green-aventurine-shree-yantra-723100",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-geode-286364/",
+    "view": "shop-product-clear-quartz-geode-286364",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-sphere-872412/",
+    "view": "shop-product-labradorite-sphere-872412",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-sphere-743644/",
+    "view": "shop-product-lapis-lazuli-sphere-743644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lavender-amethyst-crystal-tumbles-set-of-2-080988/",
+    "view": "shop-product-lavender-amethyst-crystal-tumbles-set-of-2-080988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/bronzite-crystal-tumbles-set-of-2-936412/",
+    "view": "shop-product-bronzite-crystal-tumbles-set-of-2-936412",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/strawberry-quartz-crystal-tumbles-set-of-2-644956/",
+    "view": "shop-product-strawberry-quartz-crystal-tumbles-set-of-2-644956",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/crackle-quartz-crystal-tumbles-set-of-2-696988/",
+    "view": "shop-product-crackle-quartz-crystal-tumbles-set-of-2-696988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lemon-quartz-crystal-tumbles-set-of-2-235420/",
+    "view": "shop-product-lemon-quartz-crystal-tumbles-set-of-2-235420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-geode-medium-size-128860/",
+    "view": "shop-product-clear-quartz-geode-medium-size-128860",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodochrosite-925-sterling-silver-pendant-557596/",
+    "view": "shop-product-rhodochrosite-925-sterling-silver-pendant-557596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amber-cabochon-stone-506780/",
+    "view": "shop-product-amber-cabochon-stone-506780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-tree-with-crystal-base-772188/",
+    "view": "shop-product-lapis-lazuli-tree-with-crystal-base-772188",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-round-lamp-with-usb-interface-363100/",
+    "view": "shop-product-amethyst-round-lamp-with-usb-interface-363100",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-howlite-mala-568476/",
+    "view": "shop-product-blue-howlite-mala-568476",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-smoky-quartz-bracelet-combo-622620/",
+    "view": "shop-product-carnelian-smoky-quartz-bracelet-combo-622620",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-black-tourmaline-bracelet-combo-116444/",
+    "view": "shop-product-citrine-black-tourmaline-bracelet-combo-116444",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-onyx-black-tourmaline-bracelet-combo-527772/",
+    "view": "shop-product-green-onyx-black-tourmaline-bracelet-combo-527772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-7-chakra-bracelet-combo-023068/",
+    "view": "shop-product-pyrite-7-chakra-bracelet-combo-023068",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-raw-stone-258844/",
+    "view": "shop-product-rose-quartz-raw-stone-258844",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-relationship-duck-284060/",
+    "view": "shop-product-rose-quartz-relationship-duck-284060",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-diamond-cut-mala-602076/",
+    "view": "shop-product-amethyst-diamond-cut-mala-602076",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-fluorite-piece-980060/",
+    "view": "shop-product-green-fluorite-piece-980060",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-moon-shape-lamp-074012/",
+    "view": "shop-product-selenite-moon-shape-lamp-074012",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-crystal-ring-151004/",
+    "view": "shop-product-green-jade-crystal-ring-151004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-turtle-lamp-with-usb-connector-612060/",
+    "view": "shop-product-pyrite-turtle-lamp-with-usb-connector-612060",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-tree-007388/",
+    "view": "shop-product-green-aventurine-tree-007388",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/septarian-egg-009052/",
+    "view": "shop-product-septarian-egg-009052",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-lamp-with-tree-of-love-240924/",
+    "view": "shop-product-rose-quartz-lamp-with-tree-of-love-240924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/snowflake-obsidian-crystal-683612/",
+    "view": "shop-product-snowflake-obsidian-crystal-683612",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/august-born-kit-009564/",
+    "view": "shop-product-august-born-kit-009564",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/september-born-kit-545372/",
+    "view": "shop-product-september-born-kit-545372",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/may-born-kit-207644/",
+    "view": "shop-product-may-born-kit-207644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/july-born-kit-598556/",
+    "view": "shop-product-july-born-kit-598556",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/june-born-kit-370332/",
+    "view": "shop-product-june-born-kit-370332",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/april-born-kit-046108/",
+    "view": "shop-product-april-born-kit-046108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/march-born-kit-374940/",
+    "view": "shop-product-march-born-kit-374940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/february-born-kit-162524/",
+    "view": "shop-product-february-born-kit-162524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/january-born-kit-113948/",
+    "view": "shop-product-january-born-kit-113948",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/december-born-kit-508316/",
+    "view": "shop-product-december-born-kit-508316",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/november-born-kit-395356/",
+    "view": "shop-product-november-born-kit-395356",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/october-born-kit-460892/",
+    "view": "shop-product-october-born-kit-460892",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-onyx-diamond-cut-bracelet-014300/",
+    "view": "shop-product-green-onyx-diamond-cut-bracelet-014300",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/exclusive-amethyst-chevron-raw-piece-624348/",
+    "view": "shop-product-exclusive-amethyst-chevron-raw-piece-624348",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/kiwi-quartz-925-sterling-silver-ring-169308/",
+    "view": "shop-product-kiwi-quartz-925-sterling-silver-ring-169308",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-onyx-bracelet-in-brass-915996/",
+    "view": "shop-product-black-onyx-bracelet-in-brass-915996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/eternal-love-anniversary-kit-nurturing-bonds-and-honouring-shared-journeys-812252/",
+    "view": "shop-product-eternal-love-anniversary-kit-nurturing-bonds-and-honouring-shared-journeys-812252",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/smoky-quartz-925-sterling-silver-bracelet-975964/",
+    "view": "shop-product-smoky-quartz-925-sterling-silver-bracelet-975964",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/peridot-925-sterling-silver-pendant-075420/",
+    "view": "shop-product-peridot-925-sterling-silver-pendant-075420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/maw-sitsit-925-sterling-silver-pendant-463196/",
+    "view": "shop-product-maw-sitsit-925-sterling-silver-pendant-463196",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/work-life-balance-energy-kit-016284/",
+    "view": "shop-product-work-life-balance-energy-kit-016284",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/flint-925-sterling-silver-ring-160732/",
+    "view": "shop-product-flint-925-sterling-silver-ring-160732",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pearl-925-sterling-silver-ring-392860/",
+    "view": "shop-product-pearl-925-sterling-silver-ring-392860",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-chrysocolla-925-sterling-silver-pendant-504348/",
+    "view": "shop-product-malachite-chrysocolla-925-sterling-silver-pendant-504348",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-zoisite-raw-stones-173340/",
+    "view": "shop-product-ruby-zoisite-raw-stones-173340",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-925-silver-pendant-055004/",
+    "view": "shop-product-pyrite-925-silver-pendant-055004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodonite-925-silver-pendant-134044/",
+    "view": "shop-product-rhodonite-925-silver-pendant-134044",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-925-silver-bracelet-039196/",
+    "view": "shop-product-black-tourmaline-925-silver-bracelet-039196",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rainbow-labradorite-standing-cluster-669980/",
+    "view": "shop-product-rainbow-labradorite-standing-cluster-669980",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/septarian-ball-067292/",
+    "view": "shop-product-septarian-ball-067292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-ring-in-brass-006492/",
+    "view": "shop-product-carnelian-ring-in-brass-006492",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-lace-agate-925-silver-pendant-439900/",
+    "view": "shop-product-blue-lace-agate-925-silver-pendant-439900",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-jaap-mala-044380/",
+    "view": "shop-product-7-chakra-jaap-mala-044380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/kunzite-bracelet-890908/",
+    "view": "shop-product-kunzite-bracelet-890908",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/chintamani-pendant-860572/",
+    "view": "shop-product-chintamani-pendant-860572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/cats-eye-bracelet-033244/",
+    "view": "shop-product-cats-eye-bracelet-033244",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aquamarine-925-sterling-silver-ring-calmness-158684/",
+    "view": "shop-product-aquamarine-925-sterling-silver-ring-calmness-158684",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aquamarine-925-sterling-silver-pendant-556508/",
+    "view": "shop-product-aquamarine-925-sterling-silver-pendant-556508",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-angel-161820/",
+    "view": "shop-product-black-tourmaline-angel-161820",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/morganite-925-silver-ring-love-376732/",
+    "view": "shop-product-morganite-925-silver-ring-love-376732",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/morganite-925-silver-pendant-love-426460/",
+    "view": "shop-product-morganite-925-silver-pendant-love-426460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-925-sterling-silver-ring-159836/",
+    "view": "shop-product-labradorite-925-sterling-silver-ring-159836",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-925-sterling-silver-ring-063964/",
+    "view": "shop-product-malachite-925-sterling-silver-ring-063964",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-925-sterling-silver-pendant-559836/",
+    "view": "shop-product-labradorite-925-sterling-silver-pendant-559836",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/flint-925-sterling-silver-pendant-712796/",
+    "view": "shop-product-flint-925-sterling-silver-pendant-712796",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amber-925-sterling-silver-pendant-129884/",
+    "view": "shop-product-amber-925-sterling-silver-pendant-129884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amber-925-sterling-silver-ring-heritage-luxury-250908/",
+    "view": "shop-product-amber-925-sterling-silver-ring-heritage-luxury-250908",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/oyster-turquoise-earring-set-stone-of-inner-calm-946396/",
+    "view": "shop-product-oyster-turquoise-earring-set-stone-of-inner-calm-946396",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-diamond-cut-bracelet-913628/",
+    "view": "shop-product-ruby-diamond-cut-bracelet-913628",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/birthstone-pendant-with-925-sterling-silver-chain-january-572572/",
+    "view": "shop-product-birthstone-pendant-with-925-sterling-silver-chain-january-572572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/925-sterling-silver-tiger-eye-pendant-405148/",
+    "view": "shop-product-925-sterling-silver-tiger-eye-pendant-405148",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/925-sterling-silver-amethyst-earring-set-945244/",
+    "view": "shop-product-925-sterling-silver-amethyst-earring-set-945244",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/angelite-crystal-bracelet-10mm-stone-of-divine-connection-202588/",
+    "view": "shop-product-angelite-crystal-bracelet-10mm-stone-of-divine-connection-202588",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ammonite-with-925-sterling-silver-pendant-025244/",
+    "view": "shop-product-ammonite-with-925-sterling-silver-pendant-025244",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/larimar-pendant-in-925-sterling-silver-000476/",
+    "view": "shop-product-larimar-pendant-in-925-sterling-silver-000476",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-kyanite-ring-in-925-sterling-silver-560988/",
+    "view": "shop-product-blue-kyanite-ring-in-925-sterling-silver-560988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/smoky-quartz-diamond-cut-mala-191900/",
+    "view": "shop-product-smoky-quartz-diamond-cut-mala-191900",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aquamarine-raw-beads-925-sterling-silver-bracelet-611100/",
+    "view": "shop-product-aquamarine-raw-beads-925-sterling-silver-bracelet-611100",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-raw-beads-925-sterling-silver-bracelet-799644/",
+    "view": "shop-product-rose-quartz-raw-beads-925-sterling-silver-bracelet-799644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/garnet-raw-beads-925-sterling-solid-silver-bracelet-734108/",
+    "view": "shop-product-garnet-raw-beads-925-sterling-solid-silver-bracelet-734108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-925-sterling-silver-earrings-set-155804/",
+    "view": "shop-product-labradorite-925-sterling-silver-earrings-set-155804",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-copper-turquoise-pendant-in-925-sterling-silver-763740/",
+    "view": "shop-product-green-copper-turquoise-pendant-in-925-sterling-silver-763740",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rainbow-moonstone-om-symbol-pendant-in-925-silver-321948/",
+    "view": "shop-product-rainbow-moonstone-om-symbol-pendant-in-925-silver-321948",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-pendant-in-925-sterling-silver-849692/",
+    "view": "shop-product-7-chakra-pendant-in-925-sterling-silver-849692",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-diamond-cut-925-sterling-silver-pendant-768348/",
+    "view": "shop-product-citrine-diamond-cut-925-sterling-silver-pendant-768348",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-diamond-cut-925-sterling-silver-pendant-031644/",
+    "view": "shop-product-clear-quartz-diamond-cut-925-sterling-silver-pendant-031644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-925-sterling-silver-rawa-bead-bracelet-491548/",
+    "view": "shop-product-citrine-925-sterling-silver-rawa-bead-bracelet-491548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-925-sterling-silver-earrings-034524/",
+    "view": "shop-product-tiger-eye-925-sterling-silver-earrings-034524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-925-sterling-silver-bracelet-002076/",
+    "view": "shop-product-carnelian-925-sterling-silver-bracelet-002076",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-bati-cut-925-sterling-silver-earrings-707548/",
+    "view": "shop-product-ruby-bati-cut-925-sterling-silver-earrings-707548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-925-sterling-silver-bracelet-087260/",
+    "view": "shop-product-labradorite-925-sterling-silver-bracelet-087260",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/larimar-925-sterling-silver-pendant-503196/",
+    "view": "shop-product-larimar-925-sterling-silver-pendant-503196",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-925-sterling-silver-bracelet-377884/",
+    "view": "shop-product-amethyst-925-sterling-silver-bracelet-377884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-sterling-silver-bracelet-957660/",
+    "view": "shop-product-ruby-sterling-silver-bracelet-957660",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/14-mukhi-nepali-rudraksha-935196/",
+    "view": "shop-product-14-mukhi-nepali-rudraksha-935196",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gauri-shankar-nepali-rudraksha-591708/",
+    "view": "shop-product-gauri-shankar-nepali-rudraksha-591708",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rainbow-moonstone-925-sterling-silver-bracelet-915484/",
+    "view": "shop-product-rainbow-moonstone-925-sterling-silver-bracelet-915484",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ethiopian-opal-925-sterling-silver-pendant-784412/",
+    "view": "shop-product-ethiopian-opal-925-sterling-silver-pendant-784412",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-925-sterling-silver-pendant-148828/",
+    "view": "shop-product-7-chakra-925-sterling-silver-pendant-148828",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moonstone-pendant-in-925-sterling-silver-594076/",
+    "view": "shop-product-moonstone-pendant-in-925-sterling-silver-594076",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rainbow-moonstone-oval-earring-pendant-set-256156/",
+    "view": "shop-product-rainbow-moonstone-oval-earring-pendant-set-256156",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rainbow-moonstone-silver-teardrop-necklace-556828/",
+    "view": "shop-product-rainbow-moonstone-silver-teardrop-necklace-556828",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ethiopian-opal-oval-silver-ring-296988/",
+    "view": "shop-product-ethiopian-opal-oval-silver-ring-296988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sterling-silver-peridot-wreath-pendant-465308/",
+    "view": "shop-product-sterling-silver-peridot-wreath-pendant-465308",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sterling-silver-garnet-wreath-pendant-383964/",
+    "view": "shop-product-sterling-silver-garnet-wreath-pendant-383964",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-925-sterling-silver-pendant-778332/",
+    "view": "shop-product-lapis-lazuli-925-sterling-silver-pendant-778332",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-motivation-bracelet-in-925-sterling-silver-336540/",
+    "view": "shop-product-carnelian-motivation-bracelet-in-925-sterling-silver-336540",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-925-silver-energy-bracelet-320732/",
+    "view": "shop-product-lapis-lazuli-925-silver-energy-bracelet-320732",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/925-silver-rainbow-moonstone-bracelet-042780/",
+    "view": "shop-product-925-silver-rainbow-moonstone-bracelet-042780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/weight-loss-crystal-bracelet-195996/",
+    "view": "shop-product-weight-loss-crystal-bracelet-195996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/shungite-raw-crystal-stone-790044/",
+    "view": "shop-product-shungite-raw-crystal-stone-790044",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/saraswati-kavach-750044/",
+    "view": "shop-product-saraswati-kavach-750044",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/hessonite-garnet-409116/",
+    "view": "shop-product-hessonite-garnet-409116",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/shani-sade-saati-kavach-mala-7-mukhi-rudraksha-947420/",
+    "view": "shop-product-shani-sade-saati-kavach-mala-7-mukhi-rudraksha-947420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/triveni-shakti-rudraksha-mala-329948/",
+    "view": "shop-product-triveni-shakti-rudraksha-mala-329948",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/5-mukhi-rudraksha-bracelet-267932/",
+    "view": "shop-product-5-mukhi-rudraksha-bracelet-267932",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/kunzite-bracelet-330332/",
+    "view": "shop-product-kunzite-bracelet-330332",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-ring-031324/",
+    "view": "shop-product-labradorite-ring-031324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-925-sterling-silver-ring-936476/",
+    "view": "shop-product-clear-quartz-925-sterling-silver-ring-936476",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-ring-956892/",
+    "view": "shop-product-green-aventurine-ring-956892",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/missing-number-5-bracelet-043292/",
+    "view": "shop-product-missing-number-5-bracelet-043292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/missing-number-6-bracelet-650076/",
+    "view": "shop-product-missing-number-6-bracelet-650076",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mixed-stone-bracelet-8mm-965276/",
+    "view": "shop-product-mixed-stone-bracelet-8mm-965276",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mixed-stone-bracelet-8mm-943772/",
+    "view": "shop-product-mixed-stone-bracelet-8mm-943772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mixed-stone-bracelet-8mm-693980/",
+    "view": "shop-product-mixed-stone-bracelet-8mm-693980",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/missing-number-3-bracelet-022812/",
+    "view": "shop-product-missing-number-3-bracelet-022812",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/missing-number-2-bracelet-689244/",
+    "view": "shop-product-missing-number-2-bracelet-689244",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/missing-number-1-bracelet-050844/",
+    "view": "shop-product-missing-number-1-bracelet-050844",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-bracelet-080348/",
+    "view": "shop-product-green-aventurine-bracelet-080348",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mixed-stone-bracelet-8mm-961436/",
+    "view": "shop-product-mixed-stone-bracelet-8mm-961436",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mixed-stone-bracelet-8mm-602140/",
+    "view": "shop-product-mixed-stone-bracelet-8mm-602140",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/abalone-shell-pendant-925-sterling-silver-pendant-707420/",
+    "view": "shop-product-abalone-shell-pendant-925-sterling-silver-pendant-707420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/12-mukhi-rudraksha-406108/",
+    "view": "shop-product-12-mukhi-rudraksha-406108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/13-mukhi-rudraksha-734940/",
+    "view": "shop-product-13-mukhi-rudraksha-734940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-fluorite-pendant-152284/",
+    "view": "shop-product-green-fluorite-pendant-152284",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-9-bracelet-181596/",
+    "view": "shop-product-ruling-number-9-bracelet-181596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-6-bracelet-740572/",
+    "view": "shop-product-ruling-number-6-bracelet-740572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-7-bracelet-441372/",
+    "view": "shop-product-ruling-number-7-bracelet-441372",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-8-bracelet-788636/",
+    "view": "shop-product-ruling-number-8-bracelet-788636",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-4-bracelet-315548/",
+    "view": "shop-product-ruling-number-4-bracelet-315548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-pyramid-411932/",
+    "view": "shop-product-lapis-lazuli-pyramid-411932",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-protection-pyramid-625500/",
+    "view": "shop-product-black-tourmaline-protection-pyramid-625500",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-3-bracelet-145564/",
+    "view": "shop-product-ruling-number-3-bracelet-145564",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-charging-box-3-inches-296284/",
+    "view": "shop-product-selenite-charging-box-3-inches-296284",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/charoite-bracelet-140508/",
+    "view": "shop-product-charoite-bracelet-140508",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/yellow-opal-bracelet-939612/",
+    "view": "shop-product-yellow-opal-bracelet-939612",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-quartz-bracelet-825500/",
+    "view": "shop-product-ruby-quartz-bracelet-825500",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mariam-agate-ball-582108/",
+    "view": "shop-product-mariam-agate-ball-582108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gomed-hessonite-bracelet-324828/",
+    "view": "shop-product-gomed-hessonite-bracelet-324828",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-5-bracelet-584988/",
+    "view": "shop-product-ruling-number-5-bracelet-584988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-2-bracelet-075036/",
+    "view": "shop-product-ruling-number-2-bracelet-075036",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-duo-zibu-coin-907228/",
+    "view": "shop-product-pyrite-duo-zibu-coin-907228",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/quartz-kailash-dhan-raksha-yantra-359388/",
+    "view": "shop-product-quartz-kailash-dhan-raksha-yantra-359388",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruling-number-1-bracelet-591132/",
+    "view": "shop-product-ruling-number-1-bracelet-591132",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-crystal-charging-tower-439388/",
+    "view": "shop-product-selenite-crystal-charging-tower-439388",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-sulemani-tumble-1-pcs-770652/",
+    "view": "shop-product-red-sulemani-tumble-1-pcs-770652",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/love-harmony-gift-hamper-676572/",
+    "view": "shop-product-love-harmony-gift-hamper-676572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/self-care-gift-hamper-203164/",
+    "view": "shop-product-self-care-gift-hamper-203164",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aquarius-bracelet-600476/",
+    "view": "shop-product-aquarius-bracelet-600476",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/libra-bracelet-682972/",
+    "view": "shop-product-libra-bracelet-682972",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/leo-bracelet-503324/",
+    "view": "shop-product-leo-bracelet-503324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pisces-bracelet-356444/",
+    "view": "shop-product-pisces-bracelet-356444",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gemini-bracelet-881884/",
+    "view": "shop-product-gemini-bracelet-881884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sagittarius-bracelet-177948/",
+    "view": "shop-product-sagittarius-bracelet-177948",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/capricorn-bracelet-724316/",
+    "view": "shop-product-capricorn-bracelet-724316",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/peridot-bracelet-801308/",
+    "view": "shop-product-peridot-bracelet-801308",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-pyramid-678556/",
+    "view": "shop-product-7-chakra-pyramid-678556",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-lamp-970268/",
+    "view": "shop-product-selenite-lamp-970268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/opalite-bracelet-586332/",
+    "view": "shop-product-opalite-bracelet-586332",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/emerald-raw-stone-bracelet-325340/",
+    "view": "shop-product-emerald-raw-stone-bracelet-325340",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/taurus-bracelet-860956/",
+    "view": "shop-product-taurus-bracelet-860956",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/cancer-bracelet-328924/",
+    "view": "shop-product-cancer-bracelet-328924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aries-bracelet-010844/",
+    "view": "shop-product-aries-bracelet-010844",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-hanging-910620/",
+    "view": "shop-product-pyrite-hanging-910620",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-shree-sri-yantra-plate-464156/",
+    "view": "shop-product-selenite-shree-sri-yantra-plate-464156",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-plate-with-7-chakra-8-cm-crystals-recharge-956892/",
+    "view": "shop-product-selenite-plate-with-7-chakra-8-cm-crystals-recharge-956892",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/virgo-bracelet-114460/",
+    "view": "shop-product-virgo-bracelet-114460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-angel-819996/",
+    "view": "shop-product-amethyst-angel-819996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/scorpio-bracelet-763420/",
+    "view": "shop-product-scorpio-bracelet-763420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-bracelet-220764/",
+    "view": "shop-product-rose-quartz-bracelet-220764",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-bracelet-797084/",
+    "view": "shop-product-tiger-eye-bracelet-797084",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodochrosite-bracelet-224220/",
+    "view": "shop-product-rhodochrosite-bracelet-224220",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-aaa-bracelet-864924/",
+    "view": "shop-product-amethyst-aaa-bracelet-864924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moonstone-bracelet-069596/",
+    "view": "shop-product-moonstone-bracelet-069596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-diamond-cut-bracelet-397916/",
+    "view": "shop-product-rose-quartz-diamond-cut-bracelet-397916",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakras-tumble-set-with-wooden-box-251036/",
+    "view": "shop-product-7-chakras-tumble-set-with-wooden-box-251036",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-tree-of-life-pendant-with-red-jasper-384220/",
+    "view": "shop-product-7-chakra-tree-of-life-pendant-with-red-jasper-384220",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-lotus-candle-holder-778460/",
+    "view": "shop-product-selenite-lotus-candle-holder-778460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesha-in-orange-aventurine-897180/",
+    "view": "shop-product-lord-ganesha-in-orange-aventurine-897180",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-candle-holder-in-sphere-345884/",
+    "view": "shop-product-selenite-candle-holder-in-sphere-345884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/shree-kuber-yantra-in-green-aventurine-with-wooden-box-927772/",
+    "view": "shop-product-shree-kuber-yantra-in-green-aventurine-with-wooden-box-927772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moldavite-925-sterling-silver-pendant-147804/",
+    "view": "shop-product-moldavite-925-sterling-silver-pendant-147804",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-turtle-203676/",
+    "view": "shop-product-pyrite-turtle-203676",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gomti-chakra-bracelet-820380/",
+    "view": "shop-product-gomti-chakra-bracelet-820380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gomti-chakra-ring-274844/",
+    "view": "shop-product-gomti-chakra-ring-274844",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gomti-chakra-pendant-164188/",
+    "view": "shop-product-gomti-chakra-pendant-164188",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-ball-in-033756/",
+    "view": "shop-product-selenite-ball-in-033756",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-ball-792028/",
+    "view": "shop-product-7-chakra-ball-792028",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-pendant-with-pure-silver-760220/",
+    "view": "shop-product-ruby-pendant-with-pure-silver-760220",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/superior-turquoise-bracelet-485724/",
+    "view": "shop-product-superior-turquoise-bracelet-485724",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesha-in-clear-quartz-small-size-358044/",
+    "view": "shop-product-lord-ganesha-in-clear-quartz-small-size-358044",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesha-in-pyrite-558108/",
+    "view": "shop-product-lord-ganesha-in-pyrite-558108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-labradorite-116316/",
+    "view": "shop-product-lord-ganesh-in-labradorite-116316",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesha-idol-in-lapis-lazuli-430492/",
+    "view": "shop-product-lord-ganesha-idol-in-lapis-lazuli-430492",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-blue-goldstone-414684/",
+    "view": "shop-product-lord-ganesh-in-blue-goldstone-414684",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesha-in-lepidolite-235036/",
+    "view": "shop-product-lord-ganesha-in-lepidolite-235036",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-howlite-598940/",
+    "view": "shop-product-lord-ganesh-in-howlite-598940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-red-jasper-353756/",
+    "view": "shop-product-lord-ganesh-in-red-jasper-353756",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-tumble-duo-700700/",
+    "view": "shop-product-amethyst-tumble-duo-700700",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-angel-441052/",
+    "view": "shop-product-labradorite-angel-441052",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-prosperity-angel-2-inch-675036/",
+    "view": "shop-product-green-jade-prosperity-angel-2-inch-675036",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-angel-397084/",
+    "view": "shop-product-rose-quartz-angel-397084",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-jasper-angel-856988/",
+    "view": "shop-product-red-jasper-angel-856988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-tumble-duo-357852/",
+    "view": "shop-product-carnelian-tumble-duo-357852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/brown-goldstone-tumble-duo-872092/",
+    "view": "shop-product-brown-goldstone-tumble-duo-872092",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-tumble-duo-663132/",
+    "view": "shop-product-green-jade-tumble-duo-663132",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sphatik-clear-quartz-sri-yantra-463516/",
+    "view": "shop-product-sphatik-clear-quartz-sri-yantra-463516",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-small-bowl-927772/",
+    "view": "shop-product-selenite-small-bowl-927772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-big-bowl-443164/",
+    "view": "shop-product-selenite-big-bowl-443164",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesha-in-amethyst-522972/",
+    "view": "shop-product-lord-ganesha-in-amethyst-522972",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-mala-10mm-154460/",
+    "view": "shop-product-7-chakra-mala-10mm-154460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lodolite-garden-quartz-bracelet-7mm-548828/",
+    "view": "shop-product-lodolite-garden-quartz-bracelet-7mm-548828",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pink-selenite-bracelet-8mm-991772/",
+    "view": "shop-product-pink-selenite-bracelet-8mm-991772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/orange-selenite-bracelet-8mm-336412/",
+    "view": "shop-product-orange-selenite-bracelet-8mm-336412",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-goldstone-jaap-mala-6mm-144796/",
+    "view": "shop-product-blue-goldstone-jaap-mala-6mm-144796",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/11-mukhi-rudraksha-482012/",
+    "view": "shop-product-11-mukhi-rudraksha-482012",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-mala-728668/",
+    "view": "shop-product-green-jade-mala-728668",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-jaap-mala-353564/",
+    "view": "shop-product-green-jade-jaap-mala-353564",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amber-bracelet-905756/",
+    "view": "shop-product-amber-bracelet-905756",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-7-horse-dust-frame-141660/",
+    "view": "shop-product-pyrite-7-horse-dust-frame-141660",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/golden-rutile-quartz-bracelet-613916/",
+    "view": "shop-product-golden-rutile-quartz-bracelet-613916",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amber-bracelet-714524/",
+    "view": "shop-product-amber-bracelet-714524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/terahertz-bracelet-167772/",
+    "view": "shop-product-terahertz-bracelet-167772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-raw-piece-tumble-569948/",
+    "view": "shop-product-black-tourmaline-raw-piece-tumble-569948",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-copper-turquoise-925-sterling-silver-pendant-427164/",
+    "view": "shop-product-blue-copper-turquoise-925-sterling-silver-pendant-427164",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moonstone-jaap-mala-765916/",
+    "view": "shop-product-moonstone-jaap-mala-765916",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-raw-pendant-997596/",
+    "view": "shop-product-citrine-raw-pendant-997596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ametrine-mala-878492/",
+    "view": "shop-product-ametrine-mala-878492",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aura-quartz-bracelet-061660/",
+    "view": "shop-product-aura-quartz-bracelet-061660",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-lace-agate-bracelet-582300/",
+    "view": "shop-product-blue-lace-agate-bracelet-582300",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/1-mukhi-rudraksha-849116/",
+    "view": "shop-product-1-mukhi-rudraksha-849116",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-heart-worry-stone-087836/",
+    "view": "shop-product-selenite-heart-worry-stone-087836",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-sticks-594588/",
+    "view": "shop-product-selenite-sticks-594588",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-925-sterling-silver-ring-712796/",
+    "view": "shop-product-amethyst-925-sterling-silver-ring-712796",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-bracelet-911708/",
+    "view": "shop-product-pyrite-bracelet-911708",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/success-kit-job-exams-career-941340/",
+    "view": "shop-product-success-kit-job-exams-career-941340",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-cluster-950236/",
+    "view": "shop-product-citrine-cluster-950236",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/brown-goldstone-angel-376988/",
+    "view": "shop-product-brown-goldstone-angel-376988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/botswana-hakik-bracelet-885980/",
+    "view": "shop-product-botswana-hakik-bracelet-885980",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-tree-385180/",
+    "view": "shop-product-7-chakra-tree-385180",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-mushroom-shape-lamp-152028/",
+    "view": "shop-product-selenite-mushroom-shape-lamp-152028",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-925-silver-ring-859548/",
+    "view": "shop-product-black-tourmaline-925-silver-ring-859548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-jasper-ball-627548/",
+    "view": "shop-product-red-jasper-ball-627548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/apatite-sphere-163676/",
+    "view": "shop-product-apatite-sphere-163676",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-ball-957980/",
+    "view": "shop-product-clear-quartz-ball-957980",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sri-yantra-maa-laxmi-pyramid-677852/",
+    "view": "shop-product-sri-yantra-maa-laxmi-pyramid-677852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-tree-443292/",
+    "view": "shop-product-citrine-tree-443292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gomti-chakra-tree-with-rudraksha-558876/",
+    "view": "shop-product-gomti-chakra-tree-with-rudraksha-558876",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-meditation-angel-2-inch-026332/",
+    "view": "shop-product-7-chakra-meditation-angel-2-inch-026332",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-agate-harmony-bracelet-10mm-297500/",
+    "view": "shop-product-blue-agate-harmony-bracelet-10mm-297500",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-cleansing-angel-2-inch-054236/",
+    "view": "shop-product-clear-quartz-cleansing-angel-2-inch-054236",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-aventurine-creativity-angel-2-inch-492060/",
+    "view": "shop-product-red-aventurine-creativity-angel-2-inch-492060",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-tree-272924/",
+    "view": "shop-product-clear-quartz-tree-272924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ametrine-oval-bracelet-220892/",
+    "view": "shop-product-ametrine-oval-bracelet-220892",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/turquoise-925-silver-pendant-firoza-100252/",
+    "view": "shop-product-turquoise-925-silver-pendant-firoza-100252",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aura-quartz-manifestation-geode-065244/",
+    "view": "shop-product-aura-quartz-manifestation-geode-065244",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-green-jade-277852/",
+    "view": "shop-product-lord-ganesh-in-green-jade-277852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-money-number-duo-875100/",
+    "view": "shop-product-green-aventurine-money-number-duo-875100",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-duo-tumbles-369372/",
+    "view": "shop-product-clear-quartz-duo-tumbles-369372",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-925-silver-pendant-436188/",
+    "view": "shop-product-black-tourmaline-925-silver-pendant-436188",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aquamarine-mala-404444/",
+    "view": "shop-product-aquamarine-mala-404444",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-coral-ring-311836/",
+    "view": "shop-product-red-coral-ring-311836",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/turquoise-925-sterling-silver-ring-992860/",
+    "view": "shop-product-turquoise-925-sterling-silver-ring-992860",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/oyster-turquoise-925-silver-pendant-781596/",
+    "view": "shop-product-oyster-turquoise-925-silver-pendant-781596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/10-mukhi-nepali-rudraksha-620380/",
+    "view": "shop-product-10-mukhi-nepali-rudraksha-620380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/9-mukhi-rudraksha-735644/",
+    "view": "shop-product-9-mukhi-rudraksha-735644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/8-mukhi-rudraksha-261084/",
+    "view": "shop-product-8-mukhi-rudraksha-261084",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/6-mukhi-rudraksha-884828/",
+    "view": "shop-product-6-mukhi-rudraksha-884828",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/5-mukhi-rudraksha-344732/",
+    "view": "shop-product-5-mukhi-rudraksha-344732",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/925-sterling-silver-labradorite-pendant-116508/",
+    "view": "shop-product-925-sterling-silver-labradorite-pendant-116508",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-tree-973084/",
+    "view": "shop-product-clear-quartz-tree-973084",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-bracelet-diamond-cut-722460/",
+    "view": "shop-product-citrine-bracelet-diamond-cut-722460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/3-mukhi-rudraksha-686876/",
+    "view": "shop-product-3-mukhi-rudraksha-686876",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-tree-920860/",
+    "view": "shop-product-amethyst-tree-920860",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-tree-413532/",
+    "view": "shop-product-rose-quartz-tree-413532",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/yellow-cats-eye-bracelet-857628/",
+    "view": "shop-product-yellow-cats-eye-bracelet-857628",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-ring-709212/",
+    "view": "shop-product-rose-quartz-ring-709212",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moonstone-925-silver-ring-048156/",
+    "view": "shop-product-moonstone-925-silver-ring-048156",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-fluorite-ring-278684/",
+    "view": "shop-product-green-fluorite-ring-278684",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-sphere-650524/",
+    "view": "shop-product-citrine-sphere-650524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-diamond-cut-pendant-471004/",
+    "view": "shop-product-citrine-diamond-cut-pendant-471004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/yellow-calcite-bracelet-684572/",
+    "view": "shop-product-yellow-calcite-bracelet-684572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/hematite-angel-032796/",
+    "view": "shop-product-hematite-angel-032796",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-hexagon-bowl-504924/",
+    "view": "shop-product-selenite-hexagon-bowl-504924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-tree-522780/",
+    "view": "shop-product-citrine-tree-522780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-export-quality-plate-10-cm-from-morocco-crystals-recharge-841564/",
+    "view": "shop-product-selenite-export-quality-plate-10-cm-from-morocco-crystals-recharge-841564",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/himalayan-salt-lamp-315420/",
+    "view": "shop-product-himalayan-salt-lamp-315420",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/aquamarine-bracelet-130268/",
+    "view": "shop-product-aquamarine-bracelet-130268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/bloodstone-bracelet-460956/",
+    "view": "shop-product-bloodstone-bracelet-460956",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/turquoise-gemstone-piece-291484/",
+    "view": "shop-product-turquoise-gemstone-piece-291484",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sulemani-hakik-bracelet-885724/",
+    "view": "shop-product-sulemani-hakik-bracelet-885724",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-big-lamp-831452/",
+    "view": "shop-product-selenite-big-lamp-831452",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-charging-plate-8-cm-from-morocco-with-zibu-money-number-153692/",
+    "view": "shop-product-selenite-charging-plate-8-cm-from-morocco-with-zibu-money-number-153692",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-coaster-445660/",
+    "view": "shop-product-rose-quartz-coaster-445660",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-tree-691996/",
+    "view": "shop-product-pyrite-tree-691996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-tumble-duo-102172/",
+    "view": "shop-product-pyrite-tumble-duo-102172",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/seraphinite-bracelet-007324/",
+    "view": "shop-product-seraphinite-bracelet-007324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/cats-eye-bracelet-581340/",
+    "view": "shop-product-cats-eye-bracelet-581340",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sunstone-bracelet-414940/",
+    "view": "shop-product-sunstone-bracelet-414940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-kyanite-bracelet-049180/",
+    "view": "shop-product-blue-kyanite-bracelet-049180",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pink-tourmaline-bracelet-192924/",
+    "view": "shop-product-pink-tourmaline-bracelet-192924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-mala-404380/",
+    "view": "shop-product-citrine-mala-404380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-roller-934108/",
+    "view": "shop-product-clear-quartz-roller-934108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-face-beauty-roller-557852/",
+    "view": "shop-product-green-jade-face-beauty-roller-557852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/dumortierite-bracelet-520476/",
+    "view": "shop-product-dumortierite-bracelet-520476",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/seraphinite-bracelets-833500/",
+    "view": "shop-product-seraphinite-bracelets-833500",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-tree-385692/",
+    "view": "shop-product-pyrite-tree-385692",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-charging-plate-8-cm-with-all-zodaic-signs-219228/",
+    "view": "shop-product-selenite-charging-plate-8-cm-with-all-zodaic-signs-219228",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/2-mukhi-rudraksha-345820/",
+    "view": "shop-product-2-mukhi-rudraksha-345820",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-angel-090332/",
+    "view": "shop-product-citrine-angel-090332",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-chalcedony-bracelet-603676/",
+    "view": "shop-product-blue-chalcedony-bracelet-603676",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/chrysoprase-bracelet-177692/",
+    "view": "shop-product-chrysoprase-bracelet-177692",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tree-agate-bracelet-882780/",
+    "view": "shop-product-tree-agate-bracelet-882780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/shungite-bracelet-576668/",
+    "view": "shop-product-shungite-bracelet-576668",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/labradorite-bracelet-648156/",
+    "view": "shop-product-labradorite-bracelet-648156",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/peridot-bracelet-895004/",
+    "view": "shop-product-peridot-bracelet-895004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/larimar-bracelet-495260/",
+    "view": "shop-product-larimar-bracelet-495260",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/larimar-bracelet-348380/",
+    "view": "shop-product-larimar-bracelet-348380",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/apatite-bracelet-715932/",
+    "view": "shop-product-apatite-bracelet-715932",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lord-ganesh-in-green-aventurine-907548/",
+    "view": "shop-product-lord-ganesh-in-green-aventurine-907548",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-big-plate-in-quality-10-cm-113692/",
+    "view": "shop-product-selenite-big-plate-in-quality-10-cm-113692",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-pendant-487324/",
+    "view": "shop-product-amethyst-pendant-487324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/shungite-chip-951516/",
+    "view": "shop-product-shungite-chip-951516",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/smoky-quartz-flat-mala-060828/",
+    "view": "shop-product-smoky-quartz-flat-mala-060828",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-tower-425884/",
+    "view": "shop-product-citrine-tower-425884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-angel-3-inch-787612/",
+    "view": "shop-product-green-aventurine-angel-3-inch-787612",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-kyanite-tumble-923292/",
+    "view": "shop-product-blue-kyanite-tumble-923292",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-raw-cluster-670364/",
+    "view": "shop-product-amethyst-raw-cluster-670364",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-jaap-mala-375452/",
+    "view": "shop-product-7-chakra-jaap-mala-375452",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/brown-goldstone-bracelet-305756/",
+    "view": "shop-product-brown-goldstone-bracelet-305756",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ruby-ring-pure-silver-252892/",
+    "view": "shop-product-ruby-ring-pure-silver-252892",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/smoky-quartz-ring-565916/",
+    "view": "shop-product-smoky-quartz-ring-565916",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-925-sterling-silver-pendant-058588/",
+    "view": "shop-product-lapis-lazuli-925-sterling-silver-pendant-058588",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-pendant-371612/",
+    "view": "shop-product-green-jade-pendant-371612",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-ring-566044/",
+    "view": "shop-product-pyrite-ring-566044",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-jaap-mala-325852/",
+    "view": "shop-product-clear-quartz-jaap-mala-325852",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/opalite-angel-402972/",
+    "view": "shop-product-opalite-angel-402972",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-angel-273052/",
+    "view": "shop-product-pyrite-angel-273052",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/orange-selenite-angel-027868/",
+    "view": "shop-product-orange-selenite-angel-027868",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sodalite-angel-656220/",
+    "view": "shop-product-sodalite-angel-656220",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-angel-328540/",
+    "view": "shop-product-selenite-angel-328540",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/peridot-mala-703068/",
+    "view": "shop-product-peridot-mala-703068",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tree-of-life-pendant-with-7-chakra-719132/",
+    "view": "shop-product-tree-of-life-pendant-with-7-chakra-719132",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/desert-rose-346140/",
+    "view": "shop-product-desert-rose-346140",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mariam-agate-stone-glass-756316/",
+    "view": "shop-product-mariam-agate-stone-glass-756316",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/chintamani-stone-253788/",
+    "view": "shop-product-chintamani-stone-253788",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-fluorite-bracelet-476572/",
+    "view": "shop-product-green-fluorite-bracelet-476572",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-stone-frame-247196/",
+    "view": "shop-product-7-chakra-stone-frame-247196",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-bracelet-10mm-362460/",
+    "view": "shop-product-7-chakra-bracelet-10mm-362460",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-diamond-cut-mala-510492/",
+    "view": "shop-product-citrine-diamond-cut-mala-510492",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sunstone-ball-154524/",
+    "view": "shop-product-sunstone-ball-154524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-iolite-bracelet-709340/",
+    "view": "shop-product-pyrite-iolite-bracelet-709340",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/multi-fluorite-bracelet-005404/",
+    "view": "shop-product-multi-fluorite-bracelet-005404",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/orthoceras-kuber-fossil-pendant-079132/",
+    "view": "shop-product-orthoceras-kuber-fossil-pendant-079132",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/herkimer-diamond-bracelet-694620/",
+    "view": "shop-product-herkimer-diamond-bracelet-694620",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ammonite-raw-pair-558364/",
+    "view": "shop-product-ammonite-raw-pair-558364",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sodalite-tumbles-duo-422940/",
+    "view": "shop-product-sodalite-tumbles-duo-422940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sodalite-bracelet-538204/",
+    "view": "shop-product-sodalite-bracelet-538204",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-cluster-675612/",
+    "view": "shop-product-pyrite-cluster-675612",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-pyrite-bracelet-517468/",
+    "view": "shop-product-green-jade-pyrite-bracelet-517468",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/triple-protection-bracelet-362396/",
+    "view": "shop-product-triple-protection-bracelet-362396",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/4-mukhi-rudraksha-050908/",
+    "view": "shop-product-4-mukhi-rudraksha-050908",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-mukhi-rudraksha-117596/",
+    "view": "shop-product-7-mukhi-rudraksha-117596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amazonite-mala-895132/",
+    "view": "shop-product-amazonite-mala-895132",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodochrosite-bracelet-437532/",
+    "view": "shop-product-rhodochrosite-bracelet-437532",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-howlite-bracelet-978780/",
+    "view": "shop-product-blue-howlite-bracelet-978780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/blue-howlite-jaap-mala-111004/",
+    "view": "shop-product-blue-howlite-jaap-mala-111004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/epidote-ring-623644/",
+    "view": "shop-product-epidote-ring-623644",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/ametrine-bracelet-949724/",
+    "view": "shop-product-ametrine-bracelet-949724",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-duo-pencils-879068/",
+    "view": "shop-product-clear-quartz-duo-pencils-879068",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-jasper-pendant-045212/",
+    "view": "shop-product-red-jasper-pendant-045212",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-pendant-113052/",
+    "view": "shop-product-green-jade-pendant-113052",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-pendant-212508/",
+    "view": "shop-product-tiger-eye-pendant-212508",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-diamond-cut-925-silver-ring-345884/",
+    "view": "shop-product-citrine-diamond-cut-925-silver-ring-345884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-ring-133468/",
+    "view": "shop-product-amethyst-ring-133468",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-925-sterling-silver-ring-986588/",
+    "view": "shop-product-pyrite-925-sterling-silver-ring-986588",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-tumble-duo-239836/",
+    "view": "shop-product-citrine-tumble-duo-239836",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-mala-373212/",
+    "view": "shop-product-clear-quartz-mala-373212",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-bracelet-in-978012/",
+    "view": "shop-product-citrine-bracelet-in-978012",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/garnet-bracelet-in-german-silver-818780/",
+    "view": "shop-product-garnet-bracelet-in-german-silver-818780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-mala-346524/",
+    "view": "shop-product-carnelian-mala-346524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/smoky-quartz-flat-bracelet-008348/",
+    "view": "shop-product-smoky-quartz-flat-bracelet-008348",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/howlite-jaap-mala-447004/",
+    "view": "shop-product-howlite-jaap-mala-447004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodochrosite-jaap-mala-654364/",
+    "view": "shop-product-rhodochrosite-jaap-mala-654364",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodonite-jaap-mala-479324/",
+    "view": "shop-product-rhodonite-jaap-mala-479324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/apatite-mala-895388/",
+    "view": "shop-product-apatite-mala-895388",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-coaster-538396/",
+    "view": "shop-product-citrine-coaster-538396",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-coral-aaa-quality-246620/",
+    "view": "shop-product-red-coral-aaa-quality-246620",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/peridot-bati-cut-925-silver-bracelet-899996/",
+    "view": "shop-product-peridot-bati-cut-925-silver-bracelet-899996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moonstone-bracelet-in-german-silver-807324/",
+    "view": "shop-product-moonstone-bracelet-in-german-silver-807324",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-money-number-duo-in-key-chain-269532/",
+    "view": "shop-product-green-aventurine-money-number-duo-in-key-chain-269532",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/pyrite-jaap-mala-058268/",
+    "view": "shop-product-pyrite-jaap-mala-058268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/multi-tourmaline-bracelet-990940/",
+    "view": "shop-product-multi-tourmaline-bracelet-990940",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/malachite-bracelet-273500/",
+    "view": "shop-product-malachite-bracelet-273500",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/red-jasper-bracelet-958428/",
+    "view": "shop-product-red-jasper-bracelet-958428",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/mahogany-obsidian-bracelet-960732/",
+    "view": "shop-product-mahogany-obsidian-bracelet-960732",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-angel-916764/",
+    "view": "shop-product-tiger-eye-angel-916764",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/tiger-eye-bracelet-512348/",
+    "view": "shop-product-tiger-eye-bracelet-512348",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/gomti-chakra-tree-271772/",
+    "view": "shop-product-gomti-chakra-tree-271772",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-black-tourmaline-door-hanging-209692/",
+    "view": "shop-product-selenite-black-tourmaline-door-hanging-209692",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/cleanser-572444/",
+    "view": "shop-product-cleanser-572444",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakra-bracelet-8mm-477596/",
+    "view": "shop-product-7-chakra-bracelet-8mm-477596",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/7-chakras-tumble-set-300252/",
+    "view": "shop-product-7-chakras-tumble-set-300252",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/chrysocolla-bracelet-617884/",
+    "view": "shop-product-chrysocolla-bracelet-617884",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/fire-agate-bracelet-689180/",
+    "view": "shop-product-fire-agate-bracelet-689180",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/lapis-lazuli-bracelet-810204/",
+    "view": "shop-product-lapis-lazuli-bracelet-810204",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-jade-bracelet-004636/",
+    "view": "shop-product-green-jade-bracelet-004636",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/smoky-quartz-bracelet-912092/",
+    "view": "shop-product-smoky-quartz-bracelet-912092",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-bracelet-729308/",
+    "view": "shop-product-citrine-bracelet-729308",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/citrine-bracelet-diamond-cut-568924/",
+    "view": "shop-product-citrine-bracelet-diamond-cut-568924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-plus-hematite-diamond-cut-bracelet-362268/",
+    "view": "shop-product-clear-quartz-plus-hematite-diamond-cut-bracelet-362268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-bracelet-as-master-healer-8mm-480988/",
+    "view": "shop-product-clear-quartz-bracelet-as-master-healer-8mm-480988",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-bracelet-498268/",
+    "view": "shop-product-clear-quartz-bracelet-498268",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/clear-quartz-bracelet-059932/",
+    "view": "shop-product-clear-quartz-bracelet-059932",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-stick-769628/",
+    "view": "shop-product-selenite-stick-769628",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-diamond-cut-bracelet-207132/",
+    "view": "shop-product-amethyst-diamond-cut-bracelet-207132",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-sphere-462684/",
+    "view": "shop-product-amethyst-sphere-462684",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-relationship-number-duo-899036/",
+    "view": "shop-product-rose-quartz-relationship-number-duo-899036",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-garnet-bracelet-850780/",
+    "view": "shop-product-green-garnet-bracelet-850780",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amazonite-tumble-duo-262108/",
+    "view": "shop-product-amazonite-tumble-duo-262108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/azurite-bracelet-903708/",
+    "view": "shop-product-azurite-bracelet-903708",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moss-agate-bracelet-008924/",
+    "view": "shop-product-moss-agate-bracelet-008924",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rhodonite-bracelet-062108/",
+    "view": "shop-product-rhodonite-bracelet-062108",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/apatite-bracelet-445276/",
+    "view": "shop-product-apatite-bracelet-445276",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/moonstone-bracelet-861532/",
+    "view": "shop-product-moonstone-bracelet-861532",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/unakite-bracelet-523804/",
+    "view": "shop-product-unakite-bracelet-523804",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amazonite-bracelet-008732/",
+    "view": "shop-product-amazonite-bracelet-008732",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/howlite-bracelet-837148/",
+    "view": "shop-product-howlite-bracelet-837148",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/garnet-bracelet-474204/",
+    "view": "shop-product-garnet-bracelet-474204",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-tourmaline-bracelet-206620/",
+    "view": "shop-product-black-tourmaline-bracelet-206620",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-money-number-duo-705052/",
+    "view": "shop-product-green-aventurine-money-number-duo-705052",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/green-aventurine-sphere-994524/",
+    "view": "shop-product-green-aventurine-sphere-994524",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/carnelian-bracelet-799004/",
+    "view": "shop-product-carnelian-bracelet-799004",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/black-obsidian-bracelet-099996/",
+    "view": "shop-product-black-obsidian-bracelet-099996",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/singing-bowl-with-stick-700188/",
+    "view": "shop-product-singing-bowl-with-stick-700188",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/sunstone-bracelet-124188/",
+    "view": "shop-product-sunstone-bracelet-124188",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/selenite-bracelet-8mm-524508/",
+    "view": "shop-product-selenite-bracelet-8mm-524508",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/amethyst-aaa-bracelet-meditation-concentration-10mm-061276/",
+    "view": "shop-product-amethyst-aaa-bracelet-meditation-concentration-10mm-061276",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-sphere-334236/",
+    "view": "shop-product-rose-quartz-sphere-334236",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-bracelet-579164/",
+    "view": "shop-product-rose-quartz-bracelet-579164",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  },
+  {
+    "path": "/shop/products/rose-quartz-tumbles-duo-257564/",
+    "view": "shop-product-rose-quartz-tumbles-duo-257564",
+    "indexable": false,
+    "priority": 0.5,
+    "changeFrequency": "weekly",
+    "controller": false
+  }
+]

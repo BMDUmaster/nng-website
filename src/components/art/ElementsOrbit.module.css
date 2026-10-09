@@ -1,0 +1,17 @@
+.figure { margin:0; color:var(--plum, #401c3e); }
+.figure figcaption { font-size:18px; font-weight:600; line-height:1.45; }
+.figure > svg { display:block; width:100%; max-width:340px; height:auto; margin:8px auto 0; }
+.path { fill:none; stroke:var(--brand-brass, #b48a45); stroke-width:1; stroke-dasharray:2 5; opacity:.65; }
+.orbit { transform-origin:170px 170px; transform-box:view-box; animation:revolve 40s linear infinite; }
+.upright { transform-origin:0 0; transform-box:view-box; animation:upright 40s linear infinite; }
+.orbit, .upright { animation-play-state:paused; }
+.figure[data-running="true"] .orbit, .figure[data-running="true"] .upright { animation-play-state:running; }
+.controls { display:flex; justify-content:flex-end; margin-bottom:8px; }
+.controls button { min-height:44px; padding:8px 12px; border:1px solid currentColor; border-radius:8px; background:transparent; color:inherit; font:inherit; font-size:14px; cursor:pointer; }
+.controls button:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+.controls button:disabled { cursor:default; }
+.figure > p { font-size:15px; line-height:1.5; margin:0; }
+@keyframes revolve { to { transform:rotate(360deg); } }
+@keyframes upright { to { transform:rotate(-360deg); } }
+@media (prefers-reduced-motion:reduce) { .orbit, .upright { animation:none !important; } }
+@media print { .orbit, .upright { animation:none !important; } .controls { display:none; } }
