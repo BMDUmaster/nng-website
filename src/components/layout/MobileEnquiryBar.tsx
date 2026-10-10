@@ -19,8 +19,8 @@ export function MobileEnquiryBar() {
     // The paid landing page has its own form and sticky action. Keep that single flow intact.
     if (pathname.replace(/\/$/, "") === "/consultation" || pathname.startsWith("/shop")) return;
     const primary = document.querySelector<HTMLElement>("[data-primary-cta][data-enquiry]");
-    // A visible in-page primary action already does this job. Avoid competing gold buttons.
-    const targets = Array.from(document.querySelectorAll("[data-primary-cta], a.button[data-enquiry], .site-footer")).filter(target => !target.closest(".mobile-enquiry"));
+    // A visible in-page primary action (or the homepage hero) already does this job. Avoid competing gold buttons.
+    const targets = Array.from(document.querySelectorAll("[data-primary-cta], a.button[data-enquiry], .site-footer, .hx")).filter(target => !target.closest(".mobile-enquiry"));
     const onScreen = new Set<Element>();
     const observer = new IntersectionObserver(
       (entries) => {

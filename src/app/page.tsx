@@ -7,13 +7,13 @@ import { Portrait } from "@/components/brand/Portrait";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
 import { AreasRibbon, FaqSection, ProgramPanel, QuoteTrack } from "@/components/sections/Sections";
+import { HomeHero } from "@/components/sections/HomeHero";
 import { ServiceAtlas } from "@/components/sections/ServiceAtlas";
 import { ClienteleNote } from "@/components/sections/ClienteleNote";
 import { StoryRail } from "@/components/voices/StoryRail";
 import { SocialSection } from "@/components/sections/SocialSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
-import { figures, site } from "@/content/site";
 import { homeFilms, homeQuotes, moreFilms } from "@/content/voices";
 import { bookTitle } from "@/content/about";
 import { method } from "@/content/services";
@@ -27,52 +27,14 @@ export default function HomePage() {
     type: "image/avif",
     fetchPriority: "high",
     imageSrcSet: assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w"),
-    imageSizes: "(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px",
+    imageSizes: "(max-width: 900px) min(56vw, 250px), 300px",
   });
 
   return (
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), faqSchema(faqs.home)] }} />
 
-      <section className={`hero practice-hero section-wrap ${depth.hero}`} aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="kicker">PSYCHIC READER · ASTROLOGER · NUMEROLOGIST · VASTU</p>
-          <p className="practice-name">Personal guidance with <strong>Dr. Narayani Garg</strong></p>
-          <h1 id="hero-title">
-            Let’s talk about <span className="highlight">what’s on your mind.</span>
-          </h1>
-          <p className="hero-description">Bring your question about health, relationship, money or career. Explore it with spiritual guidance and mindset work.</p>
-          <p className="hero-proof" aria-label="Narayani's experience">
-            {figures.map((figure) => (
-              <span key={figure.label}><strong>{figure.value}</strong> {figure.label}</span>
-            ))}
-          </p>
-
-          <div className="hero-actions">
-            <EnquiryTrigger source="hero" primary>
-              <span>Enquire about a consultation</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </EnquiryTrigger>
-            <a className="button-secondary" href="#approach">
-              <span>How she works</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M12 5v14M5 12l7 7 7-7" />
-              </svg>
-            </a>
-          </div>
-
-          <p className="cta-note appointment-note">
-            <span className="appointment-dot" aria-hidden="true" />
-            Ask the team for the next available appointment
-          </p>
-        </div>
-
-        <div className="hero-visual practice-visual">
-          <Portrait name="Narayani Garg" note={site.title} priority orbit sizes="(max-width: 680px) min(68vw, 270px), (max-width: 1190px) 36vw, 440px" />
-        </div>
-      </section>
+      <HomeHero />
 
       <AreasRibbon />
 
