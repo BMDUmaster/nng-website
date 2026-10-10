@@ -76,7 +76,8 @@ export const nav: NavItem[] = [
       { label: "Blogs", href: "/resources/blogs/" },
     ],
   },
-  { label: "Shop", href: "/shop/", children: [{ label: "Crystals, Stones and Rudraksha collection", href: "/shop/" }, { label: "Your basket", href: "/shop/cart/" }] },
+  // The shop shows a coming-soon note for now, so it is a single link.
+  { label: "Shop", href: "/shop/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];

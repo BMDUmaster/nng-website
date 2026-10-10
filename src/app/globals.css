@@ -3524,7 +3524,7 @@ html.orbit-paused .zodiac-chakra,
 
 /* Two formats side by side. */
 /* Paid-traffic page: one enquiry path, without the full site's navigation or feeds. */
-body:has(.ads-landing)>.site-header,
+body:has(.ads-landing)>.nh,
 body:has(.ads-landing)>.site-footer,
 body:has(.ads-landing)>.contact-dock {
   display: none;
@@ -5884,7 +5884,7 @@ dialog.enquiry .button {
 }
 
 /* Static captures (?export=pdf): no sticky header, no bar, no veil. */
-.pdf-export .site-header {
+.pdf-export .nh {
   position: static;
 }
 
@@ -12659,4 +12659,607 @@ dialog.home-return-prompt::backdrop { background: rgb(36 19 35 / .48); backdrop-
   .practice-site .practice-hero .arch-portrait-frame picture,
   .practice-site .practice-hero .arch-portrait-frame img { border-radius: 100px 100px 8px 8px; }
   .practice-site .practice-hero .orbit-control { top: 0; right: 0; }
+}
+
+/* =============================================================================================================
+   Header (design-premium, Oct 2026). One block for the bar, the desktop menus and the phone drawer.
+   Classes are prefixed nh- so the older header rules above no longer reach it. Locked brand tokens only.
+   ============================================================================================================= */
+.nh {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgb(250 246 240 / 0.95);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  transition: box-shadow 0.3s var(--ease);
+}
+/* A double gold rule under the bar, like the edge of good stationery. */
+.nh::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -4px;
+  height: 4px;
+  border-top: 1px solid rgb(184 138 69 / 0.38);
+  border-bottom: 1px solid rgb(184 138 69 / 0.14);
+  pointer-events: none;
+}
+.nh.is-scrolled {
+  box-shadow: 0 16px 32px -26px rgb(60 24 61 / 0.45);
+}
+.nh-inner {
+  width: var(--wrap);
+  margin-inline: auto;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nh-brand {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.nh-brand img {
+  width: 104px;
+  height: auto;
+}
+
+/* Desktop links: one rhythm for every item, a champagne rule under the current section. */
+.nh-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-inline: auto;
+}
+.nh-group {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nh-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 48px;
+  padding: 0 12px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+.nh-link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--brand-champagne);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+/* A label followed by its chevron: the two read as one item. */
+.nh-group > a.nh-link {
+  padding-right: 3px;
+}
+.nh-group > a.nh-link::after {
+  right: 3px;
+}
+.nh-link:hover,
+.nh-group:hover > .nh-link,
+.nh-group:hover > .nh-toggle {
+  color: #8A5A2B;
+}
+.nh-link[data-current="true"]::after,
+.nh-group[data-current="true"] > .nh-link::after,
+.nh-link:hover::after,
+.nh-group:hover > .nh-link::after {
+  transform: scaleX(1);
+}
+.nh-group > button.nh-link::after {
+  right: 29px;
+}
+.nh-toggle:not(.nh-link) {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  min-height: 48px;
+  margin-right: 8px;
+  color: var(--ink);
+  opacity: 0.7;
+}
+.nh-chevron {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease);
+}
+.nh-toggle[aria-expanded="true"] .nh-chevron {
+  transform: rotate(180deg);
+}
+
+/* Desktop submenu: a pearl card with a small notch under its label. */
+.nh-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -8px;
+  z-index: 40;
+  min-width: 264px;
+  padding: 10px;
+  background: var(--brand-pearl);
+  border: 1px solid rgb(184 138 69 / 0.28);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -30px rgb(60 24 61 / 0.4), 0 10px 22px -14px rgb(60 24 61 / 0.18);
+  animation: nh-menu-in 0.2s var(--ease);
+}
+.nh-menu::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 30px;
+  width: 12px;
+  height: 12px;
+  background: var(--brand-pearl);
+  border-top: 1px solid rgb(184 138 69 / 0.28);
+  border-left: 1px solid rgb(184 138 69 / 0.28);
+  transform: rotate(45deg);
+}
+/* Keeps the pointer inside the group on its way down to the menu. */
+.nh-menu::after {
+  content: "";
+  position: absolute;
+  inset: -20px 0 auto;
+  height: 20px;
+}
+.nh-menu[hidden] {
+  display: none;
+}
+.nh-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nh-menu ul a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nh-menu ul a:hover,
+.nh-menu ul a:focus-visible {
+  background: var(--surface-story);
+}
+.nh-menu ul a[aria-current="page"] {
+  color: #8A5A2B;
+  font-weight: 600;
+}
+.nh-menu-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  margin-top: 8px;
+  padding: 0 14px;
+  border-top: 1px solid rgb(184 138 69 / 0.2);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #8A5A2B;
+}
+.nh-menu-all span:last-child {
+  transition: transform 0.25s var(--ease);
+}
+.nh-menu-all:hover span:last-child {
+  transform: translateX(3px);
+}
+
+/* The services: four drawn icons in a two by two grid. */
+.nh-menu.is-grid {
+  width: 440px;
+}
+.nh-menu.is-grid ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.nh-menu.is-grid ul a {
+  min-height: 64px;
+  padding: 10px 14px;
+  background: rgb(241 228 199 / 0.35);
+  border: 1px solid rgb(184 138 69 / 0.12);
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+}
+.nh-menu.is-grid ul a:hover,
+.nh-menu.is-grid ul a:focus-visible {
+  background: var(--surface-story);
+  border-color: rgb(184 138 69 / 0.32);
+}
+.nh-menu-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-pearl);
+  box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.25);
+  flex-shrink: 0;
+}
+.nh-menu-icon .ic {
+  --ic-size: 26px;
+}
+@keyframes nh-menu-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* The enquiry button: a champagne pill with the arrow in a small plum disc. */
+.nh-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.nh-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 50px;
+  padding: 5px 5px 5px 24px;
+  border-radius: 999px;
+  background: var(--brand-champagne);
+  color: var(--brand-plum);
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: inset 0 0 0 1px rgb(138 90 43 / 0.35), 0 8px 18px -10px rgb(184 138 69 / 0.7);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.nh-cta-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-plum);
+  color: var(--brand-champagne);
+  flex-shrink: 0;
+}
+.nh-cta-arrow svg {
+  transition: transform 0.25s var(--ease);
+}
+.nh-cta:hover {
+  background: #DDC27E;
+  box-shadow: inset 0 0 0 1px rgb(138 90 43 / 0.45), 0 10px 22px -10px rgb(184 138 69 / 0.8);
+}
+.nh-cta:hover .nh-cta-arrow svg {
+  transform: translateX(2px);
+}
+.nh-cta-block {
+  width: 100%;
+  min-height: 54px;
+  padding-left: 22px;
+  gap: 10px;
+  white-space: nowrap;
+}
+.nh-cta-block .nh-cta-arrow {
+  width: 44px;
+  height: 44px;
+}
+
+/* Menu button: two lines, the lower one shorter, inside a fine brass ring. */
+.nh-menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  width: 46px;
+  height: 46px;
+  padding: 0 13px;
+  border-radius: 50%;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.45);
+  transition: background-color 0.2s ease;
+}
+.nh-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: width 0.25s var(--ease);
+}
+.nh-menu-toggle span:last-child {
+  width: 12px;
+}
+.nh-menu-toggle:hover {
+  background: var(--surface-story);
+}
+.nh-menu-toggle:hover span:last-child {
+  width: 20px;
+}
+
+/* Drawer: slides in from the right; the list scrolls, the enquiry stays in reach at the bottom. */
+.nh-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgb(22 17 15 / 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s;
+}
+.nh-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.nh-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  width: min(90vw, 390px);
+  height: 100dvh;
+  background: var(--brand-pearl);
+  box-shadow: -24px 0 60px -30px rgb(22 17 15 / 0.5);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.38s var(--ease), visibility 0.38s;
+}
+.nh-drawer.is-open {
+  transform: none;
+  visibility: visible;
+}
+.nh-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 10px 18px 10px 24px;
+}
+.nh-drawer-head .nh-brand img {
+  width: 88px;
+}
+.nh-drawer-close {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.45);
+  transition: background-color 0.2s ease;
+}
+.nh-drawer-close:hover {
+  background: var(--surface-story);
+}
+.nh-drawer-method {
+  margin: 0 24px;
+  padding: 12px 0 14px;
+  border-top: 1px solid rgb(184 138 69 / 0.38);
+  border-bottom: 1px solid rgb(184 138 69 / 0.14);
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #8A5A2B;
+}
+.nh-drawer-list {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 10px 24px 18px;
+  list-style: none;
+}
+.nh-drawer-item {
+  border-bottom: 1px solid rgb(184 138 69 / 0.16);
+}
+.nh-drawer-row {
+  display: flex;
+  align-items: center;
+}
+.nh-drawer-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  font-family: var(--serif);
+  font-size: 23px;
+  line-height: 1.2;
+  color: var(--ink);
+  text-align: left;
+}
+.nh-drawer-item[data-current="true"] > .nh-drawer-row .nh-drawer-link {
+  color: #8A5A2B;
+}
+.nh-drawer-item[data-current="true"] > .nh-drawer-row .nh-drawer-link::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 12px;
+  background: var(--brand-champagne);
+  transform: rotate(45deg);
+}
+.nh-drawer-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--ink);
+  background: rgb(241 228 199 / 0.55);
+  transition: background-color 0.2s ease;
+}
+.nh-drawer-toggle .nh-chevron {
+  width: 11px;
+  height: 11px;
+}
+.nh-drawer-item[data-open="true"] .nh-drawer-toggle {
+  background: var(--brand-champagne);
+}
+.nh-drawer-item[data-open="true"] .nh-drawer-toggle .nh-chevron {
+  transform: rotate(180deg);
+}
+.nh-drawer-sub {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s var(--ease);
+}
+.nh-drawer-item[data-open="true"] .nh-drawer-sub {
+  grid-template-rows: 1fr;
+}
+.nh-drawer-sub > ul {
+  overflow: hidden;
+  min-height: 0;
+  margin: 0;
+  padding: 0 0 0 16px;
+  list-style: none;
+  border-left: 1px solid rgb(184 138 69 / 0.4);
+}
+.nh-drawer-item[data-open="true"] .nh-drawer-sub > ul {
+  margin-bottom: 16px;
+}
+.nh-drawer-sub a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.nh-drawer-sub a:hover,
+.nh-drawer-sub a[aria-current="page"] {
+  color: #8A5A2B;
+}
+/* Services in the drawer: the same drawn icons, as small tiles. */
+.nh-drawer-sub > ul.is-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-left: 0;
+  border-left: 0;
+}
+.nh-drawer-sub > ul.is-grid a {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgb(241 228 199 / 0.4);
+  border: 1px solid rgb(184 138 69 / 0.14);
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.nh-drawer-sub > ul.is-grid a[aria-current="page"] {
+  border-color: rgb(184 138 69 / 0.5);
+  color: #8A5A2B;
+}
+.nh-drawer-sub .nh-menu-icon {
+  width: 36px;
+  height: 36px;
+}
+.nh-drawer-sub .nh-menu-icon .ic {
+  --ic-size: 24px;
+}
+/* The foot: plum, so the one action stands out from the list. */
+.nh-drawer-foot {
+  padding: 20px 24px calc(20px + env(safe-area-inset-bottom));
+  background: var(--brand-plum);
+  color: var(--brand-pearl);
+}
+.nh-drawer-kicker {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-champagne);
+}
+.nh-drawer-foot .nh-cta {
+  box-shadow: none;
+}
+.nh-drawer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+.nh-drawer-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: rgb(250 246 240 / 0.78);
+}
+.nh-drawer-contact a:hover {
+  color: var(--brand-pearl);
+}
+/* On opening, the rows settle in one after another. Once, quickly. */
+@media (prefers-reduced-motion: no-preference) {
+  .nh-drawer.is-open .nh-drawer-item {
+    animation: nh-row-in 0.42s var(--ease) both;
+    animation-delay: calc(0.08s + var(--i, 0) * 0.035s);
+  }
+}
+@keyframes nh-row-in {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Seven destinations need the drawer below laptop width. */
+@media (max-width: 1180px) {
+  .nh-inner { min-height: 76px; gap: 16px; }
+  .nh-nav { display: none; }
+  .nh-actions { margin-left: auto; }
+  .nh-menu-toggle { display: flex; }
+  .nh-brand img { width: 94px; }
+}
+@media (max-width: 680px) {
+  .nh-inner { min-height: 68px; }
+  .nh-brand img { width: 86px; }
+  .nh-actions { gap: 8px; }
+  .nh-actions .nh-cta { min-height: 44px; padding: 4px 4px 4px 16px; gap: 10px; font-size: 13.5px; }
+  .nh-actions .nh-cta .nh-cta-arrow { width: 36px; height: 36px; }
+  .nh-menu-toggle { width: 44px; height: 44px; padding: 0 12px; }
+}
+@media (max-width: 400px) {
+  .nh-drawer-head { padding-left: 20px; }
+  .nh-drawer-method { margin-inline: 20px; font-size: 13px; letter-spacing: 0.12em; }
+  .nh-drawer-list { padding-inline: 20px; }
+  .nh-drawer-foot { padding-inline: 20px; }
+  .nh-cta-block { padding-left: 18px; font-size: 13.5px; }
+  .nh-drawer-contact { gap: 0 14px; font-size: 12.5px; }
+}
+@media (max-width: 359px) {
+  .nh-actions .nh-cta .nh-cta-arrow { display: none; }
+  .nh-actions .nh-cta { padding-right: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nh-drawer, .nh-backdrop, .nh-drawer-sub, .nh-menu { transition: none; animation: none; }
 }

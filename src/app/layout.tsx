@@ -8,6 +8,7 @@ import { PageVeil } from "@/components/brand/PageVeil";
 import { EnquiryDialog } from "@/components/enquiry/EnquiryDialog";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { Icon } from "@/components/icons/Icon";
 import { MobileEnquiryBar } from "@/components/layout/MobileEnquiryBar";
 import { ContactDock } from "@/components/layout/ContactDock";
 import { PreviewNotice } from "@/components/layout/PreviewNotice";
@@ -55,6 +56,14 @@ export const viewport: Viewport = {
   themeColor: "#FAF6F0",
 };
 
+/** The hand-drawn service icons for the header menus, drawn on the server so the registry stays out of the browser. */
+const navIcons = {
+  "/services/brain-training/": <Icon id="hub-brain-training" />,
+  "/services/astrology/": <Icon id="hub-astrology" />,
+  "/services/numerology/": <Icon id="hub-numerology" />,
+  "/services/vastu/": <Icon id="hub-vastu" />,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={fontVariables}>
@@ -63,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <PreviewNotice />
-        <Header />
+        <Header icons={navIcons} />
         <main id="main">{children}</main>
         <Footer />
         <ContactDock />
