@@ -8,6 +8,7 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
 import { AreasRibbon, FaqSection, ProgramPanel, QuoteTrack } from "@/components/sections/Sections";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { MeetNarayani } from "@/components/sections/MeetNarayani";
 import { ServiceAtlas } from "@/components/sections/ServiceAtlas";
 import { ClienteleNote } from "@/components/sections/ClienteleNote";
 import { StoryRail } from "@/components/voices/StoryRail";
@@ -38,22 +39,7 @@ export default function HomePage() {
 
       <AreasRibbon />
 
-      <section className={`section-wrap section-space founder-film ${depth.film}`} aria-labelledby="founder-film-title">
-        <div className="founder-film-copy">
-          <p className="kicker">IN HER OWN WORDS</p>
-          <h2 id="founder-film-title">Meet Narayani</h2>
-          <blockquote className="founder-spiritual-quote">“The spirit who is doing a ritual is spiritual.”</blockquote>
-          <p>Narayani sees the person as a spiritual being. Her starting point is the mind: understanding a pattern, then choosing how to respond.</p>
-          <p><em>{bookTitle}.</em> Hear her explain what this means in practice.</p>
-          <Link prefetch={false} className="text-link" href="/about/">Get to know Narayani</Link>
-        </div>
-        <video className="founder-film-video" controls playsInline muted preload="none"
-          poster={asset("/images/narayani-about-authentic-560.webp")}
-          aria-label="Introduction to Dr. Narayani Garg">
-          <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
-          Your browser does not support video playback.
-        </video>
-      </section>
+      <MeetNarayani bookTitle={bookTitle} />
 
       <section className="section-wrap section-space" id="testimonials" aria-labelledby="testimonial-title">
         <div className="section-heading practice-heading">

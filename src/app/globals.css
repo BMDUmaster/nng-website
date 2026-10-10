@@ -13668,3 +13668,270 @@ dialog.home-return-prompt::backdrop { background: rgb(36 19 35 / .48); backdrop-
   .hx-figures > div:first-child { padding-left: 0; }
   .hx-figures dd { font-size: clamp(32px, 2.6vw, 42px); }
 }
+
+/* =============================================================================================================
+   Meet Narayani (design-premium, Oct 2026). Classes are prefixed mn-. Her line in large gold type, the film in
+   the gold arch from the hero. Phones: heading, quote, film, words. From 901px the film stands on the left.
+   ============================================================================================================= */
+/* One vertical rhythm for the redesigned sections. */
+:root {
+  --sec-y: 56px;
+}
+@media (min-width: 681px) {
+  :root { --sec-y: clamp(64px, 6vw, 88px); }
+}
+.mn {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(50% 40% at 50% 58%, rgb(215 184 107 / 0.16), transparent 70%),
+    var(--brand-pearl);
+}
+.mn-inner {
+  width: var(--wrap);
+  margin-inline: auto;
+  display: grid;
+  grid-template-areas: "head" "film" "body";
+  padding-block: var(--sec-y);
+  text-align: center;
+}
+.mn-head { grid-area: head; }
+.mn-film { grid-area: film; position: relative; isolation: isolate; display: flex; justify-content: center; align-items: center; margin-top: 36px; }
+.mn-body { grid-area: body; }
+
+.mn-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8A5A2B;
+}
+.mn-kicker::before,
+.mn-kicker::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--brand-champagne);
+  transform: rotate(45deg);
+}
+.mn h2 {
+  margin: 14px 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 10vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--brand-plum);
+}
+
+/* Her line: large italic gold, under a tall quotation mark. */
+.mn-quote {
+  position: relative;
+  margin: 26px auto 0;
+  padding-top: 34px;
+}
+.mn-quote::before {
+  content: "“";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--serif);
+  font-size: 96px;
+  line-height: 1;
+  color: var(--brand-champagne);
+  opacity: 0.8;
+}
+.mn-quote p {
+  max-width: 17ch;
+  margin: 0 auto;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(24px, 6.8vw, 36px);
+  line-height: 1.3;
+  color: #8f6a2c;
+}
+
+/* The film: a gold arch over a fine ring, one play button. */
+.mn-arch {
+  position: relative;
+  width: min(74vw, 300px);
+  aspect-ratio: 9 / 16;
+  padding: 5px;
+  border-radius: 999px 999px 26px 26px;
+  background: linear-gradient(160deg, #F1DDA6, #B88A45 55%, #E7CD8A);
+  box-shadow: 0 0 0 8px var(--brand-pearl), 0 0 0 9px rgb(184 138 69 / 0.4), 0 44px 80px -36px rgb(60 24 61 / 0.55);
+}
+.mn-arch::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 46%;
+  width: 170%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgb(184 138 69 / 0.28);
+  box-shadow: 0 0 0 26px rgb(250 246 240 / 0), inset 0 0 0 26px rgb(250 246 240 / 0);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.mn-arch::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 46%;
+  width: 136%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed rgb(184 138 69 / 0.22);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.mn-arch video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px 999px 22px 22px;
+  background: #2E1230;
+}
+.mn-arch.is-sound video {
+  object-fit: contain;
+}
+.mn-sound {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgb(250 246 240 / 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 0 1px rgb(184 138 69 / 0.5), 0 12px 24px -12px rgb(46 18 48 / 0.6);
+  color: var(--brand-plum);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  transition: background-color 0.2s ease;
+}
+.mn-sound svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #8A5A2B;
+}
+.mn-sound:hover {
+  background: var(--brand-pearl);
+}
+.mn-play {
+  position: absolute;
+  inset: 5px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px 999px 22px 22px;
+  background: linear-gradient(180deg, transparent 55%, rgb(46 18 48 / 0.35));
+  cursor: pointer;
+}
+.mn-play-disc {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  padding-left: 4px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #E3C97F, #D7B86B);
+  color: var(--brand-plum);
+  box-shadow: 0 0 0 8px rgb(250 246 240 / 0.35), 0 18px 34px -12px rgb(46 18 48 / 0.6);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.mn-play:hover .mn-play-disc,
+.mn-play:focus-visible .mn-play-disc {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 12px rgb(250 246 240 / 0.4), 0 18px 34px -12px rgb(46 18 48 / 0.6);
+}
+
+.mn-body {
+  max-width: 36ch;
+  margin: 40px auto 0;
+}
+.mn-body p {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #4d3a4b;
+}
+.mn-body p + p {
+  margin-top: 14px;
+}
+.mn-body em {
+  font-family: var(--serif);
+  font-size: 1.08em;
+  color: var(--brand-plum);
+}
+.mn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: 22px;
+  padding: 0 24px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgb(60 24 61 / 0.22);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brand-plum);
+  transition: background-color 0.2s ease;
+}
+.mn-link span:last-child {
+  color: #8A5A2B;
+  transition: transform 0.25s var(--ease);
+}
+.mn-link:hover {
+  background: rgb(241 228 199 / 0.6);
+}
+.mn-link:hover span:last-child {
+  transform: translateX(3px);
+}
+
+@media (min-width: 681px) {
+  .mn-arch { width: 320px; }
+  .mn-body p { font-size: 17.5px; }
+}
+
+/* Wide screens: the film on the left, the words on the right. */
+@media (min-width: 901px) {
+  .mn {
+    background:
+      radial-gradient(34% 60% at 28% 50%, rgb(215 184 107 / 0.16), transparent 70%),
+      var(--brand-pearl);
+  }
+  .mn-inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas: "film head" "film body";
+    column-gap: clamp(48px, 7vw, 120px);
+    align-items: center;
+    text-align: left;
+  }
+  .mn-head { align-self: end; }
+  .mn-body { align-self: start; margin: 32px 0 0; max-width: 32em; }
+  .mn-film { margin-top: 0; }
+  .mn-arch { width: min(100%, 340px); }
+  .mn-kicker::after { display: none; }
+  .mn h2 { font-size: clamp(44px, 4vw, 60px); }
+  .mn-quote { margin: 30px 0 0; padding: 0; }
+  .mn-quote p { margin: 0; max-width: 16ch; }
+  .mn-quote::before { top: -54px; left: -8px; transform: none; font-size: 120px; opacity: 0.55; }
+  .mn-quote p { font-size: clamp(30px, 2.8vw, 42px); }
+  .mn-quote { margin-top: 64px; }
+}
