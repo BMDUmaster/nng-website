@@ -18,9 +18,20 @@ export function StoneBanner({ article, priority = false }: { article: StoneArtic
 }
 
 /** The plum opening shared by the resources, reading room, blogs and article pages. */
-export function ReadingHero({ crumbs, kicker, title, lead, demo = false, children }: { crumbs: Crumb[]; kicker: string; title: React.ReactNode; lead: string; demo?: boolean; children?: React.ReactNode }) {
+const heroBanners = ["stone-identification", "rudraksha-basics", "crystal-care"];
+
+export function ReadingHero({ crumbs, kicker, title, lead, demo = false, collage = true, children }: { crumbs: Crumb[]; kicker: string; title: React.ReactNode; lead: string; demo?: boolean; collage?: boolean; children?: React.ReactNode }) {
   return (
-    <section className="rr-hero" aria-labelledby="page-title">
+    <section className={`rr-hero${collage ? " has-collage" : ""}`} aria-labelledby="page-title">
+      {collage && (
+        <div className="rr-collage" aria-hidden="true">
+          {heroBanners.map((banner, i) => (
+            <span key={banner} className={`rr-tile rr-tile-${i + 1}`}>
+              <img src={asset(`/images/stone-journal/${banner}-640.webp`)} alt="" width={640} height={360} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+            </span>
+          ))}
+        </div>
+      )}
       <div className="rr-hero-inner" data-reveal="">
         <nav className="cn-crumbs" aria-label="Breadcrumb">
           {crumbs.map((crumb, i) => (
@@ -151,6 +162,7 @@ export function StoneArticlePage({ article }: { article: StoneArticle }) {
       <ReadingHero
         crumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources/" }, { label: "Reading room", href: stoneHubPath }, { label: article.category }]}
         kicker={`${article.category} · ${articleReadingMinutes(article)} min read`}
+        collage={false}
         title={article.title}
         lead={article.summary}
         demo

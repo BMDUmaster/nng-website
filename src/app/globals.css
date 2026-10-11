@@ -16499,3 +16499,191 @@ footer.site-footer.ft {
   .rr [data-blogs-page] .rr-grid, .rr-grid:has(> :nth-child(5):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (min-width: 1024px) { .rr-grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); } .rr-grid:has(> :nth-child(4):last-child) .rr-card h3 { font-size: 20px; } }
+
+/* Reading hero collage: three stone photographs in gold-edged frames, drifting gently. */
+.rr-hero.has-collage .rr-hero-inner { padding-bottom: 30px; }
+.rr-collage { position: relative; z-index: 1; width: var(--wrap); height: 230px; margin: 4px auto 0; order: 2; }
+.rr-hero.has-collage { display: flex; flex-direction: column; padding-bottom: 36px; }
+.rr-hero.has-collage .rr-hero-inner { order: 1; }
+.rr-tile {
+  position: absolute;
+  overflow: hidden;
+  padding: 4px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #F1DDA6, #B88A45 55%, #E7CD8A);
+  box-shadow: 0 30px 50px -24px rgb(0 0 0 / 0.65);
+}
+.rr-tile img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+.rr-tile-1 { left: 0; top: 20px; width: 58%; height: 180px; z-index: 2; transform: rotate(-3deg); }
+.rr-tile-2 { right: 0; top: 0; width: 46%; height: 140px; transform: rotate(4deg); }
+.rr-tile-3 { right: 6%; bottom: 0; width: 44%; height: 120px; z-index: 3; border-radius: 999px 999px 18px 18px; transform: rotate(-2deg); }
+.rr-tile-3 img { border-radius: 999px 999px 14px 14px; }
+@media (prefers-reduced-motion: no-preference) {
+  .rr-tile { animation: rr-float 7s ease-in-out infinite; }
+  .rr-tile-2 { animation-delay: -2.3s; }
+  .rr-tile-3 { animation-delay: -4.6s; }
+}
+@keyframes rr-float { 50% { translate: 0 -8px; } }
+@media (min-width: 1024px) {
+  .rr-hero.has-collage { display: block; padding-bottom: 0; }
+  .rr-hero.has-collage .rr-hero-inner { padding-block: 56px 72px; padding-right: 46%; box-sizing: border-box; }
+  .rr-collage { position: absolute; right: max(calc((100vw - 1280px) / 2), 56px); top: 50%; width: 520px; height: 360px; margin: 0; transform: translateY(-50%); }
+  .rr-tile-1 { width: 62%; height: 250px; top: 50px; }
+  .rr-tile-2 { width: 48%; height: 190px; }
+  .rr-tile-3 { width: 40%; height: 210px; right: 2%; bottom: -10px; }
+  .rr-hero.has-collage::after { display: none; }
+}
+
+/* =============================================================================================================
+   Services page (design-premium, Oct 2026). Classes are prefixed sv-; shares the cn- opening, heads, buttons and
+   steps, the fq- open icon and ct- quote card.
+   ============================================================================================================= */
+.sv-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.sv-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgb(250 246 240 / 0.06);
+  box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.35);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #FAF6F0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sv-jump a:hover { background: #D7B86B; color: #3C183D; }
+
+/* Concerns. */
+.sv-choose { background: #FAF6F0; }
+.sv-concerns { display: grid; gap: 10px; margin-top: 26px; align-items: start; }
+.sv-concern {
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 20%, transparent);
+  transition: box-shadow 0.25s ease;
+}
+.sv-concern[open] { box-shadow: 0 0 0 1px #B88A45, 0 22px 40px -28px rgb(60 24 61 / 0.45); }
+.sv-concern summary {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  padding: 12px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+.sv-concern summary::-webkit-details-marker { display: none; }
+.sv-concern-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #F6EEDF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 30%, transparent); color: #3C183D; }
+.sv-concern-icon .ic { --ic-size: 26px; }
+.sv-concern-text { display: grid; gap: 2px; min-width: 0; }
+.sv-concern-text strong { font-family: var(--serif); font-weight: 400; font-size: 19px; color: #3C183D; }
+.sv-concern-text span { font-size: 13px; line-height: 1.4; color: color-mix(in srgb, #3C183D 62%, #FAF6F0); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sv-concern[open] .sv-concern-text span { white-space: normal; }
+.sv-concern[open] .fq-icon { background: #3C183D; }
+.sv-concern[open] .fq-icon::before, .sv-concern[open] .fq-icon::after { background: #D7B86B; }
+.sv-concern[open] .fq-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.sv-concern ul { display: grid; gap: 2px; margin: 0; padding: 0 16px 14px 78px; list-style: none; }
+.sv-concern li a { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid color-mix(in srgb, #B88A45 15%, transparent); font-size: 14.5px; line-height: 1.45; color: #3C183D; }
+.sv-concern li a span { color: #B88A45; transition: transform 0.25s var(--ease); }
+.sv-concern li a:hover span { transform: translateX(3px); }
+
+/* Method. */
+.sv-method {
+  color: #FAF6F0;
+  background: radial-gradient(50% 70% at 15% 0%, color-mix(in srgb, #D7B86B 16%, transparent), transparent 70%), linear-gradient(180deg, #3C183D, #231E25);
+}
+.sv-method .cn-head h2 { color: #FAF6F0; }
+.sv-method .cn-head h2 em { font-style: italic; color: #D7B86B; }
+.sv-method .cn-head p { color: rgb(250 246 240 / 0.75); }
+.sv-triad { display: grid; gap: 14px; margin: 30px 0 0; padding: 0; list-style: none; counter-reset: none; }
+.sv-triad li {
+  position: relative;
+  padding: 26px 24px;
+  border-radius: 24px;
+  background: rgb(250 246 240 / 0.05);
+  box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.3);
+  transition: background-color 0.3s ease, transform 0.35s var(--ease);
+}
+.sv-triad li:hover { background: rgb(250 246 240 / 0.09); transform: translateY(-4px); }
+.sv-triad-num {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #D7B86B;
+  color: #3C183D;
+  font-family: var(--serif);
+  font-size: 17px;
+  box-shadow: 0 0 0 6px rgb(215 184 107 / 0.18);
+}
+.sv-triad h3 { margin: 16px 0 0; font-family: var(--serif); font-weight: 400; font-size: 28px; color: #FAF6F0; }
+.sv-triad p { margin: 8px 0 0; font-size: 15px; line-height: 1.65; color: rgb(250 246 240 / 0.78); }
+.sv-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.sv-tags a { padding: 6px 12px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.45); font-size: 12.5px; font-weight: 600; color: #D7B86B; transition: background-color 0.2s ease, color 0.2s ease; }
+.sv-tags a:hover { background: #D7B86B; color: #3C183D; }
+
+/* Practices. */
+.sv-practices { background: #FAF6F0; }
+.sv-practices .cn-inner { display: grid; gap: 22px; }
+.sv-practice {
+  display: grid;
+  overflow: hidden;
+  scroll-margin-top: 130px;
+  border-radius: 28px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 22%, transparent), 0 34px 60px -42px rgb(60 24 61 / 0.55);
+}
+.sv-practice-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+  padding: 26px;
+  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, color-mix(in srgb, #D7B86B 16%, #FAF6F0) 70%);
+}
+.practice-site .sv-practice-art .service-symbol { background: none; width: 100%; max-width: 360px; }
+.practice-site .sv-practice-art .service-symbol img { padding: 0; width: 100%; height: auto; mix-blend-mode: multiply; transition: transform 0.8s var(--ease); }
+.sv-practice:hover .sv-practice-art img { transform: scale(1.04); }
+.sv-practice-num { position: absolute; left: 22px; top: 18px; font-family: var(--serif); font-size: 44px; line-height: 1; color: color-mix(in srgb, #B88A45 55%, transparent); }
+.sv-practice-body { padding: 26px 22px 30px; }
+.sv-practice-kicker { margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #8a6a3f; }
+.sv-practice h2 { margin: 8px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 8vw, 46px); line-height: 1.08; color: #3C183D; }
+.sv-practice-lead { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, #3C183D 75%, #FAF6F0); }
+.sv-practice-quote { margin: 18px 0 0; padding: 16px 18px; border-radius: 18px; background: color-mix(in srgb, #D7B86B 14%, #FAF6F0); box-shadow: inset 3px 0 0 #B88A45; }
+.sv-practice-quote blockquote { margin: 0; }
+.sv-practice-quote p { margin: 0; font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; color: #3C183D; }
+.sv-practice-quote figcaption { margin-top: 8px; font-size: 12px; color: #8a6a3f; }
+.sv-look-label { margin: 22px 0 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #3C183D; }
+.sv-look { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.sv-look li { position: relative; padding-left: 26px; font-size: 15px; line-height: 1.55; color: #3C183D; }
+.sv-look li::before { content: ""; position: absolute; left: 4px; top: 8px; width: 7px; height: 7px; background: #B88A45; transform: rotate(45deg); }
+.sv-practice-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 24px; }
+
+/* How it works and formats. */
+.sv-how { background: color-mix(in srgb, #D7B86B 10%, #FAF6F0); border-block: 1px solid color-mix(in srgb, #B88A45 18%, transparent); }
+.sv-how .cn-step-num { box-shadow: inset 0 0 0 1px #B88A45, 0 0 0 6px color-mix(in srgb, #D7B86B 10%, #FAF6F0); background: color-mix(in srgb, #D7B86B 10%, #FAF6F0); }
+.sv-formats { display: grid; gap: 14px; margin-top: 34px; padding: 24px 22px; border-radius: 24px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 22%, transparent); }
+.sv-formats-intro h3 { margin: 8px 0 0; font-family: var(--serif); font-weight: 400; font-size: 26px; color: #3C183D; }
+.sv-format { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+.sv-format .ct-icon { width: 50px; height: 50px; margin: 0; }
+.sv-format h4 { margin: 4px 0 0; font-family: var(--serif); font-weight: 400; font-size: 20px; color: #3C183D; }
+.sv-format p { margin: 4px 0 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, #3C183D 72%, #FAF6F0); }
+.sv-client { background: #FAF6F0; }
+.sv-client .ct-quote { margin-top: 0; }
+.sv-program-link { margin-top: 18px; }
+
+@media (min-width: 681px) {
+  .sv-concerns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sv-triad { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .sv-formats { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; padding: 28px 32px; gap: 28px; }
+}
+@media (min-width: 1024px) {
+  .sv-practice { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .sv-practice.is-flipped .sv-practice-art { order: 2; }
+  .sv-practice-art { min-height: 100%; padding: 48px; }
+  .sv-practice-body { padding: 48px 52px; align-self: center; }
+  .sv-practices .cn-inner { gap: 28px; }
+}
