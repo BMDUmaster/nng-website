@@ -3,7 +3,7 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { LoopRail } from "@/components/ui/LoopRail";
 import { SocialLogo } from "@/components/brand/SocialLogo";
 import type { Faq } from "@/content/faq";
-import { instagramPosts } from "@/content/social";
+import { instagramPosts, youtubePosts } from "@/content/social";
 import { site } from "@/content/site";
 import { asset } from "@/lib/assets";
 
@@ -92,24 +92,34 @@ export function HomeProgram() {
 }
 
 /** "Before you enquire": numbered questions that open in place, beside a short invitation. */
-export function HomeFaq({ items }: { items: Faq[] }) {
+export function HomeFaq({
+  items,
+  title = "Before you enquire",
+  intro = "A few things you may want to know first.",
+  source = "home-faq",
+}: {
+  items: Faq[];
+  title?: string;
+  intro?: string;
+  source?: string;
+}) {
   return (
     <section className="fq" id="faq" aria-labelledby="faq-title">
       <div className="fq-inner">
         <div className="fq-intro">
           <p className="lx-kicker">Questions</p>
-          <h2 id="faq-title">Before you enquire</h2>
-          <p className="lx-lead">A few things you may want to know first.</p>
+          <h2 id="faq-title">{title}</h2>
+          <p className="lx-lead">{intro}</p>
           <div className="fq-ask">
             <p>Something else on your mind?</p>
-            <EnquiryTrigger className="fq-ask-btn" source="home-faq">
+            <EnquiryTrigger className="fq-ask-btn" source={source}>
               Ask something else <span aria-hidden="true">→</span>
             </EnquiryTrigger>
           </div>
         </div>
         <div className="fq-list">
           {items.map((item, i) => (
-            <details key={item.q} className="fq-item" name="home-faq">
+            <details key={item.q} className="fq-item" name={source}>
               <summary>
                 <span className="fq-num">{String(i + 1).padStart(2, "0")}</span>
                 <span className="fq-q">{item.q}</span>
@@ -124,25 +134,28 @@ export function HomeFaq({ items }: { items: Faq[] }) {
   );
 }
 
-/** Her most-viewed Instagram reels as tall cards drifting in a loop; a pointer holds the row. */
-export function InstagramReels() {
+/** Her most-viewed Instagram reels (or YouTube videos) as tall cards drifting in a loop; a pointer holds the row. */
+export function InstagramReels({ platform = "instagram" }: { platform?: "instagram" | "youtube" }) {
+  const youtube = platform === "youtube";
+  const name = youtube ? "YouTube" : "Instagram";
+  const posts = youtube ? youtubePosts : instagramPosts;
   return (
-    <section className="ig" id="instagram" aria-labelledby="instagram-title">
+    <section className="ig" id={platform} aria-labelledby={`${platform}-title`}>
       <div className="ig-inner">
         <header className="ig-head">
           <div>
-            <p className="lx-kicker">Instagram</p>
-            <h2 id="instagram-title">From Narayani’s Instagram</h2>
-            <p className="lx-lead">Her five Instagram reels with the most views.</p>
+            <p className="lx-kicker">{name}</p>
+            <h2 id={`${platform}-title`}>{youtube ? "Watch Narayani on YouTube" : "From Narayani’s Instagram"}</h2>
+            <p className="lx-lead">{youtube ? "Five of her videos with the most views." : "Her five Instagram reels with the most views."}</p>
           </div>
-          <a className="ig-profile" href={site.social.instagram} target="_blank" rel="noopener noreferrer">
-            <SocialLogo platform="instagram" />
-            <span>Visit her Instagram</span>
+          <a className="ig-profile" href={site.social[platform]} target="_blank" rel="noopener noreferrer">
+            <SocialLogo platform={platform} />
+            <span>Visit her {name}</span>
             <span aria-hidden="true">↗</span>
           </a>
         </header>
-        <LoopRail label="Instagram reels" className="ig-loop" speed={0.03}>
-          {instagramPosts.map((post) => (
+        <LoopRail label={`${name} posts`} className="ig-loop" speed={0.03}>
+          {posts.map((post) => (
             <a className="ig-card" key={post.id} href={post.url} target="_blank" rel="noopener noreferrer">
               <span className="ig-image">
                 <img src={asset(post.image)} alt="" width={360} height={540} loading="lazy" decoding="async" />
@@ -153,7 +166,7 @@ export function InstagramReels() {
                 <span className="ig-open" aria-hidden="true">↗</span>
               </span>
               <span className="ig-title">{post.title}</span>
-              <span className="visually-hidden"> (opens Instagram)</span>
+              <span className="visually-hidden"> (opens {name})</span>
             </a>
           ))}
         </LoopRail>
