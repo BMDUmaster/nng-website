@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema } from "@/lib/schema";
 import { Rich } from "@/components/ui/Rich";
 import styles from "./ReviewServicePage.module.css";
+import { HeroArrow, ServiceHero } from "./ServiceHero";
 import { ElementsOrbit } from "@/components/art/ElementsOrbit";
 import { PatternSequence } from "@/components/art/PatternSequence";
 
@@ -30,17 +31,17 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
   const topic = psychic ? "Psychic Reader" : page.enquiryTopic;
   const family = psychic ? "Psychic Reader" : page.hub === "vastu" ? "Vastu" : "Numerology";
   const children = childPages(page.hub);
-  return <div className={styles.page}>
+  return <div className={`${styles.page} svd svd-review`}>
     <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", name: title, serviceType: family, provider: personSchema(), description: psychic ? "Spiritual guidance around recurring patterns, thoughts and beliefs." : content.lead }} />
-    <section className={`section-wrap ${styles.hero} offer-hero`}>
-      <div><nav aria-label="Breadcrumb" className={styles.crumb}><Link href="/">Home</Link><span>/</span><Link href="/services/">Services</Link>{!isHub && <><span>/</span><Link href={`/services/${page.hub}/`}>{family}</Link></>}</nav>
-        <h1>{title}</h1>
-        <p className={styles.lead}>{psychic ? "Bring a situation that keeps repeating. Narayani helps you explore the thoughts, beliefs and responses around it." : content.lead}</p>
-        <EnquiryTrigger topic={topic} source={`review-${key}-hero`} primary>Ask about {family}</EnquiryTrigger>
-        <p className={styles.note}>Format, duration and fees to be confirmed with the team.</p>
-      </div>
-      <div className={styles.heroArt}>{psychic ? <PatternDiagram /> : !isHub ? <OfferArt spec={page.art} label={`Illustration for ${title}`} /> : <ServiceIllustration hub={page.hub} />}</div>
-    </section>
+    <ServiceHero
+      trail={[{ label: "Home", href: "/" }, { label: "Services", href: "/services/" }, ...(isHub ? [{ label: family }] : [{ label: family, href: `/services/${page.hub}/` }, { label: title }])]}
+      kicker={isHub ? "Her practice" : family}
+      title={title}
+      lead={psychic ? "Bring a situation that keeps repeating. Narayani helps you explore the thoughts, beliefs and responses around it." : content.lead}
+      actions={<EnquiryTrigger className="cn-cta" topic={topic} source={`review-${key}-hero`} primary><span>Ask about {family}</span><HeroArrow /></EnquiryTrigger>}
+      note={<p className="svd-note">Format, duration and fees to be confirmed with the team.</p>}
+      art={psychic ? <PatternDiagram /> : !isHub ? <OfferArt spec={page.art} label={`Illustration for ${title}`} /> : <ServiceIllustration hub={page.hub} />}
+    />
 
     {psychic ? <section className={`section-wrap ${styles.section}`} id="pages" aria-labelledby="choices-title">
       <h2 id="choices-title">Choose your consultation</h2><p>Six starting points. Ask the team which one fits your question.</p>

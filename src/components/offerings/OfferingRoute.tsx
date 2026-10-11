@@ -3,12 +3,11 @@ import { ReviewServicePage } from "./ReviewServicePage";
 import { shortGuidance } from "@/content/review-release";
 import Link from "next/link";
 import { OfferArt } from "@/components/art/OfferArt";
-import { Portrait } from "@/components/brand/Portrait";
 import { asset } from "@/lib/assets";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
 import { Icon } from "@/components/icons/Icon";
-import { FaqSection } from "@/components/sections/Sections";
+import { HomeFaq } from "@/components/sections/HomeLower";
 import { SectionChips } from "@/components/sections/SectionChips";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Rich } from "@/components/ui/Rich";
@@ -18,7 +17,8 @@ import { hubInfo } from "@/content/offerings/taxonomy";
 import type { HubSlug } from "@/content/offerings/types";
 import { serviceHref, services } from "@/content/services";
 import { breadcrumbSchema, faqSchema, offeringSchema, personSchema } from "@/lib/schema";
-import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
+import { type Crumb } from "./Breadcrumbs";
+import { HeroArrow, ServiceHero } from "./ServiceHero";
 import { Catalogue } from "./Catalogue";
 import { FeeOptions } from "./FeeOptions";
 import { SectionTakeaway } from "./SectionReading";
@@ -97,7 +97,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
   const related = page.related.filter(path => !indexedPaths.has(path)).map(rowFor).filter((item): item is Row => item !== null);
 
   return (
-    <>
+    <div className="svd">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -105,35 +105,27 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
         }}
       />
 
-      <section className={`page-hero section-wrap offer-hero${isHub ? " practice-vastu-hero" : " practice-detail-hero"}`} data-hub={hub} aria-labelledby="page-title">
-        <div className="page-hero-copy">
-          <Breadcrumbs trail={trail} />
-          <h1 id="page-title">
-            <Rich text={personalVastu ? "Vastu for the way you live" : page.title} />
-          </h1>
-          <p className="lead">{isHub ? hub === "astrology" ? "Your birth chart, considered around your question. Narayani explores timing and choices without treating the chart as a verdict." : "Understand crystals, stones and Rudraksha before choosing a piece. Discuss traditional guidance, then confirm product details with the team." : page.card}</p>
-          <div className="cta-row">
-            <EnquiryTrigger topic={page.enquiryTopic} source={`${source}-hero`} primary>
-              {page.cta}
-            </EnquiryTrigger>
-            <a className="text-link" href={isHub ? "#pages" : "#ready"}>
-              {personalVastu ? "Find guidance for your space" : isHub ? "See what is in this section" : "What to have ready"}
-            </a>
-          </div>
-          {!isHub && <p className="practice-service-note">
-            <img src={asset("/images/narayani-cover-portrait-96.webp")} width={48} height={48} alt="" />
-            <span>Personal guidance with <strong>Dr. Narayani Garg</strong></span>
-          </p>}
-        </div>
-        <div className="page-hero-visual">
-          {isHub ? <div className="practice-vastu-portrait">
-            <Portrait photo="gold" name="Dr. Narayani Garg" note="Personal guidance" priority sizes="(max-width: 680px) 110px, 340px" />
-            <p>{personalVastu ? "Start with your questions, not a list of faults" : "Begin with the question you bring"}</p>
-          </div> : <div className="offer-art">
-            <OfferArt spec={page.art} label={`${page.title}: a drawing made for this page`} />
-          </div>}
-        </div>
-      </section>
+      <ServiceHero
+        trail={trail}
+        kicker={isHub ? "Her practice" : service.name}
+        title={<Rich text={personalVastu ? "Vastu for the way you live" : page.title} />}
+        lead={isHub ? hub === "astrology" ? "Your birth chart, considered around your question. Narayani explores timing and choices without treating the chart as a verdict." : "Understand crystals, stones and Rudraksha before choosing a piece. Discuss traditional guidance, then confirm product details with the team." : page.card}
+        portrait={isHub}
+        art={<OfferArt spec={page.art} label={`${page.title}: a drawing made for this page`} />}
+        actions={<>
+          <EnquiryTrigger className="cn-cta" topic={page.enquiryTopic} source={`${source}-hero`} primary>
+            <span>{page.cta}</span>
+            <HeroArrow />
+          </EnquiryTrigger>
+          <a className="cn-ghost" href={isHub ? "#pages" : "#ready"}>
+            {personalVastu ? "Find guidance for your space" : isHub ? "See what is in this section" : "What to have ready"}
+          </a>
+        </>}
+        note={!isHub && <p className="svd-person">
+          <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
+          <span>Personal guidance with <strong>Dr. Narayani Garg</strong></span>
+        </p>}
+      />
 
       <SectionChips label="On this page" items={personalVastu ? [
         { id: "her-approach", label: "Her approach" },
@@ -304,7 +296,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
           <BlockList blocks={visualReading && section.id === "houses" ? section.blocks : section.blocks.filter(block => block.type !== "note" && block.type !== "quote")} />
         </section>)}
       </ReferenceReading>}
-      <FaqSection items={isHub ? page.faqs.slice(0, 3) : page.faqs} icon="gen-question" title="Questions people ask" intro="If yours is not here, ask it when you enquire." source={`${source}-faq`} />
-    </>
+      <HomeFaq items={isHub ? page.faqs.slice(0, 3) : page.faqs} title="Questions people ask" intro="If yours is not here, ask it when you enquire." source={`${source}-faq`} />
+    </div>
   );
 }

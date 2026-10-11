@@ -16687,3 +16687,169 @@ footer.site-footer.ft {
   .sv-practice-body { padding: 48px 52px; align-self: center; }
   .sv-practices .cn-inner { gap: 28px; }
 }
+
+/* =============================================================================================================
+   Service hubs and service pages (design-premium, Oct 2026). .svd wraps every page made by OfferingRoute and
+   ReviewServicePage; the opening is ServiceHero (svd-hero) and the older offer-* sections are re-dressed here.
+   ============================================================================================================= */
+.svd { background: #FAF6F0; }
+.svd-hero h1 { max-width: 16ch; }
+.svd-art { justify-self: center; width: min(86vw, 420px); }
+.svd-art-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: 26px;
+  border-radius: 999px 999px 28px 28px;
+  background: radial-gradient(circle at 50% 45%, #FFFFFF, #F6EEDF 75%);
+  box-shadow: 0 0 0 5px #D7B86B, 0 0 0 12px rgb(46 18 48 / 0.85), 0 0 0 13px rgb(215 184 107 / 0.4), 0 44px 70px -30px rgb(0 0 0 / 0.7);
+  color: #3C183D;
+  overflow: hidden;
+}
+.svd-art-card > * { max-width: 100%; max-height: 100%; }
+.svd-art-card svg { width: 100%; height: auto; }
+.svd-art-card :is(.service-symbol, .offer-art) { width: 100%; background: none !important; }
+.svd-art-card img { mix-blend-mode: multiply; padding: 0 !important; }
+.svd-art-card figcaption, .svd-art-card p { color: #3C183D; }
+.svd-person { display: flex; align-items: center; gap: 12px; margin: 22px 0 0; font-size: 14px; color: rgb(250 246 240 / 0.8); }
+.svd-person img { border-radius: 50%; box-shadow: 0 0 0 2px #D7B86B; }
+.svd-person strong { color: #FAF6F0; }
+.svd-note { margin: 16px 0 0; font-size: 13px; color: rgb(250 246 240 / 0.6); }
+@media (min-width: 1024px) { .svd-art { width: 100%; max-width: 440px; } }
+
+/* Section chips under the hero. */
+.svd .section-chips, .svd [class*="section-chips"] { background: rgb(250 246 240 / 0.94); }
+
+/* Shared section heads. */
+.svd :is(.offer-overview, .offer-index, .offer-section, .offer-ready, .offer-session, .offer-suits, .offer-related, .offer-fees-pending, .offer-fees-compact) h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(26px, 7vw, 40px);
+  line-height: 1.15;
+  color: #3C183D;
+}
+.svd :is(.offer-overview, .offer-index, .offer-section, .offer-ready, .offer-session, .offer-suits, .offer-related) h2 > .ic {
+  --ic-size: 30px;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  padding: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #FFFFFF, #F6EEDF);
+  box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 35%, transparent);
+  box-sizing: border-box;
+}
+
+/* Overview: prose beside a plum card of what she looks at. */
+.svd .offer-overview { padding-block: var(--sec-y); }
+.svd .offer-prose { font-size: 16.5px; line-height: 1.8; color: color-mix(in srgb, #3C183D 82%, #FAF6F0); }
+.svd .offer-note { margin-top: 20px; padding: 18px 20px; border-radius: 18px; background: color-mix(in srgb, #D7B86B 14%, #FAF6F0); box-shadow: inset 3px 0 0 #B88A45; }
+.svd .offer-look {
+  padding: 26px 24px;
+  border-radius: 26px;
+  color: #FAF6F0;
+  background: radial-gradient(60% 80% at 100% 0%, color-mix(in srgb, #D7B86B 18%, transparent), transparent 70%), linear-gradient(140deg, #4A2049, #3C183D 55%, #231E25);
+  box-shadow: 0 30px 54px -32px rgb(60 24 61 / 0.7);
+}
+.svd .offer-look h2 { color: #FAF6F0 !important; font-size: clamp(22px, 5.6vw, 28px) !important; }
+.svd .offer-look h2 > .ic { background: rgb(250 246 240 / 0.08) !important; box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.4) !important; color: #D7B86B; --detail: #D7B86B; }
+.svd .offer-look .offer-look-list li { color: rgb(250 246 240 / 0.88); border-color: rgb(215 184 107 / 0.18); }
+.svd .offer-look .offer-look-list .ic { color: #D7B86B; --detail: #F1DDA6; }
+
+/* Topic directory on the hubs. */
+.svd .offer-index { background: color-mix(in srgb, #D7B86B 10%, #FAF6F0); border-block: 1px solid color-mix(in srgb, #B88A45 18%, transparent); }
+.svd .directory-controls { display: grid; gap: 12px; margin-top: 20px; }
+.svd .directory-controls label { display: grid; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8a6a3f; }
+.svd .directory-controls :is(select, input) {
+  min-height: 50px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #FFFFFF;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, #B88A45 35%, transparent);
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #3C183D;
+}
+.svd .directory-count { font-size: 13px; color: color-mix(in srgb, #3C183D 60%, #FAF6F0); }
+.svd .topic-directory-list { display: grid; gap: 10px; padding: 0; list-style: none; }
+.svd .topic-directory-list a {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 20px;
+  gap: 14px;
+  align-items: center;
+  min-height: 78px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 20%, transparent);
+  color: #3C183D;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.svd .topic-directory-list a:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px #B88A45, 0 22px 40px -28px rgb(60 24 61 / 0.45); }
+.svd .topic-directory-list .ic { --ic-size: 28px; width: 48px; height: 48px; padding: 10px; border-radius: 50%; background: #F6EEDF; box-sizing: border-box; }
+.svd .topic-directory-list strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 19px; line-height: 1.25; }
+.svd .topic-directory-list span span { display: block; margin-top: 3px; font-size: 13px; line-height: 1.45; color: color-mix(in srgb, #3C183D 62%, #FAF6F0); }
+.svd .topic-directory-list a > span:last-child { color: #B88A45; }
+
+/* Reading sections: alternate pearl and champagne bands. */
+.svd .offer-section:nth-child(even) { background: color-mix(in srgb, #D7B86B 8%, #FAF6F0); }
+.svd .offer-section .section-wrap { padding-block: var(--sec-y); }
+
+/* What to have ready, sessions, suits. */
+.svd .offer-ready { background: color-mix(in srgb, #D7B86B 10%, #FAF6F0); border-block: 1px solid color-mix(in srgb, #B88A45 18%, transparent); }
+.svd .offer-ready .offer-look-list li,
+.svd .offer-overview .offer-look-list.is-wide li { padding: 16px 18px; border: 0; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 18%, transparent); }
+.svd .offer-steps li { padding: 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 20%, transparent); }
+.svd .offer-steps .step-mark b { background: #3C183D; color: #D7B86B; }
+.svd .offer-suits-grid > div { padding: 24px 22px; border-radius: 24px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 22%, transparent); }
+.svd .offer-suits-grid > div:last-child { background: color-mix(in srgb, #D7B86B 12%, #FAF6F0); }
+.svd .offer-suits-grid h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; color: #3C183D; }
+
+/* Fees, related pages. */
+.svd .offer-fees-pending {
+  margin-block: var(--sec-y);
+  padding: 30px 24px !important;
+  border-radius: 26px;
+  text-align: center;
+  color: #FAF6F0;
+  background: radial-gradient(60% 80% at 0% 0%, #4A2049, transparent 70%), linear-gradient(140deg, #3C183D, #231E25);
+  box-shadow: 0 34px 60px -38px rgb(60 24 61 / 0.7);
+}
+.svd .offer-fees-pending h2 { justify-content: center; color: #FAF6F0; }
+.svd .offer-fees-pending p { color: rgb(250 246 240 / 0.78); }
+.svd .offer-fees-pending :is(a, .button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 50px;
+  margin-top: 14px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #D7B86B;
+  color: #3C183D;
+  font-weight: 700;
+  box-shadow: none;
+}
+.svd .offer-related .offer-index-list { display: grid; gap: 10px; }
+.svd .offer-index-link {
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 20%, transparent);
+  padding: 16px 18px !important;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.svd .offer-index-link:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px #B88A45, 0 22px 40px -28px rgb(60 24 61 / 0.45); }
+.svd .offer-index-link strong { font-family: var(--serif); font-weight: 400; font-size: 19px; color: #3C183D; }
+
+@media (min-width: 681px) {
+  .svd .directory-controls { grid-template-columns: 1fr 1fr; }
+  .svd .topic-directory-list, .svd .offer-related .offer-index-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .svd .offer-fees-pending { padding: 40px !important; }
+}
