@@ -119,7 +119,7 @@
 .copy-v2 .why-narayani .principle-list p { padding: 18px 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, var(--brass) 22%, transparent); }
 
 /* Enquiry: plum band behind, pearl panel. */
-body.copy-v2 { overflow-x: hidden; }
+html:has(body.copy-v2), body.copy-v2 { overflow-x: clip; }
 .copy-v2 .enquiry-section { position: relative; isolation: isolate; }
 .copy-v2 .enquiry-section::before {
   content: "";
@@ -151,3 +151,15 @@ body.copy-v2 { overflow-x: hidden; }
 @media (max-width: 680px) {
   .copy-v2 .hero-film { max-width: 260px; margin-inline: auto; }
 }
+
+/* No page navigation: the logo and the WhatsApp button only. */
+.copy-v2 .header-inner { justify-content: space-between; }
+.copy-v2 .header .nav, .copy-v2 .header .menu-button { display: none !important; }
+.copy-v2 .header .button-small { display: inline-flex !important; }
+
+/* The introduction plays silently on a loop, upright like a reel. */
+.copy-v2 .hero-film { width: min(100%, 300px); }
+.copy-v2 .hero-film video { display: block; width: 100%; aspect-ratio: 9 / 16; height: auto; object-fit: cover; }
+@media (max-width: 680px) { .copy-v2 .hero-film { width: min(72vw, 270px); } }
+.copy-v2 .hero-film figcaption { background: transparent !important; color: #3C183D !important; font-weight: 600; }
+.copy-v2 .hero-film figcaption span { color: #3C183D !important; }
