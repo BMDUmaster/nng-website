@@ -13,3 +13,5 @@ landing-pages/dist/
 .DS_Store
 qa-local/
 *.log
+.vercel
+.env*
