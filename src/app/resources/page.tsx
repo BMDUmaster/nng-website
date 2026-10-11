@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs } from "@/components/offerings/Breadcrumbs";
-import { stoneHubPath } from "@/content/stone-articles";
-import styles from "@/components/learning/StoneLibrary.module.css";
+import { ReadingHero } from "@/components/learning/StoneLibrary";
+import { Reveal } from "@/components/ui/Reveal";
+import { stoneArticles, stoneHubPath } from "@/content/stone-articles";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -11,27 +12,37 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const choices = [
+  { kicker: "Subject guide", id: "reading-room-title", title: "Crystals, Stones and Rudraksha", text: "Meanings, materials, care and questions to ask before choosing a stone or bead.", href: stoneHubPath, cta: "Explore the reading room", banner: stoneArticles[2]?.banner },
+  { kicker: "Article library", id: "blogs-title", title: "Blogs", text: "Browse individual articles. Start with five demo guides prepared for Narayani’s review.", href: "/resources/blogs/", cta: "Browse the blogs", banner: stoneArticles[0]?.banner },
+];
+
 export default function ResourcesPage() {
-  return <div className={`section-wrap ${styles.root}`} data-resources-page>
-    <Breadcrumbs trail={[{ label: "Home", href: "/" }, { label: "Resources" }]} />
-    <header className={styles.intro}>
-      <p className={styles.eyebrow}>THE NNG READING ROOM</p>
-      <h1>Resources</h1>
-      <p>Explore a subject, find a clear explanation and read at your own pace.</p>
-    </header>
-    <div className={`${styles.grid} ${styles.resourceChoices}`}>
-      <section className={styles.card} aria-labelledby="reading-room-title">
-        <p className={styles.meta}>SUBJECT GUIDE</p>
-        <h2 id="reading-room-title">Crystals, Stones and Rudraksha</h2>
-        <p>Meanings, materials, care and questions to ask before choosing a stone or bead.</p>
-        <Link className={styles.readLink} prefetch={false} href={stoneHubPath}>Explore the reading room <span aria-hidden="true">→</span></Link>
+  return (
+    <div className="rr" data-resources-page>
+      <ReadingHero crumbs={[{ label: "Home", href: "/" }, { label: "Resources" }]} kicker="The NNG reading room" title={<>Resources</>} lead="Explore a subject, find a clear explanation and read at your own pace." />
+      <section className="rr-sec">
+        <div className="rr-inner">
+          <div className="rr-choices">
+            {choices.map((choice, i) => (
+              <section key={choice.id} className="rr-choice" aria-labelledby={choice.id} data-reveal="" style={{ "--d": `${i * 100}ms` } as React.CSSProperties}>
+                <div className="rr-choice-img">
+                  <img src={asset(`/images/stone-journal/${choice.banner}-1280.webp`)} alt="" width={1280} height={720} loading="lazy" decoding="async" />
+                </div>
+                <div className="rr-choice-body">
+                  <p className="rr-meta">{choice.kicker}</p>
+                  <h2 id={choice.id}>{choice.title}</h2>
+                  <p>{choice.text}</p>
+                  <Link className="rr-read" prefetch={false} href={choice.href}>
+                    {choice.cta} <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={styles.card} aria-labelledby="blogs-title">
-        <p className={styles.meta}>ARTICLE LIBRARY</p>
-        <h2 id="blogs-title">Blogs</h2>
-        <p>Browse individual articles. Start with five demo guides prepared for Narayani’s review.</p>
-        <Link className={styles.readLink} prefetch={false} href="/resources/blogs/">Browse the blogs <span aria-hidden="true">→</span></Link>
-      </section>
+      <Reveal />
     </div>
-  </div>;
+  );
 }
