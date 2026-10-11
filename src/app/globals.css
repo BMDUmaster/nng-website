@@ -16896,3 +16896,49 @@ footer.site-footer.ft {
   .rr-hero.has-slides .rr-hero-inner { padding: 64px 0 72px !important; padding-right: 0 !important; }
   .rr-hero.has-slides .rr-hero-inner > * { max-width: 640px; }
 }
+
+/* =============================================================================================================
+   Hand Holding Program page (design-premium, Oct 2026). Classes are prefixed hh-; shares cn-, pg-, ct-, ab2-.
+   ============================================================================================================= */
+.hh-person { margin: 16px 0 0; }
+.hh-list { margin-top: 18px; }
+.hh-list li { color: #FAF6F0; }
+.hh-notes { max-width: 520px; }
+.hh-visual { position: relative; }
+.hh-medal { display: grid !important; left: -18px !important; bottom: 40px !important; }
+.hh-for { background: #FAF6F0; }
+.hh-for-grid { display: grid; gap: 28px; }
+.hh-areas { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
+.hh-areas span { padding: 8px 16px; border-radius: 999px; background: color-mix(in srgb, #D7B86B 16%, #FAF6F0); box-shadow: inset 0 0 0 1px color-mix(in srgb, #B88A45 30%, transparent); font-size: 13.5px; font-weight: 600; color: #3C183D; }
+.hh-fit { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.hh-fit li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; padding: 18px 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 20%, transparent); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.hh-fit li:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px #B88A45, 0 20px 36px -26px rgb(60 24 61 / 0.45); }
+.hh-fit .ab2-num { color: #B88A45; padding-top: 2px; }
+.hh-fit p { margin: 0; font-size: 15.5px; line-height: 1.55; color: #3C183D; }
+.hh-ask { margin-top: 18px; }
+.hh-how { background: color-mix(in srgb, #D7B86B 10%, #FAF6F0); border-block: 1px solid color-mix(in srgb, #B88A45 18%, transparent); }
+.hh-how .cn-step-num { background: color-mix(in srgb, #D7B86B 10%, #FAF6F0); box-shadow: inset 0 0 0 1px #B88A45, 0 0 0 6px color-mix(in srgb, #D7B86B 10%, #FAF6F0); }
+.hh-compare { background: #FAF6F0; }
+.hh-cards { display: grid; gap: 16px; max-width: 920px; margin: 28px auto 0; }
+.hh-card { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 28px 24px; border-radius: 26px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 22%, transparent), 0 26px 48px -36px rgb(60 24 61 / 0.5); }
+.hh-card.is-featured { color: #FAF6F0; background: radial-gradient(60% 80% at 100% 0%, color-mix(in srgb, #D7B86B 20%, transparent), transparent 70%), linear-gradient(140deg, #4A2049, #3C183D 55%, #231E25); box-shadow: 0 34px 60px -34px rgb(60 24 61 / 0.7); }
+.hh-badge { position: absolute; top: 20px; right: 20px; padding: 5px 12px; border-radius: 999px; background: #D7B86B; color: #3C183D; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.hh-card h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 28px; color: #3C183D; }
+.hh-card.is-featured h3 { color: #FAF6F0; }
+.hh-card > p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, #3C183D 72%, #FAF6F0); }
+.hh-card.is-featured > p { color: rgb(250 246 240 / 0.8); }
+.hh-card ul { display: grid; gap: 10px; flex: 1; margin: 18px 0 22px; padding: 0; list-style: none; }
+.hh-card li { position: relative; padding-left: 26px; font-size: 14.5px; line-height: 1.5; color: #3C183D; }
+.hh-card.is-featured li { color: #FAF6F0; }
+.hh-card li::before { content: ""; position: absolute; left: 4px; top: 7px; width: 7px; height: 7px; background: #B88A45; transform: rotate(45deg); }
+.hh-card.is-featured li::before { background: #D7B86B; }
+.hh-quote { margin-top: 40px; }
+@media (min-width: 681px) { .hh-cards { grid-template-columns: 1fr 1fr; gap: 20px; } }
+@media (min-width: 1024px) {
+  .hh-for-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: center; }
+  .hh-areas { justify-content: flex-start; }
+}
+/* Final pass: wide tables scroll inside their card on phones; program badge sits above the title; hero notes legible. */
+.svd .offer-table-wrap { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.hh-badge { position: static; align-self: flex-start; margin-bottom: 12px; }
+.hh-notes, .hh-notes p { color: rgb(250 246 240 / 0.78) !important; }

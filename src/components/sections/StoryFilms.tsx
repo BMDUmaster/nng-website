@@ -11,7 +11,21 @@ import { asset } from "@/lib/assets";
  * its card (desktop) or while it is the card in view (phones). Pressing a card plays the whole film with sound in
  * a viewer; films without a local recording open the Drive player as before.
  */
-export function StoryFilms({ voices, more }: { voices: Voice[]; more: Voice[] }) {
+export function StoryFilms({
+  voices,
+  more,
+  id = "transformation",
+  kicker = "Client films",
+  title = "Hear the whole story",
+  lead = "Conversations about family, belief in oneself and finding a way through.",
+}: {
+  voices: Voice[];
+  more: Voice[];
+  id?: string;
+  kicker?: string;
+  title?: string;
+  lead?: string;
+}) {
   const rail = useRef<HTMLUListElement>(null);
   const viewer = useRef<HTMLDialogElement>(null);
   const [playing, setPlaying] = useState<Voice | null>(null);
@@ -137,13 +151,13 @@ export function StoryFilms({ voices, more }: { voices: Voice[]; more: Voice[] })
           );
 
   return (
-    <section className="sf" id="transformation" aria-labelledby="transformation-title">
+    <section className="sf" id={id} aria-labelledby={`${id}-title`}>
       <div className="sf-inner">
         <header className="sf-head">
           <div>
-            <p className="sf-kicker">Client films</p>
-            <h2 id="transformation-title">Hear the whole story</h2>
-            <p className="sf-lead">Conversations about family, belief in oneself and finding a way through.</p>
+            <p className="sf-kicker">{kicker}</p>
+            <h2 id={`${id}-title`}>{title}</h2>
+            {lead && <p className="sf-lead">{lead}</p>}
           </div>
           <div className="sf-head-actions">
             <button type="button" className="sf-arrow" onClick={() => scroll(-1)} aria-label="Previous films">
