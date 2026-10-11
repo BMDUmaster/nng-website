@@ -16942,3 +16942,47 @@ footer.site-footer.ft {
 .svd .offer-table-wrap { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .hh-badge { position: static; align-self: flex-start; margin-bottom: 12px; }
 .hh-notes, .hh-notes p { color: rgb(250 246 240 / 0.78) !important; }
+
+/* =============================================================================================================
+   Paid-traffic landing page /consultation (design-premium, Oct 2026). Classes are prefixed al-; shares cn-, sv-,
+   hh-, fq-, cw-. No site navigation: its own slim bar, one goal (#enquire).
+   ============================================================================================================= */
+.al-bar { position: sticky; top: 0; z-index: 50; background: rgb(250 246 240 / 0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid color-mix(in srgb, #B88A45 25%, transparent); }
+.al-bar-inner { width: var(--wrap); margin-inline: auto; display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.al-bar-inner img { width: 80px; height: auto; }
+.al-bar-cta { min-height: 44px !important; padding: 4px 4px 4px 18px !important; font-size: 13.5px !important; }
+.al-bar-cta .cn-arrow { width: 34px; height: 34px; }
+.al .cn-formats li { padding-left: 14px; }
+.al-method .cn-head p + p { margin-top: 10px; }
+.al-method .cn-head em { font-style: italic; color: #D7B86B; }
+.al-center { margin: 26px 0 0; text-align: center; }
+.al-enquire {
+  color: #FAF6F0;
+  background: radial-gradient(50% 70% at 85% 10%, color-mix(in srgb, #D7B86B 16%, transparent), transparent 70%), linear-gradient(180deg, #3C183D, #231E25);
+}
+.al-enquire-grid { display: grid; gap: 28px; align-items: center; }
+.al-enquire h2 { margin: 10px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 8vw, 50px); line-height: 1.1; color: #FAF6F0; }
+.al-enquire-grid > div > p:not(.cn-kicker) { margin: 12px 0 0; max-width: 46ch; font-size: 15.5px; line-height: 1.65; color: rgb(250 246 240 / 0.8); }
+.al-next { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; counter-reset: al; }
+.al-next li { counter-increment: al; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center; font-size: 15px; color: #FAF6F0; }
+.al-next li::before { content: counter(al); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #D7B86B; color: #3C183D; font-family: var(--serif); }
+.al-mail a { color: #D7B86B; border-bottom: 1px solid rgb(215 184 107 / 0.5); }
+.al-form { padding: 24px 22px; border-radius: 26px; background: #FAF6F0; color: #3C183D; box-shadow: 0 40px 70px -36px rgb(0 0 0 / 0.7); }
+.al-form .ads-enquiry-form { display: grid; gap: 8px; margin: 0; padding: 0; background: none; box-shadow: none; border: 0; }
+.al-form label { margin-top: 8px; font-size: 13px; font-weight: 600; color: #3C183D; }
+.al-form label span { font-weight: 400; color: color-mix(in srgb, #3C183D 55%, #FAF6F0); }
+.al-form :is(input, select) { min-height: 50px; padding: 0 16px; border: 0; border-radius: 14px; background: #FFFFFF; box-shadow: inset 0 0 0 1px color-mix(in srgb, #B88A45 40%, transparent); font: inherit; font-size: 16px; color: #3C183D; }
+.al-form :is(input, select):focus { outline: 2px solid #B88A45; outline-offset: 1px; }
+.al-form .button { justify-content: center !important; min-height: 54px; margin-top: 14px; border: 0 !important; border-radius: 999px !important; background: #D7B86B !important; color: #3C183D !important; font-weight: 700; box-shadow: 0 14px 28px -16px rgb(184 138 69 / 0.9) !important; }
+.al-form .form-note { margin: 10px 0 0; font-size: 12.5px; line-height: 1.55; color: color-mix(in srgb, #3C183D 62%, #FAF6F0); }
+.al-faq { border-top: 0; }
+.al-footer { padding-bottom: 90px; background: #231E25; color: rgb(250 246 240 / 0.6); font-size: 12.5px; line-height: 1.6; }
+.al-footer .cn-inner { padding-block: 32px; display: grid; gap: 8px; }
+.al-footer p { margin: 0; }
+.al-footer a, .al-footer summary { color: #D7B86B; cursor: pointer; }
+.al .ads-sticky { border-radius: 999px !important; background: #D7B86B !important; color: #3C183D !important; border: 0 !important; box-shadow: 0 16px 30px -14px rgb(0 0 0 / 0.6) !important; }
+@media (min-width: 1024px) {
+  .al-enquire-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 64px; }
+  .al-form { padding: 34px 36px; }
+}
+.al .cn-cta.button { min-height: 52px; padding: 5px 5px 5px 22px; border: 0; border-radius: 999px !important; background: #D7B86B !important; color: #3C183D !important; box-shadow: 0 14px 28px -16px rgb(184 138 69 / 0.9) !important; gap: 12px; }

@@ -66,7 +66,7 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
               onClick={(event) => {
                 track(EVENTS.filmPlay, { film: voice.id });
                 event.currentTarget.querySelector("video")?.pause();
-                if (voice.clip) window.dispatchEvent(new CustomEvent("nng:clip", { detail: voice }));
+                if (voice.clip && document.querySelector(".sf-viewer")) window.dispatchEvent(new CustomEvent("nng:clip", { detail: voice }));
                 else window.dispatchEvent(new CustomEvent("nng:film", { detail: { id: voice.film!.driveId, title: `${voice.name}: ${voice.film!.label}`, from: event.currentTarget } }));
               }}
             >
