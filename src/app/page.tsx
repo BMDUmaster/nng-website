@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { preload } from "react-dom";
-import { BookCover } from "@/components/brand/BookCover";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
 import { AreasRibbon, FaqSection, ProgramPanel } from "@/components/sections/Sections";
 import { Approach } from "@/components/sections/Approach";
+import { BookSection } from "@/components/sections/BookSection";
 import { ClientWords } from "@/components/sections/ClientWords";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { StoryFilms } from "@/components/sections/StoryFilms";
@@ -46,22 +45,7 @@ export default function HomePage() {
 
       <StoryFilms voices={storyFilms} more={otherFilms} />
 
-      <section className="band" id="meet" aria-labelledby="meet-title">
-        <div className="section-wrap section-space meet">
-          <BookCover />
-          <div className="meet-copy">
-            <h2 id="meet-title">A practice to return to</h2>
-            <p>
-              Her book, <em>{bookTitle}</em>, offers 21 days of reflection and everyday inner practice.
-            </p>
-            <div className="cta-row">
-              <Link prefetch={false} className="text-link" href="/about/">
-                Read her story
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BookSection bookTitle={bookTitle} />
 
       <section className="section-wrap section-space spiritual-gallery" aria-labelledby="spiritual-gallery-title">
         <div className="section-heading">
