@@ -1,23 +1,20 @@
 import Link from "next/link";
 import { preload } from "react-dom";
-import { MethodJourney } from "@/components/art/Explainer";
-import depth from "@/components/art/VisualDepth.module.css";
 import { BookCover } from "@/components/brand/BookCover";
-import { Portrait } from "@/components/brand/Portrait";
-import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
-import { AreasRibbon, FaqSection, ProgramPanel, QuoteTrack } from "@/components/sections/Sections";
+import { AreasRibbon, FaqSection, ProgramPanel } from "@/components/sections/Sections";
+import { Approach } from "@/components/sections/Approach";
+import { ClientWords } from "@/components/sections/ClientWords";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { StoryFilms } from "@/components/sections/StoryFilms";
 import { MeetNarayani } from "@/components/sections/MeetNarayani";
 import { ServiceAtlas } from "@/components/sections/ServiceAtlas";
 import { ClienteleNote } from "@/components/sections/ClienteleNote";
-import { StoryRail } from "@/components/voices/StoryRail";
 import { SocialSection } from "@/components/sections/SocialSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
-import { homeFilms, homeQuotes, moreFilms } from "@/content/voices";
+import { homeQuotes, otherFilms, storyFilms } from "@/content/voices";
 import { bookTitle } from "@/content/about";
-import { method } from "@/content/services";
 import { asset, assetSet } from "@/lib/assets";
 import { faqSchema, personSchema } from "@/lib/schema";
 
@@ -41,60 +38,13 @@ export default function HomePage() {
 
       <MeetNarayani bookTitle={bookTitle} />
 
-      <section className="section-wrap section-space" id="testimonials" aria-labelledby="testimonial-title">
-        <div className="section-heading practice-heading">
-          <h2 id="testimonial-title">In their own words</h2>
-          <ClienteleNote />
-        </div>
-        <QuoteTrack voices={homeQuotes} label="Client testimonials" />
-      </section>
+      <ClientWords voices={homeQuotes} note={<ClienteleNote />} />
 
       <ServiceAtlas />
 
-      <section className="band" id="approach" aria-labelledby="approach-title">
-        <div className="section-wrap section-space approach-grid">
-          <div className="approach-intro">
-            <h2 id="approach-title">Why she starts with the mind</h2>
-            <p>Knowing what to change is one thing. Living differently is another. Her work brings the two together.</p>
-            <div className="approach-quote">
-              <Portrait photo="book" className="approach-portrait" sizes="120px" />
-              <div className="method-quote">
-                <p lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p>
-                <span>Narayani Garg</span>
-                <small>A remedy works when the mind works.</small>
-              </div>
-            </div>
-          </div>
-          <div className="method-explainer">
-            <MethodJourney />
-            <details className={depth.depth}>
-              <summary>Explore Mind, Direction and Alignment</summary>
-              <dl>{method.map(step => <div key={step.word}><dt><strong>{step.word}</strong></dt><dd>{step.text}</dd></div>)}</dl>
-            </details>
-            <EnquiryTrigger className="text-link" source="home-who-for">
-              Tell her team what is on your mind
-            </EnquiryTrigger>
-          </div>
-        </div>
-      </section>
+      <Approach />
 
-      <section className="section-wrap section-space" id="transformation" aria-labelledby="transformation-title">
-        <div className="transformation-head">
-          <div>
-            <h2 id="transformation-title">Hear the whole story</h2>
-            <p>Conversations about family, belief in oneself and finding a way through.</p>
-          </div>
-          <EnquiryTrigger className="text-link" source="home-films">
-            Start your own enquiry
-          </EnquiryTrigger>
-        </div>
-        <StoryRail voices={homeFilms.slice(0, 3)} />
-        <details className={depth.depth}>
-          <summary>More client recordings</summary>
-          <StoryRail voices={[...homeFilms.slice(3), ...moreFilms]} />
-        </details>
-        <p className="stories-note">These are personal experiences, not promises of the same outcome.</p>
-      </section>
+      <StoryFilms voices={storyFilms} more={otherFilms} />
 
       <section className="band" id="meet" aria-labelledby="meet-title">
         <div className="section-wrap section-space meet">
