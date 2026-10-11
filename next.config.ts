@@ -24,6 +24,15 @@ const nextConfig: NextConfig = {
     if (process.env.NNG_DISPOSABLE_BUILD === "1") config.cache = false;
     return config;
   },
+  // The five Meta landing pages are static files built by landing-pages/build.mjs into public/landing.
+  ...(!exporting && {
+    async rewrites() {
+      return [
+        { source: "/landing/", destination: "/landing/index.html" },
+        { source: "/landing/:slug/", destination: "/landing/:slug/index.html" },
+      ];
+    },
+  }),
   ...(exporting && { output: "export", images: { unoptimized: true } }),
   ...(basePath && { basePath }),
 };

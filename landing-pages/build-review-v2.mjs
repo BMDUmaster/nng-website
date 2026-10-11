@@ -9,7 +9,7 @@ const source=path.join(root,'site');
 const output=path.join(root,'dist','landing');
 const shared=path.join(output,'_shared');
 const base='https://deoxysaryan.github.io/NNG_Codex_Build/preview-20261004-r1/landing/';
-const version='20261009-visual-v3';
+const version='20261011-premium-v4';
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const lines=s=>s.split('\n').map(esc).join('<br>');
 const arrow='<span aria-hidden="true">↗</span>';
@@ -74,9 +74,13 @@ fs.mkdirSync(path.join(shared,'assets'),{recursive:true});
 for(const file of ['icon.svg','marcellus.woff2','manrope-regular.woff2','manrope-semibold.woff2','nng-logo.webp','intro-frame.jpg','introduction.mp4','deepa.webp','manish.webp','puneet.webp','share.jpg','book-cover.webp']) fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
 // Self-contained inputs preserved from the published landing-page assets.
 for(const file of ['navleen.webp','london.webp'])fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
-fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8'));
+fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v4/premium.css'),'utf8'));
 fs.copyFileSync(path.join(root,'review-v2/landing.js'),path.join(shared,'landing.js'));
 for(const p of pages){const folder=path.join(output,p.slug);fs.mkdirSync(folder,{recursive:true});fs.writeFileSync(path.join(folder,'index.html'),render(p));}
 const review=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>NNG landing pages | Revised copy review</title><link rel="icon" href="_shared/assets/icon.svg"><link rel="stylesheet" href="_shared/styles.css?v=${version}"></head><body class="copy-v2"><main class="wrap section"><p class="eyebrow">TEAM NNG / REVISED LANDING PAGES / 9 OCTOBER 2026</p><h1>Five services.\nFive personal starting points.</h1><p class="service-terms">Rewritten around real consultation questions, Narayani’s approach and a direct WhatsApp enquiry. Staging review only; no ads or production launch.</p><div class="review-grid">${pages.map(p=>`<a class="review-link" href="${p.slug}/"><span>${esc(p.family==='program'?'Six-month personal programme':'Personal consultation')}</span><h2>${esc(p.short||p.name)}</h2><p>${esc(p.headline.join(' '))}</p><p class="review-action">Review this page ${arrow}</p></a>`).join('')}</div></main></body></html>`;
 fs.writeFileSync(path.join(output,'index.html'),review.replace('Five services.\nFive personal starting points.','Five services.<br>Five personal starting points.'));
-console.log(`Built revised five-page review: ${output}`);
+// The Next.js site serves the same files at /landing/ (see the rewrites in next.config.ts).
+const publicCopy=path.join(root,'..','public','landing');
+fs.rmSync(publicCopy,{recursive:true,force:true});
+fs.cpSync(output,publicCopy,{recursive:true});
+console.log(`Built revised five-page review: ${output} (copied to public/landing)`);
