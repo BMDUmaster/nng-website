@@ -16853,3 +16853,46 @@ footer.site-footer.ft {
   .svd .topic-directory-list, .svd .offer-related .offer-index-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .svd .offer-fees-pending { padding: 40px !important; }
 }
+
+/* Reading hero: the stone photographs crossfade slowly behind the words, under a plum veil. Replaces the collage. */
+.rr-collage { display: none !important; }
+.rr-hero.has-slides { display: block !important; padding-bottom: 0 !important; min-height: 420px; }
+.rr-hero.has-slides .rr-hero-inner { padding: 36px 0 48px !important; }
+.rr-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.rr-slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.rr-slides img:first-child { opacity: 1; }
+.rr-slides::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(35 30 37 / 0.35) 0%, rgb(35 30 37 / 0) 30%, rgb(35 30 37 / 0.55) 100%),
+    linear-gradient(90deg, rgb(46 18 48 / 0.96) 0%, rgb(60 24 61 / 0.86) 42%, rgb(60 24 61 / 0.35) 75%, rgb(60 24 61 / 0.15) 100%);
+}
+.rr-hero.has-slides::after { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .rr-slides img { animation: rr-slide 25s linear infinite; animation-delay: calc(var(--s) * 5s - 0.01s); }
+}
+@keyframes rr-slide {
+  0% { opacity: 0; transform: scale(1.12); }
+  4% { opacity: 1; }
+  20% { opacity: 1; }
+  26% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+@media (max-width: 680px) {
+  .rr-hero.has-slides { min-height: 0; }
+  .rr-slides::after { background: linear-gradient(180deg, rgb(46 18 48 / 0.82) 0%, rgb(60 24 61 / 0.9) 60%, rgb(35 30 37 / 0.95) 100%); }
+}
+@media (min-width: 1024px) {
+  .rr-hero.has-slides { min-height: 520px; display: flex !important; align-items: center; }
+  .rr-hero.has-slides .rr-hero-inner { padding: 64px 0 72px !important; padding-right: 0 !important; }
+  .rr-hero.has-slides .rr-hero-inner > * { max-width: 640px; }
+}

@@ -18,17 +18,15 @@ export function StoneBanner({ article, priority = false }: { article: StoneArtic
 }
 
 /** The plum opening shared by the resources, reading room, blogs and article pages. */
-const heroBanners = ["stone-identification", "rudraksha-basics", "crystal-care"];
+const heroBanners = ["stone-identification", "rudraksha-basics", "crystal-care", "gemstone-report", "before-you-buy"];
 
 export function ReadingHero({ crumbs, kicker, title, lead, demo = false, collage = true, children }: { crumbs: Crumb[]; kicker: string; title: React.ReactNode; lead: string; demo?: boolean; collage?: boolean; children?: React.ReactNode }) {
   return (
-    <section className={`rr-hero${collage ? " has-collage" : ""}`} aria-labelledby="page-title">
+    <section className={`rr-hero${collage ? " has-slides" : ""}`} aria-labelledby="page-title">
       {collage && (
-        <div className="rr-collage" aria-hidden="true">
+        <div className="rr-slides" aria-hidden="true">
           {heroBanners.map((banner, i) => (
-            <span key={banner} className={`rr-tile rr-tile-${i + 1}`}>
-              <img src={asset(`/images/stone-journal/${banner}-640.webp`)} alt="" width={640} height={360} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
-            </span>
+            <img key={banner} src={asset(`/images/stone-journal/${banner}-1280.webp`)} alt="" width={1280} height={720} loading={i === 0 ? "eager" : "lazy"} decoding="async" style={{ "--s": i } as React.CSSProperties} />
           ))}
         </div>
       )}
