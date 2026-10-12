@@ -19,7 +19,7 @@ export const leaves = (id) => `<svg class="v5-leaves" viewBox="0 0 160 310" aria
 export function vastuPlan() {
   const legend = [['compass', 'Direction', 'Orientation & entrance'], ['sofa', 'Arrangement', 'Rooms & seating'], ['people', 'Daily use', 'People & routines']];
   return `<figure class="consultation-art visual-explainer v5-plan" data-motion>
-    <div class="visual-label"><span class="visual-kicker">Vastu / at a glance</span><span aria-hidden="true">✦</span></div>
+    <div class="visual-label"><span class="visual-kicker">Vastulogy / at a glance</span><span aria-hidden="true">✦</span></div>
     <svg class="vp" viewBox="0 0 560 470" role="img" aria-labelledby="vp-title"><title id="vp-title">An example floor plan with bedroom, seating area, living and dining rooms, the entrance and north marked. It is not a Vastu assessment.</title>
       <rect class="vp-floor" x="40" y="30" width="430" height="370" rx="2"/>
       <g class="vp-rooms">

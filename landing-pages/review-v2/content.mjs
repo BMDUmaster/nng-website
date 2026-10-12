@@ -122,10 +122,10 @@ export const pages = [
     ],
   },
   {
-    slug: 'vastu', family: 'practice', v5: true, name: 'Vastu',
+    slug: 'vastulogy', family: 'practice', v5: true, name: 'Vastulogy',
     headline: ['Your home, workplace', 'or next property.'],
-    description: 'Explore direction, layout and everyday use with Narayani, in a Vastu consultation focused on your home, workplace, desk or next property.',
-    cta: 'Discuss a Vastu consultation', facts: [['Home & workplace','Different reviews'],['Before choosing','Property selection'],['Desk guidance','A focused enquiry']],
+    description: 'Explore direction, layout and everyday use with Narayani, in a Vastulogy consultation focused on your home, workplace, desk or next property.',
+    cta: 'Discuss Vastulogy', facts: [['Home & workplace','Different reviews'],['Before choosing','Property selection'],['Desk guidance','A focused enquiry']],
     situationTitle: 'Start with the space\nand what you need from it.',
     situationIntro: 'Reviewing a home you live in is different from choosing a property or looking at one desk. The first step is understanding which question you have.',
     situations: [

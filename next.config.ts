@@ -34,7 +34,10 @@ const nextConfig: NextConfig = {
     },
     // The Psychic Reader landing page is now the Brainology Program page; keep old ad links working.
     async redirects() {
-      return [{ source: "/landing/psychic-reader/:path*", destination: "/landing/brainology/", permanent: true }];
+      return [
+        { source: "/landing/psychic-reader/:path*", destination: "/landing/brainology/", permanent: true },
+        { source: "/landing/vastu/:path*", destination: "/landing/vastulogy/", permanent: true },
+      ];
     },
   }),
   ...(exporting && { output: "export", images: { unoptimized: true } }),

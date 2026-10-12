@@ -37,7 +37,7 @@ const mappings={
   brainology:{scenes:['relationship','career','reflection'],topics:['reflection','wellbeing','listen','chakra','conversation','practice'],method:['question','reflection','practice'],facts:['reflection','practice','conversation']},
   astrology:{scenes:['career','relationship','choice'],topics:['career','relationship','house','education','chart','clock'],method:['chart','clock','person'],facts:['career','chart','conversation']},
   numerology:{scenes:['name','business','grid'],topics:['grid','name','signature','phone','business','chart'],method:['question','grid','choice'],facts:['name','business','conversation']},
-  vastu:{scenes:['house','desk','compass'],topics:['house','business','compass','desk'],method:['compass','desk','choice'],facts:['house','compass','desk']},
+  vastulogy:{scenes:['house','desk','compass'],topics:['house','business','compass','desk'],method:['compass','desk','choice'],facts:['house','compass','desk']},
   'hand-holding':{scenes:['reflection','path','practice'],topics:['reflection','chart','grid','house'],method:['person','reflection','conversation'],facts:['calendar','relationship','conversation']},
 };
 export const pageIcon=(p,type,index)=>icon(mappings[p.slug][type][index]);
@@ -102,7 +102,7 @@ export function serviceVisual(p) {
     <path d="M265 112l10-23 10 23M269 104h12M297 93h72M297 104h55M297 115h62"/></g>
     <g data-visual-focus="2"><path class="accent" d="M258 187c19-47 31-50 19-13s-3 22 10-2 22-35 11-8 1 24 13 15c13-8 19 19 55-3M251 209h137"/></g>
     <g class="diagram-label"><text x="110" y="245">Lo Shu grid</text><text x="318" y="245">Signature &amp; identity</text></g>`),[['Birth date','Personal numbers'],['Name','Current or proposed'],['Identity','Personal or business']], 'The grid shows the traditional arrangement, not your personal calculation.');
-  if(p.slug==='vastu')return wrapper(p,svg('An illustrative room layout with entrance, seating, circulation and a north compass. It demonstrates what can be discussed, not an ideal layout or a Vastu prescription.',`
+  if(p.slug==='vastulogy')return wrapper(p,svg('An illustrative room layout with entrance, seating, circulation and a north compass. It demonstrates what can be discussed, not an ideal layout or a Vastu prescription.',`
     <path class="wash" d="m41 87 198-52 98 60v143l-201 47-95-60z"/>
     <path class="accent" d="m40 218 97 60 203-47M40 218v-6M137 278v-7M340 231v-8"/>
     <g data-visual-focus="1"><path d="M57 66h246v161H57zM161 66v161M57 139h104M238 66v73h65M161 174h29v53M161 174a29 29 0 0 0 29 29"/>

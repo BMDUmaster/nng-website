@@ -1703,7 +1703,7 @@ body.lp-v5 .v5-steps2 li:hover { transform: none; }
 /* =============================================================================================================
    Vastu approach: an illustrated floor plan in a rounded card, sage accents, leaves at the edges.
    ============================================================================================================= */
-body.lp-v5[data-page="vastu"] .v5-approach2 { position: relative; }
+body.lp-v5[data-page="vastulogy"] .v5-approach2 { position: relative; }
 body.lp-v5 .v5-plan.consultation-art.visual-explainer {
   max-width: 560px;
   padding: 30px 30px 22px;
@@ -1777,14 +1777,14 @@ body.lp-v5 .v5-plan[data-visual-active="2"] .vp-use :is(rect:not(.vp-rug), path,
 @keyframes vp-grow { from { opacity: 0; transform: scale(0.3); } to { opacity: 1; transform: none; } }
 
 /* Steps: serif number and a chevron at the right; the lit step takes a sage tint. */
-body.lp-v5[data-page="vastu"] .v5-steps2 li { padding-right: 110px; }
-body.lp-v5[data-page="vastu"] .v5-steps2 li::after { top: 50%; right: 64px; font-size: 20px; transform: translateY(-50%); }
+body.lp-v5[data-page="vastulogy"] .v5-steps2 li { padding-right: 110px; }
+body.lp-v5[data-page="vastulogy"] .v5-steps2 li::after { top: 50%; right: 64px; font-size: 20px; transform: translateY(-50%); }
 body.lp-v5 .v5-chev { position: absolute; top: 50%; right: 18px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 45%, transparent); color: var(--brass); transform: translateY(-50%); transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s var(--ease); }
 body.lp-v5 .v5-chev svg { width: 16px; height: 16px; }
-body.lp-v5[data-page="vastu"] .v5-steps2 h3 { font-family: var(--display); font-weight: 400; font-size: 21px; }
-body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active { background: linear-gradient(120deg, #F4F6EE, #FBFAF4); box-shadow: 0 0 0 1px #8FA07A, 0 26px 44px -30px rgb(60 70 40 / 0.45); }
-body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active .line-icon { background: #E3E9D8; color: #4E5E3A; box-shadow: none; }
-body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active .v5-chev { background: #4E5E3A; color: #FFFFFF; transform: translateY(-50%) translateX(3px); box-shadow: none; }
+body.lp-v5[data-page="vastulogy"] .v5-steps2 h3 { font-family: var(--display); font-weight: 400; font-size: 21px; }
+body.lp-v5[data-page="vastulogy"] .v5-steps2 li.is-active { background: linear-gradient(120deg, #F4F6EE, #FBFAF4); box-shadow: 0 0 0 1px #8FA07A, 0 26px 44px -30px rgb(60 70 40 / 0.45); }
+body.lp-v5[data-page="vastulogy"] .v5-steps2 li.is-active .line-icon { background: #E3E9D8; color: #4E5E3A; box-shadow: none; }
+body.lp-v5[data-page="vastulogy"] .v5-steps2 li.is-active .v5-chev { background: #4E5E3A; color: #FFFFFF; transform: translateY(-50%) translateX(3px); box-shadow: none; }
 
 /* Botanical accents: a soft sage moon behind the card, a sprig falling over its top corner and one rising at the
    lower left. Leaves sway a little, each on its own beat. */
@@ -1802,7 +1802,7 @@ body.lp-v5 .v5-leaves .lf > * { transform-box: view-box; }
 }
 @keyframes vp-sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
 @keyframes vp-flutter { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(6deg); } }
-body.lp-v5[data-page="vastu"] .v5-approach2 > :not(.v5-leaf-l, .v5-leaf-r, .v5-blob) { position: relative; z-index: 1; }
+body.lp-v5[data-page="vastulogy"] .v5-approach2 > :not(.v5-leaf-l, .v5-leaf-r, .v5-blob) { position: relative; z-index: 1; }
 
 @media (max-width: 580px) {
   body.lp-v5 .v5-plan.consultation-art.visual-explainer { padding: 22px 14px 16px; border-radius: 26px; }
@@ -1810,18 +1810,18 @@ body.lp-v5[data-page="vastu"] .v5-approach2 > :not(.v5-leaf-l, .v5-leaf-r, .v5-b
   body.lp-v5 .v5-plan .visual-key span:not(.vk-icon) { font-size: 11px; }
   body.lp-v5 .v5-plan .visual-key .vk-icon svg { width: 22px; height: 22px; }
   body.lp-v5 .v5-plan figcaption { font-size: 11.5px; text-align: left; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 li { padding-right: 56px; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 li::after { top: 14px; right: 16px; font-size: 15px; transform: none; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 li { padding-right: 56px; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 li::after { top: 14px; right: 16px; font-size: 15px; transform: none; }
   body.lp-v5 .v5-chev { top: auto; bottom: 12px; right: 12px; width: 30px; height: 30px; transform: none; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active .v5-chev { transform: translateX(2px); }
-  body.lp-v5[data-page="vastu"] .v5-steps2 h3 { font-size: 19px; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 li.is-active .v5-chev { transform: translateX(2px); }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 h3 { font-size: 19px; }
   body.lp-v5 :is(.v5-leaf-l, .v5-leaf-r) { width: 80px; opacity: 0.4; }
 }
 
 /* Phones: the whole section fits one screen — tighter heading, plan and steps. */
 @media (max-width: 580px) {
-  body.lp-v5[data-page="vastu"] .v5-approach2 { padding-block: 26px 22px; gap: 12px; }
-  body.lp-v5[data-page="vastu"] .v5-approach2 h2 { margin-top: 6px; font-size: 27px; line-height: 1.12; }
+  body.lp-v5[data-page="vastulogy"] .v5-approach2 { padding-block: 26px 22px; gap: 12px; }
+  body.lp-v5[data-page="vastulogy"] .v5-approach2 h2 { margin-top: 6px; font-size: 27px; line-height: 1.12; }
   body.lp-v5 .v5-plan.consultation-art.visual-explainer { padding: 12px 10px 10px; border-radius: 22px; margin-top: 2px; }
   body.lp-v5 .v5-plan .visual-label { margin-bottom: 0; }
   body.lp-v5 .v5-plan .visual-kicker { font-size: 10px; }
@@ -1831,14 +1831,14 @@ body.lp-v5[data-page="vastu"] .v5-approach2 > :not(.v5-leaf-l, .v5-leaf-r, .v5-b
   body.lp-v5 .v5-plan .visual-key .vk-icon svg { width: 18px; height: 18px; }
   body.lp-v5 .v5-plan .visual-key strong { font-size: 14px; }
   body.lp-v5 .v5-plan .visual-key span:not(.vk-icon) { display: none; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 { gap: 8px; margin-top: 10px; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 li { grid-template-columns: 36px 1fr; gap: 0 10px; padding: 10px 46px 10px 10px; border-radius: 16px; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 .line-icon { width: 36px; height: 36px; padding: 7px; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 h3 { font-size: 17px; line-height: 1.2; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 p { font-size: 12.5px; line-height: 1.4; }
-  body.lp-v5[data-page="vastu"] .v5-steps2 li::after { top: 10px; right: 14px; font-size: 13px; }
-  body.lp-v5[data-page="vastu"] .v5-chev { bottom: 9px; right: 10px; width: 26px; height: 26px; }
-  body.lp-v5[data-page="vastu"] .v5-chev svg { width: 13px; height: 13px; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 { gap: 8px; margin-top: 10px; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 li { grid-template-columns: 36px 1fr; gap: 0 10px; padding: 10px 46px 10px 10px; border-radius: 16px; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 .line-icon { width: 36px; height: 36px; padding: 7px; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 h3 { font-size: 17px; line-height: 1.2; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 p { font-size: 12.5px; line-height: 1.4; }
+  body.lp-v5[data-page="vastulogy"] .v5-steps2 li::after { top: 10px; right: 14px; font-size: 13px; }
+  body.lp-v5[data-page="vastulogy"] .v5-chev { bottom: 9px; right: 10px; width: 26px; height: 26px; }
+  body.lp-v5[data-page="vastulogy"] .v5-chev svg { width: 13px; height: 13px; }
   body.lp-v5 .v5-blob { top: 70px; right: -110px; width: 220px; }
   body.lp-v5 .v5-leaf-r { top: 64px; right: -44px; width: 92px; }
   body.lp-v5 .v5-leaf-l { display: none; }
