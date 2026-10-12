@@ -48,7 +48,7 @@
   const privacyDialog=document.querySelector('#privacy-dialog');
   const stage=document.querySelector('#video-stage');
   let returnFocus=null;
-  function openDialog(dialog,trigger){closeMenu();document.querySelector('#hero-intro').pause();returnFocus=trigger;dialog.showModal();document.body.classList.add('dialog-open');dialog.querySelector('.dialog-close').focus();}
+  function openDialog(dialog,trigger){closeMenu();document.querySelector('#hero-intro')?.pause();returnFocus=trigger;dialog.showModal();document.body.classList.add('dialog-open');dialog.querySelector('.dialog-close').focus();}
   for(const dialog of [videoDialog,privacyDialog]){
     dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close();});

@@ -4,6 +4,7 @@ import { vastuPlan, chevron, leaves } from './vastu-plan.mjs';
 import { brainApproach } from './brain-approach.mjs';
 import { numApproach } from './num-approach.mjs';
 import { situations2, practices2 } from './sections2.mjs';
+import { heroArt } from './hero-art.mjs';
 
 const person = 'Narayani Garg';
 // Client films served by the website (public/videos/stories), keyed by landing-page voice.
@@ -38,15 +39,7 @@ export function renderMain(p, h) {
       <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
       <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>
     </div>
-    <div class="hero-visual">
-      <figure class="v5-film">
-        <div class="v5-film-frame">
-          <video id="hero-intro" autoplay muted loop playsinline preload="auto" poster="${assets}intro-frame.jpg" aria-label="Narayani’s original introduction video"><source src="${assets}introduction.mp4" type="video/mp4">Your browser cannot play this video. <a href="${assets}introduction.mp4">Open Narayani’s introduction.</a></video>
-          <button class="v5-sound" type="button" aria-pressed="false" aria-label="Turn sound on">${soundOff}${soundOn}</button>
-          <figcaption><span class="v5-live" aria-hidden="true"></span><span>Meet Narayani. <em>In her own words.</em></span></figcaption>
-        </div>
-      </figure>
-    </div>
+    ${heroArt(p, { esc })}
   </section></div>`;
 
   /* Her book, opening slowly while in view, beside the clientele. */
