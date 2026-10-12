@@ -3,8 +3,9 @@
 export const pages = [
   {
     slug: 'brainology', family: 'psychic', v5: true, name: 'Brainology Program', scopeEyebrow: 'WHAT THE PROGRAM DRAWS ON',
-    headline: ['Change the pattern in the mind.', 'Change how life responds.'],
-    description: 'The Brainology Program with Narayani is mind-first personal guidance. Work on the thoughts, beliefs, habits and reactions behind a concern in relationships, work, money or wellbeing.',
+    headline: ['Same thoughts. Same arguments. Same worries?', 'Change the pattern behind them.'],
+    hook: ['Overthinking', 'The same argument again', 'Money stress that returns', 'Habits you can’t break'],
+    description: 'With Narayani, look at the beliefs and reactions that keep a problem returning, and practise a new response in everyday life.',
     cta: 'Discuss the Brainology Program', facts: [['Mind-first','Personally guided'],['Six practices','Chosen for you'],['Online or in person','By appointment']],
     situationTitle: 'A different situation.\nThe same familiar response.',
     situationIntro: 'You decide to respond differently. Then the same moment arrives, and the old reaction returns. Recognising that pattern is the starting point, not a reason to blame yourself.',
