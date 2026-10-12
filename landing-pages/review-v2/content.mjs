@@ -82,7 +82,7 @@ export const pages = [
     ],
   },
   {
-    slug: 'numerology', family: 'practice', name: 'Numerology',
+    slug: 'numerology', family: 'practice', v5: true, name: 'Numerology',
     headline: ['Choosing a name?', 'Considering a change?'],
     description: 'Explore your birth date, name, signature or business identity with Narayani. Understand the traditional interpretation before deciding on a change.',
     cta: 'Discuss a numerology consultation', facts: [['Personal names','Birth-date numbers'],['Business identity','Names & logos'],['A personal reading','Around your question']],
@@ -108,7 +108,7 @@ export const pages = [
       ['Astro-numerology','Enquire about reading chart and number perspectives together for a personal or business question.'],
     ],
     scopeNote: 'This page is for personal consultation enquiries. Ask the team about scope, format, duration and fees; no written report or instant download is sold here.',
-    boundary: 'Numerology is an interpretive tradition, not an established predictor of events or measure of ability. A name, signature or number change does not guarantee health, income, business growth or other outcomes.',
+    boundary: 'Numerology is an interpretive tradition, not an established predictor of events or measure of ability.',
     proof: ['london','deepa'],
     proofTitle: 'The person matters\nbeyond the reading.',
     closeTitle: 'Bring the name, number\nor choice on your mind.',

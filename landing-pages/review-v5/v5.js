@@ -88,8 +88,8 @@
     clip.playsInline = true;
     clip.preload = 'auto';
     stageEl.replaceChildren(clip);
-    dialog.querySelector('#video-title').textContent = `${button.dataset.clipTitle}’s experience`;
-    dialog.querySelector('#video-note').textContent = 'Translated from Hindi. A personal experience of Narayani’s wider guidance.';
+    dialog.querySelector('#video-title').textContent = button.dataset.clipTitle;
+    dialog.querySelector('#video-note').textContent = `${button.dataset.clipNote}. A personal experience of Narayani’s wider guidance.`;
     dialog.showModal();
     document.body.classList.add('dialog-open');
     clip.play().catch(() => { clip.muted = true; clip.play().catch(() => {}); });
