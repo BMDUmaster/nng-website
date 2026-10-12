@@ -32,6 +32,10 @@ const nextConfig: NextConfig = {
         { source: "/landing/:slug/", destination: "/landing/:slug/index.html" },
       ];
     },
+    // The Psychic Reader landing page is now the Brainology Program page; keep old ad links working.
+    async redirects() {
+      return [{ source: "/landing/psychic-reader/:path*", destination: "/landing/brainology/", permanent: true }];
+    },
   }),
   ...(exporting && { output: "export", images: { unoptimized: true } }),
   ...(basePath && { basePath }),

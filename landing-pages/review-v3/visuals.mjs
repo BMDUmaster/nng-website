@@ -34,7 +34,7 @@ export function icon(name,extra='') {
   return `<svg class="line-icon ${extra}" data-motion viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${strokes[name]||strokes.question}</svg>`;
 }
 const mappings={
-  'psychic-reader':{scenes:['relationship','career','reflection'],topics:['relationship','career','money','wellbeing','reflection','chakra'],method:['question','reflection','practice'],facts:['reflection','choice','conversation']},
+  brainology:{scenes:['relationship','career','reflection'],topics:['reflection','wellbeing','listen','chakra','conversation','practice'],method:['question','reflection','practice'],facts:['reflection','practice','conversation']},
   astrology:{scenes:['career','relationship','choice'],topics:['career','relationship','house','education','chart','clock'],method:['chart','clock','person'],facts:['career','chart','conversation']},
   numerology:{scenes:['name','business','grid'],topics:['grid','name','signature','phone','business','chart'],method:['question','grid','choice'],facts:['name','business','conversation']},
   vastu:{scenes:['house','desk','compass'],topics:['house','business','compass','desk'],method:['compass','desk','choice'],facts:['house','compass','desk']},
@@ -71,7 +71,7 @@ function svg(title,content) {
 }
 const at=(x,y,name,scale=1)=>`<g transform="translate(${x} ${y}) scale(${scale})">${strokes[name]}</g>`;
 export function serviceVisual(p) {
-  if(p.slug==='psychic-reader')return wrapper(p,svg('Reflection: a recurring situation, your thoughts and beliefs, and a different response to practise. Not a scientific or causal model.',`
+  if(p.slug==='brainology')return wrapper(p,svg('Reflection: a recurring situation, your thoughts and beliefs, and a different response to practise. Not a scientific or causal model.',`
     <ellipse class="wash" cx="210" cy="141" rx="103" ry="97"/>
     <path class="accent draw-line" pathLength="1" d="M108 73c-64 24-47 133 18 112 61-20 11-119-41-51-30 40 8 123 80 119 59-4 98-41 166-25"/>
     <path class="accent" d="m318 218 13 10-14 8"/>
