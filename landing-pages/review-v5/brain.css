@@ -1,0 +1,155 @@
+/* =============================================================================================================
+   Brainology approach: step cards beside a journey panel (winding gold path, three stops, sunlit arch).
+   ============================================================================================================= */
+body.lp-v5 .v5-brain { position: relative; overflow: hidden; background: linear-gradient(90deg, #FAF6F0 0%, #F7F1E8 100%); }
+body.lp-v5 .bj-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: 48px; align-items: center; }
+body.lp-v5 .bj-kicker { display: flex; align-items: center; gap: 14px; margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #8a6a3f; }
+body.lp-v5 .bj-kicker span { position: relative; width: 48px; height: 1px; background: var(--brass); }
+body.lp-v5 .bj-kicker span::after { content: "✦"; position: absolute; right: -6px; top: -9px; font-size: 13px; color: var(--brass); }
+body.lp-v5 .v5-brain h2 { margin-top: 16px; font-size: clamp(34px, 4vw, 56px); line-height: 1.06; color: var(--ink); }
+body.lp-v5 .v5-brain h2 em { font-style: normal; color: #9A6F35; }
+body.lp-v5 .bj-intro { max-width: 600px; margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+
+/* Step cards. */
+body.lp-v5 .bj-steps { display: grid; gap: 14px; margin: 30px 0 0; padding: 0; list-style: none; }
+body.lp-v5 .bj-steps li {
+  display: grid;
+  grid-template-columns: 52px 76px 1fr 46px;
+  align-items: center;
+  gap: 0 18px;
+  padding: 16px 22px 16px 18px;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 0.62);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--brass) 18%, transparent), 0 20px 40px -34px rgb(60 24 61 / 0.45);
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s var(--ease);
+}
+body.lp-v5 .bj-steps li::after { content: none; }
+body.lp-v5 .bj-no { align-self: stretch; display: grid; place-items: center; border-right: 1px solid color-mix(in srgb, var(--brass) 30%, transparent); font-family: var(--display); font-size: 22px; color: #9A6F35; }
+body.lp-v5 .bj-ic { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; color: var(--ink); transition: transform 0.5s var(--ease), box-shadow 0.5s ease; }
+body.lp-v5 .bj-ic svg { width: 34px; height: 34px; }
+body.lp-v5 .bj-ic-0 { background: #EFE6EC; }
+body.lp-v5 .bj-ic-1 { background: #F5EAD6; }
+body.lp-v5 .bj-ic-2 { background: #E5EAE1; }
+body.lp-v5 .bj-text { display: grid; gap: 4px; }
+body.lp-v5 .bj-text strong { font-family: var(--display); font-weight: 400; font-size: 24px; line-height: 1.15; color: var(--ink); }
+body.lp-v5 .bj-text span { font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+body.lp-v5 .bj-go { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; box-shadow: inset 0 0 0 1.4px var(--brass); color: #9A6F35; transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s var(--ease); }
+body.lp-v5 .bj-go svg { width: 20px; height: 20px; }
+body.lp-v5 .bj-steps li.is-active { background: #FFFFFF; box-shadow: 0 0 0 1px var(--brass), 0 26px 46px -30px rgb(60 24 61 / 0.5); }
+body.lp-v5 .bj-steps li.is-active .bj-ic { transform: scale(1.06); box-shadow: 0 0 0 6px rgb(215 184 107 / 0.18); }
+body.lp-v5 .bj-steps li.is-active .bj-go { background: var(--plum); color: var(--champ); box-shadow: none; transform: translateX(3px); }
+
+/* The journey panel. */
+body.lp-v5 .bj-figure { position: relative; height: 740px; margin: 0; overflow: hidden; border-radius: 300px 0 0 0; background: linear-gradient(180deg, #FBF7F0, #F4ECDF); box-shadow: inset 1px 0 0 color-mix(in srgb, var(--brass) 25%, transparent); }
+body.lp-v5 .bj-figure.consultation-art { all: unset; }
+body.lp-v5 .bj-crescent { position: absolute; top: -40px; left: -150px; width: 260px; height: 330px; border-radius: 0 0 0 100%; background: radial-gradient(120% 90% at 100% 0%, #4A2049, #3C183D 60%, #2E1430); transform: rotate(8deg); opacity: 0.95; }
+body.lp-v5 .bj-arch { position: absolute; top: 40px; right: -30px; width: 170px; height: 760px; overflow: hidden; border-radius: 999px 999px 0 0; background: linear-gradient(180deg, #EADBC4 0%, #E2CCAB 45%, #D7BC94 100%); box-shadow: inset 0 0 0 10px #F1E6D5, inset 0 0 0 11px color-mix(in srgb, var(--brass) 30%, transparent); }
+body.lp-v5 .bj-sun { position: absolute; inset: -20% -60%; background: repeating-linear-gradient(115deg, rgb(255 246 225 / 0) 0 28px, rgb(255 246 225 / 0.55) 28px 46px, rgb(255 246 225 / 0) 46px 80px); filter: blur(6px); mix-blend-mode: soft-light; }
+body.lp-v5 .bj-olive { position: absolute; bottom: 30px; left: -6px; width: 110px; }
+body.lp-v5 .bj-ring { position: absolute; right: -160px; bottom: -150px; width: 420px; height: 420px; border-radius: 50%; border: 1.2px solid var(--brass); opacity: 0.7; }
+body.lp-v5 .bj-glance { position: absolute; top: 108px; left: 270px; margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; line-height: 1.9; text-transform: uppercase; color: #8a6a3f; }
+body.lp-v5 .bj-glance span { margin-right: 10px; font-size: 16px; color: var(--brass); }
+body.lp-v5 .bj-tag { position: absolute; top: 280px; left: 330px; display: flex; flex-direction: column; align-items: center; margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; line-height: 2; text-align: center; text-transform: uppercase; color: #8a6a3f; }
+body.lp-v5 .bj-tag::before, body.lp-v5 .bj-tag::after { content: ""; width: 1px; height: 70px; margin: 10px 0; background: color-mix(in srgb, var(--brass) 60%, transparent); }
+body.lp-v5 .bj-path { position: absolute; top: 0; left: 0; width: 560px; height: 760px; overflow: visible; }
+body.lp-v5 .bj-path path { fill: none; stroke: var(--brass); stroke-width: 1.3; }
+body.lp-v5 .bj-dot { fill: var(--brass); filter: drop-shadow(0 0 6px rgb(215 184 107 / 0.9)); }
+body.lp-v5 .bj-nodes { position: absolute; inset: 0; display: block; margin: 0; padding: 0; border: 0; }
+body.lp-v5 .bj-node { position: absolute; left: var(--x); top: var(--y); display: flex; align-items: center; gap: 22px; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; }
+body.lp-v5 .bj-node .bj-ic { width: 112px; height: 112px; box-shadow: 0 0 0 8px rgb(250 246 240 / 0.9); }
+body.lp-v5 .bj-node .bj-ic svg { width: 44px; height: 44px; }
+body.lp-v5 .bj-label { display: grid; gap: 2px; max-width: 150px; }
+body.lp-v5 .bj-label em { font-family: var(--display); font-style: normal; font-size: 26px; color: #9A6F35; }
+body.lp-v5 .bj-label strong { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.1; color: var(--ink); }
+body.lp-v5 .bj-label span { font-size: 15px; line-height: 1.4; color: var(--muted); }
+body.lp-v5 .bj-figure[data-visual-active="0"] .bj-node[data-visual-step="0"] .bj-ic,
+body.lp-v5 .bj-figure[data-visual-active="1"] .bj-node[data-visual-step="1"] .bj-ic,
+body.lp-v5 .bj-figure[data-visual-active="2"] .bj-node[data-visual-step="2"] .bj-ic { transform: scale(1.08); box-shadow: 0 0 0 8px rgb(250 246 240 / 0.9), 0 0 0 9px var(--brass), 0 18px 36px -12px rgb(184 138 69 / 0.6); }
+body.lp-v5 .bj-figure[data-visual-active] .bj-node[aria-pressed="true"] .bj-label strong { color: #9A6F35; }
+
+/* Arrival: the path draws itself, then the stops rise in turn; light drifts across the arch. */
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .bj-path path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  body.lp-v5 .bj-figure.is-seen .bj-path path { stroke-dashoffset: 0; transition: stroke-dashoffset 2.4s cubic-bezier(0.45, 0, 0.2, 1) 0.2s; }
+  body.lp-v5 .bj-node { opacity: 0; transform: translateY(16px); }
+  body.lp-v5 .bj-figure.is-seen .bj-node { opacity: 1; transform: none; transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: calc(0.6s + var(--i) * 0.5s); }
+  body.lp-v5 :is(.bj-glance, .bj-tag) { opacity: 0; }
+  body.lp-v5 .bj-figure.is-seen :is(.bj-glance, .bj-tag) { opacity: 1; transition: opacity 1s ease 1.8s; }
+  body.lp-v5 .bj-crescent { transform: rotate(8deg) translateX(-40px); transition: transform 1.4s var(--ease); }
+  body.lp-v5 .bj-figure.is-seen .bj-crescent { transform: rotate(8deg); }
+  body.lp-v5 .bj-sun { animation: bj-light 16s ease-in-out infinite alternate; }
+  body.lp-v5 .bj-olive { transform-origin: 60% 100%; animation: vp-sway 8s ease-in-out infinite; }
+}
+@keyframes bj-light { from { transform: translateX(-30px); } to { transform: translateX(30px); } }
+
+@media (max-width: 1180px) {
+  body.lp-v5 .bj-inner { grid-template-columns: minmax(0, 1fr) 470px; gap: 32px; }
+  body.lp-v5 .bj-tag { display: none; }
+  body.lp-v5 .bj-glance { left: 230px; }
+  body.lp-v5 .bj-steps li { grid-template-columns: 40px 60px 1fr 40px; gap: 0 14px; }
+  body.lp-v5 .bj-steps .bj-ic { width: 60px; height: 60px; }
+  body.lp-v5 .bj-steps .bj-ic svg { width: 28px; height: 28px; }
+}
+
+/* Tablets and phones: the journey becomes a compact row of three stops above the cards. */
+@media (max-width: 900px) {
+  body.lp-v5 .bj-inner { grid-template-columns: 1fr; gap: 0; }
+  body.lp-v5 .bj-figure { order: 2; height: auto; margin-top: 20px; padding: 22px 16px 18px; border-radius: 26px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--brass) 25%, transparent); }
+  body.lp-v5 .bj-copy { display: contents; }
+  body.lp-v5 .bj-copy > :not(.bj-steps) { order: 1; }
+  body.lp-v5 .bj-steps { order: 3; }
+  body.lp-v5 :is(.bj-crescent, .bj-arch, .bj-ring, .bj-tag) { display: none; }
+  body.lp-v5 .bj-glance { position: static; margin-bottom: 14px; text-align: center; line-height: 1.6; }
+  body.lp-v5 .bj-glance br { display: none; }
+  body.lp-v5 .bj-path { top: 64px; left: 0; width: 100%; height: 60px; }
+  body.lp-v5 .bj-path path { d: path('M40 30C120 0 200 60 280 30S440 0 520 30'); }
+  body.lp-v5 .bj-path { display: none; }
+  body.lp-v5 .bj-nodes { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  body.lp-v5 .bj-nodes::before { content: ""; position: absolute; top: 36px; left: 16%; right: 16%; border-top: 1.4px dashed color-mix(in srgb, var(--brass) 70%, transparent); }
+  body.lp-v5 .bj-node { position: relative; left: auto; top: auto; flex-direction: column; gap: 8px; text-align: center; }
+  body.lp-v5 .bj-node .bj-ic { width: 72px; height: 72px; box-shadow: 0 0 0 5px #F8F2E8; }
+  body.lp-v5 .bj-node .bj-ic svg { width: 30px; height: 30px; }
+  body.lp-v5 .bj-label { justify-items: center; }
+  body.lp-v5 .bj-label em { font-size: 15px; }
+  body.lp-v5 .bj-label strong { font-size: 18px; }
+  body.lp-v5 .bj-label span { font-size: 12px; }
+}
+@media (max-width: 580px) {
+  body.lp-v5 .v5-brain .section { padding-block: 26px 22px; }
+  body.lp-v5 .bj-kicker { font-size: 10px; gap: 10px; }
+  body.lp-v5 .bj-kicker span { width: 28px; }
+  body.lp-v5 .v5-brain h2 { margin-top: 10px; font-size: 28px; line-height: 1.1; }
+  body.lp-v5 .bj-intro { margin-top: 8px; font-size: 13.5px; line-height: 1.5; }
+  body.lp-v5 .bj-figure { margin-top: 14px; padding: 14px 8px 12px; border-radius: 22px; }
+  body.lp-v5 .bj-glance { margin-bottom: 10px; font-size: 9.5px; }
+  body.lp-v5 .bj-nodes::before { top: 28px; }
+  body.lp-v5 .bj-node .bj-ic { width: 56px; height: 56px; }
+  body.lp-v5 .bj-node .bj-ic svg { width: 24px; height: 24px; }
+  body.lp-v5 .bj-label em { font-size: 13px; }
+  body.lp-v5 .bj-label strong { font-size: 16px; }
+  body.lp-v5 .bj-label span { font-size: 11px; }
+  body.lp-v5 .bj-steps { gap: 8px; margin-top: 12px; }
+  body.lp-v5 .bj-steps li { grid-template-columns: 26px 40px 1fr 28px; gap: 0 10px; padding: 10px 10px 10px 8px; border-radius: 16px; }
+  body.lp-v5 .bj-no { font-size: 15px; }
+  body.lp-v5 .bj-steps .bj-ic { width: 40px; height: 40px; }
+  body.lp-v5 .bj-steps .bj-ic svg { width: 20px; height: 20px; }
+  body.lp-v5 .bj-text strong { font-size: 17px; }
+  body.lp-v5 .bj-text span { font-size: 12.5px; line-height: 1.4; }
+  body.lp-v5 .bj-go { width: 28px; height: 28px; }
+  body.lp-v5 .bj-go svg { width: 14px; height: 14px; }
+}
+
+/* Desktop balance: a wider journey panel, the arch slimmer at the edge, labels clear of one another. */
+@media (min-width: 1181px) {
+  body.lp-v5 .bj-inner { grid-template-columns: minmax(0, 1fr) 620px; gap: 40px; }
+  body.lp-v5 .bj-path { width: 620px; }
+}
+body.lp-v5 .v5-brain h2 { font-size: clamp(32px, 3.3vw, 46px); }
+body.lp-v5 .bj-arch { right: -40px; width: 130px; }
+body.lp-v5 .bj-glance { top: 56px; left: 300px; }
+body.lp-v5 .bj-tag { top: 290px; left: 398px; width: 150px; }
+body.lp-v5 .bj-crescent { left: -175px; }
+body.lp-v5 .bj-node :is(strong, span, em) { border: 0 !important; text-decoration: none !important; }
+body.lp-v5 .bj-figure .visual-hint { display: none !important; }
+@media (max-width: 1180px) and (min-width: 901px) { body.lp-v5 .bj-arch { display: none; } body.lp-v5 .bj-glance { left: 250px; } }

@@ -35,7 +35,7 @@
 
   // The approach: hovering or choosing a step lights the matching part of the drawing.
   const list = document.querySelector('[data-steps]');
-  const figure = document.querySelector('.v5-approach2 .visual-explainer');
+  const figure = document.querySelector('.v5-approach2 .visual-explainer, .bj-figure');
   if (list) {
     const steps = [...list.querySelectorAll('[data-step]')];
     let chosen = null;
