@@ -91,7 +91,7 @@ export function renderMain(p, h) {
   const approach = `<section class="section wrap approach v5-approach2" id="approach" aria-labelledby="approach-title">
     <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2><p>${esc(p.methodIntro)}</p></div>
     ${serviceVisual(p)}
-    <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" tabindex="0" role="button" aria-pressed="${i === 0}"${i === 0 ? ' class="is-active"' : ''}>${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p><span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
+    <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false">${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p><span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
   </section>`;
   /* Practices: names only. */
   const practices = `<section class="scope-band v5-practices" id="ways" aria-labelledby="ways-title"><div class="section wrap">

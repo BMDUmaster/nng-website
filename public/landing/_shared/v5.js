@@ -33,35 +33,25 @@
     }, { threshold: 0.6 }).observe(count);
   }
 
-  // The approach: the three steps light in turn with the matching part of the drawing, while in view,
-  // until someone chooses a step.
+  // The approach: hovering or choosing a step lights the matching part of the drawing.
   const list = document.querySelector('[data-steps]');
   const figure = document.querySelector('.v5-approach2 .visual-explainer');
   if (list) {
     const steps = [...list.querySelectorAll('[data-step]')];
-    let active = 0, timer = null, chosen = false;
+    let chosen = null;
     const show = (i) => {
-      active = i;
       steps.forEach((s, j) => { s.classList.toggle('is-active', j === i); s.setAttribute('aria-pressed', String(j === i)); });
-      if (figure) {
-        figure.dataset.visualActive = String(i);
-        figure.querySelectorAll('[data-visual-step]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.visualStep === String(i))));
-      }
+      if (!figure) return;
+      if (i === null) delete figure.dataset.visualActive; else figure.dataset.visualActive = String(i);
+      figure.querySelectorAll('[data-visual-step]').forEach((b) => b.setAttribute('aria-pressed', String(i !== null && b.dataset.visualStep === String(i))));
     };
-    const start = () => {
-      if (chosen || reduce || timer) return;
-      list.classList.add('is-cycling');
-      show(active);
-      timer = setInterval(() => show((active + 1) % steps.length), 4200);
-    };
-    const stop = () => { clearInterval(timer); timer = null; list.classList.remove('is-cycling'); };
-    const choose = (i) => { chosen = true; stop(); show(i); };
     steps.forEach((s, i) => {
-      s.addEventListener('click', () => choose(i));
-      s.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(i); } });
+      s.addEventListener('mouseenter', () => show(i));
+      s.addEventListener('focus', () => show(i));
+      s.addEventListener('click', () => { chosen = chosen === i ? null : i; show(chosen); });
+      s.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); s.click(); } });
     });
-    figure?.querySelectorAll('[data-visual-step]').forEach((b) => b.addEventListener('click', () => { chosen = true; stop(); }));
-    new IntersectionObserver(([e]) => (e.isIntersecting ? start() : stop()), { threshold: 0.35 }).observe(list);
+    list.addEventListener('mouseleave', () => show(chosen));
   }
 
   // Sound for the introduction film.
