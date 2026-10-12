@@ -57,7 +57,7 @@
   // Numerology still life: scale the 640px stage to its column.
   const stageFig = document.querySelector('.na-figure');
   if (stageFig) {
-    const fit = () => stageFig.style.setProperty('--k', String(Math.min(1, stageFig.parentElement.clientWidth / 640)));
+    const fit = () => stageFig.style.setProperty('--k', String(Math.min(innerWidth > 900 ? 0.84 : 1, stageFig.parentElement.clientWidth / 640)));
     fit();
     addEventListener('resize', fit, { passive: true });
   }
