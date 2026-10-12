@@ -3,9 +3,9 @@
 export const pages = [
   {
     slug: 'brainology', family: 'psychic', v5: true, name: 'Brainology Program', scopeEyebrow: 'WHAT THE PROGRAM DRAWS ON',
-    headline: ['Same thoughts. Same arguments. Same worries?', 'Change the pattern behind them.'],
-    hook: ['Overthinking', 'The same argument again', 'Money stress that returns', 'Habits you can’t break'],
-    description: 'With Narayani, look at the beliefs and reactions that keep a problem returning, and practise a new response in everyday life.',
+    headline: ['Same thoughts. Same worries.', 'Time to change the pattern.'],
+    hook: ['Overthinking', 'Repeated arguments', 'Money stress', 'Old habits'],
+    description: 'With Narayani, see the belief behind a problem that keeps returning, and practise a new response in everyday life.',
     cta: 'Discuss the Brainology Program', facts: [['Mind-first','Personally guided'],['Six practices','Chosen for you'],['Online or in person','By appointment']],
     situationTitle: 'A different situation.\nThe same familiar response.',
     situationIntro: 'You decide to respond differently. Then the same moment arrives, and the old reaction returns. Recognising that pattern is the starting point, not a reason to blame yourself.',

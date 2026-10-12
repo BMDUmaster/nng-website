@@ -2827,3 +2827,59 @@ body.lp-v5 .hb-art img { object-position: 35% 35%; }
   body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost { flex: 1 1 100%; }
   body.lp-v5 .hb { height: 220px; }
 }
+
+/* =============================================================================================================
+   Full-bleed hero (Oct 13): the picture fills the whole hero on every screen, the words sit over a soft pearl veil.
+   ============================================================================================================= */
+body.lp-v5[data-page="brainology"] .v5-hero-banner { background: #F7EFE3; }
+body.lp-v5[data-page="brainology"] .v5-hero { min-height: min(640px, calc(100svh - 72px)); align-content: center; padding-block: 48px; }
+body.lp-v5[data-page="brainology"] .hero-role, body.lp-v5[data-page="brainology"] .v5-hero .hero-note { display: none; }
+body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: clamp(32px, 3.2vw, 50px); line-height: 1.08; }
+body.lp-v5[data-page="brainology"] .v5-hero h1 span { margin-top: 4px; }
+body.lp-v5[data-page="brainology"] .v5-hero .hero-description { max-width: 440px; color: #4E4A55; }
+body.lp-v5 .v5-hook ul { flex-wrap: nowrap; }
+body.lp-v5 .v5-hook li { white-space: nowrap; background: rgb(255 255 255 / 0.82); backdrop-filter: blur(6px); }
+
+body.lp-v5 .hb { inset: 0; width: 100% !important; height: auto; margin: 0; }
+body.lp-v5 .hb-art { -webkit-mask-image: none !important; mask-image: none !important; }
+body.lp-v5 .hb-art img { object-position: 78% 40%; }
+body.lp-v5 .hb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #F8F1E6 0%, rgb(248 241 230 / 0.94) 30%, rgb(248 241 230 / 0.55) 46%, rgb(248 241 230 / 0) 62%); }
+body.lp-v5 .hb-sweep { -webkit-mask-image: none; mask-image: none; }
+body.lp-v5 .hb-sun { left: 80%; top: 76%; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .hb-art img { animation: hb-reveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) both, hb-kenburns 26s ease-in-out 1.8s infinite alternate; }
+}
+@keyframes hb-kenburns { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.08) translate(-1.5%, -1%); } }
+
+/* Phones: a full-screen poster. Picture above, words below on a pearl veil rising from the bottom. */
+@media (max-width: 900px) {
+  body.lp-v5[data-page="brainology"] .v5-hero { display: flex; flex-direction: column; justify-content: flex-end; min-height: calc(100svh - 72px); padding-block: 0 26px; }
+  body.lp-v5[data-page="brainology"] .hero-copy { padding-top: 0; }
+  body.lp-v5 .hb { position: absolute; inset: 0; height: auto; margin: 0; }
+  body.lp-v5 .hb-art img { object-position: 62% 0%; height: 62%; }
+  body.lp-v5 .hb-art { background: #F7EFE3; }
+  body.lp-v5 .hb::after { background: linear-gradient(180deg, rgb(248 241 230 / 0) 30%, rgb(248 241 230 / 0.85) 48%, #F8F1E6 58%); }
+  body.lp-v5 .hb-sun { left: 58%; top: 46%; }
+}
+@media (max-width: 580px) {
+  body.lp-v5[data-page="brainology"] .v5-pill-row { margin-bottom: 10px; }
+  body.lp-v5[data-page="brainology"] .v5-pill { padding: 7px 14px 7px 12px; font-size: 10.5px; }
+  body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: 30px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .hero-description { margin-top: 10px; font-size: 14px; }
+  body.lp-v5 .v5-hook { margin-top: 14px; }
+  body.lp-v5 .v5-hook p { margin-bottom: 6px; font-size: 10px; }
+  body.lp-v5 .v5-hook ul { flex-wrap: wrap; gap: 6px; }
+  body.lp-v5 .v5-hook li { padding: 5px 11px 5px 8px; font-size: 12px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .hero-actions { margin-top: 16px; gap: 8px; flex-wrap: nowrap; }
+  body.lp-v5[data-page="brainology"] .v5-hero .wa-btn { min-height: 46px; padding-left: 16px; font-size: 13.5px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .wa-btn .wa-ic { width: 36px; height: 36px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost { flex: 1 1 auto; min-height: 46px; padding-left: 14px; font-size: 13.5px; white-space: nowrap; }
+  body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost span { overflow: hidden; text-overflow: ellipsis; }
+  body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost i { width: 34px; height: 34px; }
+}
+@media (min-width: 901px) {
+  body.lp-v5 .hb-art { left: 30%; }
+  body.lp-v5 .hb-art img { object-position: 20% 45%; }
+  body.lp-v5 .hb::after { background: linear-gradient(90deg, #F8F1E6 0%, #F8F1E6 30%, rgb(248 241 230 / 0.7) 38%, rgb(248 241 230 / 0) 52%); }
+  body.lp-v5 .hb-sun { left: 72%; top: 74%; }
+}
