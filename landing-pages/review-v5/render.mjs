@@ -16,8 +16,16 @@ const soundOff = '<svg class="snd-off" viewBox="0 0 24 24" fill="none" stroke="c
 const soundOn = '<svg class="snd-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 8.5a5 5 0 0 1 0 7M19.5 6a8.5 8.5 0 0 1 0 12"/></svg>';
 const waIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>';
 
+// A WhatsApp link with the WhatsApp mark in place of the arrow.
+export const waMark = waIcon;
+export function waLink(cta, p, source, label, cls) {
+  return cta(p, source, label, '', cls).replace('<span aria-hidden="true">↗</span>', `<span class="wa-ic" aria-hidden="true">${waIcon}</span>`);
+}
+
 export function renderMain(p, h) {
-  const { esc, lines, cta, icon, pageIcon, scenarioArt, serviceVisual, voices, assets } = h;
+  const { esc, lines, icon, pageIcon, scenarioArt, serviceVisual, voices, assets } = h;
+  const cta = h.cta;
+  const wa = (source, label, cls) => waLink(cta, p, source, label, cls);
 
   /* Opening. */
   const hero = `<div class="hero-banner v5-hero-banner"><section class="hero wrap v5-hero" id="top" aria-labelledby="hero-title">
@@ -26,7 +34,7 @@ export function renderMain(p, h) {
       <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
       <h1 id="hero-title">${esc(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
       <p class="hero-description">${esc(p.description)}</p>
-      <div class="hero-actions">${cta(p, 'hero')}<a class="v5-ghost" href="#ways"><span>See what we can discuss</span><i aria-hidden="true">${down}</i></a></div>
+      <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="#ways"><span>See what we can discuss</span><i aria-hidden="true">${down}</i></a></div>
       <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
       <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>
     </div>
@@ -129,7 +137,7 @@ export function renderMain(p, h) {
       <p class="v5-panel-intro">No form to complete. Choose a topic if useful, or open a general enquiry.</p>
       <div class="topic-picker" role="group" aria-label="Optional enquiry topic">${p.options.map((topic, i) => `<button type="button" data-select-topic="${esc(topic)}" aria-pressed="${i === 0 ? 'true' : 'false'}">${esc(topic)}</button>`).join('')}</div>
       <p class="selected-topic" role="status" aria-live="polite">General ${esc(p.short || p.name)} enquiry</p>
-      ${cta(p, 'enquiry', 'Open WhatsApp enquiry')}
+      ${wa('enquiry', 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
       <p class="form-note">Review the message in WhatsApp and send it yourself. Opening WhatsApp does not book or pay for a session.</p>
       <div class="v5-alt"><a href="tel:+919205511101">${icon('conversation')}<span>Call<small>+91 92055 11101</small></span></a><a href="mailto:enquiry@nngarg.com">${icon('confirm')}<span>Email<small>enquiry@nngarg.com</small></span></a></div>
       <p class="enquiry-boundary">Please do not send private records, home footage or someone else’s information in your first message.</p>
@@ -142,11 +150,29 @@ export function renderMain(p, h) {
       <p class="eyebrow">BEFORE BOOKING</p>
       <h2 id="faq-title">A few practical questions.</h2>
       <p>Something else on your mind? Ask the team directly.</p>
-      ${cta(p, 'faq', 'Ask on WhatsApp', '', 'v5-ghost v5-ghost-dark')}
+      ${wa('faq', '', 'wa-round').replace('<a class="wa-round"', '<a class="wa-round" aria-label="Ask on WhatsApp"')}
     </div>
     <div class="faqs">${p.faqs.map(([q, a], i) => `<details${i === 0 ? ' open' : ''}><summary><span class="v5-faq-no">0${i + 1}</span><h3>${esc(q)}</h3><span class="faq-mark" aria-hidden="true"></span></summary><p>${esc(a)}</p></details>`).join('')}</div>
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${book}${situations2(p, { esc, scenarioArt })}${stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta, pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>`;
+  return `<main id="main">${hero}${book}${situations2(p, { esc, scenarioArt })}${stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+}
+
+// Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.
+export function renderFooter(p, { cta, assets }) {
+  return `<footer class="footer v5-foot"><div class="wrap v5-foot-inner">
+    <div class="v5-foot-brand">
+      <img src="${assets}nng-logo.webp" width="100" height="53" alt="Transformation with NNG" loading="lazy">
+      <p class="v5-foot-name">Dr. Narayani Garg<span>Psychic Spiritual Mentor</span></p>
+    </div>
+    <div class="v5-foot-msg">
+      <p class="v5-foot-title">Bring your question.<br><em>Begin a personal conversation.</em></p>
+      ${waLink(cta, p, 'footer', 'Enquire on WhatsApp', 'wa-btn')}
+    </div>
+    <ul class="v5-foot-contact">
+      <li><span>Call</span><a href="tel:+919205511101">+91 92055 11101</a></li>
+      <li><span>Email</span><a href="mailto:enquiry@nngarg.com">enquiry@nngarg.com</a></li>
+    </ul>
+  </div><div class="wrap v5-foot-bottom"><p>© 2026 Transformation with NNG</p><p>Team NNG staging review. Not a production launch.</p><button type="button" class="text-link" data-privacy>How this page uses information</button></div></footer>`;
 }

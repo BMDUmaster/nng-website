@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {pages, voices} from './review-v2/content.mjs';
 import {icon, pageIcon, scenarioArt, serviceVisual, programmeContinuum} from './review-v3/visuals.mjs';
-import {renderMain} from './review-v5/render.mjs';
+import {renderMain, renderFooter} from './review-v5/render.mjs';
 
 const root=path.dirname(fileURLToPath(import.meta.url));
 const source=path.join(root,'site');
@@ -76,6 +76,7 @@ function render(p) {
   const html=renderBase(p);
   if(!p.v5) return html;
   return html.replace(/<main id="main">[\s\S]*<\/main>/,()=>renderMain(p,{esc,lines,cta,icon,pageIcon,scenarioArt,serviceVisual,voices,assets,comparison}).replace('One focused conversation,\nor room to keep working?','One focused conversation,<br>or room to keep working?'))
+    .replace(/<footer class="footer">[\s\S]*?<\/footer>/,()=>renderFooter(p,{cta,assets}))
     .replace('</body>',`<script src="../_shared/v5.js?v=${version}" defer></script></body>`);
 }
 
@@ -85,7 +86,7 @@ for(const file of ['icon.svg','marcellus.woff2','manrope-regular.woff2','manrope
 fs.copyFileSync(path.join(root,'..','public','images','approach-narayani-900.webp'),path.join(shared,'assets','approach-narayani-900.webp'));
 // Self-contained inputs preserved from the published landing-page assets.
 for(const file of ['navleen.webp','london.webp'])fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
-fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v4/premium.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/refine.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/book.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/brainology.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/brain.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/sections2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/uniform.css'),'utf8'));
+fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v4/premium.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/refine.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/book.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/brainology.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/brain.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/sections2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/uniform.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/whatsapp.css'),'utf8'));
 fs.copyFileSync(path.join(root,'review-v5/v5.js'),path.join(shared,'v5.js'));
 fs.copyFileSync(path.join(root,'review-v2/landing.js'),path.join(shared,'landing.js'));
 for(const p of pages){const folder=path.join(output,p.slug);fs.mkdirSync(folder,{recursive:true});fs.writeFileSync(path.join(folder,'index.html'),render(p));}
