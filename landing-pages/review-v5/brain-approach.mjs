@@ -25,7 +25,7 @@ export function brainApproach(p, { esc }) {
     <figure class="visual-explainer bj-figure" data-motion>
       <span class="bj-plum" aria-hidden="true"></span>
       <div class="bj-card">
-        <p class="bj-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)} / at a glance</p>
+        <p class="bj-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)}<span class="bj-glance-tail"> / at a glance</span></p>
         <svg class="bj-path" viewBox="0 0 560 660" aria-hidden="true"><path pathLength="1" d="${path}"/><circle class="bj-dot" r="4.5"><animateMotion dur="12s" repeatCount="indefinite" path="${path}"/></circle></svg>
         <div class="bj-nodes visual-key" role="group" aria-label="The three steps">${p.method.map(([t], i) => `<button type="button" class="bj-node" data-visual-step="${i}" aria-pressed="false" style="--x:${nodes[i][0]}px;--y:${nodes[i][1]}px;--i:${i}" disabled><span class="bj-ic bj-ic-${i}">${icons[i]}</span><span class="bj-label"><em>0${i + 1}.</em><strong>${esc(t)}</strong><span>${short[i]}</span></span></button>`).join('')}</div>
         <p class="bj-tag" aria-hidden="true">A clearer mind <i>✦</i> A calmer you</p>

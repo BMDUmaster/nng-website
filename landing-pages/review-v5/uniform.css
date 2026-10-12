@@ -101,3 +101,4 @@ body.lp-v5 .na-steps .bj-go { width: 40px; height: 40px; }
   body.lp-v5 .na-no { padding-right: 10px; font-size: 14px; }
   body.lp-v5 .na-steps .bj-go { width: 30px; height: 30px; }
 }
+@media (max-width: 900px) { body.lp-v5 .bj-glance-tail { display: none; } }
