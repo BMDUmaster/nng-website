@@ -148,5 +148,5 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${book}${situations2(p, { esc, scenarioArt })}${stories}${p.slug === 'brainology' ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta, pageIcon })}${why}${enquiry}${faq}</main>`;
+  return `<main id="main">${hero}${book}${situations2(p, { esc, scenarioArt })}${stories}${p.slug === 'brainology' || p.slug === 'astrology' ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta, pageIcon })}${why}${enquiry}${faq}</main>`;
 }

@@ -28,7 +28,7 @@ export function numApproach(p, { esc }) {
       <div class="na-stage">
         <span class="na-arch-plum" aria-hidden="true"></span>
         <span class="na-arch-pearl" aria-hidden="true"></span>
-        <p class="na-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)} / at a glance<i aria-hidden="true"></i></p>
+        <p class="na-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)}<span class="bj-glance-tail"> / at a glance</span></p>
         <span class="na-moon" aria-hidden="true"></span>
         <div class="na-orbit" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
         <div class="na-grid" aria-hidden="true">${grid.map((n) => `<span style="--o:${n}">${n}</span>`).join('')}</div>

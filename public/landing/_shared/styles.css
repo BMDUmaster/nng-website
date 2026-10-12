@@ -2435,3 +2435,8 @@ body.lp-v5 .na-steps .bj-go { width: 40px; height: 40px; }
   body.lp-v5 .na-steps .bj-go { width: 30px; height: 30px; }
 }
 @media (max-width: 900px) { body.lp-v5 .bj-glance-tail { display: none; } }
+@media (max-width: 580px) { body.lp-v5 .na-glance { font-size: 13px; } }
+body.lp-v5 :is(.bj-glance, .na-glance) .bj-glance-tail { margin: 0; font-size: inherit; color: inherit; }
+body.lp-v5[data-page="astrology"] .bj-label { max-width: 210px; }
+body.lp-v5[data-page="astrology"] .bj-label strong { font-size: 22px; }
+body.lp-v5[data-page="astrology"] .bj-node[data-visual-step="2"] { top: calc(var(--y) - 20px); }
