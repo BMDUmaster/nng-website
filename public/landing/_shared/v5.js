@@ -90,6 +90,8 @@
     stageEl.replaceChildren(clip);
     dialog.querySelector('#video-title').textContent = button.dataset.clipTitle;
     dialog.querySelector('#video-note').textContent = `${button.dataset.clipNote}. A personal experience of Narayani’s wider guidance.`;
+    dialog.classList.add('is-clip');
+    dialog.addEventListener('close', () => dialog.classList.remove('is-clip'), { once: true });
     dialog.showModal();
     document.body.classList.add('dialog-open');
     clip.play().catch(() => { clip.muted = true; clip.play().catch(() => {}); });
