@@ -160,7 +160,7 @@ export const pages = [
     ],
   },
   {
-    slug: 'hand-holding', family: 'program', name: 'Personalised Hand Holding Program', short: 'Hand Holding Program',
+    slug: 'hand-holding', family: 'program', v5: true, name: 'Personalised Hand Holding Program', short: 'Hand Holding Program',
     headline: ['Some questions need', 'more than one conversation.'],
     description: 'Six months of personal guidance across health, relationships, money and career. Psychic guidance, Astrology, Numerology and Vastu come together where relevant.',
     cta: 'Discuss personal hand holding', facts: [['6 months','Personal guidance'],['Individual or couple','Choose the format'],['Online guidance','Including outside India']],
@@ -184,7 +184,7 @@ export const pages = [
       ['Vastu assessment','Consider relevant living and working spaces as part of the picture.'],
     ],
     scopeNote: 'Individual and couple formats are available. The team explains the inclusions, contact rhythm, response arrangements and fee before you decide.',
-    boundary: 'This is personal and spiritual guidance, not medical or mental health treatment, executive coaching, legal or financial advice. No fixed result or unlimited access is promised.',
+    boundary: 'This is personal and spiritual guidance, not medical or mental health treatment, executive coaching, legal or financial advice.',
     proof: ['navleen','london','puneet'],
     proofTitle: 'People who return\nwith life’s important questions.',
     closeTitle: 'Explore whether six months\nof guidance fits your life.',

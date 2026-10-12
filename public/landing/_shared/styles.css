@@ -2437,6 +2437,36 @@ body.lp-v5 .na-steps .bj-go { width: 40px; height: 40px; }
 @media (max-width: 900px) { body.lp-v5 .bj-glance-tail { display: none; } }
 @media (max-width: 580px) { body.lp-v5 .na-glance { font-size: 13px; } }
 body.lp-v5 :is(.bj-glance, .na-glance) .bj-glance-tail { margin: 0; font-size: inherit; color: inherit; }
+@media (min-width: 901px) {
 body.lp-v5[data-page="astrology"] .bj-label { max-width: 210px; }
 body.lp-v5[data-page="astrology"] .bj-label strong { font-size: 22px; }
 body.lp-v5[data-page="astrology"] .bj-node[data-visual-step="2"] { top: calc(var(--y) - 20px); }
+}
+/* Phones: three equal columns for the journey stops; long names wrap neatly. */
+@media (max-width: 900px) {
+  body.lp-v5 .bj-nodes { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+  body.lp-v5 .bj-label { max-width: none; }
+}
+@media (max-width: 580px) {
+  body.lp-v5 .bj-label strong { font-size: 15px; line-height: 1.2; }
+  body.lp-v5 .bj-label span { font-size: 10.5px; }
+}
+
+/* Three client voices sit in three columns. */
+@media (min-width: 901px) { body.lp-v5 .v5-quotes-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Hand Holding: the consultation-or-programme comparison in the v5 rhythm. */
+body.lp-v5 .programme-comparison { padding-block: var(--pad) !important; }
+body.lp-v5 .programme-comparison .section-heading { margin-bottom: 28px; }
+body.lp-v5 .programme-comparison .comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+body.lp-v5 .programme-comparison .comparison-grid article { display: flex; flex-direction: column; gap: 8px; padding: 26px; border-radius: 22px; background: linear-gradient(180deg, #FFFDF9, #FBF6EE); box-shadow: 0 0 0 1px rgb(184 138 69 / 0.2), 0 26px 46px -36px rgb(60 24 61 / 0.5); }
+body.lp-v5 .programme-comparison .comparison-grid article:last-child { background: linear-gradient(140deg, #4A2049, #3C183D 55%, #231E25); }
+body.lp-v5 .programme-comparison h3 { margin: 0; font-size: clamp(20px, 1.8vw, 26px); }
+body.lp-v5 .programme-comparison p:not(.eyebrow) { margin: 0; font-size: 14.5px; }
+body.lp-v5 .programme-comparison .text-link { margin-top: auto; padding-top: 10px; }
+body.lp-v5 .comparison-visual .line-icon { width: 34px; height: 34px; }
+@media (max-width: 700px) {
+  body.lp-v5 .programme-comparison .comparison-grid { grid-template-columns: 1fr; gap: 12px; }
+  body.lp-v5 .programme-comparison .comparison-grid article { padding: 20px 18px; border-radius: 20px; }
+}
+@media (max-width: 580px) { body.lp-v5 .v5-blob, body.lp-v5 .v5-leaf-r { display: none; } }

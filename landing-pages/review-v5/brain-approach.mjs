@@ -11,6 +11,7 @@ const clock = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke
 const personIc = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M7 27c0-5 4-9 9-9s9 4 9 9"/></svg>';
 const sets = {
   brainology: { icons: null, short: ['What keeps returning', 'Thoughts & beliefs', 'A different response'], tag: 'A clearer mind <i>✦</i> A calmer you', gold: 'new response.' },
+  'hand-holding': { icons: [chart, '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M25 12a10 10 0 0 0-17.5-3.5L5 11"/><path d="M5 5v6h6"/><path d="M7 20a10 10 0 0 0 17.5 3.5L27 21"/><path d="M27 27v-6h-6"/></svg>', '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h22v14H14l-6 5v-5H5z"/><path d="M10 12h12M10 16h8"/></svg>'], short: ['Chart, numbers & spaces', 'Four life areas', 'Direct handholding'], titles: ['Circumstances', 'Patterns', 'Return'], tag: 'Six months <i>✦</i> With Narayani', gold: 'over six months.' },
   astrology: { icons: [chart, clock, personIc], short: ['Houses & chart themes', 'Periods & transits', 'Your choices remain'], tag: '', gold: 'personal conversation.' },
 };
 
@@ -36,7 +37,7 @@ export function brainApproach(p, { esc }) {
       <div class="bj-card">
         <p class="bj-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)}<span class="bj-glance-tail"> / at a glance</span></p>
         <svg class="bj-path" viewBox="0 0 560 660" aria-hidden="true"><path pathLength="1" d="${path}"/><circle class="bj-dot" r="4.5"><animateMotion dur="12s" repeatCount="indefinite" path="${path}"/></circle></svg>
-        <div class="bj-nodes visual-key" role="group" aria-label="The three steps">${p.method.map(([t], i) => `<button type="button" class="bj-node" data-visual-step="${i}" aria-pressed="false" style="--x:${nodes[i][0]}px;--y:${nodes[i][1]}px;--i:${i}" disabled><span class="bj-ic bj-ic-${i}">${ic[i]}</span><span class="bj-label"><em>0${i + 1}.</em><strong>${esc(t)}</strong><span>${short[i]}</span></span></button>`).join('')}</div>
+        <div class="bj-nodes visual-key" role="group" aria-label="The three steps">${p.method.map(([t], i) => `<button type="button" class="bj-node" data-visual-step="${i}" aria-pressed="false" style="--x:${nodes[i][0]}px;--y:${nodes[i][1]}px;--i:${i}" disabled><span class="bj-ic bj-ic-${i}">${ic[i]}</span><span class="bj-label"><em>0${i + 1}.</em><strong>${esc(set.titles ? set.titles[i] : t)}</strong><span>${short[i]}</span></span></button>`).join('')}</div>
         ${set.tag ? `<p class="bj-tag" aria-hidden="true">${set.tag}</p>` : ''}
         ${olive}
       </div>

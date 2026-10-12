@@ -75,7 +75,7 @@ function renderBase(p) {
 function render(p) {
   const html=renderBase(p);
   if(!p.v5) return html;
-  return html.replace(/<main id="main">[\s\S]*<\/main>/,()=>renderMain(p,{esc,lines,cta,icon,pageIcon,scenarioArt,serviceVisual,voices,assets}))
+  return html.replace(/<main id="main">[\s\S]*<\/main>/,()=>renderMain(p,{esc,lines,cta,icon,pageIcon,scenarioArt,serviceVisual,voices,assets,comparison}).replace('One focused conversation,\nor room to keep working?','One focused conversation,<br>or room to keep working?'))
     .replace('</body>',`<script src="../_shared/v5.js?v=${version}" defer></script></body>`);
 }
 
