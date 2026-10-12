@@ -3,13 +3,14 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {pages, voices} from './review-v2/content.mjs';
 import {icon, pageIcon, scenarioArt, serviceVisual, programmeContinuum} from './review-v3/visuals.mjs';
+import {renderMain} from './review-v5/render.mjs';
 
 const root=path.dirname(fileURLToPath(import.meta.url));
 const source=path.join(root,'site');
 const output=path.join(root,'dist','landing');
 const shared=path.join(output,'_shared');
 const base='https://deoxysaryan.github.io/NNG_Codex_Build/preview-20261004-r1/landing/';
-const version='20261012-refine-v5';
+const version='20261012-refine-v6';
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const lines=s=>s.split('\n').map(esc).join('<br>');
 const arrow='<span aria-hidden="true">↗</span>';
@@ -41,7 +42,7 @@ function comparison(p) {
   if(p.family!=='program') return '';
   return `<section class="section wrap programme-comparison" aria-labelledby="comparison-title"><div class="section-heading"><p class="eyebrow">WHICH KIND OF GUIDANCE?</p><h2 id="comparison-title">One focused conversation,\nor room to keep working?</h2></div><div class="comparison-grid"><article><div class="comparison-visual" aria-hidden="true">${icon('conversation')}</div><p class="eyebrow">A CONSULTATION</p><h3>A question to focus on.</h3><p>A standalone conversation around a particular concern, reading or decision. You can begin here without joining the programme.</p>${cta(p,'single-consultation','Ask about starting with a consultation','Start with a single consultation','text-link')}</article><article><div class="comparison-visual" aria-hidden="true">${icon('conversation')}<span class="comparison-track"><i></i><i></i><i></i><i></i><i></i><i></i></span></div><p class="eyebrow">SIX-MONTH HAND HOLDING</p><h3>Guidance to return to.</h3><p>A personally guided programme that brings relevant assessments and work on recurring patterns together over six months.</p>${cta(p,'programme-comparison','Discuss the six-month programme','','text-link')}</article></div></section>`;
 }
-function render(p) {
+function renderBase(p) {
   const original=fs.readFileSync(path.join(source,'index.html'),'utf8');
   let head=original.match(/<!doctype html>[\s\S]*?<\/head>/)[0];
   head=head.replace(/<title>[\s\S]*?<\/title>/,`<title>${esc(p.short||p.name)} with Narayani Garg | NNG</title>`)
@@ -70,11 +71,20 @@ function render(p) {
   <div class="mobile-cta" hidden><span>${esc(p.short||p.name)}</span>${cta(p,'mobile-sticky','WhatsApp','','button button-small')}</div>${dialogs}</body></html>`.replaceAll('Business responsibilities.\nPersonal questions.','Business responsibilities.<br>Personal questions.').replaceAll('A reading is personal.\nSo is the way she listens.','A reading is personal.<br>So is the way she listens.').replaceAll('Change Your Mind,\nTransform Your Life','Change Your Mind,<br>Transform Your Life').replaceAll('One focused conversation,\nor room to keep working?','One focused conversation,<br>or room to keep working?');
 }
 
+// Pages marked v5 keep the shared header, footer and dialogs, with the refined sections between them.
+function render(p) {
+  const html=renderBase(p);
+  if(!p.v5) return html;
+  return html.replace(/<main id="main">[\s\S]*<\/main>/,()=>renderMain(p,{esc,lines,cta,icon,pageIcon,scenarioArt,voices,assets}))
+    .replace('</body>',`<script src="../_shared/v5.js?v=${version}" defer></script></body>`);
+}
+
 fs.mkdirSync(path.join(shared,'assets'),{recursive:true});
 for(const file of ['icon.svg','marcellus.woff2','manrope-regular.woff2','manrope-semibold.woff2','nng-logo.webp','intro-frame.jpg','introduction.mp4','deepa.webp','manish.webp','puneet.webp','share.jpg','book-cover.webp']) fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
 // Self-contained inputs preserved from the published landing-page assets.
 for(const file of ['navleen.webp','london.webp'])fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
-fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v4/premium.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/refine.css'),'utf8'));
+fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v4/premium.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/refine.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/book.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/brainology.css'),'utf8'));
+fs.copyFileSync(path.join(root,'review-v5/v5.js'),path.join(shared,'v5.js'));
 fs.copyFileSync(path.join(root,'review-v2/landing.js'),path.join(shared,'landing.js'));
 for(const p of pages){const folder=path.join(output,p.slug);fs.mkdirSync(folder,{recursive:true});fs.writeFileSync(path.join(folder,'index.html'),render(p));}
 const review=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>NNG landing pages | Revised copy review</title><link rel="icon" href="_shared/assets/icon.svg"><link rel="stylesheet" href="_shared/styles.css?v=${version}"></head><body class="copy-v2"><main class="wrap section"><p class="eyebrow">TEAM NNG / REVISED LANDING PAGES / 9 OCTOBER 2026</p><h1>Five services.\nFive personal starting points.</h1><p class="service-terms">Rewritten around real consultation questions, Narayani’s approach and a direct WhatsApp enquiry. Staging review only; no ads or production launch.</p><div class="review-grid">${pages.map(p=>`<a class="review-link" href="${p.slug}/"><span>${esc(p.family==='program'?'Six-month personal programme':'Personal consultation')}</span><h2>${esc(p.short||p.name)}</h2><p>${esc(p.headline.join(' '))}</p><p class="review-action">Review this page ${arrow}</p></a>`).join('')}</div></main></body></html>`;
