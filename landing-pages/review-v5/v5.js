@@ -102,6 +102,19 @@
     setTimeout(step, 4000);
   }
 
+  // Brainology hero deck: the back card comes forward every few seconds; hovering holds it.
+  const deck = document.querySelector('[data-deck]');
+  if (deck && !reduce) {
+    const cards = [...deck.children];
+    let held = false;
+    deck.addEventListener('mouseenter', () => { held = true; });
+    deck.addEventListener('mouseleave', () => { held = false; });
+    setInterval(() => {
+      if (held || document.hidden) return;
+      cards.forEach((c) => { c.dataset.pos = String((Number(c.dataset.pos) + 1) % cards.length); });
+    }, 3600);
+  }
+
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
   const sound = document.querySelector('.v5-sound');
