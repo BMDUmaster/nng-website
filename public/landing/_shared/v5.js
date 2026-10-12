@@ -74,6 +74,27 @@
     sound.setAttribute('aria-label', film.muted ? 'Turn sound on' : 'Turn sound off');
   });
 
+  // Client voices: Watch opens the film and plays it straight away (the clip is served by the website).
+  const dialog = document.querySelector('#video-dialog');
+  document.querySelectorAll('[data-clip]').forEach((button) => button.addEventListener('click', () => {
+    if (!dialog) return;
+    film?.pause();
+    const stageEl = dialog.querySelector('#video-stage');
+    const clip = document.createElement('video');
+    clip.className = 'v5-clip';
+    clip.src = button.dataset.clip;
+    clip.controls = true;
+    clip.autoplay = true;
+    clip.playsInline = true;
+    clip.preload = 'auto';
+    stageEl.replaceChildren(clip);
+    dialog.querySelector('#video-title').textContent = `${button.dataset.clipTitle}’s experience`;
+    dialog.querySelector('#video-note').textContent = 'Translated from Hindi. A personal experience of Narayani’s wider guidance.';
+    dialog.showModal();
+    document.body.classList.add('dialog-open');
+    clip.play().catch(() => { clip.muted = true; clip.play().catch(() => {}); });
+  }));
+
   // Phones: the situation cards glide past in a loop, and hold still while touched or hovered.
   const rail = document.querySelector('[data-rail]');
   if (rail && !reduce && matchMedia('(max-width: 800px)').matches) {

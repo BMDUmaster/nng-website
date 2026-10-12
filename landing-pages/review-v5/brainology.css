@@ -629,3 +629,29 @@ body.lp-v5 .v5-marquee:hover .v5-rail, body.lp-v5 .v5-marquee.is-held .v5-rail {
   72%, 83% { transform: translateZ(-1.5px) rotateY(-160deg); }
   88%, 100% { transform: translateZ(-1.5px) rotateY(0deg); }
 }
+
+/* Phones: the book turns a little faster. */
+@media (max-width: 680px) and (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .bk-stage.is-on :is(.bk-book, .bk-cover, .bk-leaf) { animation-duration: 15s; }
+}
+
+/* The sticky bar on phones floats as a slim glass pill. */
+body.lp-v5 .mobile-cta {
+  left: 10px;
+  right: 10px;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  gap: 10px;
+  padding: 6px 6px 6px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(250 246 240 / 0.62);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.55), 0 0 0 1px rgb(184 138 69 / 0.3), 0 18px 34px -16px rgb(35 30 37 / 0.55);
+}
+body.lp-v5 .mobile-cta > span { font-size: 12.5px; font-weight: 600; color: var(--plum); }
+body.lp-v5 .mobile-cta .button { min-height: 42px; padding: 3px 3px 3px 16px; }
+body.lp-v5 .mobile-cta .button span { width: 34px; height: 34px; }
+
+/* The client film in the dialog. */
+body.lp-v5 .v5-clip { display: block; width: 100%; max-height: 74vh; border-radius: 14px; background: #000; }

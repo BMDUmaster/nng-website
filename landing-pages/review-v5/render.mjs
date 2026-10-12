@@ -82,7 +82,7 @@ export function renderMain(p, h) {
   /* Client voices: compact quote cards. */
   const stories = `<section class="stories-band v5-voices" id="stories" aria-labelledby="stories-title"><div class="section wrap">
     <div class="v5-head"><p class="eyebrow">CLIENT VOICES</p><h2 id="stories-title">${lines(p.proofTitle)}</h2></div>
-    <div class="v5-quotes">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-video="${key}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
+    <div class="v5-quotes">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-clip="/videos/stories/${key}.mp4" data-clip-title="${esc(v.name)}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
   </div></section>`;
 
   /* Approach: the drawing beside three steps, which light in turn while in view. */
