@@ -84,6 +84,24 @@
     if (!reduce) new IntersectionObserver(([e]) => { clearInterval(timer); if (e.isIntersecting) timer = setInterval(tick, 3800); }, { threshold: 0.4 }).observe(carousel);
   }
 
+  // Design preview only: a viewers badge with sample numbers, shown when the address carries ?demo=viewers.
+  // Visitors arriving normally never see it.
+  const viewers = document.querySelector('[data-viewers]');
+  if (viewers && new URLSearchParams(location.search).get('demo') === 'viewers') {
+    const [lo, hi] = viewers.dataset.viewers.split('-').map(Number);
+    const out = viewers.querySelector('b');
+    let n = lo + Math.floor(Math.random() * (hi - lo + 1));
+    const set = (v) => { out.classList.remove('is-tick'); void out.offsetWidth; out.textContent = String(v); out.classList.add('is-tick'); };
+    viewers.hidden = false;
+    set(n);
+    const step = () => {
+      n = Math.min(hi, Math.max(lo, n + (Math.random() < 0.5 ? -1 : 1) * (1 + Math.floor(Math.random() * 3))));
+      set(n);
+      setTimeout(step, 4000 + Math.random() * 4000);
+    };
+    setTimeout(step, 4000);
+  }
+
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
   const sound = document.querySelector('.v5-sound');

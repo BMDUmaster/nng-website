@@ -30,7 +30,7 @@ export function renderMain(p, h) {
   /* Opening. */
   const hero = `<div class="hero-banner v5-hero-banner"><section class="hero wrap v5-hero" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="v5-pill">${esc(p.short || p.name)}</p>
+      <div class="v5-pill-row"><p class="v5-pill">${esc(p.short || p.name)}</p><p class="v5-viewers" data-viewers="${({ brainology: '14-28', numerology: '9-21', vastulogy: '7-18', astrology: '16-32', 'hand-holding': '6-15' })[p.slug] || '8-20'}" hidden><span class="v5-viewers-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>0</b> viewing now</p></div>
       <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
       <h1 id="hero-title">${esc(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
       <p class="hero-description">${esc(p.description)}</p>

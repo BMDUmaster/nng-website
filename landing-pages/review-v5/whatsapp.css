@@ -110,3 +110,17 @@ body.lp-v5 .wa-round:hover { transform: scale(1.06) rotate(-6deg); }
 }
 /* Desktop: the bottom row clears the floating button. */
 @media (min-width: 901px) { body.lp-v5 .v5-foot-bottom { padding-right: 84px; } }
+
+/* Viewers badge (design preview). */
+body.lp-v5 .v5-pill-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 14px; }
+body.lp-v5 .v5-pill-row .v5-pill { margin: 0; }
+body.lp-v5 .v5-viewers { display: inline-flex; align-items: center; gap: 8px; margin: 0; padding: 7px 14px 7px 12px; border-radius: 999px; background: rgb(250 246 240 / 0.08); box-shadow: inset 0 0 0 1px rgb(250 246 240 / 0.22); color: rgb(250 246 240 / 0.86); font-size: 12.5px; font-weight: 600; backdrop-filter: blur(6px); }
+body.lp-v5 .v5-viewers[hidden] { display: none; }
+body.lp-v5 .v5-viewers svg { width: 16px; height: 16px; color: var(--champ); }
+body.lp-v5 .v5-viewers b { min-width: 2ch; font-variant-numeric: tabular-nums; color: var(--champ); }
+body.lp-v5 .v5-viewers b.is-tick { animation: v5-tick 0.5s var(--ease); }
+body.lp-v5 .v5-viewers-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #3BE07C; }
+body.lp-v5 .v5-viewers-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid #3BE07C; animation: v5-pulse 1.8s ease-out infinite; }
+@keyframes v5-tick { from { opacity: 0; transform: translateY(6px); display: inline-block; } to { opacity: 1; transform: none; } }
+@media (max-width: 580px) { body.lp-v5 .v5-pill-row { gap: 8px; margin-bottom: 10px; } body.lp-v5 .v5-viewers { padding: 6px 12px 6px 10px; font-size: 11.5px; } }
+body.lp-v5 .v5-viewers b { min-width: 0; } body.lp-v5 .v5-viewers-dot::after { border-color: rgb(59 224 124 / 0.7); }
