@@ -91,8 +91,8 @@ export function renderMain(p, h) {
 
   /* Approach: the drawing beside three steps, which light in turn while in view. */
   const approach = `<section class="section wrap approach v5-approach2" id="approach" aria-labelledby="approach-title">
-    <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2><p>${esc(p.methodIntro)}</p></div>
-    ${p.slug === 'vastu' ? vastuPlan() : serviceVisual(p)}${p.slug === 'vastu' ? `<span class="v5-leaf-l" aria-hidden="true">${leaves}</span><span class="v5-leaf-r" aria-hidden="true">${leaves}</span>` : ''}
+    <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2>${p.slug === 'vastu' ? '' : `<p>${esc(p.methodIntro)}</p>`}</div>
+    ${p.slug === 'vastu' ? vastuPlan() : serviceVisual(p)}${p.slug === 'vastu' ? `<span class="v5-blob" aria-hidden="true"></span><span class="v5-leaf-l" aria-hidden="true">${leaves('l')}</span><span class="v5-leaf-r" aria-hidden="true">${leaves('r')}</span>` : ''}
     <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false">${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p>${p.slug === 'vastu' ? `<span class="v5-chev" aria-hidden="true">${chevron}</span>` : ''}<span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
   </section>`;
   /* Practices: names only. */

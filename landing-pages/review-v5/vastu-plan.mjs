@@ -12,7 +12,9 @@ const icons = {
 
 export const chevron = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 7 5 5-5 5"/></svg>';
 
-export const leaves = `<svg class="v5-leaves" viewBox="0 0 120 200" aria-hidden="true"><path class="lf-stem" d="M60 198C58 150 64 100 92 20"/>${[[66, 160, -40], [62, 128, 35], [70, 100, -38], [74, 72, 32], [82, 48, -34], [90, 26, 20]].map(([x, y, r]) => `<ellipse cx="${x}" cy="${y}" rx="9" ry="22" transform="rotate(${r} ${x} ${y}) translate(${r < 0 ? -12 : 12} 0)"/>`).join('')}</svg>`;
+// A botanical sprig: a curved stem with almond leaves in two sage tones, each with a midrib.
+const sprig = [[24, 282, -58, 1], [30, 252, 54, 1.05], [36, 222, -56, 1.1], [44, 192, 52, 1.1], [54, 162, -54, 1.05], [66, 132, 50, 1], [80, 102, -50, 0.95], [94, 72, 46, 0.85], [106, 44, -40, 0.75], [114, 22, 10, 0.7]];
+export const leaves = (id) => `<svg class="v5-leaves" viewBox="0 0 160 310" aria-hidden="true"><defs><linearGradient id="lf-a-${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9DAF86"/><stop offset="1" stop-color="#6E8257"/></linearGradient><linearGradient id="lf-b-${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C3CFB2"/><stop offset="1" stop-color="#8FA07A"/></linearGradient></defs><path class="lf-stem" d="M20 306C34 240 52 160 116 14"/>${sprig.map(([x, y, r, k], i) => `<g class="lf" style="--d:${i * 0.35}s" transform="translate(${x} ${y}) rotate(${r}) scale(${k})"><path d="M0 0C11-9 13-30 0-44C-13-30-11-9 0 0Z" fill="url(#lf-${i % 3 ? 'a' : 'b'}-${id})"/><path class="lf-rib" d="M0-2V-40"/></g>`).join('')}</svg>`;
 
 export function vastuPlan() {
   const legend = [['compass', 'Direction', 'Orientation & entrance'], ['sofa', 'Arrangement', 'Rooms & seating'], ['people', 'Daily use', 'People & routines']];
@@ -45,6 +47,5 @@ export function vastuPlan() {
     </svg>
     <div class="visual-key" role="group" aria-label="Explore the illustration">${legend.map(([ic, a, b], i) => `<button type="button" data-visual-step="${i}" aria-pressed="false" aria-label="Highlight ${a}: ${b}" disabled><span class="vk-icon">${icons[ic]}</span><strong>${a}</strong><span>${b}</span></button>`).join('')}</div>
     <p class="visual-hint" hidden>Tap a label to explore the illustration.</p>
-    <figcaption>${icons.info}<span>An example plan, not an ideal arrangement or a prescription for your space.</span></figcaption>
   </figure>`;
 }
