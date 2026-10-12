@@ -5,6 +5,7 @@ import { brainApproach } from './brain-approach.mjs';
 import { numApproach } from './num-approach.mjs';
 import { situations2, practices2 } from './sections2.mjs';
 import { heroArt } from './hero-art.mjs';
+import { brainHero } from './hero-brain.mjs';
 
 const person = 'Narayani Garg';
 // Client films served by the website (public/videos/stories), keyed by landing-page voice.
@@ -39,7 +40,7 @@ export function renderMain(p, h) {
       <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
       <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>
     </div>
-    ${heroArt(p, { esc })}
+    ${p.slug === 'brainology' ? brainHero(p, { esc }) : heroArt(p, { esc })}
   </section></div>`;
 
   /* Her book, opening slowly while in view, beside the clientele. */
