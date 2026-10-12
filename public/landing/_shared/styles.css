@@ -2675,82 +2675,112 @@ body.lp-v5 .ha-note > span:last-child { font-size: 11.5px; color: rgb(250 246 24
 body.lp-v5 .ha-note { background: rgb(35 20 38 / 0.78); }
 body.lp-v5 .ha-ring .ha-zod { font-family: "Segoe UI Symbol", "Noto Sans Symbols", "Apple Symbols", serif; font-variant-emoji: text; }
 /* =============================================================================================================
-   Brainology hero: a compact, professional opening with a line-art visual (no photograph).
+   Brainology hero, from the approved design: pearl ground, ink and gold serif headline, features in a row, a bronze
+   action, and the illustrated mind on the right fading into the page.
    ============================================================================================================= */
-body.lp-v5[data-page="brainology"] .v5-hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 40px; align-items: center; padding-block: 52px 56px; }
-body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: clamp(34px, 3.6vw, 54px); line-height: 1.08; letter-spacing: -0.01em; }
-body.lp-v5[data-page="brainology"] .v5-hero .hero-description { max-width: 520px; margin-top: 16px; font-size: 16px; line-height: 1.65; }
-body.lp-v5[data-page="brainology"] .v5-hero .hero-actions { margin-top: 24px; }
-/* Facts as one quiet row. */
-body.lp-v5[data-page="brainology"] .v5-facts { display: flex; flex-wrap: wrap; gap: 0; max-width: none; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgb(215 184 107 / 0.22); }
-body.lp-v5[data-page="brainology"] .v5-facts li { display: grid; grid-template-columns: auto auto; grid-template-rows: auto auto; align-items: center; gap: 0 10px; padding: 0 22px 0 0; margin-right: 22px; border-radius: 0; background: none; box-shadow: none; border-right: 1px solid rgb(215 184 107 / 0.22); }
-body.lp-v5[data-page="brainology"] .v5-facts li:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+body.lp-v5[data-page="brainology"] .v5-hero-banner { position: relative; overflow: hidden; background: radial-gradient(60% 90% at 78% 40%, #FFF6E4 0%, transparent 70%), linear-gradient(180deg, #FBF6EE 0%, #F6EEE2 100%); color: var(--ink); }
+body.lp-v5[data-page="brainology"] .v5-hero-banner::before { display: none; }
+body.lp-v5[data-page="brainology"] .v5-hero { position: static; grid-template-columns: minmax(0, 560px) 1fr; min-height: 600px; padding-block: 56px 60px; gap: 0; }
+body.lp-v5[data-page="brainology"] .hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; }
+
+/* Pill. */
+body.lp-v5[data-page="brainology"] .v5-pill-row { order: 1; margin-bottom: 18px; }
+body.lp-v5[data-page="brainology"] .v5-pill { padding: 9px 18px 9px 14px; background: rgb(255 255 255 / 0.7); box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.35), 0 8px 20px -14px rgb(120 80 30 / 0.4); color: #8A5A1F; font-size: 12px; letter-spacing: 0.14em; }
+body.lp-v5[data-page="brainology"] .v5-pill::before { background: #B57A2E; }
+body.lp-v5[data-page="brainology"] .v5-viewers { background: rgb(255 255 255 / 0.7); box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.3); color: #5A4A3A; }
+body.lp-v5[data-page="brainology"] .v5-viewers b, body.lp-v5[data-page="brainology"] .v5-viewers svg { color: #9A6324; }
+body.lp-v5[data-page="brainology"] .hero-role { order: 2; margin: 0 0 10px; font-size: 13px; letter-spacing: 0.04em; color: #7A6A5C; }
+
+/* Headline and words. */
+body.lp-v5[data-page="brainology"] .v5-hero h1 { order: 3; margin: 0; font-size: clamp(36px, 3.9vw, 58px); line-height: 1.06; letter-spacing: -0.01em; color: #1F2433; }
+body.lp-v5[data-page="brainology"] .v5-hero h1 span { font-style: normal; background: linear-gradient(100deg, #8E5A1C 0%, #C08A3E 45%, #9A6324 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.lp-v5[data-page="brainology"] .v5-hero .hero-description { order: 4; max-width: 520px; margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #5B5F6B; }
+
+/* Features in a row, icon in a soft cream disc, thin dividers. */
+body.lp-v5[data-page="brainology"] .v5-facts { order: 5; display: flex; flex-wrap: wrap; gap: 0; max-width: none; margin: 26px 0 0; padding: 0; border: 0; }
+body.lp-v5[data-page="brainology"] .v5-facts li { display: grid; grid-template-columns: 52px auto; grid-template-rows: auto auto; align-items: center; gap: 0 12px; margin: 0 20px 0 0; padding: 0 20px 0 0; border: 0; border-right: 1px solid rgb(184 138 69 / 0.25); border-radius: 0; background: none; box-shadow: none; }
+body.lp-v5[data-page="brainology"] .v5-facts li:last-child { margin-right: 0; padding-right: 0; border-right: 0; }
 body.lp-v5[data-page="brainology"] .v5-facts li::before, body.lp-v5[data-page="brainology"] .v5-facts li::after { content: none; }
-body.lp-v5[data-page="brainology"] .v5-facts-icon { grid-row: 1 / 3; width: 34px; height: 34px; margin: 0; }
-body.lp-v5[data-page="brainology"] .v5-facts-icon .line-icon { width: 18px; height: 18px; }
-body.lp-v5[data-page="brainology"] .v5-facts strong { font-size: 16px; }
-body.lp-v5[data-page="brainology"] .v5-facts li > span:last-child { font-size: 12px; }
-body.lp-v5[data-page="brainology"] .v5-hero .hero-note { margin-top: 14px; }
+body.lp-v5[data-page="brainology"] .v5-facts-icon { grid-row: 1 / 3; width: 52px; height: 52px; margin: 0; background: radial-gradient(circle at 40% 35%, #FFFFFF, #F3E6D0); box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.25); }
+body.lp-v5[data-page="brainology"] .v5-facts-icon .line-icon { width: 26px; height: 26px; color: #A26A28; }
+body.lp-v5[data-page="brainology"] .v5-facts strong { font-family: var(--body); font-weight: 600; font-size: 15px; line-height: 1.25; color: #2A2D38; }
+body.lp-v5[data-page="brainology"] .v5-facts li > span:last-child { font-size: 13px; color: #6E6A66; }
 
-/* Visual: a fanned deck of paper practice cards. */
-body.lp-v5 .hb { position: relative; display: grid; place-items: center; width: 100%; max-width: 500px; height: 520px; margin-inline: auto; }
-body.lp-v5 .hb-glow { position: absolute; inset: 8% 6%; border-radius: 50%; background: radial-gradient(circle, rgb(215 184 107 / 0.26), rgb(142 74 134 / 0.08) 55%, transparent 72%); filter: blur(8px); }
-body.lp-v5 .hb-ring { position: absolute; width: 440px; height: 440px; border-radius: 50%; border: 1px solid rgb(215 184 107 / 0.28); }
-body.lp-v5 .hb-ring-2 { width: 360px; height: 360px; border-style: dashed; border-color: rgb(215 184 107 / 0.2); }
-body.lp-v5 .hb-deck { position: relative; width: 236px; height: 340px; perspective: 1400px; }
-body.lp-v5 .hb-card {
-  position: absolute;
-  inset: 0;
-  padding: 10px;
-  border-radius: 18px;
-  background: #FBF6EC;
-  background-image: radial-gradient(120% 90% at 50% 40%, transparent 60%, rgb(184 138 69 / 0.1)), repeating-linear-gradient(0deg, rgb(120 90 40 / 0.02) 0 1px, transparent 1px 3px);
-  box-shadow: 0 30px 50px -24px rgb(0 0 0 / 0.65), 0 0 0 1px rgb(184 138 69 / 0.25);
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease, box-shadow 1s ease, filter 1s ease;
-  will-change: transform;
-}
-body.lp-v5 .hb-card-in { display: flex; flex-direction: column; align-items: center; height: 100%; padding: 22px 18px 16px; border-radius: 12px; border: 1px solid rgb(184 138 69 / 0.55); outline: 1px solid rgb(184 138 69 / 0.25); outline-offset: -6px; text-align: center; }
-body.lp-v5 .hb-step { margin: 0; font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #9A6F35; }
-body.lp-v5 .hb-icon { display: grid; place-items: center; width: 84px; height: 84px; margin: 22px 0 16px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFFFF, #F1E6D2); box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.35); color: #3C183D; }
-body.lp-v5 .hb-icon svg { width: 42px; height: 42px; }
-body.lp-v5 .hb-card h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 30px; line-height: 1.1; color: #3C183D; }
-body.lp-v5 .hb-orn { margin: 6px 0 8px; font-size: 16px; color: #B88A45; }
-body.lp-v5 .hb-line { margin: 0; font-family: var(--display); font-style: italic; font-size: 15px; line-height: 1.45; color: #5A3A58; }
-body.lp-v5 .hb-foot { margin: auto 0 0; padding-top: 10px; width: 100%; border-top: 1px solid rgb(184 138 69 / 0.3); font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #9A6F35; }
-/* Positions: 0 front, 1 back-left, 2 back-right. */
-body.lp-v5 .hb-card[data-pos="0"] { z-index: 3; transform: translate3d(0, 0, 0) rotate(0deg); }
-body.lp-v5 .hb-card[data-pos="1"] { z-index: 2; transform: translate3d(-96px, 18px, -60px) rotate(-11deg); filter: brightness(0.9); }
-body.lp-v5 .hb-card[data-pos="2"] { z-index: 1; transform: translate3d(96px, 18px, -60px) rotate(11deg); filter: brightness(0.9); }
-body.lp-v5 .hb-caption { position: absolute; bottom: 4px; left: 0; right: 0; margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-align: center; text-transform: uppercase; color: rgb(250 246 240 / 0.62); }
-body.lp-v5 .hb-caption span { color: var(--champ); }
+/* Actions: bronze solid and bronze outline. */
+body.lp-v5[data-page="brainology"] .v5-hero .hero-actions { order: 6; margin-top: 30px; gap: 16px; }
+body.lp-v5[data-page="brainology"] .v5-hero .wa-btn { min-height: 56px; padding: 6px 6px 6px 26px; background: linear-gradient(180deg, #B98034, #9A6324); color: #FFFFFF; font-size: 16px; font-weight: 600; box-shadow: 0 16px 30px -16px rgb(140 90 30 / 0.9); }
+body.lp-v5[data-page="brainology"] .v5-hero .wa-btn .wa-ic { width: 44px; height: 44px; box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.4); }
+body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost { min-height: 56px; padding-left: 26px; background: rgb(255 255 255 / 0.5); box-shadow: inset 0 0 0 1.5px #B57A2E; color: #2A2D38; font-size: 16px; backdrop-filter: none; }
+body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost i { width: 42px; height: 42px; background: #9A6324; box-shadow: none; color: #FFFFFF; }
+body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost:hover { background: #FFFFFF; }
+body.lp-v5[data-page="brainology"] .v5-hero .hero-note { order: 7; margin-top: 16px; font-size: 12.5px; color: #8A7E72; }
+
+/* The picture: right half, full height, fading into the ground on the left. */
+body.lp-v5 .hb { position: absolute; top: 0; right: 0; bottom: 0; z-index: 1; width: 58%; max-width: none; height: auto; margin: 0; pointer-events: none; }
+body.lp-v5 .hb-art { position: absolute; inset: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%); }
+body.lp-v5 .hb-art img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 30% 40%; }
+body.lp-v5 .hb-sweep { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 244 214 / 0.35) 50%, transparent 65%); background-size: 250% 100%; background-position: 120% 0; mix-blend-mode: screen; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+body.lp-v5 .hb-sun { position: absolute; left: 52%; top: 70%; width: 160px; height: 160px; margin: -80px 0 0 -80px; border-radius: 50%; background: radial-gradient(circle, rgb(255 236 180 / 0.75), rgb(255 214 140 / 0.2) 40%, transparent 70%); mix-blend-mode: screen; }
+body.lp-v5 .hb-star { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #FFE9B0; box-shadow: 0 0 8px 2px rgb(255 220 150 / 0.8); opacity: 0; }
+
 @media (prefers-reduced-motion: no-preference) {
-  body.lp-v5 .hb-deck { animation: hb-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
-  body.lp-v5 .hb-ring { animation: hb-spin 80s linear infinite; }
-  body.lp-v5 .hb-glow { animation: hb-breathe 7s ease-in-out infinite; }
+  body.lp-v5[data-page="brainology"] .hero-copy > * { animation: hb-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5[data-page="brainology"] .hero-copy > .v5-pill-row { animation-delay: 0.05s; }
+  body.lp-v5[data-page="brainology"] .hero-copy > .hero-role { animation-delay: 0.12s; }
+  body.lp-v5[data-page="brainology"] .hero-copy > h1 { animation-delay: 0.2s; }
+  body.lp-v5[data-page="brainology"] .hero-copy > .hero-description { animation-delay: 0.32s; }
+  body.lp-v5[data-page="brainology"] .hero-copy > .v5-facts { animation-delay: 0.44s; }
+  body.lp-v5[data-page="brainology"] .hero-copy > .hero-actions { animation-delay: 0.56s; }
+  body.lp-v5[data-page="brainology"] .hero-copy > .hero-note { animation-delay: 0.66s; }
+  body.lp-v5[data-page="brainology"] .v5-facts li { animation: none; opacity: 1; }
+  body.lp-v5 .hb-art img { animation: hb-reveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) both, hb-breathe 22s ease-in-out 1.8s infinite alternate; }
+  body.lp-v5 .hb-sweep { animation: hb-sweep 9s ease-in-out 2s infinite; }
+  body.lp-v5 .hb-sun { animation: hb-pulse 5s ease-in-out infinite; }
+  body.lp-v5 .hb-star { animation: hb-twinkle 4.2s ease-in-out infinite; animation-delay: var(--d); }
 }
-@keyframes hb-in { from { opacity: 0; transform: translateY(40px) scale(0.94); } to { opacity: 1; transform: none; } }
-@keyframes hb-spin { to { transform: rotate(360deg); } }
-@keyframes hb-breathe { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+@keyframes hb-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes hb-reveal { from { opacity: 0; transform: scale(1.08); } to { opacity: 1; transform: scale(1); } }
+@keyframes hb-breathe { from { transform: scale(1); } to { transform: scale(1.04) translateY(-6px); } }
+@keyframes hb-sweep { 0% { background-position: 120% 0; } 60%, 100% { background-position: -40% 0; } }
+@keyframes hb-pulse { 0%, 100% { opacity: 0.55; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes hb-twinkle { 0%, 100% { opacity: 0; transform: scale(0.4); } 45%, 55% { opacity: 1; transform: scale(1.3); } }
 
-@media (max-width: 800px) {
-  body.lp-v5[data-page="brainology"] .v5-hero { grid-template-columns: 1fr; gap: 8px; padding-block: 30px 36px; }
-  body.lp-v5 .hb { height: 400px; }
-  body.lp-v5 .hb-deck { scale: 0.8; }
-  body.lp-v5 .hb-ring { width: 330px; height: 330px; }
-  body.lp-v5 .hb-ring-2 { width: 270px; height: 270px; }
+@media (max-width: 1180px) {
+  body.lp-v5[data-page="brainology"] .v5-hero { grid-template-columns: minmax(0, 500px) 1fr; }
+  body.lp-v5 .hb { width: 54%; }
+  body.lp-v5[data-page="brainology"] .v5-facts li { margin-right: 14px; padding-right: 14px; }
+}
+/* Tablets and phones: words first, the picture below at full width. */
+@media (max-width: 900px) {
+  body.lp-v5[data-page="brainology"] .v5-hero { display: block; min-height: 0; padding-block: 32px 0; }
+  body.lp-v5 .hb { position: relative; width: auto; height: 300px; margin: 26px -20px 0; }
+  body.lp-v5 .hb-art { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%); mask-image: linear-gradient(180deg, transparent 0%, #000 22%); }
+  body.lp-v5 .hb-art img { object-position: 40% 40%; }
+  body.lp-v5 .hb-sweep { -webkit-mask-image: none; mask-image: none; }
 }
 @media (max-width: 580px) {
-  body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: clamp(30px, 8.6vw, 38px); }
-  body.lp-v5[data-page="brainology"] .v5-hero .hero-description { font-size: 14.5px; }
-  body.lp-v5[data-page="brainology"] .v5-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 20px; padding-top: 16px; }
-  body.lp-v5[data-page="brainology"] .v5-facts li { grid-template-columns: 1fr; justify-items: center; gap: 4px; margin: 0; padding: 0 4px; text-align: center; }
-  body.lp-v5[data-page="brainology"] .v5-facts li:last-child { padding: 0 4px; }
-  body.lp-v5[data-page="brainology"] .v5-facts-icon { grid-row: auto; width: 30px; height: 30px; }
-  body.lp-v5[data-page="brainology"] .v5-facts strong { font-size: 13.5px; }
-  body.lp-v5[data-page="brainology"] .v5-facts li > span:last-child { font-size: 10.5px; }
-  body.lp-v5 .hb { height: 360px; }
-  body.lp-v5 .hb-deck { scale: 0.7; }
-  body.lp-v5 .hb-card[data-pos="1"] { transform: translate3d(-70px, 16px, -60px) rotate(-10deg); }
-  body.lp-v5 .hb-card[data-pos="2"] { transform: translate3d(70px, 16px, -60px) rotate(10deg); }
-  body.lp-v5 .hb-caption { font-size: 9.5px; }
+  body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: clamp(31px, 8.8vw, 40px); }
+  body.lp-v5[data-page="brainology"] .v5-hero .hero-description { margin-top: 14px; font-size: 15px; }
+  body.lp-v5[data-page="brainology"] .v5-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
+  body.lp-v5[data-page="brainology"] .v5-facts li { grid-template-columns: 1fr; justify-items: center; gap: 4px; margin: 0; padding: 0 2px; border-right: 0; text-align: center; }
+  body.lp-v5[data-page="brainology"] .v5-facts li:last-child { padding: 0 2px; }
+  body.lp-v5[data-page="brainology"] .v5-facts-icon { grid-row: auto; width: 44px; height: 44px; }
+  body.lp-v5[data-page="brainology"] .v5-facts-icon .line-icon { width: 22px; height: 22px; }
+  body.lp-v5[data-page="brainology"] .v5-facts strong { font-size: 13px; }
+  body.lp-v5[data-page="brainology"] .v5-facts li > span:last-child { font-size: 11px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .hero-actions { flex-direction: row; flex-wrap: wrap; margin-top: 22px; gap: 10px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .wa-btn { min-height: 50px; font-size: 15px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .wa-btn .wa-ic { width: 40px; height: 40px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost { flex: 1 1 100%; min-height: 50px; justify-content: space-between; font-size: 15px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .v5-ghost i { width: 38px; height: 38px; }
+  body.lp-v5[data-page="brainology"] .v5-hero .hero-note { text-align: left; }
+  body.lp-v5 .hb { height: 250px; }
+}
+@media (min-width: 581px) {
+  body.lp-v5[data-page="brainology"] .v5-facts { flex-wrap: nowrap; }
+  body.lp-v5[data-page="brainology"] .v5-facts li { grid-template-columns: 44px auto; gap: 0 10px; margin-right: 16px; padding-right: 16px; white-space: nowrap; }
+  body.lp-v5[data-page="brainology"] .v5-facts-icon { width: 44px; height: 44px; }
+  body.lp-v5[data-page="brainology"] .v5-facts-icon .line-icon { width: 22px; height: 22px; }
+  body.lp-v5[data-page="brainology"] .v5-facts strong { font-size: 14px; }
+  body.lp-v5[data-page="brainology"] .v5-facts li > span:last-child { font-size: 12px; }
 }
