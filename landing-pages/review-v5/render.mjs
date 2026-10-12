@@ -1,5 +1,7 @@
 // Refined landing page body (Oct 2026), used for pages marked `v5: true` in content.mjs. The header, footer,
 // dialogs and enquiry behaviour are shared with the other landing pages; the sections between them are drawn here.
+import { vastuPlan, chevron, leaves } from './vastu-plan.mjs';
+
 const person = 'Narayani Garg';
 // Client films served by the website (public/videos/stories), keyed by landing-page voice.
 const clips = { deepa: 'deepa', manish: 'manish', navleen: 'navleen', london: 'shelley', puneet: 'puneet' };
@@ -90,8 +92,8 @@ export function renderMain(p, h) {
   /* Approach: the drawing beside three steps, which light in turn while in view. */
   const approach = `<section class="section wrap approach v5-approach2" id="approach" aria-labelledby="approach-title">
     <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2><p>${esc(p.methodIntro)}</p></div>
-    ${serviceVisual(p)}
-    <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false">${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p><span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
+    ${p.slug === 'vastu' ? vastuPlan() : serviceVisual(p)}${p.slug === 'vastu' ? `<span class="v5-leaf-l" aria-hidden="true">${leaves}</span><span class="v5-leaf-r" aria-hidden="true">${leaves}</span>` : ''}
+    <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false">${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p>${p.slug === 'vastu' ? `<span class="v5-chev" aria-hidden="true">${chevron}</span>` : ''}<span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
   </section>`;
   /* Practices: names only. */
   const practices = `<section class="scope-band v5-practices" id="ways" aria-labelledby="ways-title"><div class="section wrap">

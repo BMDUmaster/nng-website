@@ -1700,3 +1700,112 @@ body.lp-v5 .v5-steps2 li:hover { transform: none; }
 
 /* Four options sit in two even rows of two. */
 @media (min-width: 801px) { body.lp-v5 .v5-tiles-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* =============================================================================================================
+   Vastu approach: an illustrated floor plan in a rounded card, sage accents, leaves at the edges.
+   ============================================================================================================= */
+body.lp-v5[data-page="vastu"] .v5-approach2 { position: relative; }
+body.lp-v5 .v5-plan.consultation-art.visual-explainer {
+  max-width: 560px;
+  padding: 30px 30px 22px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, #FCF9F2, #F6EFE2);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--brass) 38%, transparent), 0 40px 70px -40px rgb(60 24 61 / 0.45);
+}
+body.lp-v5 .v5-plan .visual-label { margin-bottom: 8px; }
+body.lp-v5 .vp { display: block; width: 100%; height: auto; overflow: visible; }
+body.lp-v5 .vp-floor { fill: #F8F2E6; }
+body.lp-v5 .vp-rooms rect { fill: transparent; transition: fill 0.5s ease; }
+body.lp-v5 .vp-use :is(rect, path, circle) { fill: #FFFDF8; stroke: #9C8463; stroke-width: 1.1; transition: fill 0.5s ease, stroke 0.5s ease; }
+body.lp-v5 .vp-use .vp-rug { fill: #EFE6D3; stroke: none; }
+body.lp-v5 .vp-use path[d^="M60 104"] { fill: none; }
+body.lp-v5 .vp-plant ellipse { fill: #6F8452; }
+body.lp-v5 .vp-plant .vp-pot { fill: #DCE3CF; }
+body.lp-v5 .vp-plant .vp-pot-c { fill: #4F6339; }
+body.lp-v5 .vp-doors path { fill: none; stroke: #A99A80; stroke-width: 1; stroke-dasharray: 3 3; }
+body.lp-v5 .vp-walls path { fill: none; stroke: #4E5E3A; stroke-width: 10; stroke-linecap: square; }
+body.lp-v5 .vp-labels text, body.lp-v5 .vp-entry text { font-family: var(--body); font-size: 13px; font-weight: 600; fill: #3D3530; text-anchor: middle; }
+body.lp-v5 .vp-entry path { fill: var(--brass); }
+body.lp-v5 .vp-compass .vp-ring { fill: none; stroke: color-mix(in srgb, var(--brass) 45%, transparent); stroke-dasharray: 2 4; }
+body.lp-v5 .vp-compass .vp-dial { fill: #FFFDF8; stroke: var(--brass); stroke-width: 1.6; transition: fill 0.5s ease; }
+body.lp-v5 .vp-compass text { font-family: var(--body); font-size: 14px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+body.lp-v5 .vp-needle { fill: var(--brass); transition: fill 0.5s ease; }
+
+/* Legend with icons and hairline dividers. */
+body.lp-v5 .v5-plan .visual-key { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 14px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--brass) 30%, transparent); }
+body.lp-v5 .v5-plan .visual-key button { display: grid; justify-items: center; gap: 2px; padding: 4px 8px; border: 0; border-radius: 0; background: none; text-align: center; }
+body.lp-v5 .v5-plan .visual-key button + button { border-left: 1px solid color-mix(in srgb, var(--brass) 30%, transparent); }
+body.lp-v5 .v5-plan .visual-key .vk-icon { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: 4px; color: var(--brass); }
+body.lp-v5 .v5-plan .visual-key .vk-icon svg { width: 26px; height: 26px; }
+body.lp-v5 .v5-plan .visual-key strong { font-family: var(--display); font-weight: 400; font-size: 18px; color: var(--plum); }
+body.lp-v5 .v5-plan .visual-key span:not(.vk-icon) { font-size: 12.5px; color: var(--muted); }
+body.lp-v5 .v5-plan .visual-key button[aria-pressed="true"] strong { color: var(--brass); }
+body.lp-v5 .v5-plan .visual-key button[aria-pressed="true"] .vk-icon { color: #4E5E3A; }
+body.lp-v5 .v5-plan .visual-hint { display: none !important; }
+body.lp-v5 .v5-plan figcaption { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+body.lp-v5 .v5-plan figcaption svg { flex: none; width: 18px; height: 18px; color: var(--brass); }
+
+/* Lit parts. */
+body.lp-v5 .v5-plan[data-visual-active="0"] .vp-dial { fill: #FBF0D2; }
+body.lp-v5 .v5-plan[data-visual-active="0"] .vp-needle { fill: var(--plum); }
+body.lp-v5 .v5-plan[data-visual-active="0"] .vp-entry path { fill: var(--plum); }
+body.lp-v5 .v5-plan[data-visual-active="1"] .vp-rooms rect { fill: rgb(111 132 82 / 0.16); }
+body.lp-v5 .v5-plan[data-visual-active="2"] .vp-use :is(rect:not(.vp-rug), path, circle) { fill: #F6E7BE; stroke: var(--brass); }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .v5-plan[data-visual-active="0"] .vp-ring { animation: v5-spin 14s linear infinite; }
+  body.lp-v5 .v5-plan[data-visual-active="0"] .vp-entry { animation: vp-bob 1.6s ease-in-out infinite; }
+}
+@keyframes vp-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+/* The plan draws itself once: walls, then furniture, plants and labels, and the compass finds north. */
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .v5-plan .vp-walls path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  body.lp-v5 .v5-plan :is(.vp-floor, .vp-use, .vp-doors, .vp-labels, .vp-entry, .vp-compass) { opacity: 0; }
+  body.lp-v5 .v5-plan .vp-plant { opacity: 0; transform-box: fill-box; transform-origin: center; }
+  body.lp-v5 .v5-plan .vp-needle { transform: rotate(-150deg); }
+  body.lp-v5 .v5-plan.is-seen .vp-floor { opacity: 1; transition: opacity 0.6s ease; }
+  body.lp-v5 .v5-plan.is-seen .vp-walls path { stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s cubic-bezier(0.45, 0, 0.2, 1) 0.2s; }
+  body.lp-v5 .v5-plan.is-seen .vp-walls path + path { transition-delay: 0.9s; }
+  body.lp-v5 .v5-plan.is-seen .vp-doors { opacity: 1; transition: opacity 0.6s ease 1.6s; }
+  body.lp-v5 .v5-plan.is-seen .vp-use { opacity: 1; transition: opacity 0.8s ease 1.7s; }
+  body.lp-v5 .v5-plan.is-seen .vp-plant { animation: vp-grow 0.7s var(--ease) both 2.1s; }
+  body.lp-v5 .v5-plan.is-seen :nth-child(2n) > .vp-plant { animation-delay: 2.25s; }
+  body.lp-v5 .v5-plan.is-seen :nth-child(3n) > .vp-plant { animation-delay: 2.4s; }
+  body.lp-v5 .v5-plan.is-seen :is(.vp-labels, .vp-entry) { opacity: 1; transition: opacity 0.6s ease 2.3s; }
+  body.lp-v5 .v5-plan.is-seen .vp-compass { opacity: 1; transition: opacity 0.5s ease 1.2s; }
+  body.lp-v5 .v5-plan.is-seen .vp-needle { transform: rotate(0deg); transition: transform 1.8s cubic-bezier(0.34, 1.4, 0.5, 1) 1.4s, fill 0.5s ease; }
+}
+@keyframes vp-grow { from { opacity: 0; transform: scale(0.3); } to { opacity: 1; transform: none; } }
+
+/* Steps: serif number and a chevron at the right; the lit step takes a sage tint. */
+body.lp-v5[data-page="vastu"] .v5-steps2 li { padding-right: 110px; }
+body.lp-v5[data-page="vastu"] .v5-steps2 li::after { top: 50%; right: 64px; font-size: 20px; transform: translateY(-50%); }
+body.lp-v5 .v5-chev { position: absolute; top: 50%; right: 18px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 45%, transparent); color: var(--brass); transform: translateY(-50%); transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s var(--ease); }
+body.lp-v5 .v5-chev svg { width: 16px; height: 16px; }
+body.lp-v5[data-page="vastu"] .v5-steps2 h3 { font-family: var(--display); font-weight: 400; font-size: 21px; }
+body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active { background: linear-gradient(120deg, #F4F6EE, #FBFAF4); box-shadow: 0 0 0 1px #8FA07A, 0 26px 44px -30px rgb(60 70 40 / 0.45); }
+body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active .line-icon { background: #E3E9D8; color: #4E5E3A; box-shadow: none; }
+body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active .v5-chev { background: #4E5E3A; color: #FFFFFF; transform: translateY(-50%) translateX(3px); box-shadow: none; }
+
+/* Leaves at the edges, swaying gently. */
+body.lp-v5 :is(.v5-leaf-l, .v5-leaf-r) { position: absolute; z-index: 0; width: 120px; pointer-events: none; opacity: 0.55; }
+body.lp-v5 .v5-leaf-l { left: -40px; bottom: 10px; transform: rotate(-24deg); }
+body.lp-v5 .v5-leaf-r { right: -30px; top: 40px; transform: rotate(160deg) scaleX(-1); }
+body.lp-v5 .v5-leaves { display: block; width: 100%; height: auto; fill: #8FA07A; transform-origin: 50% 100%; }
+body.lp-v5 .v5-leaves .lf-stem { fill: none; stroke: #7C8E64; stroke-width: 1.5; }
+@media (prefers-reduced-motion: no-preference) { body.lp-v5 .v5-leaves { animation: vp-sway 7s ease-in-out infinite; } }
+@keyframes vp-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+body.lp-v5[data-page="vastu"] .v5-approach2 > :not(.v5-leaf-l, .v5-leaf-r) { position: relative; z-index: 1; }
+
+@media (max-width: 580px) {
+  body.lp-v5 .v5-plan.consultation-art.visual-explainer { padding: 22px 14px 16px; border-radius: 26px; }
+  body.lp-v5 .v5-plan .visual-key strong { font-size: 15px; }
+  body.lp-v5 .v5-plan .visual-key span:not(.vk-icon) { font-size: 11px; }
+  body.lp-v5 .v5-plan .visual-key .vk-icon svg { width: 22px; height: 22px; }
+  body.lp-v5 .v5-plan figcaption { font-size: 11.5px; text-align: left; }
+  body.lp-v5[data-page="vastu"] .v5-steps2 li { padding-right: 56px; }
+  body.lp-v5[data-page="vastu"] .v5-steps2 li::after { top: 14px; right: 16px; font-size: 15px; transform: none; }
+  body.lp-v5 .v5-chev { top: auto; bottom: 12px; right: 12px; width: 30px; height: 30px; transform: none; }
+  body.lp-v5[data-page="vastu"] .v5-steps2 li.is-active .v5-chev { transform: translateX(2px); }
+  body.lp-v5[data-page="vastu"] .v5-steps2 h3 { font-size: 19px; }
+  body.lp-v5 :is(.v5-leaf-l, .v5-leaf-r) { width: 80px; opacity: 0.4; }
+}
