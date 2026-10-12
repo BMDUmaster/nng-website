@@ -697,3 +697,6 @@ body.lp-v5 .v5-steps2 li:hover { transform: none; }
   body.lp-v5 .v5-approach2 .visual-explainer.is-seen .visual-key button:nth-child(2) { transition-delay: 1.25s; }
   body.lp-v5 .v5-approach2 .visual-explainer.is-seen .visual-key button:nth-child(3) { transition-delay: 1.4s; }
 }
+
+/* Four options sit in two even rows of two. */
+@media (min-width: 801px) { body.lp-v5 .v5-tiles-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

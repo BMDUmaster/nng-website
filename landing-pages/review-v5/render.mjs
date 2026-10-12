@@ -84,7 +84,7 @@ export function renderMain(p, h) {
   /* Client voices: compact quote cards. */
   const stories = `<section class="stories-band v5-voices" id="stories" aria-labelledby="stories-title"><div class="section wrap">
     <div class="v5-head"><p class="eyebrow">CLIENT VOICES</p><h2 id="stories-title">${lines(p.proofTitle)}</h2></div>
-    <div class="v5-quotes">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
+    <div class="v5-quotes">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote || v.summary)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
   </div></section>`;
 
   /* Approach: the drawing beside three steps, which light in turn while in view. */
@@ -96,7 +96,7 @@ export function renderMain(p, h) {
   /* Practices: names only. */
   const practices = `<section class="scope-band v5-practices" id="ways" aria-labelledby="ways-title"><div class="section wrap">
     <div class="v5-head v5-head-row"><div><p class="eyebrow">${esc(p.scopeEyebrow || 'YOUR CONSULTATION OPTIONS')}</p><h2 id="ways-title">${lines(p.scopeTitle)}</h2></div>${cta(p, 'scope')}</div>
-    <ul class="v5-tiles">${p.topics.map(([t], i) => `<li data-reveal style="--i:${i}"><span class="v5-tile-icon">${pageIcon(p, 'topics', i)}</span><strong>${esc(t)}</strong><span class="v5-tile-no">0${i + 1}</span></li>`).join('')}</ul>
+    <ul class="v5-tiles${p.topics.length === 4 ? ' v5-tiles-4' : ''}">${p.topics.map(([t], i) => `<li data-reveal style="--i:${i}"><span class="v5-tile-icon">${pageIcon(p, 'topics', i)}</span><strong>${esc(t)}</strong><span class="v5-tile-no">0${i + 1}</span></li>`).join('')}</ul>
   </div></section>`;
 
   /* Why her approach matters. */

@@ -122,7 +122,7 @@ export const pages = [
     ],
   },
   {
-    slug: 'vastu', family: 'practice', name: 'Vastu',
+    slug: 'vastu', family: 'practice', v5: true, name: 'Vastu',
     headline: ['Your home, workplace', 'or next property.'],
     description: 'Explore direction, layout and everyday use with Narayani, in a Vastu consultation focused on your home, workplace, desk or next property.',
     cta: 'Discuss a Vastu consultation', facts: [['Home & workplace','Different reviews'],['Before choosing','Property selection'],['Desk guidance','A focused enquiry']],
@@ -146,7 +146,7 @@ export const pages = [
       ['Office Desk Vastu','A narrower, desk-focused enquiry for job professionals, rather than assuming a full workplace review.'],
     ],
     scopeNote: 'Body Vastu is also listed by NNG. Ask Narayani’s team about its meaning and scope; no health or biological benefit is claimed here.',
-    boundary: 'Vastu is an interpretive tradition, not structural, medical, legal or investment advice. Consult qualified professionals for building work, safety and purchase decisions. No health or business outcome is guaranteed.',
+    boundary: 'Vastu is an interpretive tradition, not structural, medical, legal or investment advice. Consult qualified professionals for building work, safety and purchase decisions.',
     proof: ['manish','puneet'],
     proofTitle: 'A personal approach\nto understanding your question.',
     closeTitle: 'Tell us about the space\nyou want to discuss.',
