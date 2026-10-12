@@ -1553,3 +1553,79 @@ body.lp-v5 .v5-tiles li > .v5-tile-no { position: relative; }
 @media (max-width: 350px) {
   body.lp-v5 .v5-rail { margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; }
 }
+
+/* ---------- Oct 12 revisions ---------- */
+/* The header stays at the top of the page rather than following the scroll. */
+body.lp-v5 .header { position: relative; }
+
+/* Her book: chapter openings set as prose, a list of the parts of a pattern, and her photograph. */
+body.lp-v5 .bk-face .bk-body { justify-content: flex-start; padding-top: 6%; gap: 2px; }
+body.lp-v5 .bk-face .bk-body strong.bk-head { margin: 2px 0 0; font-size: calc(var(--bk-w) * 0.078) !important; line-height: 1.15; color: #3C183D; }
+body.lp-v5 .bk-face .bk-orn-sm { margin: 4px 0 6px; }
+body.lp-v5 .bk-face p.bk-drop, body.lp-v5 .bk-face p.bk-para { margin: 0; text-align: justify !important; hyphens: auto; font-size: calc(var(--bk-w) * 0.041) !important; line-height: 1.55 !important; color: #4b2a4b !important; }
+body.lp-v5 .bk-face p.bk-para { margin-top: 0.5em; text-indent: 1.2em; }
+body.lp-v5 .bk-parts { display: grid; gap: calc(var(--bk-w) * 0.03); width: 100%; text-align: left; }
+body.lp-v5 .bk-parts .bk-chapter { margin-bottom: 4px; text-align: center; }
+body.lp-v5 .bk-parts p { margin: 0; padding-bottom: calc(var(--bk-w) * 0.022); border-bottom: 1px solid rgb(184 138 69 / 0.25); font-size: calc(var(--bk-w) * 0.04) !important; line-height: 1.45; color: #4b2a4b; }
+body.lp-v5 .bk-parts b { display: block; font-family: var(--display); font-weight: 400; font-size: calc(var(--bk-w) * 0.056); color: #3C183D; }
+body.lp-v5 .bk-photo img { object-position: 50% 20%; }
+@media (max-width: 680px) { body.lp-v5 .v5-book .bk-stage { --bk-w: min(44vw, 180px); } }
+
+/* Approach: the drawing and steps as before, now lighting in turn. */
+body.lp-v5 .v5-steps2 li { cursor: pointer; overflow: hidden; transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s var(--ease); }
+body.lp-v5 .v5-steps2 li:hover { transform: translateX(4px); }
+body.lp-v5 .v5-steps2 li .line-icon { transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease; }
+body.lp-v5 .v5-steps2 li.is-active { background: linear-gradient(120deg, #FFFFFF, color-mix(in srgb, var(--champ) 14%, #FFFFFF)); box-shadow: 0 0 0 1px var(--brass), 0 26px 44px -30px rgb(60 24 61 / 0.55); }
+body.lp-v5 .v5-steps2 li.is-active .line-icon { background: var(--plum); color: var(--champ); box-shadow: 0 0 0 4px color-mix(in srgb, var(--champ) 30%, transparent); }
+body.lp-v5 .v5-steps2 li.is-active h3 { color: var(--plum); }
+body.lp-v5 .v5-steps2 .v5-step-bar { position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--brass), var(--champ)); transform: scaleX(0); transform-origin: left; }
+body.lp-v5 .v5-steps2 li.is-active .v5-step-bar { transform: scaleX(1); }
+body.lp-v5 .v5-steps2.is-cycling li.is-active .v5-step-bar { animation: v5-fill 4.2s linear both; }
+body.lp-v5 .v5-approach2 .visual-explainer { transition: box-shadow 0.5s ease; }
+body.lp-v5 .v5-approach2 .visual-explainer [data-visual-focus] { transition: stroke 0.5s ease, stroke-width 0.5s ease; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .v5-approach2 .visual-explainer { animation: v5-float 7s ease-in-out infinite; }
+}
+@keyframes v5-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* Phones: situation cards glide in a loop and hold while touched. */
+body.lp-v5 .v5-marquee { overflow: hidden; margin-inline: -20px; padding: 4px 0 14px; }
+body.lp-v5 .v5-marquee + .v5-dots { display: none; }
+body.lp-v5 .v5-rail.is-loop { display: flex; width: max-content; margin: 0; padding: 0 12px 0 0; gap: 12px; overflow: visible; scroll-snap-type: none; animation: v5-glide 26s linear infinite; }
+body.lp-v5 .v5-rail.is-loop .v5-sit { flex: none; width: 76vw; max-width: 330px; }
+body.lp-v5 .v5-marquee:hover .v5-rail, body.lp-v5 .v5-marquee.is-held .v5-rail { animation-play-state: paused; }
+@keyframes v5-glide { from { transform: translateX(20px); } to { transform: translateX(calc(-50% + 20px)); } }
+
+/* Her book reads slowly: each spread rests for a few seconds before the next leaf turns. 24s loop. */
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .bk-stage.is-on .bk-book { animation: v5bk-tilt 24s var(--ease) infinite; }
+  body.lp-v5 .bk-stage.is-on .bk-cover { animation: v5bk-cover 24s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+  body.lp-v5 .bk-stage.is-on .bk-leaf-1 { animation: v5bk-leaf1 24s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+  body.lp-v5 .bk-stage.is-on .bk-leaf-2 { animation: v5bk-leaf2 24s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+  body.lp-v5 .bk-stage.is-on .bk-leaf-3 { animation: v5bk-leaf3 24s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+}
+@keyframes v5bk-tilt {
+  0%, 4% { transform: translateX(22%) rotateY(-22deg) rotateX(6deg); }
+  12%, 88% { transform: translateX(48%) rotateY(-8deg) rotateX(4deg); }
+  96%, 100% { transform: translateX(22%) rotateY(-22deg) rotateX(6deg); }
+}
+@keyframes v5bk-cover {
+  0%, 4% { transform: translateZ(1px) rotateY(0deg); }
+  12%, 89% { transform: translateZ(1px) rotateY(-172deg); }
+  95%, 100% { transform: translateZ(1px) rotateY(0deg); }
+}
+@keyframes v5bk-leaf1 {
+  0%, 26% { transform: translateZ(-0.5px) rotateY(0deg); }
+  32%, 87% { transform: translateZ(-0.5px) rotateY(-168deg); }
+  92%, 100% { transform: translateZ(-0.5px) rotateY(0deg); }
+}
+@keyframes v5bk-leaf2 {
+  0%, 46% { transform: translateZ(-1px) rotateY(0deg); }
+  52%, 85% { transform: translateZ(-1px) rotateY(-164deg); }
+  90%, 100% { transform: translateZ(-1px) rotateY(0deg); }
+}
+@keyframes v5bk-leaf3 {
+  0%, 66% { transform: translateZ(-1.5px) rotateY(0deg); }
+  72%, 83% { transform: translateZ(-1.5px) rotateY(-160deg); }
+  88%, 100% { transform: translateZ(-1.5px) rotateY(0deg); }
+}

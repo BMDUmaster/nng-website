@@ -33,25 +33,35 @@
     }, { threshold: 0.6 }).observe(count);
   }
 
-  // The approach: steps light the loop, cycling while in view until someone chooses a step.
-  const loop = document.querySelector('[data-loop]');
+  // The approach: the three steps light in turn with the matching part of the drawing, while in view,
+  // until someone chooses a step.
   const list = document.querySelector('[data-steps]');
-  if (loop && list) {
-    const buttons = [...list.querySelectorAll('[data-step]')];
+  const figure = document.querySelector('.v5-approach2 .visual-explainer');
+  if (list) {
+    const steps = [...list.querySelectorAll('[data-step]')];
     let active = 0, timer = null, chosen = false;
     const show = (i) => {
       active = i;
-      loop.dataset.active = String(i);
-      buttons.forEach((b, j) => b.setAttribute('aria-pressed', String(j === i)));
+      steps.forEach((s, j) => { s.classList.toggle('is-active', j === i); s.setAttribute('aria-pressed', String(j === i)); });
+      if (figure) {
+        figure.dataset.visualActive = String(i);
+        figure.querySelectorAll('[data-visual-step]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.visualStep === String(i))));
+      }
     };
     const start = () => {
       if (chosen || reduce || timer) return;
       list.classList.add('is-cycling');
-      timer = setInterval(() => show((active + 1) % buttons.length), 4200);
+      show(active);
+      timer = setInterval(() => show((active + 1) % steps.length), 4200);
     };
     const stop = () => { clearInterval(timer); timer = null; list.classList.remove('is-cycling'); };
-    buttons.forEach((b, i) => b.addEventListener('click', () => { chosen = true; stop(); show(i); }));
-    new IntersectionObserver(([e]) => (e.isIntersecting ? start() : stop()), { threshold: 0.4 }).observe(loop);
+    const choose = (i) => { chosen = true; stop(); show(i); };
+    steps.forEach((s, i) => {
+      s.addEventListener('click', () => choose(i));
+      s.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(i); } });
+    });
+    figure?.querySelectorAll('[data-visual-step]').forEach((b) => b.addEventListener('click', () => { chosen = true; stop(); }));
+    new IntersectionObserver(([e]) => (e.isIntersecting ? start() : stop()), { threshold: 0.35 }).observe(list);
   }
 
   // Sound for the introduction film.
@@ -64,13 +74,22 @@
     sound.setAttribute('aria-label', film.muted ? 'Turn sound on' : 'Turn sound off');
   });
 
-  // Dots under the swipeable cards on phones.
+  // Phones: the situation cards glide past in a loop, and hold still while touched or hovered.
   const rail = document.querySelector('[data-rail]');
-  const dots = document.querySelectorAll('.v5-dots i');
-  if (rail && dots.length) rail.addEventListener('scroll', () => {
-    const cards = rail.children;
-    const step = cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : 1;
-    const i = Math.min(dots.length - 1, Math.round(rail.scrollLeft / step));
-    dots.forEach((d, j) => d.classList.toggle('is-on', j === i));
-  }, { passive: true });
+  if (rail && !reduce && matchMedia('(max-width: 800px)').matches) {
+    const viewport = document.createElement('div');
+    viewport.className = 'v5-marquee';
+    rail.before(viewport);
+    viewport.append(rail);
+    [...rail.children].forEach((card) => {
+      const copy = card.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      copy.classList.add('is-in');
+      rail.append(copy);
+    });
+    rail.classList.add('is-loop');
+    let release = null;
+    viewport.addEventListener('touchstart', () => { clearTimeout(release); viewport.classList.add('is-held'); }, { passive: true });
+    viewport.addEventListener('touchend', () => { release = setTimeout(() => viewport.classList.remove('is-held'), 1200); }, { passive: true });
+  }
 })();

@@ -28,7 +28,7 @@ export const pages = [
       ['Habit work','One small, repeatable step that makes a new response part of the day.'],
     ],
     scopeNote: 'Practices are personal guidance within Narayani’s approach. The team confirms scope, format, duration and fee before booking.',
-    boundary: 'The Brainology Program is self-development practice and spiritual guidance, not therapy or medical treatment. Continue any care you receive from a doctor or counsellor. No health, relationship, financial or career outcome is guaranteed.',
+    boundary: 'The Brainology Program is self-development practice and spiritual guidance, not therapy or medical treatment. Continue any care you receive from a doctor or counsellor.',
     proof: ['deepa','manish'],
     proofTitle: 'Being heard.\nSeeing yourself differently.',
     closeTitle: 'Begin with the pattern\nyou want to change.',

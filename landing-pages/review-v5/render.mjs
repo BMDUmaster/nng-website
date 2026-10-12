@@ -10,7 +10,7 @@ const soundOn = '<svg class="snd-on" viewBox="0 0 24 24" fill="none" stroke="cur
 const waIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>';
 
 export function renderMain(p, h) {
-  const { esc, lines, cta, icon, pageIcon, scenarioArt, voices, assets } = h;
+  const { esc, lines, cta, icon, pageIcon, scenarioArt, serviceVisual, voices, assets } = h;
 
   /* Opening. */
   const hero = `<div class="hero-banner v5-hero-banner"><section class="hero wrap v5-hero" id="top" aria-labelledby="hero-title">
@@ -36,9 +36,16 @@ export function renderMain(p, h) {
 
   /* Her book, opening slowly while in view, beside the clientele. */
   const page = (folio, body, plate = false) => `${plate ? '' : `<span class="bk-run">${folio % 2 === 0 ? bookTitle : person}</span>`}<div class="bk-body">${body}</div><span class="bk-folio">${folio}</span>`;
+  // Printed pages: three chapter openings, a photographic plate, the parts of a pattern and her words.
+  const chapters = [
+    ['One', 'Mind first', 'A remedy is an instruction: chant this, keep that in the north-east, wear this. It has to be carried out on an ordinary day, by someone who may be tired, busy or doubtful.', 'If that state of mind is never looked at, the instruction waits on a shelf.'],
+    ['Two', 'What a pattern is made of', 'A pattern is a small chain that repeats. Naming its parts makes it easier to see, and easier to interrupt at the one part you can reach.', 'Reactions are fast because they have been rehearsed.'],
+    ['Three', 'Practise', 'You decide to respond differently. Then the same moment arrives, and the old reaction returns.', 'Recognising that pattern is the starting point, not a reason to blame yourself.'],
+  ];
+  const fronts = chapters.map(([no, title, a, b], i) => page(3 + i * 2, `<span class="bk-chapter">Chapter ${no}</span><strong class="bk-head">${title}</strong><span class="bk-orn bk-orn-sm">❧</span><p class="bk-drop">${a}</p><p class="bk-para">${b}</p>`));
   const backs = [
-    page(4, `<figure class="bk-photo"><img src="${assets}narayani.webp" alt="" loading="lazy" decoding="async"><figcaption>${person}</figcaption></figure>`, true),
-    page(6, `<blockquote class="bk-quote"><span class="bk-orn" aria-hidden="true">❦</span><p>“The spirit who is doing a ritual is spiritual.”</p><cite>— ${person}</cite></blockquote>`),
+    page(4, `<figure class="bk-photo"><img src="${assets}approach-narayani-900.webp" alt="" loading="lazy" decoding="async"><figcaption>${person}</figcaption></figure>`, true),
+    page(6, `<div class="bk-parts"><span class="bk-chapter">The parts of the chain</span>${[['A thought', 'The first words you tell yourself.'], ['A belief', 'An assumption you take as true.'], ['The words you use', '“Always”, “never” and “should”.'], ['A reaction', 'What happens before you decide.']].map(([t, d]) => `<p><b>${t}</b>${d}</p>`).join('')}</div>`),
     page(8, `<blockquote class="bk-quote"><span class="bk-orn" aria-hidden="true">❦</span><p lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p><cite>A remedy works when the mind works.</cite></blockquote>`),
   ];
   const sectors = [['business', 'Banking professionals'], ['career', 'CEOs of MNCs &amp; core sector companies'], ['person', 'Women entrepreneurs'], ['education', 'Printing, education &amp; hospitals']];
@@ -48,7 +55,7 @@ export function renderMain(p, h) {
       <div class="bk-book">
         <div class="bk-back"></div><div class="bk-block"></div>
         <div class="bk-page bk-page-right">${page(9, `<span class="bk-orn">✿</span><strong>21</strong><span class="bk-days">days of reflection and everyday inner practice</span><span class="bk-rule"></span><em>Mind first</em>`)}</div>
-        ${[2, 1, 0].map((i) => `<div class="bk-leaf bk-leaf-${i + 1}"><div class="bk-face bk-face-front">${page(3 + i * 2, `<span class="bk-chapter">Chapter ${String(i + 1).padStart(2, '0')}</span><strong>${esc(p.method[i][0])}</strong><span class="bk-orn bk-orn-sm">❧</span><p class="bk-drop">${esc(p.method[i][1])}</p>`)}</div><div class="bk-face bk-face-back">${backs[i]}</div></div>`).join('')}
+        ${[2, 1, 0].map((i) => `<div class="bk-leaf bk-leaf-${i + 1}"><div class="bk-face bk-face-front">${fronts[i]}</div><div class="bk-face bk-face-back">${backs[i]}</div></div>`).join('')}
         <div class="bk-cover"><img class="bk-front" src="${assets}book-cover.webp" width="440" height="622" alt="" loading="lazy" decoding="async"><div class="bk-inside"><div class="bk-bookplate"><img src="${assets}narayani.webp" alt="" loading="lazy" decoding="async"><span>${person}</span><small>Psychic Spiritual Mentor</small><span class="bk-rule"></span><em>Mind first</em></div></div></div>
       </div>
       <div class="bk-shadow"></div>
@@ -78,29 +85,12 @@ export function renderMain(p, h) {
     <div class="v5-quotes">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-video="${key}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
   </div></section>`;
 
-  /* Approach: the pattern as a loop, and the three steps that interrupt it. */
-  const nodes = [['Thought', 210, 62], ['Belief', 348, 200], ['Words', 210, 338], ['Reaction', 72, 200]];
-  const ring = `<svg class="v5-loop-svg" viewBox="0 0 420 440" role="img" aria-labelledby="loop-title"><title id="loop-title">A pattern as a loop: a thought, a belief, the words you use and a reaction, repeating until a new response is practised. A framework for reflection, not a scientific model.</title>
-    <defs><radialGradient id="loop-glow"><stop offset="0" stop-color="#D7B86B" stop-opacity=".35"/><stop offset="1" stop-color="#D7B86B" stop-opacity="0"/></radialGradient></defs>
-    <circle cx="210" cy="200" r="190" fill="url(#loop-glow)"/>
-    <circle class="loop-track" cx="210" cy="200" r="138"/>
-    <circle class="loop-dash" cx="210" cy="200" r="138" pathLength="100"/>
-    <path class="loop-escape" pathLength="1" d="M72 200C30 290 110 404 250 404"/>
-    <g class="loop-new"><circle cx="262" cy="404" r="5"/><text x="276" y="409">A new response</text></g>
-    <circle class="loop-comet" r="7"><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M210 62a138 138 0 1 1 0 276a138 138 0 1 1 0-276"/></circle>
-    <g class="loop-you"><circle cx="210" cy="200" r="58"/><circle cx="210" cy="184" r="15"/><path d="M182 230a28 28 0 0 1 56 0"/></g>
-    ${nodes.map(([label, x, y], i) => `<g class="loop-node" data-node="${i}"><circle cx="${x}" cy="${y}" r="38"/><text x="${x}" y="${y + 5}">${label}</text></g>`).join('')}
-  </svg>`;
-  const approach = `<section class="v5-approach" id="approach" aria-labelledby="approach-title"><div class="section wrap v5-approach-inner">
-    <div class="v5-approach-copy">
-      <p class="eyebrow">HOW NARAYANI APPROACHES IT</p>
-      <h2 id="approach-title">${lines(p.methodTitle)}</h2>
-      <p>${esc(p.methodIntro)}</p>
-      <ol class="v5-steps" data-steps>${p.method.map(([t, d], i) => `<li><button type="button" data-step="${i}" aria-pressed="${i === 0}"><span class="v5-step-no">0${i + 1}</span><span class="v5-step-text"><strong>${esc(t)}</strong><span>${esc(d)}</span></span><span class="v5-step-bar" aria-hidden="true"></span></button></li>`).join('')}</ol>
-    </div>
-    <figure class="v5-loop" data-loop data-active="0">${ring}<figcaption>A framework for reflection, not a scientific model.</figcaption></figure>
-  </div></section>`;
-
+  /* Approach: the drawing beside three steps, which light in turn while in view. */
+  const approach = `<section class="section wrap approach v5-approach2" id="approach" aria-labelledby="approach-title">
+    <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2><p>${esc(p.methodIntro)}</p></div>
+    ${serviceVisual(p)}
+    <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" tabindex="0" role="button" aria-pressed="${i === 0}"${i === 0 ? ' class="is-active"' : ''}>${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p><span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
+  </section>`;
   /* Practices: names only. */
   const practices = `<section class="scope-band v5-practices" id="ways" aria-labelledby="ways-title"><div class="section wrap">
     <div class="v5-head v5-head-row"><div><p class="eyebrow">${esc(p.scopeEyebrow || 'YOUR CONSULTATION OPTIONS')}</p><h2 id="ways-title">${lines(p.scopeTitle)}</h2></div>${cta(p, 'scope')}</div>
