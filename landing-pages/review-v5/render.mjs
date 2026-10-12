@@ -2,6 +2,7 @@
 // dialogs and enquiry behaviour are shared with the other landing pages; the sections between them are drawn here.
 import { vastuPlan, chevron, leaves } from './vastu-plan.mjs';
 import { brainApproach } from './brain-approach.mjs';
+import { numApproach } from './num-approach.mjs';
 
 const person = 'Narayani Garg';
 // Client films served by the website (public/videos/stories), keyed by landing-page voice.
@@ -146,5 +147,5 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${book}${situations}${stories}${p.slug === 'brainology' ? brainApproach(p, { esc }) : approach}${practices}${why}${enquiry}${faq}</main>`;
+  return `<main id="main">${hero}${book}${situations}${stories}${p.slug === 'brainology' ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices}${why}${enquiry}${faq}</main>`;
 }

@@ -35,7 +35,7 @@
 
   // The approach: hovering or choosing a step lights the matching part of the drawing.
   const list = document.querySelector('[data-steps]');
-  const figure = document.querySelector('.v5-approach2 .visual-explainer, .bj-figure');
+  const figure = document.querySelector('.v5-approach2 .visual-explainer, .bj-figure, .na-figure');
   if (list) {
     const steps = [...list.querySelectorAll('[data-step]')];
     let chosen = null;
@@ -52,6 +52,14 @@
       s.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); s.click(); } });
     });
     list.addEventListener('mouseleave', () => show(chosen));
+  }
+
+  // Numerology still life: scale the 640px stage to its column.
+  const stageFig = document.querySelector('.na-figure');
+  if (stageFig) {
+    const fit = () => stageFig.style.setProperty('--k', String(Math.min(1, stageFig.parentElement.clientWidth / 640)));
+    fit();
+    addEventListener('resize', fit, { passive: true });
   }
 
   // Sound for the introduction film.
