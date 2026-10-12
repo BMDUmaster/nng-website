@@ -42,7 +42,7 @@ export const pages = [
     ],
   },
   {
-    slug: 'astrology', family: 'practice', name: 'Astrology',
+    slug: 'astrology', family: 'practice', v5: true, name: 'Astrology',
     headline: ['A career move. A relationship decision.', 'A question about timing.'],
     description: 'Explore a career, relationship or timing question with Narayani, reading relevant birth-chart themes alongside your real circumstances and choices.',
     cta: 'Discuss an astrology consultation', facts: [['Career & business','Personal decisions'],['Chart & timing','Read together'],['Online or in person','By appointment']],
@@ -68,7 +68,7 @@ export const pages = [
       ['Uncertain birth details','Explain what you know. Ask which reading is appropriate when the birth time is missing or approximate.'],
     ],
     scopeNote: 'The team confirms the reading, necessary birth details, format, duration and fee. You do not need to upload birth data to make an enquiry.',
-    boundary: 'Astrology is an interpretive tradition, not a reliable prediction or a substitute for professional advice. A reading cannot guarantee a promotion, marriage, business profit or legal outcome.',
+    boundary: 'Astrology is an interpretive tradition, not a reliable prediction or a substitute for professional advice.',
     proof: ['puneet','navleen'],
     proofTitle: 'Personal responsibilities.\nReal conversations.',
     closeTitle: 'What decision would you\nlike to discuss?',
