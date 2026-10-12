@@ -13,8 +13,8 @@ const olive = `<svg class="bj-olive" viewBox="0 0 120 220" aria-hidden="true"><p
 export function brainApproach(p, { esc }) {
   const [first, second] = p.methodTitle.split('\n');
   const title = `${esc(first)}<br>${esc(second).replace('new response.', '<em>new response.</em>')}`;
-  const nodes = [[130, 150], [100, 330], [86, 520]];
-  const path = 'M226 0C206 70 162 120 185 205C208 292 70 300 155 385C240 470 70 482 141 575C192 668 380 704 660 690';
+  const nodes = [[150, 150], [110, 320], [150, 490]];
+  const path = 'M280 96C270 130 220 150 206 206C192 262 120 300 166 376C212 452 226 470 206 546C190 606 330 630 470 604';
   return `<section class="v5-brain" id="approach" aria-labelledby="approach-title"><div class="section wrap bj-inner">
     <div class="bj-copy">
       <p class="bj-kicker"><span aria-hidden="true"></span>How Narayani approaches it</p>
@@ -23,13 +23,14 @@ export function brainApproach(p, { esc }) {
       <ol class="bj-steps v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false"><span class="bj-no">0${i + 1}</span><span class="bj-ic bj-ic-${i}">${icons[i]}</span><span class="bj-text"><strong>${esc(t)}</strong><span>${esc(d)}</span></span><span class="bj-go" aria-hidden="true">${arrow}</span></li>`).join('')}</ol>
     </div>
     <figure class="visual-explainer bj-figure" data-motion>
-      <span class="bj-crescent" aria-hidden="true"></span>
-      <div class="bj-arch" aria-hidden="true"><span class="bj-sun"></span>${olive}</div>
-      <span class="bj-ring" aria-hidden="true"></span>
-      <p class="bj-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)}<br>/ at a glance</p>
-      <p class="bj-tag" aria-hidden="true">A clearer mind<br>A calmer you</p>
-      <svg class="bj-path" viewBox="0 0 560 760" aria-hidden="true"><path pathLength="1" d="${path}"/><circle class="bj-dot" r="4"><animateMotion dur="12s" repeatCount="indefinite" path="${path}"/></circle></svg>
-      <div class="bj-nodes visual-key" role="group" aria-label="The three steps">${p.method.map(([t], i) => `<button type="button" class="bj-node" data-visual-step="${i}" aria-pressed="false" style="--x:${nodes[i][0]}px;--y:${nodes[i][1]}px;--i:${i}" disabled><span class="bj-ic bj-ic-${i}">${icons[i]}</span><span class="bj-label"><em>0${i + 1}.</em><strong>${esc(t)}</strong><span>${short[i]}</span></span></button>`).join('')}</div>
+      <span class="bj-plum" aria-hidden="true"></span>
+      <div class="bj-card">
+        <p class="bj-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)} / at a glance</p>
+        <svg class="bj-path" viewBox="0 0 560 660" aria-hidden="true"><path pathLength="1" d="${path}"/><circle class="bj-dot" r="4.5"><animateMotion dur="12s" repeatCount="indefinite" path="${path}"/></circle></svg>
+        <div class="bj-nodes visual-key" role="group" aria-label="The three steps">${p.method.map(([t], i) => `<button type="button" class="bj-node" data-visual-step="${i}" aria-pressed="false" style="--x:${nodes[i][0]}px;--y:${nodes[i][1]}px;--i:${i}" disabled><span class="bj-ic bj-ic-${i}">${icons[i]}</span><span class="bj-label"><em>0${i + 1}.</em><strong>${esc(t)}</strong><span>${short[i]}</span></span></button>`).join('')}</div>
+        <p class="bj-tag" aria-hidden="true">A clearer mind <i>✦</i> A calmer you</p>
+        ${olive}
+      </div>
       <p class="visual-hint" hidden>Tap a step.</p>
     </figure>
   </div></section>`;

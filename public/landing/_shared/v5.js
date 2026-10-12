@@ -62,6 +62,28 @@
     addEventListener('resize', fit, { passive: true });
   }
 
+  // Phones: the situation cards turn by themselves, one whole card at a time; a touch holds them.
+  const carousel = document.querySelector('[data-carousel]');
+  const cDots = document.querySelectorAll('.s2-dots i');
+  if (carousel) {
+    const cards = [...carousel.children];
+    const current = () => Math.round(carousel.scrollLeft / Math.max(1, carousel.clientWidth));
+    carousel.addEventListener('scroll', () => cDots.forEach((d, j) => d.classList.toggle('is-on', j === current())), { passive: true });
+    let held = false, release = null, timer = null;
+    const hold = () => { held = true; clearTimeout(release); };
+    const letGo = () => { clearTimeout(release); release = setTimeout(() => { held = false; }, 2500); };
+    carousel.addEventListener('touchstart', hold, { passive: true });
+    carousel.addEventListener('touchend', letGo, { passive: true });
+    carousel.addEventListener('mouseenter', hold);
+    carousel.addEventListener('mouseleave', letGo);
+    const tick = () => {
+      if (held || carousel.scrollWidth <= carousel.clientWidth + 4) return;
+      const next = (current() + 1) % cards.length;
+      carousel.scrollTo({ left: next * carousel.clientWidth + next * parseFloat(getComputedStyle(carousel).columnGap || 0), behavior: 'smooth' });
+    };
+    if (!reduce) new IntersectionObserver(([e]) => { clearInterval(timer); if (e.isIntersecting) timer = setInterval(tick, 3800); }, { threshold: 0.4 }).observe(carousel);
+  }
+
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
   const sound = document.querySelector('.v5-sound');
