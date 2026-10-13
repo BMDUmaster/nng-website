@@ -17,10 +17,13 @@ const hangBrain = `<svg class="mb-hang" viewBox="0 0 120 360" aria-hidden="true"
 export function meetBrain(p, { esc, wa }) {
   const meds = [['brain', 'Thought<br>patterns'], ['heart', 'Emotions &amp;<br>reactions'], ['book', 'Beliefs &amp;<br>habits'], ['lotus', 'Everyday<br>practice']];
   return `<section class="mb" aria-labelledby="meet-title">
-    <div class="mb-photo" aria-hidden="true"><img src="../_shared/hero/meet-brain-wide.webp" alt="" width="1000" height="1000" loading="lazy"></div>
-    <svg class="mb-arc" viewBox="0 0 600 700" aria-hidden="true"><path pathLength="1" d="M300 20A330 330 0 0 1 300 680"/><circle class="mb-arc-dot" cx="625" cy="350" r="6"/><circle class="mb-arc-dot" cx="560" cy="120" r="4"/></svg>
-    <ul class="mb-meds" aria-label="What Brainology works with">${meds.map(([k, t], i) => `<li class="mb-med mb-med-${i}" style="--i:${i}"><span>${I[k]}</span><em>${t}</em></li>`).join('')}</ul>
-    <div class="mb-name"><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span><i aria-hidden="true"></i></div>
+    <div class="mb-visual">
+      <span class="mb-glow" aria-hidden="true"></span>
+      <svg class="mb-ring" viewBox="0 0 500 500" aria-hidden="true"><circle class="mb-ring-a" cx="250" cy="250" r="236" pathLength="1"/><circle class="mb-ring-b" cx="250" cy="250" r="214"/><circle class="mb-ring-dot" r="5"><animateMotion dur="16s" repeatCount="indefinite" path="M250 14a236 236 0 1 1 0 472a236 236 0 1 1 0-472"/></circle></svg>
+      <div class="mb-photo"><img src="../_shared/hero/meet-brain-wide.webp" alt="Narayani Garg in a pale green saree beside a white Buddha relief" width="1000" height="1000" loading="lazy"></div>
+      <ul class="mb-meds" aria-label="What Brainology works with">${meds.map(([k, t], i) => `<li class="mb-med mb-med-${i}" style="--i:${i}"><span>${I[k]}</span><em>${t.replace('<br>', ' ')}</em></li>`).join('')}</ul>
+      <div class="mb-name"><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></div>
+    </div>
     ${hangBrain}
     <span class="mb-plant" aria-hidden="true"></span>
     <div class="mb-copy">
