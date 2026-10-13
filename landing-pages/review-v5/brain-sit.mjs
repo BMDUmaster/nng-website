@@ -16,19 +16,27 @@ const I = {
 
 export function brainVoices(p, { esc, wa, voices, assets, clips }) {
   const [a, b] = p.proofTitle.split('\n');
-  return `<section class="stories-band cv3" id="stories" aria-labelledby="stories-title"><div class="wrap cv3-inner">
-    <div class="cv3-head">
-      <p class="cv3-kicker"><span aria-hidden="true">✦</span>Client voices</p>
-      <h2 id="stories-title">${esc(a)}<br><em>${esc(b)}</em></h2>
-      <p class="cv3-sub">Real clients, in their own words. Tap a film to hear their experience.</p>
-      ${wa('voices', 'Share your situation', 'cv3-cta')}
-      <p class="cv3-note">Personal experiences of Narayani’s guidance. Individual experiences vary.</p>
+  return `<section class="stories-band cv4" id="stories" aria-labelledby="stories-title">
+    <div class="cv4-visual" aria-hidden="true">
+      <img src="../_shared/hero/cv-narayani.webp" alt="" width="434" height="640" loading="lazy">
+      <p class="cv4-name"><span>Narayani Garg</span><small>Psychic · Spiritual Mentor</small></p>
     </div>
-    <div class="cv3-list">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="cv3-card" style="--i:${i}">
-      <button class="cv3-film" type="button" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv3-play" aria-hidden="true">${I.play}</span><span class="cv3-time">${esc(v.duration || '')}</span></button>
-      <div class="cv3-words"><p class="cv3-topic">${esc(v.title)}</p><blockquote>“${esc(v.quote || v.summary)}”</blockquote><p class="cv3-who"><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p></div>
-    </article>`; }).join('')}</div>
-  </div></section>`;
+    <div class="cv4-main">
+      <div class="cv4-head">
+        <div><p class="cv4-kicker"><span aria-hidden="true">✦</span>Client voices</p>
+        <h2 id="stories-title">${esc(a)}<br><em>${esc(b)}</em></h2>
+        <p class="cv4-sub">Real clients, in their own words. Tap a film to hear their experience of Narayani’s guidance.</p></div>
+        <div class="cv4-act">${wa('voices', 'Share your situation', 'cv4-cta')}<p>Personal experiences of Narayani’s guidance. Individual experiences vary.</p></div>
+      </div>
+      <div class="cv4-list" data-cv4>${p.proof.map((key, i) => { const v = voices[key]; const clip = `data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}"`; return `<article class="cv4-card" style="--i:${i}">
+        <button class="cv4-film" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv4-play" aria-hidden="true">${I.play}</span>${v.duration ? `<span class="cv4-time">${esc(v.duration)}</span>` : ''}</button>
+        <div class="cv4-words"><p class="cv4-topic">${esc(v.title)}</p><div class="cv4-q"><span aria-hidden="true">“</span><blockquote>“${esc(v.quote || v.summary)}”</blockquote></div>
+        <div class="cv4-who"><p><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p><button class="cv4-go" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s film">${I.arrow}</button></div></div>
+      </article>`; }).join('')}</div>
+      <div class="cv4-dots" aria-hidden="true">${p.proof.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div>
+      <p class="cv4-foot"><i aria-hidden="true"></i>A clearer mind <b aria-hidden="true">·</b> A calmer you<i aria-hidden="true"></i></p>
+    </div>
+  </section>`;
 }
 
 export function brainSituations(p, { esc, wa }) {

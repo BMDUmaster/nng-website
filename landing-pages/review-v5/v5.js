@@ -55,6 +55,13 @@
     list.addEventListener('mouseleave', () => show(chosen));
   }
 
+  // Brainology client voices: dots follow the swipe on phones.
+  const cvList = document.querySelector('[data-cv4]');
+  if (cvList) {
+    const cvDots = [...document.querySelectorAll('.cv4-dots i')];
+    cvList.addEventListener('scroll', () => { const k = Math.round(cvList.scrollLeft / (cvList.scrollWidth - cvList.clientWidth || 1) * (cvDots.length - 1)); cvDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); }, { passive: true });
+  }
+
   // Brainology approach loop: light one link at a time while in view.
   const loop = document.querySelector('.a6-chain ol');
   if (loop && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -139,7 +146,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  document.querySelectorAll('.mb, .m5, .cv3, .q4, .a6, .pr4, .wy3').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
+  document.querySelectorAll('.mb, .m5, .cv4, .q4, .a6, .pr4, .wy3').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
