@@ -3199,6 +3199,33 @@ body.lp-v5 .mt-brain .mt-arch img { border-radius: 999px 999px 28px 28px; }
   body.lp-v5 .mt-brain .mt-arch { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
   body.lp-v5 .mt-brain.is-in .mt-arch { opacity: 1; transform: none; }
 }
+
+/* ---- Brainology Meet, in the hero's language (Oct 13 b) ---- */
+body.lp-v5 .mt-neural, body.lp-v5 .mt-chips { display: none !important; }
+body.lp-lp-v5 .x {}
+body.lp-v5.lp-rich[data-page="brainology"] .v5-meet { background: radial-gradient(50% 60% at 25% 45%, #FFF3DC, transparent 70%), linear-gradient(180deg, #F5ECDD 0%, #F8F1E6 100%); }
+body.lp-v5 .mt-cosmos { position: absolute; inset: -12% -16% -6%; width: 132%; height: 118%; overflow: visible; pointer-events: none; }
+body.lp-v5 .mt-sun { mix-blend-mode: screen; opacity: 0.85; transform-box: fill-box; transform-origin: center; }
+body.lp-v5 .mt-orbit { fill: none; stroke: #D9B66A; stroke-width: 1.3; stroke-dasharray: 2 7; opacity: 0.8; }
+body.lp-v5 .mt-moon { opacity: 0.9; filter: drop-shadow(0 4px 8px rgb(150 110 50 / 0.25)); }
+body.lp-v5 .mt-mote { fill: #E8C77E; opacity: 0; filter: drop-shadow(0 0 5px rgb(255 214 140 / 1)); }
+body.lp-v5 .mt-brain .mt-glow { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .mt-sun { animation: hb-aura 6s ease-in-out infinite; }
+  body.lp-v5 .mt-orbit { animation: hb-dash 40s linear infinite; }
+  body.lp-v5 .mt-moon { animation: hb-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: calc(0.6s + var(--d)); }
+  body.lp-v5 .mt-mote { animation: hb-rise 7s ease-out infinite; animation-delay: var(--d); }
+}
+/* Words sit on the page like the hero, without a box. */
+body.lp-v5.lp-rich[data-page="brainology"] .mt-copy { padding: 0; background: none; box-shadow: none; }
+body.lp-v5.lp-rich[data-page="brainology"] .mt-copy::before, body.lp-v5.lp-rich[data-page="brainology"] .mt-copy::after { content: none; }
+body.lp-v5.lp-rich[data-page="brainology"] .mt-facts { border-block-color: rgb(184 138 69 / 0.3); }
+body.lp-v5.lp-rich[data-page="brainology"] .mt-facts li > span { width: 46px; height: 46px; background: radial-gradient(circle at 40% 35%, #FFFFFF, #F3E6D0); }
+body.lp-v5.lp-rich[data-page="brainology"] .mt-quote { background: none; box-shadow: none; padding-left: 52px; }
+@media (max-width: 900px) {
+  body.lp-v5 .mt-cosmos { inset: -8% -10% -4%; width: 120%; height: 112%; }
+  body.lp-v5.lp-rich[data-page="brainology"] .mt-copy { margin-top: 30px; padding: 0; border-radius: 0; background: none; backdrop-filter: none; box-shadow: none; }
+}
 /* =============================================================================================================
    Brainology book band (Oct 13): deep plum, the 3D book in a gold glow, three ideas, facts, clientele line.
    ============================================================================================================= */

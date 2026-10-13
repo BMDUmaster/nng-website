@@ -15,6 +15,20 @@ const nodes = [[40, 70], [120, 30], [210, 60], [300, 25], [380, 80], [30, 190], 
 const links = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [1, 6], [2, 6], [2, 7], [3, 7], [4, 8], [5, 6], [6, 7], [7, 8], [5, 9], [6, 10], [7, 10], [7, 11], [8, 11], [8, 12], [9, 10], [10, 11], [11, 12], [9, 13], [10, 13], [10, 14], [11, 14], [12, 15], [14, 15]];
 const neural = `<svg class="mt-neural" viewBox="0 0 430 470" aria-hidden="true">${links.map(([a, b], i) => { const [x1, y1] = nodes[a], [x2, y2] = nodes[b]; const mx = (x1 + x2) / 2 + (i % 2 ? 12 : -12), my = (y1 + y2) / 2 + (i % 3 ? -10 : 10); return `<path pathLength="1" style="--d:${(i * 0.23).toFixed(2)}s" d="M${x1} ${y1}Q${mx} ${my} ${x2} ${y2}"/>`; }).join('')}${nodes.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 ? 2.6 : 3.6}" style="--d:${(i * 0.31).toFixed(2)}s"/>`).join('')}</svg>`;
 
+// Brainology: the hero's sky around the photograph.
+const orbit = 'M250 40C380 40 470 160 470 300C470 440 380 560 250 560C120 560 30 440 30 300C30 160 120 40 250 40Z';
+const cosmos = `<svg class="mt-cosmos" viewBox="0 0 500 600" aria-hidden="true">
+  <defs><radialGradient id="mt-sun"><stop offset="0" stop-color="#FFF1CC" stop-opacity=".95"/><stop offset=".4" stop-color="#FFD891" stop-opacity=".4"/><stop offset="1" stop-color="#FFD891" stop-opacity="0"/></radialGradient>
+  <radialGradient id="mt-light"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".4" stop-color="#FFE7AE"/><stop offset="1" stop-color="#FFE7AE" stop-opacity="0"/></radialGradient></defs>
+  <circle class="mt-sun" cx="250" cy="230" r="230" fill="url(#mt-sun)"/>
+  <path class="mt-orbit" d="${orbit}"/>
+  <circle r="12" fill="url(#mt-light)"><animateMotion dur="14s" repeatCount="indefinite" path="${orbit}"/></circle>
+  <circle r="8" fill="url(#mt-light)" opacity=".8"><animateMotion dur="14s" begin="-7s" repeatCount="indefinite" path="${orbit}"/></circle>
+  <defs><radialGradient id="mt-moonfill" cx="35%" cy="35%"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".7" stop-color="#EDE6DA"/><stop offset="1" stop-color="#CFC4B2"/></radialGradient></defs>
+  ${[[34, 250, 13, 0.25], [44, 180, 15, 0.5], [70, 116, 17, 0.75], [112, 64, 19, 1]].map(([x, y, r, f], i) => `<g class="mt-moon" style="--d:${i * 0.3}s"><mask id="mt-m${i}"><rect x="${x - r - 2}" y="${y - r - 2}" width="${r * 2 + 4}" height="${r * 2 + 4}" fill="#fff"/>${f < 1 ? `<circle cx="${x - r * 2 * f}" cy="${y}" r="${r}" fill="#000"/>` : ''}</mask><circle cx="${x}" cy="${y}" r="${r}" fill="#E9E1D3" opacity=".35"/><circle cx="${x}" cy="${y}" r="${r}" fill="url(#mt-moonfill)" mask="url(#mt-m${i})"/><circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="#D9B66A" stroke-width=".8" opacity=".7"/></g>`).join('')}
+  ${[[90, 420], [420, 380], [380, 160], [130, 260], [440, 500], [60, 520]].map(([x, y], i) => `<circle class="mt-mote" cx="${x}" cy="${y}" r="${2 + (i % 3)}" style="--d:${(i * 0.9).toFixed(1)}s"/>`).join('')}
+</svg>`;
+
 const meet = {
   brainology: { brain: true, eyebrow: 'Meet your Brainology guide', img: 'meet-narayani.webp', alt: 'Narayani Garg in a pale green saree, standing before a white Buddha relief', h: 'She listens first.<br><em>Then helps you see the pattern.</em>', lead: 'Narayani begins with the person, not the prediction. She asks about the moment that keeps returning, then works with you on the beliefs and reactions behind it, with practices such as NLP, EFT tapping and Ho’oponopono, so the change you practise is your own.' },
   astrology: { img: 'meet-astrology.webp', alt: 'Narayani Garg in a red and orange bandhani saree at her home temple', h: 'She reads the chart.<br><em>And listens to the person.</em>', lead: 'Narayani reads the chart themes relevant to your question beside your real circumstances. She explains her reasoning in plain words, and the decision stays with you.' },
@@ -26,10 +40,9 @@ export function meetSection(p, { esc, wa }) {
   const m = meet[p.slug] || meet.brainology;
   return `<section class="v5-meet" aria-labelledby="meet-title"><div class="wrap mt-inner">
     <figure class="mt-photo${m.brain ? ' mt-brain' : ''}" data-reveal>
-      <span class="mt-glow" aria-hidden="true"></span>${m.brain ? neural : ''}
+      <span class="mt-glow" aria-hidden="true"></span>${m.brain ? cosmos : ''}
       <div class="mt-arch"><img src="../_shared/hero/${m.img}" alt="${m.alt}" width="720" height="910" loading="lazy"></div>
       <figcaption><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></figcaption>
-      ${m.brain ? `<ul class="mt-chips" aria-label="Practices she uses">${['NLP', 'EFT Tapping', 'Ho’oponopono', 'Breathing'].map((t, i) => `<li class="mt-chip mt-chip-${i}"><i aria-hidden="true"></i>${t}</li>`).join('')}</ul>` : ''}
     </figure>
     <div class="mt-copy">
       <p class="mt-eyebrow" data-reveal><span aria-hidden="true">✦</span>${m.eyebrow || 'Meet your guide'}</p>
