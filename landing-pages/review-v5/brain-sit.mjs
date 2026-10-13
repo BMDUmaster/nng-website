@@ -60,36 +60,46 @@ export function brainSituations(p, { esc, wa }) {
   </div></section>`;
 }
 
-// Brainology "How Narayani approaches it", from the approved reference: her photograph on plum with her name in script,
-// the words, the chain that repeats (one link lit at a time), three step cards with photographs, and a closing line.
+// Brainology "How Narayani approaches it" (Oct 13 j): compact, on deep green. Her photograph in an arched frame, the
+// words, the chain that repeats (one link lit at a time) and the three steps. Fits one screen on desktop and phone.
 export function brainApproach3(p, { esc }) {
   const [a, b] = p.methodTitle.split('\n');
   const w = b.split(' '); const tail = w.splice(-2).join(' ');
+  const [lead, ...rest] = p.methodIntro.split('. ');
   const loop = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 12a10 10 0 0 0-17.5-3.5L5 11"/><path d="M5 5v6h6"/><path d="M7 20a10 10 0 0 0 17.5 3.5L27 21"/><path d="M27 27v-6h-6"/></svg>';
   const eye = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="4.2"/><circle cx="16" cy="16" r="1.4" fill="currentColor"/></svg>';
   const words = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M6 7h20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M10 13h12M10 17h8" stroke-linecap="round"/></svg>';
-  const links = [['A thought', I.mind], ['A belief', I.heart], ['The words you use', words], ['A reaction', loop]];
-  const cards = [['ap-notice', eye], ['ap-understand', I.person], ['ap-practise', loop]];
-  return `<section class="a5" id="approach" aria-labelledby="approach-title">
-    <div class="a5-visual" aria-hidden="true">
-      <img src="../_shared/hero/ap-narayani.webp" alt="" width="490" height="612" loading="lazy">
-      <p class="a5-name"><span>Narayani Garg</span><small>Psychic · Spiritual Mentor</small></p>
-      <p class="a5-script"><span>Same patterns,</span><span>different</span><span>possibilities</span></p>
-    </div>
-    <div class="a5-copy">
-      <p class="a5-kicker"><i></i>How Narayani approaches it<i></i></p>
+  const bolt = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4 8 18h7l-2 10 11-15h-7l2-9Z"/></svg>';
+  const links = [['A thought', I.mind], ['A belief', I.heart], ['The words you use', words], ['A reaction', bolt]];
+  const icons = [eye, I.person, loop];
+  return `<section class="a6" id="approach" aria-labelledby="approach-title"><div class="a6-inner">
+    <figure class="a6-photo"><img src="../_shared/hero/ap-narayani-real.webp" alt="Narayani Garg beside a white Buddha relief" width="900" height="1003" loading="lazy"><figcaption><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></figcaption></figure>
+    <div class="a6-copy">
+      <p class="a6-kicker"><span aria-hidden="true">✦</span>How Narayani approaches it</p>
       <h2 id="approach-title">${esc(a)}<br>${esc(w.join(' '))} <em>${esc(tail)}</em></h2>
-      <p class="a5-intro">${esc(p.methodIntro)}</p>
-      <div class="a5-chain"><p>The chain <br>that repeats</p><ol>${links.map(([t, ic], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ol></div>
-      <ol class="a5-cards">${p.method.map(([t, d], i) => `<li style="--i:${i}">
-        <img class="a5-pic" src="../_shared/hero/${cards[i][0]}.webp" alt="" width="230" height="189" loading="lazy">
-        <em class="a5-no">0${i + 1}</em>
-        <span class="a5-ic" aria-hidden="true">${cards[i][1]}</span>
-        <h3>${esc(t)}</h3>
-        <p>${esc(d)}</p>
-        <a class="a5-go" href="#enquire" aria-label="Enquire about the ${esc(t).toLowerCase()} step">${I.arrow}</a>
-      </li>`).join('')}</ol>
-      <p class="a5-foot"><i aria-hidden="true"></i>A clearer mind <b aria-hidden="true">·</b> A calmer you<i aria-hidden="true"></i></p>
+      <p class="a6-intro"><span class="a6-lead">${esc(lead)}. </span>${esc(rest.join('. '))}</p>
+      <div class="a6-chain"><p>The chain that repeats</p><ol>${links.map(([t, ic], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ol></div>
+      <ol class="a6-steps">${p.method.map(([t, d], i) => `<li style="--i:${i}"><span class="a6-ic" aria-hidden="true">${icons[i]}</span><div><h3><em>0${i + 1}</em>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>
     </div>
-  </section>`;
+  </div></section>`;
+}
+
+// Brainology "What the program draws on" (Oct 13 k): six practice cards with a photograph each, on cream with deep
+// green and gold. Compact rows on phones so all six fit one screen.
+export function brainPractices(p, { esc, wa, pageIcon }) {
+  const [a, b] = p.scopeTitle.split('\n');
+  const w = b.split(' '); const tail = w.splice(-2).join(' ');
+  return `<section class="pr4" id="ways" aria-labelledby="ways-title"><div class="pr4-inner">
+    <div class="pr4-head">
+      <div><p class="pr4-kicker"><span aria-hidden="true">✦</span>${esc(p.scopeEyebrow || 'What the program draws on')}<i aria-hidden="true"></i></p>
+      <h2 id="ways-title">${esc(a)}<br>${esc(w.join(' '))} <em>${esc(tail)}</em></h2></div>
+      <p class="pr4-script" aria-hidden="true"><span>Same patterns,</span><span>different possibilities</span></p>
+      ${wa('scope', 'WhatsApp enquiry', 'pr4-cta')}
+    </div>
+    <ul class="pr4-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}">
+      <div class="pr4-text"><p class="pr4-top"><em>0${i + 1}</em><span aria-hidden="true">${pageIcon(p, 'topics', i)}</span></p><h3>${esc(t)}</h3><p>${esc(d)}</p></div>
+      <img src="../_shared/hero/pr-${i + 1}.webp" alt="" width="194" height="264" loading="lazy">
+    </li>`).join('')}</ul>
+    <p class="pr4-foot"><i aria-hidden="true"></i>A clearer mind <b aria-hidden="true">·</b> A calmer you<i aria-hidden="true"></i></p>
+  </div></section>`;
 }
