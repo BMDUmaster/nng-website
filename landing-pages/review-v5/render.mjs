@@ -141,6 +141,19 @@ export function renderMain(p, h) {
     <p class="v5-why-quote" lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.” <span>A remedy works when the mind works.</span></p>
   </div></section>`;
 
+  /* Brainology: why her approach matters — two principles split by a gold rule, and three plain promises. */
+  const why2 = `<section class="wy2" aria-labelledby="why-title"><div class="section wrap">
+    <div class="wy2-head"><p class="wy2-kicker"><span aria-hidden="true">✦</span>Why her approach matters</p><h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2></div>
+    <div class="wy2-pair">
+      ${principles.map(([ic, t, d], i) => `<article class="wy2-card" data-reveal style="--i:${i}"><span class="wy2-icon">${icon(ic)}</span><p class="wy2-no">0${i + 1}</p><h3>${t}</h3><p>${d}</p></article>`).join('<span class="wy2-rule" aria-hidden="true"><i>✦</i></span>')}
+    </div>
+    <ul class="wy2-promise" data-reveal>
+      <li><span aria-hidden="true">✓</span>No fear-based predictions</li>
+      <li><span aria-hidden="true">✓</span>No pressure to buy a remedy</li>
+      <li><span aria-hidden="true">✓</span>The reasoning explained, the choice yours</li>
+    </ul>
+  </div></section>`;
+
   /* Enquiry. */
   const steps = [['Share your starting point.', 'A short message about what you want to discuss.'], ['Understand the details.', 'Confirm scope, format, duration, fees and availability.'], ['Choose your appointment.', 'Book only after the details work for you.']];
   const enquiry = `<section class="v5-enquiry" id="enquire" aria-labelledby="enquiry-title"><div class="section wrap v5-enquiry-inner">
@@ -174,7 +187,7 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? why2 : why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.

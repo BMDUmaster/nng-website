@@ -3382,3 +3382,46 @@ body.lp-v5 .pr3 .s2-tiles li:hover .s2-go { background: var(--champ); color: #3C
   body.lp-v5 .pr3 .s2-name { padding-right: 30px; }
   body.lp-v5 .pr3 .s2-name strong { font-size: 16px; }
 }
+/* =============================================================================================================
+   Brainology "Why her approach matters" (Oct 13): cream, centred; two principles split by a gold rule; promises.
+   ============================================================================================================= */
+body.lp-v5 .wy2 { position: relative; overflow: hidden; background: radial-gradient(50% 70% at 50% 100%, rgb(255 236 200 / 0.6), transparent 70%), linear-gradient(180deg, #FBF7F0, #F5ECDD); }
+body.lp-v5 .wy2-head { text-align: center; }
+body.lp-v5 .wy2-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #8A5A1F; }
+body.lp-v5 .wy2-kicker span { color: #B57A2E; }
+body.lp-v5 .wy2 h2 { margin: 14px 0 0; color: #1F2433; }
+body.lp-v5 .wy2 h2 em { font-style: italic; background: linear-gradient(100deg, #8E5A1C, #C08A3E 50%, #9A6324); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.lp-v5 .wy2-pair { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; max-width: 980px; margin: 40px auto 0; }
+body.lp-v5 .wy2-card { display: grid; justify-items: center; gap: 6px; padding: 10px 34px; text-align: center; }
+body.lp-v5 .wy2-icon { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #5A2450, #3C183D); color: #F1DDA6; box-shadow: 0 0 0 6px #F8F1E6, 0 0 0 7px rgb(184 138 69 / 0.45), 0 20px 34px -18px rgb(60 24 61 / 0.6); transition: transform 0.5s var(--ease); }
+body.lp-v5 .wy2-icon .line-icon { width: 34px; height: 34px; color: #F1DDA6; }
+body.lp-v5 .wy2-card:hover .wy2-icon { transform: translateY(-4px) rotate(-6deg); }
+body.lp-v5 .wy2-no { margin: 14px 0 0; font-family: var(--display); font-size: 15px; letter-spacing: 0.1em; color: #B57A2E; }
+body.lp-v5 .wy2-card h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.2vw, 30px); color: #1F2433; }
+body.lp-v5 .wy2-card > p:last-child { max-width: 360px; margin: 4px 0 0; font-size: 15.5px; line-height: 1.65; color: #5B5F6B; }
+body.lp-v5 .wy2-rule { position: relative; width: 1px; margin: 10px 0; background: linear-gradient(180deg, transparent, rgb(184 138 69 / 0.6), transparent); }
+body.lp-v5 .wy2-rule i { position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: #F8F1E6; font-style: normal; font-size: 13px; color: #B57A2E; box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.45); }
+body.lp-v5 .wy2-promise { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 40px auto 0; padding: 0; list-style: none; }
+body.lp-v5 .wy2-promise li { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 12px; border-radius: 999px; background: #FFFFFF; box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.28), 0 12px 24px -18px rgb(80 60 30 / 0.5); font-size: 14px; font-weight: 600; color: #2A2430; }
+body.lp-v5 .wy2-promise span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #3C183D; color: #F1DDA6; font-size: 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .wy2-rule { transform: scaleY(0); transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s; }
+  body.lp-v5 .wy2-pair:has(.is-in) .wy2-rule { transform: none; }
+  body.lp-v5 .wy2-promise.is-in li { animation: hb-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .wy2-promise.is-in li:nth-child(2) { animation-delay: 0.12s; }
+  body.lp-v5 .wy2-promise.is-in li:nth-child(3) { animation-delay: 0.24s; }
+}
+@media (max-width: 800px) {
+  body.lp-v5 .wy2-head { text-align: left; }
+  body.lp-v5 .wy2-pair { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
+  body.lp-v5 .wy2-card { grid-template-columns: 56px 1fr; justify-items: start; align-items: start; gap: 2px 16px; padding: 18px 0; text-align: left; }
+  body.lp-v5 .wy2-icon { grid-row: 1 / 4; width: 56px; height: 56px; box-shadow: 0 0 0 4px #F8F1E6, 0 0 0 5px rgb(184 138 69 / 0.45); }
+  body.lp-v5 .wy2-icon .line-icon { width: 26px; height: 26px; }
+  body.lp-v5 .wy2-no { margin: 0; font-size: 12px; }
+  body.lp-v5 .wy2-card h3 { font-size: 22px; }
+  body.lp-v5 .wy2-card > p:last-child { font-size: 14px; }
+  body.lp-v5 .wy2-rule { width: auto; height: 1px; margin: 0; background: linear-gradient(90deg, transparent, rgb(184 138 69 / 0.55), transparent); transform: none !important; }
+  body.lp-v5 .wy2-promise { justify-content: flex-start; gap: 8px; margin-top: 20px; }
+  body.lp-v5 .wy2-promise li { padding: 8px 14px 8px 9px; font-size: 13px; }
+  body.lp-v5 .wy2-promise span { width: 20px; height: 20px; font-size: 10px; }
+}
