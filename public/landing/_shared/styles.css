@@ -3631,3 +3631,43 @@ body.lp-v5 .hn-cap { position: absolute; bottom: 4%; left: 0; right: 0; margin: 
   body.lp-v5 .hn-nums text { font-size: 26px; }
 }
 body.lp-v5 .hn-cap { bottom: -7%; } @media (max-width: 900px) { body.lp-v5 .hn { margin-bottom: 30px; } }
+/* =============================================================================================================
+   Vastulogy (Oct 13): warm stone and sage opening; a floor plan draws itself inside a compass of eight directions.
+   ============================================================================================================= */
+body.lp-v5[data-page="vastulogy"] .v5-hero-banner { background: radial-gradient(45% 70% at 76% 45%, rgb(198 214 188 / 0.55), transparent 70%), radial-gradient(40% 50% at 10% 10%, rgb(255 236 200 / 0.6), transparent 70%), linear-gradient(180deg, #F8F3EA 0%, #F0EEE4 100%); }
+body.lp-v5[data-page="vastulogy"] .v5-hero { grid-template-columns: minmax(0, 560px) 1fr; gap: 40px; }
+body.lp-v5 .hv { position: relative; display: grid; place-items: center; width: 100%; max-width: 480px; aspect-ratio: 1; margin-inline: auto; }
+body.lp-v5 .hv-glow { position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(circle, rgb(255 236 190 / 0.7), rgb(180 200 170 / 0.25) 55%, transparent 72%); }
+body.lp-v5 .hv-svg { position: relative; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 40px 50px rgb(60 70 40 / 0.18)); }
+body.lp-v5 .hv-outer { fill: none; stroke: #C9A25A; stroke-width: 1.2; opacity: 0.7; }
+body.lp-v5 .hv-ticks path { stroke: #4E5E3A; stroke-width: 1; opacity: 0.45; }
+body.lp-v5 .hv-dirs text { font-family: var(--body); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; fill: #4E5E3A; text-anchor: middle; }
+body.lp-v5 .hv-dirs .hv-n { font-size: 17px; fill: #9A6324; }
+body.lp-v5 .hv-plan path { fill: none; stroke: #4E5E3A; stroke-width: 4; stroke-linecap: square; }
+body.lp-v5 .hv-plan path:nth-child(2) { stroke-width: 2.5; }
+body.lp-v5 .hv-plan path:nth-child(3) { stroke-width: 1; stroke-dasharray: 3 3; }
+body.lp-v5 .hv-labels text { font-family: var(--body); font-size: 11px; font-weight: 600; fill: #5A5048; text-anchor: middle; }
+body.lp-v5 .hv-door { fill: #C9A25A; }
+body.lp-v5 .hv-needle { transform-origin: 200px 200px; }
+body.lp-v5 .hv-north { fill: #9A6324; opacity: 0.88; }
+body.lp-v5 .hv-south { fill: #D7CBB4; opacity: 0.8; }
+body.lp-v5 .hv-needle circle { fill: #FBF8F1; stroke: #9A6324; stroke-width: 2; }
+body.lp-v5 .hv-cap { position: absolute; bottom: -6%; left: 0; right: 0; margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-align: center; text-transform: uppercase; color: #4E5E3A; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .hv-plan path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: hv-draw 1.8s cubic-bezier(0.45, 0, 0.2, 1) 0.4s forwards; }
+  body.lp-v5 .hv-plan path:nth-child(2) { animation-delay: 1.2s; }
+  body.lp-v5 .hv-plan path:nth-child(3) { stroke-dasharray: 1; animation-delay: 2s; }
+  body.lp-v5 .hv-labels { opacity: 0; animation: hv-fade 0.8s ease 2.2s forwards; }
+  body.lp-v5 .hv-needle { animation: hv-swing 3.2s cubic-bezier(0.34, 1.4, 0.5, 1) 0.6s both, hv-sway 7s ease-in-out 4s infinite; }
+  body.lp-v5 .hv-ticks, body.lp-v5 .hv-dirs { transform-origin: 200px 200px; animation: hv-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .hv-glow { animation: mt-breathe 6s ease-in-out infinite; }
+}
+@keyframes hv-swing { 0% { transform: rotate(-160deg); } 100% { transform: rotate(0deg); } }
+@keyframes hv-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes hv-in { from { opacity: 0; transform: rotate(-30deg) scale(0.92); } to { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  body.lp-v5[data-page="vastulogy"] .v5-hero { display: flex; flex-direction: column; padding: 26px 0 34px !important; }
+  body.lp-v5 .hv { order: -1; max-width: 290px; margin-bottom: 30px; }
+}
+@media (max-width: 1100px) { body.lp-v5 .v5-blob, body.lp-v5 .v5-leaf-l, body.lp-v5 .v5-leaf-r { display: none; } }
+@keyframes hv-draw { to { stroke-dashoffset: 0; } } @keyframes hv-fade { to { opacity: 1; } }
