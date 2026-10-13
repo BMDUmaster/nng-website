@@ -91,3 +91,63 @@ body.lp-v5 .mt-cta { margin-top: 28px; }
   body.lp-v5 .mt-arch { box-shadow: 0 0 0 1px rgb(184 138 69 / 0.5), 0 0 0 7px rgb(255 252 246 / 0.75), 0 0 0 8px rgb(184 138 69 / 0.28), 0 40px 60px -30px rgb(80 60 30 / 0.5); }
   body.lp-v5 .mt-eyebrow::after { content: "· Narayani Garg"; font-family: var(--display); font-style: italic; font-size: 14px; font-weight: 400; letter-spacing: 0; text-transform: none; color: #5A4A3A; }
 }
+
+/* Brainology: neural lines behind the photograph, practice chips floating around it. */
+body.lp-v5 .mt-neural { position: absolute; inset: -8% -14%; width: 128%; height: 116%; overflow: visible; pointer-events: none; }
+body.lp-v5 .mt-neural path { fill: none; stroke: #C9A25A; stroke-width: 1; opacity: 0.4; }
+body.lp-v5 .mt-neural circle { fill: #D7B86B; opacity: 0.55; filter: drop-shadow(0 0 4px rgb(215 184 107 / 0.8)); }
+body.lp-v5 .mt-brain .mt-arch { z-index: 1; }
+body.lp-v5 .mt-chips { position: absolute; inset: 0; z-index: 2; margin: 0; padding: 0; list-style: none; pointer-events: none; }
+body.lp-v5 .mt-chip { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px 9px 12px; border-radius: 999px; background: rgb(255 252 246 / 0.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 0 1px rgb(184 138 69 / 0.35), 0 16px 30px -16px rgb(80 60 30 / 0.5); font-size: 13.5px; font-weight: 600; color: #3C183D; white-space: nowrap; }
+body.lp-v5 .mt-chip i { width: 8px; height: 8px; border-radius: 50%; background: #3C183D; box-shadow: 0 0 0 3px rgb(215 184 107 / 0.45); }
+body.lp-v5 .mt-chip-0 { left: -10%; top: 16%; }
+body.lp-v5 .mt-chip-1 { right: -14%; top: 32%; }
+body.lp-v5 .mt-chip-2 { left: -14%; top: 56%; }
+body.lp-v5 .mt-chip-3 { right: -10%; top: 72%; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .mt-neural path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  body.lp-v5 .mt-photo.is-in .mt-neural path { animation: mt-wire 1.4s ease forwards, mt-pulse 5s ease-in-out infinite; animation-delay: var(--d), calc(1.6s + var(--d)); }
+  body.lp-v5 .mt-neural circle { animation: mt-spark 4s ease-in-out infinite; animation-delay: var(--d); }
+  body.lp-v5 .mt-chip { opacity: 0; translate: 0 12px; }
+  body.lp-v5 .mt-photo.is-in .mt-chip { animation: mt-chip-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards, mt-float 6s ease-in-out infinite; }
+  body.lp-v5 .mt-photo.is-in .mt-chip-0 { animation-delay: 1s, 1.8s; }
+  body.lp-v5 .mt-photo.is-in .mt-chip-1 { animation-delay: 1.2s, 2.4s; }
+  body.lp-v5 .mt-photo.is-in .mt-chip-2 { animation-delay: 1.4s, 3s; }
+  body.lp-v5 .mt-photo.is-in .mt-chip-3 { animation-delay: 1.6s, 3.6s; }
+}
+@keyframes mt-wire { to { stroke-dashoffset: 0; } }
+@keyframes mt-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+@keyframes mt-spark { 0%, 100% { opacity: 0.35; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.4); } }
+@keyframes mt-chip-in { to { opacity: 1; translate: 0 0; } }
+@keyframes mt-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (max-width: 1180px) { body.lp-v5 .mt-chip-0, body.lp-v5 .mt-chip-2 { left: -4%; } body.lp-v5 .mt-chip-1, body.lp-v5 .mt-chip-3 { right: -4%; } }
+@media (max-width: 900px) {
+  body.lp-v5 .mt-neural { inset: -6% -8%; width: 116%; height: 112%; }
+  body.lp-v5 .mt-chip { padding: 6px 12px 6px 9px; font-size: 11.5px; }
+  body.lp-v5 .mt-chip-0 { left: -2%; top: 10%; }
+  body.lp-v5 .mt-chip-1 { right: -2%; top: 24%; }
+  body.lp-v5 .mt-chip-2 { left: -2%; top: 40%; }
+  body.lp-v5 .mt-chip-3 { right: -2%; top: 54%; }
+}
+/* Fixes: keep the arch shape and caption above, chips on the edges, short eyebrow on phones. */
+body.lp-v5 .mt-brain .mt-arch { position: relative; z-index: 1; border-radius: 999px 999px 28px 28px !important; }
+body.lp-v5 .mt-brain figcaption { z-index: 3; }
+body.lp-v5 .mt-chip-0 { left: -16%; top: 20%; }
+body.lp-v5 .mt-chip-1 { right: -18%; top: 36%; }
+body.lp-v5 .mt-chip-2 { left: -18%; top: 58%; }
+body.lp-v5 .mt-chip-3 { right: -16%; top: 74%; }
+@media (max-width: 1180px) { body.lp-v5 .mt-chip-0, body.lp-v5 .mt-chip-2 { left: -8%; } body.lp-v5 .mt-chip-1, body.lp-v5 .mt-chip-3 { right: -8%; } }
+@media (max-width: 900px) {
+  body.lp-v5 .mt-chip-0 { left: -4%; top: 30%; }
+  body.lp-v5 .mt-chip-1 { right: -4%; top: 42%; }
+  body.lp-v5 .mt-chip-2 { left: -4%; top: 56%; }
+  body.lp-v5 .mt-chip-3 { right: -4%; top: 66%; }
+  body.lp-lp-v5 .x {}
+  body.lp-v5[data-page="brainology"] .mt-eyebrow::after { content: none; }
+}
+body.lp-v5 .mt-brain .mt-arch { clip-path: none !important; isolation: isolate; -webkit-mask-image: -webkit-radial-gradient(white, black); }
+body.lp-v5 .mt-brain .mt-arch img { border-radius: 999px 999px 28px 28px; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .mt-brain .mt-arch { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+  body.lp-v5 .mt-brain.is-in .mt-arch { opacity: 1; transform: none; }
+}
