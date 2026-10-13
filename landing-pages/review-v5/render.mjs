@@ -210,7 +210,15 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? why2 : why}${p.slug === 'brainology' ? enquiry2 : enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  /* Brainology questions: one centred column of answers that open smoothly, then a quiet prompt and the boundary. */
+  const faq2 = `<section class="fq2" aria-labelledby="faq-title"><div class="section wrap">
+    <div class="fq2-head"><p class="fq2-kicker"><span aria-hidden="true">✦</span>Before booking</p><h2 id="faq-title">A few practical <em>questions.</em></h2></div>
+    <div class="fq2-list">${p.faqs.map(([q, ans], i) => `<details class="fq2-item"${i === 0 ? ' open' : ''} data-reveal style="--i:${i}"><summary><span class="fq2-no">0${i + 1}</span><h3>${esc(q)}</h3><span class="fq2-mark" aria-hidden="true"></span></summary><div class="fq2-body"><p>${esc(ans)}</p></div></details>`).join('')}</div>
+    <div class="fq2-ask" data-reveal><div><strong>Something else on your mind?</strong><span>Ask the team directly. A short message is enough.</span></div>${wa('faq', 'Ask on WhatsApp', 'wa-btn')}</div>
+    <p class="fq2-boundary">${esc(p.boundary)}</p>
+  </div></section>`;
+
+  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? why2 : why}${p.slug === 'brainology' ? enquiry2 : enquiry}${p.slug === 'brainology' ? faq2 : faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.
