@@ -351,3 +351,13 @@ body.lp-v5 .hb-eyebrow { gap: 6px 12px; }
   body.lp-v5 .hb { margin-top: 14px !important; }
   body.lp-v5 .hb-art { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 70%, transparent 100%) !important; mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 70%, transparent 100%) !important; }
 }
+/* Brainology headline B (Oct 13). */
+body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: clamp(30px, 2.9vw, 48px); }
+body.lp-v5[data-page="brainology"] .v5-hero h1 span { display: block; max-width: 520px; margin-top: 12px; font-size: 0.6em; line-height: 1.3; }
+body.lp-v5[data-page="brainology"] .hb-eyebrow { flex-wrap: wrap; }
+body.lp-v5[data-page="brainology"] .hb-eyebrow em { flex-basis: 100%; margin-top: 4px; font-size: 15px; }
+@media (max-width: 580px) { body.lp-v5[data-page="brainology"] .v5-hero h1 { font-size: 28px; } body.lp-v5[data-page="brainology"] .hb-eyebrow em { font-size: 13px; } }
+body.lp-v5[data-page="brainology"] .v5-hero { grid-template-columns: minmax(0, 640px) 1fr; }
+body.lp-v5 .hb-sep { font-weight: 400; }
+@media (max-width: 580px) { body.lp-v5 .hb-sep { display: block; height: 0; overflow: hidden; } }
+body.lp-v5[data-page="brainology"] .v5-hero h1 { max-width: none !important; }
