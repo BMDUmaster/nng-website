@@ -1,7 +1,7 @@
 // Refined landing page body (Oct 2026), used for pages marked `v5: true` in content.mjs. The header, footer,
 // dialogs and enquiry behaviour are shared with the other landing pages; the sections between them are drawn here.
 import { vastuPlan, chevron, leaves } from './vastu-plan.mjs';
-import { brainApproach } from './brain-approach.mjs';
+import { brainApproach, brainApproach2 } from './brain-approach.mjs';
 import { numApproach } from './num-approach.mjs';
 import { situations2, practices2 } from './sections2.mjs';
 import { heroArt } from './hero-art.mjs';
@@ -174,7 +174,7 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.

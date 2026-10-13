@@ -45,3 +45,26 @@ export function brainApproach(p, { esc }) {
     </figure>
   </div></section>`;
 }
+
+// Brainology: the pattern as a chain, then the three steps once, joined by a gold line.
+export function brainApproach2(p, { esc }) {
+  const [first, second] = p.methodTitle.split('\n');
+  const chain = ['A thought', 'A belief', 'The words you use', 'A reaction'];
+  return `<section class="v5-brain ba2" id="approach" aria-labelledby="approach-title"><div class="section wrap">
+    <div class="ba2-head">
+      <p class="bj-kicker"><span aria-hidden="true"></span>How Narayani approaches it</p>
+      <h2 id="approach-title">${esc(first)}<br>${esc(second).replace('new response.', '<em>new response.</em>')}</h2>
+      <p class="ba2-intro">${esc(p.methodIntro)}</p>
+    </div>
+    <div class="ba2-chain" data-chain aria-label="The parts of a pattern">
+      <p class="ba2-chain-label">The chain that repeats</p>
+      <ol>${chain.map((c, i) => `<li style="--i:${i}"><span>${c}</span></li>`).join('<li class="ba2-arrow" aria-hidden="true">→</li>')}</ol>
+      <svg class="ba2-return" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M590 4C590 30 560 34 300 34S10 30 10 4"/><path class="ba2-tip" d="M4 12 10 2l6 10"/></svg>
+    </div>
+    <ol class="ba2-steps v5-steps2" data-steps>
+      <svg class="ba2-line" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 5H1000"/></svg>
+      ${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false"><span class="ba2-medal">${icons[i]}<em>0${i + 1}</em></span><strong>${esc(t)}</strong><span class="ba2-desc">${esc(d)}</span></li>`).join('')}
+    </ol>
+    <p class="ba2-foot"><span aria-hidden="true">✦</span>A clearer mind <i aria-hidden="true">·</i> A calmer you</p>
+  </div></section>`;
+}
