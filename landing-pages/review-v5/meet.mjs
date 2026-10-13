@@ -1,0 +1,29 @@
+// "Meet Narayani": a short introduction in place of the long video. Photograph in an arch, a two-line heading, her
+// approach, three facts already published on the site, her own words, and one WhatsApp action.
+const icons = {
+  people: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15 14.2a4.6 4.6 0 0 1 6 4.3"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3Z"/></svg>',
+};
+
+export function meetSection(p, { esc, wa }) {
+  return `<section class="v5-meet" aria-labelledby="meet-title"><div class="wrap mt-inner">
+    <figure class="mt-photo" data-reveal>
+      <span class="mt-glow" aria-hidden="true"></span>
+      <div class="mt-arch"><img src="../_shared/hero/meet-narayani.webp" alt="Narayani Garg in a pale green saree, standing before a white Buddha relief" width="720" height="910" loading="lazy"></div>
+      <figcaption><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></figcaption>
+    </figure>
+    <div class="mt-copy">
+      <p class="mt-eyebrow" data-reveal><span aria-hidden="true">✦</span>Meet your guide</p>
+      <h2 id="meet-title" data-reveal>She listens first.<br><em>Then helps you see the pattern.</em></h2>
+      <p class="mt-lead" data-reveal>Narayani begins with the person, not the prediction. She asks about the moment that keeps returning, then looks with you at the beliefs and reactions behind it, so the change you practise is your own.</p>
+      <ul class="mt-facts" data-reveal>
+        <li><span>${icons.people}</span><strong><b data-count="10000">10,000</b>+</strong><em>clients guided</em></li>
+        <li><span>${icons.book}</span><strong>Author</strong><em>Change Your Mind, Transform Your Life</em></li>
+        <li><span>${icons.globe}</span><strong>Worldwide</strong><em>Online, or in person by appointment</em></li>
+      </ul>
+      <blockquote class="mt-quote" data-reveal><span class="mt-qmark" aria-hidden="true">“</span><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>A remedy works when the mind works. — Narayani Garg</cite></blockquote>
+      <div class="mt-cta" data-reveal>${wa('meet', 'Talk to Narayani’s team', 'wa-btn')}</div>
+    </div>
+  </div></section>`;
+}

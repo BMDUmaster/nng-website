@@ -15,7 +15,7 @@
   if (stage) new IntersectionObserver(([e]) => stage.classList.toggle('is-on', e.isIntersecting), { threshold: 0.35 }).observe(stage);
 
   // 10,000+ counts up once.
-  const count = document.querySelector('[data-count]');
+  document.querySelectorAll('[data-count]').forEach((count) => {
   if (count && !reduce) {
     const target = Number(count.dataset.count);
     const fmt = (n) => n.toLocaleString('en-IN');
@@ -32,6 +32,7 @@
       requestAnimationFrame(tick);
     }, { threshold: 0.6 }).observe(count);
   }
+  });
 
   // The approach: hovering or choosing a step lights the matching part of the drawing.
   const list = document.querySelector('[data-steps]');
