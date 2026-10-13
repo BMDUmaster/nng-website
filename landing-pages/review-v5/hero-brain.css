@@ -340,3 +340,14 @@ body.lp-v5 .hb-mote { fill: #FFF2CF; opacity: 0; filter: drop-shadow(0 0 5px rgb
   body.lp-v5 .hb-eyebrow em { font-size: 14px; }
 }
 @media (max-width: 580px) { body.lp-v5 .hb-eyebrow i { display: none; } body.lp-v5 .hb-eyebrow em { flex-basis: 100%; } }
+
+/* Eyebrow without the rule; the picture starts below the header with a soft top edge. */
+body.lp-v5 .hb-eyebrow i { display: none !important; }
+body.lp-v5 .hb-eyebrow { gap: 6px 12px; }
+@media (min-width: 901px) {
+  body.lp-v5 .hb-art { top: 26px !important; bottom: 0; height: calc(100% - 26px); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%) !important; mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%) !important; -webkit-mask-composite: source-in; mask-composite: intersect; }
+}
+@media (max-width: 900px) {
+  body.lp-v5 .hb { margin-top: 14px !important; }
+  body.lp-v5 .hb-art { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 70%, transparent 100%) !important; mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 70%, transparent 100%) !important; }
+}
