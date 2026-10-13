@@ -41,7 +41,8 @@ export function situations2(p, { esc, scenarioArt, wa }) {
 
 export function practices2(p, { esc, cta, pageIcon }) {
   const four = p.topics.length === 4 ? ' s2-four' : '';
-  return `<section class="v5-prac2" id="ways" aria-labelledby="ways-title">${decor}<div class="section wrap s2-inner">
+  const ed = p.slug === 'brainology';
+  return `<section class="v5-prac2${ed ? ' pr3' : ''}" id="ways" aria-labelledby="ways-title">${ed ? '<span class="pr3-glow" aria-hidden="true"></span>' : decor}<div class="section wrap s2-inner">
     <div class="s2-head">
       <div>${kicker(esc(p.scopeEyebrow || 'Your consultation options'))}<h2 id="ways-title">${goldTail(p.scopeTitle, esc)}</h2></div>
       ${cta(p, 'scope', p.cta, '', 's2-pill')}
