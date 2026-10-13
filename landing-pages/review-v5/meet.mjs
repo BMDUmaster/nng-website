@@ -9,6 +9,7 @@ const icons = {
 const meet = {
   brainology: { img: 'meet-narayani.webp', alt: 'Narayani Garg in a pale green saree, standing before a white Buddha relief', h: 'She listens first.<br><em>Then helps you see the pattern.</em>', lead: 'Narayani begins with the person, not the prediction. She asks about the moment that keeps returning, then looks with you at the beliefs and reactions behind it, so the change you practise is your own.' },
   astrology: { img: 'meet-astrology.webp', alt: 'Narayani Garg in a red and orange bandhani saree at her home temple', h: 'She reads the chart.<br><em>And listens to the person.</em>', lead: 'Narayani reads the chart themes relevant to your question beside your real circumstances. She explains her reasoning in plain words, and the decision stays with you.' },
+  numerology: { img: 'meet-numerology.webp', alt: 'Narayani Garg in a sea-green sequinned saree before a white Buddha relief', h: 'She reads the numbers.<br><em>And the reason behind them.</em>', lead: 'Narayani begins with why you are asking: a new name, a business shortlist or a change you are weighing. She explains the traditional interpretation in plain words, and the decision to change anything stays with you.' },
 };
 
 export function meetSection(p, { esc, wa }) {

@@ -84,7 +84,8 @@ export const pages = [
     ],
   },
   {
-    slug: 'numerology', family: 'practice', v5: true, name: 'Numerology',
+    slug: 'numerology', family: 'practice', v5: true, rich: true,
+    hook: ['Name & spelling', 'Business name', 'Signature', 'Mobile & house number'], hookLabel: 'Bring the question', name: 'Numerology',
     headline: ['Choosing a name?', 'Considering a change?'],
     description: 'Explore your birth date, name, signature or business identity with Narayani. Understand the traditional interpretation before deciding on a change.',
     cta: 'Discuss a numerology consultation', facts: [['Personal names','Birth-date numbers'],['Business identity','Names & logos'],['A personal reading','Around your question']],
