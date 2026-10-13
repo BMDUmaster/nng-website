@@ -16,25 +16,31 @@ const I = {
 
 export function brainVoices(p, { esc, wa, voices, assets, clips }) {
   const [a, b] = p.proofTitle.split('\n');
-  return `<section class="stories-band cv4" id="stories" aria-labelledby="stories-title">
-    <div class="cv4-visual" aria-hidden="true">
-      <img src="../_shared/hero/cv-narayani.webp" alt="" width="430" height="700" loading="lazy">
-      <p class="cv4-name"><span>Narayani Garg</span><small>Psychic · Spiritual Mentor</small></p>
+  const lotus = '<svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M24 28c-4-4-6-9-6-14s2-9 6-12c4 3 6 7 6 12s-2 10-6 14Z"/><path d="M24 28c-6-1-12-5-14-12 5-1 10 1 13 5M24 28c6-1 12-5 14-12-5-1-10 1-13 5"/><path d="M23 28C14 28 6 24 3 19c5-1 10 0 14 3M25 28c9 0 17-4 20-9-5-1-10 0-14 3"/></svg>';
+  const leaf = '<svg viewBox="0 0 120 160" aria-hidden="true"><path d="M60 158C58 120 40 96 22 70 8 50 14 18 40 8c26 10 40 40 34 72-4 24-12 44-14 78Z"/></svg>';
+  const chev = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
+  return `<section class="stories-band cv5" id="stories" aria-labelledby="stories-title">
+    <div class="cv5-visual" aria-hidden="true">
+      <img src="../_shared/hero/cv-narayani.webp" alt="" width="900" height="1098" loading="lazy">
+      <p class="cv5-script"><span>Same</span><span>patterns,</span><span>different</span><span>possibilities</span></p>
+      <svg class="cv5-curve" viewBox="0 0 320 1000" preserveAspectRatio="none"><path class="cv5-ribbon" d="M150 0H236C150 70 98 220 86 420 78 560 84 700 100 820 70 640 66 420 92 250 108 140 128 60 150 0Z"/><path class="cv5-cream" d="M320 0H236C150 70 98 220 86 420 74 620 96 820 150 1000H320Z"/><path class="cv5-gold" d="M236 0C150 70 98 220 86 420 74 620 96 820 150 1000" fill="none"/></svg>
+      <div class="cv5-name"><svg class="cv5-name-line" viewBox="0 0 400 200" preserveAspectRatio="none"><path d="M0 40C140 6 300 30 400 200" fill="none"/></svg><span>Narayani Garg</span><i>${lotus}</i><small>Psychic · Spiritual · Mentor</small></div>
     </div>
-    <div class="cv4-main">
-      <div class="cv4-head">
-        <div><p class="cv4-kicker"><span aria-hidden="true">✦</span>Client voices</p>
+    <div class="cv5-main">
+      <span class="cv5-leaf cv5-leaf-a" aria-hidden="true">${leaf}</span><span class="cv5-leaf cv5-leaf-b" aria-hidden="true">${leaf}</span>
+      <div class="cv5-head">
+        <div><p class="cv5-kicker"><span aria-hidden="true">✦</span>Client voices</p>
         <h2 id="stories-title">${esc(a)}<br><em>${esc(b)}</em></h2>
-        <p class="cv4-sub">Real clients, in their own words. Tap a film to hear their experience of Narayani’s guidance.</p></div>
-        <div class="cv4-act">${wa('voices', 'Share your situation', 'cv4-cta')}<p>Personal experiences of Narayani’s guidance. Individual experiences vary.</p></div>
+        <p class="cv5-sub">Real clients, in their own words. Tap a film to hear their experience of Narayani’s guidance.</p></div>
+        <div class="cv5-act">${wa('voices', 'Share your situation', 'cv5-cta').replace('</a>', `<i class="cv5-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<p>Personal experiences of Narayani’s guidance.<br>Individual experiences vary.</p></div>
       </div>
-      <div class="cv4-list" data-cv4>${p.proof.map((key, i) => { const v = voices[key]; const clip = `data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}"`; return `<article class="cv4-card" style="--i:${i}">
-        <button class="cv4-film" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv4-play" aria-hidden="true">${I.play}</span>${v.duration ? `<span class="cv4-time">${esc(v.duration)}</span>` : ''}</button>
-        <div class="cv4-words"><p class="cv4-topic">${esc(v.title)}</p><div class="cv4-q"><span aria-hidden="true">“</span><blockquote>“${esc(v.quote || v.summary)}”</blockquote></div>
-        <div class="cv4-who"><p><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p><button class="cv4-go" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s film">${I.arrow}</button></div></div>
+      <div class="cv5-list" data-cv5>${p.proof.map((key, i) => { const v = voices[key]; const clip = `data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}"`; return `<article class="cv5-card" style="--i:${i}">
+        <button class="cv5-film" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv5-play" aria-hidden="true">${I.play}</span>${v.duration ? `<span class="cv5-time">${esc(v.duration)}</span>` : ''}</button>
+        <div class="cv5-words"><span class="cv5-mark" aria-hidden="true">“</span><div><p class="cv5-topic">${esc(v.title)}</p><blockquote>“${esc(v.quote || v.summary)}”</blockquote>
+        <div class="cv5-who"><p><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p><button class="cv5-go" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s film">${I.arrow}</button></div></div></div>
       </article>`; }).join('')}</div>
-      <div class="cv4-dots" aria-hidden="true">${p.proof.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div>
-      <p class="cv4-foot"><i aria-hidden="true"></i>A clearer mind <b aria-hidden="true">·</b> A calmer you<i aria-hidden="true"></i></p>
+      <div class="cv5-nav"><div class="cv5-dots" aria-hidden="true">${p.proof.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div><div class="cv5-arrows"><button type="button" data-cv5-prev aria-label="Previous story">${chev('m15 6-6 6 6 6')}</button><button type="button" data-cv5-next aria-label="Next story">${chev('m9 6 6 6-6 6')}</button></div></div>
+      <p class="cv5-foot"><i aria-hidden="true"></i><span aria-hidden="true">${lotus}</span>A clearer mind <b aria-hidden="true">·</b> A calmer you<i aria-hidden="true"></i></p>
     </div>
   </section>`;
 }
@@ -112,8 +118,8 @@ export function brainPractices(p, { esc, wa, pageIcon }) {
   </div></section>`;
 }
 
-// Brainology "Why her approach matters" (Oct 13 l), from the approved reference: the words, two principle cards and
-// three promises beside her photograph, then a deep green band that invites the first message.
+// Brainology "Why her approach matters" (Oct 13 o): the words, two principle cards and three promises beside her
+// photograph in a gold-lined arch, then a compact deep green invitation card.
 export function brainWhy(p, { esc, wa, icon }) {
   const principles = [['reflection', 'The person matters.', 'Explore your beliefs and responses as you practise something new.'], ['listen', 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
   const shield = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/></svg>';
@@ -121,24 +127,18 @@ export function brainWhy(p, { esc, wa, icon }) {
   const bulb = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22h8M13 26h6M16 4a8 8 0 0 0-5 14.2c.8.7 1 1.6 1 2.8h8c0-1.2.2-2.1 1-2.8A8 8 0 0 0 16 4Z"/></svg>';
   const promises = [[shield, 'No fear-based predictions'], [cart, 'No pressure to buy a remedy'], [bulb, 'The reasoning explained, the choice yours']];
   const [ct1, ct2] = p.closeTitle.split('\n');
-  return `<section class="wy3" aria-labelledby="why-title">
-    <div class="wy3-inner">
-      <div class="wy3-copy">
-        <p class="wy3-kicker">Why her approach matters<i aria-hidden="true"></i></p>
-        <h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2>
-        <div class="wy3-cards">${principles.map(([ic, t, d], i) => `<article style="--i:${i}"><span class="wy3-ic" aria-hidden="true">${icon(ic)}</span><div><h3>${t}</h3><p>${d}</p></div></article>`).join('')}</div>
-        <ul class="wy3-promise">${promises.map(([ic, t], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ul>
-      </div>
-      <img class="wy3-photo" src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg seated in her consultation room" width="532" height="760" loading="lazy">
+  return `<section class="wy4" aria-labelledby="why-title"><div class="wy4-inner">
+    <div class="wy4-copy">
+      <p class="wy4-kicker"><span aria-hidden="true">✦</span>Why her approach matters</p>
+      <h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2>
+      <figure class="wy4-photo wy4-photo-m" aria-hidden="true"><img src="../_shared/hero/wy-narayani.webp" alt="" width="720" height="923" loading="lazy"></figure>
+      <div class="wy4-cards">${principles.map(([ic, t, d], i) => `<article style="--i:${i}"><span class="wy4-ic" aria-hidden="true">${icon(ic)}</span><div><h3>${t}</h3><p>${d}</p></div></article>`).join('')}</div>
+      <ul class="wy4-promise">${promises.map(([ic, t], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ul>
     </div>
-    <div class="wy3-band">
-      <svg class="wy3-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46C260 4 520 0 760 22s520 62 680 40V80H0Z" fill="#173628"/><path d="M0 46C260 4 520 0 760 22s520 62 680 40" fill="none" stroke="#D7B86B" stroke-width="1.6"/></svg>
-      <div class="wy3-band-inner">
-        <p class="wy3-band-kicker"><i aria-hidden="true"></i>Begin with the NNG team<i aria-hidden="true"></i></p>
-        <h3>${esc(ct1)}<br><em>${esc(ct2)}</em></h3>
-        <p>${esc(p.closeCopy)}</p>
-        ${wa('why', 'Get started', 'wy3-cta')}
-      </div>
+    <figure class="wy4-photo wy4-photo-d"><img src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg beside a white Buddha relief" width="720" height="923" loading="lazy"><figcaption>Narayani Garg<span>Psychic Spiritual Mentor</span></figcaption></figure>
+    <div class="wy4-band">
+      <div><p class="wy4-band-kicker">Begin with the NNG team</p><h3>${esc(ct1)} <em>${esc(ct2)}</em></h3><p>${esc(p.closeCopy)}</p></div>
+      ${wa('why', 'Get started', 'wy4-cta')}
     </div>
-  </section>`;
+  </div></section>`;
 }

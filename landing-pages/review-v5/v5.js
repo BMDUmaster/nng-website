@@ -55,11 +55,17 @@
     list.addEventListener('mouseleave', () => show(chosen));
   }
 
-  // Brainology client voices: dots follow the swipe on phones.
-  const cvList = document.querySelector('[data-cv4]');
+  // Brainology client voices: dots and arrows follow the cards.
+  const cvList = document.querySelector('[data-cv5]');
   if (cvList) {
-    const cvDots = [...document.querySelectorAll('.cv4-dots i')];
-    cvList.addEventListener('scroll', () => { const k = Math.round(cvList.scrollLeft / (cvList.scrollWidth - cvList.clientWidth || 1) * (cvDots.length - 1)); cvDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); }, { passive: true });
+    const cvDots = [...document.querySelectorAll('.cv5-dots i')];
+    const cards = [...cvList.children];
+    const at = () => Math.round(cvList.scrollLeft / Math.max(1, cvList.scrollWidth - cvList.clientWidth) * (cards.length - 1));
+    const go = (k) => { const c = cards[Math.max(0, Math.min(cards.length - 1, k))]; cvList.scrollTo({ left: c.offsetLeft - cvList.offsetLeft - (cvList.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' }); cvDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); c.classList.add('is-focus'); setTimeout(() => c.classList.remove('is-focus'), 900); };
+    cvList.addEventListener('scroll', () => { const k = at(); cvDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); }, { passive: true });
+    let cur = 0;
+    document.querySelector('[data-cv5-prev]')?.addEventListener('click', () => { cur = Math.max(0, (cvList.scrollWidth > cvList.clientWidth ? at() : cur) - 1); go(cur); });
+    document.querySelector('[data-cv5-next]')?.addEventListener('click', () => { cur = Math.min(cards.length - 1, (cvList.scrollWidth > cvList.clientWidth ? at() : cur) + 1); go(cur); });
   }
 
   // Brainology approach loop: light one link at a time while in view.
@@ -146,7 +152,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  document.querySelectorAll('.mb, .m5, .cv4, .q4, .a6, .pr4, .wy3').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
+  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
