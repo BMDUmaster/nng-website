@@ -1,0 +1,52 @@
+/* =============================================================================================================
+   Brainology client voices (Oct 13): portrait film cards beside the words, on plum.
+   ============================================================================================================= */
+body.lp-v5 .cv2 { position: relative; overflow: hidden; background: radial-gradient(40% 60% at 15% 20%, rgb(215 184 107 / 0.16), transparent 70%), radial-gradient(50% 70% at 100% 100%, #4A2049, transparent 60%), linear-gradient(180deg, #2E1430, #231E25) !important; }
+body.lp-v5 .cv2-head { text-align: center; }
+body.lp-v5 .cv2-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--champ); }
+body.lp-v5 .cv2 h2 { margin: 14px 0 0; color: var(--pearl); }
+body.lp-v5 .cv2 h2 em { font-style: italic; background: linear-gradient(100deg, #F1DDA6, #D7B86B 50%, #C9A25A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.lp-v5 .cv2-sub { margin: 10px 0 0; font-size: 14.5px; color: rgb(250 246 240 / 0.6); }
+body.lp-v5 .cv2-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 36px; }
+body.lp-v5 .cv2-card { display: grid; grid-template-columns: 190px 1fr; gap: 24px; align-items: center; padding: 16px 26px 16px 16px; border-radius: 28px; background: linear-gradient(160deg, rgb(250 246 240 / 0.09), rgb(250 246 240 / 0.03)); box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.25), 0 40px 60px -40px rgb(0 0 0 / 0.7); transition: box-shadow 0.5s ease, transform 0.5s var(--ease); }
+body.lp-v5 .cv2-card:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.55), 0 46px 70px -40px rgb(0 0 0 / 0.8); }
+body.lp-v5 .cv2-film { position: relative; display: block; overflow: hidden; aspect-ratio: 9 / 14; padding: 0; border: 0; border-radius: 20px; background: #1B101E; cursor: pointer; box-shadow: 0 0 0 1px rgb(215 184 107 / 0.4); }
+body.lp-v5 .cv2-film img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; transition: transform 1.2s var(--ease), filter 0.6s ease; filter: saturate(0.9); }
+body.lp-v5 .cv2-film::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgb(20 8 22 / 0.7)); }
+body.lp-v5 .cv2-card:hover .cv2-film img { transform: scale(1.06); filter: saturate(1.05); }
+body.lp-v5 .cv2-play { position: absolute; left: 50%; top: 50%; z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: rgb(250 246 240 / 0.9); color: #3C183D; box-shadow: 0 10px 24px -8px rgb(0 0 0 / 0.6); }
+body.lp-v5 .cv2-play svg { width: 22px; height: 22px; margin-left: 3px; }
+body.lp-v5 .cv2-play::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1px solid rgb(250 246 240 / 0.7); }
+body.lp-v5 .cv2-tag { position: absolute; left: 0; right: 0; bottom: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-align: center; text-transform: uppercase; color: var(--pearl); }
+body.lp-v5 .cv2-words { position: relative; }
+body.lp-v5 .cv2-topic { margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--champ); }
+body.lp-v5 .cv2-mark { position: absolute; right: -6px; top: -26px; font-family: var(--display); font-size: 90px; line-height: 1; color: rgb(215 184 107 / 0.22); }
+body.lp-v5 .cv2 blockquote { margin: 12px 0 0; font-family: var(--display); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--pearl); }
+body.lp-v5 .cv2-who { display: grid; gap: 2px; margin: 18px 0 0; padding-top: 14px; border-top: 1px solid rgb(215 184 107 / 0.22); }
+body.lp-v5 .cv2-who strong { font-size: 15px; color: var(--pearl); }
+body.lp-v5 .cv2-who span { font-size: 12.5px; color: rgb(250 246 240 / 0.55); }
+body.lp-v5 .cv2-note { margin: 26px 0 0; font-size: 12px; text-align: center; color: rgb(250 246 240 / 0.45); }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .cv2-play::before { animation: cv2-ring 2.4s ease-out infinite; }
+}
+@keyframes cv2-ring { from { transform: scale(0.9); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+@media (max-width: 1100px) { body.lp-v5 .cv2-list { grid-template-columns: 1fr; max-width: 680px; margin-inline: auto; } }
+@media (max-width: 580px) {
+  body.lp-v5 .cv2-head { text-align: left; }
+  body.lp-v5 .cv2-kicker { font-size: 10.5px; }
+  body.lp-v5 .cv2 h2 { font-size: 27px; }
+  body.lp-v5 .cv2-sub { font-size: 13px; }
+  body.lp-v5 .cv2-list { gap: 14px; margin-top: 22px; }
+  body.lp-v5 .cv2-card { grid-template-columns: 112px 1fr; gap: 14px; align-items: start; padding: 12px 14px 14px 12px; border-radius: 22px; }
+  body.lp-v5 .cv2-film { border-radius: 14px; }
+  body.lp-v5 .cv2-play { width: 42px; height: 42px; margin: -21px 0 0 -21px; }
+  body.lp-v5 .cv2-play svg { width: 16px; height: 16px; }
+  body.lp-v5 .cv2-tag { bottom: 8px; font-size: 9px; }
+  body.lp-v5 .cv2-mark { font-size: 60px; top: -16px; right: -2px; }
+  body.lp-v5 .cv2 blockquote { margin-top: 8px; font-size: 15px; line-height: 1.45; }
+  body.lp-v5 .cv2-who { margin-top: 10px; padding-top: 10px; }
+  body.lp-v5 .cv2-who strong { font-size: 13.5px; }
+  body.lp-v5 .cv2-who span { font-size: 11.5px; }
+  body.lp-v5 .cv2-note { text-align: left; font-size: 11px; }
+}
+body.lp-v5 .cv2-play { top: 74%; } body.lp-v5 .cv2-tag { bottom: 10px; }

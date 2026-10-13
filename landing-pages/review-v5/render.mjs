@@ -108,6 +108,16 @@ export function renderMain(p, h) {
     <div class="v5-quotes${p.proof.length === 3 ? ' v5-quotes-3' : ''}">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote || v.summary)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
   </div></section>`;
 
+  /* Brainology: client films as portrait cards beside their words. */
+  const voices2 = `<section class="stories-band v5-voices cv2" id="stories" aria-labelledby="stories-title"><div class="section wrap">
+    <div class="cv2-head"><p class="cv2-kicker"><span aria-hidden="true">✦</span>Client voices</p><h2 id="stories-title">Being heard.<br><em>Seeing yourself differently.</em></h2><p class="cv2-sub">In their own words. Tap a film to watch.</p></div>
+    <div class="cv2-list">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="cv2-card" data-reveal style="--i:${i}">
+      <button class="cv2-film" type="button" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv2-play" aria-hidden="true">${play}</span><span class="cv2-tag">Watch</span></button>
+      <div class="cv2-words"><p class="cv2-topic">${esc(v.title)}</p><span class="cv2-mark" aria-hidden="true">“</span><blockquote>${esc(v.quote || v.summary)}</blockquote><p class="cv2-who"><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p></div>
+    </article>`; }).join('')}</div>
+    <p class="cv2-note">Personal experiences of Narayani’s guidance. Individual experiences vary.</p>
+  </div></section>`;
+
   /* Approach: the drawing beside three steps, which light in turn while in view. */
   const approach = `<section class="section wrap approach v5-approach2" id="approach" aria-labelledby="approach-title">
     <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2>${p.slug === 'vastulogy' ? '' : `<p>${esc(p.methodIntro)}</p>`}</div>
@@ -164,7 +174,7 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.
