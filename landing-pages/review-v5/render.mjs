@@ -236,5 +236,5 @@ export function renderFooter(p, { cta, assets }) {
       <li><span>Call</span><a href="tel:+919205511101">+91 92055 11101</a></li>
       <li><span>Email</span><a href="mailto:enquiry@nngarg.com">enquiry@nngarg.com</a></li>
     </ul>
-  </div><div class="wrap v5-foot-bottom"><p>© 2026 Transformation with NNG</p><p>Team NNG staging review. Not a production launch.</p><button type="button" class="text-link" data-privacy>How this page uses information</button></div></footer>`;
+  </div><div class="wrap v5-foot-bottom"><p>© 2026 Transformation with NNG</p><button type="button" class="text-link" data-privacy>How this page uses information</button></div></footer>`;
 }
