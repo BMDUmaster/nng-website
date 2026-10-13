@@ -3226,6 +3226,11 @@ body.lp-v5.lp-rich[data-page="brainology"] .mt-quote { background: none; box-sha
   body.lp-v5 .mt-cosmos { inset: -8% -10% -4%; width: 120%; height: 112%; }
   body.lp-v5.lp-rich[data-page="brainology"] .mt-copy { margin-top: 30px; padding: 0; border-radius: 0; background: none; backdrop-filter: none; box-shadow: none; }
 }
+body.lp-v5 .mt-moon { filter: none; opacity: 1; }
+body.lp-v5 .mt-orbit { stroke: #C9A25A; stroke-width: 1.4; stroke-dasharray: 3 6; opacity: 0.9; }
+body.lp-v5 .mt-brain .mt-arch, body.lp-v5 .mt-brain .mt-arch img { border-radius: 999px 999px 999px 999px / 999px 999px 40px 40px !important; }
+body.lp-v5 .mt-brain .mt-arch, body.lp-v5 .mt-brain .mt-arch img { border-radius: 999px 999px 28px 28px !important; }
+body.lp-v5 .mt-brain .mt-arch { clip-path: inset(0 round 999px 999px 28px 28px) !important; }
 /* =============================================================================================================
    Brainology book band (Oct 13): deep plum, the 3D book in a gold glow, three ideas, facts, clientele line.
    ============================================================================================================= */
