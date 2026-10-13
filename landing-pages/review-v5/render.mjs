@@ -7,7 +7,7 @@ import { situations2, practices2 } from './sections2.mjs';
 import { heroArt } from './hero-art.mjs';
 import { meetSection } from './meet.mjs';
 import { meetBrain } from './meet-brain.mjs';
-import { brainVoices, brainSituations, brainApproach3, brainPractices } from './brain-sit.mjs';
+import { brainVoices, brainSituations, brainApproach3, brainPractices, brainWhy } from './brain-sit.mjs';
 import { brainHero } from './hero-brain.mjs';
 import { astroHero } from './hero-astro.mjs';
 import { numHero } from './hero-num.mjs';
@@ -43,7 +43,7 @@ export function renderMain(p, h) {
       <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
       <h1 id="hero-title">${lines(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
       <p class="hero-description">${esc(p.description)}</p>
-      <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="#ways"><span>${p.rich ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
+      <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="${p.slug === 'brainology' ? '#approach' : '#ways'}"><span>${p.rich ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
       ${p.hook ? `<div class="v5-hook"><p>${esc(p.hookLabel || 'Sound familiar?')}</p><ul>${p.hook.map((t, i) => `<li style="--i:${i}">${esc(t)}</li>`).join('')}</ul></div>` : ''}
       <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
       <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>
@@ -224,7 +224,7 @@ export function renderMain(p, h) {
     <p class="fq2-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${p.slug === 'astrology' ? astroHeroFull(p, { esc, wa }) : hero}${p.slug === 'brainology' ? meetBrain(p, { esc, wa }) : p.rich ? meetSection(p, { esc, wa }) : ''}${p.slug === 'brainology' ? brainVoices(p, { esc, wa, voices, assets, clips }) : p.rich ? voices2 : book}${p.slug === 'brainology' ? brainSituations(p, { esc, wa }) : situations2(p, { esc, scenarioArt, wa })}${p.rich ? '' : stories}${p.slug === 'numerology' ? numApproach(p, { esc }) : p.slug === 'vastulogy' ? approach : p.slug === 'brainology' ? brainApproach3(p, { esc }) : p.rich ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${p.slug === 'brainology' ? brainPractices(p, { esc, wa, pageIcon }) : practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.rich ? why2 : why}${p.rich ? enquiry2 : enquiry}${p.rich ? faq2 : faq}${p.rich ? book : ''}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${p.slug === 'astrology' ? astroHeroFull(p, { esc, wa }) : hero}${p.slug === 'brainology' ? meetBrain(p, { esc, wa }) : p.rich ? meetSection(p, { esc, wa }) : ''}${p.slug === 'brainology' ? brainVoices(p, { esc, wa, voices, assets, clips }) : p.rich ? voices2 : book}${p.slug === 'brainology' ? brainSituations(p, { esc, wa }) : situations2(p, { esc, scenarioArt, wa })}${p.rich ? '' : stories}${p.slug === 'numerology' ? numApproach(p, { esc }) : p.slug === 'vastulogy' ? approach : p.slug === 'brainology' ? brainApproach3(p, { esc }) : p.rich ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${p.slug === 'brainology' ? brainPractices(p, { esc, wa, pageIcon }) : practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? brainWhy(p, { esc, wa, icon }) : p.rich ? why2 : why}${p.rich ? enquiry2 : enquiry}${p.rich ? faq2 : faq}${p.rich ? book : ''}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.

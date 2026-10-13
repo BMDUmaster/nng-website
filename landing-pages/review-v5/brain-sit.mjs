@@ -103,3 +103,34 @@ export function brainPractices(p, { esc, wa, pageIcon }) {
     <p class="pr4-foot"><i aria-hidden="true"></i>A clearer mind <b aria-hidden="true">·</b> A calmer you<i aria-hidden="true"></i></p>
   </div></section>`;
 }
+
+// Brainology "Why her approach matters" (Oct 13 l), from the approved reference: the words, two principle cards and
+// three promises beside her photograph, then a deep green band that invites the first message.
+export function brainWhy(p, { esc, wa, icon }) {
+  const principles = [['reflection', 'The person matters.', 'Explore your beliefs and responses as you practise something new.'], ['listen', 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
+  const shield = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/></svg>';
+  const cart = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h3l3 13h12l3-9H9"/><circle cx="12" cy="25" r="1.6"/><circle cx="21" cy="25" r="1.6"/><path d="m15 11 4 4M19 11l-4 4"/></svg>';
+  const bulb = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22h8M13 26h6M16 4a8 8 0 0 0-5 14.2c.8.7 1 1.6 1 2.8h8c0-1.2.2-2.1 1-2.8A8 8 0 0 0 16 4Z"/></svg>';
+  const promises = [[shield, 'No fear-based predictions'], [cart, 'No pressure to buy a remedy'], [bulb, 'The reasoning explained, the choice yours']];
+  const [ct1, ct2] = p.closeTitle.split('\n');
+  return `<section class="wy3" aria-labelledby="why-title">
+    <div class="wy3-inner">
+      <div class="wy3-copy">
+        <p class="wy3-kicker">Why her approach matters<i aria-hidden="true"></i></p>
+        <h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2>
+        <div class="wy3-cards">${principles.map(([ic, t, d], i) => `<article style="--i:${i}"><span class="wy3-ic" aria-hidden="true">${icon(ic)}</span><div><h3>${t}</h3><p>${d}</p></div></article>`).join('')}</div>
+        <ul class="wy3-promise">${promises.map(([ic, t], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ul>
+      </div>
+      <img class="wy3-photo" src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg seated in her consultation room" width="532" height="760" loading="lazy">
+    </div>
+    <div class="wy3-band">
+      <svg class="wy3-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46C260 4 520 0 760 22s520 62 680 40V80H0Z" fill="#173628"/><path d="M0 46C260 4 520 0 760 22s520 62 680 40" fill="none" stroke="#D7B86B" stroke-width="1.6"/></svg>
+      <div class="wy3-band-inner">
+        <p class="wy3-band-kicker"><i aria-hidden="true"></i>Begin with the NNG team<i aria-hidden="true"></i></p>
+        <h3>${esc(ct1)}<br><em>${esc(ct2)}</em></h3>
+        <p>${esc(p.closeCopy)}</p>
+        ${wa('why', 'Get started', 'wy3-cta')}
+      </div>
+    </div>
+  </section>`;
+}
