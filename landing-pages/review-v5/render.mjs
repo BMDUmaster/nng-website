@@ -10,6 +10,7 @@ import { brainHero } from './hero-brain.mjs';
 import { astroHero } from './hero-astro.mjs';
 import { numHero } from './hero-num.mjs';
 import { vastuHero } from './hero-vastu.mjs';
+import { astroHeroFull } from './hero-astro2.mjs';
 
 const person = 'Narayani Garg';
 // Client films served by the website (public/videos/stories), keyed by landing-page voice.
@@ -221,7 +222,7 @@ export function renderMain(p, h) {
     <p class="fq2-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.rich ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.rich ? voices2 : stories}${p.slug === 'numerology' ? numApproach(p, { esc }) : p.slug === 'vastulogy' ? approach : p.rich ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.rich ? why2 : why}${p.rich ? enquiry2 : enquiry}${p.rich ? faq2 : faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${p.slug === 'astrology' ? astroHeroFull(p, { esc, wa }) : hero}${p.rich ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.rich ? voices2 : stories}${p.slug === 'numerology' ? numApproach(p, { esc }) : p.slug === 'vastulogy' ? approach : p.rich ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.rich ? why2 : why}${p.rich ? enquiry2 : enquiry}${p.rich ? faq2 : faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.
