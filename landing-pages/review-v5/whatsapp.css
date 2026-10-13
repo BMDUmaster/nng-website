@@ -124,3 +124,22 @@ body.lp-v5 .v5-viewers-dot::after { content: ""; position: absolute; inset: -4px
 @keyframes v5-tick { from { opacity: 0; transform: translateY(6px); display: inline-block; } to { opacity: 1; transform: none; } }
 @media (max-width: 580px) { body.lp-v5 .v5-pill-row { gap: 8px; margin-bottom: 10px; } body.lp-v5 .v5-viewers { padding: 6px 12px 6px 10px; font-size: 11.5px; } }
 body.lp-v5 .v5-viewers b { min-width: 0; } body.lp-v5 .v5-viewers-dot::after { border-color: rgb(59 224 124 / 0.7); }
+
+/* Header: no bar. The logo and the WhatsApp button float over the opening in glass. */
+body.lp-v5 .header { position: absolute !important; top: 0; left: 0; right: 0; z-index: 30; background: transparent !important; border: 0 !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; box-shadow: none !important; }
+body.lp-v5 .header-inner { min-height: 0; padding-block: 16px; }
+body.lp-v5 .header .brand { display: inline-flex; padding: 6px 10px; border-radius: 16px; background: rgb(255 255 255 / 0.55); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.6), 0 0 0 1px rgb(184 138 69 / 0.25), 0 14px 30px -18px rgb(40 20 30 / 0.5); }
+body.lp-v5 .header .brand img { width: 84px; height: auto; display: block; }
+body.lp-v5 .header .button-small { min-height: 46px; padding: 4px 4px 4px 18px; border-radius: 999px; background: rgb(255 255 255 / 0.5) !important; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); color: #3C183D; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.6), 0 0 0 1px rgb(184 138 69 / 0.3), 0 14px 30px -18px rgb(40 20 30 / 0.5) !important; }
+body.lp-v5 .header .button-small span { background: radial-gradient(circle at 35% 30%, #3BE07C, #1FB457) !important; color: #FFFFFF !important; }
+/* The opening makes room for the floating header. */
+body.lp-v5 .v5-hero { padding-top: 112px !important; }
+@media (max-width: 580px) {
+  body.lp-v5 .header-inner { padding-block: 12px; }
+  body.lp-v5 .header .brand { padding: 5px 8px; border-radius: 13px; }
+  body.lp-v5 .header .brand img { width: 70px; }
+  body.lp-v5 .header .button-small { min-height: 42px; font-size: 13px; }
+  body.lp-v5 .v5-hero { padding-top: 92px !important; }
+}
+/* Brainology on phones: the picture runs up behind the floating header. */
+@media (max-width: 900px) { body.lp-v5[data-page="brainology"] .v5-hero { padding-top: 0 !important; } }

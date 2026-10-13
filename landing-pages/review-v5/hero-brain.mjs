@@ -26,6 +26,5 @@ export function brainHero(p, { esc }) {
       <span class="hb-sweep"></span>
       <span class="hb-sun"></span>
     </div>
-    <p class="hb-badge"><span class="hb-badge-dot" aria-hidden="true"></span><strong>${esc(p.short || p.name)}</strong><em>with Narayani Garg</em></p>
   </div>`;
 }

@@ -279,3 +279,7 @@ body.lp-v5[data-page="brainology"] .v5-hero .wa-btn { white-space: nowrap; }
 @media (max-width: 900px) { body.lp-v5 .hb { width: calc(100% + 40px) !important; margin: 0 0 0 -20px; } }
 @media (max-width: 350px) { body.lp-v5 .hb { width: calc(100% + 32px) !important; margin-left: -16px; } }
 @media (max-width: 900px) { body.lp-v5 .hb { height: calc(100vw * 0.86); } body.lp-v5 .hb-art { transform: translateX(-56%); } }
+
+/* Badge above the headline, left. */
+body.lp-v5 .v5-pill-row .hb-badge { position: static; display: inline-grid; margin: 0 0 18px; animation: hb-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (max-width: 900px) { body.lp-v5 .v5-pill-row .hb-badge { margin-bottom: 12px; padding: 7px 14px 7px 10px; } }
