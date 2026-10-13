@@ -60,7 +60,7 @@ export function renderMain(p, h) {
     page(8, `<blockquote class="bk-quote"><span class="bk-orn" aria-hidden="true">❦</span><p lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p><cite>A remedy works when the mind works.</cite></blockquote>`),
   ];
   const sectors = [['business', 'Banking professionals'], ['career', 'CEOs of MNCs &amp; core sector companies'], ['person', 'Women entrepreneurs'], ['education', 'Printing, education &amp; hospitals']];
-  const book = `<section class="bk v5-book" aria-labelledby="book-title"><div class="bk-inner wrap">
+  const book = `<section class="bk v5-book${p.slug === 'brainology' ? ' bk2-band' : ''}" aria-labelledby="book-title"><div class="bk-inner wrap">
     <div class="bk-stage" aria-hidden="true">
       <div class="bk-glow"></div>
       <div class="bk-book">
@@ -71,7 +71,19 @@ export function renderMain(p, h) {
       </div>
       <div class="bk-shadow"></div>
     </div>
-    <div class="v5-book-copy">
+    ${p.slug === 'brainology' ? `<div class="v5-book-copy bk2">
+      <p class="bk2-kicker" data-reveal><span aria-hidden="true">✦</span>Her book</p>
+      <h2 id="book-title" data-reveal>Change Your Mind,<br><em>Transform Your Life</em></h2>
+      <p class="bk2-lead" data-reveal>Twenty-one days of reflection and everyday inner practice, written in the same mind-first way she guides every conversation.</p>
+      <p class="bk2-label" data-reveal>Her approach, in three ideas</p>
+      <ol class="bk2-inside" data-reveal>
+        <li><span>01</span><strong>Mind first</strong><em>Why the state of mind comes before any remedy.</em></li>
+        <li><span>02</span><strong>What a pattern is made of</strong><em>A thought, a belief, the words you use, a reaction.</em></li>
+        <li><span>03</span><strong>Practise</strong><em>Small steps that make a new response part of the day.</em></li>
+      </ol>
+      <ul class="bk2-stats" data-reveal><li><b>21</b><span>days</span></li><li><b>Daily</b><span>reflection</span></li><li><b>Everyday</b><span>practice</span></li></ul>
+      <p class="bk2-trust" data-reveal>Her clients include ${sectors.map(([, label]) => `<span>${label}</span>`).join('')}</p>
+    </div>` : `<div class="v5-book-copy">
       <p class="v5-kicker">${person} / Author</p>
       <h2 id="book-title">Change Your Mind,<br><span>Transform Your Life</span></h2>
       <p class="v5-book-lead">Her mind-first perspective, in her own words.</p>
@@ -80,7 +92,7 @@ export function renderMain(p, h) {
         <ul class="v5-sectors">${sectors.map(([ic, label], i) => `<li style="--i:${i}"><span>${icon(ic)}</span>${label}</li>`).join('')}</ul>
         <p class="v5-fine">Individual clients, not endorsements by their organisations.</p>
       </div>
-    </div>
+    </div>`}
   </div></section>`;
 
   /* The question you bring. */
