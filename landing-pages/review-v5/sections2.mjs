@@ -21,18 +21,21 @@ export function goldTail(lines, esc) {
   return [...parts, `${last.join(' ')} <em>${tail}</em>`].join('<br>');
 }
 
-export function situations2(p, { esc, scenarioArt }) {
-  return `<section class="v5-sit2" aria-labelledby="situation-title">${decor}<div class="section wrap s2-inner">
+export function situations2(p, { esc, scenarioArt, wa }) {
+  const ed = p.slug === 'brainology';
+  return `<section class="v5-sit2${ed ? ' s3' : ''}" aria-labelledby="situation-title">${ed ? '' : decor}<div class="section wrap s2-inner">
     ${kicker('The question you bring')}
     <h2 id="situation-title">${goldTail(p.situationTitle, esc)}</h2>
+    ${ed ? `<p class="s3-intro">${esc(p.situationIntro.split('. Recognising')[0])}.</p>` : ''}
     <div class="s2-cards" data-carousel>${p.situations.map(([t, d], i) => `<article class="s2-card" data-reveal style="--i:${i}" title="${esc(d)}">
       <span class="s2-no">0${i + 1}</span>
       <div class="s2-art">${star}<span class="s2-moon"></span>${scenarioArt(p, i)}<svg class="s2-wave" viewBox="0 0 300 60" aria-hidden="true"><path pathLength="1" d="M0 44C60 46 80 20 130 26S220 54 300 30"/><circle cx="40" cy="44" r="3"/></svg></div>
       <h3>${esc(t)}</h3>
       <p>${esc(d)}</p>
-      <div class="s2-foot"><span></span><a class="s2-go" href="#enquire" aria-label="Enquire about: ${esc(t)}">${arrow}</a></div>
+      <div class="s2-foot"><span></span>${ed && wa ? wa('situation', 'Start with this', 's3-link') : `<a class="s2-go" href="#enquire" aria-label="Enquire about: ${esc(t)}">${arrow}</a>`}</div>
     </article>`).join('')}</div>
     <div class="s2-dots" aria-hidden="true">${p.situations.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div>
+    ${ed ? `<p class="s3-note" data-reveal><span aria-hidden="true">✦</span>Recognising that pattern is the starting point, <em>not a reason to blame yourself.</em></p>` : ''}
   </div></section>`;
 }
 

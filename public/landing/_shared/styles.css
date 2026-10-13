@@ -3194,3 +3194,48 @@ body.lp-v5 .mt-copy { position: relative; }
 body.lp-v5 .mt-quote { padding: 14px 0 14px 54px; border-radius: 14px; background: linear-gradient(90deg, rgb(215 184 107 / 0.12), transparent 80%); box-shadow: inset 2px 0 0 #C9A25A; }
 body.lp-v5 .mt-qmark { left: 12px; top: -2px; }
 body.lp-v5 .mt-arch::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, transparent 70%, rgb(245 236 221 / 0.35)); pointer-events: none; }
+/* =============================================================================================================
+   Brainology "The question you bring" (Oct 13): cream editorial cards after the plum book band.
+   ============================================================================================================= */
+body.lp-v5 .s3 { background: radial-gradient(50% 60% at 85% 10%, rgb(255 236 200 / 0.6), transparent 70%), linear-gradient(180deg, #FBF7F0 0%, #F5ECDD 100%); }
+body.lp-v5 .s3 .s2-inner { text-align: center; }
+body.lp-v5 .s3 .s2-kicker { justify-content: center; }
+body.lp-v5 .s3 h2 { margin-inline: auto; max-width: 760px; }
+body.lp-v5 .s3-intro { max-width: 600px; margin: 14px auto 0; font-size: 16px; line-height: 1.7; color: #5B5F6B; }
+body.lp-v5 .s3 .s2-cards { gap: 22px; margin-top: 36px; text-align: left; }
+body.lp-v5 .s3 .s2-card { position: relative; overflow: hidden; padding: 26px 26px 22px; border-radius: 26px; background: linear-gradient(180deg, #FFFFFF 0%, #FCF8F1 100%); box-shadow: 0 0 0 1px rgb(184 138 69 / 0.2), 0 30px 54px -40px rgb(80 60 30 / 0.55); }
+body.lp-v5 .s3 .s2-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, transparent, #C9A25A, transparent); opacity: 0; transition: opacity 0.5s ease; }
+body.lp-v5 .s3 .s2-card:hover::before { opacity: 1; }
+body.lp-v5 .s3 .s2-no { position: absolute; top: 14px; right: 20px; padding: 0; border: 0; font-size: 64px; line-height: 1; color: rgb(184 138 69 / 0.16); transition: color 0.5s ease; }
+body.lp-v5 .s3 .s2-card:hover .s2-no { color: rgb(184 138 69 / 0.35); }
+body.lp-v5 .s3 .s2-art { justify-items: start; height: 150px; margin: 0 0 18px; }
+body.lp-v5 .s3 .s2-moon { left: 0; margin-left: 0; width: 140px; height: 140px; background: radial-gradient(circle at 40% 35%, #FFF8EC, #F1E3C8 75%) !important; box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.25); }
+body.lp-v5 .s3 .s2-art .scenario-art { margin: 0 !important; }
+body.lp-v5 .s3 .s2-art .scenario-art svg { width: 230px !important; margin: 0; }
+body.lp-v5 .s3 .s2-art > .s2-star { left: auto; right: 6%; }
+body.lp-v5 .s3 .s2-card h3 { font-size: clamp(21px, 1.7vw, 26px); }
+body.lp-v5 .s3 .s2-card > p { display: block; margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #5B5F6B; }
+body.lp-v5 .s3 .s2-foot { padding-top: 18px; }
+body.lp-v5 .s3-link { display: inline-flex; align-items: center; gap: 8px; color: #8A5A1F; font-size: 13.5px; font-weight: 700; text-decoration: none; opacity: 0.7; transform: translateX(-4px); transition: opacity 0.4s ease, transform 0.4s var(--ease); }
+body.lp-v5 .s3-link .wa-ic { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #25D366; color: #FFFFFF; }
+body.lp-v5 .s3-link .wa-ic svg { width: 17px; height: 17px; }
+body.lp-v5 .s3 .s2-card:hover .s3-link, body.lp-v5 .s3-link:focus-visible { opacity: 1; transform: none; }
+body.lp-v5 .s3-note { display: inline-flex; align-items: center; gap: 10px; margin: 30px auto 0; padding: 12px 22px; border-radius: 999px; background: rgb(255 255 255 / 0.7); box-shadow: inset 0 0 0 1px rgb(184 138 69 / 0.28); font-family: var(--display); font-size: 17px; color: #2A2430; }
+body.lp-v5 .s3-note span { color: #B57A2E; }
+body.lp-v5 .s3-note em { font-style: italic; color: #9A6324; }
+@media (max-width: 800px) {
+  body.lp-v5 .s3 .s2-inner { text-align: left; }
+  body.lp-v5 .s3 .s2-kicker { justify-content: flex-start; }
+  body.lp-v5 .s3-intro { margin-left: 0; font-size: 14.5px; }
+  body.lp-v5 .s3 .s2-cards { margin-top: 22px; }
+  body.lp-v5 .s3-link { opacity: 1; transform: none; }
+  body.lp-v5 .s3-note { display: flex; align-items: flex-start; margin-top: 18px; padding: 12px 16px; border-radius: 16px; font-size: 15px; line-height: 1.45; }
+}
+@media (max-width: 580px) {
+  body.lp-v5 .s3 .s2-no { font-size: 48px; }
+  body.lp-v5 .s3 .s2-art { height: 124px; }
+  body.lp-v5 .s3 .s2-moon { width: 118px; height: 118px; }
+  body.lp-v5 .s3 .s2-art .scenario-art svg { width: 200px !important; }
+}
+body.lp-v5 .s3 .s2-art > .s2-star { display: none; }
+@media (max-width: 800px) { body.lp-v5 .s3-note { display: block; } body.lp-v5 .s3-note span { margin-right: 8px; } }

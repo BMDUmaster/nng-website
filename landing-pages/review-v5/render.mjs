@@ -164,7 +164,7 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt })}${stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${stories}${['brainology', 'astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.
