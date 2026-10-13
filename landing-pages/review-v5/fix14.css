@@ -1,0 +1,61 @@
+/* =============================================================================================================
+   Brainology fixes (Oct 13 n): smaller name tags that never sit on her face; client voices with a slimmer photograph
+   column (her whole figure, not a close crop) and no WhatsApp button on phones.
+   ============================================================================================================= */
+
+/* ---- Name tags: one small, quiet pill. ---- */
+body.lp-v5 .m5-name, body.lp-v5 .a6-photo figcaption { gap: 0; padding: 6px 16px 7px; border-radius: 12px; }
+body.lp-v5 .m5-name strong, body.lp-v5 .a6-photo strong { font-size: 16px; line-height: 1.2; }
+body.lp-v5 .m5-name span, body.lp-v5 .a6-photo span { font-size: 8.5px; letter-spacing: 0.18em; }
+body.lp-v5 .m5-name { left: 44%; bottom: 18px; transform: translateX(-50%); }
+body.lp-v5 .a6-photo figcaption { bottom: 12px; }
+
+/* ---- Client voices: slimmer photograph column so her figure shows, not a close-up. ---- */
+body.lp-v5 .cv4 { grid-template-columns: 440px minmax(0, 1fr); }
+body.lp-v5 .cv4-visual { min-height: 640px; }
+body.lp-v5 .cv4-visual img { object-position: 50% 0; }
+body.lp-v5 .cv4-name { width: 78%; height: 130px; padding-bottom: 20px; }
+body.lp-v5 .cv4-name span { font-size: clamp(30px, 2.2vw, 40px); }
+body.lp-v5 .cv4-name small { font-size: 9px; }
+body.lp-v5 .cv4-main { padding: 40px max(3vw, 28px) 26px 40px; }
+@media (max-width: 1240px) {
+  body.lp-v5 .cv4 { grid-template-columns: 360px minmax(0, 1fr); }
+  body.lp-v5 .cv4-name { height: 112px; padding-bottom: 16px; }
+  body.lp-v5 .cv4-name span { font-size: 30px; }
+}
+@media (max-width: 900px) {
+  body.lp-v5 .cv4 { grid-template-columns: minmax(0, 1fr); }
+  body.lp-v5 .cv4-visual { min-height: 0; height: 320px; }
+  body.lp-v5 .cv4-visual img { object-position: 50% 4%; }
+  body.lp-v5 .cv4-name { width: auto; height: auto; padding: 5px 14px 6px; }
+  body.lp-v5 .cv4-name span { font-size: 22px; }
+  body.lp-v5 .cv4-name small { font-size: 7.5px; }
+}
+
+/* ---- Phones: name tags sit on the bottom edge of the photograph, clear of her face. ---- */
+@media (max-width: 900px) {
+  body.lp-v5 .cv4-name { left: 50%; right: auto; bottom: 10px; transform: translateX(-50%); white-space: nowrap; }
+  body.lp-v5 .a6-photo figcaption { left: 50%; bottom: 10px; transform: translateX(-50%); padding: 5px 14px 6px; }
+  body.lp-v5 .a6-photo strong { font-size: 15px; }
+  body.lp-v5 .a6-photo img { object-position: 30% 8%; }
+  body.lp-v5 .m5-name { left: 50%; bottom: 10px; padding: 5px 14px 6px; }
+  body.lp-v5 .m5-name strong { font-size: 15px; }
+}
+@media (max-width: 640px) {
+  body.lp-v5 .cv4-visual { height: 300px; }
+  /* No WhatsApp button here on phones; the floating button is always at hand. */
+  body.lp-v5 .cv4-act { display: none; }
+  body.lp-v5 .cv4-list { margin-top: 14px; }
+}
+
+/* Second pass. */
+body.lp-v5 .cv4-film { height: 210px; }
+body.lp-v5 .cv4-film img { object-position: 50% 38%; }
+body.lp-v5 .wy3-photo { -webkit-mask-image: radial-gradient(56% 50% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(56% 50% at 50% 50%, #000 60%, transparent 100%); }
+@media (max-width: 1240px) { body.lp-v5 .cv4-film { height: 180px; } }
+@media (max-width: 900px) {
+  body.lp-v5 .cv4-name, body.lp-v5 .a6-photo figcaption { left: auto; right: 12px; bottom: 12px; transform: none; }
+  body.lp-v5 .cv4-film { height: 160px; }
+}
+@media (max-width: 820px) { body.lp-v5 .wy3-photo { -webkit-mask-image: none; mask-image: none; } }
+@media (min-width: 1241px) { body.lp-v5 .cv4-list { max-width: 1200px; } body.lp-v5 .cv4-film { height: 240px; } body.lp-v5 .cv4-film img { object-position: 50% 46%; } }
