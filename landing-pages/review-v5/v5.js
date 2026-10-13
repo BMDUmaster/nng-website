@@ -131,8 +131,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  const mb = document.querySelector('.mb, .m5');
-  if (mb) new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb);
+  document.querySelectorAll('.mb, .m5, .cv3, .q4').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
