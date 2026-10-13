@@ -233,3 +233,68 @@ body.lp-v5 .mb-bead { fill: #E3BE6C; filter: drop-shadow(0 0 8px rgb(227 190 108
   body.lp-v5 .mb-cta, body.lp-v5 .mb-ghost { min-height: 50px; }
 }
 @media (max-width: 580px) { body.lp-v5 .mb-eyebrow { font-size: 10.5px; letter-spacing: 0.2em; } body.lp-v5 .mb-eyebrow i { display: none; } }
+
+/* =============================================================================================================
+   Meet your guide, contained (Oct 13 e): same design, but the photograph sits inside the page in an arch, a little
+   in from the left, so nothing is cut; the section is shorter. On phones the arc goes and the medallions sit in a
+   row beneath the photograph, clear of her face.
+   ============================================================================================================= */
+body.lp-v5 .mb { isolation: isolate; overflow: visible; width: var(--wrap); min-height: 0; margin: 0 auto; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 64px; padding-block: 56px; background: none; }
+body.lp-v5 .mb::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(50% - 50vw); right: calc(50% - 50vw); z-index: -1; background: radial-gradient(50% 70% at 72% 40%, #FFF6E6, transparent 70%), linear-gradient(180deg, #F7EFE3, #F5ECDD); }
+body.lp-v5 .mb-visual { position: relative; grid-column: 1; grid-row: 1; width: min(100%, 500px); height: 540px; justify-self: end; margin-right: 10px; }
+body.lp-v5 .mb-photo { position: absolute !important; inset: 0 0 0 44px !important; width: auto !important; height: auto !important; overflow: hidden; border-radius: 999px 999px 28px 28px; box-shadow: 0 0 0 6px #FBF6EC, 0 0 0 7px rgb(201 162 90 / 0.45), 0 40px 70px -36px rgb(80 60 30 / 0.55); transform: none; }
+body.lp-v5 .mb-photo::after { content: none !important; }
+body.lp-v5 .mb-photo img { object-position: 50% 22% !important; }
+body.lp-v5 .mb-arc { position: absolute !important; left: 44px !important; top: -20px !important; right: -30px; bottom: -20px; width: auto !important; height: auto !important; }
+body.lp-v5 .mb-meds { position: absolute !important; left: 0 !important; top: 0 !important; bottom: 0 !important; width: 120px !important; height: auto !important; }
+body.lp-v5 .mb-med { width: 92px !important; height: 92px !important; }
+body.lp-v5 .mb-med svg { width: 26px !important; height: 26px !important; }
+body.lp-v5 .mb-med em { font-size: 10.5px !important; }
+body.lp-v5 .mb-med-0 { left: 26px !important; top: 6% !important; }
+body.lp-v5 .mb-med-1 { left: 0 !important; top: 28% !important; }
+body.lp-v5 .mb-med-2 { left: 0 !important; top: 50% !important; }
+body.lp-v5 .mb-med-3 { left: 26px !important; top: 72% !important; }
+body.lp-v5 .mb-name { left: calc(50% + 22px) !important; right: auto !important; top: auto !important; bottom: -22px !important; transform: translateX(-50%); padding: 10px 26px !important; white-space: nowrap; }
+body.lp-v5 .mb-name strong { font-size: 21px !important; }
+body.lp-v5 .mb-name span { font-size: 10px !important; }
+body.lp-v5 .mb-copy { grid-column: 2; grid-row: 1; padding: 0 90px 0 0 !important; max-width: 640px; }
+body.lp-v5 .mb-hang { right: 0 !important; top: -56px !important; }
+body.lp-v5 .mb-plant { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .mb-photo { opacity: 0; transform: translateY(20px) !important; transition: opacity 1.1s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+  body.lp-v5 .mb.is-on .mb-photo { opacity: 1; transform: none !important; }
+  body.lp-v5 .mb.is-on .mb-name { animation: hb-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; }
+  @keyframes hb-up { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+}
+@media (max-width: 1280px) {
+  body.lp-v5 .mb { gap: 40px; }
+  body.lp-v5 .mb-copy { padding-right: 0 !important; }
+  body.lp-v5 .mb-visual { height: 500px; }
+}
+@media (max-width: 900px) {
+  body.lp-v5 .mb { display: grid; grid-template-columns: 1fr; gap: 0; padding-block: 36px 40px; }
+  body.lp-v5 .mb-visual { grid-column: 1; justify-self: center; width: min(86vw, 360px); height: auto; aspect-ratio: 4 / 4.6; margin: 0 0 128px; }
+  body.lp-v5 .mb-photo { inset: 0 !important; }
+  body.lp-v5 .mb-arc { display: none; }
+  body.lp-v5 .mb-meds { inset: auto 50% -122px auto !important; left: 50% !important; top: auto !important; bottom: -122px !important; width: min(92vw, 380px) !important; display: flex; justify-content: space-between; transform: translateX(-50%); }
+  body.lp-v5 .mb-med { position: static !important; width: 82px !important; height: 82px !important; }
+  body.lp-v5 .mb-med svg { width: 22px !important; height: 22px !important; }
+  body.lp-v5 .mb-med em { font-size: 9.5px !important; }
+  body.lp-v5 .mb-name { left: 50% !important; bottom: -20px !important; padding: 8px 20px !important; }
+  body.lp-v5 .mb-name strong { font-size: 18px !important; }
+  body.lp-v5 .mb-name span { font-size: 9px !important; }
+  body.lp-v5 .mb-copy { grid-column: 1; grid-row: 2; padding: 0 !important; }
+  body.lp-v5 .mb-hang { display: none; }
+}
+@media (max-width: 380px) { body.lp-v5 .mb-med { width: 74px !important; height: 74px !important; } body.lp-v5 .mb-med em { font-size: 8.5px !important; } }
+body.lp-v5 .mb-hang { top: 0 !important; height: 240px !important; }
+body.lp-v5 .mb-copy { padding-right: 0 !important; max-width: 620px; }
+body.lp-v5 .mb-facts strong { font-size: 17px !important; white-space: nowrap; }
+body.lp-v5 .mb-facts em { font-size: 12px !important; }
+body.lp-v5 .mb-facts li > span { width: 40px !important; height: 40px !important; }
+body.lp-v5 .mb-facts svg { width: 20px !important; height: 20px !important; }
+body.lp-v5 .mb-quote p { font-size: 19px !important; }
+body.lp-v5 .mb-actions { flex-wrap: nowrap; }
+body.lp-v5 .mb-cta, body.lp-v5 .mb-ghost { font-size: 14.5px !important; white-space: nowrap; }
+@media (max-width: 1100px) { body.lp-v5 .mb-actions { flex-wrap: wrap; } }
+@media (max-width: 580px) { body.lp-v5 .mb-actions { flex-wrap: wrap; } }

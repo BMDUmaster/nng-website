@@ -17,16 +17,18 @@ const hangBrain = `<svg class="mb-hang" viewBox="0 0 120 360" aria-hidden="true"
 export function meetBrain(p, { esc, wa }) {
   const meds = [['brain', 'Thought<br>patterns'], ['heart', 'Emotions &amp;<br>reactions'], ['book', 'Beliefs &amp;<br>habits'], ['lotus', 'Everyday<br>practice']];
   return `<section class="mb" aria-labelledby="meet-title">
-    <div class="mb-photo" aria-hidden="true"><img src="../_shared/hero/meet-brain-wide.webp" alt="" width="1000" height="1000" loading="lazy"></div>
+    <div class="mb-visual">
+    <div class="mb-photo"><img src="../_shared/hero/meet-brain-wide.webp" alt="Narayani Garg in a pale green saree beside a white Buddha relief" width="1000" height="1000" loading="lazy"></div>
     <svg class="mb-arc" viewBox="0 0 600 700" aria-hidden="true"><path pathLength="1" d="M300 20A330 330 0 0 1 300 680"/><circle class="mb-bead" r="7"><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear" path="M300 20A330 330 0 0 1 300 680"/></circle><circle class="mb-arc-dot" cx="625" cy="350" r="6"/><circle class="mb-arc-dot" cx="560" cy="120" r="4"/></svg>
     <ul class="mb-meds" aria-label="What Brainology works with">${meds.map(([k, t], i) => `<li class="mb-med mb-med-${i}" style="--i:${i}"><span>${I[k]}</span><em>${t}</em></li>`).join('')}</ul>
     <div class="mb-name"><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span><i aria-hidden="true"></i></div>
+    </div>
     ${hangBrain}
     <span class="mb-plant" aria-hidden="true"></span>
     <div class="mb-copy">
       <p class="mb-eyebrow" data-reveal><span aria-hidden="true">✦</span>Meet your Brainology guide<i aria-hidden="true"></i></p>
-      <h2 id="meet-title" data-reveal>She listens first.<br><em>Then helps you see the pattern.</em></h2>
-      <p class="mb-lead" data-reveal>Narayani begins with the person, not the prediction. She asks about the moment that keeps returning, then works with you on the beliefs and reactions behind it, with practices such as NLP, EFT tapping and Ho’oponopono, so the change you practise is your own.</p>
+      <h2 id="meet-title" data-reveal>First she listens.<br><em>Then she helps you change.</em></h2>
+      <p class="mb-lead" data-reveal>Narayani asks about the moment that keeps repeating in your life, then helps you see the belief behind it and work on it with practical steps.</p>
       <ul class="mb-facts" data-reveal>
         <li><span>${I.people}</span><div><strong><b data-count="10000">10,000</b>+</strong><em>Clients guided</em></div></li>
         <li><span>${I.leaf}</span><div><strong>6 Practices</strong><em>NLP, EFT, Ho’oponopono and more</em></div></li>

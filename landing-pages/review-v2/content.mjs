@@ -3,9 +3,9 @@
 export const pages = [
   {
     slug: 'brainology', family: 'psychic', v5: true, rich: true, name: 'Brainology Program', scopeEyebrow: 'WHAT THE PROGRAM DRAWS ON',
-    headline: ['You know what to do.\nYou still do the same thing.', 'Understand the belief behind it, and practise a new response.'], byline: 'Spiritual guidance by Narayani Garg · Psychic Spiritual Mentor',
+    headline: ['Why does the same problem', 'keep coming back?'], byline: 'Spiritual guidance by Narayani Garg · Psychic Spiritual Mentor',
     hook: ['Overthinking', 'Repeated arguments', 'Money stress', 'Old habits'],
-    description: 'The Brainology Program is personal guidance with Narayani for the thoughts, habits and reactions that keep returning in relationships, work, money and wellbeing.',
+    description: 'Narayani helps you find the belief behind overthinking and teaches you a new way to respond in daily life.',
     cta: 'Discuss the Brainology Program', facts: [['Mind-first','Personally guided'],['Six practices','Chosen for you'],['Online or in person','By appointment']],
     situationTitle: 'A different situation.\nThe same familiar response.',
     situationIntro: 'You decide to respond differently. Then the same moment arrives, and the old reaction returns. Recognising that pattern is the starting point, not a reason to blame yourself.',

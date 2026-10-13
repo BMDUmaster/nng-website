@@ -361,3 +361,5 @@ body.lp-v5[data-page="brainology"] .v5-hero { grid-template-columns: minmax(0, 6
 body.lp-v5 .hb-sep { font-weight: 400; }
 @media (max-width: 580px) { body.lp-v5 .hb-sep { display: block; height: 0; overflow: hidden; } }
 body.lp-v5[data-page="brainology"] .v5-hero h1 { max-width: none !important; }
+/* Brainology headline (Oct 13 e): both lines at full size, the second in gold. */
+body.lp-v5[data-page="brainology"] .v5-hero h1 span { display: block; max-width: none; margin-top: 2px; font-size: 1em; line-height: 1.12; }
