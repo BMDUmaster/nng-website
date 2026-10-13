@@ -14,28 +14,38 @@ const I = {
 // A brain drawn in fine gold line, hanging on a thread.
 const hangBrain = `<svg class="mb-hang" viewBox="0 0 120 360" aria-hidden="true"><path class="mb-thread" d="M60 0V152M60 208V330M20 0V60M100 0V80"/><path class="mb-dia" d="M60 336l5 6-5 6-5-6zM20 66l4 5-4 5-4-5zM100 86l4 5-4 5-4-5z"/><g class="mb-brain" transform="translate(28 150)"><path d="M30 8C20 2 6 8 6 22c-6 4-6 16 2 20-2 10 6 18 16 16 4 6 14 6 18 0V10C40 6 34 5 30 8Z"/><path d="M34 8c10-6 24 0 24 14 6 4 6 16-2 20 2 10-6 18-16 16"/><path d="M16 22c4 0 6 3 6 6M12 38c5-1 8 2 9 5M50 22c-4 0-6 3-6 6M54 38c-5-1-8 2-9 5M32 18v40"/></g></svg>`;
 
+const leaf = '<svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 58C20 40 8 30 6 14 4 6 12 2 20 2c8 0 16 4 14 12-2 16-14 26-14 44Z" fill="currentColor"/><path d="M20 56V8" stroke="rgb(255 255 255 / .45)" stroke-width="1" fill="none"/></svg>';
+const sprig = '<svg viewBox="0 0 60 90" aria-hidden="true" fill="none" stroke="#C9A25A" stroke-width="1.2" stroke-linecap="round"><path d="M30 88C30 60 34 34 44 6"/><path d="M31 70c-8-2-14-8-16-16 8 1 14 7 16 16ZM33 54c8-2 14-8 15-16-8 1-14 7-15 16ZM35 38c-7-2-12-8-13-15 7 1 12 7 13 15ZM39 24c7-2 11-7 12-13-6 1-11 6-12 13Z"/></svg>';
+
 export function meetBrain(p, { esc, wa }) {
   const meds = [['brain', 'Thought<br>patterns'], ['heart', 'Emotions &amp;<br>reactions'], ['book', 'Beliefs &amp;<br>habits'], ['lotus', 'Everyday<br>practice']];
-  return `<section class="mb" aria-labelledby="meet-title">
-    <div class="mb-visual">
-    <div class="mb-photo"><img src="../_shared/hero/meet-brain-wide.webp" alt="Narayani Garg in a pale green saree beside a white Buddha relief" width="1000" height="1000" loading="lazy"></div>
-    <svg class="mb-arc" viewBox="0 0 600 700" aria-hidden="true"><path pathLength="1" d="M300 20A330 330 0 0 1 300 680"/><circle class="mb-bead" r="7"><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear" path="M300 20A330 330 0 0 1 300 680"/></circle><circle class="mb-arc-dot" cx="625" cy="350" r="6"/><circle class="mb-arc-dot" cx="560" cy="120" r="4"/></svg>
-    <ul class="mb-meds" aria-label="What Brainology works with">${meds.map(([k, t], i) => `<li class="mb-med mb-med-${i}" style="--i:${i}"><span>${I[k]}</span><em>${t}</em></li>`).join('')}</ul>
-    <div class="mb-name"><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span><i aria-hidden="true"></i></div>
+  const left = ['Thoughts', 'Beliefs', 'Habits'], right = ['Emotions', 'Patterns', 'Behaviour'];
+  return `<section class="m5" aria-labelledby="meet-title">
+    <div class="m5-visual">
+      <div class="m5-photo"><img src="../_shared/hero/meet-brain-wide.webp" alt="Narayani Garg in a pale green saree beside a white Buddha relief" width="1000" height="1000" loading="lazy"></div>
+      <p class="m5-script" aria-hidden="true"><span>Understand</span><span>your mind,</span><span>transform</span><span>your life</span></p>
+      <ul class="m5-meds" aria-label="What Brainology works with">${meds.map(([k, t], i) => `<li style="--i:${i}"><span>${I[k]}</span><em>${t}</em></li>`).join('')}</ul>
+      <div class="m5-name"><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></div>
     </div>
-    ${hangBrain}
-    <span class="mb-plant" aria-hidden="true"></span>
-    <div class="mb-copy">
-      <p class="mb-eyebrow" data-reveal><span aria-hidden="true">✦</span>Meet your Brainology guide<i aria-hidden="true"></i></p>
-      <h2 id="meet-title" data-reveal>First she listens.<br><em>Then she helps you change.</em></h2>
-      <p class="mb-lead" data-reveal>Narayani asks about the moment that keeps repeating in your life, then helps you see the belief behind it and work on it with practical steps.</p>
-      <ul class="mb-facts" data-reveal>
+    <div class="m5-copy">
+      <figure class="m5-brain" aria-hidden="true">
+        <img src="../_shared/hero/brain-art.webp" alt="" width="206" height="306" loading="lazy">
+        <ul class="m5-l">${left.map((t, i) => `<li style="--i:${i}">${t}<i></i></li>`).join('')}</ul>
+        <ul class="m5-r">${right.map((t, i) => `<li style="--i:${i}"><i></i>${t}</li>`).join('')}</ul>
+      </figure>
+      <span class="m5-leaf m5-leaf-a" aria-hidden="true">${leaf}</span><span class="m5-leaf m5-leaf-b" aria-hidden="true">${leaf}</span>
+      <div class="m5-head">
+        <p class="m5-eyebrow"><span aria-hidden="true">✦</span>Meet your Brainology guide<i aria-hidden="true"></i></p>
+        <h2 id="meet-title">First she listens.<br><em>Then she helps you change.</em></h2>
+        <p class="m5-lead">Narayani asks about the moment that keeps repeating in your life, then helps you see the belief behind it and work on it with practical steps.</p>
+      </div>
+      <ul class="m5-facts">
         <li><span>${I.people}</span><div><strong><b data-count="10000">10,000</b>+</strong><em>Clients guided</em></div></li>
         <li><span>${I.leaf}</span><div><strong>6 Practices</strong><em>NLP, EFT &amp; more</em></div></li>
         <li><span>${I.mind}</span><div><strong>Mind First</strong><em>Beliefs and habits before any remedy</em></div></li>
       </ul>
-      <blockquote class="mb-quote" data-reveal><span aria-hidden="true">“</span><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>Narayani Garg</cite></blockquote>
-      <div class="mb-actions" data-reveal>${wa('meet', 'Talk to Narayani’s team', 'mb-cta').replace('</a>', `<i class="mb-cta-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<a class="mb-ghost" href="#approach"><span aria-hidden="true">${I.play}</span>How Brainology works</a></div>
+      <blockquote class="m5-quote"><span class="m5-q" aria-hidden="true">“</span><div><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>Narayani Garg</cite></div><span class="m5-sprig" aria-hidden="true">${sprig}</span></blockquote>
+      <div class="m5-actions">${wa('meet', 'Talk to Narayani’s team', 'm5-cta').replace('</a>', `<i class="m5-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<a class="m5-ghost" href="#approach"><span aria-hidden="true">${I.play}</span>How Brainology works</a></div>
     </div>
   </section>`;
 }

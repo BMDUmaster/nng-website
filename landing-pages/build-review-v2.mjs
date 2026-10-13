@@ -77,7 +77,7 @@ function render(p) {
   if(!p.v5) return html;
   return html.replace(/<main id="main">[\s\S]*<\/main>/,()=>renderMain(p,{esc,lines,cta,icon,pageIcon,scenarioArt,serviceVisual,voices,assets,comparison}).replace('One focused conversation,\nor room to keep working?','One focused conversation,<br>or room to keep working?'))
     .replace(/<footer class="footer">[\s\S]*?<\/footer>/,()=>renderFooter(p,{cta,assets}))
-    .replace('</body>',`<script src="../_shared/v5.js?v=${version}" defer></script></body>`);
+    .replace('</body>',`<script src="../_shared/v5.js?v=${version}" defer></script></body>`).replace('</head>', p.slug==='brainology' ? '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&display=swap"></head>' : '</head>');
 }
 
 fs.mkdirSync(path.join(shared,'assets'),{recursive:true});
