@@ -59,3 +59,32 @@ export function brainSituations(p, { esc, wa }) {
     <p class="q4-note"><span aria-hidden="true">${I.mind}</span>Recognising that pattern is the starting point, <em>not a reason to blame yourself.</em></p>
   </div></section>`;
 }
+
+// Brainology "How Narayani approaches it": the words beside a loop of the four links that repeat (one lit at a time),
+// then the three steps as cards joined by a gold line, and an action.
+export function brainApproach3(p, { esc, wa }) {
+  const [a, b] = p.methodTitle.split('\n');
+  const w = b.split(' '); const tail = w.splice(-2).join(' ');
+  const links = [['A thought', I.mind], ['A belief', I.heart], ['The words you use', '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M6 7h20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M10 13h12M10 17h8" stroke-linecap="round"/></svg>'], ['A reaction', '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4 8 18h7l-2 10 11-15h-7l2-9Z"/></svg>']];
+  const steps = [
+    '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="4.2"/><circle cx="16" cy="16" r="1.4" fill="currentColor"/></svg>',
+    I.mind,
+    '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 12a10 10 0 0 0-17.5-3.5L5 11"/><path d="M5 5v6h6"/><path d="M7 20a10 10 0 0 0 17.5 3.5L27 21"/><path d="M27 27v-6h-6"/></svg>',
+  ];
+  return `<section class="a4" id="approach" aria-labelledby="approach-title"><div class="wrap a4-inner">
+    <div class="a4-top">
+      <div class="a4-copy">
+        <p class="a4-kicker"><span aria-hidden="true">✦</span>How Narayani approaches it<i aria-hidden="true"></i></p>
+        <h2 id="approach-title">${esc(a)}<br>${esc(w.join(' '))} <em>${esc(tail)}</em></h2>
+        <p class="a4-intro">${esc(p.methodIntro)}</p>
+      </div>
+      <figure class="a4-loop" aria-label="The chain that repeats: a thought, a belief, the words you use, a reaction">
+        <svg class="a4-ring" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="150" pathLength="1"/><circle class="a4-dot" r="5"><animateMotion dur="14s" repeatCount="indefinite" path="M200 50a150 150 0 1 1 -0.1 0"/></circle></svg>
+        <div class="a4-centre" aria-hidden="true"><span>The chain<br>that repeats</span><em>Find the one link<br>you can change</em></div>
+        <ol class="a4-links">${links.map(([t, ic], i) => `<li class="a4-l${i}" style="--i:${i}"><span>${ic}</span><b>${t}</b></li>`).join('')}</ol>
+      </figure>
+    </div>
+    <ol class="a4-steps">${p.method.map(([t, d], i) => `<li style="--i:${i}"><span class="a4-ic" aria-hidden="true">${steps[i]}</span><em class="a4-no">0${i + 1}</em><h3>${esc(t)}</h3><p>${esc(d)}</p></li>`).join('')}</ol>
+    <div class="a4-foot"><p><span aria-hidden="true">✦</span>A clearer mind <i aria-hidden="true">·</i> A calmer you</p>${wa('approach', 'Start with one situation', 'a4-cta').replace('</a>', `<i class="a4-go" aria-hidden="true">${I.arrow}</i></a>`)}</div>
+  </div></section>`;
+}

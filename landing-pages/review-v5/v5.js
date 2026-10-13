@@ -55,6 +55,14 @@
     list.addEventListener('mouseleave', () => show(chosen));
   }
 
+  // Brainology approach loop: light one link at a time while in view.
+  const loop = document.querySelector('.a4-links');
+  if (loop && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const items = [...loop.children]; let k = 0, t = null;
+    const tick = () => { items.forEach((li, j) => li.classList.toggle('is-lit', j === k)); k = (k + 1) % items.length; };
+    new IntersectionObserver(([e]) => { clearInterval(t); if (e.isIntersecting) { tick(); t = setInterval(tick, 2600); } }, { threshold: 0.3 }).observe(loop);
+  }
+
   // Numerology still life: scale the 640px stage to its column.
   const stageFig = document.querySelector('.na-figure');
   if (stageFig) {
@@ -131,7 +139,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  document.querySelectorAll('.mb, .m5, .cv3, .q4').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
+  document.querySelectorAll('.mb, .m5, .cv3, .q4, .a4').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
