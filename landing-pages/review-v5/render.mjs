@@ -175,6 +175,29 @@ export function renderMain(p, h) {
     </div>
   </div></section>`;
 
+  /* Brainology enquiry: steps on the left; on the right the WhatsApp panel with a live preview of the message. */
+  const enquiry2 = `<section class="v5-enquiry en2" id="enquire" aria-labelledby="enquiry-title"><div class="section wrap">
+    <div class="en2-head"><p class="en2-kicker"><span aria-hidden="true">✦</span>Begin with the NNG team</p><h2 id="enquiry-title">${lines(p.closeTitle).replace(/<br>(.*)$/, '<br><em>$1</em>')}</h2><p>${esc(p.closeCopy)}</p></div>
+    <div class="en2-grid">
+      <div class="en2-how">
+        <p class="en2-label">How it works</p>
+        <ol class="en2-steps">${steps.map(([t, d], i) => `<li data-reveal style="--i:${i}"><span>${i + 1}</span><div><strong>${t}</strong><p>${d}</p></div></li>`).join('')}</ol>
+        <div class="en2-alt"><a href="tel:+919205511101">${icon('conversation')}<span>Prefer to call?<small>+91 92055 11101</small></span></a><a href="mailto:enquiry@nngarg.com">${icon('confirm')}<span>Or write to us<small>enquiry@nngarg.com</small></span></a></div>
+      </div>
+      <div class="enquiry-panel en2-panel">
+        <div class="en2-panel-head"><span class="v5-wa">${waIcon}</span><div><strong>Start on WhatsApp</strong><span>No form. Choose a topic if useful.</span></div></div>
+        <div class="topic-picker" role="group" aria-label="Optional enquiry topic">${p.options.map((topic, i) => `<button type="button" data-select-topic="${esc(topic)}" aria-pressed="${i === 0 ? 'true' : 'false'}">${esc(topic)}</button>`).join('')}</div>
+        <p class="selected-topic" role="status" aria-live="polite">General ${esc(p.short || p.name)} enquiry</p>
+        <div class="en2-chat" aria-label="Your message preview">
+          <p class="en2-chat-label">Your message</p>
+          <div class="en2-bubble" data-preview data-offer="${esc(p.name)}"><p>Hello NNG team, I would like to enquire about ${esc(p.name)}.</p><p>Please share the appropriate scope, format, duration, fees and availability.</p><span class="en2-time">now <i aria-hidden="true">✓✓</i></span></div>
+        </div>
+        ${wa('enquiry', 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
+        <p class="en2-note">You review and send the message yourself. Opening WhatsApp does not book or pay for a session. Please keep private records and other people’s details out of the first message.</p>
+      </div>
+    </div>
+  </div></section>`;
+
   /* Questions. */
   const faq = `<section class="faq-band v5-faq" aria-labelledby="faq-title"><div class="section wrap v5-faq-inner">
     <div class="v5-faq-side">
@@ -187,7 +210,7 @@ export function renderMain(p, h) {
     <p class="service-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? why2 : why}${enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? why2 : why}${p.slug === 'brainology' ? enquiry2 : enquiry}${faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.

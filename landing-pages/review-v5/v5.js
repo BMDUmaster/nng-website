@@ -116,6 +116,20 @@
     }, 3600);
   }
 
+  // Enquiry: the message preview follows the chosen topic.
+  const preview = document.querySelector('[data-preview]');
+  if (preview) {
+    const offer = preview.dataset.offer;
+    const lines = (topic) => [`Hello NNG team, I would like to enquire about ${offer}.`, topic ? `My enquiry is about: ${topic}.` : '', 'Please share the appropriate scope, format, duration, fees and availability.'].filter(Boolean);
+    const time = preview.querySelector('.en2-time');
+    document.querySelectorAll('[data-select-topic]').forEach((b, i) => b.addEventListener('click', () => {
+      const topic = i === 0 ? '' : b.dataset.selectTopic;
+      preview.querySelectorAll('p').forEach((n) => n.remove());
+      lines(topic).forEach((l) => { const n = document.createElement('p'); n.textContent = l; preview.insertBefore(n, time); });
+      preview.classList.remove('is-new'); void preview.offsetWidth; preview.classList.add('is-new');
+    }));
+  }
+
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
   const sound = document.querySelector('.v5-sound');
