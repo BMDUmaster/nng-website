@@ -142,4 +142,4 @@ body.lp-v5 .v5-hero { padding-top: 112px !important; }
   body.lp-v5 .v5-hero { padding-top: 92px !important; }
 }
 /* Brainology on phones: the picture runs up behind the floating header. */
-@media (max-width: 900px) { body.lp-v5[data-page="brainology"] .v5-hero { padding-top: 0 !important; } }
+@media (max-width: 900px) { body.lp-v5.lp-rich .v5-hero { padding-top: 0 !important; } }

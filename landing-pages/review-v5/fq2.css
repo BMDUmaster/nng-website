@@ -53,8 +53,8 @@ body.lp-v5 .fq2-boundary { max-width: 840px; margin: 22px auto 0; font-size: 12.
 @media (min-width: 1024px) { body.lp-v5 .v5-book .bk-stage { --bk-w: min(300px, 20vw); } }
 /* Hero: on narrower laptops the picture fades in later so the words stay clear. */
 @media (min-width: 901px) and (max-width: 1280px) {
-  body.lp-v5[data-page="brainology"] .hb-art { -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, #000 58%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%) !important; mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, #000 58%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%) !important; }
-  body.lp-v5[data-page="brainology"] .v5-hero { grid-template-columns: minmax(0, 470px) 1fr; }
+  body.lp-v5.lp-rich .hb-art { -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, #000 58%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%) !important; mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, #000 58%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%) !important; }
+  body.lp-v5.lp-rich .v5-hero { grid-template-columns: minmax(0, 470px) 1fr; }
 }
 /* Meet: facts stack icon over words when the column is narrow. */
 @media (min-width: 901px) and (max-width: 1280px) {

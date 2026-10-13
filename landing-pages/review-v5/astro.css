@@ -1,0 +1,44 @@
+/* =============================================================================================================
+   Astrology (Oct 13): a night-sky opening with the zodiac wheel; the rest follows the rich page layout.
+   ============================================================================================================= */
+body.lp-v5[data-page="astrology"] .v5-hero-banner { background: radial-gradient(45% 70% at 76% 45%, rgb(215 184 107 / 0.18), transparent 70%), radial-gradient(70% 90% at 0% 0%, #4A2049, transparent 60%), linear-gradient(180deg, #2A1230 0%, #1C1420 100%); color: var(--pearl); }
+body.lp-v5[data-page="astrology"] .v5-hero h1 { color: var(--pearl); }
+body.lp-v5[data-page="astrology"] .v5-hero h1 span { background: linear-gradient(100deg, #F1DDA6, #D7B86B 50%, #C9A25A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.lp-v5[data-page="astrology"] .v5-hero .hero-description { color: rgb(250 246 240 / 0.76); }
+body.lp-v5[data-page="astrology"] .hb-eyebrow strong { color: var(--champ); }
+body.lp-v5[data-page="astrology"] .hb-eyebrow > span { color: var(--champ); }
+body.lp-v5[data-page="astrology"] .hb-eyebrow em { color: rgb(250 246 240 / 0.75); }
+body.lp-v5[data-page="astrology"] .v5-hook p { color: var(--champ); }
+body.lp-v5[data-page="astrology"] .v5-hook li { background: rgb(250 246 240 / 0.08); box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.35); color: var(--pearl); backdrop-filter: none; }
+body.lp-v5[data-page="astrology"] .v5-hook li::before { background: var(--champ); }
+body.lp-v5[data-page="astrology"] .v5-hero .wa-btn { background: linear-gradient(180deg, #E3C97F, #D7B86B); color: #3C183D; }
+body.lp-v5[data-page="astrology"] .v5-hero .v5-ghost { background: rgb(250 246 240 / 0.06); box-shadow: inset 0 0 0 1.5px rgb(215 184 107 / 0.6); color: var(--pearl); }
+body.lp-v5[data-page="astrology"] .v5-hero .v5-ghost i { background: var(--champ); color: #3C183D; }
+/* The header over a dark opening keeps its pearl glass. */
+
+/* Visual. */
+body.lp-v5 .hz { position: relative; display: grid; place-items: center; width: 100%; max-width: 520px; aspect-ratio: 1; margin-inline: auto; }
+body.lp-v5 .hz-glow { position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(circle, rgb(255 226 160 / 0.28), rgb(142 74 134 / 0.1) 55%, transparent 72%); }
+body.lp-v5 .hz-wheel { position: absolute; inset: 4%; border-radius: 50%; filter: drop-shadow(0 30px 60px rgb(0 0 0 / 0.55)); }
+body.lp-v5 .hz-wheel img { display: block; width: 100%; height: 100%; object-fit: contain; }
+body.lp-v5 .hz-orbit { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+body.lp-v5 .hz-orbit > circle:first-child { fill: none; stroke: rgb(241 221 166 / 0.5); stroke-width: 1; stroke-dasharray: 2 6; }
+body.lp-v5 .hz-planet { fill: #FFF1CC; filter: drop-shadow(0 0 8px rgb(255 214 140 / 1)); }
+body.lp-v5 .hz-moon { position: absolute; right: 2%; top: 4%; width: 54px; height: 54px; border-radius: 50%; box-shadow: inset -12px 6px 0 0 #F1DDA6; transform: rotate(-20deg); filter: drop-shadow(0 0 12px rgb(241 221 166 / 0.6)); }
+body.lp-v5 .hz-star { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #FFF3D2; box-shadow: 0 0 6px 2px rgb(255 226 160 / 0.7); opacity: 0.3; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .hz-wheel { animation: hb-reveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .hz-wheel img { animation: hz-turn 140s linear infinite; }
+  body.lp-v5 .hz-glow { animation: mt-breathe 6s ease-in-out infinite; }
+  body.lp-v5 .hz-star { animation: hz-tw 3.8s ease-in-out infinite; animation-delay: var(--d); }
+  body.lp-v5 .hz-moon { animation: ha-drift 8s ease-in-out infinite; }
+}
+@keyframes hz-turn { to { transform: rotate(360deg); } }
+@keyframes hz-tw { 0%, 100% { opacity: 0.2; transform: scale(0.6); } 50% { opacity: 1; transform: scale(1.4); } }
+
+body.lp-v5[data-page="astrology"] .v5-hero { grid-template-columns: minmax(0, 560px) 1fr; gap: 40px; }
+@media (max-width: 900px) {
+  body.lp-v5[data-page="astrology"] .v5-hero { display: flex; flex-direction: column; padding: 28px 0 34px !important; }
+  body.lp-v5 .hz { order: -1; max-width: 300px; margin-bottom: 8px; }
+  body.lp-v5 .hz-moon { width: 40px; height: 40px; box-shadow: inset -9px 4px 0 0 #F1DDA6; }
+}

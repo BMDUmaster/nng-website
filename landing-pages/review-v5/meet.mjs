@@ -6,17 +6,23 @@ const icons = {
   globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3Z"/></svg>',
 };
 
+const meet = {
+  brainology: { img: 'meet-narayani.webp', alt: 'Narayani Garg in a pale green saree, standing before a white Buddha relief', h: 'She listens first.<br><em>Then helps you see the pattern.</em>', lead: 'Narayani begins with the person, not the prediction. She asks about the moment that keeps returning, then looks with you at the beliefs and reactions behind it, so the change you practise is your own.' },
+  astrology: { img: 'meet-astrology.webp', alt: 'Narayani Garg in a red and orange bandhani saree at her home temple', h: 'She reads the chart.<br><em>And listens to the person.</em>', lead: 'Narayani reads the chart themes relevant to your question beside your real circumstances. She explains her reasoning in plain words, and the decision stays with you.' },
+};
+
 export function meetSection(p, { esc, wa }) {
+  const m = meet[p.slug] || meet.brainology;
   return `<section class="v5-meet" aria-labelledby="meet-title"><div class="wrap mt-inner">
     <figure class="mt-photo" data-reveal>
       <span class="mt-glow" aria-hidden="true"></span>
-      <div class="mt-arch"><img src="../_shared/hero/meet-narayani.webp" alt="Narayani Garg in a pale green saree, standing before a white Buddha relief" width="720" height="910" loading="lazy"></div>
+      <div class="mt-arch"><img src="../_shared/hero/${m.img}" alt="${m.alt}" width="720" height="910" loading="lazy"></div>
       <figcaption><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></figcaption>
     </figure>
     <div class="mt-copy">
       <p class="mt-eyebrow" data-reveal><span aria-hidden="true">✦</span>Meet your guide</p>
-      <h2 id="meet-title" data-reveal>She listens first.<br><em>Then helps you see the pattern.</em></h2>
-      <p class="mt-lead" data-reveal>Narayani begins with the person, not the prediction. She asks about the moment that keeps returning, then looks with you at the beliefs and reactions behind it, so the change you practise is your own.</p>
+      <h2 id="meet-title" data-reveal>${m.h}</h2>
+      <p class="mt-lead" data-reveal>${m.lead}</p>
       <ul class="mt-facts" data-reveal>
         <li><span>${icons.people}</span><strong><b data-count="10000">10,000</b>+</strong><em>clients guided</em></li>
         <li><span>${icons.book}</span><strong>Author</strong><em>Change Your Mind, Transform Your Life</em></li>

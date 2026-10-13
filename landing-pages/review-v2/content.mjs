@@ -2,7 +2,7 @@
 // These are consultation enquiry pages, not confirmed packages or report storefronts.
 export const pages = [
   {
-    slug: 'brainology', family: 'psychic', v5: true, name: 'Brainology Program', scopeEyebrow: 'WHAT THE PROGRAM DRAWS ON',
+    slug: 'brainology', family: 'psychic', v5: true, rich: true, name: 'Brainology Program', scopeEyebrow: 'WHAT THE PROGRAM DRAWS ON',
     headline: ['Same thoughts.\nSame worries.', 'Time to change the pattern.'],
     hook: ['Overthinking', 'Repeated arguments', 'Money stress', 'Old habits'],
     description: 'With Narayani, see the belief behind a problem that keeps returning, and practise a new response in everyday life.',
@@ -43,8 +43,9 @@ export const pages = [
     ],
   },
   {
-    slug: 'astrology', family: 'practice', v5: true, name: 'Astrology',
-    headline: ['A career move. A relationship decision.', 'A question about timing.'],
+    slug: 'astrology', family: 'practice', v5: true, rich: true, name: 'Astrology',
+    headline: ['A career move.\nA relationship decision.', 'A question about timing.'],
+    hook: ['Career & business', 'Marriage', 'Property', 'Education'], hookLabel: 'Bring the decision',
     description: 'Explore a career, relationship or timing question with Narayani, reading relevant birth-chart themes alongside your real circumstances and choices.',
     cta: 'Discuss an astrology consultation', facts: [['Career & business','Personal decisions'],['Chart & timing','Read together'],['Online or in person','By appointment']],
     situationTitle: 'The question matters\nmore than a general prediction.',

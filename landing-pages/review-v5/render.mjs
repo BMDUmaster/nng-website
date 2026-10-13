@@ -7,6 +7,7 @@ import { situations2, practices2 } from './sections2.mjs';
 import { heroArt } from './hero-art.mjs';
 import { meetSection } from './meet.mjs';
 import { brainHero } from './hero-brain.mjs';
+import { astroHero } from './hero-astro.mjs';
 
 const person = 'Narayani Garg';
 // Client films served by the website (public/videos/stories), keyed by landing-page voice.
@@ -33,16 +34,16 @@ export function renderMain(p, h) {
   /* Opening. */
   const hero = `<div class="hero-banner v5-hero-banner"><section class="hero wrap v5-hero" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <div class="v5-pill-row">${p.slug === 'brainology' ? `<p class="hb-eyebrow"><span aria-hidden="true">✦</span><strong>${esc(p.short || p.name)}</strong><i aria-hidden="true"></i><em>with Narayani Garg</em></p>` : ''}<p class="v5-pill">${esc(p.short || p.name)}</p><p class="v5-viewers" data-viewers="${({ brainology: '14-28', numerology: '9-21', vastulogy: '7-18', astrology: '16-32', 'hand-holding': '6-15' })[p.slug] || '8-20'}" hidden><span class="v5-viewers-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>0</b> viewing now</p></div>
+      <div class="v5-pill-row">${p.rich ? `<p class="hb-eyebrow"><span aria-hidden="true">✦</span><strong>${esc(p.short || p.name)}</strong><i aria-hidden="true"></i><em>with Narayani Garg</em></p>` : ''}<p class="v5-pill">${esc(p.short || p.name)}</p><p class="v5-viewers" data-viewers="${({ brainology: '14-28', numerology: '9-21', vastulogy: '7-18', astrology: '16-32', 'hand-holding': '6-15' })[p.slug] || '8-20'}" hidden><span class="v5-viewers-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>0</b> viewing now</p></div>
       <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
       <h1 id="hero-title">${lines(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
       <p class="hero-description">${esc(p.description)}</p>
-      <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="#ways"><span>${p.slug === 'brainology' ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
-      ${p.hook ? `<div class="v5-hook"><p>Sound familiar?</p><ul>${p.hook.map((t, i) => `<li style="--i:${i}">${esc(t)}</li>`).join('')}</ul></div>` : ''}
+      <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="#ways"><span>${p.rich ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
+      ${p.hook ? `<div class="v5-hook"><p>${esc(p.hookLabel || 'Sound familiar?')}</p><ul>${p.hook.map((t, i) => `<li style="--i:${i}">${esc(t)}</li>`).join('')}</ul></div>` : ''}
       <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
       <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>
     </div>
-    ${p.slug === 'brainology' ? brainHero(p, { esc }) : heroArt(p, { esc })}
+    ${p.slug === 'brainology' ? brainHero(p, { esc }) : p.slug === 'astrology' ? astroHero(p, { esc }) : heroArt(p, { esc })}
   </section></div>`;
 
   /* Her book, opening slowly while in view, beside the clientele. */
@@ -60,7 +61,7 @@ export function renderMain(p, h) {
     page(8, `<blockquote class="bk-quote"><span class="bk-orn" aria-hidden="true">❦</span><p lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p><cite>A remedy works when the mind works.</cite></blockquote>`),
   ];
   const sectors = [['business', 'Banking professionals'], ['career', 'CEOs of MNCs &amp; core sector companies'], ['person', 'Women entrepreneurs'], ['education', 'Printing, education &amp; hospitals']];
-  const book = `<section class="bk v5-book${p.slug === 'brainology' ? ' bk2-band' : ''}" aria-labelledby="book-title"><div class="bk-inner wrap">
+  const book = `<section class="bk v5-book${p.rich ? ' bk2-band' : ''}" aria-labelledby="book-title"><div class="bk-inner wrap">
     <div class="bk-stage" aria-hidden="true">
       <div class="bk-glow"></div>
       <div class="bk-book">
@@ -71,7 +72,7 @@ export function renderMain(p, h) {
       </div>
       <div class="bk-shadow"></div>
     </div>
-    ${p.slug === 'brainology' ? `<div class="v5-book-copy bk2">
+    ${p.rich ? `<div class="v5-book-copy bk2">
       <p class="bk2-kicker" data-reveal><span aria-hidden="true">✦</span>Her book</p>
       <h2 id="book-title" data-reveal>Change Your Mind,<br><em>Transform Your Life</em></h2>
       <p class="bk2-lead" data-reveal>Twenty-one days of reflection and everyday inner practice, written in the same mind-first way she guides every conversation.</p>
@@ -110,7 +111,7 @@ export function renderMain(p, h) {
 
   /* Brainology: client films as portrait cards beside their words. */
   const voices2 = `<section class="stories-band v5-voices cv2" id="stories" aria-labelledby="stories-title"><div class="section wrap">
-    <div class="cv2-head"><p class="cv2-kicker"><span aria-hidden="true">✦</span>Client voices</p><h2 id="stories-title">Being heard.<br><em>Seeing yourself differently.</em></h2><p class="cv2-sub">In their own words. Tap a film to watch.</p></div>
+    <div class="cv2-head"><p class="cv2-kicker"><span aria-hidden="true">✦</span>Client voices</p><h2 id="stories-title">${lines(p.proofTitle).replace(/<br>(.*)$/, '<br><em>$1</em>')}</h2><p class="cv2-sub">In their own words. Tap a film to watch.</p></div>
     <div class="cv2-list">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="cv2-card" data-reveal style="--i:${i}">
       <button class="cv2-film" type="button" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv2-play" aria-hidden="true">${play}</span><span class="cv2-tag">Watch</span></button>
       <div class="cv2-words"><p class="cv2-topic">${esc(v.title)}</p><span class="cv2-mark" aria-hidden="true">“</span><blockquote>${esc(v.quote || v.summary)}</blockquote><p class="cv2-who"><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p></div>
@@ -218,7 +219,7 @@ export function renderMain(p, h) {
     <p class="fq2-boundary">${esc(p.boundary)}</p>
   </div></section>`;
 
-  return `<main id="main">${hero}${p.slug === 'brainology' ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.slug === 'brainology' ? voices2 : stories}${p.slug === 'brainology' ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'brainology' ? why2 : why}${p.slug === 'brainology' ? enquiry2 : enquiry}${p.slug === 'brainology' ? faq2 : faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+  return `<main id="main">${hero}${p.rich ? meetSection(p, { esc, wa }) : ''}${book}${situations2(p, { esc, scenarioArt, wa })}${p.rich ? voices2 : stories}${p.rich ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.rich ? why2 : why}${p.rich ? enquiry2 : enquiry}${p.rich ? faq2 : faq}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
 }
 
 // Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.

@@ -22,11 +22,11 @@ export function goldTail(lines, esc) {
 }
 
 export function situations2(p, { esc, scenarioArt, wa }) {
-  const ed = p.slug === 'brainology';
+  const ed = !!p.rich;
   return `<section class="v5-sit2${ed ? ' s3' : ''}" aria-labelledby="situation-title">${ed ? '' : decor}<div class="section wrap s2-inner">
     ${kicker('The question you bring')}
     <h2 id="situation-title">${goldTail(p.situationTitle, esc)}</h2>
-    ${ed ? `<p class="s3-intro">${esc(p.situationIntro.split('. Recognising')[0])}.</p>` : ''}
+    ${ed ? `<p class="s3-intro">${esc(p.situationIntro.split(' Recognising')[0])}</p>` : ''}
     <div class="s2-cards" data-carousel>${p.situations.map(([t, d], i) => `<article class="s2-card" data-reveal style="--i:${i}" title="${esc(d)}">
       <span class="s2-no">0${i + 1}</span>
       <div class="s2-art">${star}<span class="s2-moon"></span>${scenarioArt(p, i)}<svg class="s2-wave" viewBox="0 0 300 60" aria-hidden="true"><path pathLength="1" d="M0 44C60 46 80 20 130 26S220 54 300 30"/><circle cx="40" cy="44" r="3"/></svg></div>
@@ -35,13 +35,13 @@ export function situations2(p, { esc, scenarioArt, wa }) {
       <div class="s2-foot"><span></span>${ed && wa ? wa('situation', 'Start with this', 's3-link') : `<a class="s2-go" href="#enquire" aria-label="Enquire about: ${esc(t)}">${arrow}</a>`}</div>
     </article>`).join('')}</div>
     <div class="s2-dots" aria-hidden="true">${p.situations.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div>
-    ${ed ? `<p class="s3-note" data-reveal><span aria-hidden="true">✦</span>Recognising that pattern is the starting point, <em>not a reason to blame yourself.</em></p>` : ''}
+    ${ed && p.slug === 'brainology' ? `<p class="s3-note" data-reveal><span aria-hidden="true">✦</span>Recognising that pattern is the starting point, <em>not a reason to blame yourself.</em></p>` : ''}
   </div></section>`;
 }
 
 export function practices2(p, { esc, cta, pageIcon }) {
   const four = p.topics.length === 4 ? ' s2-four' : '';
-  const ed = p.slug === 'brainology';
+  const ed = !!p.rich;
   return `<section class="v5-prac2${ed ? ' pr3' : ''}" id="ways" aria-labelledby="ways-title">${ed ? '<span class="pr3-glow" aria-hidden="true"></span>' : decor}<div class="section wrap s2-inner">
     <div class="s2-head">
       <div>${kicker(esc(p.scopeEyebrow || 'Your consultation options'))}<h2 id="ways-title">${goldTail(p.scopeTitle, esc)}</h2></div>

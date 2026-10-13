@@ -47,24 +47,30 @@ export function brainApproach(p, { esc }) {
 }
 
 // Brainology: the pattern as a chain, then the three steps once, joined by a gold line.
+const chains = {
+  brainology: { label: 'The chain that repeats', items: ['A thought', 'A belief', 'The words you use', 'A reaction'], loop: true, foot: 'A clearer mind <i aria-hidden="true">·</i> A calmer you' },
+  astrology: { label: 'What a reading brings together', items: ['Your question', 'Birth date, time & place', 'Relevant chart themes', 'Your choices'], loop: false, foot: 'Read together <i aria-hidden="true">·</i> Decided by you' },
+};
 export function brainApproach2(p, { esc }) {
   const [first, second] = p.methodTitle.split('\n');
-  const chain = ['A thought', 'A belief', 'The words you use', 'A reaction'];
+  const c = chains[p.slug] || chains.brainology;
+  const chain = c.items;
+  const ic = (sets[p.slug] && sets[p.slug].icons) || icons;
   return `<section class="v5-brain ba2" id="approach" aria-labelledby="approach-title"><div class="section wrap">
     <div class="ba2-head">
       <p class="bj-kicker"><span aria-hidden="true"></span>How Narayani approaches it</p>
-      <h2 id="approach-title">${esc(first)}<br>${esc(second).replace('new response.', '<em>new response.</em>')}</h2>
+      <h2 id="approach-title">${esc(first)}<br>${(() => { const w = esc(second).split(' '); const t = w.splice(-2).join(' '); return `${w.join(' ')} <em>${t}</em>`; })()}</h2>
       <p class="ba2-intro">${esc(p.methodIntro)}</p>
     </div>
     <div class="ba2-chain" data-chain aria-label="The parts of a pattern">
-      <p class="ba2-chain-label">The chain that repeats</p>
+      <p class="ba2-chain-label">${c.label}</p>
       <ol>${chain.map((c, i) => `<li style="--i:${i}"><span>${c}</span></li>`).join('<li class="ba2-arrow" aria-hidden="true">→</li>')}</ol>
-      <svg class="ba2-return" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M590 4C590 30 560 34 300 34S10 30 10 4"/><path class="ba2-tip" d="M4 12 10 2l6 10"/></svg>
+      ${c.loop ? '' : '<!--'}<svg class="ba2-return" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M590 4C590 30 560 34 300 34S10 30 10 4"/><path class="ba2-tip" d="M4 12 10 2l6 10"/></svg>${c.loop ? '' : '-->'}
     </div>
     <ol class="ba2-steps v5-steps2" data-steps>
       <svg class="ba2-line" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 5H1000"/></svg>
-      ${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false"><span class="ba2-medal">${icons[i]}<em>0${i + 1}</em></span><strong>${esc(t)}</strong><span class="ba2-desc">${esc(d)}</span></li>`).join('')}
+      ${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false"><span class="ba2-medal">${ic[i]}<em>0${i + 1}</em></span><strong>${esc(t)}</strong><span class="ba2-desc">${esc(d)}</span></li>`).join('')}
     </ol>
-    <p class="ba2-foot"><span aria-hidden="true">✦</span>A clearer mind <i aria-hidden="true">·</i> A calmer you</p>
+    <p class="ba2-foot"><span aria-hidden="true">✦</span>${c.foot}</p>
   </div></section>`;
 }
