@@ -3,7 +3,7 @@
 export const pages = [
   {
     slug: 'brainology', family: 'psychic', v5: true, name: 'Brainology Program', scopeEyebrow: 'WHAT THE PROGRAM DRAWS ON',
-    headline: ['Same thoughts. Same worries.', 'Time to change the pattern.'],
+    headline: ['Same thoughts.\nSame worries.', 'Time to change the pattern.'],
     hook: ['Overthinking', 'Repeated arguments', 'Money stress', 'Old habits'],
     description: 'With Narayani, see the belief behind a problem that keeps returning, and practise a new response in everyday life.',
     cta: 'Discuss the Brainology Program', facts: [['Mind-first','Personally guided'],['Six practices','Chosen for you'],['Online or in person','By appointment']],

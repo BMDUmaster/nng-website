@@ -34,7 +34,7 @@ export function renderMain(p, h) {
     <div class="hero-copy">
       <div class="v5-pill-row"><p class="v5-pill">${esc(p.short || p.name)}</p><p class="v5-viewers" data-viewers="${({ brainology: '14-28', numerology: '9-21', vastulogy: '7-18', astrology: '16-32', 'hand-holding': '6-15' })[p.slug] || '8-20'}" hidden><span class="v5-viewers-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>0</b> viewing now</p></div>
       <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
-      <h1 id="hero-title">${esc(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
+      <h1 id="hero-title">${lines(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
       <p class="hero-description">${esc(p.description)}</p>
       <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="#ways"><span>${p.slug === 'brainology' ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
       ${p.hook ? `<div class="v5-hook"><p>Sound familiar?</p><ul>${p.hook.map((t, i) => `<li style="--i:${i}">${esc(t)}</li>`).join('')}</ul></div>` : ''}
