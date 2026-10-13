@@ -31,7 +31,7 @@ export function meetBrain(p, { esc, wa }) {
       <p class="mb-lead" data-reveal>Narayani asks about the moment that keeps repeating in your life, then helps you see the belief behind it and work on it with practical steps.</p>
       <ul class="mb-facts" data-reveal>
         <li><span>${I.people}</span><div><strong><b data-count="10000">10,000</b>+</strong><em>Clients guided</em></div></li>
-        <li><span>${I.leaf}</span><div><strong>6 Practices</strong><em>NLP, EFT, Ho’oponopono and more</em></div></li>
+        <li><span>${I.leaf}</span><div><strong>6 Practices</strong><em>NLP, EFT &amp; more</em></div></li>
         <li><span>${I.mind}</span><div><strong>Mind First</strong><em>Beliefs and habits before any remedy</em></div></li>
       </ul>
       <blockquote class="mb-quote" data-reveal><span aria-hidden="true">“</span><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>Narayani Garg</cite></blockquote>

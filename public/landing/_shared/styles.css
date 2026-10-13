@@ -4157,3 +4157,4 @@ body.lp-v5 .mb-actions { flex-wrap: nowrap; }
 body.lp-v5 .mb-cta, body.lp-v5 .mb-ghost { font-size: 14.5px !important; white-space: nowrap; }
 @media (max-width: 1100px) { body.lp-v5 .mb-actions { flex-wrap: wrap; } }
 @media (max-width: 580px) { body.lp-v5 .mb-actions { flex-wrap: wrap; } }
+body.lp-v5 .mb-hang { display: none !important; }
