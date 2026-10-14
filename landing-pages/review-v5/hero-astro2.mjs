@@ -30,7 +30,7 @@ export function astroHero3(p, { esc, wa }) {
   const lotus = '<svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M24 28c-4-4-6-9-6-14s2-9 6-12c4 3 6 7 6 12s-2 10-6 14Z"/><path d="M24 28c-6-1-12-5-14-12 5-1 10 1 13 5M24 28c6-1 12-5 14-12-5-1-10 1-13 5"/><path d="M23 28C14 28 6 24 3 19c5-1 10 0 14 3M25 28c9 0 17-4 20-9-5-1-10 0-14 3"/></svg>';
   const leaf = '<svg viewBox="0 0 120 160" aria-hidden="true"><path d="M60 158C58 120 40 96 22 70 8 50 14 18 40 8c26 10 40 40 34 72-4 24-12 44-14 78Z"/></svg>';
   return `<div class="ah3">
-    <div class="ah3-photo" aria-hidden="true"><img src="../_shared/hero/astro-hero.webp" alt="" width="875" height="731" fetchpriority="high"></div>
+    <div class="ah3-photo" aria-hidden="true"><img src="../_shared/hero/astro-hero.webp" alt="" width="875" height="731" fetchpriority="high"><img class="ah3-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000"></div>
     <p class="ah3-script" aria-hidden="true"><span>Same patterns,</span><span>different</span><span>possibilities</span></p>
     <ul class="ah3-topics" aria-label="Questions Narayani reads for">${topics.map((t, i) => `<li style="--i:${i}">${t}</li>`).join('')}</ul>
     <span class="ah3-leaf ah3-leaf-a" aria-hidden="true">${leaf}</span><span class="ah3-leaf ah3-leaf-b" aria-hidden="true">${leaf}</span>
@@ -74,7 +74,7 @@ export function astroOptions(p, { esc, wa }) {
         <p class="ao-lead">${esc(p.scopeIntro)}</p>
       </div>
       <p class="ao-script" aria-hidden="true"><span>Same patterns,</span><span>different possibilities</span></p>
-      <figure class="ao-photo" aria-hidden="true"><img class="ao-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy"><span class="ao-arch"><img src="../_shared/hero/meet-astrology.webp" alt="" width="720" height="875" loading="lazy"></span></figure>
+      <figure class="ao-photo" aria-hidden="true"><img class="ao-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy"><span class="ao-arch"><img src="../_shared/hero/hero-astrology.webp" alt="" width="720" height="856" loading="lazy"></span></figure>
     </div>
     <ul class="ao-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}"><span class="ao-ic">${icons[i]}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div><em class="ao-no" aria-hidden="true">0${i + 1}</em><a class="ao-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${arrow}</a></li>`).join('')}</ul>
     <div class="ao-foot">${wa('scope', 'WhatsApp enquiry', 'ao-cta').replace('</a>', `<i class="ao-arrow" aria-hidden="true">${arrow}</i></a>`)}<ul>${assure.map(([icn, t, d]) => `<li><span>${icn}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul></div>
