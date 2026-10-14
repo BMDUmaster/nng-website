@@ -293,3 +293,76 @@ body.lp-v5 .vh-kicker { align-items: flex-start; }
 body.lp-v5 .vh-kicker > span { margin-top: 2px; }
 body.lp-v5 .vh-kicker { flex-wrap: nowrap; }
 body.lp-v5 .vh-kick-t { display: grid; font-weight: inherit; }
+
+/* =============================================================================================================
+   Astrology hero, option 1 pass 3 (Oct 14), from the green-saree banner: her photograph bleeding in from the right,
+   the words and four cards on cream, leaves in the corners, and a cream band with a gold curve carrying the invitation,
+   three assurances and an action.
+   ============================================================================================================= */
+body.lp-v5 .ah4 { background: radial-gradient(40% 60% at 70% 30%, rgb(255 236 196 / 0.6), transparent 70%), linear-gradient(180deg, #FBF6EC, #F6EEDF); }
+body.lp-v5 .ah4-photo { left: 42%; right: 0; top: 0; bottom: 120px; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%); mask-image: linear-gradient(90deg, transparent 0%, #000 26%); }
+body.lp-v5 .ah4-photo img { object-position: 46% 16%; }
+body.lp-v5 .ah4-wheel { display: none; }
+body.lp-v5 .ah4-leaves { position: absolute; z-index: 1; left: -60px; top: 120px; width: 170px; fill: #5E7A52; opacity: 0.55; filter: blur(1.5px); transform: rotate(160deg); pointer-events: none; }
+body.lp-v5 .ah4-copy { padding-bottom: 28px; }
+body.lp-v5 .ah6-band { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.5fr) auto; align-items: center; gap: 26px; margin-top: auto; padding: 26px max(4vw, 24px) 24px; background: linear-gradient(180deg, rgb(251 246 236 / 0.92), #F8F1E3); }
+body.lp-v5 .ah6-curve { position: absolute; left: 0; right: 0; top: -22px; width: 100%; height: 40px; fill: none; stroke: #C9A25A; stroke-width: 1.4; }
+body.lp-v5 .ah6-invite { display: flex; align-items: center; gap: 16px; padding-right: 24px; border-right: 1px solid rgb(201 162 90 / 0.45); }
+body.lp-v5 .ah6-invite > span { display: grid; place-items: center; flex: none; width: 54px; color: #A27A33; }
+body.lp-v5 .ah6-invite > span svg { width: 46px; height: 46px; }
+body.lp-v5 .ah6-invite p { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #A27A33; }
+body.lp-v5 .ah6-invite h2 { margin: 4px 0 0; font-family: "Playfair Display", Georgia, serif !important; font-weight: 500; font-size: clamp(20px, 1.7vw, 28px) !important; line-height: 1.2 !important; color: #10261A; }
+body.lp-v5 .ah6-invite h2 em { font-style: italic; color: #A57A33; }
+body.lp-v5 .ah6-invite div > em { display: block; margin-top: 4px; font-style: normal; font-size: 12.5px; line-height: 1.45; color: #6A6A66; }
+body.lp-v5 .ah6-band ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+body.lp-v5 .ah6-band li { display: flex; align-items: center; gap: 12px; padding: 0 16px; }
+body.lp-v5 .ah6-band li + li { border-left: 1px solid rgb(201 162 90 / 0.45); }
+body.lp-v5 .ah6-band li span { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 50%; background: #F3E6CC; color: #8A6224; }
+body.lp-v5 .ah6-band li span svg { width: 26px; height: 26px; }
+body.lp-v5 .ah6-band strong { display: block; font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 16px; line-height: 1.2; color: #10261A; }
+body.lp-v5 .ah6-band li em { display: block; margin-top: 3px; font-style: normal; font-size: 12px; line-height: 1.35; color: #6A6A66; }
+body.lp-v5 a.ah6-cta { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 5px 22px 5px 26px; border-radius: 999px; background: linear-gradient(180deg, #23503D, #10291E); color: #FAF6F0; font-size: 16px; font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: 0 0 0 1px rgb(215 184 107 / 0.6), 0 16px 30px -16px rgb(20 45 30 / 0.8); }
+body.lp-v5 a.ah6-cta .wa-ic { display: none; }
+body.lp-v5 a.ah6-cta > i { display: block; width: 20px; } body.lp-v5 a.ah6-cta > i svg { display: block; width: 100%; }
+@media (max-width: 1500px) {
+  body.lp-v5 .ah4-photo { bottom: 112px; }
+  body.lp-v5 .ah6-band { gap: 18px; padding-block: 20px 18px; }
+  body.lp-v5 .ah6-invite > span { display: none; }
+  body.lp-v5 .ah6-band li { padding: 0 10px; gap: 8px; }
+  body.lp-v5 .ah6-band li span { width: 42px; height: 42px; } body.lp-v5 .ah6-band li span svg { width: 21px; height: 21px; }
+  body.lp-v5 .ah6-band strong { font-size: 14.5px; } body.lp-v5 .ah6-band li em { font-size: 11px; }
+  body.lp-v5 a.ah6-cta { min-height: 46px; font-size: 14.5px; }
+}
+@media (max-width: 1100px) {
+  body.lp-v5 .ah6-band { grid-template-columns: minmax(0, 1fr) auto; }
+  body.lp-v5 .ah6-band ul { grid-column: 1 / -1; grid-row: 2; }
+  body.lp-v5 .ah6-invite { border-right: 0; padding-right: 0; }
+}
+@media (max-width: 760px) {
+  body.lp-v5 .ah4-photo { left: auto; bottom: auto; height: min(110vw, 460px); }
+  body.lp-v5 .ah4-photo img { object-position: 40% 12%; }
+  body.lp-v5 .ah4-leaves { display: none; }
+  body.lp-v5 .ah6-band { grid-template-columns: minmax(0, 1fr); margin: 22px 20px 28px; padding: 20px 16px; border-radius: 20px; box-shadow: 0 0 0 1px rgb(201 162 90 / 0.45); }
+  body.lp-v5 .ah6-curve { display: none; }
+  body.lp-v5 .ah6-band ul { grid-template-columns: minmax(0, 1fr); gap: 12px; grid-row: auto; }
+  body.lp-v5 .ah6-band li { padding: 0 !important; border: 0 !important; }
+  body.lp-v5 a.ah6-cta { justify-self: start; }
+}
+/* Pass 3b: her whole figure (no heavy zoom), quiet leaves, a slimmer band on laptops. */
+@media (min-width: 761px) {
+  body.lp-v5 .ah4-photo img { position: absolute; top: 0; right: 0; width: auto !important; height: 118%; max-width: none; object-fit: contain; }
+  body.lp-v5 .ah4-photo { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(0deg, transparent 0%, #000 12%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(0deg, transparent 0%, #000 12%); mask-composite: intersect; }
+}
+body.lp-v5 .ah4-leaves { top: auto; bottom: 150px; left: -70px; }
+@media (max-width: 1500px) {
+  body.lp-v5 .ah4-leaves { display: none; }
+  body.lp-v5 .ah6-invite div > em { display: none; }
+  body.lp-v5 .ah6-band { padding-block: 16px 14px; }
+  body.lp-v5 .ah6-invite h2 { font-size: 20px !important; }
+  body.lp-v5 .ah4-copy { padding-bottom: 20px; }
+}
+@media (min-width: 761px) {
+  body.lp-v5 .ah4-photo { -webkit-mask-image: none !important; mask-image: none !important; }
+  body.lp-v5 .ah4-photo img { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%), linear-gradient(0deg, transparent 0%, #000 12%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 24%), linear-gradient(0deg, transparent 0%, #000 12%); mask-composite: intersect; }
+}
+@media (min-width: 1600px) { body.lp-v5 .ah4-photo img { height: 152%; right: -2%; } }

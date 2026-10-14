@@ -31,10 +31,10 @@ const head = (wa, ghost = 'ah4-ghost') => `
 
 export function astroHero4(p, { esc, wa }) {
   return `<section class="ah4" id="top" aria-labelledby="hero-title" data-hero-a>
-    <div class="ah4-photo" aria-hidden="true"><img src="../_shared/hero/astro-hero.webp" alt="" width="875" height="731" fetchpriority="high"></div>
-    <aside class="ah4-side" aria-label="What Narayani reads for"><ul>${side.map(([ic, t]) => `<li><span>${ic}</span>${t}</li>`).join('')}</ul><img class="ah4-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" aria-hidden="true"></aside>
+    <div class="ah4-photo" aria-hidden="true"><img src="../_shared/hero/ah6.webp" alt="" width="1000" height="1265" fetchpriority="high"></div>
+    <svg class="ah4-leaves" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <div class="ah4-copy">${head(wa)}</div>
-    <ul class="ah4-feats">${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul>
+    <div class="ah6-band"><svg class="ah6-curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C260 4 520 0 760 18s520 42 680 20"/></svg><div class="ah6-invite"><span aria-hidden="true">${I.chat}</span><div><p>Let’s discuss your question</p><h2>What decision would you like <em>to discuss today?</em></h2><em>Share your question. The team will explain the appropriate reading and appointment details.</em></div></div><ul>${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul>${wa('why', 'Get started', 'ah6-cta').replace('</a>', `<i aria-hidden="true">${I.arrow}</i></a>`)}</div>
   </section>
   <section class="ah5" aria-label="Astrology with Narayani" data-hero-b hidden>
     <figure class="ah5-photo" aria-hidden="true">${zodiacRing('ah5-ring')}<img src="../_shared/hero/hero-astrology.webp" alt="" width="720" height="856"></figure>
