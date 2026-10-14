@@ -34,6 +34,7 @@ export function numHero2(p, { esc, wa }) {
   const grid = [4, 9, 2, 3, 5, 7, 8, 1, 6];
   const tile = (n, cls) => `<span class="nh2-tile ${cls}" aria-hidden="true">${n}</span>`;
   return `<section class="nh2" id="top" aria-labelledby="hero-title">
+    <svg class="nh2-leaves nh2-leaves-r" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <svg class="nh2-leaves" viewBox="0 0 200 260" aria-hidden="true"><path d="M10 258C30 200 60 150 110 120" fill="none" stroke="#3F5E3A" stroke-width="2"/><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <div class="nh2-visual" aria-hidden="true">
       ${ring()}
@@ -53,4 +54,35 @@ export function numHero2(p, { esc, wa }) {
     </div>
     <ul class="nh2-feats">${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul>
   </section>`;
+}
+
+// Numerology "Meet your guide" (Oct 14), from the approved banner: her photograph in an arch with a turning arc of
+// numbers, leaves and a name card; the words, three fact cards, her quote and an action with three small assurances.
+export function numMeet(p, { esc, wa }) {
+  const people = s('<circle cx="12" cy="11" r="4"/><path d="M5 25a7 7 0 0 1 14 0"/><circle cx="22" cy="12" r="3.2"/><path d="M20 18a6 6 0 0 1 8 6"/>');
+  const book = s('<path d="M8 4h13l4 4v20H8z"/><path d="M12 12h9M12 16h9M12 20h6"/>');
+  const globe = s('<circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3.5 3.5 5 7 5 11s-1.5 7.5-5 11c-3.5-3.5-5-7-5-11s1.5-7.5 5-11Z"/>');
+  const cal = s('<rect x="6" y="8" width="20" height="18" rx="2"/><path d="M6 13h20M11 5v5M21 5v5"/>');
+  const facts = [[people, '<b data-count="10000">10,000</b>+', 'clients guided'], [book, 'Author', 'Change Your Mind, Transform Your Life'], [globe, 'Worldwide', 'Online, or in person by appointment']];
+  const small = [[I.shield, 'Confidential<br>&amp; secure'], [cal, 'Flexible<br>appointments'], [I.people, 'Personalised<br>guidance']];
+  const arc = [];
+  const nums = [8, 7, 3, 3, 7, 1, 2, 9];
+  for (let i = 0; i < 8; i++) { const a = (200 + i * 22) * Math.PI / 180; arc.push(`<text x="${(300 + 268 * Math.cos(a)).toFixed(1)}" y="${(300 + 268 * Math.sin(a)).toFixed(1)}">${nums[i]}</text>`); }
+  for (let i = 0; i < 40; i++) { const a = (190 + i * 4.6) * Math.PI / 180, r1 = i % 5 ? 286 : 280; arc.push(`<path d="M${(300 + r1 * Math.cos(a)).toFixed(1)} ${(300 + r1 * Math.sin(a)).toFixed(1)}L${(300 + 292 * Math.cos(a)).toFixed(1)} ${(300 + 292 * Math.sin(a)).toFixed(1)}"/>`); }
+  return `<section class="nm" aria-labelledby="meet-title"><div class="nm-inner">
+    <figure class="nm-photo">
+      <svg class="nm-arc" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="300" cy="300" r="292" stroke-width="1.2"/><circle cx="300" cy="300" r="250" stroke-width=".7" stroke-dasharray="2 6"/>${arc.join('')}</svg>
+      <span class="nm-arch"><img src="../_shared/hero/meet-numerology.webp" alt="Narayani Garg in a sea-green sequinned saree before a white Buddha relief" width="720" height="719" loading="lazy"></span>
+      <i class="nh2-spark nm-s1">${I.star}</i><i class="nh2-spark nm-s2">${I.star}</i>
+      <figcaption><span aria-hidden="true">${I.lotus}</span><div>Narayani Garg<small>Psychic Spiritual Mentor</small></div></figcaption>
+    </figure>
+    <div class="nm-copy">
+      <p class="nh2-kicker nm-kicker"><span aria-hidden="true">${I.star}</span>Meet your guide</p>
+      <h2 id="meet-title">She reads the numbers.<br><em>And the reason behind them.</em></h2>
+      <p class="nm-lead">Narayani begins with why you are asking: a new name, a business shortlist or a change you are weighing. She explains the traditional interpretation in plain words, and the decision to change anything stays with you.</p>
+      <ul class="nm-facts">${facts.map(([ic, t, d]) => `<li><span>${ic}</span><strong>${t}</strong><em>${d}</em></li>`).join('')}</ul>
+      <blockquote class="nm-quote"><span aria-hidden="true">“</span><div><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>Narayani Garg</cite></div><i aria-hidden="true">${I.lotus}</i></blockquote>
+      <div class="nm-foot">${wa('meet', 'Talk to Narayani’s team', 'nh2-cta nm-cta').replace('</a>', `<i class="nh2-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<ul>${small.map(([ic, t]) => `<li><span>${ic}</span>${t}</li>`).join('')}</ul></div>
+    </div>
+  </div></section>`;
 }
