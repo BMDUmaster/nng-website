@@ -68,6 +68,9 @@
     document.querySelector('[data-cv5-next]')?.addEventListener('click', () => { cur = Math.min(cards.length - 1, (cvList.scrollWidth > cvList.clientWidth ? at() : cur) + 1); go(cur); });
   }
 
+  // Astrology options: "See more" opens a card's description on phones.
+  document.querySelectorAll('.ao-more').forEach((b) => b.addEventListener('click', () => { const li = b.closest('li'); const open = li.classList.toggle('is-open'); b.setAttribute('aria-expanded', String(open)); b.textContent = open ? 'See less' : 'See more'; }));
+
   // Brainology approach loop: light one link at a time while in view.
   const loop = document.querySelector('.a6-chain ol, .ap-chain ol');
   if (loop && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

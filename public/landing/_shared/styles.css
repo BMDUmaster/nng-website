@@ -5217,6 +5217,85 @@ body.lp-v5 .ah3-wheel { right: -190px; top: -200px; width: 460px; opacity: 0.4; 
 @media (max-width: 700px) { body.lp-v5 .ao-grid p { display: block; -webkit-line-clamp: unset; overflow: visible; } }
 body.lp-v5 .ah3-photo img.ah3-wheel { inset: auto; right: -190px; top: -200px; width: 460px; height: 460px; object-fit: contain; animation-name: as-spin; }
 @media (max-width: 900px) { body.lp-v5 .ah3-photo img.ah3-wheel { right: -140px; top: -140px; width: 290px; height: 290px; } }
+
+/* =============================================================================================================
+   Oct 14 d: the question section's photograph in a gold ring with two slow orbits and twinkling stars (no wheel);
+   a twinkling constellation in the meet card (no wheel); the consultation options on phones from the approved
+   reference, with "See more" on each description.
+   ============================================================================================================= */
+@keyframes as-twinkle { 0%, 100% { opacity: 0.25; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes as-draw { to { stroke-dashoffset: 0; } }
+
+/* ---- Question: photograph in a ring with orbits. ---- */
+body.lp-v5 .aq-top { align-items: center; }
+body.lp-v5 .aq-photo { position: relative; width: 300px; height: 300px; margin: 0 20px 0 auto; }
+body.lp-v5 .aq-ring { position: absolute; inset: 22px; overflow: hidden; border-radius: 50%; box-shadow: 0 0 0 4px #FFFCF6, 0 0 0 5px #C9A25A, 0 30px 50px -26px rgb(60 50 30 / 0.55); }
+body.lp-v5 .aq-ring img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(0.92); }
+body.lp-v5 .aq-orbit { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed rgb(181 138 62 / 0.55); }
+body.lp-v5 .aq-orbit-2 { inset: -18px; border: 1px solid rgb(120 150 110 / 0.35); }
+body.lp-v5 .aq-orbit b { position: absolute; left: 50%; top: -5px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #F6E3B4, #C9A25A); box-shadow: 0 0 10px rgb(215 184 107 / 0.9); }
+body.lp-v5 .aq-orbit-2 b { width: 7px; height: 7px; margin-left: -3.5px; top: -4px; background: #6F8C68; box-shadow: 0 0 8px rgb(111 140 104 / 0.8); }
+body.lp-v5 .aq-stars i { position: absolute; left: var(--x); top: var(--y); width: 10px; height: 10px; background: #C9A25A; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+body.lp-v5 .aq-cards { margin-top: 30px; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .aq-orbit { animation: as-spin 22s linear infinite; }
+  body.lp-v5 .aq-orbit-2 { animation-duration: 34s; animation-direction: reverse; }
+  body.lp-v5 .aq-stars i { animation: as-twinkle 3.2s ease-in-out infinite; animation-delay: var(--d); }
+}
+@media (max-width: 1060px) { body.lp-v5 .aq-photo { width: 250px; height: 250px; } }
+@media (max-width: 640px) {
+  body.lp-v5 .aq-top { grid-template-columns: minmax(0, 1fr) 118px; }
+  body.lp-v5 .aq-photo { width: 118px; height: 118px; margin: 0 6px 0 0; }
+  body.lp-v5 .aq-ring { inset: 10px; box-shadow: 0 0 0 3px #FFFCF6, 0 0 0 4px #C9A25A; }
+  body.lp-v5 .aq-orbit-2 { inset: -8px; }
+  body.lp-v5 .aq-stars i { width: 7px; height: 7px; }
+}
+
+/* ---- Meet: a constellation that draws itself and twinkles. ---- */
+body.lp-v5 .am-stars { position: absolute; right: 18px; top: 16px; width: 230px; height: auto; pointer-events: none; }
+body.lp-v5 .am-stars path { fill: none; stroke: rgb(181 138 62 / 0.45); stroke-width: 0.8; stroke-dasharray: 1; stroke-dashoffset: 0; }
+body.lp-v5 .am-stars circle { fill: #C9A25A; transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .am-stars path { stroke-dashoffset: 1; }
+  body.lp-v5 .am.is-on .am-stars path { animation: as-draw 1s ease forwards; animation-delay: calc(0.6s + var(--d)); }
+  body.lp-v5 .am-stars circle { animation: as-twinkle 3.4s ease-in-out infinite; animation-delay: var(--d); }
+}
+@media (max-width: 640px) { body.lp-v5 .am-stars { width: 150px; right: 8px; top: 10px; opacity: 0.8; } }
+
+/* ---- Options: "See more" only on phones. ---- */
+body.lp-v5 .ao-more { display: none; }
+@media (max-width: 700px) {
+  body.lp-v5 .ao-inner { padding-top: 30px; }
+  body.lp-v5 .ao-top { grid-template-columns: minmax(0, 1fr) 46%; gap: 6px; align-items: end; }
+  body.lp-v5 .ao h2 { font-size: 27px !important; }
+  body.lp-v5 .ao h2 em { display: inline; }
+  body.lp-v5 .ao-copy::after { content: ""; display: block; width: 44px; height: 2px; margin-top: 12px; background: #C9A25A; }
+  body.lp-v5 .ao-photo { width: auto; height: 210px; margin: 0 -20px 0 0; }
+  body.lp-v5 .ao-arch { left: 0; right: 0; border-radius: 120px 0 0 0; box-shadow: -1px -1px 0 0 rgb(201 162 90 / 0.9), -6px -6px 0 0 rgb(255 252 246 / 0.7); }
+  body.lp-v5 .ao-arch img { object-position: 45% 10%; }
+  body.lp-v5 .ao-wheel { width: 260px; height: 260px; left: -120px; right: auto; top: -60px; opacity: 0.4 !important; }
+  body.lp-v5 .ao-grid { margin-top: 16px; gap: 10px; }
+  body.lp-v5 .ao-grid li { padding: 14px 12px 14px; gap: 8px; border-radius: 18px; background: linear-gradient(180deg, #FFFEFA, #FBF5EA); }
+  body.lp-v5 .ao-ic { width: 46px; height: 46px; background: radial-gradient(circle at 40% 35%, #2B4A36, #16301F); color: #F1DDA6; box-shadow: 0 0 0 2px #FFFCF6, 0 0 0 3px #C9A25A, 0 8px 16px -8px rgb(20 45 30 / 0.6); }
+  body.lp-v5 .ao-ic svg { width: 22px; height: 22px; }
+  body.lp-v5 .ao-no { top: 14px; right: 12px; font-size: 24px; color: rgb(201 162 90 / 0.75); }
+  body.lp-v5 .ao-grid h3 { display: block; margin-top: 4px; padding-bottom: 8px; font-size: 16px; }
+  body.lp-v5 .ao-grid h3::after { display: block; width: 24px; }
+  body.lp-v5 .ao-grid p { display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical; overflow: hidden !important; margin-top: 8px; font-size: 12px; line-height: 1.45; }
+  body.lp-v5 .ao-grid li.is-open p { display: block !important; -webkit-line-clamp: unset !important; overflow: visible !important; }
+  body.lp-v5 .ao-more { display: inline-block; margin: 4px 0 0; padding: 0; border: 0; background: none; color: #9A7434; font-size: 11.5px; font-weight: 700; letter-spacing: 0.02em; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  body.lp-v5 .ao-go { position: static; margin-top: 10px; width: 32px; height: 32px; }
+  body.lp-v5 .ao-grid li > div { display: flex; flex-direction: column; align-items: flex-start; }
+  body.lp-v5 .ao-grid li { display: flex; }
+}
+body.lp-v5 .aq-photo > span.aq-orbit { inset: 0; overflow: visible; border-radius: 50%; box-shadow: none; }
+body.lp-v5 .aq-photo > span.aq-orbit-2 { inset: -18px; }
+body.lp-v5 .aq-photo > span.aq-ring { inset: 22px; border-radius: 50%; box-shadow: 0 0 0 4px #FFFCF6, 0 0 0 5px #C9A25A, 0 30px 50px -26px rgb(60 50 30 / 0.55); }
+body.lp-v5 .aq-photo > span.aq-stars { inset: 0; overflow: visible; border-radius: 0; box-shadow: none; }
+@media (max-width: 640px) {
+  body.lp-v5 .aq-photo > span.aq-ring { inset: 10px; box-shadow: 0 0 0 3px #FFFCF6, 0 0 0 4px #C9A25A; }
+  body.lp-v5 .aq-photo > span.aq-orbit-2 { inset: -8px; }
+}
 /* =============================================================================================================
    Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
    gold on dark ones; label first, a small WhatsApp disc at the end.

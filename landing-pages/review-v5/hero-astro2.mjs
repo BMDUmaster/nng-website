@@ -76,7 +76,7 @@ export function astroOptions(p, { esc, wa }) {
       <p class="ao-script" aria-hidden="true"><span>Same patterns,</span><span>different possibilities</span></p>
       <figure class="ao-photo" aria-hidden="true"><img class="ao-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy"><span class="ao-arch"><img src="../_shared/hero/hero-astrology.webp" alt="" width="720" height="856" loading="lazy"></span></figure>
     </div>
-    <ul class="ao-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}"><span class="ao-ic">${icons[i]}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div><em class="ao-no" aria-hidden="true">0${i + 1}</em><a class="ao-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${arrow}</a></li>`).join('')}</ul>
+    <ul class="ao-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}"><span class="ao-ic">${icons[i]}</span><div><h3>${esc(t)}</h3><p id="ao-d${i}">${esc(d)}</p><button class="ao-more" type="button" aria-expanded="false" aria-controls="ao-d${i}">See more</button></div><em class="ao-no" aria-hidden="true">0${i + 1}</em><a class="ao-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${arrow}</a></li>`).join('')}</ul>
     <div class="ao-foot">${wa('scope', 'WhatsApp enquiry', 'ao-cta').replace('</a>', `<i class="ao-arrow" aria-hidden="true">${arrow}</i></a>`)}<ul>${assure.map(([icn, t, d]) => `<li><span>${icn}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul></div>
   </div></section>`;
 }
