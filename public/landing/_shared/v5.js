@@ -69,7 +69,7 @@
   }
 
   // Astrology options: "See more" opens a card's description on phones.
-  document.querySelectorAll('.ao-more').forEach((b) => b.addEventListener('click', () => { const li = b.closest('li'); const open = li.classList.toggle('is-open'); b.setAttribute('aria-expanded', String(open)); b.textContent = open ? 'See less' : 'See more'; }));
+  document.querySelectorAll('.ao-more, .no-more').forEach((b) => b.addEventListener('click', () => { const li = b.closest('li'); const open = li.classList.toggle('is-open'); b.setAttribute('aria-expanded', String(open)); b.textContent = open ? 'See less' : 'See more'; }));
 
   // Brainology approach loop: light one link at a time while in view.
   const loop = document.querySelector('.a6-chain ol, .ap-chain ol');
@@ -155,7 +155,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4, .ao, .am, .aq, .ap, .aw, .nm').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
+  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4, .ao, .am, .aq, .ap, .aw, .nm, .nq, .no, .v5-num').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');

@@ -37,8 +37,9 @@ export function numHero2(p, { esc, wa }) {
     <svg class="nh2-leaves nh2-leaves-r" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <svg class="nh2-leaves" viewBox="0 0 200 260" aria-hidden="true"><path d="M10 258C30 200 60 150 110 120" fill="none" stroke="#3F5E3A" stroke-width="2"/><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <div class="nh2-visual" aria-hidden="true">
-      ${ring()}
       <div class="nh2-photo"><img src="../_shared/hero/num-hero.webp" alt="" width="1100" height="966" fetchpriority="high"></div>
+      ${ring()}
+      <div class="nh2-photo nh2-cut"><img src="../_shared/hero/num-hero-cut.webp" alt="" width="1100" height="966"></div>
       ${tile(3, 'nh2-t1')}${tile(7, 'nh2-t2')}${tile(6, 'nh2-t3')}${tile(7, 'nh2-t4')}
       <i class="nh2-spark nh2-s1">${I.star}</i><i class="nh2-spark nh2-s2">${I.star}</i><i class="nh2-spark nh2-s3">${I.star}</i>
       <div class="nh2-grid">${grid.map((n) => `<span${n === 5 ? ' class="is-mid"' : ''}>${n}</span>`).join('')}</div>
