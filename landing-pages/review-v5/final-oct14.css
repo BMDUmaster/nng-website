@@ -257,3 +257,22 @@ body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan > svg { display: block;
   body.lp-v5 .vq-rose { top: auto; bottom: auto; display: none; }
 }
 @media (max-width: 760px) { body.lp-v5 .vq .vh-kicker { font-size: 11px; letter-spacing: 0.22em; } }
+
+/* Astrology hero option 1, pass 2: no green column; photograph to the right edge; the assurances bar sits below the
+   words (never over the cards); a faint turning zodiac ring in the photograph's top-right corner. */
+body.lp-v5 .ah4 { height: auto !important; min-height: 0 !important; max-height: none !important; display: flex; flex-direction: column; }
+body.lp-v5 .ah4-side ul { display: none; }
+body.lp-v5 .ah4-side { position: absolute; top: 0; right: 0; bottom: auto; width: 0; height: 0; overflow: visible; background: none; box-shadow: none; border-radius: 0; }
+body.lp-v5 .ah4-wheel { position: absolute; right: -130px !important; top: -110px; bottom: auto !important; width: 340px !important; height: 340px !important; opacity: 0.55; filter: none; z-index: 1; }
+body.lp-v5 .ah4-photo { right: 0; bottom: 104px; left: 46%; }
+body.lp-v5 .ah4-photo img { object-position: 28% 14%; }
+body.lp-v5 .ah4-copy { padding-bottom: 34px; }
+body.lp-v5 .ah4-feats { position: relative; right: auto; left: auto; bottom: auto; border-radius: 0; margin-top: auto; }
+@media (max-width: 1500px) { body.lp-v5 .ah4-feats { right: auto; } body.lp-v5 .ah4-photo { right: 0; bottom: 84px; } body.lp-v5 .ah4-wheel { width: 260px !important; height: 260px !important; right: -100px !important; top: -90px; } }
+@media (max-width: 1100px) { body.lp-v5 .ah4-copy { padding-bottom: 30px; } }
+@media (max-width: 760px) {
+  body.lp-v5 .ah4-photo { bottom: auto; left: auto; }
+  body.lp-v5 .ah4-wheel { width: 180px !important; height: 180px !important; right: -70px !important; top: -60px; }
+  body.lp-v5 .ah4-feats { margin-top: 22px; }
+}
+@media (max-width: 760px) { body.lp-v5 .ah4-feats { border-radius: 20px !important; background: rgb(255 253 248 / 0.9); } }
