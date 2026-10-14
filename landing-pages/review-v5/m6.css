@@ -62,3 +62,5 @@ body.lp-v5 .cv5-arrows { right: 0; }
 }
 @media (max-width: 1100px) { body.lp-v5 .cv5-act p { text-align: left; } }
 @media (min-width: 1101px) and (max-width: 1500px) { body.lp-v5 .cv5-head { grid-template-columns: minmax(0, 1fr) auto; } body.lp-v5 .cv5-act { grid-auto-flow: row; justify-items: end; text-align: right; } body.lp-v5 .cv5-film { height: 200px !important; } body.lp-v5 .cv5-main { width: min(1120px, calc(100% - 64px)); } }
+body.lp-v5 .cv5-summary { flex: 1; margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4E524F; }
+@media (max-width: 640px) { body.lp-v5 .cv5-summary { margin-top: 6px; font-size: 13.5px; } }

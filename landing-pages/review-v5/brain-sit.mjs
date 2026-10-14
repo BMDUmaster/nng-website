@@ -30,7 +30,7 @@ export function brainVoices(p, { esc, wa, voices, assets, clips }) {
       </div>
       <div class="cv5-list" data-cv5>${p.proof.map((key, i) => { const v = voices[key]; const clip = `data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}"`; return `<article class="cv5-card" style="--i:${i}">
         <button class="cv5-film" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv5-play" aria-hidden="true">${I.play}</span>${v.duration ? `<span class="cv5-time">${esc(v.duration)}</span>` : ''}</button>
-        <div class="cv5-words"><span class="cv5-mark" aria-hidden="true">“</span><div><p class="cv5-topic">${esc(v.title)}</p><blockquote>“${esc(v.quote || v.summary)}”</blockquote>
+        <div class="cv5-words"><span class="cv5-mark" aria-hidden="true">${v.quote ? '“' : ''}</span><div><p class="cv5-topic">${esc(v.title)}</p>${v.quote ? `<blockquote>“${esc(v.quote)}”</blockquote>` : `<p class="cv5-summary">${esc(v.summary)}</p>`}
         <div class="cv5-who"><p><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p><button class="cv5-go" type="button" ${clip} aria-label="Watch ${esc(v.name)}’s film">${I.arrow}</button></div></div></div>
       </article>`; }).join('')}</div>
       <div class="cv5-nav"><div class="cv5-dots" aria-hidden="true">${p.proof.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div><div class="cv5-arrows"><button type="button" data-cv5-prev aria-label="Previous story">${chev('m15 6-6 6 6 6')}</button><button type="button" data-cv5-next aria-label="Next story">${chev('m9 6 6 6-6 6')}</button></div></div>
