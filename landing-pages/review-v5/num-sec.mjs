@@ -64,3 +64,41 @@ export function numOptions(p, { esc, wa }) {
     </figure>
   </div></section>`;
 }
+
+// Numerology "Why her approach matters" (Oct 14), from the approved banner: words, two cards and three promises; her
+// photograph in a gold-lined arch on a deep green panel with a sun motif and a turning number dial; a green invitation.
+export function numWhy(p, { esc, wa }) {
+  const person = s('<circle cx="14" cy="10" r="4.5"/><path d="M5 26a9 9 0 0 1 14-7.5M22 14l2 2 4-4"/>');
+  const head = s('<path d="M20 27v-4h3a2 2 0 0 0 2-2v-4l2-1-2-4a10 10 0 1 0-15 9v6"/><path d="M15 12a2.5 2.5 0 1 1 3 2.4V16M17.5 19v.5"/>');
+  const shield = s('<path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/>');
+  const cart = s('<path d="M4 6h3l3 13h12l3-9H9"/><circle cx="12" cy="25" r="1.6"/><circle cx="21" cy="25" r="1.6"/>');
+  const bulb = s('<path d="M12 22h8M13 26h6M16 4a8 8 0 0 0-5 14.2c.8.7 1 1.6 1 2.8h8c0-1.2.2-2.1 1-2.8A8 8 0 0 0 16 4Z"/>');
+  const cards = [[person, 'The person matters.', 'Explore your beliefs and responses alongside the reading.'], [head, 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
+  const promises = [[shield, 'No fear-based <br>predictions'], [cart, 'No pressure to <br>buy a remedy'], [bulb, 'The reasoning explained, <br>the choice yours']];
+  const [c1, c2] = p.closeTitle.split('\n');
+  const w2 = c2.split(' '); const tail = w2.splice(-4).join(' ');
+  const sun = '<svg class="nw-sun" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="50" cy="50" r="14" fill="currentColor" fill-opacity=".9"/><circle cx="50" cy="50" r="20"/>' + Array.from({ length: 16 }, (_, i) => { const a = i * 22.5 * Math.PI / 180, r1 = 24, r2 = i % 2 ? 36 : 46; return `<path d="M${(50 + r1 * Math.cos(a)).toFixed(1)} ${(50 + r1 * Math.sin(a)).toFixed(1)}L${(50 + r2 * Math.cos(a)).toFixed(1)} ${(50 + r2 * Math.sin(a)).toFixed(1)}"/>`; }).join('') + '</svg>';
+  return `<section class="nw" aria-labelledby="why-title">
+    ${leaf('nw-leaf-l')}${leaf('nw-leaf-r')}
+    <div class="nw-inner">
+      <div class="nw-copy">
+        <p class="nh2-kicker"><span aria-hidden="true">${star}</span>Why her approach matters</p>
+        <h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2>
+        <p class="nw-lead">Explore your beliefs, questions and choices with Narayani. Every reading is a safe, supportive conversation: no fear, no pressure, only clarity.</p>
+        <div class="nw-cards">${cards.map(([icn, t, d]) => `<article><span class="nw-ic" aria-hidden="true">${icn}<i>${lotus}</i></span><div><h3>${t}</h3><p>${d}</p></div><a class="nw-go" href="#enquire" aria-label="Enquire">${arrow}</a></article>`).join('')}</div>
+        <ul class="nw-promise">${promises.map(([icn, t]) => `<li><span aria-hidden="true">${icn}</span>${t}</li>`).join('')}</ul>
+      </div>
+      <figure class="nw-photo">
+        <span class="nw-panel" aria-hidden="true">${sun}<span class="nh2-spark nw-s1">${star}</span><span class="nh2-spark nw-s2">${star}</span></span>
+        ${dial('nw-dial', [3, 6, 9, 2, 5, 8, 1, 4, 7])}
+        <span class="nw-arch"><img src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg beside a white Buddha relief" width="720" height="923" loading="lazy"></span>
+        <figcaption><span aria-hidden="true">${lotus}</span><div>Narayani Garg<small>Psychic Spiritual Mentor</small></div></figcaption>
+      </figure>
+    </div>
+    <div class="nw-band">
+      <span class="nw-band-lotus" aria-hidden="true">${lotus}</span>
+      <div><p class="nw-band-kicker"><span aria-hidden="true">${star}</span>Begin with the NNG team</p><h3>${esc(c1)} ${esc(w2.join(' '))} <em>${esc(tail)}</em></h3><p>${esc(p.closeCopy)}</p></div>
+      ${wa('why', 'Get started', 'nw-cta').replace('</a>', `<i aria-hidden="true">${arrow}</i></a>`)}
+    </div>
+  </section>`;
+}
