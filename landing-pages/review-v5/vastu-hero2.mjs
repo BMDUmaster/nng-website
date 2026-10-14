@@ -69,3 +69,38 @@ export function vastuScope(p, { esc, wa }) {
     <figure class="vs-photo" aria-hidden="true">${rose().replace('class="vh-rose"', 'class="vh-rose vs-rose"')}<img src="../_shared/hero/vs-photo.webp" alt="" width="700" height="1200" loading="lazy"></figure>
   </div></section>`;
 }
+
+// Vastulogy "The question you bring" (Oct 14), from the approved banner: the words and three drawn cards on the left,
+// her photograph with a turning compass rose on the right, and a deep green invitation band along the bottom.
+export function vastuQuestion(p, { esc, wa, scenarioArt }) {
+  const [a, b] = p.situationTitle.split('\n');
+  const bw = b.split(' '); const tail = bw.splice(-2).join(' ');
+  const doc = s('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 16h8M13 20h8M13 24h5"/>');
+  const chat = s('<path d="M6 7h20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>');
+  const cal = s('<rect x="6" y="8" width="20" height="18" rx="2"/><path d="M6 13h20M11 5v5M21 5v5"/>');
+  const feats = [[doc, 'Personalised guidance', 'Based on your space and question'], [chat, 'Practical next steps', 'For real-life decisions'], [cal, 'Online or in person', 'By appointment']];
+  const [c1, c2] = p.closeTitle.split('\n');
+  return `<section class="vq" aria-labelledby="situation-title">
+    <figure class="vq-photo" aria-hidden="true"><img src="../_shared/hero/cv-narayani.webp" alt="" width="800" height="1198" loading="lazy"></figure>
+    <div class="vq-inner">
+      <div class="vq-copy">
+        <p class="vh-kicker"><span aria-hidden="true">${I.star}</span>The question you bring</p>
+        <h2 id="situation-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em></h2>
+        <p class="vq-lead">${esc(p.situationIntro)}</p>
+      </div>
+      ${rose().replace('class="vh-rose"', 'class="vh-rose vq-rose"')}
+      <div class="vq-cards">${p.situations.map(([t, d], i) => `<article style="--i:${i}">
+        <em class="vq-no" aria-hidden="true">0${i + 1}</em>
+        <div class="vq-art" aria-hidden="true"><span class="vq-moon"></span>${scenarioArt(p, i)}</div>
+        <h3>${esc(t)}</h3><p>${esc(d)}</p>
+        <div class="vq-foot"><i aria-hidden="true"></i>${wa('situation', 'Start with this', 'vq-go').replace('</a>', `<b aria-hidden="true">${I.arrow}</b></a>`)}</div>
+      </article>`).join('')}</div>
+      <div class="vq-dots" aria-hidden="true">${p.situations.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div>
+    </div>
+    <div class="vq-band">
+      <div class="vq-invite"><span aria-hidden="true">${I.lotus}</span><div><p>Let’s discuss your space</p><h3>${esc(c1)} <em>${esc(c2)}</em></h3></div></div>
+      <ul>${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul>
+      ${wa('why', 'Get started', 'vq-cta').replace('</a>', `<b aria-hidden="true">${I.arrow}</b></a>`)}
+    </div>
+  </section>`;
+}

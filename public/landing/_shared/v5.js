@@ -78,6 +78,12 @@
     nqList.addEventListener('scroll', () => { const k = Math.round(nqList.scrollLeft / Math.max(1, nqList.scrollWidth - nqList.clientWidth) * (nqDots.length - 1)); nqDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); }, { passive: true });
   }
 
+  // Astrology hero option 2 for review (?hero=2).
+  if (/[?&]hero=2/.test(location.search)) { const ha = document.querySelector('[data-hero-a]'), hb = document.querySelector('[data-hero-b]'); if (ha && hb) { ha.hidden = true; hb.hidden = false; hb.id = 'top'; } }
+  // Vastulogy question cards: dots follow the swipe on phones.
+  const vqList = document.querySelector('.vq-cards');
+  if (vqList) { const vqDots = [...document.querySelectorAll('.vq-dots i')]; vqList.addEventListener('scroll', () => { const k = Math.round(vqList.scrollLeft / Math.max(1, vqList.scrollWidth - vqList.clientWidth) * (vqDots.length - 1)); vqDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); }, { passive: true }); }
+
   // Brainology approach loop: light one link at a time while in view.
   const loop = document.querySelector('.a6-chain ol, .ap-chain ol');
   if (loop && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -162,7 +168,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4, .ao, .am, .aq, .ap, .aw, .nm, .nq, .no, .v5-num, .nw, .vs').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
+  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4, .ao, .am, .aq, .ap, .aw, .nm, .nq, .no, .v5-num, .nw, .vs, .vq').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
