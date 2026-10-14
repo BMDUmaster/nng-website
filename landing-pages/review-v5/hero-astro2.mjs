@@ -47,3 +47,36 @@ export function astroHero3(p, { esc, wa }) {
     <div class="ah3-band" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 60C300 10 620 0 900 30s420 60 540 30V120H0Z" fill="#1E3A2A"/><path d="M0 60C300 10 620 0 900 30s420 60 540 30" fill="none" stroke="#D2AE6E" stroke-width="1.6"/></svg><p><i></i><span>${lotus}</span><i></i></p><p class="ah3-band-text">A clearer mind · A calmer you</p></div>
   </div>`;
 }
+
+// Astrology "Your consultation options" (Oct 14), from the approved reference: the words beside her photograph in a
+// gold-lined arch with a faint zodiac wheel, six option cards, then an action and three assurances.
+export function astroOptions(p, { esc, wa }) {
+  const s = (d) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+  const icons = [
+    s('<rect x="5" y="10" width="22" height="15" rx="2.5"/><path d="M12 10V7.5A1.5 1.5 0 0 1 13.5 6h5A1.5 1.5 0 0 1 20 7.5V10M5 16h22M14 16v2h4v-2"/>'),
+    s('<circle cx="11" cy="9" r="4"/><circle cx="21" cy="9" r="4"/><path d="M4 25a7 7 0 0 1 10-6M28 25a7 7 0 0 0-10-6"/><path d="M16 27s-4-2.4-4-5a2 2 0 0 1 4-.6 2 2 0 0 1 4 .6c0 2.6-4 5-4 5Z"/>'),
+    s('<path d="M5 15 16 6l11 9"/><path d="M8 13v13h16V13"/><path d="M13 26v-7h6v7"/>'),
+    s('<path d="M3 12 16 6l13 6-13 6Z"/><path d="M9 15v6c2 2 4.5 3 7 3s5-1 7-3v-6M29 12v7"/>'),
+    s('<rect x="6" y="6" width="20" height="20"/><path d="M6 6l20 20M26 6 6 26M16 6 6 16l10 10 10-10Z"/>'),
+    s('<circle cx="16" cy="17" r="9"/><path d="M16 12v5l3 2M13 4h6M16 4v4"/>'),
+  ];
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  const shield = s('<path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/>');
+  const people = s('<circle cx="16" cy="10" r="3.5"/><circle cx="8" cy="12" r="2.8"/><circle cx="24" cy="12" r="2.8"/><path d="M10 25a6 6 0 0 1 12 0M3 24a5 5 0 0 1 7-4.6M29 24a5 5 0 0 0-7-4.6"/>');
+  const assure = [[ic.lotus, 'Personal guidance', 'Based on your chart'], [shield, 'Practical insights', 'For real-life decisions'], [people, 'One-to-one consultation', 'Online or in person']];
+  const [a, b] = p.scopeTitle.split('\n');
+  const bw = b.split(' '); const tail = bw.splice(-2).join(' ');
+  return `<section class="ao" id="ways" aria-labelledby="ways-title"><div class="ao-inner">
+    <div class="ao-top">
+      <div class="ao-copy">
+        <p class="ao-kicker"><span aria-hidden="true">✦</span>Your consultation options</p>
+        <h2 id="ways-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em></h2>
+        <p class="ao-lead">${esc(p.scopeIntro)}</p>
+      </div>
+      <p class="ao-script" aria-hidden="true"><span>Same patterns,</span><span>different possibilities</span></p>
+      <figure class="ao-photo" aria-hidden="true"><img class="ao-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy"><span class="ao-arch"><img src="../_shared/hero/meet-astrology.webp" alt="" width="720" height="875" loading="lazy"></span></figure>
+    </div>
+    <ul class="ao-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}"><span class="ao-ic">${icons[i]}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div><em class="ao-no" aria-hidden="true">0${i + 1}</em><a class="ao-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${arrow}</a></li>`).join('')}</ul>
+    <div class="ao-foot">${wa('scope', 'WhatsApp enquiry', 'ao-cta').replace('</a>', `<i class="ao-arrow" aria-hidden="true">${arrow}</i></a>`)}<ul>${assure.map(([icn, t, d]) => `<li><span>${icn}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul></div>
+  </div></section>`;
+}
