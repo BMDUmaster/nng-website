@@ -113,22 +113,22 @@ body.lp-v5 .aw ~ .en2 .en2-head { display: none; }
 }
 
 /* ---- Tighter sections across the page ---- */
-body.lp-v5[data-page="astrology"] .am-inner { padding-block: 42px; }
-body.lp-v5[data-page="astrology"] .am-arch { height: 470px; }
-body.lp-v5[data-page="astrology"] .cv5-main { padding-block: 42px 30px !important; }
-body.lp-v5[data-page="astrology"] .cv5-film { height: 200px !important; }
-body.lp-v5[data-page="astrology"] .ap-inner { padding-block: 42px 32px; }
-body.lp-v5[data-page="astrology"] .ap-steps { margin-top: 24px; }
-body.lp-v5[data-page="astrology"] .ao-inner { padding-block: 42px 36px; }
-body.lp-v5[data-page="astrology"] .ao-grid li { min-height: 132px; }
-body.lp-v5[data-page="astrology"] .en2 > .section { padding-block: 44px !important; }
-body.lp-v5[data-page="astrology"] .fq2 > .section { padding-block: 44px !important; }
-body.lp-v5[data-page="astrology"] .bk2-band .bk-inner { padding-block: 40px !important; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .am-inner { padding-block: 42px; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .am-arch { height: 470px; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-main { padding-block: 42px 30px !important; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-film { height: 200px !important; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ap-inner { padding-block: 42px 32px; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ap-steps { margin-top: 24px; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ao-inner { padding-block: 42px 36px; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ao-grid li { min-height: 132px; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 > .section { padding-block: 44px !important; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2 > .section { padding-block: 44px !important; }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .bk2-band .bk-inner { padding-block: 40px !important; }
 @media (max-width: 640px) {
-  body.lp-v5[data-page="astrology"] .am-arch { height: 300px; }
-  body.lp-v5[data-page="astrology"] :is(.am-inner, .ap-inner, .ao-inner) { padding-block: 30px; }
-  body.lp-v5[data-page="astrology"] .cv5-main { padding-block: 30px 24px !important; }
-  body.lp-v5[data-page="astrology"] :is(.en2, .fq2) > .section { padding-block: 32px !important; }
+  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .am-arch { height: 300px; }
+  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.am-inner, .ap-inner, .ao-inner) { padding-block: 30px; }
+  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-main { padding-block: 30px 24px !important; }
+  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.en2, .fq2) > .section { padding-block: 32px !important; }
 }
 
 /* Final check fixes. */
@@ -150,7 +150,7 @@ body.lp-v5 .aw-arch img { object-position: 50% 8%; }
   body.lp-v5 .aw-arch { left: 26px; right: 26px; top: 26px; border-radius: 110px 110px 16px 16px; }
 }
 @media (max-width: 640px) { body.lp-v5 .aq2-photo { margin-bottom: 4px; } body.lp-v5 .aq2 .aq-inner { padding-top: 24px; } }
-body.lp-v5[data-page="astrology"] .cv5-film img { object-position: 50% 22%; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 8%; }
-@media (min-width: 641px) { body.lp-v5[data-page="astrology"] .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 36%; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 30%; } }
-@media (min-width: 641px) { body.lp-v5[data-page="astrology"] .cv5-film { height: 250px !important; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 44%; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 34%; } }
+body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-film img { object-position: 50% 22%; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 8%; }
+@media (min-width: 641px) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 36%; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 30%; } }
+@media (min-width: 641px) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-film { height: 250px !important; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 44%; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 34%; } }
 body.lp-v5 .aq2-circle img { object-position: 50% 30%; } @media (max-width: 640px) { body.lp-v5 .aq2-photo { width: 290px; height: 290px; } body.lp-v5 .aq2-circle { inset: 34px; } body.lp-v5 .zr text { font-size: 20px; } }
