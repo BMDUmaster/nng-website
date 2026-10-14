@@ -5341,52 +5341,52 @@ body.lp-v5 .wy4-photo-d { z-index: 1; }
    Astrology (Oct 14 f): the why section's wheel beside her arch; enquiry, FAQ, book and footer moved from plum to the
    page's deep green and cream, each with a slowly turning zodiac wheel; compact topic chips on phones.
    ============================================================================================================= */
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) { --as-g: #1E3A2A; --as-g2: #2B4A36; --as-gd: #13281C; }
+body.lp-v5[data-page="astrology"] { --as-g: #1E3A2A; --as-g2: #2B4A36; --as-gd: #13281C; }
 
 /* Why: the wheel turns behind her arch (positioned from the section, not the grid). */
 body.lp-v5 .wy4-inner { position: relative; }
 body.lp-v5 .wy4-wheel { position: absolute; grid-area: auto; right: -110px; top: 50%; width: 560px; height: 560px; margin-top: -330px; opacity: 0.3; }
 
 /* A turning wheel as a background layer. */
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.en2, .fq2, .bk2-band, .v5-foot) { position: relative; overflow: hidden; isolation: isolate; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.en2, .fq2, .bk2-band, .v5-foot)::after { content: ""; position: absolute; z-index: -1; width: 520px; height: 520px; background: url("hero/zodiac.webp") center / contain no-repeat; pointer-events: none; }
-@media (prefers-reduced-motion: no-preference) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.en2, .fq2, .bk2-band, .v5-foot)::after { animation: as-spin 90s linear infinite; } }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2::after { left: -200px; bottom: -200px; opacity: 0.12; filter: brightness(1.6); }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2::after { right: -230px; top: -150px; opacity: 0.28; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .bk2-band::after { right: -180px; top: -160px; opacity: 0.1; filter: brightness(1.6); }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .v5-foot::after { right: -160px; bottom: -300px; width: 460px; height: 460px; opacity: 0.08; filter: brightness(1.8); }
+body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot) { position: relative; overflow: hidden; isolation: isolate; }
+body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot)::after { content: ""; position: absolute; z-index: -1; width: 520px; height: 520px; background: url("hero/zodiac.webp") center / contain no-repeat; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) { body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot)::after { animation: as-spin 90s linear infinite; } }
+body.lp-v5[data-page="astrology"] .en2::after { left: -200px; bottom: -200px; opacity: 0.12; filter: brightness(1.6); }
+body.lp-v5[data-page="astrology"] .fq2::after { right: -230px; top: -150px; opacity: 0.28; }
+body.lp-v5[data-page="astrology"] .bk2-band::after { right: -180px; top: -160px; opacity: 0.1; filter: brightness(1.6); }
+body.lp-v5[data-page="astrology"] .v5-foot::after { right: -160px; bottom: -300px; width: 460px; height: 460px; opacity: 0.08; filter: brightness(1.8); }
 
 /* Enquiry: deep green; green and gold accents in the panel. */
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 { background: radial-gradient(50% 70% at 100% 0%, rgb(215 184 107 / 0.12), transparent 70%), linear-gradient(170deg, #1F3E2D, var(--as-gd)) !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 :is(.en2-steps span, .en2-alt a) { border-color: rgb(215 184 107 / 0.45) !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .en2-alt a { background: rgb(255 255 255 / 0.05) !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .topic-picker button[aria-pressed="true"] { background: var(--as-g) !important; border-color: var(--as-g) !important; color: #FAF6F0 !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .topic-picker button { color: #1F2A22 !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 a.wa-btn { background: linear-gradient(180deg, var(--as-g2), var(--as-g)) !important; color: #FAF6F0 !important; }
+body.lp-v5[data-page="astrology"] .en2 { background: radial-gradient(50% 70% at 100% 0%, rgb(215 184 107 / 0.12), transparent 70%), linear-gradient(170deg, #1F3E2D, var(--as-gd)) !important; }
+body.lp-v5[data-page="astrology"] .en2 :is(.en2-steps span, .en2-alt a) { border-color: rgb(215 184 107 / 0.45) !important; }
+body.lp-v5[data-page="astrology"] .en2 .en2-alt a { background: rgb(255 255 255 / 0.05) !important; }
+body.lp-v5[data-page="astrology"] .en2 .topic-picker button[aria-pressed="true"] { background: var(--as-g) !important; border-color: var(--as-g) !important; color: #FAF6F0 !important; }
+body.lp-v5[data-page="astrology"] .en2 .topic-picker button { color: #1F2A22 !important; }
+body.lp-v5[data-page="astrology"] .en2 a.wa-btn { background: linear-gradient(180deg, var(--as-g2), var(--as-g)) !important; color: #FAF6F0 !important; }
 
 /* FAQ: green marks and a green ask card. */
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2-item[open] .fq2-mark, body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2-item.is-open .fq2-mark { background: var(--as-g) !important; border-color: var(--as-g) !important; color: #FAF6F0 !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2-ask { background: radial-gradient(60% 140% at 100% 0%, rgb(215 184 107 / 0.16), transparent 60%), linear-gradient(160deg, #1F4634, #10291E) !important; }
+body.lp-v5[data-page="astrology"] .fq2-item[open] .fq2-mark, body.lp-v5[data-page="astrology"] .fq2-item.is-open .fq2-mark { background: var(--as-g) !important; border-color: var(--as-g) !important; color: #FAF6F0 !important; }
+body.lp-v5[data-page="astrology"] .fq2-ask { background: radial-gradient(60% 140% at 100% 0%, rgb(215 184 107 / 0.16), transparent 60%), linear-gradient(160deg, #1F4634, #10291E) !important; }
 
 /* Book and footer: deep green. */
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .bk2-band { background: radial-gradient(50% 70% at 20% 50%, rgb(215 184 107 / 0.1), transparent 70%), linear-gradient(170deg, #1F3E2D, var(--as-gd)) !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .bk2-band .bk-glow { opacity: 0.5; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .v5-foot { background: linear-gradient(180deg, #17301F, #0F2117) !important; }
+body.lp-v5[data-page="astrology"] .bk2-band { background: radial-gradient(50% 70% at 20% 50%, rgb(215 184 107 / 0.1), transparent 70%), linear-gradient(170deg, #1F3E2D, var(--as-gd)) !important; }
+body.lp-v5[data-page="astrology"] .bk2-band .bk-glow { opacity: 0.5; }
+body.lp-v5[data-page="astrology"] .v5-foot { background: linear-gradient(180deg, #17301F, #0F2117) !important; }
 
 /* Phones: compact enquiry topics in one swipeable row; smaller wheels. */
 @media (max-width: 700px) {
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .topic-picker { flex-wrap: nowrap; overflow-x: auto; margin-inline: -20px; padding: 2px 20px 6px; scrollbar-width: none; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .topic-picker::-webkit-scrollbar { display: none; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .topic-picker button { flex: none; white-space: nowrap; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.en2, .fq2, .bk2-band, .v5-foot)::after { width: 300px; height: 300px; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2::after { right: -150px; top: -90px; }
+  body.lp-v5[data-page="astrology"] .en2 .topic-picker { flex-wrap: nowrap; overflow-x: auto; margin-inline: -20px; padding: 2px 20px 6px; scrollbar-width: none; }
+  body.lp-v5[data-page="astrology"] .en2 .topic-picker::-webkit-scrollbar { display: none; }
+  body.lp-v5[data-page="astrology"] .en2 .topic-picker button { flex: none; white-space: nowrap; }
+  body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot)::after { width: 300px; height: 300px; }
+  body.lp-v5[data-page="astrology"] .fq2::after { right: -150px; top: -90px; }
 }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .en2-steps span { background: var(--as-gd) !important; color: #E9CD8A !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .en2-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 :is(.en2-grid > *, .en2-panel, .topic-picker) { min-width: 0; }
-@media (max-width: 900px) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .en2-grid { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 700px) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .topic-picker { margin-inline: -14px; padding-inline: 14px; max-width: calc(100% + 28px); } }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 .en2-steps span { box-shadow: inset 0 0 0 1px #D7B86B, 0 0 0 5px rgb(19 40 28 / 0.9) !important; }
+body.lp-v5[data-page="astrology"] .en2 .en2-steps span { background: var(--as-gd) !important; color: #E9CD8A !important; }
+body.lp-v5[data-page="astrology"] .en2 .en2-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+body.lp-v5[data-page="astrology"] .en2 :is(.en2-grid > *, .en2-panel, .topic-picker) { min-width: 0; }
+@media (max-width: 900px) { body.lp-v5[data-page="astrology"] .en2 .en2-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 700px) { body.lp-v5[data-page="astrology"] .en2 .topic-picker { margin-inline: -14px; padding-inline: 14px; max-width: calc(100% + 28px); } }
+body.lp-v5[data-page="astrology"] .en2 .en2-steps span { box-shadow: inset 0 0 0 1px #D7B86B, 0 0 0 5px rgb(19 40 28 / 0.9) !important; }
 /* =============================================================================================================
    Astrology "The question you bring" (Oct 14 g), from the approved banner: her photograph fills the top right and
    fades into cream, a gold zodiac wheel turns around her, a hand-written line under the words, and three cards with
@@ -5593,22 +5593,22 @@ body.lp-v5 .aw ~ .en2 .en2-head { display: none; }
 }
 
 /* ---- Tighter sections across the page ---- */
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .am-inner { padding-block: 42px; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .am-arch { height: 470px; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-main { padding-block: 42px 30px !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-film { height: 200px !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ap-inner { padding-block: 42px 32px; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ap-steps { margin-top: 24px; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ao-inner { padding-block: 42px 36px; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .ao-grid li { min-height: 132px; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .en2 > .section { padding-block: 44px !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .fq2 > .section { padding-block: 44px !important; }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .bk2-band .bk-inner { padding-block: 40px !important; }
+body.lp-v5[data-page="astrology"] .am-inner { padding-block: 42px; }
+body.lp-v5[data-page="astrology"] .am-arch { height: 470px; }
+body.lp-v5[data-page="astrology"] .cv5-main { padding-block: 42px 30px !important; }
+body.lp-v5[data-page="astrology"] .cv5-film { height: 200px !important; }
+body.lp-v5[data-page="astrology"] .ap-inner { padding-block: 42px 32px; }
+body.lp-v5[data-page="astrology"] .ap-steps { margin-top: 24px; }
+body.lp-v5[data-page="astrology"] .ao-inner { padding-block: 42px 36px; }
+body.lp-v5[data-page="astrology"] .ao-grid li { min-height: 132px; }
+body.lp-v5[data-page="astrology"] .en2 > .section { padding-block: 44px !important; }
+body.lp-v5[data-page="astrology"] .fq2 > .section { padding-block: 44px !important; }
+body.lp-v5[data-page="astrology"] .bk2-band .bk-inner { padding-block: 40px !important; }
 @media (max-width: 640px) {
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .am-arch { height: 300px; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.am-inner, .ap-inner, .ao-inner) { padding-block: 30px; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-main { padding-block: 30px 24px !important; }
-  body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) :is(.en2, .fq2) > .section { padding-block: 32px !important; }
+  body.lp-v5[data-page="astrology"] .am-arch { height: 300px; }
+  body.lp-v5[data-page="astrology"] :is(.am-inner, .ap-inner, .ao-inner) { padding-block: 30px; }
+  body.lp-v5[data-page="astrology"] .cv5-main { padding-block: 30px 24px !important; }
+  body.lp-v5[data-page="astrology"] :is(.en2, .fq2) > .section { padding-block: 32px !important; }
 }
 
 /* Final check fixes. */
@@ -5630,46 +5630,162 @@ body.lp-v5 .aw-arch img { object-position: 50% 8%; }
   body.lp-v5 .aw-arch { left: 26px; right: 26px; top: 26px; border-radius: 110px 110px 16px 16px; }
 }
 @media (max-width: 640px) { body.lp-v5 .aq2-photo { margin-bottom: 4px; } body.lp-v5 .aq2 .aq-inner { padding-top: 24px; } }
-body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-film img { object-position: 50% 22%; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 8%; }
-@media (min-width: 641px) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 36%; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 30%; } }
-@media (min-width: 641px) { body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-film { height: 250px !important; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 44%; } body.lp-v5:is([data-page="astrology"], [data-page="numerology"]) .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 34%; } }
+body.lp-v5[data-page="astrology"] .cv5-film img { object-position: 50% 22%; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 8%; }
+@media (min-width: 641px) { body.lp-v5[data-page="astrology"] .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 36%; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 30%; } }
+@media (min-width: 641px) { body.lp-v5[data-page="astrology"] .cv5-film { height: 250px !important; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(2) .cv5-film img { object-position: 50% 44%; } body.lp-v5[data-page="astrology"] .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 34%; } }
 body.lp-v5 .aq2-circle img { object-position: 50% 30%; } @media (max-width: 640px) { body.lp-v5 .aq2-photo { width: 290px; height: 290px; } body.lp-v5 .aq2-circle { inset: 34px; } body.lp-v5 .zr text { font-size: 20px; } }
+/* Numerology: see num-hero2.css. */
 /* =============================================================================================================
-   Numerology (Oct 14): the Astrology layout with her blue saree photograph, a turning ring of the numbers 1 to 9 in
-   place of the zodiac, and no green tint on the photograph.
+   Numerology opening (Oct 14 b), from the approved banner. Cream ground; her photograph on the right inside a slowly
+   turning ring of numbers; a glass Lo Shu card, a deep green name card and soft floating number tiles; the words and
+   question chips on the left; four assurances in a bar across the bottom.
    ============================================================================================================= */
-body.lp-v5 .nr .nr-n { fill: #A8803A; stroke: none; font-family: var(--display); font-size: 22px; text-anchor: middle; dominant-baseline: central; }
-body.lp-v5 .nr { aspect-ratio: 1; }
+body.lp-v5 .nh2 { --g: #1E3A2A; --gold: #B0843A; position: relative; overflow: hidden; min-height: clamp(640px, calc(100svh - 74px), 780px); background: radial-gradient(40% 60% at 72% 40%, rgb(255 234 190 / 0.6), transparent 70%), radial-gradient(30% 40% at 0% 100%, rgb(110 140 100 / 0.18), transparent 70%), linear-gradient(180deg, #FBF7EF, #F6EEE1); isolation: isolate; }
 
-/* Hero: natural colours, a soft cream wash on the far right, the number ring in the top-right corner. */
-body.lp-v5[data-page="numerology"] .ah3-photo::before { display: none; }
-body.lp-v5[data-page="numerology"] .ah3-photo::after { background: linear-gradient(0deg, rgb(250 244 234 / 0.5), transparent 26%); }
-body.lp-v5[data-page="numerology"] .ah3-photo > img:first-child { object-position: 62% 18%; }
-body.lp-v5[data-page="numerology"] .ah3-photo > svg.ah3-wheel { position: absolute; z-index: 1; right: -150px; top: -170px; width: 420px; height: 420px; color: #C9A25A; opacity: 0.7; mix-blend-mode: normal; filter: none; }
-body.lp-v5[data-page="numerology"] .ah3-topics { top: auto; bottom: 150px; right: 2.4%; padding: 14px 18px 14px 22px; border-radius: 16px; border-left: 0; background: rgb(255 252 246 / 0.86); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.4), 0 16px 30px -18px rgb(60 50 30 / 0.45); }
-body.lp-v5[data-page="numerology"] .ah3-topics::before { display: none; }
-body.lp-v5[data-page="numerology"] .ah3-topics li { color: #1E3A2A; text-shadow: none; font-size: 10.5px; }
-@media (max-width: 1240px) { body.lp-v5[data-page="numerology"] .ah3-topics { display: none; } }
-@media (max-width: 900px) {
-  body.lp-v5[data-page="numerology"] .ah3-photo > img:first-child { object-position: 42% 16%; }
-  body.lp-v5[data-page="numerology"] .ah3-photo > svg.ah3-wheel { right: -110px; top: -110px; width: 260px; height: 260px; }
+/* Right: photograph, ring, cards, tiles. */
+body.lp-v5 .nh2-visual { position: absolute; top: 0; right: 0; bottom: 0; width: 58%; z-index: 0; }
+body.lp-v5 .nh2-photo { position: absolute; inset: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%); mask-composite: intersect; }
+body.lp-v5 .nh2-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 46% 18%; }
+body.lp-v5 .nh2-ring { position: absolute; z-index: 1; left: 44%; top: 46%; width: min(40vw, 600px); height: auto; aspect-ratio: 1; color: rgb(176 132 58 / 0.75); translate: -50% -50%; pointer-events: none; overflow: visible; filter: drop-shadow(0 0 6px rgb(255 240 210 / 0.9)); }
+body.lp-v5 .nh2-ring text { fill: #A27A33; stroke: none; font-family: var(--display); font-size: 38px; text-anchor: middle; dominant-baseline: central; paint-order: stroke; }
+body.lp-v5 .nh2-tile { position: absolute; z-index: 1; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 14px; background: linear-gradient(160deg, rgb(255 253 247 / 0.95), rgb(243 232 210 / 0.9)); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.35), 0 18px 30px -18px rgb(90 70 30 / 0.5); font-family: var(--display); font-style: italic; font-size: 34px; color: var(--gold); }
+body.lp-v5 .nh2-t1 { left: 6%; top: 8%; rotate: -10deg; }
+body.lp-v5 .nh2-t2 { right: 3%; top: 16%; width: 80px; height: 80px; font-size: 44px; filter: blur(2.5px); opacity: 0.75; rotate: 12deg; }
+body.lp-v5 .nh2-t3 { right: 2%; bottom: 140px; rotate: -12deg; }
+body.lp-v5 .nh2-t4 { left: 10%; bottom: 230px; width: 54px; height: 54px; filter: blur(3px); opacity: 0.6; }
+body.lp-v5 .nh2-spark { position: absolute; z-index: 1; display: block; width: 16px; color: #C9A25A; }
+body.lp-v5 .nh2-spark svg { display: block; width: 100%; }
+body.lp-v5 .nh2-s1 { left: 18%; top: 14%; } body.lp-v5 .nh2-s2 { right: 6%; top: 54%; width: 20px; } body.lp-v5 .nh2-s3 { left: 22%; bottom: 210px; width: 12px; }
+body.lp-v5 .nh2-grid { position: absolute; z-index: 2; right: 5%; bottom: 210px; display: grid; grid-template-columns: repeat(3, 46px); gap: 6px; padding: 12px; border-radius: 20px; background: rgb(255 252 245 / 0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.45), 0 26px 44px -26px rgb(90 70 30 / 0.55); }
+body.lp-v5 .nh2-grid span { display: grid; place-items: center; height: 46px; border-radius: 10px; background: linear-gradient(160deg, #FFFDF8, #F2E7D3); box-shadow: inset 0 0 0 1px rgb(201 162 90 / 0.25); font-family: var(--display); font-size: 22px; color: #6E5226; }
+body.lp-v5 .nh2-grid span.is-mid { background: linear-gradient(160deg, #D9B66C, #B98A3E); color: #FFFBF0; box-shadow: 0 0 18px rgb(217 182 108 / 0.7); }
+body.lp-v5 .nh2-name { position: absolute; z-index: 3; right: 9%; bottom: 140px; display: flex; align-items: center; gap: 12px; padding: 10px 22px 11px 14px; border-radius: 16px; background: linear-gradient(160deg, #23503D, #173628); box-shadow: 0 0 0 1px rgb(215 184 107 / 0.8), 0 18px 34px -16px rgb(20 45 30 / 0.7); white-space: nowrap; font-family: var(--display); font-size: 19px; color: #F6E6BF; }
+body.lp-v5 .nh2-name > span { display: block; width: 30px; color: #E2C27A; }
+body.lp-v5 .nh2-name > span svg { display: block; width: 100%; }
+body.lp-v5 .nh2-name div { padding-left: 12px; border-left: 1px solid rgb(215 184 107 / 0.45); }
+body.lp-v5 .nh2-name small { display: block; font-family: var(--body, inherit); font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(250 246 240 / 0.85); }
+
+/* Left: words. */
+body.lp-v5 .nh2-copy { position: relative; z-index: 2; width: min(46%, 700px); padding: 48px 0 150px max(5.5vw, 32px); }
+body.lp-v5 .nh2-kicker { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #A27A33; }
+body.lp-v5 .nh2-kicker > span { display: block; width: 16px; color: #B88A3A; }
+body.lp-v5 .nh2-kicker > span svg { display: block; width: 100%; }
+body.lp-v5 .nh2-kicker em { font-family: var(--display); font-style: italic; font-size: 16px; letter-spacing: 0; text-transform: none; color: #6A6458; }
+body.lp-v5 .nh2 h1 { margin: 16px 0 0; font-family: var(--display); font-weight: 400; font-size: clamp(40px, 3.8vw, 64px) !important; line-height: 1.04 !important; letter-spacing: -0.01em; color: #14251B; }
+body.lp-v5 .nh2 h1 em { font-style: italic; color: #A57A33; }
+body.lp-v5 .nh2-lead { max-width: 560px; margin: 16px 0 0; font-size: 16.5px; line-height: 1.6; color: #5E5E58; }
+body.lp-v5 .nh2-label { margin: 20px 0 0; font-size: 11.5px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #A27A33; }
+body.lp-v5 .nh2-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 560px; margin: 10px 0 0; padding: 0; list-style: none; }
+body.lp-v5 .nh2-chips li { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 12px; border-radius: 999px; background: rgb(255 253 248 / 0.8); box-shadow: inset 0 0 0 1px rgb(201 162 90 / 0.4); font-size: 14.5px; color: #2A2A24; }
+body.lp-v5 .nh2-chips svg { width: 20px; height: 20px; color: #A27A33; }
+body.lp-v5 .nh2-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+body.lp-v5 a.nh2-cta { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 5px 20px 5px 6px; border-radius: 999px; background: linear-gradient(180deg, #23503D, #173628); color: #FAF6F0; font-size: 15.5px; font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: 0 0 0 1px rgb(215 184 107 / 0.45), 0 16px 30px -16px rgb(20 45 30 / 0.8); transition: transform 0.3s ease; }
+body.lp-v5 a.nh2-cta .wa-ic { order: -1; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: #FFFFFF; }
+body.lp-v5 a.nh2-cta .wa-ic svg { width: 21px; height: 21px; }
+body.lp-v5 .nh2-arrow { display: block; width: 18px; }
+body.lp-v5 .nh2-arrow svg { display: block; width: 100%; transition: transform 0.3s ease; }
+body.lp-v5 a.nh2-cta:hover { transform: translateY(-1px); }
+body.lp-v5 a.nh2-cta:hover .nh2-arrow svg { transform: translateX(3px); }
+body.lp-v5 .nh2-ghost { display: inline-flex; align-items: center; gap: 16px; min-height: 52px; padding: 5px 6px 5px 26px; border-radius: 999px; background: rgb(255 253 248 / 0.7); box-shadow: inset 0 0 0 1.2px #C9A25A; color: #1F2A22; font-size: 15.5px; text-decoration: none; }
+body.lp-v5 .nh2-ghost i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(180deg, #D3AB60, #A9792F); color: #FFFFFF; }
+body.lp-v5 .nh2-ghost i svg { width: 18px; height: 18px; }
+
+/* Bottom: assurances bar. */
+body.lp-v5 .nh2-feats { position: absolute; z-index: 3; left: max(4vw, 24px); right: max(4vw, 24px); bottom: 24px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 18px 10px; list-style: none; border-radius: 24px; background: rgb(255 253 248 / 0.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.3), 0 24px 44px -30px rgb(90 70 30 / 0.5); }
+body.lp-v5 .nh2-feats li { display: flex; align-items: center; gap: 14px; padding: 0 22px; }
+body.lp-v5 .nh2-feats li + li { border-left: 1px solid rgb(201 162 90 / 0.35); }
+body.lp-v5 .nh2-feats span { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFFFF, #F1E3C8); box-shadow: inset 0 0 0 1px rgb(201 162 90 / 0.45); color: #A27A33; }
+body.lp-v5 .nh2-feats span svg { width: 26px; height: 26px; }
+body.lp-v5 .nh2-feats strong { display: block; font-family: var(--display); font-weight: 400; font-size: 18px; line-height: 1.2; color: #14251B; }
+body.lp-v5 .nh2-feats em { display: block; margin-top: 2px; font-style: normal; font-size: 12.5px; color: #6A6A66; }
+
+/* Motion. */
+@keyframes nh2-spin { to { rotate: 360deg; } }
+@keyframes nh2-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes nh2-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes nh2-glow { 0%, 100% { box-shadow: 0 0 10px rgb(217 182 108 / 0.5); } 50% { box-shadow: 0 0 24px rgb(217 182 108 / 0.95); } }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .nh2-ring { animation: nh2-spin 120s linear infinite; }
+  body.lp-v5 .nh2-tile { animation: nh2-bob 6s ease-in-out infinite; }
+  body.lp-v5 .nh2-t2 { animation-delay: -2s; } body.lp-v5 .nh2-t3 { animation-delay: -4s; } body.lp-v5 .nh2-t4 { animation-delay: -1s; }
+  body.lp-v5 .nh2-grid span.is-mid { animation: nh2-glow 3s ease-in-out infinite; }
+  body.lp-v5 .nh2-copy > *, body.lp-v5 .nh2-feats { animation: nh2-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .nh2-copy > :nth-child(2) { animation-delay: 0.08s; } body.lp-v5 .nh2-copy > :nth-child(3) { animation-delay: 0.16s; } body.lp-v5 .nh2-copy > :nth-child(4), body.lp-v5 .nh2-copy > :nth-child(5) { animation-delay: 0.24s; } body.lp-v5 .nh2-copy > :nth-child(6) { animation-delay: 0.32s; }
+  body.lp-v5 .nh2-feats { animation-delay: 0.45s; }
+  body.lp-v5 .nh2-photo img { animation: ah3-zoom 2.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
 }
 
-/* Meet, approach, options: number rings in place of the zodiac image. */
-body.lp-v5[data-page="numerology"] svg.am-wheel { position: absolute; right: -140px; top: -140px; width: 340px; height: 340px; color: #C9A25A; opacity: 0.35; }
-body.lp-v5[data-page="numerology"] svg.ap-wheel { position: absolute; left: -230px; top: -20px; width: 440px; height: 440px; color: #C9A25A; opacity: 0.45; }
-body.lp-v5[data-page="numerology"] svg.ao-wheel { position: absolute; right: -140px; top: -40px; width: 380px; height: 380px; color: #C9A25A; opacity: 0.5; }
-@media (max-width: 700px) {
-  body.lp-v5[data-page="numerology"] svg.ao-wheel { right: 30% !important; left: auto !important; top: -30px !important; width: 220px !important; height: 220px !important; opacity: 0.4 !important; }
-  body.lp-v5[data-page="numerology"] svg.ap-wheel { width: 300px; height: 300px; left: -170px; }
+/* Laptops. */
+@media (max-width: 1500px) {
+  body.lp-v5 .nh2 { min-height: clamp(620px, calc(100svh - 70px), 720px); }
+  body.lp-v5 .nh2-copy { padding: 34px 0 132px max(4.5vw, 28px); }
+  body.lp-v5 .nh2 h1 { font-size: clamp(36px, 3.6vw, 52px) !important; }
+  body.lp-v5 .nh2-lead { margin-top: 12px; font-size: 15px; }
+  body.lp-v5 .nh2-label { margin-top: 14px; }
+  body.lp-v5 .nh2-chips li { padding: 6px 14px 6px 10px; font-size: 13.5px; }
+  body.lp-v5 .nh2-actions { margin-top: 18px; }
+  body.lp-v5 a.nh2-cta, body.lp-v5 .nh2-ghost { min-height: 48px; font-size: 14.5px; }
+  body.lp-v5 .nh2-feats { padding: 14px 6px; border-radius: 20px; }
+  body.lp-v5 .nh2-feats li { padding: 0 14px; gap: 10px; }
+  body.lp-v5 .nh2-feats span { width: 42px; height: 42px; } body.lp-v5 .nh2-feats span svg { width: 22px; height: 22px; }
+  body.lp-v5 .nh2-feats strong { font-size: 15.5px; } body.lp-v5 .nh2-feats em { font-size: 11.5px; }
+  body.lp-v5 .nh2-grid { bottom: 170px; grid-template-columns: repeat(3, 38px); gap: 5px; padding: 9px; }
+  body.lp-v5 .nh2-grid span { height: 38px; font-size: 18px; }
+  body.lp-v5 .nh2-name { bottom: 116px; font-size: 16px; padding: 8px 16px 9px 12px; }
+  body.lp-v5 .nh2-t3 { bottom: 110px; }
 }
-/* Photographs. */
-body.lp-v5[data-page="numerology"] .am-arch img { object-position: 45% 20%; }
-body.lp-v5[data-page="numerology"] .aq2-circle img { object-position: 50% 20%; }
-body.lp-v5[data-page="numerology"] .ao-arch img { object-position: 50% 18%; }
-body.lp-v5[data-page="numerology"] .aw-arch img { object-position: 50% 4%; }
-body.lp-v5[data-page="numerology"] .aq2-deco { color: #C9A25A; }
-body.lp-v5[data-page="numerology"] .ao-arch img { object-position: 50% 12%; } body.lp-v5[data-page="numerology"] .cv5-card:nth-child(1) .cv5-film img { object-position: 50% 58% !important; }
+@media (max-width: 1100px) {
+  body.lp-v5 .nh2-copy { width: 52%; }
+  body.lp-v5 .nh2-visual { width: 54%; }
+  body.lp-v5 .nh2-feats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
+  body.lp-v5 .nh2-feats li:nth-child(3) { border-left: 0; }
+  body.lp-v5 .nh2-copy { padding-bottom: 190px; }
+  body.lp-v5 .nh2-grid { bottom: 220px; } body.lp-v5 .nh2-name { bottom: 170px; } body.lp-v5 .nh2-t3, body.lp-v5 .nh2-t4 { display: none; }
+}
+/* Phones: photograph on top inside the ring, words beneath, assurances as a 2 x 2 card. */
+@media (max-width: 760px) {
+  body.lp-v5 .nh2 { display: flex; flex-direction: column; min-height: 0; }
+  body.lp-v5 .nh2-visual { position: relative; width: 100%; height: min(112vw, 460px); }
+  body.lp-v5 .nh2-photo { -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 22%); mask-image: linear-gradient(0deg, transparent 0%, #000 22%); }
+  body.lp-v5 .nh2-photo img { object-position: 46% 14%; }
+  body.lp-v5 .nh2-ring { left: 50%; top: 44%; width: 104vw; max-width: 480px; }
+  body.lp-v5 .nh2-ring text { font-size: 44px; }
+  body.lp-v5 .nh2-tile { width: 46px; height: 46px; font-size: 24px; border-radius: 11px; }
+  body.lp-v5 .nh2-t1 { left: 4%; top: 6%; } body.lp-v5 .nh2-t2 { right: 4%; top: 8%; width: 52px; height: 52px; font-size: 28px; }
+  body.lp-v5 .nh2-s1, body.lp-v5 .nh2-s3 { display: none; }
+  body.lp-v5 .nh2-grid { right: 4%; bottom: 70px; grid-template-columns: repeat(3, 28px); gap: 4px; padding: 7px; border-radius: 14px; }
+  body.lp-v5 .nh2-grid span { height: 28px; font-size: 14px; border-radius: 7px; }
+  body.lp-v5 .nh2-name { left: 50%; right: auto; bottom: 18px; translate: -50% 0; font-size: 15px; padding: 7px 14px 8px 10px; gap: 8px; }
+  body.lp-v5 .nh2-name > span { width: 22px; } body.lp-v5 .nh2-name div { padding-left: 8px; }
+  body.lp-v5 .nh2-copy { width: 100%; padding: 6px 20px 0; }
+  body.lp-v5 .nh2-kicker { font-size: 11px; letter-spacing: 0.2em; } body.lp-v5 .nh2-kicker em { font-size: 14px; }
+  body.lp-v5 .nh2 h1 { margin-top: 10px; font-size: 31px !important; }
+  body.lp-v5 .nh2-lead { font-size: 14px; }
+  body.lp-v5 .nh2-chips { gap: 8px; }
+  body.lp-v5 .nh2-chips li { font-size: 12.5px; padding: 6px 12px 6px 9px; gap: 7px; }
+  body.lp-v5 .nh2-chips svg { width: 16px; height: 16px; }
+  body.lp-v5 .nh2-actions { flex-direction: column; gap: 10px; }
+  body.lp-v5 a.nh2-cta { justify-content: flex-start; }
+  body.lp-v5 a.nh2-cta .nh2-arrow { margin-left: auto; }
+  body.lp-v5 a.nh2-cta, body.lp-v5 .nh2-ghost { width: 100%; }
+  body.lp-v5 .nh2-ghost { justify-content: space-between; }
+  body.lp-v5 .nh2-feats { position: static; margin: 22px 20px 30px; padding: 14px 6px; row-gap: 14px; }
+  body.lp-v5 .nh2-feats li { flex-direction: column; align-items: flex-start; gap: 6px; padding: 0 10px; }
+  body.lp-v5 .nh2-feats span { width: 36px; height: 36px; } body.lp-v5 .nh2-feats span svg { width: 19px; height: 19px; }
+  body.lp-v5 .nh2-feats strong { font-size: 14px; } body.lp-v5 .nh2-feats em { font-size: 11px; }
+}
+
+/* Review fixes: the headline on two lines, the ring kept to the background, room under the photograph. */
+body.lp-v5 .nh2-copy { width: min(48%, 760px); }
+body.lp-v5 .nh2 h1 { font-size: clamp(40px, 3.4vw, 60px) !important; white-space: nowrap; }
+body.lp-v5 .nh2-ring { z-index: 0; color: rgb(176 132 58 / 0.6); }
+body.lp-v5 .nh2-photo { z-index: 0; }
+body.lp-v5 .nh2-ring { mix-blend-mode: multiply; }
+@media (max-width: 1500px) { body.lp-v5 .nh2 { min-height: clamp(660px, calc(100svh - 70px), 740px); } }
+@media (max-width: 1100px) { body.lp-v5 .nh2 h1 { white-space: normal; } }
+body.lp-v5 .nh2-ring { z-index: 1; mix-blend-mode: normal; color: rgb(176 132 58 / 0.7); -webkit-mask-image: radial-gradient(closest-side, transparent 70%, #000 74%); mask-image: radial-gradient(closest-side, transparent 70%, #000 74%); }
+body.lp-v5 .nh2-ring text { fill: #9C7330; }
+@media (max-width: 760px) { body.lp-v5 .nh2-copy { width: 100%; } body.lp-v5 .nh2 h1 { white-space: normal; font-size: 31px !important; } }
 /* =============================================================================================================
    Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
    gold on dark ones; label first, a small WhatsApp disc at the end.
