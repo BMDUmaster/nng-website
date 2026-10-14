@@ -366,3 +366,23 @@ body.lp-v5 .ah4-leaves { top: auto; bottom: 150px; left: -70px; }
   body.lp-v5 .ah4-photo img { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%), linear-gradient(0deg, transparent 0%, #000 12%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 24%), linear-gradient(0deg, transparent 0%, #000 12%); mask-composite: intersect; }
 }
 @media (min-width: 1600px) { body.lp-v5 .ah4-photo img { height: 152%; right: -2%; } }
+
+/* Astrology hero, pass 4 (gold saree banner): her photograph with a gold zodiac compass passing behind her (a cut-out
+   on top); the band without an action. */
+body.lp-v5 .ah7-cut { z-index: 1; pointer-events: none; }
+body.lp-v5 .ah7-cut img { animation: none !important; }
+body.lp-v5 .ah7-ring { position: absolute; z-index: 1; left: 48%; top: 22%; width: min(19vw, 300px); height: auto; aspect-ratio: 1; color: #C49A4A; filter: drop-shadow(0 0 2px rgb(255 248 230 / 1)); pointer-events: none; }
+body.lp-v5 .ah7-ring text { fill: #A27A33; font-size: 22px; }
+body.lp-v5 .ah7-ring::after { content: none; }
+body.lp-v5 .ah6-band { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr); }
+@media (min-width: 761px) {
+  body.lp-v5 .ah4-photo img { height: 112% !important; right: -4% !important; }
+  body.lp-v5 .ah7-cut img { -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 12%) !important; mask-image: linear-gradient(0deg, transparent 0%, #000 12%) !important; }
+}
+@media (min-width: 1600px) { body.lp-v5 .ah4-photo img { height: 124% !important; } body.lp-v5 .ah7-ring { left: 52%; } }
+@media (max-width: 1100px) { body.lp-v5 .ah6-band { grid-template-columns: minmax(0, 1fr); } body.lp-v5 .ah7-ring { display: none; } }
+@media (max-width: 760px) {
+  body.lp-v5 .ah7-cut { display: none; }
+  body.lp-v5 .ah4-photo img { object-position: 52% 10%; }
+}
+@media (min-width: 1101px) { body.lp-v5 .ah7-ring { left: auto !important; right: 21%; top: 24%; width: min(21vw, 330px); } }
