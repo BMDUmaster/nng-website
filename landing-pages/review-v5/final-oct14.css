@@ -276,3 +276,4 @@ body.lp-v5 .ah4-feats { position: relative; right: auto; left: auto; bottom: aut
   body.lp-v5 .ah4-feats { margin-top: 22px; }
 }
 @media (max-width: 760px) { body.lp-v5 .ah4-feats { border-radius: 20px !important; background: rgb(255 253 248 / 0.9); } }
+body.lp-v5[data-page="astrology"] .aw-arch img { object-position: 50% 4%; }

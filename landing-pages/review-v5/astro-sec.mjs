@@ -58,7 +58,7 @@ const branch = s('<path d="M16 28V16M16 16 8 6M16 16l8-10M5 9l3-3 3 3M21 9l3-3 3
 const CFG = {
   astrology: {
     meetImg: ['meet-astrology.webp', 720, 875, 'Narayani Garg in a red and orange bandhani saree at her home temple'], meetH: 'She reads the chart.<br><em>And listens to the person.</em>', meetLead: 'Narayani reads the chart themes relevant to your question beside your real circumstances. She explains her reasoning in plain words, and the decision stays with you.',
-    face: ['aq-face.webp', 640, 640], qIcons: null, chain: null, apIcons: null, whyImg: ['wy-narayani.webp', 720, 923, 'Narayani Garg in a blue saree beside a white Buddha relief'],
+    face: ['aq-face.webp', 640, 640], qIcons: null, chain: null, apIcons: null, whyImg: ['aw-gold.webp', 720, 939, 'Narayani Garg in a gold embroidered saree beside a white Buddha relief'],
   },
   numerology: {
     meetImg: ['meet-numerology.webp', 720, 719, 'Narayani Garg in a sea-green sequinned saree before a white Buddha relief'], meetH: 'She reads the numbers.<br><em>And the reason behind them.</em>', meetLead: 'Narayani begins with why you are asking: a new name, a business shortlist or a change you are weighing. She explains the traditional interpretation in plain words, and the decision to change anything stays with you.',
