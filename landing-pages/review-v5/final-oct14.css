@@ -246,3 +246,14 @@ body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan > svg { display: block;
   body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan .visual-label { font-size: 11px; margin-bottom: 10px; }
   body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan > svg { width: 86% !important; }
 }
+
+/* Vastulogy question, tablets and phones: her photograph on top, the words full width beneath. */
+@media (max-width: 1000px) {
+  body.lp-v5 .vq { display: flex; flex-direction: column; }
+  body.lp-v5 .vq-photo { display: block !important; position: relative; top: auto; right: auto; bottom: auto; width: 100%; height: min(100vw, 460px); -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 22%); mask-image: linear-gradient(0deg, transparent 0%, #000 22%); }
+  body.lp-v5 .vq-photo img { object-position: 45% 6%; }
+  body.lp-v5 .vq-inner { margin-top: -40px; padding-top: 0; }
+  body.lp-v5 .vq-copy { width: 100% !important; }
+  body.lp-v5 .vq-rose { top: auto; bottom: auto; display: none; }
+}
+@media (max-width: 760px) { body.lp-v5 .vq .vh-kicker { font-size: 11px; letter-spacing: 0.22em; } }
