@@ -24,17 +24,17 @@ const feats = [[I.doc, 'Personalised guidance', 'Based on your birth chart'], [I
 const head = (wa, ghost = 'ah4-ghost') => `
   <p class="ah4-kicker"><span aria-hidden="true">${I.star}</span><b>Astrology with Narayani<small>Guidance for a brighter tomorrow</small></b></p>
   <h1 id="hero-title">Find clarity through<br>the wisdom of astrology.<br><em>Align with your true path.</em></h1>
-  <span class="ah4-rule" aria-hidden="true"><i></i>${I.star}</span>
+  <span class="ah4-rule ah8-rule" aria-hidden="true"><i></i>${I.lotus}<i></i></span>
   <p class="ah4-lead">Narayani reads your birth chart and life patterns beside your real circumstances, for questions about relationships, career, money, wellbeing and important life decisions.</p>
   <div class="ah4-actions">${wa('hero', 'WhatsApp enquiry', 'ah4-cta').replace('</a>', `<i aria-hidden="true">${I.arrow}</i></a>`)}<a class="${ghost}" href="#ways"><i aria-hidden="true">${I.play}</i>See what we can discuss</a></div>
   <ul class="ah4-cards">${cards.map(([ic, t, d]) => `<li><span>${ic}</span><strong>${t}</strong><em>${d}</em></li>`).join('')}</ul>`;
 
 export function astroHero4(p, { esc, wa }) {
   return `<section class="ah4" id="top" aria-labelledby="hero-title" data-hero-a>
-    <div class="ah4-photo" aria-hidden="true"><img src="../_shared/hero/ah7.webp" alt="" width="900" height="915" fetchpriority="high"></div>${zodiacRing('ah7-ring')}<div class="ah4-photo ah7-cut" aria-hidden="true"><img src="../_shared/hero/ah7-cut.webp" alt="" width="900" height="915"></div>
-    <svg class="ah4-leaves" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
+    <div class="ah4-photo" aria-hidden="true"><img src="../_shared/hero/ah8.webp" alt="" width="1000" height="788" fetchpriority="high"></div>
+    <svg class="ah4-leaves ah8-leaf-r" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg><svg class="ah4-leaves" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <div class="ah4-copy">${head(wa)}</div>
-    <div class="ah6-band"><svg class="ah6-curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C260 4 520 0 760 18s520 42 680 20"/></svg><div class="ah6-invite"><span aria-hidden="true">${I.chat}</span><div><p>Let’s discuss your space</p><h2>What decision would you like <em>to discuss today?</em></h2><em>Share your question. The team will explain the appropriate reading and appointment details.</em></div></div><ul>${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul></div>
+    <div class="ah6-band"><svg class="ah8-hills" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60C180 20 340 30 520 52s380 34 560 6 280-30 360-16V90H0Z" fill="#DCE4CF"/><path d="M0 74C240 48 460 56 700 70s460 14 740-10V90H0Z" fill="#C9D5BA"/></svg><svg class="ah6-curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C260 4 520 0 760 18s520 42 680 20"/></svg><div class="ah6-invite"><span aria-hidden="true">${I.chat}</span><div><p>Let’s discuss your space</p><h2>What decision would you like <em>to discuss today?</em></h2><em>Share your question. The team will explain the appropriate reading and appointment details.</em></div></div><ul>${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul></div>
   </section>
   <section class="ah5" aria-label="Astrology with Narayani" data-hero-b hidden>
     <figure class="ah5-photo" aria-hidden="true">${zodiacRing('ah5-ring')}<img src="../_shared/hero/hero-astrology.webp" alt="" width="720" height="856"></figure>

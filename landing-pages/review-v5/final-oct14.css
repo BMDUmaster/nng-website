@@ -386,3 +386,38 @@ body.lp-v5 .ah6-band { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
   body.lp-v5 .ah4-photo img { object-position: 52% 10%; }
 }
 @media (min-width: 1101px) { body.lp-v5 .ah7-ring { left: auto !important; right: 21%; top: 24%; width: min(21vw, 330px); } }
+
+/* =============================================================================================================
+   Astrology hero, pass 5 (botanical banner): her red and white saree photograph, a lotus divider, gold lines under the
+   cards, leaves in both corners, a band with soft green hills, and the whole hero within one screen on desktop.
+   ============================================================================================================= */
+@media (min-width: 761px) {
+  body.lp-v5 .ah4 { height: calc(100svh - 72px); min-height: 600px !important; max-height: 900px !important; }
+  body.lp-v5 .ah4-photo { left: 44%; right: 0; top: 0; bottom: 0; z-index: 0; }
+  body.lp-v5 .ah4-photo img { position: static !important; width: 100% !important; height: 100% !important; object-fit: cover; object-position: 58% 22%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%) !important; mask-image: linear-gradient(90deg, transparent 0%, #000 22%) !important; }
+  body.lp-v5 .ah4-copy { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: 2vh; padding-bottom: 1.5vh; }
+  body.lp-v5 .ah4 h1 { font-size: clamp(34px, min(3.4vw, 6.2vh), 64px) !important; margin-top: 1.6vh; }
+  body.lp-v5 .ah4-lead { margin-top: 1.4vh !important; }
+  body.lp-v5 .ah4-actions { margin-top: 2vh !important; }
+  body.lp-v5 .ah4-cards { margin-top: 2.2vh !important; }
+  body.lp-v5 .ah4-cards li { padding: 1.6vh 10px 1.4vh !important; }
+  body.lp-v5 .ah4-cards span { width: min(54px, 6vh) !important; height: min(54px, 6vh) !important; margin-bottom: 0.6vh !important; }
+  body.lp-v5 .ah6-band { flex: none; padding-top: 2vh; padding-bottom: 3.4vh; }
+}
+body.lp-v5 .ah8-rule { width: 420px; gap: 12px; margin-top: 14px; }
+body.lp-v5 .ah8-rule i { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #C49A4A); }
+body.lp-v5 .ah8-rule i + svg + i, body.lp-v5 .ah8-rule svg + i { background: linear-gradient(90deg, #C49A4A, transparent); }
+body.lp-v5 .ah8-rule svg { flex: none; width: 34px; margin: 0; color: #B58A3E; }
+body.lp-v5 :is(.ah4) .ah4-cards li::after { content: ""; display: block; width: 28px; height: 1.5px; margin-top: 8px; background: #C9A25A; }
+body.lp-v5 .ah4-leaves { z-index: 1; top: 140px; bottom: auto; left: -60px; width: 190px; opacity: 0.5; filter: blur(2px); display: block !important; }
+body.lp-v5 .ah8-leaf-r { left: auto; right: -50px; top: auto; bottom: 120px; width: 170px; transform: scaleX(-1) rotate(20deg); opacity: 0.6; filter: blur(1px); }
+body.lp-v5 .ah6-band { overflow: hidden; }
+body.lp-v5 .ah8-hills { position: absolute; left: 0; right: 0; bottom: 0; z-index: -1; width: 100%; height: 34px; }
+body.lp-v5 .ah6-band > * { position: relative; }
+@media (max-width: 760px) {
+  body.lp-v5 .ah4-photo img { object-position: 52% 20%; }
+  body.lp-v5 .ah4-leaves { display: none !important; }
+  body.lp-v5 .ah8-rule { width: 240px; }
+}
+body.lp-v5 .ah6-band > svg { position: absolute !important; } body.lp-v5 .ah6-band > .ah6-curve { top: 0; height: 30px; }
+body.lp-v5 .ah4-leaves:not(.ah8-leaf-r) { top: auto !important; bottom: 150px; left: -95px; width: 170px; z-index: 0; }
