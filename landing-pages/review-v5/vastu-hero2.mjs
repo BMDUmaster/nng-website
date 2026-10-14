@@ -39,7 +39,7 @@ export function vastuHero2(p, { esc, wa }) {
       <div class="vh-name"><span>${I.lotus}</span><div>Narayani Garg<small>Psychic Spiritual Mentor</small></div></div>
     </div>
     <div class="vh-copy">
-      <p class="vh-kicker"><span aria-hidden="true">${I.star}</span>Vastulogy</p>
+      <p class="vh-kicker"><span aria-hidden="true">${I.star}</span><b class="vh-kick-t">Vastulogy<small>Spiritual guidance by Narayani Garg</small></b></p>
       <h1 id="hero-title">${esc(l1)}<br>${esc(l2)}<br><em>${esc(p.headline[1])}</em></h1>
       <p class="vh-lead">${esc(p.description)}</p>
       <ul class="vh-chips" aria-label="Bring the space">${chips.map(([ic, t]) => `<li><span>${ic}</span>${t}</li>`).join('')}</ul>

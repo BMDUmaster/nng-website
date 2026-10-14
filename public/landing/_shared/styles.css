@@ -6891,6 +6891,22 @@ body.lp-v5 .ah4-feats { position: relative; right: auto; left: auto; bottom: aut
 }
 @media (max-width: 760px) { body.lp-v5 .ah4-feats { border-radius: 20px !important; background: rgb(255 253 248 / 0.9); } }
 body.lp-v5[data-page="astrology"] .aw-arch img { object-position: 50% 4%; }
+
+/* Planet names beside the Lo Shu numbers (Numerology); Narayani's byline in the Vastulogy hero. */
+body.lp-v5 :is(.nh2-grid, .na-grid) span { flex-direction: column; gap: 0; line-height: 1; }
+body.lp-v5 :is(.nh2-grid, .na-grid) span { display: grid; place-content: center; justify-items: center; }
+body.lp-v5 :is(.nh2-grid, .na-grid) small { display: block; margin-top: 3px; font-family: var(--body, inherit); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.8; }
+body.lp-v5 .nh2-grid { grid-template-columns: repeat(3, 58px) !important; }
+body.lp-v5 .nh2-grid span { height: 58px !important; font-size: 20px !important; }
+body.lp-v5 .nh2-grid small { font-size: 7.5px; }
+body.lp-v5 .na-grid small { font-size: 10px; margin-top: 4px; }
+@media (max-width: 1500px) { body.lp-v5 .nh2-grid { grid-template-columns: repeat(3, 50px) !important; } body.lp-v5 .nh2-grid span { height: 50px !important; font-size: 17px !important; } body.lp-v5 .nh2-grid small { font-size: 6.5px; } }
+@media (max-width: 760px) { body.lp-v5 .nh2-grid { grid-template-columns: repeat(3, 38px) !important; } body.lp-v5 .nh2-grid span { height: 38px !important; font-size: 14px !important; } body.lp-v5 .nh2-grid small { font-size: 5.5px; margin-top: 1px; } body.lp-v5 .na-grid small { font-size: 7.5px; margin-top: 2px; } }
+body.lp-v5 .vh-kicker small { display: block; margin-top: 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: #8C7B62; }
+body.lp-v5 .vh-kicker { align-items: flex-start; }
+body.lp-v5 .vh-kicker > span { margin-top: 2px; }
+body.lp-v5 .vh-kicker { flex-wrap: nowrap; }
+body.lp-v5 .vh-kick-t { display: grid; font-weight: inherit; }
 /* =============================================================================================================
    Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
    gold on dark ones; label first, a small WhatsApp disc at the end.

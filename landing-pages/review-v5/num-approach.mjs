@@ -18,6 +18,8 @@ const flowers = `<svg class="na-flowers" viewBox="0 0 140 220" aria-hidden="true
 const legendIc = ['<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>', person, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 4a8 8 0 0 0-8 8M12 7a5 5 0 0 0-5 5v3M12 10a2 2 0 0 0-2 2v6M14 12v4a5 5 0 0 1-1 3M17 12a5 5 0 0 0-5-5M20 12a8 8 0 0 0-8-8"/></svg>'];
 const archNums = [[1, -160], [3, -125], [9, -90], [7, -55]].map(([n, d]) => `<text x="${(200 + 165 * Math.cos(d * Math.PI / 180)).toFixed(1)}" y="${(200 + 165 * Math.sin(d * Math.PI / 180)).toFixed(1)}">${n}</text>`).join('');
 
+const PLANET = { 1: 'Sun', 2: 'Moon', 3: 'Jupiter', 4: 'Rahu', 5: 'Mercury', 6: 'Venus', 7: 'Ketu', 8: 'Shani', 9: 'Mangal' };
+
 export function numApproach(p, { esc }) {
   const [first, second] = p.methodTitle.split('\n');
   const title = `${esc(first)}<br>${esc(second).replace('in view.', '<em>in view.</em>')}`;
@@ -35,7 +37,7 @@ export function numApproach(p, { esc }) {
         <p class="na-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)}<span class="bj-glance-tail"> / at a glance</span></p>
         <span class="na-moon" aria-hidden="true"></span>
         <div class="na-orbit" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
-        <div class="na-grid" aria-hidden="true">${grid.map((n) => `<span style="--o:${n}">${n}</span>`).join('')}</div>
+        <div class="na-grid" aria-hidden="true">${grid.map((n) => `<span style="--o:${n}">${n}<small>${PLANET[n]}</small></span>`).join('')}</div>
         <div class="na-plinth" aria-hidden="true"><span>Lo Shu grid</span></div>
         <span class="na-slab" aria-hidden="true"></span>
         <div class="na-vase" aria-hidden="true">${flowers}<span class="na-pot"></span></div>

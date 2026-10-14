@@ -28,6 +28,8 @@ function ring() {
   return `<svg class="nh2-ring" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${out.join('')}</svg>`;
 }
 
+const PLANET = { 1: 'Sun', 2: 'Moon', 3: 'Jupiter', 4: 'Rahu', 5: 'Mercury', 6: 'Venus', 7: 'Ketu', 8: 'Shani', 9: 'Mangal' };
+
 export function numHero2(p, { esc, wa }) {
   const chips = [[I.letter, 'Name & spelling'], [I.case, 'Business name'], [I.pen, 'Signature'], [I.phone, 'Mobile & house number']];
   const feats = [[I.shield, 'Personal guidance', 'Based on your numbers'], [I.target, 'Clarity in decisions', 'For name, business or signature'], [I.lotus, 'Traditional approach', 'Time-tested numerology insights'], [I.people, 'One-to-one consultation', 'Online or in person']];
@@ -42,7 +44,7 @@ export function numHero2(p, { esc, wa }) {
       <div class="nh2-photo nh2-cut"><img src="../_shared/hero/num-hero-cut.webp" alt="" width="1100" height="966"></div>
       ${tile(3, 'nh2-t1')}${tile(7, 'nh2-t2')}${tile(6, 'nh2-t3')}${tile(7, 'nh2-t4')}
       <i class="nh2-spark nh2-s1">${I.star}</i><i class="nh2-spark nh2-s2">${I.star}</i><i class="nh2-spark nh2-s3">${I.star}</i>
-      <div class="nh2-grid">${grid.map((n) => `<span${n === 5 ? ' class="is-mid"' : ''}>${n}</span>`).join('')}</div>
+      <div class="nh2-grid">${grid.map((n) => `<span${n === 5 ? ' class="is-mid"' : ''}>${n}<small>${PLANET[n]}</small></span>`).join('')}</div>
       <div class="nh2-name"><span>${I.lotus}</span><div>Narayani Garg<small>Psychic Spiritual Mentor</small></div></div>
     </div>
     <div class="nh2-copy">
