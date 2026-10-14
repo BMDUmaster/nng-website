@@ -22,7 +22,7 @@ export function meetBrain(p, { esc, wa }) {
   const left = ['Thoughts', 'Beliefs', 'Habits'], right = ['Emotions', 'Patterns', 'Behaviour'];
   return `<section class="m5" aria-labelledby="meet-title">
     <div class="m5-visual">
-      <div class="m5-photo"><img src="../_shared/hero/meet-brain-wide.webp" alt="Narayani Garg in a pale green saree beside a white Buddha relief" width="1000" height="1000" loading="lazy"></div>
+      <div class="m5-photo"><img src="../_shared/hero/meet-real.webp" alt="Narayani Garg in a blue silk saree beside a white Buddha relief" width="760" height="964" loading="lazy"></div>
       <p class="m5-script" aria-hidden="true"><span>Understand</span><span>your mind,</span><span>transform</span><span>your life</span></p>
       <ul class="m5-meds" aria-label="What Brainology works with">${meds.map(([k, t], i) => `<li style="--i:${i}"><span>${I[k]}</span><em>${t}</em></li>`).join('')}</ul>
       <div class="m5-name"><strong>Narayani Garg</strong><span>Psychic Spiritual Mentor</span></div>

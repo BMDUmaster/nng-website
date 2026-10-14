@@ -1,0 +1,40 @@
+/* =============================================================================================================
+   Brainology polish (Oct 14): a calmer "Meet your guide" (her real photograph in a clean gold-lined frame, the four
+   medallions in a straight column on its edge, no script or loose leaves over the photograph) and a cleaner client
+   voices photograph (no script over the plants, no leaf smudges).
+   ============================================================================================================= */
+body.lp-v5 .m5 { grid-template-columns: minmax(0, 40%) minmax(0, 60%); padding-block: 56px; }
+body.lp-v5 .m5-visual { display: flex; align-items: center; justify-content: flex-end; min-height: 0; padding: 0 92px 0 max(4vw, 32px); }
+body.lp-v5 .m5-photo { position: relative; inset: auto; width: 100%; max-width: 420px; height: 540px; overflow: hidden; border-radius: 28px; box-shadow: 0 0 0 1px rgb(201 162 90 / 0.6), 0 0 0 9px rgb(255 252 246 / 0.8), 0 0 0 10px rgb(201 162 90 / 0.3), 0 40px 70px -40px rgb(80 60 30 / 0.55); }
+body.lp-v5 .m5-photo::after { display: none; }
+body.lp-v5 .m5-photo img { object-position: 40% 10%; }
+body.lp-v5 .m5-script, body.lp-v5 .m5-name, body.lp-v5 .m5-leaf { display: none; }
+body.lp-v5 .m5-meds { right: 30px; top: 50%; bottom: auto; gap: 14px; transform: translateY(-50%); }
+body.lp-v5 .m5-meds li { width: 100px; height: 100px; }
+body.lp-v5 .m5-meds li:nth-child(2), body.lp-v5 .m5-meds li:nth-child(3) { transform: none; }
+body.lp-v5 .m5-copy { padding: 0 max(4vw, 32px) 0 40px; }
+@media (max-width: 1360px) {
+  body.lp-v5 .m5-visual { padding-right: 80px; }
+  body.lp-v5 .m5-photo { height: 500px; }
+  body.lp-v5 .m5-meds { right: 22px; }
+  body.lp-v5 .m5-meds li { width: 90px; height: 90px; }
+}
+@media (max-width: 900px) {
+  body.lp-v5 .m5 { grid-template-columns: minmax(0, 1fr); padding-block: 36px 40px; }
+  body.lp-v5 .m5-visual { display: block; height: auto; max-height: none; margin: 0 0 22px; padding: 0 20px; }
+  body.lp-v5 .m5-photo { max-width: none; height: 380px; margin: 0 auto; border-radius: 24px; }
+  body.lp-v5 .m5-meds { position: static; width: auto; margin: 22px 0 0; transform: none; justify-content: space-between; }
+  body.lp-v5 .m5-copy { padding: 0 20px; }
+}
+@media (max-width: 640px) {
+  body.lp-v5 .m5-photo { height: 340px; }
+  body.lp-v5 .m5-meds li { width: 76px; height: 76px; }
+}
+
+/* Client voices photograph: no script over the plants, no leaf smudges, softer light. */
+body.lp-v5 .cv5-script, body.lp-v5 .cv5-leaf { display: none; }
+body.lp-v5 .cv5-visual > img { object-position: 45% 12%; filter: saturate(0.95) brightness(0.97); }
+body.lp-v5 .m5-photo { -webkit-mask-image: none; mask-image: none; }
+body.lp-v5 .m5-brain { transform: scale(0.8); transform-origin: top right; }
+body.lp-v5 .m5-facts { margin-top: 30px; }
+body.lp-v5 .cv5-visual > img { filter: saturate(0.92) brightness(0.93) contrast(1.04); }
