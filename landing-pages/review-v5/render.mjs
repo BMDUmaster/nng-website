@@ -237,7 +237,7 @@ export function renderFooter(p, { cta, assets }) {
   return `<footer class="footer v5-foot"><div class="wrap v5-foot-inner">
     <div class="v5-foot-brand">
       <img src="${assets}nng-logo.webp" width="100" height="53" alt="Transformation with NNG" loading="lazy">
-      <p class="v5-foot-name">Dr. Narayani Garg<span>Psychic Spiritual Mentor</span></p>
+      <p class="v5-foot-name">Narayani Garg<span>Psychic Spiritual Mentor</span></p>
     </div>
     <div class="v5-foot-msg">
       <p class="v5-foot-title">Bring your question.<br><em>Begin a personal conversation.</em></p>
