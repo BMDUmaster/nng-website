@@ -149,3 +149,56 @@ body.lp-v5 .nh2-ring { mix-blend-mode: multiply; }
 body.lp-v5 .nh2-ring { z-index: 1; mix-blend-mode: normal; color: rgb(176 132 58 / 0.7); -webkit-mask-image: radial-gradient(closest-side, transparent 70%, #000 74%); mask-image: radial-gradient(closest-side, transparent 70%, #000 74%); }
 body.lp-v5 .nh2-ring text { fill: #9C7330; }
 @media (max-width: 760px) { body.lp-v5 .nh2-copy { width: 100%; } body.lp-v5 .nh2 h1 { white-space: normal; font-size: 31px !important; } }
+
+/* =============================================================================================================
+   Pass 2 (closer to the banner): her photograph sits nearer the centre and stays crisp, the ring is centred on her,
+   the Lo Shu and name cards sit beside her, larger words, leaves in the lower-left corner.
+   ============================================================================================================= */
+body.lp-v5 .nh2 { min-height: clamp(660px, calc(100svh - 74px), 800px); }
+body.lp-v5 .nh2-visual { width: 66%; }
+body.lp-v5 .nh2-photo { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%), linear-gradient(0deg, transparent 0%, #000 16%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%), linear-gradient(0deg, transparent 0%, #000 16%); }
+body.lp-v5 .nh2-photo img { object-position: 50% 14%; }
+body.lp-v5 .nh2-photo::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 70% at 46% 40%, transparent 50%, rgb(250 244 232 / 0.55) 100%); pointer-events: none; }
+body.lp-v5 .nh2-ring { left: 45%; top: 40%; width: min(44vw, 64vh, 620px); color: rgb(176 132 58 / 0.75); -webkit-mask-image: radial-gradient(closest-side, transparent 72%, #000 75%); mask-image: radial-gradient(closest-side, transparent 72%, #000 75%); }
+body.lp-v5 .nh2-ring text { fill: #8E6828; font-size: 40px; }
+body.lp-v5 .nh2-grid { right: 8%; bottom: auto; top: 36%; }
+body.lp-v5 .nh2-name { right: auto; left: 54%; bottom: 150px; }
+body.lp-v5 .nh2-t1 { left: 24%; top: 6%; }
+body.lp-v5 .nh2-t2 { right: 2%; top: 12%; }
+body.lp-v5 .nh2-t3 { right: 3%; bottom: 140px; }
+body.lp-v5 .nh2-t4 { left: 30%; bottom: 220px; }
+body.lp-v5 .nh2-s1 { left: 34%; top: 14%; } body.lp-v5 .nh2-s2 { right: 4%; top: 64%; } body.lp-v5 .nh2-s3 { left: 33%; bottom: 190px; }
+body.lp-v5 .nh2-copy { width: min(46%, 760px); padding-top: 54px; }
+body.lp-v5 .nh2 h1 { font-size: clamp(44px, 4vw, 70px) !important; color: #0F2A1C; font-weight: 500; }
+body.lp-v5 .nh2-lead { font-size: 17.5px; color: #55554F; max-width: 600px; }
+body.lp-v5 .nh2-chips li { padding: 10px 22px 10px 14px; font-size: 15px; }
+body.lp-v5 a.nh2-cta, body.lp-v5 .nh2-ghost { min-height: 56px; font-size: 16px; }
+body.lp-v5 .nh2-feats { padding: 20px 12px; }
+body.lp-v5 .nh2-leaves { position: absolute; z-index: 2; left: -30px; bottom: -20px; width: 170px; fill: #4F6E46; opacity: 0.85; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) { body.lp-v5 .nh2-leaves { transform-origin: 10% 100%; animation: m5-sway 9s ease-in-out infinite; } }
+@media (max-width: 1500px) {
+  body.lp-v5 .nh2 h1 { font-size: clamp(38px, 3.8vw, 54px) !important; }
+  body.lp-v5 .nh2-lead { font-size: 15.5px; }
+  body.lp-v5 .nh2-chips li { padding: 7px 16px 7px 11px; font-size: 13.5px; }
+  body.lp-v5 a.nh2-cta, body.lp-v5 .nh2-ghost { min-height: 50px; font-size: 15px; }
+  body.lp-v5 .nh2-copy { padding-top: 36px; }
+  body.lp-v5 .nh2-grid { top: 34%; }
+  body.lp-v5 .nh2-name { bottom: 112px; }
+  body.lp-v5 .nh2-leaves { width: 130px; }
+}
+@media (max-width: 1100px) { body.lp-v5 .nh2-visual { width: 60%; } body.lp-v5 .nh2-name { left: 40%; bottom: 170px; } body.lp-v5 .nh2 h1 { white-space: normal; } }
+@media (max-width: 760px) {
+  body.lp-v5 .nh2-visual { width: 100%; }
+  body.lp-v5 .nh2-photo { -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 20%); mask-image: linear-gradient(0deg, transparent 0%, #000 20%); }
+  body.lp-v5 .nh2-photo img { object-position: 42% 12%; }
+  body.lp-v5 .nh2-ring { left: 44%; top: 40%; width: 96vw; }
+  body.lp-v5 .nh2-grid { top: auto; right: 4%; bottom: 72px; }
+  body.lp-v5 .nh2-name { left: 50%; bottom: 18px; }
+  body.lp-v5 .nh2-t1 { left: 4%; top: 6%; } body.lp-v5 .nh2-t4 { display: none; }
+  body.lp-v5 .nh2 h1 { font-size: 32px !important; }
+  body.lp-v5 .nh2-lead { font-size: 14px; }
+  body.lp-v5 .nh2-chips li { padding: 6px 12px 6px 9px; font-size: 12.5px; }
+  body.lp-v5 .nh2-leaves { display: none; }
+}
+body.lp-v5 .nh2-t4 { display: none; }
+@media (max-width: 760px) { body.lp-v5 .nh2-copy { width: 100%; padding-top: 6px; } body.lp-v5 .nh2 h1 { white-space: normal; } }
