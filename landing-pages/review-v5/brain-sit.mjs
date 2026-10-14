@@ -115,7 +115,7 @@ export function brainPractices(p, { esc, wa, pageIcon }) {
 // Brainology "Why her approach matters" (Oct 13 o): the words, two principle cards and three promises beside her
 // photograph in a gold-lined arch, then a compact deep green invitation card.
 export function brainWhy(p, { esc, wa, icon }) {
-  const principles = [['reflection', 'The person matters.', 'Explore your beliefs and responses as you practise something new.'], ['listen', 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
+  const principles = [['reflection', 'The person matters.', p.slug === 'astrology' ? 'Explore your beliefs and responses alongside the reading.' : 'Explore your beliefs and responses as you practise something new.'], ['listen', 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
   const shield = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/></svg>';
   const cart = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h3l3 13h12l3-9H9"/><circle cx="12" cy="25" r="1.6"/><circle cx="21" cy="25" r="1.6"/><path d="m15 11 4 4M19 11l-4 4"/></svg>';
   const bulb = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22h8M13 26h6M16 4a8 8 0 0 0-5 14.2c.8.7 1 1.6 1 2.8h8c0-1.2.2-2.1 1-2.8A8 8 0 0 0 16 4Z"/></svg>';
@@ -129,7 +129,7 @@ export function brainWhy(p, { esc, wa, icon }) {
       <div class="wy4-cards">${principles.map(([ic, t, d], i) => `<article style="--i:${i}"><span class="wy4-ic" aria-hidden="true">${icon(ic)}</span><div><h3>${t}</h3><p>${d}</p></div></article>`).join('')}</div>
       <ul class="wy4-promise">${promises.map(([ic, t], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ul>
     </div>
-    <figure class="wy4-photo wy4-photo-d"><img src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg beside a white Buddha relief" width="720" height="923" loading="lazy"><figcaption>Narayani Garg<span>Psychic Spiritual Mentor</span></figcaption></figure>
+    ${p.slug === 'astrology' ? '<img class="wy4-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy" aria-hidden="true">' : ''}<figure class="wy4-photo wy4-photo-d"><img src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg beside a white Buddha relief" width="720" height="923" loading="lazy"><figcaption>Narayani Garg<span>Psychic Spiritual Mentor</span></figcaption></figure>
     <div class="wy4-band">
       <div><p class="wy4-band-kicker">Begin with the NNG team</p><h3>${esc(ct1)} <em>${esc(ct2)}</em></h3><p>${esc(p.closeCopy)}</p></div>
       ${wa('why', 'Get started', 'wy4-cta')}

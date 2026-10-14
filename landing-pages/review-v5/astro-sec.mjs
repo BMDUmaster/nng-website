@@ -27,7 +27,7 @@ export function astroMeet(p, { esc, wa }) {
       <figcaption><span aria-hidden="true">${I.lotus}</span>Narayani Garg<small>Psychic Spiritual Mentor</small></figcaption>
     </figure>
     <div class="am-card">
-      <svg class="am-stars" viewBox="0 0 280 160" aria-hidden="true"><path pathLength="1" d="M30 40L90 22" style="--d:0.0s"/><path pathLength="1" d="M90 22L150 60" style="--d:0.25s"/><path pathLength="1" d="M150 60L210 30" style="--d:0.5s"/><path pathLength="1" d="M210 30L250 95" style="--d:0.75s"/><path pathLength="1" d="M250 95L185 130" style="--d:1.0s"/><path pathLength="1" d="M185 130L120 110" style="--d:1.25s"/><circle cx="30" cy="40" r="3.6" style="--d:0.0s"/><circle cx="90" cy="22" r="2.6" style="--d:0.4s"/><circle cx="150" cy="60" r="3.6" style="--d:0.8s"/><circle cx="210" cy="30" r="2.6" style="--d:1.2000000000000002s"/><circle cx="250" cy="95" r="3.6" style="--d:1.6s"/><circle cx="185" cy="130" r="2.6" style="--d:2.0s"/><circle cx="120" cy="110" r="3.6" style="--d:2.4000000000000004s"/></svg>
+      <img class="am-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy" aria-hidden="true">
       <p class="am-kicker"><span aria-hidden="true">${I.lotus}</span>Meet your guide</p>
       <h2 id="meet-title">She reads the chart.<br><em>And listens to the person.</em></h2>
       <p class="am-lead">Narayani reads the chart themes relevant to your question beside your real circumstances. She explains her reasoning in plain words, and the decision stays with you.</p>
@@ -46,7 +46,7 @@ export function astroQuestion(p, { esc, wa }) {
       <div><p class="aq-kicker"><span aria-hidden="true">✦</span>The question you bring</p>
       <h2 id="situation-title">${esc(a)}<br><em>${esc(b)}</em></h2>
       <p class="aq-lead">${esc(p.situationIntro)}</p></div>
-      <figure class="aq-photo" aria-hidden="true"><span class="aq-orbit"><b></b></span><span class="aq-orbit aq-orbit-2"><b></b></span><span class="aq-ring"><img src="../_shared/hero/aq-narayani.webp" alt="" width="720" height="720" loading="lazy"></span><span class="aq-stars"><i style="--x:6%;--y:18%;--d:0s"></i><i style="--x:92%;--y:10%;--d:1.2s"></i><i style="--x:98%;--y:62%;--d:0.6s"></i><i style="--x:4%;--y:78%;--d:1.8s"></i><i style="--x:80%;--y:96%;--d:2.4s"></i><i style="--x:50%;--y:-4%;--d:3s"></i></span></figure>
+      <figure class="aq-photo" aria-hidden="true"><img class="aq-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy"><span class="aq-ring"><img src="../_shared/hero/aq-narayani.webp" alt="" width="720" height="720" loading="lazy"></span></figure>
     </div>
     <div class="aq-cards">${p.situations.map(([t, d], i) => `<article style="--i:${i}">
       <div class="aq-head"><span class="aq-ic" aria-hidden="true">${icons[i]}</span><em aria-hidden="true">0${i + 1}</em></div>

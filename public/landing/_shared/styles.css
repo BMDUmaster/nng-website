@@ -5296,6 +5296,97 @@ body.lp-v5 .aq-photo > span.aq-stars { inset: 0; overflow: visible; border-radiu
   body.lp-v5 .aq-photo > span.aq-ring { inset: 10px; box-shadow: 0 0 0 3px #FFFCF6, 0 0 0 4px #C9A25A; }
   body.lp-v5 .aq-photo > span.aq-orbit-2 { inset: -8px; }
 }
+
+/* =============================================================================================================
+   Oct 14 e: turning zodiac wheels throughout (constellation and orbits removed), a refined hero WhatsApp button on
+   phones, a cleaner wheel in the options header on phones, a calmer question header on phones, and the why section.
+   ============================================================================================================= */
+/* Meet: wheel back in the card corner. */
+body.lp-v5 .am-wheel { display: block; right: -150px; top: -150px; width: 360px; height: 360px; opacity: 0.2; }
+/* Question: the wheel turns behind the round photograph. */
+body.lp-v5 .aq-photo { width: 300px; height: 300px; }
+body.lp-v5 .aq-photo > .aq-wheel { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); right: auto; top: auto; opacity: 0.45; }
+body.lp-v5 .aq-photo > span.aq-ring { inset: 26px; }
+@media (max-width: 640px) {
+  body.lp-v5 .aq-top { grid-template-columns: minmax(0, 1fr) 128px; grid-template-areas: "head head" "lead photo"; row-gap: 12px; }
+  body.lp-v5 .aq-top > div { display: contents; }
+  body.lp-v5 .aq-kicker, body.lp-v5 .aq h2 { grid-column: 1 / -1; }
+  body.lp-v5 .aq-lead { grid-column: 1; margin: 0; align-self: center; font-size: 13.5px; }
+  body.lp-v5 .aq-photo { grid-column: 2; width: 128px; height: 128px; margin: 0; }
+  body.lp-v5 .aq-photo > .aq-wheel { inset: -16px; width: 160px; height: 160px; }
+  body.lp-v5 .aq-photo > span.aq-ring { inset: 12px; }
+}
+/* Options, phones: the wheel behind the arch, not behind the words. */
+@media (max-width: 700px) {
+  body.lp-v5 .ao-top { position: relative; }
+  body.lp-v5 .ao-copy { position: relative; z-index: 1; }
+  body.lp-v5 .ao-photo { position: relative; }
+  body.lp-v5 .ao-wheel { left: auto !important; right: 30% !important; top: -34px !important; width: 230px !important; height: 230px !important; opacity: 0.28 !important; z-index: -1; }
+  body.lp-v5 .ao-copy::before { content: ""; position: absolute; inset: -10px -14px -10px -20px; z-index: -1; background: radial-gradient(closest-side, #FBF7EF 70%, rgb(251 247 239 / 0)); }
+}
+/* Hero, phones: one refined WhatsApp bar (icon, label, arrow) and a lighter second action. */
+@media (max-width: 900px) {
+  body.lp-v5 .ah3-actions { flex-direction: column; gap: 10px; }
+  body.lp-v5 a.ah3-cta { width: 100%; min-height: 52px; justify-content: flex-start; padding: 5px 5px 5px 6px; font-size: 15px; }
+  body.lp-v5 a.ah3-cta .ah3-arrow { display: grid !important; margin-left: auto; width: 40px; height: 40px; background: linear-gradient(180deg, #E8CB86, #C9A25A); color: #1C3527; }
+  body.lp-v5 .ah3-ghost { width: 100%; min-height: 46px; justify-content: center; background: transparent; font-size: 14px; }
+}
+/* Why her approach matters (Astrology): a wheel turning behind her arch. */
+body.lp-v5 .wy4-wheel { position: absolute; grid-area: photo; z-index: 0; align-self: center; justify-self: center; width: 520px; height: 520px; opacity: 0.32; pointer-events: none; }
+body.lp-v5 .wy4-photo-d { z-index: 1; }
+@media (prefers-reduced-motion: no-preference) { body.lp-v5 :is(.am-wheel, .aq-wheel, .wy4-wheel) { animation: as-spin 80s linear infinite; } }
+@media (max-width: 1100px) { body.lp-v5 .wy4-wheel { width: 420px; height: 420px; } }
+@media (max-width: 820px) { body.lp-v5 .wy4-wheel { display: none; } }
+/* =============================================================================================================
+   Astrology (Oct 14 f): the why section's wheel beside her arch; enquiry, FAQ, book and footer moved from plum to the
+   page's deep green and cream, each with a slowly turning zodiac wheel; compact topic chips on phones.
+   ============================================================================================================= */
+body.lp-v5[data-page="astrology"] { --as-g: #1E3A2A; --as-g2: #2B4A36; --as-gd: #13281C; }
+
+/* Why: the wheel turns behind her arch (positioned from the section, not the grid). */
+body.lp-v5 .wy4-inner { position: relative; }
+body.lp-v5 .wy4-wheel { position: absolute; grid-area: auto; right: -110px; top: 50%; width: 560px; height: 560px; margin-top: -330px; opacity: 0.3; }
+
+/* A turning wheel as a background layer. */
+body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot) { position: relative; overflow: hidden; isolation: isolate; }
+body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot)::after { content: ""; position: absolute; z-index: -1; width: 520px; height: 520px; background: url("hero/zodiac.webp") center / contain no-repeat; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) { body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot)::after { animation: as-spin 90s linear infinite; } }
+body.lp-v5[data-page="astrology"] .en2::after { left: -200px; bottom: -200px; opacity: 0.12; filter: brightness(1.6); }
+body.lp-v5[data-page="astrology"] .fq2::after { right: -230px; top: -150px; opacity: 0.28; }
+body.lp-v5[data-page="astrology"] .bk2-band::after { right: -180px; top: -160px; opacity: 0.1; filter: brightness(1.6); }
+body.lp-v5[data-page="astrology"] .v5-foot::after { right: -160px; bottom: -300px; width: 460px; height: 460px; opacity: 0.08; filter: brightness(1.8); }
+
+/* Enquiry: deep green; green and gold accents in the panel. */
+body.lp-v5[data-page="astrology"] .en2 { background: radial-gradient(50% 70% at 100% 0%, rgb(215 184 107 / 0.12), transparent 70%), linear-gradient(170deg, #1F3E2D, var(--as-gd)) !important; }
+body.lp-v5[data-page="astrology"] .en2 :is(.en2-steps span, .en2-alt a) { border-color: rgb(215 184 107 / 0.45) !important; }
+body.lp-v5[data-page="astrology"] .en2 .en2-alt a { background: rgb(255 255 255 / 0.05) !important; }
+body.lp-v5[data-page="astrology"] .en2 .topic-picker button[aria-pressed="true"] { background: var(--as-g) !important; border-color: var(--as-g) !important; color: #FAF6F0 !important; }
+body.lp-v5[data-page="astrology"] .en2 .topic-picker button { color: #1F2A22 !important; }
+body.lp-v5[data-page="astrology"] .en2 a.wa-btn { background: linear-gradient(180deg, var(--as-g2), var(--as-g)) !important; color: #FAF6F0 !important; }
+
+/* FAQ: green marks and a green ask card. */
+body.lp-v5[data-page="astrology"] .fq2-item[open] .fq2-mark, body.lp-v5[data-page="astrology"] .fq2-item.is-open .fq2-mark { background: var(--as-g) !important; border-color: var(--as-g) !important; color: #FAF6F0 !important; }
+body.lp-v5[data-page="astrology"] .fq2-ask { background: radial-gradient(60% 140% at 100% 0%, rgb(215 184 107 / 0.16), transparent 60%), linear-gradient(160deg, #1F4634, #10291E) !important; }
+
+/* Book and footer: deep green. */
+body.lp-v5[data-page="astrology"] .bk2-band { background: radial-gradient(50% 70% at 20% 50%, rgb(215 184 107 / 0.1), transparent 70%), linear-gradient(170deg, #1F3E2D, var(--as-gd)) !important; }
+body.lp-v5[data-page="astrology"] .bk2-band .bk-glow { opacity: 0.5; }
+body.lp-v5[data-page="astrology"] .v5-foot { background: linear-gradient(180deg, #17301F, #0F2117) !important; }
+
+/* Phones: compact enquiry topics in one swipeable row; smaller wheels. */
+@media (max-width: 700px) {
+  body.lp-v5[data-page="astrology"] .en2 .topic-picker { flex-wrap: nowrap; overflow-x: auto; margin-inline: -20px; padding: 2px 20px 6px; scrollbar-width: none; }
+  body.lp-v5[data-page="astrology"] .en2 .topic-picker::-webkit-scrollbar { display: none; }
+  body.lp-v5[data-page="astrology"] .en2 .topic-picker button { flex: none; white-space: nowrap; }
+  body.lp-v5[data-page="astrology"] :is(.en2, .fq2, .bk2-band, .v5-foot)::after { width: 300px; height: 300px; }
+  body.lp-v5[data-page="astrology"] .fq2::after { right: -150px; top: -90px; }
+}
+body.lp-v5[data-page="astrology"] .en2 .en2-steps span { background: var(--as-gd) !important; color: #E9CD8A !important; }
+body.lp-v5[data-page="astrology"] .en2 .en2-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+body.lp-v5[data-page="astrology"] .en2 :is(.en2-grid > *, .en2-panel, .topic-picker) { min-width: 0; }
+@media (max-width: 900px) { body.lp-v5[data-page="astrology"] .en2 .en2-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 700px) { body.lp-v5[data-page="astrology"] .en2 .topic-picker { margin-inline: -14px; padding-inline: 14px; max-width: calc(100% + 28px); } }
+body.lp-v5[data-page="astrology"] .en2 .en2-steps span { box-shadow: inset 0 0 0 1px #D7B86B, 0 0 0 5px rgb(19 40 28 / 0.9) !important; }
 /* =============================================================================================================
    Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
    gold on dark ones; label first, a small WhatsApp disc at the end.
