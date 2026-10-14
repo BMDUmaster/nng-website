@@ -93,6 +93,26 @@ fs.copyFileSync(path.join(root,'review-v2/landing.js'),path.join(shared,'landing
 for(const p of pages){const folder=path.join(output,p.slug);fs.mkdirSync(folder,{recursive:true});fs.writeFileSync(path.join(folder,'index.html'),render(p));}
 const review=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>NNG landing pages | Revised copy review</title><link rel="icon" href="_shared/assets/icon.svg"><link rel="stylesheet" href="_shared/styles.css?v=${version}"></head><body class="copy-v2"><main class="wrap section"><p class="eyebrow">TEAM NNG / REVISED LANDING PAGES / 9 OCTOBER 2026</p><h1>Five services.\nFive personal starting points.</h1><p class="service-terms">Rewritten around real consultation questions, Narayani’s approach and a direct WhatsApp enquiry. Staging review only; no ads or production launch.</p><div class="review-grid">${pages.map(p=>`<a class="review-link" href="${p.slug}/"><span>${esc(p.family==='program'?'Six-month personal programme':'Personal consultation')}</span><h2>${esc(p.short||p.name)}</h2><p>${esc(p.headline.join(' '))}</p><p class="review-action">Review this page ${arrow}</p></a>`).join('')}</div></main></body></html>`;
 fs.writeFileSync(path.join(output,'index.html'),review.replace('Five services.\nFive personal starting points.','Five services.<br>Five personal starting points.'));
+// Oct 14: the pages are green, cream and gold. Any purple left in the stylesheet or the pages (plum backgrounds,
+// mauve text, lilac accents) is turned into the deep green of the same lightness.
+const toGreen = (r, g, b) => {
+  r /= 255; g /= 255; b /= 255;
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2;
+  if (d < 0.05) return null;
+  let h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  h = (h * 60 + 360) % 360;
+  if (h < 262 || h > 338) return null;
+  const sat = Math.min(0.55, (d / (1 - Math.abs(2 * l - 1))) * 0.85), hue = 150 / 360;
+  const q = l < 0.5 ? l * (1 + sat) : l + sat - l * sat, pp = 2 * l - q;
+  const f = (t) => { t = (t + 1) % 1; return t < 1 / 6 ? pp + (q - pp) * 6 * t : t < 1 / 2 ? q : t < 2 / 3 ? pp + (q - pp) * (2 / 3 - t) * 6 : pp; };
+  return [f(hue + 1 / 3), f(hue), f(hue - 1 / 3)].map((v) => Math.round(v * 255));
+};
+const greenify = (txt) => txt
+  .replace(/#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b/g, (m, h) => { if (h.length === 3) h = h.split('').map((c) => c + c).join(''); const c = toGreen(parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)); return c ? '#' + c.map((v) => v.toString(16).padStart(2, '0')).join('').toUpperCase() : m; })
+  .replace(/rgb(a?)\(\s*(\d+)([ ,]+)(\d+)([ ,]+)(\d+)/g, (m, a, r, s1, g, s2, b) => { const c = toGreen(+r, +g, +b); return c ? `rgb${a}(${c[0]}${s1}${c[1]}${s2}${c[2]}` : m; });
+fs.writeFileSync(path.join(shared, 'styles.css'), greenify(fs.readFileSync(path.join(shared, 'styles.css'), 'utf8')));
+for (const p of pages) { const f = path.join(output, p.slug, 'index.html'); fs.writeFileSync(f, greenify(fs.readFileSync(f, 'utf8'))); }
+
 // The Next.js site serves the same files at /landing/ (see the rewrites in next.config.ts).
 const publicCopy=path.join(root,'..','public','landing');
 fs.rmSync(publicCopy,{recursive:true,force:true});
