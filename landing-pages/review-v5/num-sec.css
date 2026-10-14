@@ -227,3 +227,13 @@ body.lp-v5 .nq-cards article::after { display: none; }
   body.lp-v5 .no-more { margin-right: 34px; }
   body.lp-v5[data-page="numerology"] .na-steps li { grid-template-columns: 30px 50px minmax(0, 1fr) 32px; column-gap: 8px; }
 }
+/* Phones: question cards as a swipeable slider with dots. */
+body.lp-v5 .nq-dots { display: none; }
+@media (max-width: 760px) {
+  body.lp-v5 .nq-cards { display: flex; gap: 14px; max-width: none; margin: 22px -20px 0; padding: 4px 20px 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  body.lp-v5 .nq-cards::-webkit-scrollbar { display: none; }
+  body.lp-v5 .nq-cards article { flex: 0 0 84%; scroll-snap-align: center; }
+  body.lp-v5 .nq-dots { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+  body.lp-v5 .nq-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgb(201 162 90 / 0.4); transition: width 0.3s ease, background 0.3s ease; }
+  body.lp-v5 .nq-dots i.is-on { width: 22px; border-radius: 4px; background: #1E3A2A; }
+}

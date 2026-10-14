@@ -36,11 +36,12 @@ export function numQuestion(p, { esc, wa }) {
       <p class="nq-kicker">The question you bring</p>
       <h2 id="situation-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em>.</h2>
       <p class="nq-lead">${esc(p.situationIntro)}</p>
-      <div class="nq-cards">${p.situations.map(([t, d], i) => `<article style="--i:${i}">
+      <div class="nq-cards" data-nq>${p.situations.map(([t, d], i) => `<article style="--i:${i}">
         <div class="nq-photo"><img src="../_shared/hero/nq-${i + 1}.webp" alt="" width="333" height="148" loading="lazy"><em>0${i + 1}</em><span class="nq-ic" aria-hidden="true">${icons[i]}</span></div>
         <h3>${esc(t)}</h3><p>${esc(d)}</p>
         ${wa('situation', 'Start with this', 'nq-cta').replace('</a>', `<i aria-hidden="true">${arrow}</i></a>`)}
       </article>`).join('')}</div>
+      <div class="nq-dots" aria-hidden="true">${p.situations.map((_, i) => `<i${i ? '' : ' class="is-on"'}></i>`).join('')}</div>
     </div>
   </section>`;
 }

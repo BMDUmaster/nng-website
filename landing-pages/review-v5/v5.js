@@ -71,6 +71,13 @@
   // Astrology options: "See more" opens a card's description on phones.
   document.querySelectorAll('.ao-more, .no-more').forEach((b) => b.addEventListener('click', () => { const li = b.closest('li'); const open = li.classList.toggle('is-open'); b.setAttribute('aria-expanded', String(open)); b.textContent = open ? 'See less' : 'See more'; }));
 
+  // Numerology question cards: dots follow the swipe on phones.
+  const nqList = document.querySelector('[data-nq]');
+  if (nqList) {
+    const nqDots = [...document.querySelectorAll('.nq-dots i')];
+    nqList.addEventListener('scroll', () => { const k = Math.round(nqList.scrollLeft / Math.max(1, nqList.scrollWidth - nqList.clientWidth) * (nqDots.length - 1)); nqDots.forEach((d, n) => d.classList.toggle('is-on', n === k)); }, { passive: true });
+  }
+
   // Brainology approach loop: light one link at a time while in view.
   const loop = document.querySelector('.a6-chain ol, .ap-chain ol');
   if (loop && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
