@@ -48,3 +48,24 @@ export function vastuHero2(p, { esc, wa }) {
     <ul class="vh-feats">${feats.map(([ic, t]) => `<li><span>${ic}</span><strong>${t}</strong></li>`).join('')}</ul>
   </section>`;
 }
+
+// Vastulogy "Your consultation options" (Oct 14), from the approved banner: the words, four photograph cards and an
+// action on the left; her full-length photograph with a turning compass rose on the right.
+export function vastuScope(p, { esc, wa }) {
+  const [a, b] = p.scopeTitle.split('\n');
+  const bw = b.split(' '); const tail = bw.splice(-2).join(' ');
+  const icons = [I.home, I.case, I.compass, I.desk];
+  return `<section class="vs" id="ways" aria-labelledby="ways-title"><div class="vs-inner">
+    <div class="vs-main">
+      <p class="vh-kicker"><span aria-hidden="true">${I.star}</span>Vastu consultation</p>
+      <h2 id="ways-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em></h2>
+      <p class="vs-lead">${esc(p.scopeIntro)}</p>
+      <ul class="vs-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}">
+        <div class="vs-text"><p class="vs-top"><em>0${i + 1}</em><span aria-hidden="true">${icons[i]}</span></p><h3>${esc(t)}</h3><p>${esc(d)}</p></div>
+        <div class="vs-pic"><img src="../_shared/hero/vs-${i + 1}.webp" alt="" width="220" height="210" loading="lazy"><a class="vs-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${I.arrow}</a></div>
+      </li>`).join('')}</ul>
+      <div class="vs-foot">${wa('scope', 'WhatsApp enquiry', 'vh-cta vs-cta').replace('</a>', `<i class="vh-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<span class="vs-rule" aria-hidden="true"><i></i>${I.star}<i></i></span></div>
+    </div>
+    <figure class="vs-photo" aria-hidden="true">${rose().replace('class="vh-rose"', 'class="vh-rose vs-rose"')}<img src="../_shared/hero/vs-photo.webp" alt="" width="700" height="1200" loading="lazy"></figure>
+  </div></section>`;
+}
