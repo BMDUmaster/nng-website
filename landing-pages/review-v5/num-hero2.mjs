@@ -79,8 +79,8 @@ export function numMeet(p, { esc, wa }) {
     </figure>
     <div class="nm-copy">
       <p class="nh2-kicker nm-kicker"><span aria-hidden="true">${I.star}</span>Meet your guide</p>
-      <h2 id="meet-title">She reads the numbers.<br><em>And the reason behind them.</em></h2>
-      <p class="nm-lead">Narayani begins with why you are asking: a new name, a business shortlist or a change you are weighing. She explains the traditional interpretation in plain words, and the decision to change anything stays with you.</p>
+      <h2 id="meet-title">Numbers are all around you.<br><em>What do yours say?</em></h2>
+      <p class="nm-lead">Your name, your house, your car, your blood reports, even your child’s progress report: each carries a number. Knowing your numbers is a start. A closer look with Narayani shows the hidden blessings in them.</p>
       <ul class="nm-facts">${facts.map(([ic, t, d]) => `<li><span>${ic}</span><strong>${t}</strong><em>${d}</em></li>`).join('')}</ul>
       <blockquote class="nm-quote"><span aria-hidden="true">“</span><div><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>Narayani Garg</cite></div><i aria-hidden="true">${I.lotus}</i></blockquote>
       <div class="nm-foot">${wa('meet', 'Talk to Narayani’s team', 'nh2-cta nm-cta').replace('</a>', `<i class="nh2-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<ul>${small.map(([ic, t]) => `<li><span>${ic}</span>${t}</li>`).join('')}</ul></div>

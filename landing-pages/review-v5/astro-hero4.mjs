@@ -23,9 +23,9 @@ const feats = [[I.doc, 'Personalised guidance', 'Based on your birth chart'], [I
 
 const head = (wa, ghost = 'ah4-ghost') => `
   <p class="ah4-kicker"><span aria-hidden="true">${I.star}</span><b>Astrology with Narayani<small>Guidance for a brighter tomorrow</small></b></p>
-  <h1 id="hero-title">Find clarity through<br>the wisdom of astrology.<br><em>Align with your true path.</em></h1>
+  <h1 id="hero-title">A career move.<br>A relationship decision.<br><em>A question about timing.</em></h1>
   <span class="ah4-rule" aria-hidden="true"><i></i>${I.star}</span>
-  <p class="ah4-lead">Narayani reads your birth chart and life patterns beside your real circumstances, for questions about relationships, career, money, wellbeing and important life decisions.</p>
+  <p class="ah4-lead">Explore a career, relationship or timing question with Narayani, reading relevant birth-chart themes alongside your real circumstances and choices.</p>
   <div class="ah4-actions">${wa('hero', 'WhatsApp enquiry', 'ah4-cta').replace('</a>', `<i aria-hidden="true">${I.arrow}</i></a>`)}<a class="${ghost}" href="#ways"><i aria-hidden="true">${I.play}</i>See what we can discuss</a></div>
   <ul class="ah4-cards">${cards.map(([ic, t, d]) => `<li><span>${ic}</span><strong>${t}</strong><em>${d}</em></li>`).join('')}</ul>`;
 
