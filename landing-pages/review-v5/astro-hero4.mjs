@@ -17,6 +17,33 @@ const I = {
   play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.5v7l5.5-3.5Z"/></svg>',
   star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0Z"/></svg>',
 };
+
+// A glowing zodiac wheel for the opening: a sun at the centre, rays, the twelve signs on a ring, fine tick marks.
+const SG = '♈♉♊♋♌♍♎♏♐♑♒♓';
+function sunWheel() {
+  const c = 300, o = [];
+  o.push('<defs><radialGradient id="ah9-glow"><stop offset="0" stop-color="#FFF4CF" stop-opacity=".95"/><stop offset=".45" stop-color="#F7DC97" stop-opacity=".5"/><stop offset="1" stop-color="#F7DC97" stop-opacity="0"/></radialGradient></defs>');
+  o.push('<circle class="ah9-halo" cx="300" cy="300" r="300" fill="url(#ah9-glow)" stroke="none"/>');
+  o.push('<g class="ah9-spin">');
+  [292, 284, 214, 206, 96].forEach((r, i) => o.push(`<circle cx="300" cy="300" r="${r}" stroke-width="${i === 0 || i === 3 ? 1.6 : 0.8}"/>`));
+  for (let i = 0; i < 12; i++) {
+    const a = (i * 30 - 90) * Math.PI / 180, b = (i * 30 - 75) * Math.PI / 180;
+    o.push(`<path d="M${(c + 214 * Math.cos(a)).toFixed(1)} ${(c + 214 * Math.sin(a)).toFixed(1)}L${(c + 284 * Math.cos(a)).toFixed(1)} ${(c + 284 * Math.sin(a)).toFixed(1)}" stroke-width="1"/>`);
+    const x = (c + 249 * Math.cos(b)).toFixed(1), y = (c + 249 * Math.sin(b)).toFixed(1);
+    o.push(`<text x="${x}" y="${y}" transform="rotate(${i * 30 + 15} ${x} ${y})">${SG[i]}&#xFE0E;</text>`);
+  }
+  for (let i = 0; i < 120; i++) { const a = i * 3 * Math.PI / 180, r1 = i % 5 ? 200 : 192; o.push(`<path d="M${(c + r1 * Math.cos(a)).toFixed(1)} ${(c + r1 * Math.sin(a)).toFixed(1)}L${(c + 206 * Math.cos(a)).toFixed(1)} ${(c + 206 * Math.sin(a)).toFixed(1)}" stroke-width=".6"/>`); }
+  o.push('</g><g class="ah9-sun">');
+  for (let i = 0; i < 24; i++) { const a = i * 15 * Math.PI / 180, r2 = i % 2 ? 150 : 185; o.push(`<path d="M${(c + 46 * Math.cos(a - 0.08)).toFixed(1)} ${(c + 46 * Math.sin(a - 0.08)).toFixed(1)}L${(c + r2 * Math.cos(a)).toFixed(1)} ${(c + r2 * Math.sin(a)).toFixed(1)}L${(c + 46 * Math.cos(a + 0.08)).toFixed(1)} ${(c + 46 * Math.sin(a + 0.08)).toFixed(1)}Z" class="ah9-ray"/>`); }
+  o.push('<circle cx="300" cy="300" r="44" class="ah9-core"/></g>');
+  return `<svg class="ah9-wheel" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${o.join('')}</svg>`;
+}
+const sky = `<svg class="ah9-sky" viewBox="0 0 600 520" fill="none" aria-hidden="true">
+  <path class="ah9-moon" d="M118 70a34 34 0 1 0 30 52 28 28 0 1 1-30-52Z"/>
+  <g class="ah9-const"><path d="M40 150 92 118 140 170 196 140M60 330 110 300 150 340"/>${[[40, 150], [92, 118], [140, 170], [196, 140], [60, 330], [110, 300], [150, 340]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.6"/>`).join('')}</g>
+  ${[[230, 40, 9], [470, 30, 7], [560, 120, 10], [30, 250, 7], [560, 300, 6], [260, 470, 8], [520, 470, 9], [380, 10, 6]].map(([x, y, r], i) => `<path class="ah9-star" style="--d:${(i * 0.45).toFixed(2)}s" d="M${x} ${y - r}L${x + r * 0.22} ${y - r * 0.22}L${x + r} ${y}L${x + r * 0.22} ${y + r * 0.22}L${x} ${y + r}L${x - r * 0.22} ${y + r * 0.22}L${x - r} ${y}L${x - r * 0.22} ${y - r * 0.22}Z"/>`).join('')}
+</svg>`;
+
 const cards = [[I.heart, 'Relationships', 'Marriage, matching and timing'], [I.case, 'Career', 'Work changes and business'], [I.coins, 'Money', 'Property and major decisions'], [I.lotus, 'Wellbeing', 'Periods and transits']];
 const side = [[I.heart, 'Relationships'], [I.case, 'Career'], [I.coins, 'Money'], [I.lotus, 'Wellbeing'], [I.leaf, 'Life decisions']];
 const feats = [[I.doc, 'Personalised guidance', 'Based on your birth chart'], [I.chat, 'Practical next steps', 'For real-life questions'], [I.cal, 'Online or in person', 'By appointment']];
@@ -31,7 +58,7 @@ const head = (wa, ghost = 'ah4-ghost') => `
 
 export function astroHero4(p, { esc, wa }) {
   return `<section class="ah4" id="top" aria-labelledby="hero-title" data-hero-a>
-    <div class="ah4-photo" aria-hidden="true"><img src="../_shared/hero/ah8.webp" alt="" width="1000" height="788" fetchpriority="high"></div>
+    <div class="ah4-photo" aria-hidden="true"><img src="../_shared/hero/ah8.webp" alt="" width="1000" height="788" fetchpriority="high"></div><div class="ah9-stage" aria-hidden="true">${sunWheel()}${sky}</div><div class="ah4-photo ah9-cut" aria-hidden="true"><img src="../_shared/hero/ah8-cut.webp" alt="" width="1000" height="788"></div>
     <svg class="ah4-leaves ah8-leaf-r" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg><svg class="ah4-leaves" viewBox="0 0 200 260" aria-hidden="true"><path d="M40 200c-30-6-40-40-30-64 26 10 38 38 30 64Z"/><path d="M62 168c-6-30 14-58 40-62 4 28-14 54-40 62Z"/><path d="M84 142c-26-14-30-48-14-68 22 16 28 46 14 68Z"/><path d="M28 236c-28 6-50-14-52-38 26-2 46 16 52 38Z"/></svg>
     <div class="ah4-copy">${head(wa)}</div>
     <div class="ah6-band"><svg class="ah8-hills" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60C180 20 340 30 520 52s380 34 560 6 280-30 360-16V90H0Z" fill="#DCE4CF"/><path d="M0 74C240 48 460 56 700 70s460 14 740-10V90H0Z" fill="#C9D5BA"/></svg><svg class="ah6-curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C260 4 520 0 760 18s520 42 680 20"/></svg><div class="ah6-invite"><span aria-hidden="true">${I.chat}</span><div><p>Let’s discuss your space</p><h2>What decision would you like <em>to discuss today?</em></h2><em>Share your question. The team will explain the appropriate reading and appointment details.</em></div></div><ul>${feats.map(([ic, t, d]) => `<li><span>${ic}</span><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ul></div>

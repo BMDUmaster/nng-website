@@ -7035,6 +7035,46 @@ body.lp-v5 .ah6-band > * { position: relative; }
 }
 body.lp-v5 .ah6-band > svg { position: absolute !important; } body.lp-v5 .ah6-band > .ah6-curve { top: 0; height: 30px; }
 body.lp-v5 .ah4-leaves:not(.ah8-leaf-r) { top: auto !important; bottom: 150px; left: -95px; width: 170px; z-index: 0; }
+
+/* =============================================================================================================
+   Astrology hero, pass 6: a glowing zodiac wheel with a sun at its centre turns slowly behind her (a cut-out sits on
+   top), a crescent moon, a constellation and twinkling stars; on phones too.
+   ============================================================================================================= */
+body.lp-v5 .ah9-stage { position: absolute; z-index: 1; left: calc(44% + 7%); top: -2%; width: min(40vw, 640px); aspect-ratio: 1; pointer-events: none; }
+body.lp-v5 .ah9-wheel { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: #C9A04E; filter: drop-shadow(0 0 3px rgb(255 240 200 / 0.95)); }
+body.lp-v5 .ah9-wheel text { fill: #A9802F; stroke: none; font-size: 30px; text-anchor: middle; dominant-baseline: central; font-family: "Segoe UI Symbol", "Noto Sans Symbols", serif; }
+body.lp-v5 .ah9-halo { mix-blend-mode: screen; }
+body.lp-v5 .ah9-ray { fill: rgb(214 170 80 / 0.22); stroke: rgb(201 160 78 / 0.55); stroke-width: 0.8; }
+body.lp-v5 .ah9-core { fill: rgb(255 238 190 / 0.85); stroke: #C9A04E; stroke-width: 1.2; }
+body.lp-v5 .ah9-sky { position: absolute; left: -18%; top: -6%; width: 130%; height: auto; overflow: visible; }
+body.lp-v5 .ah9-moon { fill: #D7AE5E; opacity: 0.85; }
+body.lp-v5 .ah9-const path { stroke: rgb(184 140 62 / 0.55); stroke-width: 0.8; }
+body.lp-v5 .ah9-const circle { fill: #C9A04E; }
+body.lp-v5 .ah9-star { fill: #D2A957; transform-box: fill-box; transform-origin: center; }
+body.lp-v5 .ah9-cut { z-index: 2; pointer-events: none; }
+body.lp-v5 .ah9-cut img { animation: none !important; }
+body.lp-v5 .ah6-band, body.lp-v5 .ah4-copy { z-index: 3; }
+@keyframes ah9-spin { to { rotate: 360deg; } }
+@keyframes ah9-spin-r { to { rotate: -360deg; } }
+@keyframes ah9-pulse { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }
+@keyframes ah9-twinkle { 0%, 100% { opacity: 0.25; scale: 0.6; } 50% { opacity: 1; scale: 1; } }
+@keyframes ah9-in { from { opacity: 0; scale: 0.92; } to { opacity: 1; scale: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .ah9-stage { animation: ah9-in 1.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .ah9-spin { transform-origin: 300px 300px; animation: ah9-spin 120s linear infinite; }
+  body.lp-v5 .ah9-sun { transform-origin: 300px 300px; animation: ah9-spin-r 80s linear infinite; }
+  body.lp-v5 .ah9-halo, body.lp-v5 .ah9-core { animation: ah9-pulse 4.5s ease-in-out infinite; }
+  body.lp-v5 .ah9-star { animation: ah9-twinkle 3.2s ease-in-out infinite; animation-delay: var(--d); }
+}
+@media (max-width: 1500px) { body.lp-v5 .ah9-stage { width: min(42vw, 560px); left: calc(44% + 5%); } }
+@media (max-width: 1100px) { body.lp-v5 .ah9-stage { left: 46%; width: 50vw; } }
+@media (max-width: 760px) {
+  body.lp-v5 .ah9-stage { left: 6%; top: 6px; width: 88vw; }
+  body.lp-v5 .ah9-cut { display: block; position: absolute; left: 0; right: 0; top: 0; height: min(110vw, 460px); }
+  body.lp-v5 .ah9-cut img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 20%; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 22%); mask-image: linear-gradient(0deg, transparent 0%, #000 22%); }
+  body.lp-v5 .ah9-wheel text { font-size: 34px; }
+}
+@media (min-width: 761px) { body.lp-v5 .ah9-stage { left: calc(75.5% - min(20vw, 320px)) !important; top: -6%; } }
 /* =============================================================================================================
    Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
    gold on dark ones; label first, a small WhatsApp disc at the end.
