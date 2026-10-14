@@ -1,0 +1,150 @@
+/* =============================================================================================================
+   Astrology opening (Oct 14), from the approved green banner. Her photograph fills the right; a cream panel with a
+   soft curved edge holds the words; a hand-written line and a list of topics sit on the photograph; a deep green wave
+   with a lotus closes the banner. Calm motion on load.
+   ============================================================================================================= */
+body.lp-v5 .ah3 { --g: #1E3A2A; --g2: #2B4A36; --cream: #FAF4EA; position: relative; display: flex; align-items: center; min-height: clamp(640px, calc(100vh - 78px), 800px); overflow: hidden; background: var(--cream); isolation: isolate; }
+
+/* Photograph, warmed towards green on the right so it sits with the page palette (her face is left untouched). */
+body.lp-v5 .ah3-photo { position: absolute; top: 0; bottom: 0; left: 36%; right: 0; z-index: 0; overflow: hidden; }
+body.lp-v5 .ah3-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 28% 18%; }
+body.lp-v5 .ah3-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 52%, #24503A 78%); mix-blend-mode: color; opacity: 0.85; pointer-events: none; }
+body.lp-v5 .ah3-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 60%, rgb(20 42 30 / 0.6) 100%), linear-gradient(0deg, rgb(20 42 30 / 0.35), transparent 30%); pointer-events: none; }
+
+/* Cream panel with a soft curved edge. */
+body.lp-v5 .ah3::before { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse 54% 125% at 0% 42%, var(--cream) 0 84%, rgb(250 244 234 / 0.7) 92%, transparent 100%); pointer-events: none; }
+body.lp-v5 .ah3::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse 54.3% 125.4% at 0% 42%, transparent 0 91.4%, rgb(201 162 90 / 0.55) 91.6%, transparent 92%); pointer-events: none; }
+
+body.lp-v5 .ah3-panel { position: relative; z-index: 2; width: 100%; padding: 40px 0 140px max(6vw, 32px); }
+body.lp-v5 .ah3-copy { max-width: 700px; }
+body.lp-v5 .ah3-pill { display: inline-flex; align-items: center; gap: 14px; margin: 0; padding: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #22261F; }
+body.lp-v5 .ah3-pill > span { display: block; width: 22px; color: #B58A3E; }
+body.lp-v5 .ah3-pill > span svg { display: block; width: 100%; }
+body.lp-v5 .ah3-pill::after { content: ""; order: 0; }
+body.lp-v5 .ah3-pill { position: relative; }
+body.lp-v5 .ah3-pill span + * { }
+body.lp-v5 .ah3-role { margin: 14px 0 0; font-size: 16px; color: #9A7434; }
+body.lp-v5 .ah3 h1 { margin: 14px 0 0; font-family: var(--display); font-weight: 400; font-size: clamp(38px, 3.4vw, 64px) !important; line-height: 1.08 !important; letter-spacing: -0.005em; color: #14181C; }
+body.lp-v5 .ah3 h1 em { font-style: italic; color: #A57A33; }
+body.lp-v5 .ah3-lead { max-width: 600px; margin: 18px 0 0; font-size: 16.5px; line-height: 1.65; color: #55585A; }
+body.lp-v5 .ah3-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+body.lp-v5 a.ah3-cta { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 4px 5px 4px 8px; border-radius: 999px; background: linear-gradient(180deg, #2B4A36, #1C3527); color: #FAF6F0; font-size: 15.5px; font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: 0 16px 30px -16px rgb(20 45 30 / 0.8); transition: transform 0.3s ease; }
+body.lp-v5 a.ah3-cta .wa-ic { order: -1; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #25D366; color: #FFFFFF; }
+body.lp-v5 a.ah3-cta .wa-ic svg { width: 19px; height: 19px; }
+body.lp-v5 .ah3-arrow { display: grid; place-items: center; width: 42px; height: 42px; margin-left: 10px; border-radius: 50%; background: rgb(255 255 255 / 0.1); }
+body.lp-v5 .ah3-arrow svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
+body.lp-v5 a.ah3-cta:hover { transform: translateY(-1px); }
+body.lp-v5 a.ah3-cta:hover .ah3-arrow svg { transform: translateX(3px); }
+body.lp-v5 .ah3-ghost { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 4px 26px 4px 18px; border-radius: 999px; background: rgb(255 255 255 / 0.5); box-shadow: inset 0 0 0 1.2px #C9A25A; color: #1F2433; font-size: 15.5px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background 0.3s ease; }
+body.lp-v5 .ah3-ghost i { display: block; width: 24px; color: #6E6A62; }
+body.lp-v5 .ah3-ghost i svg { display: block; width: 100%; }
+body.lp-v5 .ah3-ghost:hover { background: rgb(255 255 255 / 0.85); }
+
+body.lp-v5 .ah3-feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 34px 0 0; padding: 0; list-style: none; }
+body.lp-v5 .ah3-feats li { display: grid; align-content: start; gap: 2px; padding: 0 22px; }
+body.lp-v5 .ah3-feats li:first-child { padding-left: 0; }
+body.lp-v5 .ah3-feats li + li { border-left: 1px solid rgb(181 138 62 / 0.3); }
+body.lp-v5 .ah3-feats span { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 10px; border-radius: 50%; background: #F1E5CF; color: #3A3428; }
+body.lp-v5 .ah3-feats span svg { width: 28px; height: 28px; }
+body.lp-v5 .ah3-feats strong { font-family: var(--display); font-weight: 400; font-size: 21px; line-height: 1.15; color: #14181C; }
+body.lp-v5 .ah3-feats em { font-style: normal; font-size: 14px; line-height: 1.4; color: #6A6A66; }
+
+/* On the photograph. */
+body.lp-v5 .ah3-script { position: absolute; left: 54%; top: 9%; z-index: 2; display: grid; margin: 0; font-family: "Allura", "Great Vibes", cursive; font-size: clamp(30px, 2.3vw, 42px); line-height: 0.98; color: #F3DEA8; transform: rotate(-10deg); transform-origin: left top; text-shadow: 0 2px 14px rgb(10 20 14 / 0.75); }
+body.lp-v5 .ah3-script span:nth-child(2) { padding-left: 0.3em; } body.lp-v5 .ah3-script span:nth-child(3) { padding-left: 0.5em; }
+body.lp-v5 .ah3-script::after { content: ""; display: block; width: 46%; height: 2px; margin: 8px 0 0 1.4em; border-radius: 2px; background: #F3DEA8; opacity: 0.8; transform: rotate(-4deg); }
+body.lp-v5 .ah3-topics { position: absolute; right: 2.4%; top: 64px; z-index: 2; display: grid; gap: 14px; margin: 0; padding: 4px 0 4px 22px; list-style: none; border-left: 1px solid rgb(233 205 138 / 0.6); }
+body.lp-v5 .ah3-topics::before { content: "✦"; position: absolute; left: -7px; top: -22px; font-size: 14px; color: #E9CD8A; }
+body.lp-v5 .ah3-topics li { font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #FAF3E2; text-shadow: 0 1px 8px rgb(0 0 0 / 0.5); }
+body.lp-v5 .ah3-leaf { position: absolute; z-index: 3; width: 150px; fill: #5D7A55; opacity: 0.4; filter: blur(2px); pointer-events: none; }
+body.lp-v5 .ah3-leaf-a { left: -50px; top: -46px; transform: rotate(150deg); }
+body.lp-v5 .ah3-leaf-b { left: -40px; bottom: 30px; width: 170px; transform: rotate(40deg); }
+
+/* Green wave with a lotus. */
+body.lp-v5 .ah3-band { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 116px; }
+body.lp-v5 .ah3-band svg:first-child { position: absolute; inset: 0; width: 100%; height: 100%; }
+body.lp-v5 .ah3-band p { position: relative; display: flex; align-items: center; justify-content: center; gap: 18px; margin: 0; padding-top: 44px; color: #D7B86B; }
+body.lp-v5 .ah3-band p i { width: min(16vw, 230px); height: 1px; background: rgb(215 184 107 / 0.6); }
+body.lp-v5 .ah3-band p span { display: block; width: 44px; }
+body.lp-v5 .ah3-band p span svg { display: block; width: 100%; }
+body.lp-v5 .ah3-band .ah3-band-text { padding-top: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: rgb(233 205 138 / 0.9); }
+
+/* Motion on load. */
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .ah3-photo img { animation: ah3-zoom 2.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .ah3-copy > * { animation: ah3-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  body.lp-v5 .ah3-copy > :nth-child(2) { animation-delay: 0.08s; } body.lp-v5 .ah3-copy > :nth-child(3) { animation-delay: 0.16s; } body.lp-v5 .ah3-copy > :nth-child(4) { animation-delay: 0.26s; } body.lp-v5 .ah3-copy > :nth-child(5) { animation-delay: 0.36s; } body.lp-v5 .ah3-copy > :nth-child(6) { animation-delay: 0.46s; }
+  body.lp-v5 .ah3-script span { opacity: 0; clip-path: inset(0 100% 0 0); animation: m5-write 0.9s ease forwards; }
+  body.lp-v5 .ah3-script span:nth-child(1) { animation-delay: 0.8s; } body.lp-v5 .ah3-script span:nth-child(2) { animation-delay: 1.1s; } body.lp-v5 .ah3-script span:nth-child(3) { animation-delay: 1.4s; }
+  body.lp-v5 .ah3-topics li { animation: ah3-in 0.7s ease both; animation-delay: calc(0.6s + var(--i) * 0.12s); }
+  body.lp-v5 .ah3-band p { animation: ah3-fade 1s ease 0.9s both; }
+  body.lp-v5 .ah3-leaf svg { animation: m5-sway 9s ease-in-out infinite; transform-origin: 50% 100%; }
+}
+@keyframes ah3-zoom { from { transform: scale(1.06); opacity: 0.4; } to { transform: none; opacity: 1; } }
+@keyframes ah3-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes ah3-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
+@keyframes ah3-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* Laptops. */
+@media (max-width: 1500px) {
+  body.lp-v5 .ah3 { min-height: clamp(600px, calc(100vh - 70px), 700px); }
+  body.lp-v5 .ah3-panel { padding: 28px 0 124px max(4.5vw, 32px); }
+  body.lp-v5 .ah3-copy { max-width: 600px; }
+  body.lp-v5 .ah3 h1 { font-size: clamp(36px, 3.3vw, 48px) !important; }
+  body.lp-v5 .ah3-role { margin-top: 10px; font-size: 15px; }
+  body.lp-v5 .ah3-lead { margin-top: 12px; font-size: 15px; max-width: 540px; }
+  body.lp-v5 .ah3-actions { margin-top: 20px; }
+  body.lp-v5 a.ah3-cta, body.lp-v5 .ah3-ghost { min-height: 48px; font-size: 14.5px; }
+  body.lp-v5 .ah3-feats { margin-top: 24px; }
+  body.lp-v5 .ah3-feats span { width: 46px; height: 46px; margin-bottom: 6px; } body.lp-v5 .ah3-feats span svg { width: 23px; height: 23px; }
+  body.lp-v5 .ah3-feats strong { font-size: 18px; } body.lp-v5 .ah3-feats em { font-size: 13px; }
+  body.lp-v5 .ah3-band { height: 96px; } body.lp-v5 .ah3-band p { padding-top: 36px; } body.lp-v5 .ah3-band p span { width: 36px; }
+  body.lp-v5 .ah3-band .ah3-band-text { padding-top: 6px; font-size: 11px; }
+  body.lp-v5 .ah3-script { font-size: 30px; }
+  body.lp-v5 .ah3-topics { top: 50px; gap: 11px; } body.lp-v5 .ah3-topics li { font-size: 11px; }
+}
+@media (max-width: 1180px) {
+  body.lp-v5 .ah3-photo { left: 40%; }
+  body.lp-v5 .ah3-script { display: none; }
+  body.lp-v5 .ah3-copy { max-width: 540px; }
+}
+/* Tablets and phones: photograph on top, words beneath on cream, a slim green wave to close. */
+@media (max-width: 900px) {
+  body.lp-v5 .ah3 { display: block; min-height: 0; }
+  body.lp-v5 .ah3::before, body.lp-v5 .ah3::after, body.lp-v5 .ah3-leaf, body.lp-v5 .ah3-topics, body.lp-v5 .ah3-script { display: none; }
+  body.lp-v5 .ah3-photo { position: relative; left: auto; height: min(96vw, 460px); }
+  body.lp-v5 .ah3-photo img { object-position: 30% 14%; }
+  body.lp-v5 .ah3-photo::before { background: linear-gradient(90deg, transparent 58%, #24503A 90%); }
+  body.lp-v5 .ah3-photo::after { background: linear-gradient(0deg, var(--cream) 0%, rgb(250 244 234 / 0.6) 12%, transparent 30%); }
+  body.lp-v5 .ah3-panel { margin-top: -30px; padding: 0 20px 92px; }
+  body.lp-v5 .ah3-pill { font-size: 11px; letter-spacing: 0.2em; gap: 10px; } body.lp-v5 .ah3-pill > span { width: 18px; }
+  body.lp-v5 .ah3-role { margin-top: 8px; font-size: 13.5px; }
+  body.lp-v5 .ah3 h1 { margin-top: 10px; font-size: 30px !important; }
+  body.lp-v5 .ah3-lead { margin-top: 10px; font-size: 14px; line-height: 1.6; }
+  body.lp-v5 .ah3-actions { gap: 10px; margin-top: 18px; }
+  body.lp-v5 a.ah3-cta, body.lp-v5 .ah3-ghost { min-height: 46px; font-size: 14px; }
+  body.lp-v5 .ah3-ghost { padding-right: 18px; }
+  body.lp-v5 .ah3-feats { margin-top: 22px; }
+  body.lp-v5 .ah3-feats li { padding: 0 10px; }
+  body.lp-v5 .ah3-feats span { width: 40px; height: 40px; } body.lp-v5 .ah3-feats span svg { width: 20px; height: 20px; }
+  body.lp-v5 .ah3-feats strong { font-size: 15px; } body.lp-v5 .ah3-feats em { font-size: 11.5px; }
+  body.lp-v5 .ah3-band { height: 76px; } body.lp-v5 .ah3-band p { padding-top: 28px; gap: 12px; } body.lp-v5 .ah3-band p span { width: 30px; }
+  body.lp-v5 .ah3-band .ah3-band-text { font-size: 9.5px; letter-spacing: 0.3em; padding-top: 4px; }
+}
+@media (max-width: 420px) {
+  body.lp-v5 .ah3 h1 { font-size: 27px !important; }
+  body.lp-v5 .ah3-arrow { display: none; }
+  body.lp-v5 .ah3-actions > * { flex: 1 1 auto; justify-content: center; }
+}
+
+/* Review fixes: nothing over her face, no leaf smudges, the wheel in green, a calmer headline size. */
+body.lp-v5 .ah3-script, body.lp-v5 .ah3-leaf { display: none !important; }
+body.lp-v5 .ah3-photo::before { background: linear-gradient(90deg, transparent 47%, #24503A 60%); opacity: 0.9; }
+body.lp-v5 .ah3-copy { max-width: 760px; }
+body.lp-v5 .ah3 h1 { font-size: clamp(38px, 3vw, 58px) !important; }
+@media (max-width: 1500px) { body.lp-v5 .ah3-copy { max-width: 600px; } body.lp-v5 .ah3 h1 { font-size: clamp(36px, 3.3vw, 48px) !important; } }
+@media (max-width: 900px) { body.lp-v5 .ah3-photo::before { background: linear-gradient(90deg, transparent 50%, #24503A 66%); } body.lp-v5 .ah3-copy { max-width: none; } body.lp-v5 .ah3 h1 { font-size: 30px !important; } }
+@media (max-width: 420px) { body.lp-v5 .ah3 h1 { font-size: 27px !important; } }
+body.lp-v5 .ah3-photo::before { z-index: 1; } body.lp-v5 .ah3-photo::after { z-index: 2; }
+body.lp-v5 .ah3-photo::before { background: linear-gradient(90deg, transparent 69%, #24503A 79%); }
+@media (max-width: 900px) { body.lp-v5 .ah3-photo::before { background: linear-gradient(90deg, transparent 78%, #24503A 88%); } }
