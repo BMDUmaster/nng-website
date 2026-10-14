@@ -62,7 +62,7 @@ export function astroQuestion(p, { esc, wa }) {
   ];
   const sparkle = (x, y, z) => `<i class="aq-spark" style="left:${x};top:${y};--z:${z}" aria-hidden="true"></i>`;
   return `<section class="aq aq2" aria-labelledby="situation-title">
-    <figure class="aq2-photo" aria-hidden="true">${zodiacRing('aq2-ring')}<span class="aq2-circle"><img src="../_shared/hero/aq-red.webp" alt="" width="900" height="859" loading="lazy"></span></figure>
+    <figure class="aq2-photo" aria-hidden="true">${zodiacRing('aq2-ring')}<span class="aq2-circle"><img src="../_shared/hero/aq-face.webp" alt="" width="640" height="640" loading="lazy"></span></figure>
     ${sparkle('8%', '30%', 1)}${sparkle('47%', '14%', 0.7)}${sparkle('51%', '38%', 1.2)}${sparkle('3%', '72%', 0.8)}${sparkle('96%', '92%', 0.7)}
     <div class="aq-inner">
       <div class="aq2-copy">
