@@ -19,6 +19,20 @@ const I = {
   clock: s('<circle cx="16" cy="17" r="10"/><path d="M16 11v6l4 3M12 4h8"/>'),
 };
 
+
+// A drawn zodiac ring: fine gold lines and the twelve signs, transparent everywhere else.
+const SIGNS = '♈♉♊♋♌♍♎♏♐♑♒♓';
+export function zodiacRing(cls) {
+  const c = 200, out = [`<circle cx="200" cy="200" r="196" stroke-width="1.6"/>`, `<circle cx="200" cy="200" r="158" stroke-width="1"/>`, `<circle cx="200" cy="200" r="150" stroke-width=".6" stroke-dasharray="2 5"/>`];
+  for (let i = 0; i < 12; i++) {
+    const a = (i * 30 - 90) * Math.PI / 180, b = (i * 30 - 75) * Math.PI / 180;
+    out.push(`<path d="M${(c + 158 * Math.cos(a)).toFixed(1)} ${(c + 158 * Math.sin(a)).toFixed(1)}L${(c + 196 * Math.cos(a)).toFixed(1)} ${(c + 196 * Math.sin(a)).toFixed(1)}" stroke-width="1"/>`);
+    const x = (c + 177 * Math.cos(b)).toFixed(1), y = (c + 177 * Math.sin(b)).toFixed(1);
+    out.push(`<text x="${x}" y="${y}" transform="rotate(${i * 30 + 15} ${x} ${y})">${SIGNS[i]}&#xFE0E;</text>`);
+  }
+  return `<svg class="zr ${cls}" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">${out.join('')}</svg>`;
+}
+
 export function astroMeet(p, { esc, wa }) {
   const facts = [[I.people, '<b data-count="10000">10,000</b>+', 'Clients guided'], [I.book, 'Author', 'Change Your Mind, Transform Your Life'], [I.globe, 'Worldwide', 'Online, or in person by appointment']];
   return `<section class="am" aria-labelledby="meet-title"><div class="am-inner">
@@ -48,7 +62,7 @@ export function astroQuestion(p, { esc, wa }) {
   ];
   const sparkle = (x, y, z) => `<i class="aq-spark" style="left:${x};top:${y};--z:${z}" aria-hidden="true"></i>`;
   return `<section class="aq aq2" aria-labelledby="situation-title">
-    <figure class="aq2-photo" aria-hidden="true"><img src="../_shared/hero/aq-red.webp" alt="" width="900" height="859" loading="lazy"><svg class="aq2-wheel" viewBox="0 0 400 400" fill="none" stroke="currentColor"><circle cx="200" cy="200" r="196" stroke-width="1.6"/><circle cx="200" cy="200" r="160" stroke-width="1"/><circle cx="200" cy="200" r="150" stroke-width="0.6" stroke-dasharray="2 5"/><path d="M200.0 40.0L200.0 4.0" stroke-width="1"/><text x="246.1" y="28.1" transform="rotate(15 246.1 28.1)">♈&#xFE0E;</text><path d="M280.0 61.4L298.0 30.3" stroke-width="1"/><text x="325.9" y="74.1" transform="rotate(45 325.9 74.1)">♉&#xFE0E;</text><path d="M338.6 120.0L369.7 102.0" stroke-width="1"/><text x="371.9" y="153.9" transform="rotate(75 371.9 153.9)">♊&#xFE0E;</text><path d="M360.0 200.0L396.0 200.0" stroke-width="1"/><text x="371.9" y="246.1" transform="rotate(105 371.9 246.1)">♋&#xFE0E;</text><path d="M338.6 280.0L369.7 298.0" stroke-width="1"/><text x="325.9" y="325.9" transform="rotate(135 325.9 325.9)">♌&#xFE0E;</text><path d="M280.0 338.6L298.0 369.7" stroke-width="1"/><text x="246.1" y="371.9" transform="rotate(165 246.1 371.9)">♍&#xFE0E;</text><path d="M200.0 360.0L200.0 396.0" stroke-width="1"/><text x="153.9" y="371.9" transform="rotate(195 153.9 371.9)">♎&#xFE0E;</text><path d="M120.0 338.6L102.0 369.7" stroke-width="1"/><text x="74.1" y="325.9" transform="rotate(225 74.1 325.9)">♏&#xFE0E;</text><path d="M61.4 280.0L30.3 298.0" stroke-width="1"/><text x="28.1" y="246.1" transform="rotate(255 28.1 246.1)">♐&#xFE0E;</text><path d="M40.0 200.0L4.0 200.0" stroke-width="1"/><text x="28.1" y="153.9" transform="rotate(285 28.1 153.9)">♑&#xFE0E;</text><path d="M61.4 120.0L30.3 102.0" stroke-width="1"/><text x="74.1" y="74.1" transform="rotate(315 74.1 74.1)">♒&#xFE0E;</text><path d="M120.0 61.4L102.0 30.3" stroke-width="1"/><text x="153.9" y="28.1" transform="rotate(345 153.9 28.1)">♓&#xFE0E;</text><path d="M346.0 200.0L356.0 200.0" stroke-width="0.6"/><path d="M349.4 213.1L355.4 213.6" stroke-width="0.6"/><path d="M343.8 225.4L353.6 227.1" stroke-width="0.6"/><path d="M344.9 238.8L350.7 240.4" stroke-width="0.6"/><path d="M337.2 249.9L346.6 253.4" stroke-width="0.6"/><path d="M335.9 263.4L341.4 265.9" stroke-width="0.6"/><path d="M326.4 273.0L335.1 278.0" stroke-width="0.6"/><path d="M322.9 286.0L327.8 289.5" stroke-width="0.6"/><path d="M311.8 293.8L319.5 300.3" stroke-width="0.6"/><path d="M306.1 306.1L310.3 310.3" stroke-width="0.6"/><path d="M293.8 311.8L300.3 319.5" stroke-width="0.6"/><path d="M286.0 322.9L289.5 327.8" stroke-width="0.6"/><path d="M273.0 326.4L278.0 335.1" stroke-width="0.6"/><path d="M263.4 335.9L265.9 341.4" stroke-width="0.6"/><path d="M249.9 337.2L253.4 346.6" stroke-width="0.6"/><path d="M238.8 344.9L240.4 350.7" stroke-width="0.6"/><path d="M225.4 343.8L227.1 353.6" stroke-width="0.6"/><path d="M213.1 349.4L213.6 355.4" stroke-width="0.6"/><path d="M200.0 346.0L200.0 356.0" stroke-width="0.6"/><path d="M186.9 349.4L186.4 355.4" stroke-width="0.6"/><path d="M174.6 343.8L172.9 353.6" stroke-width="0.6"/><path d="M161.2 344.9L159.6 350.7" stroke-width="0.6"/><path d="M150.1 337.2L146.6 346.6" stroke-width="0.6"/><path d="M136.6 335.9L134.1 341.4" stroke-width="0.6"/><path d="M127.0 326.4L122.0 335.1" stroke-width="0.6"/><path d="M114.0 322.9L110.5 327.8" stroke-width="0.6"/><path d="M106.2 311.8L99.7 319.5" stroke-width="0.6"/><path d="M93.9 306.1L89.7 310.3" stroke-width="0.6"/><path d="M88.2 293.8L80.5 300.3" stroke-width="0.6"/><path d="M77.1 286.0L72.2 289.5" stroke-width="0.6"/><path d="M73.6 273.0L64.9 278.0" stroke-width="0.6"/><path d="M64.1 263.4L58.6 265.9" stroke-width="0.6"/><path d="M62.8 249.9L53.4 253.4" stroke-width="0.6"/><path d="M55.1 238.8L49.3 240.4" stroke-width="0.6"/><path d="M56.2 225.4L46.4 227.1" stroke-width="0.6"/><path d="M50.6 213.1L44.6 213.6" stroke-width="0.6"/><path d="M54.0 200.0L44.0 200.0" stroke-width="0.6"/><path d="M50.6 186.9L44.6 186.4" stroke-width="0.6"/><path d="M56.2 174.6L46.4 172.9" stroke-width="0.6"/><path d="M55.1 161.2L49.3 159.6" stroke-width="0.6"/><path d="M62.8 150.1L53.4 146.6" stroke-width="0.6"/><path d="M64.1 136.6L58.6 134.1" stroke-width="0.6"/><path d="M73.6 127.0L64.9 122.0" stroke-width="0.6"/><path d="M77.1 114.0L72.2 110.5" stroke-width="0.6"/><path d="M88.2 106.2L80.5 99.7" stroke-width="0.6"/><path d="M93.9 93.9L89.7 89.7" stroke-width="0.6"/><path d="M106.2 88.2L99.7 80.5" stroke-width="0.6"/><path d="M114.0 77.1L110.5 72.2" stroke-width="0.6"/><path d="M127.0 73.6L122.0 64.9" stroke-width="0.6"/><path d="M136.6 64.1L134.1 58.6" stroke-width="0.6"/><path d="M150.1 62.8L146.6 53.4" stroke-width="0.6"/><path d="M161.2 55.1L159.6 49.3" stroke-width="0.6"/><path d="M174.6 56.2L172.9 46.4" stroke-width="0.6"/><path d="M186.9 50.6L186.4 44.6" stroke-width="0.6"/><path d="M200.0 54.0L200.0 44.0" stroke-width="0.6"/><path d="M213.1 50.6L213.6 44.6" stroke-width="0.6"/><path d="M225.4 56.2L227.1 46.4" stroke-width="0.6"/><path d="M238.8 55.1L240.4 49.3" stroke-width="0.6"/><path d="M249.9 62.8L253.4 53.4" stroke-width="0.6"/><path d="M263.4 64.1L265.9 58.6" stroke-width="0.6"/><path d="M273.0 73.6L278.0 64.9" stroke-width="0.6"/><path d="M286.0 77.1L289.5 72.2" stroke-width="0.6"/><path d="M293.8 88.2L300.3 80.5" stroke-width="0.6"/><path d="M306.1 93.9L310.3 89.7" stroke-width="0.6"/><path d="M311.8 106.2L319.5 99.7" stroke-width="0.6"/><path d="M322.9 114.0L327.8 110.5" stroke-width="0.6"/><path d="M326.4 127.0L335.1 122.0" stroke-width="0.6"/><path d="M335.9 136.6L341.4 134.1" stroke-width="0.6"/><path d="M337.2 150.1L346.6 146.6" stroke-width="0.6"/><path d="M344.9 161.2L350.7 159.6" stroke-width="0.6"/><path d="M343.8 174.6L353.6 172.9" stroke-width="0.6"/><path d="M349.4 186.9L355.4 186.4" stroke-width="0.6"/></svg></figure>
+    <figure class="aq2-photo" aria-hidden="true">${zodiacRing('aq2-ring')}<span class="aq2-circle"><img src="../_shared/hero/aq-red.webp" alt="" width="900" height="859" loading="lazy"></span></figure>
     ${sparkle('8%', '30%', 1)}${sparkle('47%', '14%', 0.7)}${sparkle('51%', '38%', 1.2)}${sparkle('3%', '72%', 0.8)}${sparkle('96%', '92%', 0.7)}
     <div class="aq-inner">
       <div class="aq2-copy">
@@ -80,5 +94,31 @@ export function astroApproach(p, { esc }) {
     <div class="ap-chain"><p>What a reading brings together</p><ol>${chain.map(([ic, t], i) => `<li style="--i:${i}"><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ol></div>
     <ol class="ap-steps">${p.method.map(([t, d], i) => `<li style="--i:${i}"><em>0${i + 1}</em><span class="ap-ic" aria-hidden="true">${icons[i]}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></li>`).join('')}</ol>
     <p class="ap-foot"><span aria-hidden="true">${I.lotus}</span>Read together · Decided by you</p>
+  </div></section>`;
+}
+
+// Astrology "Why her approach matters" (Oct 14 h), from the approved banner: words, two cards and three promises
+// beside her photograph in an arch framed by a turning zodiac ring, then a deep green invitation.
+export function astroWhy(p, { esc, wa }) {
+  const cards = [[I.person, 'The person matters.', 'Explore your beliefs and responses alongside the reading.'], [I.chat, 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
+  const shield = s('<path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/>');
+  const cart = s('<path d="M4 6h3l3 13h12l3-9H9"/><circle cx="12" cy="25" r="1.6"/><circle cx="21" cy="25" r="1.6"/>');
+  const bulb = s('<path d="M12 22h8M13 26h6M16 4a8 8 0 0 0-5 14.2c.8.7 1 1.6 1 2.8h8c0-1.2.2-2.1 1-2.8A8 8 0 0 0 16 4Z"/>');
+  const promises = [[shield, 'No fear-based predictions'], [cart, 'No pressure to buy a remedy'], [bulb, 'The reasoning explained, the choice yours']];
+  const [c1, c2] = p.closeTitle.split('\n');
+  const w2 = c2.split(' '); const tail = w2.splice(-2).join(' ');
+  return `<section class="aw" aria-labelledby="why-title"><div class="aw-inner">
+    <div class="aw-copy">
+      <p class="aq-kicker"><span aria-hidden="true">✦</span>Why her approach matters</p>
+      <h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2>
+      <div class="aw-cards">${cards.map(([ic, t, d]) => `<article><span class="aw-ic" aria-hidden="true">${ic}</span><div><h3>${t}</h3><p>${d}</p></div><a class="aw-go" href="#enquire" aria-label="${t} Enquire">${I.arrow}</a></article>`).join('')}</div>
+      <ul class="aw-promise">${promises.map(([ic, t]) => `<li><span aria-hidden="true">${ic}</span>${t}</li>`).join('')}</ul>
+    </div>
+    <figure class="aw-photo">${zodiacRing('aw-ring')}<span class="aw-arch"><img src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg in a blue saree beside a white Buddha relief" width="720" height="923" loading="lazy"></span><figcaption><span aria-hidden="true">${I.lotus}</span><div>Narayani Garg<small>Psychic Spiritual Mentor</small></div></figcaption></figure>
+    <p class="aw-script" aria-hidden="true"><span>Same patterns,</span><span>different</span><span>possibilities</span></p>
+    <div class="aw-band">
+      <div><p class="aw-band-kicker">Begin with the NNG team</p><h3>${esc(c1)} ${esc(w2.join(' '))} <em>${esc(tail)}</em></h3><p>${esc(p.closeCopy)}</p></div>
+      ${wa('why', 'Get started', 'aw-cta')}
+    </div>
   </div></section>`;
 }

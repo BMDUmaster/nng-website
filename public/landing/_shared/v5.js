@@ -155,7 +155,7 @@
   }
 
   // Brainology meet section: start its motion when it comes into view.
-  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4, .ao, .am, .aq, .ap').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
+  document.querySelectorAll('.mb, .m5, .cv5, .q4, .a6, .pr4, .wy4, .ao, .am, .aq, .ap, .aw').forEach((mb) => new IntersectionObserver(([e], o) => { if (e.isIntersecting) { mb.classList.add('is-on'); o.disconnect(); } }, { threshold: 0.08 }).observe(mb));
 
   // Sound for the introduction film.
   const film = document.querySelector('#hero-intro');
