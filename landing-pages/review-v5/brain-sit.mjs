@@ -20,12 +20,6 @@ export function brainVoices(p, { esc, wa, voices, assets, clips }) {
   const leaf = '<svg viewBox="0 0 120 160" aria-hidden="true"><path d="M60 158C58 120 40 96 22 70 8 50 14 18 40 8c26 10 40 40 34 72-4 24-12 44-14 78Z"/></svg>';
   const chev = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
   return `<section class="stories-band cv5" id="stories" aria-labelledby="stories-title">
-    <div class="cv5-visual" aria-hidden="true">
-      <img src="../_shared/hero/cv-narayani.webp" alt="" width="900" height="1098" loading="lazy">
-      <p class="cv5-script"><span>Same</span><span>patterns,</span><span>different</span><span>possibilities</span></p>
-      <svg class="cv5-curve" viewBox="0 0 320 1000" preserveAspectRatio="none"><path class="cv5-ribbon" d="M150 0H236C150 70 98 220 86 420 78 560 84 700 100 820 70 640 66 420 92 250 108 140 128 60 150 0Z"/><path class="cv5-cream" d="M320 0H236C150 70 98 220 86 420 74 620 96 820 150 1000H320Z"/><path class="cv5-gold" d="M236 0C150 70 98 220 86 420 74 620 96 820 150 1000" fill="none"/></svg>
-      <div class="cv5-name"><svg class="cv5-name-line" viewBox="0 0 400 200" preserveAspectRatio="none"><path d="M0 40C140 6 300 30 400 200" fill="none"/></svg><span>Narayani Garg</span><i>${lotus}</i><small>Psychic · Spiritual · Mentor</small></div>
-    </div>
     <div class="cv5-main">
       <span class="cv5-leaf cv5-leaf-a" aria-hidden="true">${leaf}</span><span class="cv5-leaf cv5-leaf-b" aria-hidden="true">${leaf}</span>
       <div class="cv5-head">
