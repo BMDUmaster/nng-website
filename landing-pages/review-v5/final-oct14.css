@@ -236,3 +236,13 @@ body.lp-v5 .ah4-wheel { right: -110px; bottom: -60px; width: 420px; height: 420p
 @media (max-width: 760px) { body.lp-v5 .ah4-wheel { width: 160px; height: 160px; right: -70px; bottom: -40px; } }
 body.lp-v5 .ah5-photo img { -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 14%); mask-image: linear-gradient(0deg, transparent 0%, #000 14%); }
 @media (min-width: 761px) { body.lp-v5 .ah4-wheel { bottom: 90px !important; } }
+
+/* Vastulogy plan card: keep the label and the plan clear of the arch's curved top. */
+body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan { padding: 96px 34px 22px !important; }
+body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan .visual-label { position: relative; top: auto; justify-content: center; margin: 0 0 14px; }
+body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan > svg { display: block; width: 84% !important; max-width: 420px; height: auto; margin: 0 auto !important; }
+@media (max-width: 900px) {
+  body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan { padding: 74px 20px 18px !important; border-radius: 170px 170px 26px 26px !important; }
+  body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan .visual-label { font-size: 11px; margin-bottom: 10px; }
+  body.lp-v5[data-page="vastulogy"] .v5-approach2 .v5-plan > svg { width: 86% !important; }
+}
