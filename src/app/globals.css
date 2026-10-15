@@ -17937,3 +17937,34 @@ footer.site-footer.ft {
   .hm h1 { text-shadow: 0 0 12px #FBF8EF, 0 0 4px #FBF8EF; }
 }
 @media (max-width: 900px) { .hm-visual { z-index: auto; } }
+
+/* Phones, pass 7: a compact two-line action that stays clear of her photograph, and refined practice cards. */
+@media (max-width: 900px) {
+  .hm-cta { gap: 10px; min-height: 0; padding: 5px 16px 5px 5px; font-size: 13px; line-height: 1.25; white-space: normal; }
+  .hm-cta-text { text-align: left; }
+  .hm-cta-wa { width: 40px; height: 40px; flex: none; }
+  .hm-ghost { min-height: 0; padding: 5px 16px 5px 5px; font-size: 13px; }
+  .hm-play { width: 34px; height: 34px; }
+  .hm-note { max-width: 62%; line-height: 1.4; align-items: flex-start; }
+  .hm-dot { flex: none; margin-top: 3px; }
+
+  .hm-practices { gap: 7px; width: calc(100% - 16px); margin-top: 52px; }
+  .hm-practices a {
+    padding: 14px 6px 30px;
+    border-radius: 999px 999px 28px 28px;
+    background: radial-gradient(120% 60% at 50% 0%, #2A6A4E 0%, transparent 60%), linear-gradient(180deg, #1D5240 0%, #123A2B 100%);
+    box-shadow: inset 0 0 0 1.2px #D2AE6E, inset 0 0 0 4px #164634, inset 0 0 0 4.8px rgb(210 174 110 / 0.4), 0 16px 28px -18px rgb(0 0 0 / 0.65);
+  }
+  .hm-pr-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: radial-gradient(circle, rgb(221 184 106 / 0.18), rgb(221 184 106 / 0.02) 70%); box-shadow: inset 0 0 0 1px rgb(221 184 106 / 0.45); }
+  .hm-pr-icon svg { width: 28px; height: 28px; }
+  .hm-pr-text strong { margin-top: 10px; font-size: 12px; letter-spacing: -0.01em; }
+  .hm-pr-text strong::after { width: 18px; margin: 6px auto 6px; }
+  .hm-pr-text small { padding: 0 2px; font-size: 9.8px; line-height: 1.35; color: rgb(255 255 255 / 0.82); }
+  .hm-pr-go { bottom: -12px; width: 26px; height: 26px; font-size: 13px; box-shadow: 0 0 0 3px #123A2B, 0 6px 12px -4px rgb(0 0 0 / 0.5); }
+}
+@media (max-width: 380px) {
+  .hm-pr-text strong { font-size: 11px; }
+  .hm-pr-text small { font-size: 9px; }
+  .hm-pr-icon { width: 42px; height: 42px; }
+  .hm-pr-icon svg { width: 24px; height: 24px; }
+}
