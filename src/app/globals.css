@@ -13349,6 +13349,7 @@ dialog.home-return-prompt::backdrop { background: rgb(36 19 35 / .48); backdrop-
   color: rgb(250 246 240 / 0.78);
 }
 .hx-name::before,
+.hx-name::after,
 .hx-name::after {
   content: "";
   flex-shrink: 0;
@@ -17170,3 +17171,9 @@ footer.site-footer.ft {
   .cf-inner { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; }
   .cf-copy { position: sticky; top: 140px; padding-top: 12px; }
 }
+
+/* No line beside a heading or its label (Oct 15): the hero's "Personal guidance with", "Her approach", "Client films". */
+.hx-name::before,
+.hx-name::after,
+.ab-kicker::after,
+.sf-kicker::after { display: none; }
