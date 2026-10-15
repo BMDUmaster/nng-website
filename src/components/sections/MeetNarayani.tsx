@@ -85,7 +85,7 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
               muted
               preload="none"
               poster={asset("/images/narayani-about-authentic-560.webp")}
-              aria-label="Introduction to Dr. Narayani Garg"
+              aria-label="Introduction to Narayani Garg"
             >
               <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
               Your browser does not support video playback.

@@ -50,7 +50,7 @@ export function Approach() {
           src={asset("/images/approach-narayani-900.webp")}
           srcSet={assetSet("/images/approach-narayani-900.webp 900w, /images/approach-narayani-1400.webp 1400w")}
           sizes="(max-width: 1099px) 100vw, 46vw"
-          alt="Dr. Narayani Garg in her meditation room"
+          alt="Narayani Garg in her meditation room"
           width={1400}
           height={1194}
           loading="lazy"

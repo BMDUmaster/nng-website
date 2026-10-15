@@ -24,7 +24,7 @@ const backs = [
   <Page key="plate" folio={4} plate>
     <figure className="bk-photo">
       <img src={asset("/images/approach-narayani-900.webp")} alt="" loading="lazy" decoding="async" />
-      <figcaption>Dr. Narayani Garg</figcaption>
+      <figcaption>Narayani Garg</figcaption>
     </figure>
   </Page>,
   <Page key="spirit" folio={6}>

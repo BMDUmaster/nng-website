@@ -103,7 +103,7 @@ export function PracticeReturnPrompt() {
     <button className="home-prompt-close" type="button" aria-label="Close consultation reminder" onClick={() => dismiss("close")}>×</button>
     <div className="home-prompt-person">
       <img src={asset("/images/narayani-cover-portrait-96.webp")} alt="" width={48} height={48} />
-      <div><p>{format === "desktop" ? "Before you go" : "When you’re ready"}</p><span>Dr. Narayani Garg</span></div>
+      <div><p>{format === "desktop" ? "Before you go" : "When you’re ready"}</p><span>Narayani Garg</span></div>
     </div>
     <h2 id={`home-prompt-${format}-title`}>{format === "desktop" ? "What could the next six months look like?" : "Ready for ongoing support?"}</h2>
     <p className="home-prompt-copy">{format === "desktop" ? "Personal hand holding brings remedies, mindset work and direct guidance together over six months. Ask the team how it fits your situation." : "Six months of remedies, mindset work and personal guidance. Ask how the program fits your situation."}</p>

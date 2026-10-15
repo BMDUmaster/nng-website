@@ -123,7 +123,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
         </>}
         note={!isHub && <p className="svd-person">
           <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
-          <span>Personal guidance with <strong>Dr. Narayani Garg</strong></span>
+          <span>Personal guidance with <strong>Narayani Garg</strong></span>
         </p>}
       />
 

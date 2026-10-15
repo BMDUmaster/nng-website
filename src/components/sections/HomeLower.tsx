@@ -29,7 +29,7 @@ export function JourneyPhotos() {
           {teachers.map(({ photo, name }) => (
             <figure className="jr-card" key={photo}>
               <div className="jr-frame">
-                <img src={asset(`/images/celebrities/${photo}`)} alt={`Dr. Narayani Garg with ${name}`} loading="lazy" decoding="async" width={650} height={1000} />
+                <img src={asset(`/images/celebrities/${photo}`)} alt={`Narayani Garg with ${name}`} loading="lazy" decoding="async" width={650} height={1000} />
               </div>
               <figcaption>{name}</figcaption>
             </figure>
@@ -78,7 +78,7 @@ export function HomeProgram() {
           </div>
           <div className="pg-visual">
             <div className="pg-arch">
-              <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="Dr. Narayani Garg" width={684} height={855} loading="lazy" decoding="async" />
+              <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="Narayani Garg" width={684} height={855} loading="lazy" decoding="async" />
             </div>
             <div className="pg-medal" aria-hidden="true">
               <strong>6</strong>

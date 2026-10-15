@@ -31,7 +31,7 @@ export function HomeHero() {
           </p>
           <p className="hx-name">
             <span>
-              Personal guidance with <strong>Dr. Narayani Garg</strong>
+              Personal guidance with <strong>Narayani Garg</strong>
             </span>
           </p>
           <h1 id="hero-title">

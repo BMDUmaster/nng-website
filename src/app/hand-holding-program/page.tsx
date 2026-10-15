@@ -77,7 +77,7 @@ export default function ProgramPage() {
             </h1>
             <p className="svd-person hh-person">
               <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
-              <span>Personally guided by <strong>Dr. Narayani Garg</strong></span>
+              <span>Personally guided by <strong>Narayani Garg</strong></span>
             </p>
             <p className="cn-lead">Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
             <ul className="pg-list hh-list">
@@ -101,7 +101,7 @@ export default function ProgramPage() {
           </div>
           <div className="cn-hero-visual hh-visual" data-reveal="">
             <div className="cn-arch">
-              <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="Dr. Narayani Garg" width={684} height={855} fetchPriority="high" />
+              <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="Narayani Garg" width={684} height={855} fetchPriority="high" />
             </div>
             <div className="pg-medal hh-medal" aria-hidden="true">
               <strong>6</strong>

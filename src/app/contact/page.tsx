@@ -67,7 +67,7 @@ export default function ContactPage() {
             <div className="cn-arch">
               <picture>
                 <source type="image/avif" srcSet={assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 380px" />
-                <img src={asset("/images/narayani-portrait-684.webp")} alt={`Dr. Narayani Garg, ${site.title}`} width={684} height={1000} fetchPriority="high" />
+                <img src={asset("/images/narayani-portrait-684.webp")} alt={`Narayani Garg, ${site.title}`} width={684} height={1000} fetchPriority="high" />
               </picture>
             </div>
             <p className="cn-badge">

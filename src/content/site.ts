@@ -8,7 +8,7 @@
 export const site = {
   name: "Transformation with NNG",
   /** Display name confirmed by Aryan on 30 September 2026; no degree detail is asserted. */
-  person: "Dr. Narayani Garg",
+  person: "Narayani Garg",
   /** Positioning updated by Aryan on 4 October 2026, superseding the earlier identity line. */
   title: "Psychic Spiritual Mentor",
   method: "Mind. Direction. Alignment.",

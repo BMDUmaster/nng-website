@@ -51,7 +51,7 @@ export default function ConsultationLandingPage() {
             <p className="cn-kicker">Personal consultation · Astrology, numerology &amp; Vastu</p>
             <p className="svd-person">
               <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
-              <span>With <strong>Dr. Narayani Garg</strong></span>
+              <span>With <strong>Narayani Garg</strong></span>
             </p>
             <h1 id="ads-title">
               Guidance for the question <em>you keep coming back to.</em>

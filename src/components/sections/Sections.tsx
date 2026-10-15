@@ -110,7 +110,7 @@ export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
       <div className="program-main">
         <p className="program-duration-label">Six months of personal guidance</p>
         <Heading id={asHero ? "page-title" : "program-title"}>Personalised Hand Holding Program</Heading>
-        {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-96.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Dr. Narayani Garg</strong></span></div>}
+        {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-96.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Narayani Garg</strong></span></div>}
         <p>Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
         <ul className="program-inclusions">
           <li>Astrology, numerology and Vastu assessment</li>

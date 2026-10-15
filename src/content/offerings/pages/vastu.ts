@@ -283,7 +283,7 @@ export const page: OfferingPage = {
     },
     {
       q: "Who gives the guidance?",
-      a: "Dr. Narayani Garg looks at homes and workplaces, and where they help the question she brings Vastu together with numerology, astrology and Brain Training, her mind-first work. She asks about the people before the plan and explains her reasoning, so you can decide what to keep. The team takes the enquiries and confirms the practical details.",
+      a: "Narayani Garg looks at homes and workplaces, and where they help the question she brings Vastu together with numerology, astrology and Brain Training, her mind-first work. She asks about the people before the plan and explains her reasoning, so you can decide what to keep. The team takes the enquiries and confirms the practical details.",
     },
     {
       q: "Do I have to believe in Vastu before I ask?",

@@ -15,7 +15,7 @@ import { personSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "About Narayani Garg | Psychic Spiritual Mentor",
   description:
-    "Meet Dr. Narayani Garg, Psychic Spiritual Mentor. Her guidance in numerology, Vastu and astrology begins with the mind and the patterns behind your decisions.",
+    "Meet Narayani Garg, Psychic Spiritual Mentor. Her guidance in numerology, Vastu and astrology begins with the mind and the patterns behind your decisions.",
   alternates: { canonical: "/about/" },
 };
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
             </nav>
             <p className="cn-kicker">{site.title}</p>
             <h1 id="about-hero-title">
-              Meet <em>Dr. Narayani Garg</em>
+              Meet <em>Narayani Garg</em>
             </h1>
             <p className="cn-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
             <blockquote className="ab2-hero-quote">
@@ -69,7 +69,7 @@ export default function AboutPage() {
           </div>
           <figure className="ab2-film" data-reveal="">
             <div className="ab2-film-frame">
-              <video controls playsInline preload="metadata" poster={asset("/images/narayani-about-authentic-560.webp")} aria-label="Introduction to Dr. Narayani Garg">
+              <video controls playsInline preload="metadata" poster={asset("/images/narayani-about-authentic-560.webp")} aria-label="Introduction to Narayani Garg">
                 <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
                 Your browser does not support video playback.
               </video>
