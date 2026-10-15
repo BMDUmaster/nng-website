@@ -85,9 +85,8 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
           <h2 id="founder-film-title">
             Meet <span className="mn-name">Narayani</span>
           </h2>
-          <p className="mn-roles" aria-label="Spiritual guide, author, life mentor">
+          <p className="mn-roles" aria-label="Spiritual guide, life mentor">
             <span>Spiritual guide</span>
-            <span>Author</span>
             <span>Life mentor</span>
           </p>
           <blockquote className="mn-quote">
