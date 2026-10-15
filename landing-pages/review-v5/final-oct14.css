@@ -466,3 +466,4 @@ body.lp-v5 .ah6-band, body.lp-v5 .ah4-copy { z-index: 3; }
 body.lp-v5 .no-grid-short li { min-height: 150px; }
 body.lp-v5 .nm-lead + .nm-lead { margin-top: 10px; }
 @media (max-width: 760px) { body.lp-v5 .no-grid-short li { min-height: 0; padding-bottom: 48px; } }
+body.lp-v5 .m5-lead + .m5-lead { margin-top: 10px; }

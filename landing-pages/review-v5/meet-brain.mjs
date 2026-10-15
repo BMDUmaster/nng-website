@@ -36,8 +36,9 @@ export function meetBrain(p, { esc, wa }) {
       <span class="m5-leaf m5-leaf-a" aria-hidden="true">${leaf}</span><span class="m5-leaf m5-leaf-b" aria-hidden="true">${leaf}</span>
       <div class="m5-head">
         <p class="m5-eyebrow"><span aria-hidden="true">✦</span>Meet your Brainology guide<i aria-hidden="true"></i></p>
-        <h2 id="meet-title">Same beliefs. Same thoughts.<br><em>How can the actions be different?</em></h2>
-        <p class="m5-lead">When the beliefs and thoughts stay the same, the same reactions keep returning. Narayani helps you find the belief behind them and practise a new response in daily life.</p>
+        <h2 id="meet-title">What’s the Problem<br><em>You Keep Running Into?</em></h2>
+        <p class="m5-lead">You know what you should do, yet it keeps not happening. The same situation comes back, and you react the same way. You’ve read the advice and tried to think differently, but little changes.</p>
+        <p class="m5-lead">Here, we don’t start with theory or a one-size-fits-all program. We start with the problem.</p>
       </div>
       <ul class="m5-facts">
         <li><span>${I.people}</span><div><strong><b data-count="10000">10,000</b>+</strong><em>Clients guided</em></div></li>

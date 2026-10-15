@@ -48,7 +48,7 @@ export function renderMain(p, h) {
       <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
       <h1 id="hero-title">${lines(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
       <p class="hero-description">${esc(p.description)}</p>
-      <div class="hero-actions">${wa('hero', 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="${p.slug === 'brainology' ? '#approach' : '#ways'}"><span>${p.rich ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
+      <div class="hero-actions">${wa('hero', p.heroCta || 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="${p.slug === 'brainology' ? '#approach' : '#ways'}"><span>${p.rich ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
       ${p.hook ? `<div class="v5-hook"><p>${esc(p.hookLabel || 'Sound familiar?')}</p><ul>${p.hook.map((t, i) => `<li style="--i:${i}">${esc(t)}</li>`).join('')}</ul></div>` : ''}
       <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
       <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>

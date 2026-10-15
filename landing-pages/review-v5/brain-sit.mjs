@@ -64,7 +64,7 @@ export function brainSituations(p, { esc, wa }) {
       <p>${esc(d)}</p>
       <div class="q4-foot">${wa('situation', 'Start with this', 'q4-start').replace('</a>', `<i class="q4-go" aria-hidden="true">${I.arrow}</i></a>`)}<span class="q4-rule" aria-hidden="true"></span><a class="q4-more" href="#approach">Understand your patterns <span aria-hidden="true">${I.chev}</span></a></div>
     </article>`).join('')}</div>
-    <p class="q4-note"><span aria-hidden="true">${I.mind}</span>Recognising that pattern is the starting point, <em>not a reason to blame yourself.</em></p>
+    <p class="q4-note"><span aria-hidden="true">${I.mind}</span>Same beliefs. Same thoughts. <em>Different actions, and a different outcome.</em></p>
   </div></section>`;
 }
 
@@ -132,7 +132,7 @@ export function brainWhy(p, { esc, wa, icon }) {
     ${p.slug === 'astrology' ? '<img class="wy4-wheel" src="../_shared/hero/zodiac.webp" alt="" width="1000" height="1000" loading="lazy" aria-hidden="true">' : ''}<figure class="wy4-photo wy4-photo-d"><img src="../_shared/hero/wy-narayani.webp" alt="Narayani Garg beside a white Buddha relief" width="720" height="923" loading="lazy"><figcaption>Narayani Garg<span>Psychic Spiritual Mentor</span></figcaption></figure>
     <div class="wy4-band">
       <div><p class="wy4-band-kicker">Begin with the NNG team</p><h3>${esc(ct1)} <em>${esc(ct2)}</em></h3><p>${esc(p.closeCopy)}</p></div>
-      ${wa('why', 'Get started', 'wy4-cta')}
+      ${wa('why', p.closeCta || 'Get started', 'wy4-cta')}
     </div>
   </div></section>`;
 }
