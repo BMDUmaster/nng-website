@@ -17698,3 +17698,149 @@ footer.site-footer.ft {
   .hm-cta { font-size: 12.5px; letter-spacing: -0.005em; }
   .hm-ghost { font-size: 13px; }
 }
+
+/* Homepage hero, desktop pass 5 (Oct 15, "Narayani Garg Spiritual Guidance Hero" banner). Desktop only: phones keep
+   their own layout (all of this is inside min-width: 901px, and the new pieces are hidden below it). */
+.hm-desk, .hm-ring2-wrap, .hm-foot { display: none; }
+@media (min-width: 901px) {
+  .hm { --d: min(30.5vw, 64vh, 580px); min-height: min(900px, max(700px, calc(100svh - 88px))); background: linear-gradient(180deg, #FBF8EF 0%, #F8F3E6 100%); }
+  .hm-room, .hm-leaf-layer, .hm-areas, .hm-kicker, .hm-ring-wrap, .hm-sky-wrap .hm-const { display: none; }
+
+  /* The art layer: green panel with pillars, soft corner foliage, a leaf by the ring, the handwritten words. */
+  .hm-desk { display: block; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+  .hm-panel {
+    position: absolute;
+    left: 54.7%;
+    right: 12.4%;
+    top: 0;
+    bottom: 5%;
+    background:
+      radial-gradient(42% 34% at 50% 30%, rgb(252 248 228 / 0.95), rgb(246 240 214 / 0.4) 60%, transparent 80%),
+      linear-gradient(180deg, #D9E3CC 0%, #CBD9BC 55%, #C2D2B2 100%);
+    box-shadow: inset 0 0 60px rgb(255 255 255 / 0.35);
+  }
+  .hm-panel::before, .hm-panel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 7%;
+    background: linear-gradient(90deg, rgb(255 255 255 / 0.15), rgb(255 253 240 / 0.85) 35%, rgb(255 255 255 / 0.95) 55%, rgb(230 236 214 / 0.5) 80%, rgb(255 255 255 / 0.1));
+    box-shadow: 0 0 24px rgb(255 255 255 / 0.5);
+  }
+  .hm-panel::before { left: 6%; }
+  .hm-panel::after { right: 6%; }
+  .hm-corner { position: absolute; height: auto; }
+  .hm-corner-tl { left: 0; top: 0; width: 18%; }
+  .hm-corner-bl { left: 0; bottom: 0; width: 18%; }
+  .hm-corner-tr { right: 0; top: 0; width: 12%; }
+  .hm-leaf-l { position: absolute; left: 51.5%; top: 9%; width: 7.6%; max-width: 128px; height: auto; transform-origin: 80% 100%; }
+  .hm-script {
+    position: absolute;
+    left: 87.6%;
+    top: 15%;
+    display: grid;
+    margin: 0;
+    font-family: var(--font-script), cursive;
+    font-size: clamp(26px, 2.3vw, 40px);
+    line-height: 1.12;
+    color: #8C6A2E;
+    transform: rotate(-16deg);
+    transform-origin: 0 0;
+  }
+  .hm-script span:nth-child(2) { margin-left: 0.4em; }
+  .hm-script span:nth-child(3) { margin-left: 0.1em; }
+
+  /* Words on the left, from the top; the figures in a card that runs to the panel. */
+  .hm-inner { position: static; align-items: start; padding: clamp(36px, 8vh, 84px) 0 0; }
+  .hm-copy { padding-bottom: 0; animation: none; }
+  .hm-name { margin-top: 0; font-size: clamp(16px, 1.35vw, 21px); }
+  .hm-star { width: 24px; height: 24px; }
+  .hm h1 { margin-top: clamp(14px, 2.4vh, 24px); font-size: clamp(48px, min(5.6vw, 10vh), 96px); line-height: 1.02; }
+  .hm-rule { max-width: 620px; margin-top: clamp(14px, 2.4vh, 22px); }
+  .hm-rule span { width: 30px; }
+  .hm-lead { max-width: 640px; margin-top: clamp(12px, 2vh, 20px); font-size: clamp(16px, 1.3vw, 21px); line-height: 1.6; color: #3E3A33; }
+  .hm-actions { gap: 22px; margin-top: clamp(18px, 3.2vh, 32px); }
+  .hm-cta { min-height: 64px; padding: 8px 32px 8px 10px; gap: 16px; font-size: clamp(15px, 1.15vw, 18px); box-shadow: 0 22px 36px -20px rgb(18 58 43 / 0.9); }
+  .hm-cta-wa { width: 48px; height: 48px; }
+  .hm-ghost { min-height: 64px; padding: 8px 32px 8px 10px; gap: 16px; font-size: clamp(15px, 1.15vw, 18px); background: rgb(255 255 255 / 0.7); }
+  .hm-play { width: 44px; height: 44px; }
+  .hm-note { margin-top: 18px; font-size: clamp(13.5px, 1vw, 16px); }
+  .hm-figures {
+    position: relative;
+    z-index: 1;
+    width: calc(54.4vw - (100vw - min(1280px, 100vw - 112px)) / 2 + 36px);
+    margin: clamp(18px, 3.6vh, 40px) 0 0 -36px;
+    padding: clamp(16px, 2.6vh, 26px) 36px;
+    border: 0;
+    border-radius: 0 30px 30px 0;
+    grid-template-columns: repeat(3, 1fr);
+    background: linear-gradient(90deg, rgb(255 255 255 / 0.55), rgb(255 253 247 / 0.92) 20%);
+    box-shadow: 0 0 0 1px rgb(201 162 86 / 0.18), 0 26px 50px -36px rgb(60 44 20 / 0.5);
+    backdrop-filter: blur(6px);
+  }
+  .hm-figures > div { padding: 0 20px; }
+  .hm-figures > div:first-child { padding-left: 0; }
+  .hm-fig-icon { width: clamp(38px, 3.2vw, 52px); }
+  .hm-figures dd { font-size: clamp(30px, 2.8vw, 46px); }
+  .hm-figures dt { font-size: clamp(13px, 1vw, 16px); }
+
+  /* The ring with medallions, centred on the panel; Narayani in front of it. */
+  .hm-visual { position: static; }
+  .hm-stage { position: absolute; z-index: 1; left: calc(71% - var(--d) / 2); top: max(10px, calc(28% - var(--d) / 2)); width: var(--d); transform: none; }
+  .hm-disc { inset: 6%; background: radial-gradient(circle, rgb(255 252 236 / 0.9) 0%, rgb(255 248 222 / 0.6) 55%, rgb(255 244 210 / 0) 72%); }
+  .hm-ring2-wrap { display: block; position: absolute; inset: 0; }
+  .hm-ring2 { width: 100%; height: 100%; overflow: visible; color: #C49A4A; filter: drop-shadow(0 0 8px rgb(255 244 210 / 1)) drop-shadow(0 0 2px rgb(255 255 255 / 0.9)); }
+  .hm-ring2 .hm-medal { fill: rgb(255 251 238 / 0.55); }
+  .hm-ring2 text { fill: #A7792E; stroke: none; font-size: 30px; text-anchor: middle; dominant-baseline: central; font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Apple Symbols", serif; }
+  .hm-sky { inset: -14%; width: 128%; height: 128%; }
+  .hm-person { left: 46%; top: 22%; height: calc(var(--d) * 1.9); filter: drop-shadow(0 20px 28px rgb(50 60 30 / 0.28)); }
+
+  /* Soft green hills across the foot (in front of her), and the lotus with leaves on the right. */
+  .hm-foot { display: block; position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; height: 15%; pointer-events: none; }
+  .hm-hills2 { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hm-h-back { fill: #DCE5CF; }
+  .hm-h-front { fill: #CFDCC0; }
+  .hm-h-line { fill: none; stroke: #C9A256; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+  .hm-flora { position: absolute; right: 0.5%; bottom: 8%; width: 21%; max-width: 380px; height: auto; filter: drop-shadow(0 18px 24px rgb(30 50 20 / 0.25)); }
+
+  @keyframes hm-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+  @keyframes hm-turn-back { to { rotate: -360deg; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .hm-ring2 { animation: hm-turn 160s linear infinite; }
+    .hm-ring2 text { animation: hm-turn-back 160s linear infinite; transform-box: fill-box; transform-origin: center; }
+    .hm-flora { animation: hm-float 7s ease-in-out infinite; }
+    .hm-leaf-l { animation: hm-sway 8s ease-in-out infinite; }
+    .hm-script { animation: hm-fade 1.6s ease 0.8s both; }
+    .hm-figures { animation: hm-rise 0.9s var(--ease) 0.6s both; }
+  }
+}
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hm { --d: min(34vw, 56vh, 520px); }
+  .hm-script { display: none; }
+  .hm-actions { gap: 12px; }
+  .hm-cta, .hm-ghost { min-height: 56px; padding-right: 22px; }
+}
+@media (min-width: 901px) {
+  .hm-corner-tr { display: none; }
+  .hm h1 { font-size: clamp(46px, min(5.1vw, 9.4vh), 88px); }
+  .hm-script { left: 86.6%; top: 16%; font-size: clamp(24px, 2vw, 36px); }
+  .hm-leaf-l { left: 52.4%; top: 10%; }
+}
+/* Desktop pass 5b: the words start at the banner's margin on every width, and leave room for the hills below. */
+@media (min-width: 901px) {
+  .hm { min-height: 0; }
+  .hm-inner { width: auto; margin: 0 0 0 7.2vw; grid-template-columns: 45.5vw 1fr; }
+  .hm-copy { padding-bottom: clamp(96px, 13vh, 128px); }
+  .hm-figures { width: calc(47.2vw + 36px); }
+  .hm-foot { height: clamp(84px, 11vh, 118px); }
+}
+@media (min-width: 901px) {
+  .hm-figures { width: calc(47.2vw + 60px); }
+}
+@media (min-width: 901px) and (max-width: 1500px) {
+  .hm-actions { gap: 14px; flex-wrap: nowrap; }
+  .hm-cta, .hm-ghost { min-height: 58px; padding-right: 24px; gap: 12px; font-size: 15px; }
+  .hm-cta-wa { width: 44px; height: 44px; }
+  .hm-play { width: 40px; height: 40px; }
+}

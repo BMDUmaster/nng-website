@@ -40,4 +40,9 @@ export const displayLatin = localFont({
   ],
   variable: "--font-display", display: "swap", adjustFontFallback: "Times New Roman",
 });
-export const fontVariables = [serifLatin, sansLatin, serifDeva, sansDeva, displayLatin].map((font) => font.variable).join(" ");
+// Script for the hero's handwritten words (Guidance, Clarity, Positive Change).
+export const scriptLatin = localFont({
+  src: "../fonts/brand/allura-latin-400-normal.woff2",
+  weight: "400", variable: "--font-script", display: "swap", preload: false, adjustFontFallback: false,
+});
+export const fontVariables = [serifLatin, sansLatin, serifDeva, sansDeva, displayLatin, scriptLatin].map((font) => font.variable).join(" ");

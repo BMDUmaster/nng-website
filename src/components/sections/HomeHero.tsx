@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- fixed-size static artwork placed by CSS */
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { asset } from "@/lib/assets";
 import { areas, areaTopics, figures, site } from "@/content/site";
@@ -50,6 +51,30 @@ function ring() {
     out.push(`<path d="M${(c + r1 * Math.cos(a)).toFixed(1)} ${(c + r1 * Math.sin(a)).toFixed(1)}L${(c + 292 * Math.cos(a)).toFixed(1)} ${(c + 292 * Math.sin(a)).toFixed(1)}" stroke-width=".6"/>`);
   }
   return `<svg class="hm-ring" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
+}
+
+/** Desktop ring: each sign in its own small medallion, an inner chart of fine lines, a soft glow. */
+function medallionRing() {
+  const signs = ["♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓", "♈"];
+  const c = 300;
+  const out: string[] = [
+    '<circle cx="300" cy="300" r="292" stroke-width="2"/><circle cx="300" cy="300" r="286" stroke-width=".7"/>',
+    '<circle cx="300" cy="300" r="205" stroke-width="1"/><circle cx="300" cy="300" r="196" stroke-width=".5" stroke-dasharray="2 5"/><circle cx="300" cy="300" r="120" stroke-width=".7"/><circle cx="300" cy="300" r="62" stroke-width=".7"/>',
+  ];
+  for (let i = 0; i < 12; i++) {
+    const a = ((i * 30 - 90) * Math.PI) / 180;
+    out.push(`<path d="M${(c + 62 * Math.cos(a)).toFixed(1)} ${(c + 62 * Math.sin(a)).toFixed(1)}L${(c + 205 * Math.cos(a)).toFixed(1)} ${(c + 205 * Math.sin(a)).toFixed(1)}" stroke-width=".5"/>`);
+    const b = ((i * 30 - 75) * Math.PI) / 180;
+    const x = (c + 248 * Math.cos(b)).toFixed(1);
+    const y = (c + 248 * Math.sin(b)).toFixed(1);
+    out.push(`<circle class="hm-medal" cx="${x}" cy="${y}" r="29" stroke-width="1.3"/><text x="${x}" y="${y}">${signs[i]}&#xFE0E;</text>`);
+  }
+  for (let i = 0; i < 6; i++) {
+    const a = ((i * 60 + 15) * Math.PI) / 180;
+    const b = ((i * 60 + 135) * Math.PI) / 180;
+    out.push(`<path d="M${(c + 196 * Math.cos(a)).toFixed(1)} ${(c + 196 * Math.sin(a)).toFixed(1)}L${(c + 196 * Math.cos(b)).toFixed(1)} ${(c + 196 * Math.sin(b)).toFixed(1)}" stroke-width=".4" opacity=".7"/>`);
+  }
+  return `<svg class="hm-ring2" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
 }
 
 /** A four-point sparkle centred on (x, y). */
@@ -106,6 +131,13 @@ export function HomeHero() {
   return (
     <section className="hm" aria-labelledby="hero-title">
       <div className="hm-room" aria-hidden="true" />
+      <div className="hm-desk" aria-hidden="true">
+        <div className="hm-panel" />
+        <img className="hm-corner hm-corner-tl" src={asset("/images/hero-corner-tl.webp")} alt="" width={600} height={760} />
+        <img className="hm-corner hm-corner-bl" src={asset("/images/hero-corner-bl.webp")} alt="" width={600} height={802} />
+        <img className="hm-leaf-l" src={asset("/images/hero-leafL.webp")} alt="" width={129} height={278} />
+        <p className="hm-script"><span>Guidance</span><span>Clarity</span><span>Positive Change</span></p>
+      </div>
       <span className="hm-leaf-layer" aria-hidden="true" dangerouslySetInnerHTML={html(branch("hm-br-tl", 11) + branch("hm-br-bl", 9) + branch("hm-br-tr", 8) + branch("hm-br-br", 10))} />
 
       <div className="hm-inner">
@@ -172,8 +204,8 @@ export function HomeHero() {
             <span className="hm-sky-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sky())} />
             <span className="hm-disc" aria-hidden="true" />
             <span className="hm-ring-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(ring())} />
+            <span className="hm-ring2-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(medallionRing())} />
             <span className="hm-sun-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sun)} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="hm-person"
               src={asset("/images/hero-narayani-cut.webp")}
@@ -186,6 +218,15 @@ export function HomeHero() {
             />
           </div>
         </div>
+      </div>
+
+      <div className="hm-foot" aria-hidden="true">
+        <svg className="hm-hills2" viewBox="0 0 1440 130" preserveAspectRatio="none">
+          <path className="hm-h-back" d="M0 70C220 40 420 28 640 52s420 50 620 22c80-11 140-20 180-22V130H0Z" />
+          <path className="hm-h-line" d="M0 70C220 40 420 28 640 52s420 50 620 22c80-11 140-20 180-22" />
+          <path className="hm-h-front" d="M0 100C260 78 520 84 760 98s460 12 680-14V130H0Z" />
+        </svg>
+        <img className="hm-flora" src={asset("/images/hero-flora.webp")} alt="" width={612} height={803} />
       </div>
 
       <nav className="hm-areas" aria-label="Enquire about an area of life">
