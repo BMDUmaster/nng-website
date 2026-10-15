@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CallLink } from "@/components/contact/CallLink";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { HomeFaq } from "@/components/sections/HomeLower";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -33,7 +34,7 @@ function Arrow() {
   );
 }
 
-/** Contact: a plum opening, three ways to reach the team, what happens next with a client's words, then questions. */
+/** Contact: a plum opening, the enquiry form, three ways to reach the team, what happens next with a client's words, then questions. */
 export default function ContactPage() {
   const manish = voices.manish;
   return (
@@ -58,8 +59,8 @@ export default function ContactPage() {
                 <span>Message on WhatsApp</span>
                 <Arrow />
               </EnquiryTrigger>
-              <a className="cn-ghost" href="#ways">
-                Other ways to reach us
+              <a className="cn-ghost" href="#enquiry">
+                Send an enquiry
               </a>
             </div>
           </div>
@@ -74,6 +75,26 @@ export default function ContactPage() {
               <span>{site.person}</span>
               <small>{site.title}</small>
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cn-sec cf" id="enquiry" aria-labelledby="enquiry-title">
+        <div className="cn-inner cf-inner">
+          <div className="cf-copy" data-reveal="">
+            <p className="cn-kicker cn-kicker-dark">Send an enquiry</p>
+            <h2 id="enquiry-title">
+              Write to <em>her team</em>
+            </h2>
+            <p className="cf-lead">Fill in your details and the NNG team will connect with you. A few lines are enough; you do not need to explain everything here.</p>
+            <ul className="cf-points">
+              <li>The team replies by phone or WhatsApp</li>
+              <li>Fees and availability are explained before you book</li>
+              <li>Your details stay with the NNG team</li>
+            </ul>
+          </div>
+          <div data-reveal="" style={{ "--d": "120ms" } as React.CSSProperties}>
+            <ContactForm />
           </div>
         </div>
       </section>
