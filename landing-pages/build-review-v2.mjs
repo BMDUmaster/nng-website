@@ -16,6 +16,35 @@ const lines=s=>s.split('\n').map(esc).join('<br>');
 const arrow='<span aria-hidden="true">↗</span>';
 const assets='../_shared/assets/';
 
+// Tracking for the landing pages: Google Tag Manager, Google Analytics 4 and Microsoft Clarity.
+const TRACK_HEAD = `<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P3KXR4GL');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8FZ4BE77QW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8FZ4BE77QW');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yxm2cn04j3");
+</script>`;
+const TRACK_BODY = `<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3KXR4GL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->`;
+
 function message(p,sourceName,topic='') {
   return [`Hello NNG team, I would like to enquire about ${p.name}.`,topic?`My enquiry is about: ${topic}.`:'', 'Please share the appropriate scope, format, duration, fees and availability.',`Enquiry source: ${p.slug} landing page (${sourceName}).`].filter(Boolean).join('\n');
 }
@@ -45,6 +74,7 @@ function comparison(p) {
 function renderBase(p) {
   const original=fs.readFileSync(path.join(source,'index.html'),'utf8');
   let head=original.match(/<!doctype html>[\s\S]*?<\/head>/)[0];
+  head=head.replace('<head>','<head>'+TRACK_HEAD);
   head=head.replace(/<title>[\s\S]*?<\/title>/,`<title>${esc(p.short||p.name)} with Narayani Garg | NNG</title>`)
     .replace(/(<meta name="description" content=")[^"]*(">)/,`$1${esc(p.description)}$2`)
     .replace(/(<meta property="og:title" content=")[^"]*(">)/,`$1${esc(p.short||p.name)} with Narayani Garg$2`)
@@ -55,7 +85,7 @@ function renderBase(p) {
   let dialogs=original.slice(original.indexOf('  <dialog id="video-dialog"'),original.indexOf('</body>'));
   dialogs=dialogs.replace('Your answers stay in the form while it is open. They are not stored in browser storage or sent to NNG by this page.','An optional topic selection stays in this page’s memory only. It is not stored in browser storage or sent to NNG by the page.')
     .replace('When you prepare an enquiry, your first name and selections are placed in a WhatsApp link. Opening it shares the prepared text with WhatsApp; you choose whether to send it to NNG.','WhatsApp links contain the service, enquiry topic if selected, and page source. This page does not ask for your name or private details. Opening a link shares its prepared text with WhatsApp; you review it and choose whether to send it to NNG.');
-  return `${head}<body class="copy-v2${p.v5?' lp-v5':''}${p.rich?' lp-rich':''}" data-page="${p.slug}" data-offer="${esc(p.name)}" data-family="${p.family}"><a class="skip-link" href="#main">Skip to content</a>
+  return `${head}<body class="copy-v2${p.v5?' lp-v5':''}${p.rich?' lp-rich':''}" data-page="${p.slug}" data-offer="${esc(p.name)}" data-family="${p.family}">${TRACK_BODY}<a class="skip-link" href="#main">Skip to content</a>
   <header class="header"><div class="wrap header-inner"><a class="brand" href="#top" aria-label="Transformation with NNG, top of page"><img src="${assets}nng-logo.webp" width="100" height="53" alt="Transformation with NNG"></a>${cta(p,'header','WhatsApp','','button button-small')}</div></header>
   <main id="main"><div class="hero-banner"><section class="hero wrap" id="top" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">${esc(p.short||p.name)}</p><p class="hero-role">Narayani Garg · Psychic Spiritual Mentor</p><h1 id="hero-title">${esc(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1><p class="hero-description">${esc(p.description)}</p><div class="hero-actions">${cta(p,'hero')}<a class="text-link" href="#ways">See what we can discuss <span aria-hidden="true">↓</span></a></div><div class="hero-facts">${p.facts.map(([a,b],i)=>`<div>${pageIcon(p,'facts',i)}<strong>${esc(a)}</strong><span>${esc(b)}</span></div>`).join('')}</div><p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p></div><div class="hero-visual"><figure class="hero-film"><video id="hero-intro" autoplay muted loop playsinline controls preload="auto" poster="${assets}intro-frame.jpg" aria-label="Narayani’s original introduction video"><source src="${assets}introduction.mp4" type="video/mp4">Your browser cannot play this video. <a href="${assets}introduction.mp4">Open Narayani’s introduction.</a></video><figcaption><span>Meet Narayani. In her own words.</span><span>1:21</span></figcaption></figure></div></section></div>
   ${authority()}
