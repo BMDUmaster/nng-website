@@ -6,3 +6,4 @@ landing-pages/review-v3
 out
 AGENTS.md
 CLAUDE.md
+.env.local
