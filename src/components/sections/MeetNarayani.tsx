@@ -4,11 +4,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 /* eslint-disable @next/next/no-img-element -- small decorative leaves placed by CSS */
 import { asset } from "@/lib/assets";
+import { figures } from "@/content/site";
 
 const icon = (d: string) =>
   `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const lotus = '<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/>';
 /** Four things she helps with (desktop band under the film). */
+/** Phones only: her figures under the feature cards. */
+const statIcons = [
+  icon('<circle cx="16" cy="10" r="4.2"/><path d="M8.5 25a7.5 7.5 0 0 1 15 0"/><circle cx="7" cy="12.5" r="3"/><path d="M2.5 23.5a5 5 0 0 1 6.5-4.7"/><circle cx="25" cy="12.5" r="3"/><path d="M29.5 23.5a5 5 0 0 0-6.5-4.7"/>'),
+  icon('<circle cx="16" cy="12" r="7.5"/><path d="m12.8 12 2.2 2.2 4.2-4.4"/><path d="m11 18.5-3 9 4.5-1.8L15 29l1-5M21 18.5l3 9-4.5-1.8L17 29"/>'),
+  icon('<circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3.4 3.2 5 6.9 5 11s-1.6 7.8-5 11c-3.4-3.2-5-6.9-5-11s1.6-7.8 5-11Z"/><path d="M7 10.5h18M7 21.5h18"/>'),
+];
 const features = [
   { title: "Understand Your Patterns", text: "Gain clarity about your thoughts and emotions.", icon: icon(lotus) },
   { title: "Make Better Life Decisions", text: "Find balance in relationships, career and health.", icon: icon('<path d="M16 15.5s-5.5-3.3-5.5-6.8a3 3 0 0 1 5.5-1.7 3 3 0 0 1 5.5 1.7c0 3.5-5.5 6.8-5.5 6.8Z"/><path d="M3 21h5l4 2h5a2 2 0 0 0 0-4h-3M8 21l9-2.5c2.2-.6 4.4-1.6 6.3-2.9L26 14a2 2 0 0 1 2.5 3l-5 5c-1.5 1.4-3.5 2-5.5 2H11"/>') },
@@ -202,6 +209,16 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
           </li>
         ))}
       </ul>
+
+      <dl className="mn-stats" aria-label="Narayani's experience">
+        {figures.map((f, i) => (
+          <div key={f.label}>
+            <span className="mn-s-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: statIcons[i] ?? statIcons[0] }} />
+            <dd>{f.value}</dd>
+            <dt>{f.label}</dt>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }
