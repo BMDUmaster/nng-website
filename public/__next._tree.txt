@@ -5,4 +5,4 @@
 :HL["/_next/static/media/marcellus_latin_400_normal-s.p.3bt6-98rl8drt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/images/narayani-portrait-480.avif","image",{"type":"image/avif","fetchPriority":"high","imageSrcSet":"/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w","imageSizes":"(max-width: 900px) min(56vw, 250px), 300px"}]
 :HL["/images/social/instagram-logo.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"M3rr7NPMpIU5l5JtUJpXk"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"IOXmIHWLckLTQr4Zp98SB"}

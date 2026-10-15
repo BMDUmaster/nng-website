@@ -15,6 +15,7 @@
     "preview": "node scripts/preview.mjs",
     "preview:rebuilt": "node scripts/preview.mjs --rebuilt",
     "build:landing": "node landing-pages/build.mjs",
+    "sync:laravel": "node scripts/sync-to-laravel.mjs",
     "build:review": "node scripts/build-review.mjs",
     "verify:published": "node scripts/verify-published.mjs",
     "verify:landing": "node scripts/verify-landing.mjs",
