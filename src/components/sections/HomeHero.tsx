@@ -74,9 +74,24 @@ function sky() {
   </svg>`;
 }
 
-/** Soft leaves in a corner: a stem with alternating leaves. */
-const leaves = (cls: string) =>
-  `<svg class="hm-leaves ${cls}" viewBox="0 0 220 300" aria-hidden="true"><path class="hm-stem" d="M20 300C60 230 90 160 160 60" fill="none"/><path d="M58 236c-34-4-52-36-46-62 30 6 50 34 46 62Z"/><path d="M78 196c-6-34 16-62 44-66 4 30-16 58-44 66Z"/><path d="M96 166c-32-10-42-44-28-68 26 12 38 44 28 68Z"/><path d="M118 126c-2-32 22-56 50-56 0 30-22 54-50 56Z"/><path d="M136 100c-28-14-32-46-14-66 22 16 28 44 14 66Z"/><path d="M40 270c-32 4-56-18-58-44 28-2 50 18 58 44Z"/></svg>`;
+/** A leafy branch: a curved stem with paired, veined leaves in two greens (shaded by a gradient). */
+let branchId = 0;
+function branch(cls: string, leaves = 9, flip = false) {
+  const id = `hm-lg-${branchId++}`;
+  const out: string[] = [];
+  for (let i = 0; i < leaves; i++) {
+    const t = i / (leaves - 1);
+    const x = 30 + t * 170, y = 290 - t * 250 - Math.sin(t * Math.PI) * 30;
+    const side = i % 2 ? 1 : -1;
+    const ang = (side > 0 ? -35 : 205) + t * 20;
+    const sc = 1.05 - t * 0.45;
+    out.push(`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${ang.toFixed(1)}) scale(${sc.toFixed(2)})"><path class="hm-leaf" d="M0 0C14-20 46-22 64 0C46 22 14 20 0 0Z" fill="url(#${id})"/><path class="hm-vein" d="M2 0H58"/></g>`);
+  }
+  return `<svg class="hm-branch ${cls}" viewBox="0 0 240 320" aria-hidden="true"${flip ? ' style="--flip:-1"' : ""}><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FA05E"/><stop offset=".55" stop-color="#4E7A3C"/><stop offset="1" stop-color="#2F5A2A"/></linearGradient></defs><path class="hm-stem" d="M20 318C60 250 110 160 205 30" fill="none"/>${out.join("")}</svg>`;
+}
+
+/** A small sun with rays, above the ring on phones. */
+const sun = `<svg class="hm-sun-top" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="16" fill="currentColor"/><circle cx="60" cy="60" r="24" fill="none" stroke="currentColor" stroke-width="1"/>${Array.from({ length: 24 }, (_, i) => { const a = (i * 15 * Math.PI) / 180; const r = i % 2 ? 40 : 56; return `<path d="M${(60 + 28 * Math.cos(a)).toFixed(1)} ${(60 + 28 * Math.sin(a)).toFixed(1)}L${(60 + r * Math.cos(a)).toFixed(1)} ${(60 + r * Math.sin(a)).toFixed(1)}" stroke="currentColor" stroke-width="${i % 2 ? 0.8 : 1.2}"/>`; }).join("")}</svg>`;
 
 const practiceCards = [
   { name: "Brainology", note: "Mindset & personal growth", href: "/services/brain-training/", icon: svg('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22M12 11H9.5M12 17h-3M20 13h2.5M20 19h3"/>') },
@@ -91,7 +106,7 @@ export function HomeHero() {
   return (
     <section className="hm" aria-labelledby="hero-title">
       <div className="hm-room" aria-hidden="true" />
-      <span className="hm-leaf-layer" aria-hidden="true" dangerouslySetInnerHTML={html(leaves("hm-leaves-tl") + leaves("hm-leaves-bl") + leaves("hm-leaves-br"))} />
+      <span className="hm-leaf-layer" aria-hidden="true" dangerouslySetInnerHTML={html(branch("hm-br-tl", 11) + branch("hm-br-bl", 9) + branch("hm-br-tr", 8) + branch("hm-br-br", 10))} />
 
       <div className="hm-inner">
         <div className="hm-copy">
@@ -155,7 +170,9 @@ export function HomeHero() {
         <div className="hm-visual">
           <div className="hm-stage">
             <span className="hm-sky-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sky())} />
+            <span className="hm-disc" aria-hidden="true" />
             <span className="hm-ring-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(ring())} />
+            <span className="hm-sun-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sun)} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="hm-person"
