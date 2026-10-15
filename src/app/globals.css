@@ -17968,3 +17968,7 @@ footer.site-footer.ft {
   .hm-pr-icon { width: 42px; height: 42px; }
   .hm-pr-icon svg { width: 24px; height: 24px; }
 }
+/* Desktop: the lotus sits on the hill line, the cut leaf fades out at the edge. */
+@media (min-width: 901px) {
+  .hm-flora { right: 0; bottom: 26%; width: 18.5%; max-width: 360px; filter: drop-shadow(0 14px 18px rgb(30 50 20 / 0.22)); }
+}
