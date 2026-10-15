@@ -461,3 +461,8 @@ body.lp-v5 .ah6-band, body.lp-v5 .ah4-copy { z-index: 3; }
   body.lp-v5 .ah9-wheel text { font-size: 34px; }
 }
 @media (min-width: 761px) { body.lp-v5 .ah9-stage { left: calc(75.5% - min(20vw, 320px)) !important; top: -6%; } }
+
+/* Numerology copy update (Oct 15): topic cards carry a title only; the opening runs to three short paragraphs. */
+body.lp-v5 .no-grid-short li { min-height: 150px; }
+body.lp-v5 .nm-lead + .nm-lead { margin-top: 10px; }
+@media (max-width: 760px) { body.lp-v5 .no-grid-short li { min-height: 0; padding-bottom: 48px; } }

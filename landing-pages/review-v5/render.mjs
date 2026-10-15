@@ -179,7 +179,7 @@ export function renderMain(p, h) {
       <p class="v5-panel-intro">No form to complete. Choose a topic if useful, or open a general enquiry.</p>
       <div class="topic-picker" role="group" aria-label="Optional enquiry topic">${p.options.map((topic, i) => `<button type="button" data-select-topic="${esc(topic)}" aria-pressed="${i === 0 ? 'true' : 'false'}">${esc(topic)}</button>`).join('')}</div>
       <p class="selected-topic" role="status" aria-live="polite">General ${esc(p.short || p.name)} enquiry</p>
-      ${wa('enquiry', 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
+      ${wa('enquiry', p.closeCta || 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
       <p class="form-note">Review the message in WhatsApp and send it yourself. Opening WhatsApp does not book or pay for a session.</p>
       <div class="v5-alt"><a href="tel:+919205511101">${icon('conversation')}<span>Call<small>+91 92055 11101</small></span></a><a href="mailto:enquiry@nngarg.com">${icon('confirm')}<span>Email<small>enquiry@nngarg.com</small></span></a></div>
       <p class="enquiry-boundary">Please do not send private records, home footage or someone else’s information in your first message.</p>
@@ -203,7 +203,7 @@ export function renderMain(p, h) {
           <p class="en2-chat-label">Your message</p>
           <div class="en2-bubble" data-preview data-offer="${esc(p.name)}"><p>Hello NNG team, I would like to enquire about ${esc(p.name)}.</p><p>Please share the appropriate scope, format, duration, fees and availability.</p><span class="en2-time">now <i aria-hidden="true">✓✓</i></span></div>
         </div>
-        ${wa('enquiry', 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
+        ${wa('enquiry', p.closeCta || 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
         <p class="en2-note">You review and send the message yourself. Opening WhatsApp does not book or pay for a session. Please keep private records and other people’s details out of the first message.</p>
       </div>
     </div>

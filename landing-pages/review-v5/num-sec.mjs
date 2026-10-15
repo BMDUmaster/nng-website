@@ -34,8 +34,8 @@ export function numQuestion(p, { esc, wa }) {
     ${leaf('nq-leaf-l')}${leaf('nq-leaf-r')}
     <div class="nq-inner">
       <p class="nq-kicker">The question you bring</p>
-      <h2 id="situation-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em>.</h2>
-      <p class="nq-lead">${esc(p.situationIntro)}</p>
+      <h2 id="situation-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em>${/\.$/.test(b) ? '.' : ''}</h2>
+      ${p.situationIntro ? `<p class="nq-lead">${esc(p.situationIntro)}</p>` : ''}
       <div class="nq-cards" data-nq>${p.situations.map(([t, d], i) => `<article style="--i:${i}">
         <div class="nq-photo"><img src="../_shared/hero/nq-${i + 1}.webp" alt="" width="333" height="148" loading="lazy"><em>0${i + 1}</em><span class="nq-ic" aria-hidden="true">${icons[i]}</span></div>
         <h3>${esc(t)}</h3><p>${esc(d)}</p>
@@ -48,14 +48,14 @@ export function numQuestion(p, { esc, wa }) {
 
 export function numOptions(p, { esc, wa }) {
   const [a, b] = p.scopeTitle.split('\n');
-  const icons = [ic.grid, ic.name, ic.sign, ic.phone, ic.build, ic.astro];
+  const icons = [s('<circle cx="12" cy="11" r="4"/><path d="M5 25a7 7 0 0 1 14 0"/><path d="M21 9h6M21 13h6M21 17h4"/>'), ic.case, ic.grid, ic.name, ic.sign, ic.phone];
   return `<section class="no" id="ways" aria-labelledby="ways-title"><div class="no-inner">
     <div class="no-main">
       <p class="nh2-kicker no-kicker"><span aria-hidden="true">${star}</span>Your consultation options</p>
       <h2 id="ways-title">${esc(a)}<br><em>${esc(b)}</em></h2>
-      <p class="no-lead">${esc(p.scopeIntro)}</p>
+      ${p.scopeIntro ? `<p class="no-lead">${esc(p.scopeIntro)}</p>` : ''}
       ${wa('scope', 'WhatsApp enquiry', 'no-cta').replace('</a>', `<i class="nh2-arrow" aria-hidden="true">${arrow}</i></a>`)}
-      <ul class="no-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}"><span class="no-ic" aria-hidden="true">${icons[i]}</span><em aria-hidden="true">0${i + 1}</em><h3>${esc(t)}</h3><p id="no-d${i}">${esc(d)}</p><button class="no-more" type="button" aria-expanded="false" aria-controls="no-d${i}">See more</button><a class="no-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${arrow}</a></li>`).join('')}</ul>
+      <ul class="no-grid${p.topics.some(([, d]) => d) ? '' : ' no-grid-short'}">${p.topics.map(([t, d], i) => `<li style="--i:${i}"><span class="no-ic" aria-hidden="true">${icons[i]}</span><em aria-hidden="true">0${i + 1}</em><h3>${esc(t)}</h3>${d ? `<p id="no-d${i}">${esc(d)}</p><button class="no-more" type="button" aria-expanded="false" aria-controls="no-d${i}">See more</button>` : ''}<a class="no-go" href="#enquire" aria-label="Enquire about ${esc(t)}">${arrow}</a></li>`).join('')}</ul>
     </div>
     <figure class="no-photo" aria-hidden="true">
       ${dial('no-dial', [3, 11, 8, 9, 1, 2, 7, 6, 4])}
@@ -73,20 +73,17 @@ export function numWhy(p, { esc, wa }) {
   const shield = s('<path d="M16 4 6 8v7c0 6.5 4.3 11 10 13 5.7-2 10-6.5 10-13V8Z"/><path d="m11.5 16 3 3 6-6"/>');
   const cart = s('<path d="M4 6h3l3 13h12l3-9H9"/><circle cx="12" cy="25" r="1.6"/><circle cx="21" cy="25" r="1.6"/>');
   const bulb = s('<path d="M12 22h8M13 26h6M16 4a8 8 0 0 0-5 14.2c.8.7 1 1.6 1 2.8h8c0-1.2.2-2.1 1-2.8A8 8 0 0 0 16 4Z"/>');
-  const cards = [[person, 'The person matters.', 'Explore your beliefs and responses alongside the reading.'], [head, 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.']];
-  const promises = [[shield, 'No fear-based <br>predictions'], [cart, 'No pressure to <br>buy a remedy'], [bulb, 'The reasoning explained, <br>the choice yours']];
+  const cards = [[shield, 'Guidance without fear.', 'You will never be frightened into a decision.'], [bulb, 'Reasons explained.', 'Every insight comes with the “why,” so you understand it instead of just accepting it.'], [cart, 'No pressure to buy remedies.', 'Suggestions are offered, never pushed.'], [head, 'The choice is always yours.', 'You decide what to act on, and what to leave.']];
   const [c1, c2] = p.closeTitle.split('\n');
-  const w2 = c2.split(' '); const tail = w2.splice(-4).join(' ');
+  const w2 = c2.split(' '); const tail = w2.splice(-2).join(' ');
   const sun = '<svg class="nw-sun" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="50" cy="50" r="14" fill="currentColor" fill-opacity=".9"/><circle cx="50" cy="50" r="20"/>' + Array.from({ length: 16 }, (_, i) => { const a = i * 22.5 * Math.PI / 180, r1 = 24, r2 = i % 2 ? 36 : 46; return `<path d="M${(50 + r1 * Math.cos(a)).toFixed(1)} ${(50 + r1 * Math.sin(a)).toFixed(1)}L${(50 + r2 * Math.cos(a)).toFixed(1)} ${(50 + r2 * Math.sin(a)).toFixed(1)}"/>`; }).join('') + '</svg>';
   return `<section class="nw" aria-labelledby="why-title">
     ${leaf('nw-leaf-l')}${leaf('nw-leaf-r')}
     <div class="nw-inner">
       <div class="nw-copy">
-        <p class="nh2-kicker"><span aria-hidden="true">${star}</span>Why her approach matters</p>
-        <h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2>
-        <p class="nw-lead">Explore your beliefs, questions and choices with Narayani. Every reading is a safe, supportive conversation: no fear, no pressure, only clarity.</p>
-        <div class="nw-cards">${cards.map(([icn, t, d]) => `<article><span class="nw-ic" aria-hidden="true">${icn}<i>${lotus}</i></span><div><h3>${t}</h3><p>${d}</p></div><a class="nw-go" href="#enquire" aria-label="Enquire">${arrow}</a></article>`).join('')}</div>
-        <ul class="nw-promise">${promises.map(([icn, t]) => `<li><span aria-hidden="true">${icn}</span>${t}</li>`).join('')}</ul>
+        <p class="nh2-kicker"><span aria-hidden="true">${star}</span>Our approach</p>
+        <h2 id="why-title">Guidance <em>You Can Trust</em></h2>
+        <div class="nw-cards nw-cards-4">${cards.map(([icn, t, d]) => `<article><span class="nw-ic" aria-hidden="true">${icn}<i>${lotus}</i></span><div><h3>${t}</h3><p>${d}</p></div><a class="nw-go" href="#enquire" aria-label="Enquire">${arrow}</a></article>`).join('')}</div>
       </div>
       <figure class="nw-photo">
         <span class="nw-panel" aria-hidden="true">${sun}<span class="nh2-spark nw-s1">${star}</span><span class="nh2-spark nw-s2">${star}</span></span>
@@ -98,7 +95,7 @@ export function numWhy(p, { esc, wa }) {
     <div class="nw-band">
       <span class="nw-band-lotus" aria-hidden="true">${lotus}</span>
       <div><p class="nw-band-kicker"><span aria-hidden="true">${star}</span>Begin with the NNG team</p><h3>${esc(c1)} ${esc(w2.join(' '))} <em>${esc(tail)}</em></h3><p>${esc(p.closeCopy)}</p></div>
-      ${wa('why', 'Get started', 'nw-cta').replace('</a>', `<i aria-hidden="true">${arrow}</i></a>`)}
+      ${wa('why', p.closeCta || 'Get started', 'nw-cta').replace('</a>', `<i aria-hidden="true">${arrow}</i></a>`)}
     </div>
   </section>`;
 }
