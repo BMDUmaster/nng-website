@@ -1,13 +1,14 @@
 import Script from "next/script";
 
 /**
- * Tracking for the main website, the same three tags as the landing pages: Google Tag Manager, Google Analytics 4
- * and Microsoft Clarity. NEXT_PUBLIC_GA_ID may override the GA4 id. Consent defaults to denied for the UK, EEA and
- * Switzerland, so those visitors are measured without cookies.
+ * Tracking for the main website: the same three tags as the landing pages (Google Tag Manager, Google Analytics 4
+ * and Microsoft Clarity), plus the Meta Pixel, which is on the main website only. NEXT_PUBLIC_GA_ID may override the
+ * GA4 id. Consent defaults to denied for the UK, EEA and Switzerland, so those visitors are measured without cookies.
  */
 const GTM_ID = "GTM-P3KXR4GL";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-8FZ4BE77QW";
 const CLARITY_ID = "yxm2cn04j3";
+const META_PIXEL_ID = "1412583603769916";
 
 const DENIED_REGIONS = [
   "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT",
@@ -34,6 +35,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "${CLARITY_ID}");`;
 
+  const pixel = `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '${META_PIXEL_ID}');
+fbq('track', 'PageView');`;
+
   return (
     <>
       <Script id="ga-init" strategy="afterInteractive">
@@ -46,11 +58,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <Script id="clarity-init" strategy="afterInteractive">
         {clarity}
       </Script>
+      <Script id="meta-pixel" strategy="afterInteractive">
+        {pixel}
+      </Script>
     </>
   );
 }
 
-/** Tag Manager for visitors without JavaScript; placed straight after the opening body tag. */
+/** Tag Manager and the Meta Pixel for visitors without JavaScript; placed straight after the opening body tag. */
 export function AnalyticsNoScript() {
   return (
     <noscript>
@@ -60,6 +75,8 @@ export function AnalyticsNoScript() {
         width="0"
         style={{ display: "none", visibility: "hidden" }}
       />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img height="1" width="1" style={{ display: "none" }} alt="" src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} />
     </noscript>
   );
 }
