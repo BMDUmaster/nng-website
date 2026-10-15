@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
       return [
         { source: "/landing/", destination: "/landing/index.html" },
         { source: "/landing/:slug/", destination: "/landing/:slug/index.html" },
+        // Local testing only: with ENQUIRY_BACKEND_URL set (e.g. the Laravel app on http://127.0.0.1:8090), the
+        // contact form's /enquiry/store reaches that backend from the same origin, as it does on nngarg.com. With
+        // trailingSlash on, Next first redirects the POST (308, method kept) to /enquiry/store/, so that is the source.
+        ...(process.env.ENQUIRY_BACKEND_URL
+          ? [{ source: "/enquiry/store/", destination: `${process.env.ENQUIRY_BACKEND_URL}/enquiry/store` }]
+          : []),
       ];
     },
     // The Psychic Reader landing page is now the Brainology Program page; keep old ad links working.
