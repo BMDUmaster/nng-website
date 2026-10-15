@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./reading-rhythm.css";
 import { fontVariables } from "./fonts";
-import { Analytics } from "@/components/analytics/Analytics";
+import { Analytics, AnalyticsNoScript } from "@/components/analytics/Analytics";
 import { Motion } from "@/components/art/Motion";
 import { PageVeil } from "@/components/brand/PageVeil";
 import { EnquiryDialog } from "@/components/enquiry/EnquiryDialog";
@@ -68,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={fontVariables}>
       <body className="practice-site">
+        <AnalyticsNoScript />
         <a className="skip-link" href="#main">
           Skip to content
         </a>
