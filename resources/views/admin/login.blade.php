@@ -314,12 +314,12 @@
                 @csrf
                 <div class="form-group">
                     <label class="form-label" for="email">Admin Email Address</label>
-                    <input type="email" id="email" name="email" class="input-control" value="{{ old('email', 'admin@nngarg.com') }}" placeholder="admin@nngarg.com" required autofocus>
+                    <input type="email" id="email" name="email" class="input-control" value="{{ old('email') }}" placeholder="Email address" required autofocus>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="password">Password</label>
-                    <input type="password" id="password" name="password" class="input-control" value="adminpassword123" placeholder="••••••••••••" required>
+                    <input type="password" id="password" name="password" class="input-control" placeholder="••••••••••••" required>
                 </div>
 
                 <div class="form-options">
@@ -335,11 +335,6 @@
                 </button>
             </form>
 
-            <div class="credentials-box">
-                <strong>🔑 Default MySQL Admin Credentials:</strong><br>
-                Email: <code>admin@nngarg.com</code><br>
-                Password: <code>adminpassword123</code>
-            </div>
         </div>
 
         <div class="back-link">

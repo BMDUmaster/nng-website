@@ -41,6 +41,17 @@ php artisan serve
 Open http://127.0.0.1:8000/ for the website and http://127.0.0.1:8000/admin/login for the admin. The local `.env`
 needs a working database for the admin and the contact form; the website pages themselves need none.
 
+## Maintenance mode (currently ON)
+
+While the website is being updated, every page shows `public/maintenance.html` with status 503 (so Google keeps the
+pages indexed). Still working during maintenance: `/admin` and `/login`, `/enquiry/store`, the landing pages under
+`/landing/`, and images and other files.
+
+- The switch is the block between `MAINTENANCE MODE: ON` and `END MAINTENANCE` at the top of `public/.htaccess`.
+  Delete that block to bring the website back. `php artisan serve` (local) follows the same block through `server.php`.
+- To put only the maintenance page on the current live site, upload `public/maintenance.html`,
+  `public/maintenance.php` and this `public/.htaccess` block.
+
 ## Putting it live on Hostinger
 
 1. Take a backup of the current site files and the database (hPanel → Backups).
@@ -61,6 +72,12 @@ npm run build:landing
 Then copy the contents of `out/` into `public/`. On Windows Git Bash, prefix the build with `MSYS_NO_PATHCONV=1`
 so `/enquiry/store` is not turned into a file path. Note that Laravel's root `app/` folder can hide Next's
 `src/app/` during a build; build from a copy without the Laravel folders if `next build` finds no pages.
+
+## Security: urgent
+
+The live admin login page (`/admin/login`) shows the admin email and password (`admin@nngarg.com` /
+`adminpassword123`, from `database/seeders/DatabaseSeeder.php`) to every visitor and pre-fills them. This branch removes
+them from the page. Change the live admin password now, whether or not this branch is deployed yet.
 
 ## Security items found (not changed in this branch)
 

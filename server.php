@@ -8,6 +8,16 @@ $publicPath = __DIR__.'/public';
 
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '');
 
+// Maintenance mode follows the same switch as Apache: the MAINTENANCE MODE block in public/.htaccess.
+$htaccess = @file_get_contents($publicPath.'/.htaccess') ?: '';
+if (str_contains($htaccess, 'MAINTENANCE MODE: ON')
+    && !preg_match('#^/(admin|login|enquiry|landing)(/|$)#i', $uri)
+    && !preg_match('#^/(icon\.svg|favicon\.ico|robots\.txt|maintenance\.(php|html))$#i', $uri)
+    && !preg_match('#^/(images|_next|uploads|videos|build|css|js|fonts|storage)/#i', $uri)) {
+    require $publicPath.'/maintenance.php';
+    return true;
+}
+
 if ($uri !== '/' && is_file($publicPath.$uri)) {
     return false;
 }

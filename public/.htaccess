@@ -6,6 +6,15 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # --- MAINTENANCE MODE: ON ---------------------------------------------------------------------------------------
+    # Every page shows maintenance.html (status 503, via maintenance.php) except the admin, the enquiry store, the
+    # landing pages and the files they need. To switch maintenance off, delete this block down to "END MAINTENANCE".
+    RewriteCond %{REQUEST_URI} !^/(admin|login|enquiry|landing)(/|$) [NC]
+    RewriteCond %{REQUEST_URI} !^/(icon\.svg|favicon\.ico|robots\.txt)$ [NC]
+    RewriteCond %{REQUEST_URI} !^/(images|_next|uploads|videos|build|css|js|fonts|storage)/ [NC]
+    RewriteRule !^maintenance\.(php|html)$ maintenance.php [L]
+    # --- END MAINTENANCE ------------------------------------------------------------------------------------------
+
     # Old landing-page addresses used in ads
     RewriteRule ^landing/psychic-reader(/.*)?$ /landing/brainology/ [R=301,L]
     RewriteRule ^landing/vastu(/.*)?$ /landing/vastulogy/ [R=301,L]
