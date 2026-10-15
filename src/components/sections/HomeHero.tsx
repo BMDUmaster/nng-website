@@ -78,6 +78,13 @@ function sky() {
 const leaves = (cls: string) =>
   `<svg class="hm-leaves ${cls}" viewBox="0 0 220 300" aria-hidden="true"><path class="hm-stem" d="M20 300C60 230 90 160 160 60" fill="none"/><path d="M58 236c-34-4-52-36-46-62 30 6 50 34 46 62Z"/><path d="M78 196c-6-34 16-62 44-66 4 30-16 58-44 66Z"/><path d="M96 166c-32-10-42-44-28-68 26 12 38 44 28 68Z"/><path d="M118 126c-2-32 22-56 50-56 0 30-22 54-50 56Z"/><path d="M136 100c-28-14-32-46-14-66 22 16 28 44 14 66Z"/><path d="M40 270c-32 4-56-18-58-44 28-2 50 18 58 44Z"/></svg>`;
 
+const practiceCards = [
+  { name: "Brainology", note: "Mindset & personal growth", href: "/services/brain-training/", icon: svg('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22M12 11H9.5M12 17h-3M20 13h2.5M20 19h3"/>') },
+  { name: "Numerology", note: "Know yourself better", href: "/services/numerology/", icon: '<svg viewBox="0 0 32 32" aria-hidden="true"><text x="9" y="14" text-anchor="middle">1</text><text x="23" y="14" text-anchor="middle">2</text><text x="9" y="28" text-anchor="middle">3</text><text x="23" y="28" text-anchor="middle">4</text></svg>' },
+  { name: "Vastulogy", note: "Harmonise your space", href: "/services/vastu/", icon: svg('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>') },
+  { name: "Astrology", note: "Guidance for a brighter path", href: "/services/astrology/", icon: svg('<circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="7"/><path d="M16 4v24M4 16h24M7.5 7.5l17 17M24.5 7.5l-17 17"/><circle cx="16" cy="16" r="2" fill="currentColor"/>') },
+];
+
 const html = (markup: string) => ({ __html: markup });
 
 export function HomeHero() {
@@ -154,8 +161,8 @@ export function HomeHero() {
               className="hm-person"
               src={asset("/images/hero-narayani-cut.webp")}
               alt={`Narayani Garg, ${site.title}`}
-              width={296}
-              height={818}
+              width={370}
+              height={1160}
               loading="eager"
               fetchPriority="high"
               decoding="sync"
@@ -188,6 +195,21 @@ export function HomeHero() {
           ))}
         </ul>
       </nav>
+
+      <ul className="hm-practices" aria-label="Her practices">
+        {practiceCards.map((card, i) => (
+          <li key={card.name} style={{ "--i": i } as React.CSSProperties}>
+            <a href={asset(card.href)}>
+              <span className={`hm-pr-icon${card.name === "Numerology" ? " hm-pr-num" : ""}`} aria-hidden="true" dangerouslySetInnerHTML={html(card.icon)} />
+              <span className="hm-pr-text">
+                <strong>{card.name}</strong>
+                <small>{card.note}</small>
+              </span>
+              <span className="hm-pr-go" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
