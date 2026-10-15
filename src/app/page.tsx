@@ -1,6 +1,5 @@
 import { preload } from "react-dom";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
-import { AreasRibbon } from "@/components/sections/Sections";
 import { Approach } from "@/components/sections/Approach";
 import { BookSection } from "@/components/sections/BookSection";
 import { ClientWords } from "@/components/sections/ClientWords";
@@ -24,7 +23,7 @@ export default function HomePage() {
     type: "image/avif",
     fetchPriority: "high",
     imageSrcSet: assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w"),
-    imageSizes: "(max-width: 900px) min(56vw, 250px), 300px",
+    imageSizes: "(max-width: 900px) 62vw, 360px",
   });
 
   return (
@@ -32,8 +31,6 @@ export default function HomePage() {
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), faqSchema(faqs.home)] }} />
 
       <HomeHero />
-
-      <AreasRibbon />
 
       <MeetNarayani bookTitle={bookTitle} />
 

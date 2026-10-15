@@ -32,4 +32,12 @@ export const sansDeva = localFont({
   declarations: [{ prop: "unicode-range", value: "U+0900-097F,U+1CD0-1CFF,U+200C-200D,U+20A8,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF" }],
   adjustFontFallback: false,
 });
-export const fontVariables = [serifLatin, sansLatin, serifDeva, sansDeva].map((font) => font.variable).join(" ");
+// Display serif for the homepage hero heading (Oct 15 redesign). Upright 600 and italic 500 only.
+export const displayLatin = localFont({
+  src: [
+    { path: "../fonts/brand/playfair-display-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/brand/playfair-display-latin-500-italic.woff2", weight: "500", style: "italic" },
+  ],
+  variable: "--font-display", display: "swap", adjustFontFallback: "Times New Roman",
+});
+export const fontVariables = [serifLatin, sansLatin, serifDeva, sansDeva, displayLatin].map((font) => font.variable).join(" ");

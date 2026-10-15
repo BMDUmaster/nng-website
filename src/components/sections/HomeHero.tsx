@@ -1,118 +1,191 @@
-import { ZodiacWheel } from "@/components/art/ZodiacWheel";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { asset, assetSet } from "@/lib/assets";
-import { figures, site } from "@/content/site";
+import { areas, areaTopics, figures, site } from "@/content/site";
 
-/** In two pairs, so a phone can set them on two even lines. */
-const practices = [
-  ["Psychic Reader", "Astrologer"],
-  ["Numerologist", "Vastu"],
-];
-
-/**
- * The homepage hero. On phones it reads top to bottom: who she is, the question, her portrait in the zodiac
- * wheel, then one action and the figures. On wide screens the portrait stands to the right of the copy.
+/*
+ * The homepage hero (Oct 15 redesign, from the approved "Mystical Astrology Consultation" banner): a cream page with
+ * soft leaves; on the left the practices, the heading, two actions, a note and her figures; on the right her
+ * photograph in an arch inside a slowly turning golden zodiac ring with constellations, moons and stars; across the
+ * foot a curved band with the four areas of life. On phones the same pieces stack: words, portrait, figures, areas.
  */
+
+const practices = ["Psychic Reader", "Astrologer", "Numerologist", "Vastu"];
+
+const svg = (d: string) =>
+  `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+
+const icons = {
+  people: svg('<circle cx="16" cy="10" r="4.2"/><path d="M8.5 25a7.5 7.5 0 0 1 15 0"/><circle cx="7" cy="12.5" r="3"/><path d="M2.5 23.5a5 5 0 0 1 6.5-4.7"/><circle cx="25" cy="12.5" r="3"/><path d="M29.5 23.5a5 5 0 0 0-6.5-4.7"/>'),
+  award: svg('<circle cx="16" cy="12" r="7.5"/><circle cx="16" cy="12" r="4"/><path d="m11 18.5-3 9 4.5-1.8L15 29l1-5M21 18.5l3 9-4.5-1.8L17 29"/>'),
+  globe: svg('<circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3.4 3.2 5 6.9 5 11s-1.6 7.8-5 11c-3.4-3.2-5-6.9-5-11s1.6-7.8 5-11Z"/><path d="M7 10.5h18M7 21.5h18"/>'),
+  lotus: svg('<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/>'),
+  heart: svg('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6c0 1.6-.5 3.2-1.3 4.6"/><path d="M22.5 17.5c1.6 0 3 1.3 3 3s-1.4 3-3 3"/>'),
+  coins: svg('<ellipse cx="13" cy="8" rx="8" ry="3"/><path d="M5 8v4c0 1.7 3.6 3 8 3s8-1.3 8-3V8M5 12v4c0 1.7 3.6 3 8 3 1.2 0 2.4-.1 3.4-.3M5 16v4c0 1.7 3.6 3 8 3 .9 0 1.8 0 2.6-.2"/><ellipse cx="22" cy="19" rx="6.5" ry="2.6"/><path d="M15.5 19v4c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6v-4"/>'),
+  case: svg('<rect x="4" y="10" width="24" height="16" rx="2.5"/><path d="M12 10V7.5A1.5 1.5 0 0 1 13.5 6h5A1.5 1.5 0 0 1 20 7.5V10M4 17h24M14 17v2.5h4V17"/>'),
+};
+const areaIcon: Record<string, string> = { Health: icons.lotus, Relationship: icons.heart, Money: icons.coins, Career: icons.case };
+const figureIcon = [icons.people, icons.award, icons.globe];
+
+const star = (cls: string) =>
+  `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.7 6.4 5.6 11.3 12 12-6.4.7-11.3 5.6-12 12-.7-6.4-5.6-11.3-12-12C6.4 11.3 11.3 6.4 12 0Z"/></svg>`;
+
+/** A golden ring of the twelve signs with fine ticks; transparent everywhere else. */
+function ring() {
+  const signs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+  const c = 300;
+  const out: string[] = [
+    '<circle cx="300" cy="300" r="292" stroke-width="1.4"/><circle cx="300" cy="300" r="284" stroke-width=".7"/><circle cx="300" cy="300" r="226" stroke-width="1.1"/><circle cx="300" cy="300" r="218" stroke-width=".6" stroke-dasharray="1.5 6"/>',
+  ];
+  for (let i = 0; i < 12; i++) {
+    const a = ((i * 30 - 90) * Math.PI) / 180;
+    const b = ((i * 30 - 75) * Math.PI) / 180;
+    out.push(`<path d="M${(c + 226 * Math.cos(a)).toFixed(1)} ${(c + 226 * Math.sin(a)).toFixed(1)}L${(c + 284 * Math.cos(a)).toFixed(1)} ${(c + 284 * Math.sin(a)).toFixed(1)}" stroke-width=".8"/>`);
+    const x = (c + 255 * Math.cos(b)).toFixed(1);
+    const y = (c + 255 * Math.sin(b)).toFixed(1);
+    out.push(`<text x="${x}" y="${y}" transform="rotate(${i * 30 + 15} ${x} ${y})">${signs[i]}&#xFE0E;</text>`);
+  }
+  for (let i = 0; i < 72; i++) {
+    const a = (i * 5 * Math.PI) / 180;
+    const r1 = i % 6 ? 287 : 284;
+    out.push(`<path d="M${(c + r1 * Math.cos(a)).toFixed(1)} ${(c + r1 * Math.sin(a)).toFixed(1)}L${(c + 292 * Math.cos(a)).toFixed(1)} ${(c + 292 * Math.sin(a)).toFixed(1)}" stroke-width=".6"/>`);
+  }
+  return `<svg class="hm-ring" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
+}
+
+/** A four-point sparkle centred on (x, y). */
+const sparkle = (x: number, y: number, r: number) =>
+  `M${x} ${y - r}C${x + r * 0.14} ${y - r * 0.14} ${x + r * 0.14} ${y - r * 0.14} ${x + r} ${y}C${x + r * 0.14} ${y + r * 0.14} ${x + r * 0.14} ${y + r * 0.14} ${x} ${y + r}C${x - r * 0.14} ${y + r * 0.14} ${x - r * 0.14} ${y + r * 0.14} ${x - r} ${y}C${x - r * 0.14} ${y - r * 0.14} ${x - r * 0.14} ${y - r * 0.14} ${x} ${y - r}Z`;
+
+/** Constellations, crescent moons, a radiant star and twinkling points around the ring. */
+function sky() {
+  const dots = (pts: number[][]) => pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.6"/>`).join("");
+  const twinkles = [[118, 70, 11], [452, 40, 8], [30, 300, 12], [580, 470, 9], [96, 540, 8], [300, 8, 7], [540, 250, 7], [20, 120, 6]];
+  const rays = Array.from({ length: 16 }, (_, i) => {
+    const a = (i * 22.5 * Math.PI) / 180;
+    const r = i % 2 ? 18 : 32;
+    return `<path d="M${(572 + 9 * Math.cos(a)).toFixed(1)} ${(320 + 9 * Math.sin(a)).toFixed(1)}L${(572 + r * Math.cos(a)).toFixed(1)} ${(320 + r * Math.sin(a)).toFixed(1)}"/>`;
+  }).join("");
+  return `<svg class="hm-sky" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+    <g class="hm-const"><path d="M58 150 96 104 150 128 128 186M470 112 510 160 548 142 586 200M520 400 556 440 536 500 580 540M24 420 62 460 44 520"/>${dots([[58, 150], [96, 104], [150, 128], [128, 186], [470, 112], [510, 160], [548, 142], [586, 200], [520, 400], [556, 440], [536, 500], [580, 540], [24, 420], [62, 460], [44, 520]])}</g>
+    <path class="hm-moon" d="M520 8a40 40 0 1 0 44 58 33 33 0 1 1-44-58Z"/>
+    <path class="hm-moon hm-moon-s" d="M452 30a18 18 0 1 0 20 27 15 15 0 1 1-20-27Z"/>
+    <g class="hm-sun"><circle cx="572" cy="320" r="6"/>${rays}</g>
+    ${twinkles.map(([x, y, r], i) => `<path class="hm-twinkle" style="--d:${(i * 0.55).toFixed(2)}s" d="${sparkle(x, y, r)}"/>`).join("")}
+  </svg>`;
+}
+
+/** Soft leaves in a corner: a stem with alternating leaves. */
+const leaves = (cls: string) =>
+  `<svg class="hm-leaves ${cls}" viewBox="0 0 220 300" aria-hidden="true"><path class="hm-stem" d="M20 300C60 230 90 160 160 60" fill="none"/><path d="M58 236c-34-4-52-36-46-62 30 6 50 34 46 62Z"/><path d="M78 196c-6-34 16-62 44-66 4 30-16 58-44 66Z"/><path d="M96 166c-32-10-42-44-28-68 26 12 38 44 28 68Z"/><path d="M118 126c-2-32 22-56 50-56 0 30-22 54-50 56Z"/><path d="M136 100c-28-14-32-46-14-66 22 16 28 44 14 66Z"/><path d="M40 270c-32 4-56-18-58-44 28-2 50 18 58 44Z"/></svg>`;
+
+const html = (markup: string) => ({ __html: markup });
+
 export function HomeHero() {
   return (
-    <section className="hx" aria-labelledby="hero-title">
-      <div className="hx-inner">
-        <div className="hx-top">
-          <p className="hx-kicker">
-            {practices.map((pair) => (
-              <span key={pair[0]} className="hx-kicker-pair">
-                {pair.map((practice) => (
-                  <span key={practice} className="hx-kicker-item">
-                    {practice}
-                  </span>
-                ))}
-              </span>
+    <section className="hm" aria-labelledby="hero-title">
+      <div className="hm-room" aria-hidden="true" />
+      <span className="hm-leaf-layer" aria-hidden="true" dangerouslySetInnerHTML={html(leaves("hm-leaves-tl") + leaves("hm-leaves-bl") + leaves("hm-leaves-br"))} />
+
+      <div className="hm-inner">
+        <div className="hm-copy">
+          <p className="hm-kicker">
+            {practices.map((p) => (
+              <span key={p}>{p}</span>
             ))}
           </p>
-          <p className="hx-name">
+          <p className="hm-name">
+            <span className="hm-name-star" aria-hidden="true" dangerouslySetInnerHTML={html(star("hm-star"))} />
             <span>
               Personal guidance with <strong>Narayani Garg</strong>
             </span>
           </p>
           <h1 id="hero-title">
-            Let’s talk about <span className="hx-highlight">what’s on your mind.</span>
+            Let’s talk about <em>what’s on your mind.</em>
           </h1>
-        </div>
-
-        <div className="hx-visual">
-          <div className="hx-stage">
-            <div className="hx-wheel" aria-hidden="true">
-              <div className="hx-wheel-turn">
-                <ZodiacWheel />
-              </div>
-            </div>
-            <div className="hx-arch">
-              <picture>
-                <source
-                  type="image/avif"
-                  srcSet={assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w")}
-                  sizes="(max-width: 900px) min(56vw, 250px), 300px"
-                />
-                <source
-                  type="image/webp"
-                  srcSet={assetSet("/images/narayani-portrait-480.webp 480w, /images/narayani-portrait-684.webp 684w")}
-                  sizes="(max-width: 900px) min(56vw, 250px), 300px"
-                />
-                <img
-                  src={asset("/images/narayani-portrait-gold.png")}
-                  alt={`Narayani Garg, ${site.title}`}
-                  width={330}
-                  height={450}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
-                />
-              </picture>
-            </div>
-            <p className="hx-badge">
-              <span>Narayani Garg</span>
-              <small>{site.title}</small>
-            </p>
-          </div>
-        </div>
-
-        <div className="hx-bottom">
-          <p className="hx-description">
-            Bring your question about health, relationship, money or career. Explore it with spiritual guidance and mindset work.
+          <p className="hm-lead">
+            Bring your questions about health, relationship, money or career. Explore it with spiritual guidance and mindset work.
           </p>
-
-          <div className="hx-actions">
-            <EnquiryTrigger className="hx-cta" source="hero" primary>
-              <span>Enquire about a consultation</span>
-              <span className="hx-cta-arrow" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2.5 6h7M6.5 3l3 3-3 3" />
+          <div className="hm-actions">
+            <EnquiryTrigger className="hm-cta" source="hero" primary>
+              <span className="hm-cta-wa" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z" />
                 </svg>
               </span>
+              <span>Enquire about a consultation</span>
+              <span className="hm-arrow" aria-hidden="true">→</span>
             </EnquiryTrigger>
-            <a className="hx-secondary" href="#approach">
+            <a className="hm-ghost" href="#approach">
+              <span className="hm-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M9.5 7.5v9l7-4.5-7-4.5Z" />
+                </svg>
+              </span>
               <span>How she works</span>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M6 2v8M2.5 6.5L6 10l3.5-3.5" />
-              </svg>
+              <span className="hm-arrow" aria-hidden="true">→</span>
             </a>
           </div>
-
-          <p className="hx-note">
-            <span className="hx-note-dot" aria-hidden="true" />
+          <p className="hm-note">
+            <span className="hm-dot" aria-hidden="true" />
             Ask the team for the next available appointment
           </p>
-
-          <dl className="hx-figures" aria-label="Narayani's experience">
-            {figures.map((figure) => (
-              <div key={figure.label}>
+          <div className="hm-rule" aria-hidden="true">
+            <i />
+            <span dangerouslySetInnerHTML={html(icons.lotus)} />
+            <i />
+          </div>
+          <dl className="hm-figures" aria-label="Narayani's experience">
+            {figures.map((figure, i) => (
+              <div key={figure.label} style={{ "--i": i } as React.CSSProperties}>
+                <span className="hm-fig-icon" aria-hidden="true" dangerouslySetInnerHTML={html(figureIcon[i] ?? icons.people)} />
                 <dt>{figure.label}</dt>
                 <dd>{figure.value}</dd>
               </div>
             ))}
           </dl>
         </div>
+
+        <div className="hm-visual">
+          <div className="hm-stage">
+            <span className="hm-sky-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sky())} />
+            <span className="hm-ring-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(ring())} />
+            <div className="hm-arch">
+              <picture>
+                <source type="image/avif" srcSet={assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 360px" />
+                <img
+                  src={asset("/images/narayani-portrait-684.webp")}
+                  srcSet={assetSet("/images/narayani-portrait-480.webp 480w, /images/narayani-portrait-684.webp 684w")}
+                  sizes="(max-width: 900px) 62vw, 360px"
+                  alt={`Narayani Garg, ${site.title}`}
+                  width={684}
+                  height={1000}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <nav className="hm-areas" aria-label="Enquire about an area of life">
+        <svg className="hm-hills" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 70C200 30 360 40 560 66s420 40 620 6c120-20 200-24 260-14V120H0Z" />
+          <path d="M0 92C260 64 500 74 760 88s480 16 680-10V120H0Z" />
+        </svg>
+        <ul>
+          {areas.map((area, i) => (
+            <li key={area} style={{ "--i": i } as React.CSSProperties}>
+              {i > 0 && <span className="hm-area-star" aria-hidden="true" dangerouslySetInnerHTML={html(star("hm-sep"))} />}
+              <EnquiryTrigger className="hm-area" topic={areaTopics[area]} source={`hero-area-${area.toLowerCase()}`}>
+                <span className="hm-area-icon" aria-hidden="true" dangerouslySetInnerHTML={html(areaIcon[area] ?? icons.lotus)} />
+                <span className="hm-area-label">{area}</span>
+              </EnquiryTrigger>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </section>
   );
 }
