@@ -7081,6 +7081,12 @@ body.lp-v5 .no-grid-short li { min-height: 150px; }
 body.lp-v5 .nm-lead + .nm-lead { margin-top: 10px; }
 @media (max-width: 760px) { body.lp-v5 .no-grid-short li { min-height: 0; padding-bottom: 48px; } }
 body.lp-v5 .m5-lead + .m5-lead { margin-top: 10px; }
+
+/* Client voices button (Oct 15): a plain pill like the other WhatsApp buttons; no outer ring, no separate arrow disc. */
+body.lp-v5 a.cv5-cta { min-height: 44px; padding: 4px 5px 4px 20px; gap: 10px; font-size: 14px; background: linear-gradient(180deg, #2E4A38, #1E3528); box-shadow: 0 12px 24px -16px rgb(30 45 34 / 0.7); }
+body.lp-v5 a.cv5-cta .wa-ic { width: 34px; height: 34px; }
+body.lp-v5 a.cv5-cta .wa-ic svg { width: 18px; height: 18px; }
+body.lp-v5 a.cv5-cta .cv5-arrow { display: none; }
 /* =============================================================================================================
    Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
    gold on dark ones; label first, a small WhatsApp disc at the end.
