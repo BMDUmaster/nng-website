@@ -2,7 +2,7 @@
   "name": "nng-website",
   "version": "0.1.0",
   "private": true,
-  "description": "Transformation with NNG: parallel website build (homepage first).",
+  "description": "NNG website final: editable website, five landing pages and exact published review snapshot.",
   "engines": {
     "node": ">=20.9.0"
   },
@@ -10,13 +10,20 @@
     "dev": "next dev -p 3400",
     "build": "next build",
     "start": "next start -p 3400",
-    "lint": "eslint .",
+    "lint": "eslint src scripts next.config.ts eslint.config.mjs",
     "lint:copy": "node scripts/copy-lint.mjs",
-    "nosync": "node scripts/nosync.mjs",
+    "preview": "node scripts/preview.mjs",
+    "preview:rebuilt": "node scripts/preview.mjs --rebuilt",
+    "build:landing": "node landing-pages/build.mjs",
+    "build:review": "node scripts/build-review.mjs",
+    "verify:published": "node scripts/verify-published.mjs",
+    "verify:landing": "node scripts/verify-landing.mjs",
     "typecheck": "tsc --noEmit",
-    "export": "node scripts/export-next.mjs",
-    "sync:laravel": "node scripts/build-blade-views.mjs",
-    "build:laravel": "npm run export && npm run sync:laravel"
+    "export": "npm run build:pages && npm run build:icons && node scripts/build-store-thumbnails.mjs && node scripts/export-next.mjs",
+    "check:routes": "node scripts/check-export.mjs",
+    "build:icons": "node scripts/build-icons.mjs --check",
+    "check:content": "npm run build:pages && for f in src/content/offerings/pages/*--*.ts src/content/offerings/pages/[a-z]*.ts; do [ \"$(basename $f)\" = index.ts ] && continue; node scripts/check-offering.mjs \"$f\" --drawn || exit 1; done",
+    "build:pages": "node scripts/gen-offering-pages.mjs"
   },
   "dependencies": {
     "next": "16.3.5",
@@ -25,12 +32,12 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",
-    "@types/node": "22.20.4",
-    "@types/react": "19.3.0",
+    "@types/node": "^22.20.4",
+    "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.3.5",
     "tailwindcss": "4.3.3",
-    "typescript": "5.9.3"
+    "typescript": "~5.9.3"
   }
 }

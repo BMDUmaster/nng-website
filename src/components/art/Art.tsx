@@ -196,10 +196,3 @@ export function AreasFigure({ className = "areas-figure" }: ArtProps) {
     </svg>
   );
 }
-
-export const serviceArt = {
-  "mind-training": MindArt,
-  numerology: NumerologyArt,
-  vastu: VastuArt,
-  astrology: AstrologyArt,
-} as const;

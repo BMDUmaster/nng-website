@@ -14,6 +14,9 @@ export const EVENTS = {
   callbackSubmit: "callback_submit",
   /** A client film was played. params: film */
   filmPlay: "film_play",
+  /** Programme reminder impressions and dismissals; no personal data. */
+  promptView: "practice_prompt_view",
+  promptDismiss: "practice_prompt_dismiss",
 } as const;
 
 type Params = Record<string, string | number | boolean | undefined>;

@@ -1,0 +1,144 @@
+/* =============================================================================================================
+   Brainology "Meet your guide" (Oct 13 f), from the approved reference: her photograph on the left fading into
+   pearl, a hand-written line, four medallions down its edge (no lines on the photograph); the words, a labelled brain,
+   three fact cards, a quote card and two actions on the right. Calm motion only.
+   ============================================================================================================= */
+body.lp-v5 .m5 { position: relative; display: grid; grid-template-columns: minmax(0, 44%) minmax(0, 56%); align-items: center; overflow: hidden; background: radial-gradient(40% 60% at 80% 30%, #FFF6E4, transparent 70%), linear-gradient(180deg, #F8F1E6, #F4EBDD); }
+
+/* Left: photograph, script, medallions, name. */
+body.lp-v5 .m5-visual { position: relative; align-self: stretch; min-height: 620px; }
+body.lp-v5 .m5-photo { position: absolute; inset: 0 12% 0 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, #000 55%, transparent 99%); mask-image: linear-gradient(90deg, #000 55%, transparent 99%); }
+body.lp-v5 .m5-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 38% 22%; }
+body.lp-v5 .m5-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(248 241 230 / 0.35), transparent 22%, transparent 78%, rgb(244 235 221 / 0.8)); }
+body.lp-v5 .m5-script { position: absolute; left: 4%; top: 7%; display: grid; margin: 0; font-family: "Allura", "Great Vibes", cursive; font-size: clamp(30px, 2.6vw, 44px); line-height: 0.95; color: #7E4F17; transform: rotate(-8deg); transform-origin: left top; text-shadow: 0 0 12px rgb(255 250 240 / 0.95), 0 1px 0 #FFF8EC; z-index: 1; }
+body.lp-v5 .m5-script::before { content: ""; position: absolute; inset: -30% -25% -30% -20%; z-index: -1; border-radius: 50%; background: radial-gradient(closest-side, rgb(250 243 232 / 0.92), rgb(250 243 232 / 0.7) 60%, transparent); filter: blur(4px); }
+body.lp-v5 .m5-script span:nth-child(2), body.lp-v5 .m5-script span:nth-child(4) { padding-left: 0.6em; }
+body.lp-v5 .m5-meds { position: absolute; right: 2%; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; margin: 0; padding: 0; list-style: none; }
+body.lp-v5 .m5-meds li { display: grid; justify-items: center; align-content: center; gap: 4px; width: 112px; height: 112px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFDF8, #F5EAD6); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.4), 0 0 0 6px rgb(255 252 246 / 0.6), 0 18px 32px -18px rgb(80 60 30 / 0.5); text-align: center; transition: box-shadow 0.4s ease; }
+body.lp-v5 .m5-meds li:nth-child(2), body.lp-v5 .m5-meds li:nth-child(3) { transform: translateX(26px); }
+body.lp-v5 .m5-meds span { color: #9A6324; }
+body.lp-v5 .m5-meds svg { width: 34px; height: 34px; }
+body.lp-v5 .m5-meds em { font-style: normal; font-size: 12px; font-weight: 600; line-height: 1.25; color: #2A2430; }
+body.lp-v5 .m5-meds li:hover { box-shadow: 0 0 0 1.5px #C9A25A, 0 0 0 6px rgb(255 252 246 / 0.8), 0 24px 40px -18px rgb(140 90 30 / 0.5); }
+body.lp-v5 .m5-name { position: absolute; left: 22%; bottom: 5%; display: grid; justify-items: center; gap: 2px; padding: 12px 28px; border-radius: 16px; background: rgb(255 252 246 / 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.3), 0 20px 34px -20px rgb(80 60 30 / 0.5); white-space: nowrap; }
+body.lp-v5 .m5-name strong { font-family: var(--display); font-weight: 400; font-size: 22px; color: #2A2430; }
+body.lp-v5 .m5-name span { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #9A6324; }
+
+/* Right: words with the brain at the top right. */
+body.lp-v5 .m5-copy { position: relative; padding: 56px max(4vw, 32px) 56px 40px; }
+body.lp-v5 .m5-head { padding-right: 300px; }
+body.lp-v5 .m5-eyebrow { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #8A5A1F; }
+body.lp-v5 .m5-eyebrow > span { color: #B57A2E; }
+body.lp-v5 .m5-eyebrow i { width: 70px; height: 1px; background: rgb(181 122 46 / 0.55); }
+body.lp-v5 .m5 h2 { margin: 14px 0 0; font-family: var(--display); font-weight: 400; font-size: clamp(30px, 2.6vw, 46px) !important; line-height: 1.12 !important; color: #1F2433; }
+body.lp-v5 .m5 h2 em { font-style: normal; background: linear-gradient(100deg, #8E5A1C, #C08A3E 50%, #9A6324); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.lp-v5 .m5-lead { margin: 14px 0 0; font-size: 15.5px; line-height: 1.7; color: #4E4A55; }
+body.lp-v5 .m5-brain { position: absolute; right: max(4vw, 32px); top: 34px; width: 280px; height: 260px; margin: 0; }
+body.lp-v5 .m5-brain img { position: absolute; left: 50%; top: 0; width: 150px; height: auto; transform: translateX(-50%); -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(60% 60% at 50% 50%, #000 62%, transparent 100%); }
+body.lp-v5 .m5-brain::before { content: ""; position: absolute; left: 50%; top: 40px; width: 220px; height: 220px; margin-left: -110px; border-radius: 50%; background: radial-gradient(circle, rgb(255 226 160 / 0.45), transparent 65%); }
+body.lp-v5 .m5-brain ul { position: absolute; top: 34px; display: grid; gap: 44px; margin: 0; padding: 0; list-style: none; font-size: 12.5px; font-weight: 600; color: #3A3340; }
+body.lp-v5 .m5-l { left: 0; text-align: right; }
+body.lp-v5 .m5-r { right: 0; }
+body.lp-v5 .m5-brain li { display: flex; align-items: center; gap: 6px; }
+body.lp-v5 .m5-brain li i { width: 22px; height: 1px; background: #B57A2E; }
+body.lp-v5 .m5-leaf { position: absolute; width: 26px; color: #8FA27A; opacity: 0.75; pointer-events: none; }
+body.lp-v5 .m5-leaf-a { right: 26%; top: 18px; transform: rotate(30deg); }
+body.lp-v5 .m5-leaf-b { right: 2%; top: 300px; width: 22px; transform: rotate(-40deg); }
+body.lp-v5 .m5-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 26px 0 0; padding: 0; list-style: none; }
+body.lp-v5 .m5-facts li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: rgb(255 255 255 / 0.6); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.18), 0 16px 30px -24px rgb(80 60 30 / 0.4); }
+body.lp-v5 .m5-facts li > span { display: grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFFFF, #F3E6D0); color: #9A6324; box-shadow: inset 0 0 0 1px rgb(201 162 90 / 0.3); }
+body.lp-v5 .m5-facts svg { width: 23px; height: 23px; }
+body.lp-v5 .m5-facts li > div { min-width: 0; }
+body.lp-v5 .m5-facts strong { display: block; font-family: var(--display); font-weight: 400; font-size: 19px; line-height: 1.2; color: #1F2433; white-space: nowrap; }
+body.lp-v5 .m5-facts strong b { font-weight: 400; }
+body.lp-v5 .m5-facts em { display: block; font-style: normal; font-size: 12.5px; line-height: 1.35; color: #6E6A66; }
+body.lp-v5 .m5-quote { position: relative; display: flex; align-items: center; gap: 18px; margin: 14px 0 0; padding: 16px 70px 16px 22px; border-radius: 16px; background: rgb(255 255 255 / 0.55); box-shadow: 0 0 0 1px rgb(201 162 90 / 0.18); }
+body.lp-v5 .m5-q { align-self: flex-start; font-family: var(--display); font-size: 54px; line-height: 0.9; color: #B57A2E; }
+body.lp-v5 .m5-quote p { margin: 0; font-family: var(--display); font-style: italic; font-size: 20px; color: #2A2430; }
+body.lp-v5 .m5-quote cite { display: flex; align-items: center; gap: 10px; margin-top: 4px; font-style: normal; font-size: 13px; color: #6E6A66; }
+body.lp-v5 .m5-quote cite::before { content: ""; width: 22px; height: 1px; background: #8A7E72; }
+body.lp-v5 .m5-sprig { position: absolute; right: 18px; top: 50%; width: 34px; transform: translateY(-50%); }
+body.lp-v5 .m5-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+body.lp-v5 .m5-cta { display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 5px 20px 5px 26px; border-radius: 999px; background: linear-gradient(180deg, #B98034, #9A6324); color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none; box-shadow: 0 14px 28px -16px rgb(140 90 30 / 0.85); transition: transform 0.3s ease; }
+body.lp-v5 .m5-cta .wa-ic { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366; color: #FFFFFF; box-shadow: 0 0 0 2px rgb(255 255 255 / 0.8); }
+body.lp-v5 .m5-cta .wa-ic svg { width: 22px; height: 22px; }
+body.lp-v5 .m5-arrow svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
+body.lp-v5 .m5-cta:hover { transform: translateY(-2px); }
+body.lp-v5 .m5-cta:hover .m5-arrow svg { transform: translateX(3px); }
+body.lp-v5 .m5-ghost { display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 5px 28px 5px 24px; border-radius: 999px; box-shadow: inset 0 0 0 1.4px #B57A2E; color: #2A2430; font-size: 15px; font-weight: 600; text-decoration: none; transition: background-color 0.3s ease; }
+body.lp-v5 .m5-ghost span { color: #9A6324; }
+body.lp-v5 .m5-ghost svg { width: 18px; height: 18px; }
+body.lp-v5 .m5-ghost:hover { background: rgb(255 255 255 / 0.7); }
+
+/* Motion. */
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .m5-photo img { opacity: 0; transform: scale(1.05); transition: opacity 1.2s ease, transform 2s cubic-bezier(0.22, 1, 0.36, 1); }
+  body.lp-v5 .m5.is-on .m5-photo img { opacity: 1; transform: none; }
+  body.lp-v5 .m5-script span { opacity: 0; clip-path: inset(0 100% 0 0); }
+  body.lp-v5 .m5.is-on .m5-script span { animation: m5-write 1s ease forwards; animation-delay: calc(0.6s + var(--n, 0) * 0.35s); }
+  body.lp-v5 .m5-script span:nth-child(2) { --n: 1; } body.lp-v5 .m5-script span:nth-child(3) { --n: 2; } body.lp-v5 .m5-script span:nth-child(4) { --n: 3; }
+  body.lp-v5 .m5-meds li { opacity: 0; scale: 0.7; }
+  body.lp-v5 .m5.is-on .m5-meds li { animation: m5-pop 0.7s cubic-bezier(0.34, 1.4, 0.5, 1) forwards, m5-float 7s ease-in-out infinite; animation-delay: calc(1s + var(--i) * 0.22s), calc(2.2s + var(--i) * 0.8s); }
+  body.lp-v5 .m5-name { opacity: 0; translate: 0 14px; }
+  body.lp-v5 .m5.is-on .m5-name { animation: m5-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards; }
+  body.lp-v5 .m5-copy > .m5-head, body.lp-v5 .m5-copy > .m5-facts, body.lp-v5 .m5-copy > .m5-quote, body.lp-v5 .m5-copy > .m5-actions { opacity: 0; translate: 0 16px; transition: opacity 0.8s ease, translate 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+  body.lp-v5 .m5.is-on .m5-copy > .m5-head, body.lp-v5 .m5.is-on .m5-copy > .m5-facts, body.lp-v5 .m5.is-on .m5-copy > .m5-quote, body.lp-v5 .m5.is-on .m5-copy > .m5-actions { opacity: 1; translate: 0 0; }
+  body.lp-v5 .m5.is-on .m5-facts { transition-delay: 0.15s; }
+  body.lp-v5 .m5.is-on .m5-quote { transition-delay: 0.3s; }
+  body.lp-v5 .m5.is-on .m5-actions { transition-delay: 0.45s; }
+  body.lp-v5 .m5-brain img { animation: m5-bob 6s ease-in-out infinite; }
+  body.lp-v5 .m5-brain::before { animation: mt-breathe 5s ease-in-out infinite; }
+  body.lp-v5 .m5-brain li { opacity: 0; }
+  body.lp-v5 .m5.is-on .m5-brain li { animation: m5-fade 0.6s ease forwards; animation-delay: calc(1.2s + var(--i) * 0.2s); }
+  body.lp-v5 .m5-leaf { animation: m5-sway 6s ease-in-out infinite; }
+  body.lp-v5 .m5-leaf-b { animation-delay: -3s; }
+}
+@keyframes m5-write { to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes m5-pop { to { opacity: 1; scale: 1; } }
+@keyframes m5-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@keyframes m5-up { to { opacity: 1; translate: 0 0; } }
+@keyframes m5-fade { to { opacity: 1; } }
+@keyframes m5-bob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-6px); } }
+@keyframes m5-sway { 0%, 100% { rotate: -6deg; } 50% { rotate: 6deg; } }
+
+@media (max-width: 1360px) {
+  body.lp-v5 .m5-head { padding-right: 230px; }
+  body.lp-v5 .m5-brain { width: 220px; transform: scale(0.85); transform-origin: top right; }
+  body.lp-v5 .m5-meds li { width: 98px; height: 98px; }
+  body.lp-v5 .m5-meds svg { width: 28px; height: 28px; }
+  body.lp-v5 .m5-meds em { font-size: 11px; }
+}
+@media (max-width: 1100px) {
+  body.lp-v5 .m5-head { padding-right: 0; }
+  body.lp-v5 .m5-brain { display: none; }
+  body.lp-v5 .m5-facts { grid-template-columns: 1fr; }
+}
+/* Phones and tablets: photograph on top, medallions in a row beneath, then the words. */
+@media (max-width: 900px) {
+  body.lp-v5 .m5 { grid-template-columns: 1fr; }
+  body.lp-v5 .m5-visual { min-height: 0; height: calc(100vw * 1.0); max-height: 520px; margin-bottom: 120px; }
+  body.lp-v5 .m5-photo { inset: 0; }
+  body.lp-v5 .m5-photo::after { background: linear-gradient(0deg, #F6EDE0 0%, rgb(246 237 224 / 0.6) 14%, transparent 34%), linear-gradient(180deg, rgb(248 241 230 / 0.4), transparent 22%); }
+  body.lp-v5 .m5-script { font-size: 26px; left: 5%; top: 5%; }
+  body.lp-v5 .m5-meds { position: absolute; left: 50%; right: auto; top: auto; bottom: -112px; width: min(calc(100vw - 32px), 420px); flex-direction: row; justify-content: space-between; gap: 6px; transform: translateX(-50%); }
+  body.lp-v5 .m5-meds li { width: 80px; height: 80px; gap: 2px; }
+  body.lp-v5 .m5-meds li:nth-child(2), body.lp-v5 .m5-meds li:nth-child(3) { transform: none; }
+  body.lp-v5 .m5-meds svg { width: 22px; height: 22px; }
+  body.lp-v5 .m5-meds em { font-size: 9.5px; }
+  body.lp-v5 .m5-name { left: 50%; bottom: 14px; transform: translateX(-50%); padding: 9px 22px; }
+  body.lp-v5 .m5-name strong { font-size: 18px; }
+  body.lp-v5 .m5-name span { font-size: 9px; }
+  body.lp-v5 .m5-copy { padding: 0 20px 44px; }
+  body.lp-v5 .m5-leaf { display: none; }
+}
+@media (max-width: 580px) {
+  body.lp-v5 .m5-eyebrow { font-size: 10.5px; } body.lp-v5 .m5-eyebrow i { display: none; }
+  body.lp-v5 .m5 h2 { font-size: 27px !important; }
+  body.lp-v5 .m5-lead { font-size: 14.5px; }
+  body.lp-v5 .m5-quote { padding: 14px 52px 14px 14px; gap: 10px; }
+  body.lp-v5 .m5-q { font-size: 44px; }
+  body.lp-v5 .m5-quote p { font-size: 17px; }
+  body.lp-v5 .m5-cta { width: 100%; justify-content: space-between; }
+  body.lp-v5 .m5-ghost { width: 100%; justify-content: center; }
+}
+@media (max-width: 380px) { body.lp-v5 .m5-meds li { width: 72px; height: 72px; } body.lp-v5 .m5-meds em { font-size: 8.5px; } }

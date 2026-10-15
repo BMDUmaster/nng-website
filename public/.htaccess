@@ -6,6 +6,10 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # Old landing-page addresses used in ads
+    RewriteRule ^landing/psychic-reader(/.*)?$ /landing/brainology/ [R=301,L]
+    RewriteRule ^landing/vastu(/.*)?$ /landing/vastulogy/ [R=301,L]
+
     # Match trailing-slash canonicals
     RewriteRule ^(about|services|hand-holding-program|contact|consultation)$ $1/ [L,R=301]
 
@@ -16,7 +20,9 @@
 </IfModule>
 
 <IfModule mod_dir.c>
-    DirectoryIndex index.php
+    # The redesigned website is static: a folder's index.html is the page. Anything without a file or folder
+    # (admin, blog, enquiry store) still goes to Laravel through index.php.
+    DirectoryIndex index.html index.php
 </IfModule>
 
 <IfModule mod_headers.c>

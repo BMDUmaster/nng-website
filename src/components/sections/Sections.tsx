@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { Icon } from "@/components/icons/Icon";
 import { Fragment } from "react";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
-import { serviceArt } from "@/components/art/Art";
+import { serviceArt } from "@/components/art/OfferArt";
 import { OrbitBackdrop, VastuBackdrop } from "@/components/art/Sky";
 import { Rich } from "@/components/ui/Rich";
 import { Track } from "@/components/ui/Track";
 import { FilmCard } from "@/components/voices/FilmCard";
 import { QuoteCard } from "@/components/voices/QuoteCard";
 import { areas, areaTopics } from "@/content/site";
-import { services } from "@/content/services";
+import { serviceHref, services } from "@/content/services";
 import { asset } from "@/lib/assets";
 import type { Faq } from "@/content/faq";
 import type { Voice } from "@/content/voices";
@@ -28,6 +29,7 @@ export function PageHero({
   visual,
   visualLate = false,
   backdrop,
+  personal = false,
 }: {
   crumb?: string;
   title: string;
@@ -36,9 +38,10 @@ export function PageHero({
   visual?: React.ReactNode;
   visualLate?: boolean;
   backdrop?: React.ReactNode;
+  personal?: boolean;
 }) {
   return (
-    <section className={`page-hero section-wrap${backdrop ? " has-backdrop" : ""}`} aria-labelledby="page-title">
+    <section className={`page-hero section-wrap${backdrop ? " has-backdrop" : ""}${personal ? " practice-vastu-hero practice-core-hero" : ""}`} aria-labelledby="page-title">
       {backdrop}
       <div className="page-hero-copy">
         <h1 id="page-title">
@@ -59,20 +62,30 @@ export function FaqSection({
   intro = "A few things you may want to know first.",
   items,
   source,
+  icon,
 }: {
   id?: string;
   title?: string;
   intro?: string;
   items: Faq[];
   source: string;
+  /** An icon beside the heading, drawn for the page's subject (service pages only). */
+  icon?: string;
 }) {
+  const priority = items.filter(item => /book|session|consult|prepare|bring|online|fee|suit|medical|treatment|safe|confiden|available/i.test(item.q));
+  const first = [...priority, ...items.filter(item => !priority.includes(item))].slice(0, 4);
+  const remaining = items.filter(item => !first.includes(item));
+  const questions = (list: Faq[]) => list.map(item => <details key={item.q}><summary>{item.q}<span aria-hidden="true" /></summary><p>{item.a}</p></details>);
   return (
     <section className="faq-wrap has-backdrop" aria-labelledby={`${id}-title`}>
       <VastuBackdrop />
       <div className="faq section-wrap section-space" id={id}>
-        <div className="faq-intro">
+        <div className="faq-intro faq-intro-compact">
           <h2 id={`${id}-title`}>
-            <Rich text={title} />
+            {icon && <Icon id={icon} />}
+            <span>
+              <Rich text={title} />
+            </span>
           </h2>
           <p>{intro}</p>
           <EnquiryTrigger className="text-link" source={source}>
@@ -80,15 +93,8 @@ export function FaqSection({
           </EnquiryTrigger>
         </div>
         <div className="faq-list">
-          {items.map((item) => (
-            <details key={item.q}>
-              <summary>
-                {item.q}
-                <span aria-hidden="true" />
-              </summary>
-              <p>{item.a}</p>
-            </details>
-          ))}
+          {questions(first)}
+          {remaining.length > 0 && <details className="faq-more"><summary>More questions ({remaining.length})<span aria-hidden="true" /></summary><div className="faq-extra">{questions(remaining)}</div></details>}
         </div>
       </div>
     </section>
@@ -99,12 +105,18 @@ export function FaqSection({
 export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
   const Heading = asHero ? "h1" : "h2";
   return (
-    <div className="program-panel has-backdrop">
+    <div className={`program-panel has-backdrop${!asHero ? " program-invitation" : ""}`}>
       <OrbitBackdrop className="on-feature" />
       <div className="program-main">
+        <p className="program-duration-label">Six months of personal guidance</p>
         <Heading id={asHero ? "page-title" : "program-title"}>Personalised Hand Holding Program</Heading>
-        {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-480.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Dr. Narayani Garg</strong></span></div>}
-        <p>Knowing what to change is one part of it. Over six months, the program brings astrology, numerology and vastu together with brain training and direct guidance.</p>
+        {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-96.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Narayani Garg</strong></span></div>}
+        <p>Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
+        <ul className="program-inclusions">
+          <li>Astrology, numerology and Vastu assessment</li>
+          <li>Psychic guidance for recurring patterns</li>
+          <li>Direct guidance across health, relationships, money and career</li>
+        </ul>
         <div className="cta-row">
           <EnquiryTrigger
             className="button button-light"
@@ -115,28 +127,13 @@ export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
             Enquire about the program
           </EnquiryTrigger>
           {!asHero && (
-            <Link prefetch={false} className="program-btn-learn" href="/hand-holding-program/">
-              How the six months work →
+            <Link prefetch={false} className="text-link" href="/hand-holding-program/">
+              How the programme works
             </Link>
           )}
         </div>
         <p className="program-note">Format and fees are discussed before you decide.</p>
-      </div>
-      <div className="program-details">
-        <div className="program-duration">
-          <strong>6</strong>
-          <span>months of personal guidance</span>
-        </div>
-        <ul>
-          <li>Astrology, numerology and vastu assessment</li>
-          <li>Brain training for recurring patterns</li>
-          <li>Direct handholding across all four life areas</li>
-        </ul>
-        <div className="program-domains">
-          {areas.map((area) => (
-            <span key={area}>{area}</span>
-          ))}
-        </div>
+        <p className="program-availability"><span className="appointment-dot" aria-hidden="true" />Ask the team about the next available start date</p>
       </div>
     </div>
   );
@@ -155,7 +152,7 @@ export function ServiceCards() {
             </div>
             <div className="service-body">
               <h3>
-                <a href={asset(`/services/#${service.slug}`)}>{service.name}</a>
+                <a href={asset(serviceHref(service.slug))}>{service.name}</a>
               </h3>
               <p>{service.card}</p>
             </div>

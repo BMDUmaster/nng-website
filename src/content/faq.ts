@@ -3,6 +3,8 @@
  * the consultation length (the practice offers more than one) and how to begin. The remedy answer quotes her line from the
  * 10 Sept discovery call, as recorded in the master document. All answers are drafts for her approval.
  */
+import { consultationOptions, feesPublic } from "./consultation";
+
 export type Faq = { q: string; a: string };
 
 const disclaimer: Faq = {
@@ -10,10 +12,16 @@ const disclaimer: Faq = {
   a: "No. This is personal and spiritual guidance. It does not replace medical care, mental health treatment, legal advice or financial advice from qualified professionals.",
 };
 
-const fees: Faq = {
-  q: "What are the consultation and program fees?",
-  a: "Please ask for the current fees when you enquire. The consultation and the program lasting six months are separate options. The team explains the scope and fee before you decide.",
-};
+/** The consultation fees are read from src/content/consultation.ts, so this answer cannot drift from the fees table. */
+const fees: Faq = feesPublic
+  ? {
+      q: "What do the consultations cost?",
+      a: `${consultationOptions.map((option) => `${option.mode}, ${option.length}: ${option.fee}`).join(". ")}. Each fee is for one session, and the team confirms the format and final amount before you book. The fee for the Personalised Hand Holding Program is shared when you enquire.`,
+    }
+  : {
+      q: "What are the consultation and program fees?",
+      a: "Please ask for the current fees when you enquire. The consultation and the program lasting six months are separate options. The team explains the scope and fee before you decide.",
+    };
 
 export const faqs = {
   home: [
@@ -48,6 +56,10 @@ export const faqs = {
     {
       q: "Are consultations available outside India?",
       a: "Yes, online. Mention your country and time zone when you enquire.",
+    },
+    {
+      q: "Does Narayani teach courses?",
+      a: "Not on this website at present. Her guidance is personal: consultations, and the six-month Personalised Hand Holding Program. If courses are planned, the team will tell you when you enquire.",
     },
     fees,
     disclaimer,

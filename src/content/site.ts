@@ -8,9 +8,9 @@
 export const site = {
   name: "Transformation with NNG",
   /** Display name confirmed by Aryan on 30 September 2026; no degree detail is asserted. */
-  person: "Dr. Narayani Garg",
-  /** Approved by Aryan on 23 Sept 2026 as the identity lock-up. */
-  title: "The Life Strategist",
+  person: "Narayani Garg",
+  /** Positioning updated by Aryan on 4 October 2026, superseding the earlier identity line. */
+  title: "Psychic Spiritual Mentor",
   method: "Mind. Direction. Alignment.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3400",
   /** Business enquiry number selected from the NNG packages PDF by Aryan on 30 September 2026. */
@@ -34,19 +34,56 @@ export const figures = [
   { value: "5+", label: "Countries served" },
 ] as const;
 
-export type NavItem = { label: string; href: string; short?: string };
+export type NavChild = { label: string; href: string };
+export type NavItem = { label: string; href: string; short?: string; overviewLabel?: string; children?: NavChild[]; excludePaths?: string[]; dropdownOnly?: boolean };
 
-/** Temple Darshan stays out: it is Phase 2 and on the never-build list for this site. */
+/**
+ * Temple Darshan stays out: it is Phase 2 and on the never-build list for this site.
+ * Services contains consultation practices. Educational stone guides live under Resources;
+ * their existing URLs are retained so shared links keep working.
+ */
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services/" },
-  { label: "Hand Holding Program", short: "Program", href: "/hand-holding-program/" },
+  {
+    label: "Consultation",
+    href: "/consultations/",
+    overviewLabel: "Consultation overview",
+    children: [
+      { label: "Where to begin", href: "/consultations/#choose" },
+      { label: "Options and fees", href: "/consultations/#fees" },
+      { label: "How it works", href: "/consultations/#how" },
+      { label: "Hand Holding Program", href: "/hand-holding-program/" },
+    ],
+  },
+  {
+    label: "Services",
+    href: "/services/",
+    excludePaths: ["/services/stones-and-rudraksh/"],
+    // The same order as the service cards: she starts with the mind.
+    children: [
+      { label: "Psychic Reader", href: "/services/brain-training/" },
+      { label: "Astrology", href: "/services/astrology/" },
+      { label: "Numerology", href: "/services/numerology/" },
+      { label: "Vastu", href: "/services/vastu/" },
+    ],
+  },
+  {
+    label: "Resources",
+    href: "/resources/",
+    dropdownOnly: true,
+    children: [
+      { label: "Crystals, Stones and Rudraksha", href: "/services/stones-and-rudraksh/" },
+      { label: "Blogs", href: "/resources/blogs/" },
+    ],
+  },
+  // The shop shows a coming-soon note for now, so it is a single link.
+  { label: "Shop", href: "/shop/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
 
 /** The four areas, always in this order. */
-export const areas = ["Health", "Relationship", "Career", "Money"] as const;
+export const areas = ["Health", "Relationship", "Money", "Career"] as const;
 
 /**
  * Options for the WhatsApp enquiry dialog, in three groups. The value goes into the
@@ -57,16 +94,21 @@ export const enquiryTopics = [
   { value: "choosing the right service", label: "I'm not sure where to begin", group: "Where to begin" },
   { value: "a consultation on my health", label: "Health", group: "An area of life" },
   { value: "a consultation on a relationship", label: "Relationship", group: "An area of life" },
-  { value: "a consultation on my career", label: "Career", group: "An area of life" },
   { value: "a consultation on money", label: "Money", group: "An area of life" },
-  { value: "Mind Training", label: "Mind Training", group: "A service" },
+  { value: "a consultation on my career", label: "Career", group: "An area of life" },
+  { value: "Psychic Reader", label: "Psychic Reader", group: "A service" },
   { value: "Numerology", label: "Numerology", group: "A service" },
   { value: "Vastu", label: "Vastu", group: "A service" },
   { value: "Astrology", label: "Astrology", group: "A service" },
+  { value: "Crystals, Stones and Rudraksha", label: "Crystals, Stones and Rudraksha", group: "A service" },
   { value: "the Personalised Hand Holding Program", label: "Personalised Hand Holding Program", group: "A service" },
 ] as const;
 
-export type EnquiryTopic = (typeof enquiryTopics)[number]["value"];
+/**
+ * The listed topics, or any other string: a page can pass its own topic ("Astrology: marriage and
+ * compatibility") and the enquiry dialog adds it to its list for that visit.
+ */
+export type EnquiryTopic = (typeof enquiryTopics)[number]["value"] | (string & {});
 
 /** The four areas, each opening the enquiry for that area (the ribbon on the homepage). */
 export const areaTopics: Record<(typeof areas)[number], EnquiryTopic> = {
@@ -81,6 +123,6 @@ export const topicGroups = ["Where to begin", "An area of life", "A service"] as
 
 export const legal = {
   disclaimer:
-    "Numerology, vastu and astrology are interpretive traditions. Guidance here is personal and spiritual, not medical, mental health, legal or financial advice.",
+    "Psychic guidance is personal and spiritual. Numerology, Vastu and astrology are interpretive traditions. Guidance here is personal and spiritual, not medical, mental health, legal or financial advice.",
   copyright: "© 2026 Transformation with NNG",
 };

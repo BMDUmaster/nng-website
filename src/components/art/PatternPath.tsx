@@ -9,7 +9,13 @@ export function PatternPath() {
         <circle cx="374" cy="64" r="6" fill="var(--paper)" stroke="var(--detail)" />
         <path d="m442 58 7 6-7 6" stroke="var(--detail)" strokeWidth="1.5" />
       </svg>
-      <figcaption>A familiar pattern. A different way forward.</figcaption>
+      <figcaption>
+        <ol className="pattern-labels">
+          <li><strong>Notice</strong><span>The situation that repeats</span></li>
+          <li><strong>Understand</strong><span>Your usual response</span></li>
+          <li><strong>Practise</strong><span>A choice you can make</span></li>
+        </ol>
+      </figcaption>
     </figure>
   );
 }

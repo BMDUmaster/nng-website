@@ -1,0 +1,76 @@
+// Brainology: the approach as a journey. Step cards on the left; on the right a winding gold path through three
+// stops, an arch of sunlit stone with an olive sprig, and a plum crescent.
+const icons = [
+  '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="4.2"/><circle cx="16" cy="16" r="1.4" fill="currentColor"/></svg>',
+  '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="12" r="5"/><path d="M6 27c0-5 4-8.5 9-8.5s9 3.5 9 8.5z"/><path d="M24 4v4M22 6h4M22.6 4.6l2.8 2.8M25.4 4.6l-2.8 2.8"/></svg>',
+  '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M25 12a10 10 0 0 0-17.5-3.5L5 11"/><path d="M5 5v6h6"/><path d="M7 20a10 10 0 0 0 17.5 3.5L27 21"/><path d="M27 27v-6h-6"/></svg>',
+];
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const chart = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="22" height="22"/><path d="M5 5l22 22M27 5 5 27M16 5 5 16l11 11 11-11z"/></svg>';
+const clock = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="17" r="10"/><path d="M16 11v6l4 3M12 4h8"/></svg>';
+const personIc = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M7 27c0-5 4-9 9-9s9 4 9 9"/></svg>';
+const sets = {
+  brainology: { icons: null, short: ['What keeps returning', 'Thoughts & beliefs', 'A different response'], tag: 'A clearer mind <i>✦</i> A calmer you', gold: 'new response.' },
+  'hand-holding': { icons: [chart, '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M25 12a10 10 0 0 0-17.5-3.5L5 11"/><path d="M5 5v6h6"/><path d="M7 20a10 10 0 0 0 17.5 3.5L27 21"/><path d="M27 27v-6h-6"/></svg>', '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h22v14H14l-6 5v-5H5z"/><path d="M10 12h12M10 16h8"/></svg>'], short: ['Chart, numbers & spaces', 'Four life areas', 'Direct handholding'], titles: ['Circumstances', 'Patterns', 'Return'], tag: 'Six months <i>✦</i> With Narayani', gold: 'over six months.' },
+  astrology: { icons: [chart, clock, personIc], short: ['Houses & chart themes', 'Periods & transits', 'Your choices remain'], tag: '', gold: 'personal conversation.' },
+};
+
+const olive = `<svg class="bj-olive" viewBox="0 0 120 220" aria-hidden="true"><path d="M70 220C66 170 60 120 40 20" fill="none" stroke="#6D6A3E" stroke-width="1.6"/>${[[68, 196, -50], [66, 178, 48], [63, 160, -52], [60, 142, 46], [57, 124, -50], [53, 106, 44], [50, 88, -48], [46, 70, 40], [43, 52, -42], [41, 34, 30]].map(([x, y, r], i) => `<ellipse cx="${x}" cy="${y}" rx="4" ry="15" transform="rotate(${r} ${x} ${y}) translate(0 -12)" fill="${i % 2 ? '#7E8758' : '#97A06B'}"/>`).join('')}</svg>`;
+
+export function brainApproach(p, { esc }) {
+  const set = sets[p.slug] || sets.brainology;
+  const ic = set.icons || icons;
+  const short = set.short;
+  const [first, second] = p.methodTitle.split('\n');
+  const title = `${esc(first)}<br>${esc(second).replace(set.gold, `<em>${set.gold}</em>`)}`;
+  const nodes = [[150, 150], [110, 320], [150, 490]];
+  const path = 'M280 96C270 130 220 150 206 206C192 262 120 300 166 376C212 452 226 470 206 546C190 606 330 630 470 604';
+  return `<section class="v5-brain" id="approach" aria-labelledby="approach-title"><div class="section wrap bj-inner">
+    <div class="bj-copy">
+      <p class="bj-kicker"><span aria-hidden="true"></span>How Narayani approaches it</p>
+      <h2 id="approach-title">${title}</h2>
+      <p class="bj-intro">${esc(p.methodIntro)}</p>
+      <ol class="bj-steps v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false"><span class="bj-no">0${i + 1}</span><span class="bj-ic bj-ic-${i}">${ic[i]}</span><span class="bj-text"><strong>${esc(t)}</strong><span>${esc(d)}</span></span><span class="bj-go" aria-hidden="true">${arrow}</span></li>`).join('')}</ol>
+    </div>
+    <figure class="visual-explainer bj-figure" data-motion>
+      <span class="bj-plum" aria-hidden="true"></span>
+      <div class="bj-card">
+        <p class="bj-glance"><span aria-hidden="true">✦</span>${esc(p.short || p.name)}<span class="bj-glance-tail"> / at a glance</span></p>
+        <svg class="bj-path" viewBox="0 0 560 660" aria-hidden="true"><path pathLength="1" d="${path}"/><circle class="bj-dot" r="4.5"><animateMotion dur="12s" repeatCount="indefinite" path="${path}"/></circle></svg>
+        <div class="bj-nodes visual-key" role="group" aria-label="The three steps">${p.method.map(([t], i) => `<button type="button" class="bj-node" data-visual-step="${i}" aria-pressed="false" style="--x:${nodes[i][0]}px;--y:${nodes[i][1]}px;--i:${i}" disabled><span class="bj-ic bj-ic-${i}">${ic[i]}</span><span class="bj-label"><em>0${i + 1}.</em><strong>${esc(set.titles ? set.titles[i] : t)}</strong><span>${short[i]}</span></span></button>`).join('')}</div>
+        ${set.tag ? `<p class="bj-tag" aria-hidden="true">${set.tag}</p>` : ''}
+        ${olive}
+      </div>
+      <p class="visual-hint" hidden>Tap a step.</p>
+    </figure>
+  </div></section>`;
+}
+
+// Brainology: the pattern as a chain, then the three steps once, joined by a gold line.
+const chains = {
+  brainology: { label: 'The chain that repeats', items: ['A thought', 'A belief', 'The words you use', 'A reaction'], loop: true, foot: 'A clearer mind <i aria-hidden="true">·</i> A calmer you' },
+  astrology: { label: 'What a reading brings together', items: ['Your question', 'Birth date, time & place', 'Relevant chart themes', 'Your choices'], loop: false, foot: 'Read together <i aria-hidden="true">·</i> Decided by you' },
+};
+export function brainApproach2(p, { esc }) {
+  const [first, second] = p.methodTitle.split('\n');
+  const c = chains[p.slug] || chains.brainology;
+  const chain = c.items;
+  const ic = (sets[p.slug] && sets[p.slug].icons) || icons;
+  return `<section class="v5-brain ba2" id="approach" aria-labelledby="approach-title"><div class="section wrap">
+    <div class="ba2-head">
+      <p class="bj-kicker"><span aria-hidden="true"></span>How Narayani approaches it</p>
+      <h2 id="approach-title">${esc(first)}<br>${(() => { const w = esc(second).split(' '); const t = w.splice(-2).join(' '); return `${w.join(' ')} <em>${t}</em>`; })()}</h2>
+      <p class="ba2-intro">${esc(p.methodIntro)}</p>
+    </div>
+    <div class="ba2-chain" data-chain aria-label="The parts of a pattern">
+      <p class="ba2-chain-label">${c.label}</p>
+      <ol>${chain.map((c, i) => `<li style="--i:${i}"><span>${c}</span></li>`).join('<li class="ba2-arrow" aria-hidden="true">→</li>')}</ol>
+      ${c.loop ? '' : '<!--'}<svg class="ba2-return" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M590 4C590 30 560 34 300 34S10 30 10 4"/><path class="ba2-tip" d="M4 12 10 2l6 10"/></svg>${c.loop ? '' : '-->'}
+    </div>
+    <ol class="ba2-steps v5-steps2" data-steps>
+      <svg class="ba2-line" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 5H1000"/></svg>
+      ${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false"><span class="ba2-medal">${ic[i]}<em>0${i + 1}</em></span><strong>${esc(t)}</strong><span class="ba2-desc">${esc(d)}</span></li>`).join('')}
+    </ol>
+    <p class="ba2-foot"><span aria-hidden="true">✦</span>${c.foot}</p>
+  </div></section>`;
+}

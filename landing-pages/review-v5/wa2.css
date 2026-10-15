@@ -1,0 +1,44 @@
+/* =============================================================================================================
+   Brainology WhatsApp actions (Oct 13 k): one refined, modest pill everywhere. Deep green on light sections, soft
+   gold on dark ones; label first, a small WhatsApp disc at the end.
+   ============================================================================================================= */
+body.lp-v5 .pr4-cta { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 4px 5px 4px 20px; border-radius: 999px; background: linear-gradient(180deg, #23503D, #173628); color: #FAF6F0; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; white-space: nowrap; box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.4), 0 12px 24px -14px rgb(20 50 35 / 0.75); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+body.lp-v5 .pr4-cta .wa-ic { order: 2; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #25D366; color: #FFFFFF; }
+body.lp-v5 .pr4-cta .wa-ic svg { width: 18px; height: 18px; }
+body.lp-v5 .pr4-cta:hover { transform: translateY(-1px); box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.7), 0 16px 28px -14px rgb(20 50 35 / 0.8); }
+
+/* Gold variant for dark sections. */
+body.lp-v5 .wy3-cta { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 4px 5px 4px 22px; border-radius: 999px; background: linear-gradient(180deg, #F1DCA6, #D9B96E); color: #173628; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.45), 0 12px 24px -14px rgb(0 0 0 / 0.6); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+body.lp-v5 .wy3-cta .wa-ic { order: 2; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #25D366; color: #FFFFFF; }
+body.lp-v5 .wy3-cta .wa-ic svg { width: 18px; height: 18px; }
+body.lp-v5 .wy3-cta:hover { transform: translateY(-1px); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.6), 0 16px 28px -14px rgb(0 0 0 / 0.7); }
+
+/* ---- One modest WhatsApp action across the Brainology page (Oct 13 l) ---------------------------------------- */
+body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, .en2 a.wa-btn, .mobile-cta a.button, a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn) { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: auto; min-height: 44px; height: auto; margin-inline: 0; padding: 4px 5px 4px 20px; border: 0; border-radius: 999px; font-size: 14px; font-weight: 600; line-height: 1.2; letter-spacing: 0.01em; text-decoration: none; white-space: nowrap; transform: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; }
+body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, .en2 a.wa-btn, .mobile-cta a.button, a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn) .wa-ic { order: 2; display: grid; place-items: center; flex: none; width: 34px; height: 34px; margin: 0; border-radius: 50%; background: #25D366; color: #FFFFFF; box-shadow: none; }
+body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, .en2 a.wa-btn, .mobile-cta a.button, a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn) .wa-ic svg { width: 18px; height: 18px; }
+body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, .en2 a.wa-btn, .mobile-cta a.button, a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn):hover { transform: translateY(-1px); }
+/* On light sections: deep green. */
+body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, .en2 a.wa-btn, .mobile-cta a.button) { background: linear-gradient(180deg, #23503D, #173628); color: #FAF6F0; box-shadow: inset 0 0 0 1px rgb(215 184 107 / 0.4), 0 12px 24px -14px rgb(20 50 35 / 0.75); }
+/* On dark sections: soft gold. */
+body.lp-v5[data-page="brainology"] :is(a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn) { background: linear-gradient(180deg, #F1DCA6, #D9B96E); color: #173628; font-weight: 700; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.45), 0 12px 24px -14px rgb(0 0 0 / 0.6); }
+body.lp-v5[data-page="brainology"] a.m5-cta .m5-arrow { display: none; }
+body.lp-v5[data-page="brainology"] .en2 a.wa-btn { width: 100%; justify-content: space-between; }
+body.lp-v5[data-page="brainology"] .hero-actions .v5-ghost, body.lp-v5[data-page="brainology"] a.m5-ghost { min-height: 44px; padding-block: 4px; font-size: 14px; }
+body.lp-v5[data-page="brainology"] .hero-actions .v5-ghost { padding: 4px 5px 4px 20px; gap: 10px; white-space: nowrap; }
+body.lp-v5[data-page="brainology"] .hero-actions .v5-ghost i { width: 34px; height: 34px; }
+@media (max-width: 640px) { body.lp-v5[data-page="brainology"] a.cv3-cta { display: none; } }
+/* Header: small and quiet. */
+body.lp-v5[data-page="brainology"] .header a.button-small { min-height: 38px; padding: 3px 4px 3px 16px; font-size: 13.5px; }
+body.lp-v5[data-page="brainology"] .header a.button-small span { width: 30px; height: 30px; }
+/* Floating action: a little smaller, a calmer ring. */
+body.lp-v5[data-page="brainology"] .wa-fab { width: 52px; height: 52px; }
+body.lp-v5[data-page="brainology"] .wa-fab svg { width: 26px; height: 26px; }
+body.lp-v5[data-page="brainology"] .wa-fab::after { opacity: 0.5; }
+@media (max-width: 580px) {
+  body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn) { min-height: 42px; padding-left: 16px; font-size: 13.5px; }
+  body.lp-v5[data-page="brainology"] :is(.hero-actions .wa-btn, a.m5-cta, a.pr4-cta, a.cv3-cta, a.wy3-cta, .fq2-ask a.wa-btn, .v5-foot-msg a.wa-btn) .wa-ic { width: 32px; height: 32px; }
+  body.lp-v5[data-page="brainology"] .hero-actions .v5-ghost { min-height: 42px; font-size: 13.5px; }
+  body.lp-v5[data-page="brainology"] a.m5-cta, body.lp-v5[data-page="brainology"] a.m5-ghost { width: auto; }
+  body.lp-v5[data-page="brainology"] .wa-fab { width: 48px; height: 48px; }
+}

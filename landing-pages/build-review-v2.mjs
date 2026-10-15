@@ -1,0 +1,150 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {pages, voices} from './review-v2/content.mjs';
+import {icon, pageIcon, scenarioArt, serviceVisual, programmeContinuum} from './review-v3/visuals.mjs';
+import {renderMain, renderFooter} from './review-v5/render.mjs';
+
+const root=path.dirname(fileURLToPath(import.meta.url));
+const source=path.join(root,'site');
+const output=path.join(root,'dist','landing');
+const shared=path.join(output,'_shared');
+const base='https://deoxysaryan.github.io/NNG_Codex_Build/preview-20261004-r1/landing/';
+const version='20261012-refine-v6';
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const lines=s=>s.split('\n').map(esc).join('<br>');
+const arrow='<span aria-hidden="true">↗</span>';
+const assets='../_shared/assets/';
+
+// Tracking for the landing pages: Google Tag Manager, Google Analytics 4 and Microsoft Clarity.
+const TRACK_HEAD = `<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P3KXR4GL');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8FZ4BE77QW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8FZ4BE77QW');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yxm2cn04j3");
+</script>`;
+const TRACK_BODY = `<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3KXR4GL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->`;
+
+function message(p,sourceName,topic='') {
+  return [`Hello NNG team, I would like to enquire about ${p.name}.`,topic?`My enquiry is about: ${topic}.`:'', 'Please share the appropriate scope, format, duration, fees and availability.',`Enquiry source: ${p.slug} landing page (${sourceName}).`].filter(Boolean).join('\n');
+}
+function cta(p,sourceName,label=p.cta,topic='',className='button') {
+  return `<a class="${className}" href="https://wa.me/919205511101?text=${encodeURIComponent(message(p,sourceName,topic))}" data-whatsapp data-source="${sourceName}"${topic?` data-topic="${esc(topic)}"`:''} target="_blank" rel="noopener noreferrer">${esc(label)} ${arrow}</a>`;
+}
+function authority() {
+  return `<section class="clientele authority-band" aria-label="Narayani’s authorship and personal clientele"><div class="wrap authority-inner"><div class="book-credibility"><img src="${assets}book-cover.webp" width="62" height="88" alt="Narayani’s book: Change Your Mind, Transform Your Life" loading="lazy"><div><p class="eyebrow">DR. NARAYANI GARG / AUTHOR</p><h2>Change Your Mind,<br>Transform Your Life</h2><p>Her mind-first perspective, in her own words.</p></div></div><div class="authority-sectors"><h2>Trusted by 10,000+ clients,<br>including CEOs, entrepreneurs<br>and business owners.</h2><ul><li>${icon('business')}Banking professionals</li><li>${icon('career')}CEOs of MNCs &amp; core sector companies</li><li>${icon('person')}Women entrepreneurs</li><li>${icon('education')}Printing, education &amp; hospitals</li></ul><p class="fine-print">Individual clients, not endorsements by their organisations.</p></div></div></section>`;
+}
+function art(p) {
+  const shapes={
+    patterns:`<svg viewBox="0 0 440 200" role="img" aria-labelledby="art-title"><title id="art-title">A reflection sequence: notice a situation, understand your response, practise a different choice</title><g fill="none" stroke="currentColor" stroke-width="1.5"><path class="draw-line" d="M86 78h270"/><circle cx="86" cy="78" r="27"/><circle cx="220" cy="78" r="27"/><circle cx="354" cy="78" r="27"/></g><g class="art-numbers"><text x="86" y="86">1</text><text x="220" y="86">2</text><text x="354" y="86">3</text></g><g class="art-labels"><text x="86" y="137">Notice</text><text x="220" y="137">Understand</text><text x="354" y="137">Practise</text></g></svg><figcaption>A framework for reflection and daily practice.</figcaption>`,
+    chart:`<svg viewBox="0 0 440 245" role="img" aria-labelledby="art-title"><title id="art-title">Birth date, time and place inform a chart; the question determines the focus of the consultation</title><g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M165 35h110v110H165zM165 35l110 110m0-110L165 145"/><circle cx="220" cy="90" r="79"/><path class="draw-line" d="M44 188h352"/></g><g class="art-labels"><text x="62" y="213">Date</text><text x="167" y="213">Time</text><text x="274" y="213">Place</text><text x="380" y="213">Question</text></g><g class="art-dots"><circle cx="62" cy="188" r="4"/><circle cx="167" cy="188" r="4"/><circle cx="274" cy="188" r="4"/><circle cx="380" cy="188" r="4"/></g></svg><figcaption>Birth details inform the chart. Your question gives the reading its focus.</figcaption>`,
+    numbers:`<svg viewBox="0 0 440 245" role="img" aria-labelledby="art-title"><title id="art-title">Traditional Lo Shu grid, beside examples of numerology inputs: birth date, name, signature and business name</title><g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M90 35v144m48-144v144M42 83h144M42 131h144"/><path class="draw-line" d="M216 42v131"/></g><g class="art-numbers"><text x="66" y="68">4</text><text x="114" y="68">9</text><text x="162" y="68">2</text><text x="66" y="116">3</text><text x="114" y="116">5</text><text x="162" y="116">7</text><text x="66" y="164">8</text><text x="114" y="164">1</text><text x="162" y="164">6</text></g><g class="input-labels"><text x="240" y="60">Birth date</text><text x="240" y="94">Name &amp; spelling</text><text x="240" y="128">Signature</text><text x="240" y="162">Business identity</text></g></svg><figcaption>A traditional reading starts with the numbers relevant to your question.</figcaption>`,
+    plan:`<svg viewBox="0 0 440 245" role="img" aria-labelledby="art-title"><title id="art-title">Illustrative floor plan with north, entrance, rooms and seating labelled. It is not a Vastu assessment.</title><g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M65 35h265v152H65zM180 35v152M65 112h115M254 35v66h76M180 138h25v49M97 142h34v24H97z"/><path d="M180 138a25 25 0 0 0 25 25"/><path class="draw-line" d="M370 88V30m-7 12 7-12 7 12"/></g><g class="art-labels"><text x="120" y="79">Rooms</text><text x="114" y="135">Seating</text><text x="266" y="164">Entrance</text><text x="370" y="23">N</text></g></svg><figcaption>Direction, arrangement and daily use, shown on an illustrative plan.</figcaption>`,
+    programme:`<div class="programme-art"><p class="eyebrow">PERSONALLY GUIDED BY NARAYANI</p><div class="programme-duration"><strong>6</strong><span>months of<br>personal guidance</span></div><div class="programme-areas"><span>Health</span><span>Relationships</span><span>Money</span><span>Career</span></div></div><figcaption>Individual and couple formats. Online guidance is available outside India.</figcaption>`,
+  };
+  return `<figure class="consultation-art" data-motion>${shapes[p.visual]}</figure>`;
+}
+function stories(p) {
+  return `<section class="stories-band" id="stories" aria-labelledby="stories-title"><div class="section wrap"><div class="section-heading"><p class="eyebrow">CLIENT VOICES</p><h2 id="stories-title">${lines(p.proofTitle)}</h2></div><div class="stories ${p.proof.length===3?'three-stories':''}">${p.proof.map(key=>{const v=voices[key];return `<article class="story-card"><p class="story-topic">${esc(v.title)}</p>${v.quote?`<blockquote>“${esc(v.quote)}”</blockquote>`:`<div class="client-film-still"><img src="${assets+v.image}" alt="Puneet in his original testimonial video" width="400" height="230" loading="lazy"><span class="film-duration">${v.duration}</span></div><p class="film-summary">${esc(v.summary)}</p>`}<div class="story-person"><img src="${assets+v.image}" width="48" height="48" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div></div><button class="text-link" data-video="${key}" type="button">Watch ${v.quote?'this experience':'his story'} ${arrow}</button></article>`;}).join('')}</div><p class="stories-note">Accounts of Narayani’s wider guidance, not verified results of this ${p.family==='program'?'programme':'service'}. Individual experiences are not guarantees; availability mentioned is not a response-time promise.</p></div></section>`;
+}
+function comparison(p) {
+  if(p.family!=='program') return '';
+  return `<section class="section wrap programme-comparison" aria-labelledby="comparison-title"><div class="section-heading"><p class="eyebrow">WHICH KIND OF GUIDANCE?</p><h2 id="comparison-title">One focused conversation,\nor room to keep working?</h2></div><div class="comparison-grid"><article><div class="comparison-visual" aria-hidden="true">${icon('conversation')}</div><p class="eyebrow">A CONSULTATION</p><h3>A question to focus on.</h3><p>A standalone conversation around a particular concern, reading or decision. You can begin here without joining the programme.</p>${cta(p,'single-consultation','Ask about starting with a consultation','Start with a single consultation','text-link')}</article><article><div class="comparison-visual" aria-hidden="true">${icon('conversation')}<span class="comparison-track"><i></i><i></i><i></i><i></i><i></i><i></i></span></div><p class="eyebrow">SIX-MONTH HAND HOLDING</p><h3>Guidance to return to.</h3><p>A personally guided programme that brings relevant assessments and work on recurring patterns together over six months.</p>${cta(p,'programme-comparison','Discuss the six-month programme','','text-link')}</article></div></section>`;
+}
+function renderBase(p) {
+  const original=fs.readFileSync(path.join(source,'index.html'),'utf8');
+  let head=original.match(/<!doctype html>[\s\S]*?<\/head>/)[0];
+  head=head.replace('<head>','<head>'+TRACK_HEAD);
+  head=head.replace(/<title>[\s\S]*?<\/title>/,`<title>${esc(p.short||p.name)} with Narayani Garg | NNG</title>`)
+    .replace(/(<meta name="description" content=")[^"]*(">)/,`$1${esc(p.description)}$2`)
+    .replace(/(<meta property="og:title" content=")[^"]*(">)/,`$1${esc(p.short||p.name)} with Narayani Garg$2`)
+    .replace(/(<meta property="og:description" content=")[^"]*(">)/,`$1${esc(p.description)}$2`)
+    .replace(/(<meta property="og:url" content=")[^"]*(">)/,`$1${base+p.slug}/$2`)
+    .replace(/(<meta property="og:image" content=")[^"]*(">)/,`$1${base}_shared/assets/share.jpg$2`)
+    .replaceAll('href="assets/','href="'+assets).replace('href="styles.css"',`href="../_shared/styles.css?v=${version}"`).replace('src="landing.js"',`src="../_shared/landing.js?v=${version}"`);
+  let dialogs=original.slice(original.indexOf('  <dialog id="video-dialog"'),original.indexOf('</body>'));
+  dialogs=dialogs.replace('Your answers stay in the form while it is open. They are not stored in browser storage or sent to NNG by this page.','An optional topic selection stays in this page’s memory only. It is not stored in browser storage or sent to NNG by the page.')
+    .replace('When you prepare an enquiry, your first name and selections are placed in a WhatsApp link. Opening it shares the prepared text with WhatsApp; you choose whether to send it to NNG.','WhatsApp links contain the service, enquiry topic if selected, and page source. This page does not ask for your name or private details. Opening a link shares its prepared text with WhatsApp; you review it and choose whether to send it to NNG.');
+  return `${head}<body class="copy-v2${p.v5?' lp-v5':''}${p.rich?' lp-rich':''}" data-page="${p.slug}" data-offer="${esc(p.name)}" data-family="${p.family}">${TRACK_BODY}<a class="skip-link" href="#main">Skip to content</a>
+  <header class="header"><div class="wrap header-inner"><a class="brand" href="#top" aria-label="Transformation with NNG, top of page"><img src="${assets}nng-logo.webp" width="100" height="53" alt="Transformation with NNG"></a>${cta(p,'header','WhatsApp','','button button-small')}</div></header>
+  <main id="main"><div class="hero-banner"><section class="hero wrap" id="top" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">${esc(p.short||p.name)}</p><p class="hero-role">Narayani Garg · Psychic Spiritual Mentor</p><h1 id="hero-title">${esc(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1><p class="hero-description">${esc(p.description)}</p><div class="hero-actions">${cta(p,'hero')}<a class="text-link" href="#ways">See what we can discuss <span aria-hidden="true">↓</span></a></div><div class="hero-facts">${p.facts.map(([a,b],i)=>`<div>${pageIcon(p,'facts',i)}<strong>${esc(a)}</strong><span>${esc(b)}</span></div>`).join('')}</div><p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p></div><div class="hero-visual"><figure class="hero-film"><video id="hero-intro" autoplay muted loop playsinline controls preload="auto" poster="${assets}intro-frame.jpg" aria-label="Narayani’s original introduction video"><source src="${assets}introduction.mp4" type="video/mp4">Your browser cannot play this video. <a href="${assets}introduction.mp4">Open Narayani’s introduction.</a></video><figcaption><span>Meet Narayani. In her own words.</span><span>1:21</span></figcaption></figure></div></section></div>
+  ${authority()}
+  <section class="section wrap situations" aria-labelledby="situation-title"><div class="section-heading"><p class="eyebrow">THE QUESTION YOU BRING</p><h2 id="situation-title">${lines(p.situationTitle)}</h2></div><div class="situation-grid">${p.situations.map(([h,t],i)=>`<article>${scenarioArt(p,i)}<h3>${esc(h)}</h3><p>${esc(t)}</p></article>`).join('')}</div></section>
+  ${stories(p)}
+  <section class="section wrap approach" id="approach" aria-labelledby="approach-title"><div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${lines(p.methodTitle)}</h2><p>${esc(p.methodIntro)}</p></div>${serviceVisual(p)}<ol class="reading-points" data-motion>${p.method.map(([h,t],i)=>`<li>${pageIcon(p,'method',i)}<h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join('')}</ol>${p.family==='program'?programmeContinuum():''}</section>
+  <section class="scope-band" id="ways" aria-labelledby="ways-title"><div class="section wrap"><div class="section-heading"><p class="eyebrow">${p.scopeEyebrow||(p.family==='program'?'WHAT COMES TOGETHER':'YOUR CONSULTATION OPTIONS')}</p><h2 id="ways-title">${lines(p.scopeTitle)}</h2><p>${esc(p.scopeIntro)}</p></div><div class="scope-grid">${p.topics.map(([h,t],i)=>`<article>${pageIcon(p,'topics',i)}<div><h3>${esc(h)}</h3><p>${esc(t)}</p>${p.family==='program'||p.v5?'':cta(p,'scope','Discuss this',h,'text-link')}</div></article>`).join('')}</div>${p.v5?`<div class="scope-cta">${cta(p,'scope')}</div>`:''}<p class="scope-note">${esc(p.scopeNote)}</p></div></section>
+  ${comparison(p)}
+  <section class="section wrap why-narayani" aria-labelledby="why-title"><div><p class="eyebrow">WHY HER APPROACH MATTERS</p><h2 id="why-title">Mind first.<br>Guidance without fear.</h2></div><div class="principle-list"><p>${icon('reflection')}<span><strong>The person matters.</strong> Explore your beliefs and responses ${p.slug==='brainology'?'as you practise something new':'alongside the reading'}.</span></p><p>${icon('listen')}<span><strong>The choice stays yours.</strong> Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.</span></p></div></section>
+  <section class="section wrap enquiry-section" id="enquire" aria-labelledby="enquiry-title"><div class="enquiry-copy"><p class="eyebrow">BEGIN WITH THE NNG TEAM</p><h2 id="enquiry-title">${lines(p.closeTitle)}</h2><p>${esc(p.closeCopy)}</p><ol class="next-steps"><li>${icon('conversation')}<strong>Share your starting point.</strong><span>A short message about the consultation you want to discuss.</span></li><li>${icon('confirm')}<strong>Understand the details.</strong><span>Confirm scope, format, duration, fees and availability.</span></li><li>${icon('calendar')}<strong>Choose your appointment.</strong><span>Book only after the details work for you.</span></li></ol></div><div class="enquiry-panel"><p class="eyebrow">${esc(p.short||p.name)}</p><h3>Start on WhatsApp.</h3><p>No form to complete. Choose a topic if useful, or open a general enquiry.</p><div class="topic-picker" role="group" aria-label="Optional enquiry topic">${p.options.map((topic,i)=>`<button type="button" data-select-topic="${esc(topic)}" aria-pressed="${i===0?'true':'false'}">${esc(topic)}</button>`).join('')}</div><p class="selected-topic" role="status" aria-live="polite">General ${esc(p.short||p.name)} enquiry</p>${cta(p,'enquiry','Open WhatsApp enquiry')}<p class="form-note">Review the message in WhatsApp and send it yourself. Opening WhatsApp does not book or pay for a session.</p><div class="contact-alternatives"><span>Prefer another way?</span><a href="tel:+919205511101">Call +91 92055 11101 ${arrow}</a><a href="mailto:enquiry@nngarg.com">enquiry@nngarg.com ${arrow}</a></div><p class="enquiry-boundary">Please do not send private records, home footage or someone else’s information in your first message.</p></div></section>
+  <section class="faq-band" aria-labelledby="faq-title"><div class="section wrap"><div class="section-heading"><p class="eyebrow">BEFORE BOOKING</p><h2 id="faq-title">A few practical questions.</h2></div><div class="faqs">${p.faqs.map(([q,a],i)=>p.v5?`<details${i===0?' open':''}><summary><h3>${esc(q)}</h3><span class="faq-mark" aria-hidden="true"></span></summary><p>${esc(a)}</p></details>`:`<article><h3>${esc(q)}</h3><p>${esc(a)}</p></article>`).join('')}</div><p class="service-boundary">${esc(p.boundary)}</p></div></section>
+  </main><footer class="footer"><div class="wrap footer-inner"><div><img src="${assets}nng-logo.webp" width="88" height="46" alt="Transformation with NNG" loading="lazy"><p>Narayani Garg<br>Psychic Spiritual Mentor</p></div><div class="footer-message"><p>Bring your question.<br><span>Begin a personal conversation.</span></p>${cta(p,'footer','Enquire with the team','','text-link')}</div></div><div class="wrap footer-bottom"><p>© 2026 Transformation with NNG.</p><button type="button" class="text-link" data-privacy>How this page uses information</button></div></footer>
+  <div class="mobile-cta" hidden><span>${esc(p.short||p.name)}</span>${cta(p,'mobile-sticky','WhatsApp','','button button-small')}</div>${dialogs}</body></html>`.replaceAll('Business responsibilities.\nPersonal questions.','Business responsibilities.<br>Personal questions.').replaceAll('A reading is personal.\nSo is the way she listens.','A reading is personal.<br>So is the way she listens.').replaceAll('Change Your Mind,\nTransform Your Life','Change Your Mind,<br>Transform Your Life').replaceAll('One focused conversation,\nor room to keep working?','One focused conversation,<br>or room to keep working?');
+}
+
+// Pages marked v5 keep the shared header, footer and dialogs, with the refined sections between them.
+function render(p) {
+  const html=renderBase(p);
+  if(!p.v5) return html;
+  return html.replace(/<main id="main">[\s\S]*<\/main>/,()=>renderMain(p,{esc,lines,cta,icon,pageIcon,scenarioArt,serviceVisual,voices,assets,comparison}).replace('One focused conversation,\nor room to keep working?','One focused conversation,<br>or room to keep working?'))
+    .replace(/<footer class="footer">[\s\S]*?<\/footer>/,()=>renderFooter(p,{cta,assets}))
+    .replace('</body>',`<script src="../_shared/v5.js?v=${version}" defer></script></body>`).replace(/Spiritual guidance by Narayani Garg/g, p.slug==='brainology' ? 'Brainology by Narayani Garg' : 'Spiritual guidance by Narayani Garg').replace('self-development practice and spiritual guidance, not therapy', p.slug==='brainology' ? 'self-development practice, not therapy' : 'self-development practice and spiritual guidance, not therapy').replace('</head>', ['brainology','astrology','numerology','vastulogy'].includes(p.slug) ? '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"></head>' : '</head>');
+}
+
+fs.mkdirSync(path.join(shared,'assets'),{recursive:true});
+for(const file of ['icon.svg','marcellus.woff2','manrope-regular.woff2','manrope-semibold.woff2','nng-logo.webp','intro-frame.jpg','introduction.mp4','deepa.webp','manish.webp','puneet.webp','share.jpg','book-cover.webp','narayani.webp']) fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
+// Her photograph for the book plate, from the website images.
+fs.copyFileSync(path.join(root,'..','public','images','approach-narayani-900.webp'),path.join(shared,'assets','approach-narayani-900.webp'));
+// Self-contained inputs preserved from the published landing-page assets.
+for(const file of ['navleen.webp','london.webp'])fs.copyFileSync(path.join(source,'assets',file),path.join(shared,'assets',file));
+fs.writeFileSync(path.join(shared,'styles.css'),fs.readFileSync(path.join(source,'styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v2/styles.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v3/visuals.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v4/premium.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/refine.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/book.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'review-v5/brainology.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/brain.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/sections2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/uniform.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/whatsapp.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/hero-art.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/hero-brain.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/meet.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/book2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/sit3.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/cv2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/ba2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/pr3.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/wy2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/en2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/fq2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/astro.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num-hero.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu-hero.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/astro2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/meet-brain.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/brain-sit.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/a6.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/pr4.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/wy4.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/cv5.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/fix14.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/m6.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/ah3.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/ao.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/astro-sec.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/astro-end.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/aq2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/astro-final.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num-final.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num-hero2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num-meet.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num-sec.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/num-why.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu-hero2.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu-page.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/vastu-fix.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/final-oct14.css'),'utf8')+fs.readFileSync(path.join(root,'review-v5/wa2.css'),'utf8'));
+fs.copyFileSync(path.join(root,'review-v5/v5.js'),path.join(shared,'v5.js'));
+fs.cpSync(path.join(root,'review-v5/img'),path.join(shared,'hero'),{recursive:true});
+fs.copyFileSync(path.join(root,'review-v2/landing.js'),path.join(shared,'landing.js'));
+for(const p of pages){const folder=path.join(output,p.slug);fs.mkdirSync(folder,{recursive:true});fs.writeFileSync(path.join(folder,'index.html'),render(p));}
+const review=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>NNG landing pages | Revised copy review</title><link rel="icon" href="_shared/assets/icon.svg"><link rel="stylesheet" href="_shared/styles.css?v=${version}"></head><body class="copy-v2"><main class="wrap section"><p class="eyebrow">TEAM NNG / REVISED LANDING PAGES / 9 OCTOBER 2026</p><h1>Five services.\nFive personal starting points.</h1><p class="service-terms">Rewritten around real consultation questions, Narayani’s approach and a direct WhatsApp enquiry. Staging review only; no ads or production launch.</p><div class="review-grid">${pages.map(p=>`<a class="review-link" href="${p.slug}/"><span>${esc(p.family==='program'?'Six-month personal programme':'Personal consultation')}</span><h2>${esc(p.short||p.name)}</h2><p>${esc(p.headline.join(' '))}</p><p class="review-action">Review this page ${arrow}</p></a>`).join('')}</div></main></body></html>`;
+fs.writeFileSync(path.join(output,'index.html'),review.replace('Five services.\nFive personal starting points.','Five services.<br>Five personal starting points.'));
+// Oct 14: the pages are green, cream and gold. Any purple left in the stylesheet or the pages (plum backgrounds,
+// mauve text, lilac accents) is turned into the deep green of the same lightness.
+const toGreen = (r, g, b) => {
+  r /= 255; g /= 255; b /= 255;
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2;
+  if (d < 0.05) return null;
+  let h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  h = (h * 60 + 360) % 360;
+  if (h < 262 || h > 338) return null;
+  const sat = Math.min(0.55, (d / (1 - Math.abs(2 * l - 1))) * 0.85), hue = 150 / 360;
+  const q = l < 0.5 ? l * (1 + sat) : l + sat - l * sat, pp = 2 * l - q;
+  const f = (t) => { t = (t + 1) % 1; return t < 1 / 6 ? pp + (q - pp) * 6 * t : t < 1 / 2 ? q : t < 2 / 3 ? pp + (q - pp) * (2 / 3 - t) * 6 : pp; };
+  return [f(hue + 1 / 3), f(hue), f(hue - 1 / 3)].map((v) => Math.round(v * 255));
+};
+const greenify = (txt) => txt
+  .replace(/#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b/g, (m, h) => { if (h.length === 3) h = h.split('').map((c) => c + c).join(''); const c = toGreen(parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)); return c ? '#' + c.map((v) => v.toString(16).padStart(2, '0')).join('').toUpperCase() : m; })
+  .replace(/rgb(a?)\(\s*(\d+)([ ,]+)(\d+)([ ,]+)(\d+)/g, (m, a, r, s1, g, s2, b) => { const c = toGreen(+r, +g, +b); return c ? `rgb${a}(${c[0]}${s1}${c[1]}${s2}${c[2]}` : m; });
+fs.writeFileSync(path.join(shared, 'styles.css'), greenify(fs.readFileSync(path.join(shared, 'styles.css'), 'utf8')));
+for (const p of pages) { const f = path.join(output, p.slug, 'index.html'); fs.writeFileSync(f, greenify(fs.readFileSync(f, 'utf8'))); }
+
+// The Next.js site serves the same files at /landing/ (see the rewrites in next.config.ts).
+const publicCopy=path.join(root,'..','public','landing');
+fs.rmSync(publicCopy,{recursive:true,force:true});
+fs.cpSync(output,publicCopy,{recursive:true});
+console.log(`Built revised five-page review: ${output} (copied to public/landing)`);

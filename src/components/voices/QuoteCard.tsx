@@ -1,5 +1,6 @@
 import { type Voice } from "@/content/voices";
 import { VoiceFilmButton } from "./VoiceFilmButton";
+import { asset } from "@/lib/assets";
 
 /** Client words lead; editorial headlines never masquerade as another quote. */
 export function QuoteCard({ voice, quote }: { voice: Voice; quote?: string }) {
@@ -10,6 +11,7 @@ export function QuoteCard({ voice, quote }: { voice: Voice; quote?: string }) {
         <p>“{quote ?? voice.quote}”</p>
       </blockquote>
       <footer className="client">
+        {voice.poster && <img className="practice-client-still" src={asset(voice.poster)} width={56} height={56} alt="" loading="lazy" decoding="async" />}
         <div>
           {voice.name}
           {voice.translated && <small>Translated from Hindi</small>}

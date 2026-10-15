@@ -24,10 +24,13 @@ export type Voice = {
   poster?: string;
   hook?: string;
   film?: { driveId: string; duration: string; label: string };
+  /** A local MP4 of the same film, for the silent preview on the homepage. Plays on hover or in view. */
+  clip?: string;
 };
 
 export const voices = {
   deepa: {
+    clip: "/videos/stories/deepa.mp4",
     poster: "/images/testimonials/client-0.webp",
     hook: "The belief I had lost",
     id: "deepa",
@@ -42,6 +45,7 @@ export const voices = {
   },
   // Keyed by first name: ids end up in the page source, and surnames stay off the site until confirmed.
   manish: {
+    clip: "/videos/stories/manish.mp4",
     poster: "/images/testimonials/client-1.webp",
     hook: "It never felt like a lecture",
     id: "manish",
@@ -68,6 +72,7 @@ export const voices = {
     film: { driveId: "1WPPE_eY5evBiDC_WjqX9ftbFDfzDfTC3", duration: "1:01", label: "A way out of a hard year" },
   },
   navleen: {
+    clip: "/videos/stories/navleen.mp4",
     poster: "/images/testimonials/client-3.webp",
     hook: "Before a decision that would change her life",
     id: "navleen",
@@ -79,6 +84,7 @@ export const voices = {
     film: { driveId: "1l0SNg8sedyAuktzfDbX9GzY5R-fJMd1-", duration: "2:22", label: "A family’s move home" },
   },
   shelley: {
+    clip: "/videos/stories/shelley.mp4",
     poster: "/images/testimonials/client-4.webp",
     hook: "I was all over the place",
     id: "shelley",
@@ -121,12 +127,20 @@ export const homeFilms: Voice[] = [voices.navleen, voices.shelley, voices.deepa,
  * 1YioAyFpP1HMOcaJXmajgABqmbikvuLKu is a SHA-256 verified duplicate of Vanshika's recording.
  */
 export const addedFilms: Voice[] = [
-  { id: "finding-direction", name: "A client's reflection", context: "Three years of guidance", headline: "", quote: "", hook: "I was completely lost", poster: "/images/testimonials/new-1.webp", film: { driveId: "1ZQ9QvbkBBrtcTRby57ADfJcTQ3i3OH_p", duration: "1:36", label: "Finding her own direction" } },
-  { id: "five-years", name: "A client's reflection", context: "Five years of guidance", headline: "", quote: "", hook: "Through the best and worst", poster: "/images/testimonials/new-2.webp", film: { driveId: "1UHLdIA7SysXyW_dM1NHw7DCwC4H2xL-X", duration: "0:46", label: "Someone to turn to" } },
-  { id: "family-decisions", name: "A client's reflection", context: "Two years of guidance", headline: "", quote: "", hook: "Before the big decisions", poster: "/images/testimonials/new-4.webp", film: { driveId: "1IIG1FfXqAcNhiEJFncXJzjO5KxPxh_Wd", duration: "0:56", label: "Guidance for him and his family" } },
-  { id: "difficult-year", name: "A client's reflection", context: "Through a difficult time", headline: "", quote: "", hook: "We couldn't see a way forward", poster: "/images/testimonials/new-5.webp", film: { driveId: "1uU8Ol2Bbk3o_FG7k2-K9_-qxAlKsldVl", duration: "1:05", label: "Finding a way through" } },
+  // Role is self-stated in the opening of this recording, rechecked 4 Oct 2026.
+  // "Banking" does not establish an employer, corporate banking specialism or CEO/COO title.
+  { id: "puneet", clip: "/videos/stories/puneet.mp4", name: "Puneet", context: "Works in banking", headline: "", quote: "", hook: "Guidance through personal and professional challenges", poster: "/images/testimonials/puneet.webp", film: { driveId: "1kuLWPPJJ6taVMR19VpA1lUjv6MEMYExa", duration: "1:11", label: "His experience of guidance" } },
+  { id: "finding-direction", clip: "/videos/stories/finding-direction.mp4", name: "A client's reflection", context: "Three years of guidance", headline: "", quote: "", hook: "I was completely lost", poster: "/images/testimonials/new-1.webp", film: { driveId: "1ZQ9QvbkBBrtcTRby57ADfJcTQ3i3OH_p", duration: "1:36", label: "Finding her own direction" } },
+  { id: "five-years", clip: "/videos/stories/five-years.mp4", name: "A client's reflection", context: "Five years of guidance", headline: "", quote: "", hook: "Through the best and worst", poster: "/images/testimonials/new-2.webp", film: { driveId: "1UHLdIA7SysXyW_dM1NHw7DCwC4H2xL-X", duration: "0:46", label: "Someone to turn to" } },
+  { id: "family-decisions", clip: "/videos/stories/family-decisions.mp4", name: "A client's reflection", context: "Two years of guidance", headline: "", quote: "", hook: "Before the big decisions", poster: "/images/testimonials/new-4.webp", film: { driveId: "1IIG1FfXqAcNhiEJFncXJzjO5KxPxh_Wd", duration: "0:56", label: "Guidance for him and his family" } },
+  { id: "difficult-year", clip: "/videos/stories/difficult-year.mp4", name: "A client's reflection", context: "Through a difficult time", headline: "", quote: "", hook: "We couldn't see a way forward", poster: "/images/testimonials/new-5.webp", film: { driveId: "1uU8Ol2Bbk3o_FG7k2-K9_-qxAlKsldVl", duration: "1:05", label: "Finding a way through" } },
   { id: "neha", name: "Neha", context: "Melbourne", headline: "", quote: "", hook: "Why I reached out", poster: "/images/testimonials/new-0.webp", film: { driveId: "1y7JLLC2r_2v364UxD7y-rZLOXeUVq9Sl", duration: "3:02", label: "Her personal experience" } },
 ];
+/** Films with a local recording: they preview silently on hover (or in view on phones) in "Hear the whole story". */
+export const storyFilms: Voice[] = [voices.navleen, voices.shelley, voices.deepa, voices.manish, ...addedFilms.filter((voice) => voice.clip)];
+/** The remaining recordings, still played from Drive. */
+export const otherFilms: Voice[] = [voices.shashi, voices.renu, voices.vanshika, ...addedFilms.filter((voice) => !voice.clip)];
+
 export const moreFilms: Voice[] = [...addedFilms, voices.manish, voices.renu, voices.vanshika];
 
 /** The three written testimonials on the homepage. */

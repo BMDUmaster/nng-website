@@ -13,5 +13,5 @@
 </IfModule>
 
 <IfModule mod_dir.c>
-    DirectoryIndex public/index.php index.php
+    DirectoryIndex public/index.html public/index.php index.php
 </IfModule>

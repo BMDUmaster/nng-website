@@ -62,7 +62,8 @@ export function StoryRail({ voices, children, label = "All client testimonial vi
     const element = rail.current;
     if (!element) return;
     const width = element.firstElementChild?.getBoundingClientRect().width ?? 280;
-    element.scrollBy({ left: by * (width + 24), behavior: reduced ? "auto" : "smooth" });
+    const gap = parseFloat(getComputedStyle(element).columnGap) || 0;
+    element.scrollBy({ left: by * (width + gap), behavior: reduced ? "auto" : "smooth" });
   };
 
   const duplicatedVoices = voices ? [...voices, ...voices] : null;
@@ -97,4 +98,3 @@ export function StoryRail({ voices, children, label = "All client testimonial vi
     </div>
   );
 }
-

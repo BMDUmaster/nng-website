@@ -1,0 +1,251 @@
+// Refined landing page body (Oct 2026), used for pages marked `v5: true` in content.mjs. The header, footer,
+// dialogs and enquiry behaviour are shared with the other landing pages; the sections between them are drawn here.
+import { vastuPlan, chevron, leaves } from './vastu-plan.mjs';
+import { brainApproach, brainApproach2 } from './brain-approach.mjs';
+import { numApproach } from './num-approach.mjs';
+import { situations2, practices2 } from './sections2.mjs';
+import { heroArt } from './hero-art.mjs';
+import { meetSection } from './meet.mjs';
+import { meetBrain } from './meet-brain.mjs';
+import { brainVoices, brainSituations, brainApproach3, brainPractices, brainWhy } from './brain-sit.mjs';
+import { brainHero } from './hero-brain.mjs';
+import { astroHero } from './hero-astro.mjs';
+import { numHero } from './hero-num.mjs';
+import { vastuHero } from './hero-vastu.mjs';
+import { astroHeroFull, astroHero3, astroOptions } from './hero-astro2.mjs';
+import { astroMeet, astroQuestion, astroApproach, astroWhy } from './astro-sec.mjs';
+import { numHero2, numMeet } from './num-hero2.mjs';
+import { numQuestion, numOptions, numWhy } from './num-sec.mjs';
+import { vastuHero2, vastuScope, vastuQuestion } from './vastu-hero2.mjs';
+import { astroHero4 } from './astro-hero4.mjs';
+
+const person = 'Narayani Garg';
+// Client films served by the website (public/videos/stories), keyed by landing-page voice.
+const clips = { deepa: 'deepa', manish: 'manish', navleen: 'navleen', london: 'shelley', puneet: 'puneet' };
+const bookTitle = 'Change Your Mind, Transform Your Life';
+
+const play = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
+const down = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>';
+const soundOff = '<svg class="snd-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="m17 9 4 6m0-6-4 6"/></svg>';
+const soundOn = '<svg class="snd-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 8.5a5 5 0 0 1 0 7M19.5 6a8.5 8.5 0 0 1 0 12"/></svg>';
+const waIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>';
+
+// A WhatsApp link with the WhatsApp mark in place of the arrow.
+export const waMark = waIcon;
+export function waLink(cta, p, source, label, cls) {
+  return cta(p, source, label, '', cls).replace('<span aria-hidden="true">↗</span>', `<span class="wa-ic" aria-hidden="true">${waIcon}</span>`);
+}
+
+export function renderMain(p, h) {
+  const { esc, lines, icon, pageIcon, scenarioArt, serviceVisual, voices, assets } = h;
+  const cta = h.cta;
+  const wa = (source, label, cls) => waLink(cta, p, source, label, cls);
+
+  /* Opening. */
+  const hero = `<div class="hero-banner v5-hero-banner"><section class="hero wrap v5-hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <div class="v5-pill-row">${p.rich ? `<p class="hb-eyebrow"><span aria-hidden="true">✦</span><strong>${esc(p.short || p.name)}</strong><i aria-hidden="true"></i><em>${esc(p.byline || 'with Narayani Garg').replace(' · ', '<b class="hb-sep"> · </b>')}</em></p>` : ''}<p class="v5-pill">${esc(p.short || p.name)}</p><p class="v5-viewers" data-viewers="${({ brainology: '14-28', numerology: '9-21', vastulogy: '7-18', astrology: '16-32', 'hand-holding': '6-15' })[p.slug] || '8-20'}" hidden><span class="v5-viewers-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>0</b> viewing now</p></div>
+      <p class="hero-role">${person} · Psychic Spiritual Mentor</p>
+      <h1 id="hero-title">${lines(p.headline[0])}<br><span>${esc(p.headline[1])}</span></h1>
+      <p class="hero-description">${esc(p.description)}</p>
+      <div class="hero-actions">${wa('hero', p.heroCta || 'WhatsApp enquiry', 'wa-btn')}<a class="v5-ghost" href="${p.slug === 'brainology' ? '#approach' : '#ways'}"><span>${p.rich ? 'How it works' : 'See what we can discuss'}</span><i aria-hidden="true">${down}</i></a></div>
+      ${p.hook ? `<div class="v5-hook"><p>${esc(p.hookLabel || 'Sound familiar?')}</p><ul>${p.hook.map((t, i) => `<li style="--i:${i}">${esc(t)}</li>`).join('')}</ul></div>` : ''}
+      <ul class="v5-facts">${p.facts.map(([a, b], i) => `<li style="--i:${i}"><span class="v5-facts-icon">${pageIcon(p, 'facts', i)}</span><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
+      <p class="hero-note">Enquire with the NNG team. Scope and fees are explained before you book.</p>
+    </div>
+    ${p.slug === 'brainology' ? brainHero(p, { esc }) : p.slug === 'astrology' ? astroHero(p, { esc }) : p.slug === 'numerology' ? numHero(p, { esc }) : p.slug === 'vastulogy' ? vastuHero(p, { esc }) : heroArt(p, { esc })}
+  </section></div>`;
+
+  /* Her book, opening slowly while in view, beside the clientele. */
+  const page = (folio, body, plate = false) => `${plate ? '' : `<span class="bk-run">${folio % 2 === 0 ? bookTitle : person}</span>`}<div class="bk-body">${body}</div><span class="bk-folio">${folio}</span>`;
+  // Printed pages: three chapter openings, a photographic plate, the parts of a pattern and her words.
+  const chapters = [
+    ['One', 'Mind first', 'A remedy is an instruction: chant this, keep that in the north-east, wear this. It has to be carried out on an ordinary day, by someone who may be tired, busy or doubtful.', 'If that state of mind is never looked at, the instruction waits on a shelf.'],
+    ['Two', 'What a pattern is made of', 'A pattern is a small chain that repeats. Naming its parts makes it easier to see, and easier to interrupt at the one part you can reach.', 'Reactions are fast because they have been rehearsed.'],
+    ['Three', 'Practise', 'You decide to respond differently. Then the same moment arrives, and the old reaction returns.', 'Recognising that pattern is the starting point, not a reason to blame yourself.'],
+  ];
+  const fronts = chapters.map(([no, title, a, b], i) => page(3 + i * 2, `<span class="bk-chapter">Chapter ${no}</span><strong class="bk-head">${title}</strong><span class="bk-orn bk-orn-sm">❧</span><p class="bk-drop">${a}</p><p class="bk-para">${b}</p>`));
+  const backs = [
+    page(4, `<figure class="bk-photo"><img src="${assets}approach-narayani-900.webp" alt="" loading="lazy" decoding="async"><figcaption>${person}</figcaption></figure>`, true),
+    page(6, `<div class="bk-parts"><span class="bk-chapter">The parts of the chain</span>${[['A thought', 'The first words you tell yourself.'], ['A belief', 'An assumption you take as true.'], ['The words you use', '“Always”, “never” and “should”.'], ['A reaction', 'What happens before you decide.']].map(([t, d]) => `<p><b>${t}</b>${d}</p>`).join('')}</div>`),
+    page(8, `<blockquote class="bk-quote"><span class="bk-orn" aria-hidden="true">❦</span><p lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p><cite>A remedy works when the mind works.</cite></blockquote>`),
+  ];
+  const sectors = [['business', 'Banking professionals'], ['career', 'CEOs of MNCs &amp; core sector companies'], ['person', 'Women entrepreneurs'], ['education', 'Printing, education &amp; hospitals']];
+  const book = `<section class="bk v5-book${p.rich ? ' bk2-band' : ''}" aria-labelledby="book-title"><div class="bk-inner wrap">
+    <div class="bk-stage" aria-hidden="true">
+      <div class="bk-glow"></div>
+      <div class="bk-book">
+        <div class="bk-back"></div><div class="bk-block"></div>
+        <div class="bk-page bk-page-right">${page(9, `<span class="bk-orn">✿</span><strong>21</strong><span class="bk-days">days of reflection and everyday inner practice</span><span class="bk-rule"></span><em>Mind first</em>`)}</div>
+        ${[2, 1, 0].map((i) => `<div class="bk-leaf bk-leaf-${i + 1}"><div class="bk-face bk-face-front">${fronts[i]}</div><div class="bk-face bk-face-back">${backs[i]}</div></div>`).join('')}
+        <div class="bk-cover"><img class="bk-front" src="${assets}book-cover.webp" width="440" height="622" alt="" loading="lazy" decoding="async"><div class="bk-inside"><div class="bk-bookplate"><img src="${assets}narayani.webp" alt="" loading="lazy" decoding="async"><span>${person}</span><small>Psychic Spiritual Mentor</small><span class="bk-rule"></span><em>Mind first</em></div></div></div>
+      </div>
+      <div class="bk-shadow"></div>
+    </div>
+    ${p.rich ? `<div class="v5-book-copy bk2">
+      <p class="bk2-kicker" data-reveal><span aria-hidden="true">✦</span>Her book</p>
+      <h2 id="book-title" data-reveal>Change Your Mind,<br><em>Transform Your Life</em></h2>
+      <p class="bk2-lead" data-reveal>Twenty-one days of reflection and everyday inner practice, written in the same mind-first way she guides every conversation.</p>
+      <p class="bk2-label" data-reveal>Her approach, in three ideas</p>
+      <ol class="bk2-inside" data-reveal>
+        <li><span>01</span><strong>Mind first</strong><em>Why the state of mind comes before any remedy.</em></li>
+        <li><span>02</span><strong>What a pattern is made of</strong><em>A thought, a belief, the words you use, a reaction.</em></li>
+        <li><span>03</span><strong>Practise</strong><em>Small steps that make a new response part of the day.</em></li>
+      </ol>
+      <ul class="bk2-stats" data-reveal><li><b>21</b><span>days</span></li><li><b>Daily</b><span>reflection</span></li><li><b>Everyday</b><span>practice</span></li></ul>
+      <p class="bk2-trust" data-reveal>Her clients include ${sectors.map(([, label]) => `<span>${label}</span>`).join('')}</p>
+    </div>` : `<div class="v5-book-copy">
+      <p class="v5-kicker">${person} / Author</p>
+      <h2 id="book-title">Change Your Mind,<br><span>Transform Your Life</span></h2>
+      <p class="v5-book-lead">Her mind-first perspective, in her own words.</p>
+      <div class="v5-trust">
+        <p class="v5-trust-title">Trusted by <strong data-count="10000">10,000</strong>+ clients</p>
+        <ul class="v5-sectors">${sectors.map(([ic, label], i) => `<li style="--i:${i}"><span>${icon(ic)}</span>${label}</li>`).join('')}</ul>
+        <p class="v5-fine">Individual clients, not endorsements by their organisations.</p>
+      </div>
+    </div>`}
+  </div></section>`;
+
+  /* The question you bring. */
+  const situations = `<section class="section wrap v5-situations" aria-labelledby="situation-title">
+    <div class="v5-head"><p class="eyebrow">THE QUESTION YOU BRING</p><h2 id="situation-title">${lines(p.situationTitle)}</h2></div>
+    <div class="v5-rail" data-rail>${p.situations.map(([t, d], i) => `<article class="v5-sit" data-reveal style="--i:${i}"><span class="v5-sit-no">0${i + 1}</span><div class="v5-sit-art">${scenarioArt(p, i)}</div><h3>${esc(t)}</h3><p>${esc(d)}</p></article>`).join('')}</div>
+    <div class="v5-dots" aria-hidden="true">${p.situations.map((_, i) => `<i${i === 0 ? ' class="is-on"' : ''}></i>`).join('')}</div>
+  </section>`;
+
+  /* Client voices: compact quote cards. */
+  const stories = `<section class="stories-band v5-voices" id="stories" aria-labelledby="stories-title"><div class="section wrap">
+    <div class="v5-head"><p class="eyebrow">CLIENT VOICES</p><h2 id="stories-title">${lines(p.proofTitle)}</h2></div>
+    <div class="v5-quotes${p.proof.length === 3 ? ' v5-quotes-3' : ''}">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="v5-quote" data-reveal style="--i:${i}"><span class="v5-quote-mark" aria-hidden="true">“</span><p class="v5-quote-topic">${esc(v.title)}</p><blockquote>${esc(v.quote || v.summary)}</blockquote><div class="v5-quote-foot"><img src="${assets + v.image}" width="44" height="44" alt="" loading="lazy"><div><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></div><button class="v5-watch" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" type="button" aria-label="Watch ${esc(v.name)}’s experience">${play}<span>Watch</span></button></div></article>`; }).join('')}</div>
+  </div></section>`;
+
+  /* Brainology: client films as portrait cards beside their words. */
+  const voices2 = `<section class="stories-band v5-voices cv2" id="stories" aria-labelledby="stories-title"><div class="section wrap">
+    <div class="cv2-head"><p class="cv2-kicker"><span aria-hidden="true">✦</span>Client voices</p><h2 id="stories-title">${lines(p.proofTitle).replace(/<br>(.*)$/, '<br><em>$1</em>')}</h2><p class="cv2-sub">In their own words. Tap a film to watch.</p></div>
+    <div class="cv2-list">${p.proof.map((key, i) => { const v = voices[key]; return `<article class="cv2-card" data-reveal style="--i:${i}">
+      <button class="cv2-film" type="button" data-clip="/videos/stories/${clips[key]}.mp4" data-clip-title="${esc(v.title)}" data-clip-note="${esc(v.context)}" aria-label="Watch ${esc(v.name)}’s experience"><img src="${assets + v.image}" alt="" width="720" height="1280" loading="lazy"><span class="cv2-play" aria-hidden="true">${play}</span><span class="cv2-tag">Watch</span></button>
+      <div class="cv2-words"><p class="cv2-topic">${esc(v.title)}</p><span class="cv2-mark" aria-hidden="true">“</span><blockquote>${esc(v.quote || v.summary)}</blockquote><p class="cv2-who"><strong>${esc(v.name)}</strong><span>${esc(v.context)}</span></p></div>
+    </article>`; }).join('')}</div>
+    <p class="cv2-note">Personal experiences of Narayani’s guidance. Individual experiences vary.</p>
+  </div></section>`;
+
+  /* Approach: the drawing beside three steps, which light in turn while in view. */
+  const approach = `<section class="section wrap approach v5-approach2" id="approach" aria-labelledby="approach-title">
+    <div class="approach-copy"><p class="eyebrow">HOW NARAYANI APPROACHES IT</p><h2 id="approach-title">${p.slug === 'vastulogy' ? lines(p.methodTitle).replace(/<br>(.*)$/, '<br><em>$1</em>') : lines(p.methodTitle)}</h2><p>${esc(p.methodIntro)}</p></div>
+    ${p.slug === 'vastulogy' ? vastuPlan() : serviceVisual(p)}${p.slug === 'vastulogy' ? `<span class="v5-blob" aria-hidden="true"></span><span class="v5-leaf-l" aria-hidden="true">${leaves('l')}</span><span class="v5-leaf-r" aria-hidden="true">${leaves('r')}</span>` : ''}
+    <ol class="reading-points v5-steps2" data-steps>${p.method.map(([t, d], i) => `<li data-step="${i}" data-reveal style="--i:${i}" tabindex="0" role="button" aria-pressed="false">${pageIcon(p, 'method', i)}<h3>${esc(t)}</h3><p>${esc(d)}</p>${p.slug === 'vastulogy' ? `<span class="v5-chev" aria-hidden="true">${chevron}</span>` : ''}<span class="v5-step-bar" aria-hidden="true"></span></li>`).join('')}</ol>
+  </section>`;
+  /* Practices: names only. */
+  const practices = `<section class="scope-band v5-practices" id="ways" aria-labelledby="ways-title"><div class="section wrap">
+    <div class="v5-head v5-head-row"><div><p class="eyebrow">${esc(p.scopeEyebrow || 'YOUR CONSULTATION OPTIONS')}</p><h2 id="ways-title">${lines(p.scopeTitle)}</h2></div>${cta(p, 'scope')}</div>
+    <ul class="v5-tiles${p.topics.length === 4 ? ' v5-tiles-4' : ''}">${p.topics.map(([t], i) => `<li data-reveal style="--i:${i}"><span class="v5-tile-icon">${pageIcon(p, 'topics', i)}</span><strong>${esc(t)}</strong><span class="v5-tile-no">0${i + 1}</span></li>`).join('')}</ul>
+  </div></section>`;
+
+  /* Why her approach matters. */
+  const principles = [
+    ['reflection', 'The person matters.', `Explore your beliefs and responses ${p.slug === 'brainology' ? 'as you practise something new' : 'alongside the reading'}.`],
+    ['listen', 'The choice stays yours.', 'Ask questions and understand the reasoning. No threats or pressure to purchase a remedy.'],
+  ];
+  const why = `<section class="v5-why" aria-labelledby="why-title"><div class="section wrap v5-why-inner">
+    <div class="v5-why-head"><p class="eyebrow">WHY HER APPROACH MATTERS</p><h2 id="why-title">Mind first.<br><span>Guidance without fear.</span></h2></div>
+    <div class="v5-why-cards">${principles.map(([ic, t, d], i) => `<article data-reveal style="--i:${i}"><span class="v5-why-icon">${icon(ic)}</span><span class="v5-why-no">0${i + 1}</span><h3>${t}</h3><p>${d}</p></article>`).join('')}</div>
+    <p class="v5-why-quote" lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.” <span>A remedy works when the mind works.</span></p>
+  </div></section>`;
+
+  /* Brainology: why her approach matters — two principles split by a gold rule, and three plain promises. */
+  const why2 = `<section class="wy2" aria-labelledby="why-title"><div class="section wrap">
+    <div class="wy2-head"><p class="wy2-kicker"><span aria-hidden="true">✦</span>Why her approach matters</p><h2 id="why-title">Mind first.<br><em>Guidance without fear.</em></h2></div>
+    <div class="wy2-pair">
+      ${principles.map(([ic, t, d], i) => `<article class="wy2-card" data-reveal style="--i:${i}"><span class="wy2-icon">${icon(ic)}</span><p class="wy2-no">0${i + 1}</p><h3>${t}</h3><p>${d}</p></article>`).join('<span class="wy2-rule" aria-hidden="true"><i>✦</i></span>')}
+    </div>
+    <ul class="wy2-promise" data-reveal>
+      <li><span aria-hidden="true">✓</span>No fear-based predictions</li>
+      <li><span aria-hidden="true">✓</span>No pressure to buy a remedy</li>
+      <li><span aria-hidden="true">✓</span>The reasoning explained, the choice yours</li>
+    </ul>
+  </div></section>`;
+
+  /* Enquiry. */
+  const steps = [['Share your starting point.', 'A short message about what you want to discuss.'], ['Understand the details.', 'Confirm scope, format, duration, fees and availability.'], ['Choose your appointment.', 'Book only after the details work for you.']];
+  const enquiry = `<section class="v5-enquiry" id="enquire" aria-labelledby="enquiry-title"><div class="section wrap v5-enquiry-inner">
+    <div class="v5-enquiry-copy">
+      <p class="eyebrow">BEGIN WITH THE NNG TEAM</p>
+      <h2 id="enquiry-title">${lines(p.closeTitle)}</h2>
+      <p>${esc(p.closeCopy)}</p>
+      <ol class="v5-timeline">${steps.map(([t, d], i) => `<li data-reveal style="--i:${i}"><span>${i + 1}</span><div><strong>${t}</strong><p>${d}</p></div></li>`).join('')}</ol>
+    </div>
+    <div class="enquiry-panel v5-panel">
+      <div class="v5-panel-head"><span class="v5-wa">${waIcon}</span><div><p class="eyebrow">${esc(p.short || p.name)}</p><h3>Start on WhatsApp.</h3></div></div>
+      <p class="v5-panel-intro">No form to complete. Choose a topic if useful, or open a general enquiry.</p>
+      <div class="topic-picker" role="group" aria-label="Optional enquiry topic">${p.options.map((topic, i) => `<button type="button" data-select-topic="${esc(topic)}" aria-pressed="${i === 0 ? 'true' : 'false'}">${esc(topic)}</button>`).join('')}</div>
+      <p class="selected-topic" role="status" aria-live="polite">General ${esc(p.short || p.name)} enquiry</p>
+      ${wa('enquiry', p.closeCta || 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
+      <p class="form-note">Review the message in WhatsApp and send it yourself. Opening WhatsApp does not book or pay for a session.</p>
+      <div class="v5-alt"><a href="tel:+919205511101">${icon('conversation')}<span>Call<small>+91 92055 11101</small></span></a><a href="mailto:enquiry@nngarg.com">${icon('confirm')}<span>Email<small>enquiry@nngarg.com</small></span></a></div>
+      <p class="enquiry-boundary">Please do not send private records, home footage or someone else’s information in your first message.</p>
+    </div>
+  </div></section>`;
+
+  /* Brainology enquiry: steps on the left; on the right the WhatsApp panel with a live preview of the message. */
+  const enquiry2 = `<section class="v5-enquiry en2" id="enquire" aria-labelledby="enquiry-title"><div class="section wrap">
+    <div class="en2-head"><p class="en2-kicker"><span aria-hidden="true">✦</span>Begin with the NNG team</p><h2 id="enquiry-title">${lines(p.closeTitle).replace(/<br>(.*)$/, '<br><em>$1</em>')}</h2><p>${esc(p.closeCopy)}</p></div>
+    <div class="en2-grid">
+      <div class="en2-how">
+        <p class="en2-label">How it works</p>
+        <ol class="en2-steps">${steps.map(([t, d], i) => `<li data-reveal style="--i:${i}"><span>${i + 1}</span><div><strong>${t}</strong><p>${d}</p></div></li>`).join('')}</ol>
+        <div class="en2-alt"><a href="tel:+919205511101">${icon('conversation')}<span>Prefer to call?<small>+91 92055 11101</small></span></a><a href="mailto:enquiry@nngarg.com">${icon('confirm')}<span>Or write to us<small>enquiry@nngarg.com</small></span></a></div>
+      </div>
+      <div class="enquiry-panel en2-panel">
+        <div class="en2-panel-head"><span class="v5-wa">${waIcon}</span><div><strong>Start on WhatsApp</strong><span>No form. Choose a topic if useful.</span></div></div>
+        <div class="topic-picker" role="group" aria-label="Optional enquiry topic">${p.options.map((topic, i) => `<button type="button" data-select-topic="${esc(topic)}" aria-pressed="${i === 0 ? 'true' : 'false'}">${esc(topic)}</button>`).join('')}</div>
+        <p class="selected-topic" role="status" aria-live="polite">General ${esc(p.short || p.name)} enquiry</p>
+        <div class="en2-chat" aria-label="Your message preview">
+          <p class="en2-chat-label">Your message</p>
+          <div class="en2-bubble" data-preview data-offer="${esc(p.name)}"><p>Hello NNG team, I would like to enquire about ${esc(p.name)}.</p><p>Please share the appropriate scope, format, duration, fees and availability.</p><span class="en2-time">now <i aria-hidden="true">✓✓</i></span></div>
+        </div>
+        ${wa('enquiry', p.closeCta || 'Open WhatsApp enquiry', 'wa-btn wa-btn-wide')}
+        <p class="en2-note">You review and send the message yourself. Opening WhatsApp does not book or pay for a session. Please keep private records and other people’s details out of the first message.</p>
+      </div>
+    </div>
+  </div></section>`;
+
+  /* Questions. */
+  const faq = `<section class="faq-band v5-faq" aria-labelledby="faq-title"><div class="section wrap v5-faq-inner">
+    <div class="v5-faq-side">
+      <p class="eyebrow">BEFORE BOOKING</p>
+      <h2 id="faq-title">A few practical questions.</h2>
+      <p>Something else on your mind? Ask the team directly.</p>
+      ${wa('faq', '', 'wa-round').replace('<a class="wa-round"', '<a class="wa-round" aria-label="Ask on WhatsApp"')}
+    </div>
+    <div class="faqs">${p.faqs.map(([q, a], i) => `<details${i === 0 ? ' open' : ''}><summary><span class="v5-faq-no">0${i + 1}</span><h3>${esc(q)}</h3><span class="faq-mark" aria-hidden="true"></span></summary><p>${esc(a)}</p></details>`).join('')}</div>
+    <p class="service-boundary">${esc(p.boundary)}</p>
+  </div></section>`;
+
+  /* Brainology questions: one centred column of answers that open smoothly, then a quiet prompt and the boundary. */
+  const faq2 = `<section class="fq2" aria-labelledby="faq-title"><div class="section wrap">
+    <div class="fq2-head"><p class="fq2-kicker"><span aria-hidden="true">✦</span>Before booking</p><h2 id="faq-title">A few practical <em>questions.</em></h2></div>
+    <div class="fq2-list">${p.faqs.map(([q, ans], i) => `<details class="fq2-item"${i === 0 ? ' open' : ''} data-reveal style="--i:${i}"><summary><span class="fq2-no">0${i + 1}</span><h3>${esc(q)}</h3><span class="fq2-mark" aria-hidden="true"></span></summary><div class="fq2-body"><p>${esc(ans)}</p></div></details>`).join('')}</div>
+    <div class="fq2-ask" data-reveal><div><strong>Something else on your mind?</strong><span>Ask the team directly. A short message is enough.</span></div>${wa('faq', 'Ask on WhatsApp', 'wa-btn')}</div>
+    <p class="fq2-boundary">${esc(p.boundary)}</p>
+  </div></section>`;
+
+  return `<main id="main">${p.slug === 'astrology' ? astroHero4(p, { esc, wa }) : p.slug === 'numerology' ? numHero2(p, { esc, wa }) : p.slug === 'vastulogy' ? vastuHero2(p, { esc, wa }) : hero}${p.slug === 'brainology' ? meetBrain(p, { esc, wa }) : p.slug === 'astrology' ? astroMeet(p, { esc, wa }) : p.slug === 'numerology' ? numMeet(p, { esc, wa }) : p.rich ? meetSection(p, { esc, wa }) : ''}${['brainology', 'astrology', 'numerology', 'vastulogy'].includes(p.slug) ? brainVoices(p, { esc, wa, voices, assets, clips }) : p.rich ? voices2 : book}${p.slug === 'brainology' ? brainSituations(p, { esc, wa }) : p.slug === 'astrology' ? astroQuestion(p, { esc, wa }) : p.slug === 'numerology' ? numQuestion(p, { esc, wa }) : p.slug === 'vastulogy' ? vastuQuestion(p, { esc, wa, scenarioArt }) : situations2(p, { esc, scenarioArt, wa })}${p.rich ? '' : stories}${p.slug === 'numerology' ? numApproach(p, { esc }) : p.slug === 'vastulogy' ? approach : p.slug === 'brainology' ? brainApproach3(p, { esc }) : p.slug === 'astrology' ? astroApproach(p, { esc }) : p.rich ? brainApproach2(p, { esc }) : ['astrology', 'hand-holding'].includes(p.slug) ? brainApproach(p, { esc }) : p.slug === 'numerology' ? numApproach(p, { esc }) : approach}${p.slug === 'brainology' ? brainPractices(p, { esc, wa, pageIcon }) : p.slug === 'astrology' ? astroOptions(p, { esc, wa }) : p.slug === 'numerology' ? numOptions(p, { esc, wa }) : p.slug === 'vastulogy' ? vastuScope(p, { esc, wa }) : practices2(p, { esc, cta: (pp, s, l, t, c) => waLink(cta, pp, s, 'WhatsApp enquiry', 'wa-btn'), pageIcon })}${h.comparison ? h.comparison(p) : ''}${p.slug === 'astrology' ? astroWhy(p, { esc, wa }) : p.slug === 'numerology' ? numWhy(p, { esc, wa }) : ['brainology', 'vastulogy'].includes(p.slug) ? brainWhy(p, { esc, wa, icon }) : p.rich ? why2 : why}${p.rich ? enquiry2 : enquiry}${p.rich ? faq2 : faq}${p.rich ? book : ''}</main>${waLink(cta, p, 'floating', '', 'wa-fab').replace('<a class="wa-fab"', '<a class="wa-fab" aria-label="Enquire on WhatsApp"')}`;
+}
+
+// Footer for v5 pages: brand and promise on the left, contact on the right, a quiet bottom row.
+export function renderFooter(p, { cta, assets }) {
+  return `<footer class="footer v5-foot"><div class="wrap v5-foot-inner">
+    <div class="v5-foot-brand">
+      <img src="${assets}nng-logo.webp" width="100" height="53" alt="Transformation with NNG" loading="lazy">
+      <p class="v5-foot-name">Narayani Garg<span>Psychic Spiritual Mentor</span></p>
+    </div>
+    <div class="v5-foot-msg">
+      <p class="v5-foot-title">Bring your question.<br><em>Begin a personal conversation.</em></p>
+      ${waLink(cta, p, 'footer', 'Enquire on WhatsApp', 'wa-btn')}
+    </div>
+    <ul class="v5-foot-contact">
+      <li><span>Call</span><a href="tel:+919205511101">+91 92055 11101</a></li>
+      <li><span>Email</span><a href="mailto:enquiry@nngarg.com">enquiry@nngarg.com</a></li>
+    </ul>
+  </div><div class="wrap v5-foot-bottom"><p>© 2026 Transformation with NNG</p><button type="button" class="text-link" data-privacy>How this page uses information</button></div></footer>`;
+}

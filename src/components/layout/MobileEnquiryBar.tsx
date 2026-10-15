@@ -13,13 +13,18 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 export function MobileEnquiryBar() {
   const pathname = usePathname();
   const [shown, setShown] = useState(false);
+  const [topic, setTopic] = useState<string | undefined>();
 
   useEffect(() => {
-    // A visible in-page primary action already does this job. Avoid competing gold buttons.
-    const targets = Array.from(document.querySelectorAll("[data-primary-cta], a.button[data-enquiry], .site-footer"));
+    // The paid landing page has its own form and sticky action. Keep that single flow intact.
+    if (pathname.replace(/\/$/, "") === "/consultation" || pathname.startsWith("/shop")) return;
+    const primary = document.querySelector<HTMLElement>("[data-primary-cta][data-enquiry]");
+    // A visible in-page primary action (or the homepage hero) already does this job. Avoid competing gold buttons.
+    const targets = Array.from(document.querySelectorAll("[data-primary-cta], a.button[data-enquiry], .site-footer, .hx")).filter(target => !target.closest(".mobile-enquiry"));
     const onScreen = new Set<Element>();
     const observer = new IntersectionObserver(
       (entries) => {
+        setTopic(primary?.dataset.topic);
         entries.forEach((entry) => (entry.isIntersecting ? onScreen.add(entry.target) : onScreen.delete(entry.target)));
         setShown(onScreen.size === 0);
       },
@@ -29,14 +34,14 @@ export function MobileEnquiryBar() {
     return () => observer.disconnect();
   }, [pathname]);
 
+  if (pathname.replace(/\/$/, "") === "/consultation" || pathname.startsWith("/shop")) return null;
+
   return (
     <aside className={`mobile-enquiry${shown ? " is-shown" : ""}`} aria-label="Enquire" aria-hidden={!shown} inert={!shown}>
       <span>
-        Narayani Garg
-        <br />
-        <strong>Start with one conversation</strong>
+        <strong>Narayani’s team</strong>
       </span>
-      <EnquiryTrigger source="mobile-bar">Enquire</EnquiryTrigger>
+      <EnquiryTrigger topic={topic} source="mobile-bar">Enquire</EnquiryTrigger>
     </aside>
   );
 }

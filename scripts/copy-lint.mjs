@@ -58,7 +58,7 @@ const rules = [
   // Expressly excluded features
   { name: "tarot", re: /\btarot\b/gi, why: "She asked for tarot to be removed everywhere." },
   { name: "horoscope", re: /\bhoroscope\b/gi, why: "Excluded feature." },
-  { name: "shop or store", re: /\b(add to cart|buy now|checkout|webshop|online store)\b/gi, why: "No shop." },
+  { name: "unsupported checkout", re: /\b(buy now|pay now|secure checkout)\b/gi, why: "The authorised store accepts WhatsApp enquiries, not payments." },
   { name: "urgency device", re: /(only \d+ (spots?|seats?) (left|remaining)|limited time|hurry|countdown|last chance)/gi, why: "No urgency devices." },
 
   // Names that must not appear on the site (listed privately, see privateNames above)
@@ -95,6 +95,11 @@ for (const file of files) {
     // A reviewed exception is marked on the line above: // copy-lint-allow: <reason>
     if (index > 0 && lines[index - 1].includes("copy-lint-allow")) return;
     for (const rule of rules) {
+      // Narrow, dated exceptions for the owner's 8 Oct meeting decisions.
+      // This does not permit general outcome claims using these words.
+      const rel = relative(ROOT, file);
+      if (rule.name === "astrologer as her title" && rel === "src/app/page.tsx" && line.includes("PSYCHIC READER · ASTROLOGER · NUMEROLOGIST · VASTU")) continue;
+      if (rule.name === "abundance" && rel === "src/content/review-release.ts" && /name: "(?:Health|Relationship|Wealth|Career) Abundance"/.test(line)) continue;
       rule.re.lastIndex = 0;
       const match = rule.re.exec(line);
       if (match) {

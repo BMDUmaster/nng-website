@@ -1,0 +1,146 @@
+/* =============================================================================================================
+   Refined layout (Oct 2026), applied page by page through `v5: true` in content.mjs (body.lp-v5). Tighter
+   rhythm, method steps beside the drawing, a three-column practice grid with one call to action, FAQ accordion.
+   ============================================================================================================= */
+body.lp-v5 .section { padding-block: 76px; }
+body.lp-v5 .section-heading { margin-bottom: 34px; }
+body.lp-v5 .section-heading > p:not(.eyebrow) { max-width: 620px; margin-top: 14px; }
+
+/* Opening. */
+body.lp-v5 .hero { min-height: 0; padding-block: 64px 72px; }
+body.lp-v5 .hero-facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px; margin-top: 30px; }
+body.lp-v5 .hero-facts > div { align-items: center; padding: 12px 18px 12px 14px; }
+body.lp-v5 .hero-note { margin-top: 16px; font-size: 12.5px; color: rgb(250 246 240 / 0.62); }
+
+/* The question you bring: three cards, drawing above. */
+body.lp-v5 .situation-grid article { display: flex; flex-direction: column; padding: 22px 24px 24px; }
+body.lp-v5 .situation-grid .scenario-art { max-width: 210px; margin: 0 0 14px; }
+body.lp-v5 .situation-grid h3 { margin: 0 0 8px; font-size: 24px; }
+
+/* Approach: words and steps on the left, the drawing on the right. */
+body.lp-v5 .approach { grid-template-columns: 1.05fr 0.95fr; grid-template-rows: auto 1fr; gap: 0 64px; align-items: start; }
+body.lp-v5 .approach-copy { grid-column: 1; grid-row: 1; }
+body.lp-v5 .approach .consultation-art { grid-column: 2; grid-row: 1 / 3; align-self: center; width: 100%; max-width: 470px; justify-self: end; }
+body.lp-v5 .reading-points { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: 1fr; gap: 12px; margin: 30px 0 0; counter-reset: step; }
+body.lp-v5 .reading-points li {
+  position: relative;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 2px 16px;
+  margin: 0;
+  padding: 16px 20px 16px 16px;
+  border: 0;
+  border-radius: 18px;
+}
+body.lp-v5 .reading-points .line-icon {
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--champ) 18%, #FFFFFF);
+  color: var(--plum);
+}
+body.lp-v5 .reading-points li::after {
+  counter-increment: step;
+  content: "0" counter(step);
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--brass);
+}
+body.lp-v5 .reading-points h3 { font-size: 16px; }
+body.lp-v5 .reading-points p { margin: 0; font-size: 14px; }
+
+/* Practices: three columns, one call to action beneath. */
+body.lp-v5 .scope-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+body.lp-v5 .scope-grid article { display: flex; flex-direction: column; gap: 14px; padding: 24px 24px 26px; }
+body.lp-v5 .scope-grid .line-icon {
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 10px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--champ) 18%, #FFFFFF);
+  color: var(--plum);
+}
+body.lp-v5 .scope-grid h3 { margin-bottom: 6px; font-size: 23px; }
+body.lp-v5 .scope-grid p { font-size: 14px; }
+body.lp-v5 .scope-cta { display: flex; justify-content: center; margin-top: 30px; }
+body.lp-v5 .scope-note { margin-top: 18px; text-align: center; border: 0; padding: 0; max-width: none; }
+
+/* Questions: an accordion. */
+body.lp-v5 .faqs { grid-template-columns: 1fr 1fr; align-items: start; gap: 12px 16px; }
+body.lp-v5 .faqs details {
+  border-radius: 18px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--brass) 22%, transparent), 0 20px 40px -34px rgb(60 24 61 / 0.5);
+}
+body.lp-v5 .faqs summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; cursor: pointer; list-style: none; }
+body.lp-v5 .faqs summary::-webkit-details-marker { display: none; }
+body.lp-v5 .faqs summary h3 { margin: 0; font-size: 20px; line-height: 1.3; }
+body.lp-v5 .faq-mark { position: relative; flex: none; width: 30px; height: 30px; border-radius: 50%; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 50%, transparent); }
+body.lp-v5 .faq-mark::before, body.lp-v5 .faq-mark::after { content: ""; position: absolute; top: 50%; left: 50%; width: 11px; height: 1.5px; background: var(--brass); transform: translate(-50%, -50%); transition: transform 0.25s ease; }
+body.lp-v5 .faq-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
+body.lp-v5 details[open] .faq-mark { background: var(--plum); box-shadow: none; }
+body.lp-v5 details[open] .faq-mark::before, body.lp-v5 details[open] .faq-mark::after { background: var(--champ); }
+body.lp-v5 details[open] .faq-mark::after { transform: translate(-50%, -50%) rotate(0deg); }
+body.lp-v5 .faqs details p { margin: 0; padding: 0 20px 20px; font-size: 14.5px; }
+body.lp-v5 .service-boundary { margin-top: 26px; }
+
+/* Enquiry: steps sit in a quiet panel so the left column carries weight. */
+body.lp-v5 .enquiry-section { align-items: center; }
+
+@media (max-width: 1100px) {
+  body.lp-v5 .approach { gap: 0 40px; }
+  body.lp-v5 .scope-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 800px) {
+  body.lp-v5 .approach { grid-template-columns: 1fr; grid-template-rows: none; }
+  body.lp-v5 .approach-copy, body.lp-v5 .approach .consultation-art, body.lp-v5 .reading-points { grid-column: 1; grid-row: auto; }
+  body.lp-v5 .approach .consultation-art { justify-self: center; margin-top: 26px; }
+  body.lp-v5 .reading-points { margin-top: 18px; }
+  body.lp-v5 .faqs { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 580px) {
+  body.lp-v5 .section { padding-block: 50px; }
+  body.lp-v5 .section-heading { margin-bottom: 24px; }
+  body.lp-v5 .hero { padding-block: 28px 40px; }
+  body.lp-v5 .hero-facts { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; }
+  body.lp-v5 .hero-facts > div { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 6px; text-align: center; }
+  body.lp-v5 .hero-facts .line-icon { width: 24px; height: 24px; margin-bottom: 2px; }
+  body.lp-v5 .hero-facts strong { font-size: 13px; line-height: 1.25; }
+  body.lp-v5 .hero-facts span { font-size: 11.5px; line-height: 1.3; }
+  body.lp-v5 .hero-note { margin-top: 14px; text-align: center; }
+  body.lp-v5 .situation-grid { gap: 12px; }
+  body.lp-v5 .situation-grid article { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 4px 16px; padding: 16px 18px; }
+  body.lp-v5 .situation-grid .scenario-art { grid-row: 1 / 3; max-width: none; margin: 0; }
+  body.lp-v5 .situation-grid h3 { margin: 0; font-size: 21px; }
+  body.lp-v5 .situation-grid p { font-size: 14px; }
+  body.lp-v5 .reading-points li { grid-template-columns: 40px 1fr; padding: 14px 44px 14px 14px; }
+  body.lp-v5 .reading-points .line-icon { width: 40px; height: 40px; padding: 8px; }
+  body.lp-v5 .scope-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  body.lp-v5 .scope-grid article { gap: 10px; padding: 16px 14px 18px; border-radius: 18px; }
+  body.lp-v5 .scope-grid .line-icon { width: 40px; height: 40px; padding: 8px; }
+  body.lp-v5 .scope-grid h3 { margin-bottom: 4px; font-size: 19px; line-height: 1.2; }
+  body.lp-v5 .scope-grid p { font-size: 13px; line-height: 1.5; }
+  body.lp-v5 .scope-cta .button { width: 100%; justify-content: space-between; }
+  body.lp-v5 .faqs summary { padding: 15px 16px; }
+  body.lp-v5 .faqs summary h3 { font-size: 18px; }
+  body.lp-v5 .faqs details p { padding: 0 16px 16px; font-size: 14px; }
+}
+
+/* Questions read as one column; principles sit close together; the footer runs to the bottom edge. */
+body.lp-v5 .faqs { grid-template-columns: 1fr; max-width: 880px; }
+body.lp-v5 .principle-list { gap: 12px; }
+body.lp-v5 .principle-list p { margin: 0; }
+@media (max-width: 800px) {
+  body.lp-v5 { padding-bottom: 0; }
+  body.lp-v5 .footer { padding-bottom: 67px; }
+}

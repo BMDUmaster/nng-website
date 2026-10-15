@@ -1,17 +1,21 @@
-import type { EnquiryTopic } from "./site";
+import type { HubSlug } from "./offerings/types";
 
 /**
- * The four services. Rewritten on 23 Sept 2026 to say what she actually looks at, in place of the
- * general lines that read as template copy. Everything draws only on what she has said or published:
+ * The five services. The first four were rewritten on 23 Sept 2026 to say what she actually looks at, in place
+ * of the general lines that read as template copy. Everything draws only on what she has said or published:
  * her calls (10 and 15 Sept 2026), her content pillars (the home mandir, ancestors' photographs, name
- * spelling, mobile numbers) and her book (breathwork, affirmations, Ho'oponopono, EFT, habits). The two
- * quotes are her words from the 10 Sept discovery call, translated from Hindi. All of it is draft copy
- * for Narayani's approval.
+ * spelling, mobile numbers) and her book (breathwork, affirmations, Ho'oponopono, EFT, habits). The quote is
+ * her words from the 10 Sept discovery call, translated from Hindi. On 1 Oct 2026 Aryan chose "Psychic Reader"
+ * as the public name (her own phrase on the price sheet) in place of "Mind Training", and asked for a
+ * fifth service, Crystals, Stones and Rudraksha. All of it is draft copy for Narayani's approval.
+ *
+ * Each service opens a hub page at /services/<slug>/ with its own pages beneath it (src/content/offerings).
  */
 export type Service = {
-  slug: "mind-training" | "numerology" | "vastu" | "astrology";
+  slug: HubSlug;
   name: string;
-  topic: EnquiryTopic;
+  /** The WhatsApp enquiry topic for this service. */
+  topic: string;
   card: string;
   lead: string;
   look: string[];
@@ -20,16 +24,16 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "mind-training",
-    name: "Mind Training",
-    topic: "Mind Training",
+    slug: "brain-training",
+    name: "Psychic Reader",
+    topic: "Psychic Reader",
     card: "The beliefs and habits behind a recurring concern. Where she starts.",
     lead: "A look at the beliefs, habits and reactions that shape how you respond to the question you bring.",
     quote: "Couldn’t Krishna have fixed the vastu and ended the war between the brothers? He didn’t. He worked on Arjuna’s mind.",
     look: [
-      "The patterns that keep returning in health, relationships, career or money",
+      "The patterns that keep returning in health, relationships, money or career",
       "How you respond under pressure, and what you tell yourself",
-      "Practices from her book: breathwork, affirmations, Ho’oponopono and EFT tapping",
+      "The beliefs behind a recurring situation, explored through personal guidance",
       "Daily habits you can practise between conversations",
     ],
   },
@@ -69,14 +73,28 @@ export const services: Service[] = [
       "What to do next, and the reason for it",
     ],
   },
+  {
+    slug: "stones-and-rudraksh",
+    name: "Crystals, Stones and Rudraksha",
+    topic: "Crystals, Stones and Rudraksha",
+    card: "Gemstones and Rudraksha beads: what they are, and how to choose with care.",
+    lead: "Guidance on gemstones and Rudraksha beads, given alongside your chart and your question, never ahead of them.",
+    look: [
+      "Whether a stone or a bead is worth considering for you at all",
+      "How to tell what is genuine, and what to ask before you buy",
+      "How to wear and look after what you choose",
+    ],
+  },
 ];
+
+export const serviceHref = (slug: HubSlug) => `/services/${slug}/`;
 
 /** Mind. Direction. Alignment. The lock-up line, read as the order of a consultation (proposed). */
 export const method = [
   {
     word: "Mind",
     text: "Notice the thoughts and habits that recur in the situation you bring.",
-    services: ["mind-training"],
+    services: ["brain-training"],
   },
   {
     word: "Direction",
@@ -89,3 +107,10 @@ export const method = [
     services: ["vastu"],
   },
 ] as const;
+
+/** Service order confirmed by Aryan on 8 October 2026. */
+const displayOrder: HubSlug[] = ["brain-training", "astrology", "numerology", "vastu", "stones-and-rudraksh"];
+services.sort((a, b) => displayOrder.indexOf(a.slug) - displayOrder.indexOf(b.slug));
+
+/** Educational stone material is a resource, not a bookable practice (8 October 2026). */
+export const consultationServices = services.filter(service => service.slug !== "stones-and-rudraksh");

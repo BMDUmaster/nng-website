@@ -18,6 +18,28 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   turbopack: { root },
   outputFileTracingRoot: root,
+  webpack(config) {
+    // Atomic exports run in a disposable staging folder. A disk cache there
+    // cannot be reused and needlessly competes with the export for free space.
+    if (process.env.NNG_DISPOSABLE_BUILD === "1") config.cache = false;
+    return config;
+  },
+  // The five Meta landing pages are static files built by landing-pages/build.mjs into public/landing.
+  ...(!exporting && {
+    async rewrites() {
+      return [
+        { source: "/landing/", destination: "/landing/index.html" },
+        { source: "/landing/:slug/", destination: "/landing/:slug/index.html" },
+      ];
+    },
+    // The Psychic Reader landing page is now the Brainology Program page; keep old ad links working.
+    async redirects() {
+      return [
+        { source: "/landing/psychic-reader/:path*", destination: "/landing/brainology/", permanent: true },
+        { source: "/landing/vastu/:path*", destination: "/landing/vastulogy/", permanent: true },
+      ];
+    },
+  }),
   ...(exporting && { output: "export", images: { unoptimized: true } }),
   ...(basePath && { basePath }),
 };

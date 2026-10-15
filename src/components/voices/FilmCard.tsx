@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { EVENTS, track } from "@/lib/analytics";
 import { drivePlayer, voicePoster, type Voice } from "@/content/voices";
 
@@ -10,23 +10,12 @@ import { drivePlayer, voicePoster, type Voice } from "@/content/voices";
  */
 export function FilmCard({ voice, modal = false }: { voice: Voice; modal?: boolean }) {
   const [playing, setPlaying] = useState(false);
+  const captionId = useId();
   const film = voice.film;
   if (!film) return null;
 
   return (
-    <figure
-      className="reel"
-      onMouseEnter={() => {
-        if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) {
-          setPlaying(true);
-        }
-      }}
-      onMouseLeave={() => {
-        if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) {
-          setPlaying(false);
-        }
-      }}
-    >
+    <figure className="reel">
       <div className="reel-frame">
         {playing ? (
           <iframe
@@ -54,7 +43,7 @@ export function FilmCard({ voice, modal = false }: { voice: Voice; modal?: boole
                 }
                 setPlaying(true);
               }}
-              aria-label={`${voice.hook ?? film.label}. Watch their story: ${voice.name}, ${film.duration}`}
+              aria-describedby={captionId}
               data-title={`${voice.name}: ${film.label}`}
             >
               <span className="reel-hook">{voice.hook ?? film.label}</span>
@@ -68,7 +57,7 @@ export function FilmCard({ voice, modal = false }: { voice: Voice; modal?: boole
           </>
         )}
       </div>
-      <figcaption>
+      <figcaption id={captionId}>
         <strong>{film.label}</strong>
         <span>
           {voice.name} · {voice.context}

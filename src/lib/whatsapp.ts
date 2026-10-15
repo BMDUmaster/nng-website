@@ -1,10 +1,14 @@
 import { site } from "@/content/site";
 
+/** An enquiry about one stone or one bead asks for details and the price, not for a consultation. */
+const goods = /^(Gemstones|Rudraksha): /;
+
 /** The prepared WhatsApp message. The same wording as the Codex homepage. */
 export function enquiryMessage(topic: string, region: "India" | "outside India") {
+  const ask = goods.test(topic) ? "the details, current price and availability" : "the consultation process, current fees and availability";
   return `Hello, I would like to enquire about ${topic} with Narayani Garg. I am based ${
     region === "India" ? "in India" : "outside India"
-  }. Could you please share the consultation process, current fees and availability?`;
+  }. Could you please share ${ask}?`;
 }
 
 /**

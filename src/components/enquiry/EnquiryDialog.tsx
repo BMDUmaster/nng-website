@@ -21,16 +21,21 @@ export function EnquiryDialog() {
   const trigger = useRef<HTMLElement | null>(null);
   const source = useRef("unknown");
   const [topic, setTopic] = useState<string>(DEFAULT_TOPIC);
+  // A page-specific topic, kept in the list for as long as the dialog is open on this visit.
+  const [pageTopic, setPageTopic] = useState<string | null>(null);
   const [region, setRegion] = useState<Region>("India");
   const preview = isPreviewNumber();
 
   const open = useCallback((from: HTMLElement) => {
     const el = dialog.current;
     if (!el || el.open) return;
-    trigger.current = from;
+    trigger.current = from.closest("[data-enquiry-return-focus]")
+      ? document.querySelector<HTMLElement>("[data-primary-cta][data-enquiry]") ?? from
+      : from;
     source.current = from.dataset.source || "unknown";
     const chosen = from.dataset.topic || DEFAULT_TOPIC;
     setTopic(chosen);
+    setPageTopic(enquiryTopics.some((item) => item.value === chosen) ? null : chosen);
     document.body.classList.add("dialog-open");
     el.showModal();
     select.current?.focus();
@@ -97,10 +102,11 @@ export function EnquiryDialog() {
       <p className="kicker">Let’s begin</p>
       <h2 id="enquiry-title">What brings you here?</h2>
       <p className="dialog-intro">Choose a starting point for your consultation enquiry.</p>
+      <p className="dialog-consent-note">Share your own details only. Obtain permission before sharing another person’s date of birth; a parent or guardian must consent for a child. Do not send private home footage or medical records in a first enquiry.</p>
       <form onSubmit={(event) => event.preventDefault()}>
         <label htmlFor="enquiry-topic">I would like guidance with</label>
         <select id="enquiry-topic" ref={select} value={topic} onChange={(event) => setTopic(event.target.value)}>
-          <TopicOptions />
+          <TopicOptions extra={pageTopic} />
         </select>
         <label htmlFor="enquiry-region">Where are you based?</label>
         <select id="enquiry-region" value={region} onChange={(event) => setRegion(event.target.value as Region)}>
@@ -121,12 +127,7 @@ export function EnquiryDialog() {
           Continue on WhatsApp <span aria-hidden="true">↗</span>
         </a>
         <div className="dialog-alt">
-          <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent("Consultation enquiry")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => dialog.current?.close()}
-          >
+          <a href={`mailto:${site.email}?subject=${encodeURIComponent("Consultation enquiry")}`} onClick={() => dialog.current?.close()}>
             Prefer email? Write to the team
           </a>
         </div>

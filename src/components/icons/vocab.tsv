@@ -1,0 +1,477 @@
+# id<TAB>set<TAB>what to draw. One idea, one icon. A new idea gets a new id (add it to requests/<file>.tsv).
+graha-sun	grahas	The Sun: a small solid disc inside a ring, eight short rays outside it
+graha-moon	grahas	The Moon: a waxing crescent with one small four-point star beside it
+graha-mars	grahas	Mars: the classic glyph (ring with an arrow leaving at the upper right), the arrowhead bold
+graha-mercury	grahas	Mercury: the classic glyph (small crescent horns above a ring above a cross)
+graha-jupiter	grahas	Jupiter: the classic glyph (a curved 4-like form), clean and balanced
+graha-venus	grahas	Venus: the classic glyph (ring above a cross)
+graha-saturn	grahas	Saturn: the classic glyph (cross with a flowing curved tail)
+graha-rahu	grahas	Rahu: the north-node glyph, an open horseshoe arc with two small rings at its ends, opening downward
+graha-ketu	grahas	Ketu: the south-node glyph, the same horseshoe arc opening upward, ends as small rings
+sign-aries	signs	Aries: ram's horns glyph
+sign-taurus	signs	Taurus: ring with horns glyph
+sign-gemini	signs	Gemini: the two pillars joined top and bottom
+sign-cancer	signs	Cancer: two interlocked curled arms glyph
+sign-leo	signs	Leo: curled mane and tail glyph
+sign-virgo	signs	Virgo: three arches with a looped tail
+sign-libra	signs	Libra: a horizon line under a raised arch (balance)
+sign-scorpio	signs	Scorpio: three arches ending in an arrow tail
+sign-sagittarius	signs	Sagittarius: an arrow rising to the upper right across a short cross-bar
+sign-capricorn	signs	Capricorn: horn and looped tail glyph
+sign-aquarius	signs	Aquarius: two parallel zigzag waves
+sign-pisces	signs	Pisces: two crescents facing away, joined by a bar
+house-1	houses	First house, the self: a small sun rising over a horizon line, one upright flame beneath it
+house-2	houses	Second house, wealth, speech and family: a coin beside a curved speech arc
+house-3	houses	Third house, effort and courage: a drawn bow with an arrow set on it
+house-4	houses	Fourth house, home and roots: a small house with a door and short roots beneath it
+house-5	houses	Fifth house, creativity, children and learning: a young sprout with two leaves and a small star above
+house-6	houses	Sixth house, daily work, service and health habits: a mortar and pestle
+house-7	houses	Seventh house, partnership: two interlocking rings
+house-8	houses	Eighth house, change and the hidden: a cocoon splitting open with a thin wing emerging
+house-9	houses	Ninth house, beliefs, teachers and fortune: a single lotus flower in profile
+house-10	houses	Tenth house, work and standing: a mountain peak with a small flag
+house-11	houses	Eleventh house, gains and networks: five small dots joined as a net
+house-12	houses	Twelfth house, rest, letting go: a small boat on a wave under a thin crescent
+nak-ashwini	nakshatras	Ashwini: a horse's head in profile
+nak-bharani	nakshatras	Bharani: a yoni, a vesica (pointed oval) with a small bowl beneath
+nak-krittika	nakshatras	Krittika: a razor blade with a flame above it
+nak-rohini	nakshatras	Rohini: a bullock cart (a wheel, a cart bed, a yoke)
+nak-mrigashira	nakshatras	Mrigashira: a deer's head with antlers
+nak-ardra	nakshatras	Ardra: a single teardrop with a small spiral inside it
+nak-punarvasu	nakshatras	Punarvasu: a bow with a quiver of arrows
+nak-pushya	nakshatras	Pushya: an upright arrow passing through a small lotus bud
+nak-ashlesha	nakshatras	Ashlesha: a coiled serpent with raised head
+nak-magha	nakshatras	Magha: a throne with a high back
+nak-purva-phalguni	nakshatras	Purva Phalguni: a hammock slung between two short posts
+nak-uttara-phalguni	nakshatras	Uttara Phalguni: a bed with four short legs and a headboard
+nak-hasta	nakshatras	Hasta: an open hand, palm toward the viewer
+nak-chitra	nakshatras	Chitra: a faceted jewel seen from the side
+nak-swati	nakshatras	Swati: a young shoot bending in the wind with two short wind lines
+nak-vishakha	nakshatras	Vishakha: a ceremonial gateway arch with two pillars and a crossbar
+nak-anuradha	nakshatras	Anuradha: a lotus flower open in front view
+nak-jyeshtha	nakshatras	Jyeshtha: a round amulet hanging from a short cord
+nak-mula	nakshatras	Mula: a bundle of tied roots
+nak-purva-ashadha	nakshatras	Purva Ashadha: a winnowing fan (a flat basket with a rim)
+nak-uttara-ashadha	nakshatras	Uttara Ashadha: a curved elephant tusk
+nak-shravana	nakshatras	Shravana: a single ear in profile
+nak-dhanishta	nakshatras	Dhanishta: a small two-sided drum (damaru)
+nak-shatabhisha	nakshatras	Shatabhisha: a ring with a hundred tiny dots scattered inside it (draw twelve)
+nak-purva-bhadrapada	nakshatras	Purva Bhadrapada: an upright sword with a small guard
+nak-uttara-bhadrapada	nakshatras	Uttara Bhadrapada: two tall pillars standing over wavy water lines
+nak-revati	nakshatras	Revati: a fish
+koota-varna	kootas	Varna: four ascending bars like a ladder of four rungs
+koota-vashya	kootas	Vashya: a rope loop with a short lead line
+koota-tara	kootas	Tara: a star on a short path of three dots
+koota-yoni	kootas	Yoni: a paw print
+koota-graha-maitri	kootas	Graha Maitri: two small planets in orbit around each other with a bridge line between
+koota-gana	kootas	Gana: three overlapping circles in a triangle
+koota-bhakoot	kootas	Bhakoot: a ring divided into twelve with two opposite segments marked
+koota-nadi	kootas	Nadi: three parallel wavy pulse lines of different heights
+element-earth	elements	Earth: a solid square on a short base line with a small mountain inside
+element-water	elements	Water: three wave lines under a single drop
+element-fire	elements	Fire: a flame with an inner smaller flame
+element-air	elements	Air: three flowing wind lines curling at their ends
+element-space	elements	Space: an open circle with a small dot at its centre and a short ring around it
+dir-north	directions	North: an upward compass needle with a coin above it (Kubera, wealth)
+dir-northeast	directions	North-east: an oil lamp with a small water drop beside it (Ishana, clarity)
+dir-east	directions	East: a sun rising over a horizon with a short arrow pointing right
+dir-southeast	directions	South-east: a flame in a hearth (Agni, fire)
+dir-south	directions	South: a standing stone slab with a small seat (Yama, steadiness)
+dir-southwest	directions	South-west: a heavy pillar on broad footings (Nirriti, grounding)
+dir-west	directions	West: a wave curling over a short arrow pointing left (Varuna)
+dir-northwest	directions	North-west: a bird in flight with wind lines (Vayu, movement)
+dir-centre	directions	The centre, Brahmasthan: an open square courtyard with a small circle at its centre
+num-1	numbers	The number one: a tall pillar form of "1" with a small sun above
+num-2	numbers	The number two: a "2" with a small crescent beside it
+num-3	numbers	The number three: a "3" beside a short three-line crown
+num-4	numbers	The number four: a "4" set inside a square corner frame
+num-5	numbers	The number five: a "5" with a short flowing arrow beneath it
+num-6	numbers	The number six: a "6" with a small heart-shaped curve
+num-7	numbers	The number seven: a "7" with a small spiral at its top
+num-8	numbers	The number eight: an "8" laid as two stacked rings with a coin-like centre
+num-9	numbers	The number nine: a "9" with three small concentric arcs around it
+hub-astrology	pages	Astrology: a diamond-in-square birth chart with a small crescent and sun above its top corner
+page-birth-chart-reading	pages	Birth chart reading: a rolled scroll tied with a cord, a small circle chart on the open end
+page-dashas-and-transits	pages	Dashas and transits: an hourglass with a thin orbit ring around its waist
+page-nakshatras	pages	Nakshatras: a ring of small stars with a crescent moon resting in the ring
+page-marriage	pages	Marriage: a four-post wedding canopy (mandap) with a small flame beneath
+page-kundali-matching	pages	Kundali matching: two small diamond charts joined by a knotted thread
+page-career-and-business	pages	Career and business: a briefcase on top of a three-step staircase
+page-education	pages	Education: an open book with a small lamp flame above its spine
+page-health-and-wellbeing	pages	Health and wellbeing: one leaf above a gentle wave line (a rhythm, not a medical cross)
+page-property-and-big-decisions	pages	Property and big decisions: a small house outline with a key hanging at its door
+page-specific-issue-reading	pages	A specific concern: a magnifying glass over one small knot
+page-reading-without-birth-details	pages	A reading without birth details: a clock face with a small question mark beside it
+page-astrology-remedies	pages	Astrology remedies: an oil lamp (diya) with a bead string (mala) looped beneath
+hub-numerology	pages	Numerology: a circle holding the numeral nine, with two small orbit arcs outside
+page-personal-numbers	pages	Your date of birth numbers: a calendar leaf with a bold numeral five
+page-name-numerology	pages	Name numerology: a nameplate with two letter blocks and a small number badge
+page-mobile-and-house-numbers	pages	Mobile and house numbers: a phone beside a small door plate with a number
+page-signature	pages	Signature: one flowing signature line with a pen nib at its end and an underline
+page-lo-shu-grid	pages	The Lo Shu grid: a three by three grid with the centre cell marked and a short diagonal arrow
+page-business-name	pages	Business name and logo: a signboard hanging from two hooks with a small mark on it
+page-astro-numerology	pages	AstroNumerology: a small diamond chart overlapping a numeral eight
+page-numerology-systems	pages	Numerology systems: three small stacked letter tables of different shapes
+hub-vastu	pages	Vastu: a simple floor plan with a compass needle crossing it
+page-directions-and-elements	pages	Directions and the five elements: a compass rose with five small dots around its ring
+page-home	pages	Vastu for the home: a house with a front door, one window and a chimney
+page-office-and-shop	pages	Office, shop or clinic: a shopfront with a striped awning and a sign
+page-property-and-land	pages	A property or plot: a plot outline with a boundary stake and a small flag
+page-real-estate-and-developers	pages	Real estate and developers: three towers of different heights with a crane arm
+page-specialised-spaces	pages	Special spaces: a row of four small building silhouettes (factory, hotel, school, temple)
+page-astro-vastu	pages	Astro-Vastu: a floor plan sitting inside a circle marked with eight short ticks
+page-vastu-remedies	pages	Corrections without demolition: a house with a small plant and a lamp beside it
+hub-brain-training	pages	Brain training: five thin threads gathering into one line, with a small dot at the join
+page-nlp	pages	NLP: a speech bubble and a thought bubble joined in a loop
+page-eft-tapping	pages	EFT and tapping: two fingertips touching a small point with three ripple arcs
+page-hooponopono	pages	Ho'oponopono: three concentric rings with a small heart at the centre
+hub-stones-and-rudraksh	pages	Stones and Rudraksha: a cut gem beside a ridged bead
+page-gemstones	pages	Gemstones: a faceted gem with two small sparkle marks
+page-rudraksha	pages	Rudraksha: a ridged bead on a thread loop with a small knot
+group-chart	taxonomy	Group, reading your chart: a chart diamond with one small planet dot
+group-relationships	taxonomy	Group, marriage and relationships: two small arches (people) leaning toward each other under a thin arc
+group-work-study	taxonomy	Group, work, study and wellbeing: a pen across a small ladder
+group-decisions	taxonomy	Group, decisions and concerns: a fork in a path with a small marker
+group-remedies	taxonomy	Group, remedies: a small lamp and a bead string
+group-your-numbers	taxonomy	Group, your numbers: three digits in a row, the middle one larger
+group-daily-numbers	taxonomy	Group, numbers in daily use: a phone, a door plate and a pen in a row
+group-business-numbers	taxonomy	Group, business and the larger picture: a signboard above a small chart
+group-foundations	taxonomy	Group, foundations: a compass over a square base
+group-homes	taxonomy	Group, homes and property: a house with a boundary line
+group-workplaces	taxonomy	Group, work places and projects: a tall building beside a small shop
+group-chart-space	taxonomy	Group, with your chart: a chart diamond beside a small floor plan
+group-practices	taxonomy	Group, practices: three small circles in a rising line
+group-guidance	taxonomy	Group, guidance: an open hand holding a small gem
+room-main-entrance	rooms	The main entrance: a door with a threshold step and a small lamp above it
+room-living-room	rooms	The living room: a sofa seen from the front with a low table
+room-kitchen	rooms	The kitchen: a cooking pot on a flame
+room-prayer-room	rooms	The prayer room: a small shrine niche with an oil lamp
+room-master-bedroom	rooms	The master bedroom: a double bed with two pillows
+room-childrens-room	rooms	The children's room: a small bed with a toy block
+room-guest-room	rooms	The guest room: a single bed beside a small suitcase
+room-bathroom	rooms	The bathroom: a basin tap with a drop beneath
+room-toilet	rooms	The toilet: a plain cistern and bowl seen from the side
+room-study	rooms	The study: a desk with an open book and a lamp
+room-staircase	rooms	The staircase: a flight of steps with a handrail
+room-balcony	rooms	The balcony: a railing with a potted plant
+room-terrace	rooms	The terrace: an open roof line with a small water tank
+room-basement	rooms	The basement: a block with steps leading down
+room-store	rooms	The store room: stacked boxes
+room-garden	rooms	The garden: a small tree and a low fence
+room-parking	rooms	Parking: a car seen from the front in a bay
+room-water-source	rooms	Water source, borewell or tank: a pump pipe with a drop
+room-courtyard	rooms	The open courtyard: a square with a small circle and open sky lines
+room-boundary-gate	rooms	Boundary wall and gate: a wall with a gate between two posts
+room-apartment	rooms	An apartment: a block of flats with a lit window grid and a door
+room-lift-corridor	rooms	Lift and corridor: a lift door with an up and a down mark
+room-mirror	rooms	Mirrors: a standing oval mirror
+room-plants	rooms	Plants: a pot with three leaves
+room-clutter	rooms	Order and clutter: a tidy square beside a scattering of small shapes
+room-lighting	rooms	Lighting: a hanging lamp with light lines
+work-owner-cabin	workplace	The owner's cabin: a desk with a high-backed chair
+work-team-space	workplace	The team's workspace: a row of three desks
+work-sales-desk	workplace	The sales team: a handshake across a desk
+work-finance	workplace	Finance: a ledger book with a coin
+work-hr	workplace	HR: a clipboard with a tick list
+work-pantry	workplace	The pantry: a cup with steam
+work-server-room	workplace	The server room: stacked server units with small lights
+work-reception	workplace	Reception: a counter with a small bell
+work-cash-counter	workplace	The cash counter: a till with a coin tray
+work-meeting-room	workplace	The meeting room: an oval table with six small seats
+work-client-lounge	workplace	The client lounge: two armchairs and a small table
+work-showroom	workplace	The showroom: a display plinth under a spotlight
+work-retail-shop	workplace	A retail shop: a shelf with boxes and a basket
+work-clinic	workplace	A clinic: a door with a plain plus-free emblem, a stool and a couch outline
+work-coworking	workplace	A co-working space: a long shared desk with laptops
+work-corporate-floor	workplace	A corporate floor: a tall building with a floor band highlighted
+work-warehouse	workplace	A warehouse: a wide shed with a roller door and stacked pallets
+work-signage	workplace	Signage: a board on a short post
+work-customer-flow	workplace	Customer flow: a curved path with a dotted route through a shop plan
+work-rented-space	workplace	A rented space: a key on a ring beside a short lease page
+work-relocation	workplace	Moving premises: two small buildings joined by a dotted arc
+work-retainer	workplace	Ongoing support: a calendar with a circular repeat arc
+re-land-reading	realestate	Reading the land: a plot with contour lines and a small compass
+re-soil-history	realestate	Soil and site history: layered ground strata with a small shovel
+re-road-alignment	realestate	Road alignment: a plot beside a road with a small direction arrow
+re-tower-wing	realestate	Towers and wings: two tower blocks joined at a corner
+re-gate-boundary	realestate	Gate and boundary planning: a rectangle boundary with a gate gap
+re-amenity-zones	realestate	Amenity zoning: a park circle, a pool rectangle and a small court
+re-fire-water	realestate	Fire and water balance: a flame and a drop set on a balance beam
+re-parking-utilities	realestate	Parking and utilities: a car bay beside a pipe and a cable line
+re-floor-directions	realestate	Floor-wise directions: stacked floor plates each with a small north arrow
+re-lobby-flow	realestate	Lobby and circulation: a lobby plan with a curved flow arrow
+re-report	realestate	The written report: a document with a compass emblem and lines
+re-overlay	realestate	Direction overlays: a plan with a transparent compass rose over it
+re-buyer-view	realestate	The buyer's view: an eye over a small house
+re-materials	realestate	Colour and materials: three small swatches and a brick
+re-annual-review	realestate	Annual review: a calendar page with a tick and a circular arrow
+re-approvals	realestate	Approvals and the building code: a stamp on a plan sheet
+re-builder	realestate	Builders: a trowel on a brick course
+re-architect	realestate	Architects: a set square and a compass divider
+re-developer	realestate	Developers: a crane over a site
+re-hotel-hospital	realestate	Hotel groups and hospitals: two building silhouettes of different forms
+re-plot-selection	realestate	Plot selection: three plots with one marked
+re-phased-build	realestate	Phased construction: three stacked building stages growing taller
+re-foundation-stone	realestate	The foundation stone: a block in the ground corner with a small flame
+re-non-demolition	realestate	Without demolition: a wall with a gentle adjusting arrow beside it, no break
+space-industrial	spaces	Industrial and factory: a factory with a chimney and a cog
+space-hospitality	spaces	Hospitality: a bell and a bed under one roof line
+space-healing	spaces	Medical and healing spaces: a building with a leaf (no cross)
+space-educational	spaces	Educational: a school building with a flag
+space-spiritual	spaces	Spiritual: a temple spire with a small flag
+space-agricultural	spaces	Agricultural: a field with rows and a small hut
+space-landscape	spaces	Landscape: a tree, a path and a small bench
+space-wealth	spaces	Wealth-related spaces: a strongbox with a small coin
+rem-lighting	vremedies	Lighting remedy: a lamp with rays
+rem-mirrors	vremedies	Mirror remedy: an oval mirror reflecting a small arrow
+rem-furniture	vremedies	Furniture placement: a chair and a table with a small move arrow
+rem-colours	vremedies	Colour remedy: a palette of three swatches
+rem-copper	vremedies	Copper strip remedy: a thin strip with a small inlay line
+rem-crystals	vremedies	Crystal remedy: a small cluster of crystal points
+rem-salt	vremedies	Salt remedy: a bowl with a few grains
+rem-plants	vremedies	Plant remedy: a plant on a stand
+rem-declutter	vremedies	Clearing remedy: a broom
+rem-water-feature	vremedies	Water feature remedy: a small fountain
+rem-pyramid	vremedies	Pyramid remedy: a small stepped pyramid
+rem-yantra	vremedies	Yantra remedy: a small interlaced triangle diagram in a square frame
+rem-morning-routine	vremedies	Morning routine for a space: a sunrise over a window
+rem-weekly-reset	vremedies	Weekly reset: a calendar row of seven with one marked and a circular arrow
+rem-sound	vremedies	Sound remedy: a small bell with two sound arcs
+astro-lagna	astro	The rising sign, lagna: a horizon with a small arrow rising at its left
+astro-birth-time	astro	Birth time: a clock with a small sunrise
+astro-birth-place	astro	Birth place: a map pin on a small coastline
+astro-birth-date	astro	Birth date: a calendar page
+astro-rectification	astro	Birth time correction: a clock with two small adjusting arrows
+astro-yoga	astro	Yogas, planetary combinations: two small circles joined by a bright line
+astro-aspect	astro	Aspects: a planet circle with three thin sight lines
+astro-navamsa	astro	The navamsa chart: a diamond chart divided into nine small cells
+astro-dashamsa	astro	The dashamsa chart: a diamond chart with a rising line
+astro-mahadasha	astro	A major period: a long bar with one section filled
+astro-antardasha	astro	A sub-period: a short bar inside a longer bar
+astro-transit	astro	Transit: a small planet on an arc across a chart diamond
+astro-sade-sati	astro	Sade Sati: seven and a half small ticks around a ring with a heavy planet dot
+astro-jupiter-transit	astro	Jupiter's transit: a larger planet circle on a wide arc
+astro-muhurta	astro	Choosing a date, muhurta: a calendar day circled with a small sunrise
+astro-manglik	astro	Manglik questions: a small spear glyph over a house diamond
+astro-compatibility	astro	Compatibility: two circles overlapping with a shared lens
+astro-marriage-timing	astro	Timing of marriage: a ring with a small clock
+astro-partner-search	astro	Looking for a partner: a path with a small lamp at its end
+astro-second-marriage	astro	A second marriage: two rings with a small fresh leaf
+astro-family	astro	Family: three arches of different heights under one roof arc
+astro-job-change	astro	A job change: a doorway with an arrow through it
+astro-promotion	astro	A promotion: three ascending steps with a small flag
+astro-business-launch	astro	A launch: a small door sign opening with sun lines
+astro-partnership	astro	A business partnership: two tall bars joined at the top
+astro-leadership	astro	Leadership: a flag on a high pole with three small followers' dots
+astro-exams	astro	Exams: a sheet with a tick and a pencil
+astro-focus	astro	Focus: a small circle with a bright centre point
+astro-stream-choice	astro	Choosing a stream: a path splitting into three
+astro-study-abroad	astro	Study abroad: a small aeroplane over an open book
+astro-child-study	astro	A child's study: a small desk with a star above it
+astro-wellbeing-rhythm	astro	Wellbeing rhythm: a gentle sine wave with a small sun and moon at either end
+astro-stress	astro	Stress patterns: a spiral tightening to a point
+astro-sleep	astro	Sleep: a crescent with three small z-free dots over a pillow line
+astro-energy-low	astro	A low-energy period: a battery-free outline of a small lamp with a low flame
+astro-property-buy	astro	Buying property: a house with a small price-free tag arrow
+astro-property-sell	astro	Selling property: a house with an outward arrow
+astro-relocation	astro	Relocating: a small house, a dotted arc and another small house
+astro-investment	astro	An investment: a seed in a coin
+astro-signing	astro	Signing: a pen over a signature line on a sheet
+astro-legal	astro	A legal matter: a pair of scales
+astro-dispute	astro	A dispute: two arrows pointing at each other, a small gap between
+astro-travel	astro	Travel: a small compass and a suitcase outline
+astro-stalled-project	astro	A stalled project: a bar partly filled with a pause mark
+astro-recurring-obstacle	astro	A recurring obstacle: a circular path with a small block on it
+astro-question-chart	astro	A question chart: a diamond chart with a question dot at its centre
+astro-remedy-mantra	astro	Mantra: a small sound wave rising from a lotus
+astro-remedy-colour	astro	Colour remedy: three overlapping circles in a row
+astro-remedy-direction	astro	Direction remedy: a compass needle beside a seat outline
+astro-remedy-behaviour	astro	Behaviour remedy: a small habit loop with one step marked
+astro-remedy-charity	astro	Giving, daan: an open palm with a small coin falling
+astro-remedy-fasting	astro	Fasting: an empty small bowl with a thin crescent
+astro-remedy-worship	astro	Worship, puja: a small tray with a lamp, flowers and a bell
+astro-remedy-breath	astro	Breath: two soft wind curls inside a circle
+astro-no-remedy	astro	When no remedy is needed: a small closed circle with a check dot
+astro-limits	astro	The limits of astrology: a calm boundary line with a small open door in it
+numc-mulank	numcon	Mulank, the birth day number: a calendar day with a small number badge
+numc-bhagyank	numcon	Bhagyank, the destiny number: the full date with a path arrow to one number
+numc-life-path	numcon	Life path: a winding path ending in a small numeral
+numc-destiny	numcon	Destiny or expression: a signet seal with a numeral
+numc-soul-urge	numcon	Soul urge: a small flame inside a numeral frame
+numc-personality	numcon	Personality: a mask outline with a numeral on its brow (no face)
+numc-birthday	numcon	The birthday number: a small cake-free candle with a numeral
+numc-maturity	numcon	Maturity number: a young sprout and a grown tree on one line
+numc-karma	numcon	Karma numbers: a loop with a small numeral at its knot
+numc-karmic-lessons	numcon	Karmic lessons, missing numbers: a row of nine small boxes with two empty
+numc-master	numcon	Master numbers: two matching numerals joined
+numc-personal-year	numcon	Personal year: a wheel with nine spokes and one marked
+numc-personal-month	numcon	Personal month: a calendar month with a small numeral
+numc-pinnacle	numcon	Pinnacles: four ascending peaks
+numc-challenge	numcon	Challenge numbers: a small block on an ascending line
+numc-annual-forecast	numcon	Annual forecast: a year ring with a small arrow at its start
+numc-relationships	numcon	Relationship numbers: two numerals joined by a small arc
+numc-name	numcon	A name number: a name line with a small total beneath
+numc-initials	numcon	Initials: two large letters in a frame
+numc-nickname	numcon	A nickname: a small tag on a thread
+numc-spelling	numcon	Spelling: a letter with a small insert caret
+numc-name-correction	numcon	Name correction: an eraser mark and a pencil over a letter row
+numc-chaldean	numcon	The Chaldean system: a table with eight columns and a nine-less top row
+numc-pythagorean	numcon	The Pythagorean system: a table of three rows by nine columns
+numc-vedic	numcon	The Vedic system: nine small planet dots arranged in a three by three
+numc-tamil	numcon	The Tamil or Dravidian system: a small temple gopuram outline with a numeral
+numc-western	numcon	The Western modern system: a numeral inside a thought bubble
+numc-loshu-system	numcon	The Chinese Lo Shu system: a small tortoise shell with a grid on it
+numc-money	numcon	Money numerology: a coin with a numeral
+numc-house-number	numcon	House number numerology: a door plate with a numeral
+numc-mobile	numcon	Mobile number: a phone with a short row of digits
+numc-vehicle	numcon	Vehicle number: a number plate
+numc-signature-slant	numcon	Slant of a signature: a rising line and a falling line
+numc-signature-underline	numcon	An underline: a signature with a swash beneath
+numc-signature-dots	numcon	Dots and strokes: a short signature with a dot
+numc-logo	numcon	Logo alignment: a simple mark in a square with registration ticks
+numc-brand-colours	numcon	Brand colours: three small swatches in a row
+numc-letter-count	numcon	Letter count: a row of five boxes with letters
+numc-partners	numcon	Partners' names: two plates side by side
+numc-mental-plane	numcon	The mental plane: the top row of a grid highlighted
+numc-emotional-plane	numcon	The emotional plane: the middle row of a grid highlighted
+numc-practical-plane	numcon	The practical plane: the bottom row of a grid highlighted
+numc-missing-number	numcon	A missing number: a grid with one empty cell
+numc-repeated-number	numcon	A repeated number: a grid with one cell doubled
+numc-remedy-mindset	numcon	Mindset: a small thought bubble with a bright dot
+numc-remedy-sound	numcon	Sound: a small bell with sound arcs
+numc-remedy-colour	numcon	Colour: a swatch beside a numeral
+numc-remedy-habit	numcon	Small habit: a loop with a short step
+numc-limits	numcon	The limits of numerology: a numeral beside a calm boundary line
+brain-pattern	brain	A repeating pattern: a short motif repeated three times, the third fading
+brain-belief	brain	A belief: a small foundation stone under an arch
+brain-habit	brain	A habit: a loop with a short step
+brain-reaction	brain	A reaction: a spark jumping across a gap
+brain-thought	brain	A thought: a small bubble with a dot
+brain-words	brain	The words we use: three short lines of text with a quote mark
+brain-action-loop	brain	A thought, a word, an action: three nodes in a loop
+brain-anchoring	brain	Anchoring: a small anchor on a short line
+brain-reframing	brain	Reframing: a picture frame with a different frame beside it
+brain-meta-model	brain	The meta-model, questions: three stacked small question marks
+brain-timeline	brain	Timeline work: a horizontal line with a marker and a backward arc
+brain-submodalities	brain	Submodalities: a small slider on a track
+brain-origin	brain	Where it began: a small seed beside a date line
+brain-research	brain	What research shows: a magnifying glass over a small chart
+brain-limits	brain	Not therapy: a small bridge line with a gap and a hand reaching to a post
+brain-professional-help	brain	When to see a professional: a door with a calm light
+tap-eyebrow	brain	Tapping point, the eyebrow: a small arc with a dot at its inner end
+tap-side-eye	brain	Tapping point, side of the eye: a small eye outline with a dot at its corner
+tap-under-eye	brain	Tapping point, under the eye: an eye outline with a dot beneath
+tap-under-nose	brain	Tapping point, under the nose: a small nose line with a dot beneath
+tap-chin	brain	Tapping point, the chin: a chin curve with a dot
+tap-collarbone	brain	Tapping point, the collarbone: two short bone lines with a dot
+tap-under-arm	brain	Tapping point, under the arm: an arm outline with a dot at the side
+tap-crown	brain	Tapping point, the crown: a head outline with a dot at the top
+tap-setup	brain	The set-up statement: a speech arc with a small tick
+tap-reminder	brain	The reminder phrase: a short line with a tap mark
+tap-rounds	brain	Rounds: a circle of eight small dots with an arrow
+tap-rating	brain	The rating scale: a short zero to ten line with a marker
+hoo-sorry	brain	I am sorry: a small bowed arch
+hoo-forgive	brain	Please forgive me: two small hands (arcs) opening
+hoo-thanks	brain	Thank you: a small lotus offered on a palm
+hoo-love	brain	I love you: a heart with a short glow
+hoo-cleaning	brain	Cleaning, the practice: a ripple clearing to a still circle
+hoo-responsibility	brain	One hundred percent responsibility: a small arch standing in the middle of a ring
+hoo-family	brain	The family form: three small arches joined by a ring
+breath-work	brain	Breathwork: two soft curls in and out of a circle
+breath-box	brain	Box breathing: a square with an arrow on each side
+affirmations	brain	Affirmations: a short line of text in a frame with a spark
+habit-stacking	brain	Habit stacking: three blocks stacked, the top one smaller
+habit-two-minute	brain	The two-minute rule: a clock face with a small segment filled
+habit-morning	brain	A morning calibration: a sun over a short list
+habit-evidence	brain	Keeping a record: a small notebook with a tick row
+gem-ruby	stones	Ruby: an oval cut gem with a sun glyph in the corner
+gem-pearl	stones	Pearl: a round pearl with a crescent in the corner
+gem-red-coral	stones	Red coral: a branching coral twig with a small Mars glyph
+gem-emerald	stones	Emerald: an emerald-cut gem with a small Mercury glyph
+gem-yellow-sapphire	stones	Yellow sapphire: a cushion-cut gem with a small Jupiter glyph
+gem-diamond	stones	Diamond: a round brilliant with a small Venus glyph
+gem-blue-sapphire	stones	Blue sapphire: a cushion-cut gem with a small Saturn glyph
+gem-hessonite	stones	Hessonite: an oval gem with a small Rahu glyph
+gem-cats-eye	stones	Cat's eye: a cabochon with a thin bright line and a small Ketu glyph
+gem-substitutes	stones	Substitute stones: two small gems with an exchange arc
+gem-natural	stones	A natural stone: a rough crystal in the ground
+gem-treated	stones	A treated stone: a gem with a small flame mark
+gem-dyed	stones	A dyed stone: a gem with a small drop
+gem-synthetic	stones	A synthetic or lab-grown stone: a gem beside a small flask
+gem-certificate	stones	A laboratory certificate: a document with a small gem and a seal
+gem-trial	stones	A trial period: a gem and a small calendar of seven
+gem-metal	stones	The metal of the setting: a ring band
+gem-finger	stones	The finger: a hand with one finger marked
+gem-day	stones	The day to begin: a calendar with one day circled
+gem-weight	stones	The weight: a small balance beside a gem
+gem-care	stones	Caring for a stone: a soft cloth and a gem
+rud-seed	stones	The Rudraksha seed: a ridged bead with a cut section
+rud-tree	stones	The Rudraksha tree: a tree with round fruit
+rud-nepal	stones	Nepal beads: a mountain line and a larger bead
+rud-indonesia	stones	Indonesian beads: an island line and a small bead
+rud-india	stones	Indian beads: a small bead on a leaf
+rud-size	stones	Size: a bead beside a small ruler
+rud-mala	stones	The mala: a loop of beads with a larger guru bead
+rud-wearing	stones	Wearing a Rudraksha: a bead on a cord near a neck line
+rud-care	stones	Caring for a mala: a small drop of oil and a bead
+rud-authenticity	stones	Genuine or not: a bead under a small magnifier
+rud-xray	stones	An X-ray: a bead outline with its inner chambers drawn as lines
+rud-water-test	stones	The water test, unreliable: a bead in a bowl with a small cross mark
+rud-fakes	stones	Common fakes: two beads, one broken-line
+mukhi-1	stones	One mukhi: a bead with one line and a small sun glyph
+mukhi-2	stones	Two mukhi: a bead with two lines and a small crescent
+mukhi-3	stones	Three mukhi: a bead with three lines and a small flame
+mukhi-4	stones	Four mukhi: a bead with four lines and a small open book
+mukhi-5	stones	Five mukhi: a bead with five lines and a small lotus
+mukhi-6	stones	Six mukhi: a bead with six lines and a small spear
+mukhi-7	stones	Seven mukhi: a bead with seven lines and a small coin
+mukhi-8	stones	Eight mukhi: a bead with eight lines and a small elephant head outline
+mukhi-9	stones	Nine mukhi: a bead with nine lines and a small trident-free lotus bud
+mukhi-10	stones	Ten mukhi: a bead with ten lines and a small shell
+mukhi-11	stones	Eleven mukhi: a bead with eleven lines and a small mace
+mukhi-12	stones	Twelve mukhi: a bead with twelve lines and a small sun ring
+mukhi-13	stones	Thirteen mukhi: a bead with thirteen lines and a small bow
+mukhi-14	stones	Fourteen mukhi: a bead with fourteen lines and a small third-eye mark
+gen-session-online	general	An online session: a small screen with an arch inside
+gen-session-person	general	An in-person session: two arches facing across a low table
+gen-whatsapp	general	A WhatsApp message: a speech bubble with a phone handset curve
+gen-call	general	A call: a handset
+gen-email	general	An email: an envelope
+gen-fees	general	The fee: a coin with a small stroke
+gen-time	general	Time: a clock face
+gen-calendar	general	A date: a calendar page
+gen-question	general	A question: a question mark in a bubble
+gen-limits	general	Limits and honesty: a small shield with a plain line
+gen-caution	general	Take care: a small flame under a cupped hand
+gen-privacy	general	Privacy: a closed padlock
+gen-bring-details	general	What to bring: an open folder with a sheet
+gen-bring-plan	general	A plan to send: a floor plan sheet with a north arrow
+gen-bring-name	general	Your name and date of birth: a card with two lines
+gen-bring-photo	general	A photograph: a frame with a mountain line
+gen-couple	general	A couple: two arches side by side joined by a thin arc
+gen-child	general	A child: one small arch with a star
+gen-parents	general	Parents: two tall arches with a small one between
+gen-owner	general	A business owner: an arch with a key
+gen-student	general	A student: an arch with a small open book
+gen-professional	general	A professional: an arch with a briefcase
+gen-homeowner	general	A homeowner: an arch inside a house outline
+gen-buyer	general	A property buyer: an arch beside a house with a key
+gen-investor	general	An investor: an arch with a seed and a coin
+gen-tenant	general	A tenant: an arch with a short lease page
+gen-six-months	general	Six months of guidance: a long arc divided into six
+gen-next-step	general	The next step: a path with a single step marked
+gen-listen	general	Listening first: an ear beside an arch
+gen-explain	general	The reason explained: a line leading to a small lamp
+gen-no-pressure	general	No pressure: an open hand turned palm-down, calm
+gen-mind-first	general	The mind first: a small sun above a line of three points
+page-discovery-session	pages	A discovery session: two armchairs facing each other across a low table with a small lamp on it
+page-ongoing-vastu-guidance	pages	Ongoing Vastu guidance: a floor plan with a small circular arrow and a calendar tick beneath it
+page-energy-balancing	pages	Energy balancing: a still bowl of water with three ripple rings spreading from one drop
+page-career-growth	pages	Career growth: a young tree with a briefcase set among its roots and a small flag on its top branch
+page-legal-matters	pages	Legal matters: a pair of balanced scales with a small clock face on one pan and a sheet on the other
+page-intuitive-consult	pages	Intuitive consultation: an ear in profile beside three small arcs and a single thought dot
+page-business-astro-numerology	pages	Business AstroNumerology: a tall building outline with a small chart diamond on its face and a numeral at its crown
+page-business-logo	pages	Business logo guidance: a simple mark built on a square grid with registration ticks and a compass
+group-begin	taxonomy	Group, where she starts: a doorway with a small lamp above it and a short path leading to it
+group-ongoing	taxonomy	Group, guidance over time: a strip of six equal segments with one marked and a small arrow
+group-energy	taxonomy	Group, energy and balance: three soft concentric ripples around a small lamp flame

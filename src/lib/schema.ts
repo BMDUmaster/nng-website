@@ -1,6 +1,8 @@
 import { site } from "@/content/site";
 import type { Faq } from "@/content/faq";
 import type { Service } from "@/content/services";
+import { serviceHref } from "@/content/services";
+import type { OfferingPage } from "@/content/offerings/types";
 
 /**
  * Structured data. Only confirmed facts: no prices, no ratings or reviews (the client films are not
@@ -20,7 +22,7 @@ export function personSchema() {
       "Narayani Garg offers personal guidance in numerology, vastu and astrology, beginning with the mind, and a hand holding program lasting six months.",
     url: site.url,
     image: `${site.url}/images/narayani-portrait-684.webp`,
-    knowsAbout: ["Numerology", "Vastu", "Astrology", "Mind training"],
+    knowsAbout: ["Numerology", "Vastu", "Astrology", "Brain training", "Gemstones", "Rudraksha"],
     worksFor: { "@type": "Organization", "@id": orgId, name: site.name, url: site.url, sameAs },
     sameAs,
   };
@@ -40,7 +42,7 @@ export function serviceSchema(list: Service[]) {
     description: service.lead,
     provider: { "@id": personId },
     areaServed: "Worldwide",
-    url: `${site.url}/services/#${service.slug}`,
+    url: `${site.url}${serviceHref(service.slug)}`,
   }));
 }
 
@@ -52,5 +54,24 @@ export function programSchema() {
     provider: { "@id": personId },
     areaServed: "Worldwide",
     url: `${site.url}/hand-holding-program/`,
+  };
+}
+
+/** One service page: what it is, who provides it, and where it lives. No price, rating or review is marked up. */
+export function offeringSchema(page: OfferingPage, path: string) {
+  return {
+    "@type": "Service",
+    name: page.title,
+    description: page.metaDescription,
+    provider: { "@id": personId },
+    areaServed: "Worldwide",
+    url: `${site.url}${path}`,
+  };
+}
+
+export function breadcrumbSchema(trail: { label: string; path: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((crumb, index) => ({ "@type": "ListItem", position: index + 1, name: crumb.label, item: `${site.url}${crumb.path}` })),
   };
 }

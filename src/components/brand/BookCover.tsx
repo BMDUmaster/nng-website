@@ -16,12 +16,13 @@ export function BookCover({
       {withChakra && (
         <div className="book-zodiac-wheel" aria-hidden="true">
           <img
-            src={asset("/images/zodiac-chakra.png")}
+            src={asset("/images/zodiac-chakra-660.webp")}
             className="zodiac-chakra"
             alt=""
             width={580}
             height={580}
             loading="lazy"
+            decoding="async"
           />
         </div>
       )}

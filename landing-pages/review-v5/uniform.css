@@ -1,0 +1,139 @@
+/* =============================================================================================================
+   One rhythm for every v5 section (Oct 12): the same heading size, the same vertical padding, calmer card and
+   drawing sizes; kickers keep the star without the rule; phones lose decorative lines that cross content.
+   ============================================================================================================= */
+body.lp-v5 { --h2: clamp(28px, 2.7vw, 40px); --pad: 64px; }
+@media (max-width: 580px) { body.lp-v5 { --pad: 40px; } }
+
+/* Headings and padding. */
+body.lp-v5 main h2 { font-size: var(--h2) !important; line-height: 1.12 !important; }
+body.lp-v5 main :is(.section, .v5-sit2 .section, .v5-prac2 .section, .v5-brain .section, .v5-num .section, .v5-approach2.section) { padding-block: var(--pad) !important; }
+body.lp-v5 .v5-book .bk-inner { padding-block: var(--pad) !important; }
+body.lp-v5 :is(.s2-cards, .s2-tiles) { margin-top: 28px; }
+
+/* Kickers: star only, no rule. */
+body.lp-v5 :is(.bj-kicker, .s2-kicker) span { width: auto; height: auto; background: none; }
+body.lp-v5 :is(.bj-kicker, .s2-kicker) span::after { position: static; font-size: 12px; }
+body.lp-v5 :is(.bj-kicker, .s2-kicker) { gap: 10px; }
+
+/* Situation cards. */
+body.lp-v5 .s2-cards { gap: 18px; }
+body.lp-v5 .s2-card { padding: 20px 22px 18px; border-radius: 22px; }
+body.lp-v5 .s2-no { font-size: 19px; }
+body.lp-v5 .s2-art { height: 130px; margin: 2px 0 10px; }
+body.lp-v5 .s2-moon { width: 116px; height: 116px; margin-left: -50px; }
+body.lp-v5 .s2-art .scenario-art svg { width: 230px !important; }
+body.lp-v5 .s2-card h3 { font-size: clamp(20px, 1.6vw, 24px); }
+body.lp-v5 .s2-foot { padding-top: 14px; }
+body.lp-v5 .s2-go { width: 42px; height: 42px; }
+body.lp-v5 .s2-go svg { width: 17px; height: 17px; }
+
+/* Practice tiles and pill. */
+body.lp-v5 .s2-tiles { gap: 14px; }
+body.lp-v5 .s2-tiles li { gap: 14px; padding: 16px 16px 16px 18px; border-radius: 20px; }
+body.lp-v5 .s2-ic { width: 62px; height: 62px; }
+body.lp-v5 .s2-ic .line-icon { width: 28px; height: 28px; }
+body.lp-v5 .s2-orbit { inset: -7px; }
+body.lp-v5 .s2-name strong { font-size: clamp(18px, 1.4vw, 21px); }
+body.lp-v5 .s2-side { gap: 14px; padding-left: 14px; }
+body.lp-v5 .s2-side em { font-size: 18px; }
+body.lp-v5 .s2-tiles .s2-go { width: 38px; height: 38px; }
+body.lp-v5 .s2-pill { gap: 14px; padding: 6px 6px 6px 22px; font-size: 16px; }
+body.lp-v5 .s2-pill span { width: 40px; height: 40px; }
+body.lp-v5 .s2-arch { width: 230px; height: 380px; }
+body.lp-v5 .s2-branch { width: 180px; }
+
+/* Step cards (Brainology, Numerology, Vastu, Astrology). */
+body.lp-v5 .bj-steps li { grid-template-columns: 40px 58px 1fr 40px; gap: 0 14px; padding: 12px 16px 12px 12px; border-radius: 18px; }
+body.lp-v5 .bj-steps .bj-ic { width: 58px; height: 58px; }
+body.lp-v5 .bj-steps .bj-ic svg { width: 26px; height: 26px; }
+body.lp-v5 .bj-no { font-size: 18px; }
+body.lp-v5 .bj-text strong { font-size: 20px; }
+body.lp-v5 .bj-text span { font-size: 13.5px; }
+body.lp-v5 .bj-go { width: 40px; height: 40px; }
+body.lp-v5 .bj-go svg { width: 17px; height: 17px; }
+body.lp-v5 :is(.bj-steps, .na-steps) { gap: 12px; margin-top: 24px; }
+body.lp-v5 .bj-intro { font-size: 15px; margin-top: 12px; }
+body.lp-v5 .na-steps li { grid-template-columns: 58px 1fr auto 40px; gap: 0 16px; padding: 12px 14px; border-radius: 18px; }
+body.lp-v5 .na-ic { width: 58px; height: 58px; }
+body.lp-v5 .na-ic svg { width: 28px; height: 28px; }
+body.lp-v5 .na-steps strong { padding-left: 16px; font-size: 19px; }
+body.lp-v5 .na-no { padding-right: 16px; font-size: 18px; }
+body.lp-v5 .na-steps .bj-go { width: 40px; height: 40px; }
+
+/* Drawings: a little smaller so they sit level with the text. */
+@media (min-width: 901px) {
+  body.lp-v5 .bj-figure { zoom: 0.82; }
+  body.lp-v5 .bj-inner, body.lp-v5 .na-inner { gap: 32px; }
+  body.lp-v5 .v5-plan.consultation-art.visual-explainer { max-width: 480px; padding: 24px 24px 18px; }
+  body.lp-v5 .v5-approach2 .visual-explainer { max-width: 460px; }
+}
+
+/* Phones: no lines crossing content, tighter tiles. */
+@media (max-width: 800px) {
+  body.lp-v5 .s2-arcs, body.lp-v5 .s2-decor { display: none; }
+}
+@media (max-width: 580px) {
+  body.lp-v5 .s2-card { padding: 18px 18px 16px; }
+  body.lp-v5 .s2-art { height: 120px; }
+  body.lp-v5 .s2-card h3 { font-size: 22px; }
+  body.lp-v5 .s2-tiles { gap: 10px; }
+  body.lp-v5 .s2-tiles li { gap: 8px; padding: 14px 12px 12px; }
+  body.lp-v5 .s2-ic { width: 46px; height: 46px; }
+  body.lp-v5 .s2-ic .line-icon { width: 22px; height: 22px; }
+  body.lp-v5 .s2-orbit { inset: -5px; }
+  body.lp-v5 .s2-name strong { font-size: 16px; }
+  body.lp-v5 .s2-side { top: 12px; right: 10px; bottom: 10px; }
+  body.lp-v5 .s2-side em { font-size: 14px; }
+  body.lp-v5 .s2-tiles .s2-go { width: 28px; height: 28px; }
+  body.lp-v5 .bj-steps li { grid-template-columns: 24px 40px 1fr 28px; gap: 0 10px; padding: 10px 10px 10px 8px; }
+  body.lp-v5 .bj-steps .bj-ic { width: 40px; height: 40px; }
+  body.lp-v5 .bj-steps .bj-ic svg { width: 20px; height: 20px; }
+  body.lp-v5 .bj-no { font-size: 14px; }
+  body.lp-v5 .bj-text strong { font-size: 17px; }
+  body.lp-v5 .bj-text span { font-size: 12.5px; }
+  body.lp-v5 .bj-go { width: 28px; height: 28px; }
+  body.lp-v5 :is(.bj-steps, .na-steps) { gap: 8px; margin-top: 10px; }
+  body.lp-v5 .na-steps li { grid-template-columns: 40px 1fr auto 30px; gap: 0 10px; padding: 8px 10px; }
+  body.lp-v5 .na-ic { width: 40px; height: 40px; }
+  body.lp-v5 .na-ic svg { width: 20px; height: 20px; }
+  body.lp-v5 .na-steps strong { padding-left: 10px; font-size: 16px; }
+  body.lp-v5 .na-no { padding-right: 10px; font-size: 14px; }
+  body.lp-v5 .na-steps .bj-go { width: 30px; height: 30px; }
+}
+@media (max-width: 900px) { body.lp-v5 .bj-glance-tail { display: none; } }
+@media (max-width: 580px) { body.lp-v5 .na-glance { font-size: 13px; } }
+body.lp-v5 :is(.bj-glance, .na-glance) .bj-glance-tail { margin: 0; font-size: inherit; color: inherit; }
+@media (min-width: 901px) {
+body.lp-v5[data-page="astrology"] .bj-label { max-width: 210px; }
+body.lp-v5[data-page="astrology"] .bj-label strong { font-size: 22px; }
+body.lp-v5[data-page="astrology"] .bj-node[data-visual-step="2"] { top: calc(var(--y) - 20px); }
+}
+/* Phones: three equal columns for the journey stops; long names wrap neatly. */
+@media (max-width: 900px) {
+  body.lp-v5 .bj-nodes { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+  body.lp-v5 .bj-label { max-width: none; }
+}
+@media (max-width: 580px) {
+  body.lp-v5 .bj-label strong { font-size: 15px; line-height: 1.2; }
+  body.lp-v5 .bj-label span { font-size: 10.5px; }
+}
+
+/* Three client voices sit in three columns. */
+@media (min-width: 901px) { body.lp-v5 .v5-quotes-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Hand Holding: the consultation-or-programme comparison in the v5 rhythm. */
+body.lp-v5 .programme-comparison { padding-block: var(--pad) !important; }
+body.lp-v5 .programme-comparison .section-heading { margin-bottom: 28px; }
+body.lp-v5 .programme-comparison .comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+body.lp-v5 .programme-comparison .comparison-grid article { display: flex; flex-direction: column; gap: 8px; padding: 26px; border-radius: 22px; background: linear-gradient(180deg, #FFFDF9, #FBF6EE); box-shadow: 0 0 0 1px rgb(184 138 69 / 0.2), 0 26px 46px -36px rgb(60 24 61 / 0.5); }
+body.lp-v5 .programme-comparison .comparison-grid article:last-child { background: linear-gradient(140deg, #4A2049, #3C183D 55%, #231E25); }
+body.lp-v5 .programme-comparison h3 { margin: 0; font-size: clamp(20px, 1.8vw, 26px); }
+body.lp-v5 .programme-comparison p:not(.eyebrow) { margin: 0; font-size: 14.5px; }
+body.lp-v5 .programme-comparison .text-link { margin-top: auto; padding-top: 10px; }
+body.lp-v5 .comparison-visual .line-icon { width: 34px; height: 34px; }
+@media (max-width: 700px) {
+  body.lp-v5 .programme-comparison .comparison-grid { grid-template-columns: 1fr; gap: 12px; }
+  body.lp-v5 .programme-comparison .comparison-grid article { padding: 20px 18px; border-radius: 20px; }
+}
+@media (max-width: 580px) { body.lp-v5 .v5-blob, body.lp-v5 .v5-leaf-r { display: none; } }

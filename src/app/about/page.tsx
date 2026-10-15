@@ -1,203 +1,174 @@
 import type { Metadata } from "next";
-import { KundliBackdrop } from "@/components/art/Sky";
-import { BookCover } from "@/components/brand/BookCover";
-import { Portrait } from "@/components/brand/Portrait";
+import Link from "next/link";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
-import { QuoteTrack } from "@/components/sections/Sections";
-import { SocialSection } from "@/components/sections/SocialSection";
+import { ClientWords } from "@/components/sections/ClientWords";
+import { ClienteleNote } from "@/components/sections/ClienteleNote";
+import { InstagramReels } from "@/components/sections/HomeLower";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Reveal } from "@/components/ui/Reveal";
 import { beliefs, bookTitle, story } from "@/content/about";
+import { site } from "@/content/site";
 import { voices } from "@/content/voices";
-import { asset } from "@/lib/assets";
+import { asset, assetSet } from "@/lib/assets";
 import { personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Narayani Garg | Life Strategist & Vedic Practitioner",
+  title: "About Narayani Garg | Psychic Spiritual Mentor",
   description:
-    "Narayani Garg, The Life Strategist: an MBA and a decade in business before a practice in numerology, vastu and astrology that begins with the mind.",
+    "Meet Narayani Garg, Psychic Spiritual Mentor. Her guidance in numerology, Vastu and astrology begins with the mind and the patterns behind your decisions.",
   alternates: { canonical: "/about/" },
 };
 
-export default function AboutPage() {
-  const experiences = [
-    {
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-        </svg>
-      ),
-      number: "10+ Years",
-      title: "Manufacturing business",
-      desc: "After her MBA, Narayani spent about a decade running a kidswear manufacturing business. That experience informs how she listens to questions about work and decisions.",
-    },
-    {
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-          <path d="M2 12h20" />
-        </svg>
-      ),
-      number: "15+ Years",
-      title: "Professional experience",
-      desc: "Her work across business and personal guidance shapes how she listens to questions about choices, habits and change.",
-    },
-    {
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-          <circle cx="9" cy="7" r="4" />
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
-      ),
-      number: "Online",
-      title: "India and abroad",
-      desc: "Personal consultations are available online, including for people living outside India.",
-    },
-  ];
+const background = [
+  // copy-lint-allow: doctorate subject explicitly confirmed by Aryan on 4 Oct 2026; no institution or date claimed.
+  { number: "PhD", title: "Occult Sciences", desc: "A doctorate in Occult Sciences." },
+  { number: "15+ Years", title: "Professional experience", desc: "Personal guidance through astrology, numerology, Vastu and mindset work." },
+];
 
+function Arrow() {
   return (
-    <>
+    <span className="cn-arrow" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2.5 6h7M6.5 3l3 3-3 3" />
+      </svg>
+    </span>
+  );
+}
+
+/** About: a plum opening with her film, her background, her story, what she holds to, her book, client words, YouTube. */
+export default function AboutPage() {
+  return (
+    <div className="cn ab2">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema()] }} />
 
-      <section className="about-hero-section section-wrap" aria-labelledby="about-hero-title">
-        <div className="about-hero-grid">
-          <div className="about-hero-copy">
-            <p className="kicker">THE PERSON BEHIND THE PRACTICE</p>
-            <h1 id="about-hero-title">Meet Narayani Garg</h1>
-            <p>She brings a business owner&apos;s eye to decisions and a practitioner&apos;s understanding of astrology, numerology and vastu. Her starting point is the person making the choice.</p>
-            <div className="about-hero-actions">
-              <EnquiryTrigger source="about-hero" primary>Enquire about a consultation</EnquiryTrigger>
-              <a className="text-link" href="#experience">Read her story</a>
+      <section className="cn-hero" aria-labelledby="about-hero-title">
+        <div className="cn-hero-inner">
+          <div className="cn-hero-copy" data-reveal="">
+            <nav className="cn-crumbs" aria-label="Breadcrumb">
+              <Link prefetch={false} href="/">Home</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">About</span>
+            </nav>
+            <p className="cn-kicker">{site.title}</p>
+            <h1 id="about-hero-title">
+              Meet <em>Narayani Garg</em>
+            </h1>
+            <p className="cn-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
+            <blockquote className="ab2-hero-quote">
+              <p>“The spirit who is doing a ritual is spiritual.”</p>
+            </blockquote>
+            <div className="cn-actions">
+              <EnquiryTrigger className="cn-cta" source="about-hero" primary>
+                <span>Enquire about a consultation</span>
+                <Arrow />
+              </EnquiryTrigger>
+              <a className="cn-ghost" href="#story">
+                Read her story
+              </a>
             </div>
           </div>
-          <figure className="about-hero-photo">
-            <img
-              src={asset("/images/narayani-about-authentic.webp")}
-              alt="Narayani Garg at her practice"
-              width={1257}
-              height={2048}
-              loading="eager"
-              fetchPriority="high"
-            />
+          <figure className="ab2-film" data-reveal="">
+            <div className="ab2-film-frame">
+              <video controls playsInline preload="metadata" poster={asset("/images/narayani-about-authentic-560.webp")} aria-label="Introduction to Narayani Garg">
+                <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
+            </div>
+            <figcaption>Watch Narayani’s introduction</figcaption>
           </figure>
         </div>
       </section>
 
-      {/* Experience & Credentials Showcase Section */}
-      <section className="about-experience-section section-space" id="experience" aria-labelledby="experience-title">
-        <div className="section-wrap">
-          <div className="section-heading centered">
-            <p className="experience-kicker">Business and practice</p>
-            <h2 id="experience-title" className="experience-main-title">Business experience, then a new practice</h2>
-            <p className="experience-subtitle">
-              She starts with the mind, then uses numerology, Vastu and astrology where they help answer the question you bring.
-            </p>
-          </div>
-
-          <div className="experience-grid">
-            {experiences.map((item, idx) => (
-              <div className="experience-card" key={idx}>
-                <div className="experience-card-header">
-                  <div className="experience-icon-box">{item.icon}</div>
-                  <span className="experience-number-badge">{item.number}</span>
-                </div>
-                <h3 className="experience-card-title">{item.title}</h3>
-                <p className="experience-card-desc">{item.desc}</p>
-              </div>
+      <section className="cn-sec ab2-bg" id="experience" aria-labelledby="experience-title">
+        <div className="cn-inner">
+          <header className="cn-head" data-reveal="">
+            <p className="cn-kicker cn-kicker-dark">Credentials</p>
+            <h2 id="experience-title">Her background</h2>
+          </header>
+          <ul className="ab2-stats">
+            {background.map((item, i) => (
+              <li key={item.title} data-reveal="" style={{ "--d": `${i * 100}ms` } as React.CSSProperties}>
+                <strong>{item.number}</strong>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </li>
             ))}
-          </div>
-
+          </ul>
         </div>
       </section>
 
-      <section className="section-wrap section-space founder-film" aria-labelledby="about-founder-film-title">
-        <div className="founder-film-copy">
-          <p className="kicker">IN HER OWN WORDS</p>
-          <h2 id="about-founder-film-title">Hear from Narayani</h2>
-          <p>A short introduction to the person and perspective behind the practice.</p>
-        </div>
-        <video
-          className="founder-film-video"
-          controls
-          playsInline
-          preload="none"
-          poster={asset("/images/narayani-about-authentic.webp")}
-          aria-label="Introduction to Dr. Narayani Garg"
-        >
-          <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
-          Your browser does not support video playback.
-        </video>
-      </section>
-
-      {/* Story Timeline Section */}
-      <section className="band has-backdrop" aria-labelledby="story-title">
-        <KundliBackdrop className="in-story" />
-        <div className="section-wrap section-space">
-          <div className="section-heading">
-            <h2 id="story-title">How she came to this work</h2>
+      <section className="cn-sec ab2-story" id="story" aria-labelledby="story-title">
+        <div className="cn-inner ab2-story-grid">
+          <div className="ab2-story-visual" data-reveal="">
+            <div className="cn-arch">
+              <picture>
+                <source type="image/avif" srcSet={assetSet("/images/narayani-cover-portrait-480.avif 480w, /images/narayani-cover-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 360px" />
+                <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="" width={684} height={855} loading="lazy" />
+              </picture>
+            </div>
           </div>
-          <div className="story-grid">
-            <Portrait photo="gold" className="story-portrait" sizes="(max-width: 680px) 58vw, 22vw" />
-            <ol className="story">
-              {story.map((item) => (
-                <li key={item.step}>
-                  <span className="story-step">{item.step}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </li>
-              ))}
+          <div>
+            <header className="cn-head ab2-left" data-reveal="">
+              <p className="cn-kicker cn-kicker-dark">Her story</p>
+              <h2 id="story-title">The story behind her name and practice</h2>
+              <p>In her book, Narayani shares the personal moments that shaped her sense of purpose.</p>
+            </header>
+            <ol className="ab2-timeline" data-reveal="">
+              {story
+                .filter((item) => item.step !== "The book" && item.step !== "The practice")
+                .map((item, i) => (
+                  <li key={item.step} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
+                    <span className="ab2-dot" aria-hidden="true" />
+                    <span className="ab2-step">{item.step}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </li>
+                ))}
             </ol>
           </div>
         </div>
       </section>
 
-      {/* Beliefs Section */}
-      <section className="band" aria-labelledby="beliefs-title">
-        <div className="section-wrap section-space">
-          <div className="section-heading">
+      <section className="cn-sec ab2-beliefs" aria-labelledby="beliefs-title">
+        <div className="cn-inner">
+          <header className="cn-head" data-reveal="">
+            <p className="cn-kicker">Her principles</p>
             <h2 id="beliefs-title">What she holds to</h2>
-          </div>
-          <div className="beliefs">
-            {beliefs.map((belief) => (
-              <div className="belief" key={belief.title}>
+          </header>
+          <ul className="ab2-principles">
+            {beliefs.map((belief, i) => (
+              <li key={belief.title} data-reveal="" style={{ "--d": `${i * 100}ms` } as React.CSSProperties}>
+                <span className="ab2-num">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{belief.title}</h3>
                 <p>{belief.text}</p>
-              </div>
+              </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="cn-sec ab2-book" aria-labelledby="book-title">
+        <div className="cn-inner ab2-book-grid">
+          <div className="ab2-book-cover" data-reveal="">
+            <img src={asset("/images/book-cover-660.webp")} srcSet={assetSet("/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w")} sizes="(max-width: 680px) 60vw, 320px" width={660} height={934} alt={`The cover of ${bookTitle}, by Narayani Garg`} loading="lazy" />
+          </div>
+          <div data-reveal="">
+            <p className="cn-kicker cn-kicker-dark">Her book</p>
+            <h2 id="book-title">
+              <em>{bookTitle}</em>
+            </h2>
+            <p className="ab2-book-lead">A 21 day companion for reflection and inner practice, exploring the chakras, EFT and Ho’oponopono.</p>
+            <blockquote className="ab2-book-quote">
+              <p>“When you change your mind, you change your world.”</p>
+              <cite>From the book</cite>
+            </blockquote>
           </div>
         </div>
       </section>
 
-      {/* Book Feature Section */}
-      <section className="section-wrap section-space book-feature" aria-labelledby="book-title">
-        <BookCover />
-        <div>
-          <h2 id="book-title">
-            <em>{bookTitle}</em>
-          </h2>
-          <p>Her book explores the mind, daily habits, energy and the chakras through a practice for each of its 21 days.</p>
-          <div className="method-quote">
-            <p>“When you change your mind, you change your world.”</p>
-            <span>From the book</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="band" aria-labelledby="voices-title">
-        <div className="section-wrap section-space">
-          <div className="section-heading centered">
-            <h2 id="voices-title">In their words</h2>
-            <p>Clients share what brought them to Narayani.</p>
-          </div>
-          <QuoteTrack voices={[voices.shelley, voices.vanshika, voices.shashi]} label="Client testimonials" />
-        </div>
-      </section>
-
-      <SocialSection platform="youtube" />
-    </>
+      <ClientWords voices={[voices.shelley, voices.vanshika, voices.shashi]} note={<ClienteleNote />} />
+      <InstagramReels platform="youtube" />
+      <Reveal />
+    </div>
   );
 }

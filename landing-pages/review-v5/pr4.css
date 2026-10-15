@@ -1,0 +1,73 @@
+/* =============================================================================================================
+   Brainology "What the program draws on" (Oct 13 k), from the approved reference: six practice cards with a photograph
+   each, on cream with deep green and gold. Compact rows on phones so all six fit one screen.
+   ============================================================================================================= */
+body.lp-v5 .pr4 { --g-ink: #1C3A2C; --g-deep: #173628; position: relative; overflow: hidden; background: radial-gradient(40% 60% at 92% 0%, rgb(64 120 88 / 0.12), transparent 70%), radial-gradient(40% 50% at 0% 100%, rgb(215 184 107 / 0.16), transparent 70%), linear-gradient(180deg, #FBF7EF, #F4ECDD); }
+body.lp-v5 .pr4-inner { width: min(1280px, calc(100% - 64px)); margin-inline: auto; padding-block: 52px 40px; }
+body.lp-v5 .pr4-head { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: end; gap: 40px; }
+body.lp-v5 .pr4-kicker { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: #8A6A2E; }
+body.lp-v5 .pr4-kicker > span { color: #B58A3E; }
+body.lp-v5 .pr4-kicker i { width: 100px; height: 1px; background: rgb(181 138 62 / 0.5); }
+body.lp-v5 .pr4 h2 { margin: 12px 0 0; font-family: var(--display); font-weight: 400; font-size: clamp(32px, 2.9vw, 46px) !important; line-height: 1.1 !important; color: var(--g-ink); }
+body.lp-v5 .pr4 h2 em { font-style: italic; padding-right: 0.08em; background: linear-gradient(100deg, #9A6F26, #C49A4A 50%, #A47A30); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.lp-v5 .pr4-script { display: grid; margin: 0 0 4px; font-family: "Allura", "Great Vibes", cursive; font-size: 30px; line-height: 1; color: #8A6A2E; transform: rotate(-8deg); }
+body.lp-v5 .pr4-script span + span { padding-left: 0.8em; }
+
+body.lp-v5 .pr4-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 26px 0 0; padding: 0; list-style: none; }
+body.lp-v5 .pr4-grid li { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 40%; height: 196px; overflow: hidden; border-radius: 20px; background: #FFFDF8; box-shadow: 0 0 0 1px rgb(181 138 62 / 0.2), 0 22px 40px -30px rgb(60 50 30 / 0.45); transition: transform 0.5s var(--ease), box-shadow 0.5s ease; }
+body.lp-v5 .pr4-grid li:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px rgb(181 138 62 / 0.45), 0 30px 50px -30px rgb(60 50 30 / 0.5); }
+body.lp-v5 .pr4-text { padding: 18px 8px 18px 22px; }
+body.lp-v5 .pr4-top { display: flex; align-items: center; gap: 12px; margin: 0; }
+body.lp-v5 .pr4-top em { font-style: normal; font-family: var(--display); font-size: 24px; line-height: 1; color: #B58A3E; }
+body.lp-v5 .pr4-top span { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #2A5240, var(--g-deep)); color: #E3C47E; box-shadow: 0 0 0 3px rgb(215 184 107 / 0.25), 0 8px 16px -8px rgb(20 50 35 / 0.6); }
+body.lp-v5 .pr4-top svg { width: 20px; height: 20px; }
+body.lp-v5 .pr4-grid h3 { margin: 14px 0 0; font-family: var(--display); font-weight: 400; font-size: 21px; line-height: 1.15; color: var(--g-ink); }
+body.lp-v5 .pr4-grid p:not(.pr4-top) { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #5C605D; }
+body.lp-v5 .pr4-grid img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: radial-gradient(130% 150% at 100% 50%, #000 70%, transparent 71%); mask-image: radial-gradient(130% 150% at 100% 50%, #000 70%, transparent 71%); transition: transform 1.4s var(--ease); }
+body.lp-v5 .pr4-grid li:hover img { transform: scale(1.05); }
+body.lp-v5 .pr4-foot { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 22px 0 0; font-size: 11.5px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: #8A6A2E; }
+body.lp-v5 .pr4-foot i { width: 100px; height: 1px; background: rgb(181 138 62 / 0.45); }
+body.lp-v5 .pr4-foot b { font-weight: 400; }
+
+@media (prefers-reduced-motion: no-preference) {
+  body.lp-v5 .pr4-head > *, body.lp-v5 .pr4-grid li, body.lp-v5 .pr4-foot { opacity: 0; translate: 0 16px; transition: opacity 0.8s ease, translate 0.8s var(--ease), transform 0.5s var(--ease), box-shadow 0.5s ease; }
+  body.lp-v5 .pr4.is-on .pr4-head > *, body.lp-v5 .pr4.is-on .pr4-grid li, body.lp-v5 .pr4.is-on .pr4-foot { opacity: 1; translate: 0 0; }
+  body.lp-v5 .pr4.is-on .pr4-head > :nth-child(2) { transition-delay: 0.15s; } body.lp-v5 .pr4.is-on .pr4-head > :nth-child(3) { transition-delay: 0.25s; }
+  body.lp-v5 .pr4.is-on .pr4-grid li { transition-delay: calc(0.25s + var(--i) * 0.09s), calc(0.25s + var(--i) * 0.09s), 0s, 0s; }
+  body.lp-v5 .pr4.is-on .pr4-foot { transition-delay: 0.9s; }
+}
+
+@media (max-width: 1240px) {
+  body.lp-v5 .pr4-script { display: none; }
+  body.lp-v5 .pr4-head { grid-template-columns: minmax(0, 1fr) auto; }
+  body.lp-v5 .pr4-grid li { grid-template-columns: minmax(0, 1fr) 36%; height: 200px; }
+  body.lp-v5 .pr4-text { padding: 16px 6px 16px 18px; }
+  body.lp-v5 .pr4-grid h3 { font-size: 19px; margin-top: 12px; }
+  body.lp-v5 .pr4-grid p:not(.pr4-top) { font-size: 12.5px; }
+}
+@media (max-width: 1000px) {
+  body.lp-v5 .pr4-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* Phones: compact rows, photograph as a thumbnail. */
+@media (max-width: 680px) {
+  body.lp-v5 .pr4-inner { width: calc(100% - 40px); padding-block: 34px 30px; }
+  body.lp-v5 .pr4-head { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  body.lp-v5 .pr4-kicker { font-size: 10.5px; letter-spacing: 0.22em; } body.lp-v5 .pr4-kicker i { width: 30px; }
+  body.lp-v5 .pr4 h2 { margin-top: 8px; font-size: 27px !important; }
+  body.lp-v5 .pr4-cta { justify-self: start; }
+  body.lp-v5 .pr4-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 16px; }
+  body.lp-v5 .pr4-grid li { grid-template-columns: 64px minmax(0, 1fr); align-items: center; gap: 12px; height: auto; padding: 8px 12px 8px 8px; border-radius: 16px; }
+  body.lp-v5 .pr4-grid img { order: -1; width: 64px; height: 64px; border-radius: 12px; -webkit-mask-image: none; mask-image: none; }
+  body.lp-v5 .pr4-text { padding: 0; }
+  body.lp-v5 .pr4-top { display: none; }
+  body.lp-v5 .pr4-grid h3 { margin: 0; font-size: 17px; }
+  body.lp-v5 .pr4-grid p:not(.pr4-top) { margin-top: 2px; font-size: 12px; line-height: 1.4; }
+  body.lp-v5 .pr4-foot { display: none; }
+}
+
+/* Icons in the green discs: force the gold line, undo the shared draw-on state; show the stones whole. */
+body.lp-v5 .pr4-top .line-icon, body.lp-v5 .pr4-top .line-icon * { color: #E9CD8A !important; stroke: #E9CD8A !important; stroke-width: 2 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; animation: none !important; }
+body.lp-v5 .pr4-grid li:nth-child(6) img { object-position: 50% 80%; }
+body.lp-v5 .pr4-grid li:nth-child(1) img { object-position: 30% 50%; }
+body.lp-v5 .pr4-grid li { grid-template-rows: minmax(0, 1fr); }
+@media (max-width: 680px) { body.lp-v5 .pr4-grid li { grid-template-rows: auto; } }
