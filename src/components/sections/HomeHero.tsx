@@ -119,10 +119,10 @@ function branch(cls: string, leaves = 9, flip = false) {
 const sun = `<svg class="hm-sun-top" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="16" fill="currentColor"/><circle cx="60" cy="60" r="24" fill="none" stroke="currentColor" stroke-width="1"/>${Array.from({ length: 24 }, (_, i) => { const a = (i * 15 * Math.PI) / 180; const r = i % 2 ? 40 : 56; return `<path d="M${(60 + 28 * Math.cos(a)).toFixed(1)} ${(60 + 28 * Math.sin(a)).toFixed(1)}L${(60 + r * Math.cos(a)).toFixed(1)} ${(60 + r * Math.sin(a)).toFixed(1)}" stroke="currentColor" stroke-width="${i % 2 ? 0.8 : 1.2}"/>`; }).join("")}</svg>`;
 
 const practiceCards = [
-  { name: "Brainology", note: "Mindset & personal growth", href: "/services/brain-training/", icon: svg('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22M12 11H9.5M12 17h-3M20 13h2.5M20 19h3"/>') },
-  { name: "Numerology", note: "Know yourself better", href: "/services/numerology/", icon: '<svg viewBox="0 0 32 32" aria-hidden="true"><text x="9" y="14" text-anchor="middle">1</text><text x="23" y="14" text-anchor="middle">2</text><text x="9" y="28" text-anchor="middle">3</text><text x="23" y="28" text-anchor="middle">4</text></svg>' },
-  { name: "Vastulogy", note: "Harmonise your space", href: "/services/vastu/", icon: svg('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>') },
-  { name: "Astrology", note: "Guidance for a brighter path", href: "/services/astrology/", icon: svg('<circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="7"/><path d="M16 4v24M4 16h24M7.5 7.5l17 17M24.5 7.5l-17 17"/><circle cx="16" cy="16" r="2" fill="currentColor"/>') },
+  { name: "Brainology", note: "Understand your mind", href: "/services/brain-training/", icon: svg('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22M12 11H9.5M12 17h-3M20 13h2.5M20 19h3"/>') },
+  { name: "Numerology", note: "Discover your numbers", href: "/services/numerology/", icon: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="16" cy="10" r="6.5"/><circle cx="10" cy="21" r="6.5"/><circle cx="22" cy="21" r="6.5"/><text x="16" y="10.5" text-anchor="middle" dominant-baseline="central">3</text><text x="10" y="21.5" text-anchor="middle" dominant-baseline="central">7</text><text x="22" y="21.5" text-anchor="middle" dominant-baseline="central">9</text></svg>' },
+  { name: "Vastulogy", note: "Create harmony in your space", href: "/services/vastu/", icon: svg('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/><path d="M21 7V4h3v5.5"/>') },
+  { name: "Astrology", note: "Gain deeper life insights", href: "/services/astrology/", icon: svg('<circle cx="16" cy="16" r="7.5"/><ellipse cx="16" cy="16" rx="14" ry="4.6" transform="rotate(-20 16 16)"/>') },
 ];
 
 const html = (markup: string) => ({ __html: markup });
@@ -154,7 +154,7 @@ export function HomeHero() {
             </span>
           </p>
           <h1 id="hero-title">
-            Let’s talk about <em>what’s on your mind.</em>
+            Let’s talk about <em><span className="hm-whats">what’s</span> <br className="hm-br-m" />on your mind.</em>
           </h1>
           <div className="hm-rule" aria-hidden="true">
             <i />

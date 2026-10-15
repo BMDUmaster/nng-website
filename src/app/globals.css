@@ -17844,3 +17844,96 @@ footer.site-footer.ft {
   .hm-cta-wa { width: 44px; height: 44px; }
   .hm-play { width: 40px; height: 40px; }
 }
+
+/* Homepage hero, phones pass 6 (Oct 15, "Luxe Spiritual Guidance" banner). Phones only; desktop untouched. */
+.hm-br-m { display: none; }
+@media (max-width: 900px) {
+  .hm { padding-bottom: 26px; background: linear-gradient(180deg, #FBF8EF 0%, #F7F2E4 100%); }
+  .hm-room, .hm-sun-wrap, .hm-ring-wrap, .hm-sky-wrap .hm-const { display: none; }
+
+  /* Heading: "Let's talk / about what's / on your mind." */
+  .hm h1 { max-width: 64%; font-size: clamp(33px, 10vw, 44px); line-height: 1.04; }
+  .hm h1 em { display: inline; }
+  .hm-whats { font-style: normal; font-weight: 600; color: var(--hm-green); letter-spacing: -0.02em; }
+  .hm-br-m { display: inline; }
+  .hm-lead { max-width: 58%; }
+
+  /* Ring with medallions top-right, a soft green glow, Narayani in front of it. */
+  .hm-visual { position: static; }
+  .hm-stage { position: absolute; left: 49vw; right: auto; top: 34px; width: 50vw; transform: none; }
+  .hm-disc { inset: -7%; border-radius: 50%; background: radial-gradient(circle, rgb(255 252 236 / 0.95) 0%, rgb(247 243 222 / 0.9) 40%, rgb(206 220 186 / 0.95) 62%, rgb(196 212 176 / 0) 71%); }
+  .hm-ring2-wrap { display: block; position: absolute; inset: 0; }
+  .hm-ring2 { width: 100%; height: 100%; overflow: visible; color: #C49A4A; filter: drop-shadow(0 0 5px rgb(255 244 210 / 1)); }
+  .hm-ring2 .hm-medal { fill: rgb(255 251 238 / 0.6); }
+  .hm-ring2 text { fill: #A7792E; stroke: none; font-size: 32px; text-anchor: middle; dominant-baseline: central; font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Apple Symbols", serif; }
+  .hm-person { left: 50%; right: auto; top: 13%; height: min(150vw, 620px); transform: translateX(-50%); }
+
+  /* Leaves around the ring and the handwritten words below it. */
+  .hm-desk { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .hm-panel, .hm-corner { display: none; }
+  .hm-leaf-l { position: absolute; left: 41vw; top: 70px; width: 15vw; height: auto; transform: rotate(-14deg); }
+  .hm-script { position: absolute; left: 76vw; top: min(76vw, 320px); display: grid; margin: 0; font-family: var(--font-script), cursive; font-size: clamp(19px, 5.4vw, 24px); line-height: 1.1; color: #3E3A33; transform: rotate(-16deg); transform-origin: 0 0; }
+  .hm-script span:nth-child(2) { margin-left: 0.4em; }
+
+  /* Deep green band with a lotus, behind the four practice cards. */
+  .hm-foot { display: block; position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; height: 250px; pointer-events: none; }
+  .hm-hills2 { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hm-h-back { fill: #1F5640; }
+  .hm-h-front { fill: #123A2B; }
+  .hm-h-line { fill: none; stroke: #C9A256; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+  .hm-flora { position: absolute; left: -16vw; bottom: 168px; width: 34vw; height: auto; transform: scaleX(-1); }
+
+  /* Four tall arched cards: icon, name, a short gold line, a note and a gold arrow on the edge. */
+  .hm-practices { grid-template-columns: repeat(4, 1fr); gap: 8px; width: calc(100% - 20px); margin: 46px auto 16px; }
+  .hm-practices a {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: start;
+    gap: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 18px 4px 26px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #1F5640 0%, #133E2D 100%);
+    box-shadow: inset 0 0 0 1.4px #C9A256, inset 0 0 0 4px rgb(18 58 43 / 1), inset 0 0 0 5px rgb(201 162 86 / 0.35), 0 18px 30px -20px rgb(0 0 0 / 0.6);
+    overflow: visible;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .hm-pr-icon { width: auto; height: auto; background: none; box-shadow: none; color: #DDB86A; }
+  .hm-pr-icon svg { width: 38px; height: 38px; }
+  .hm-pr-num svg text { fill: #DDB86A; font-family: var(--font-display), serif; font-size: 7.5px; font-weight: 600; stroke: none; }
+  .hm-pr-text { justify-items: center; gap: 0; padding: 0; }
+  .hm-pr-text strong { margin-top: 8px; font-family: var(--sans); font-weight: 600; font-size: 12.5px; color: #FFFFFF; }
+  .hm-pr-text strong::after { content: ""; display: block; width: 22px; height: 1.5px; margin: 7px auto 6px; background: #C9A256; }
+  .hm-pr-text small { font-size: 10.5px; line-height: 1.3; color: rgb(255 255 255 / 0.85); }
+  .hm-pr-go { position: absolute; top: auto; right: auto; left: 50%; bottom: -13px; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(180deg, #F0D08A, #C9A256); box-shadow: 0 4px 10px -4px rgb(0 0 0 / 0.5); color: #123A2B; font-size: 14px; transform: translateX(-50%); }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .hm-ring2 { animation: hm-turn 160s linear infinite; }
+  .hm-ring2 text { animation: hm-turn-back 160s linear infinite; transform-box: fill-box; transform-origin: center; }
+  .hm-leaf-l { animation: hm-sway 8s ease-in-out infinite; }
+}
+@media (max-width: 380px) {
+  .hm-pr-text strong { font-size: 11.5px; }
+  .hm-pr-text small { font-size: 9.5px; }
+  .hm-pr-icon svg { width: 32px; height: 32px; }
+}
+@media (max-width: 900px) {
+  .hm h1 { max-width: 60%; font-size: clamp(30px, 8.9vw, 40px); }
+  .hm h1 em { white-space: nowrap; }
+  .hm-desk { z-index: 4; }
+  .hm-script { left: 79vw; top: min(84vw, 340px); text-shadow: 0 0 8px #FBF6EC; }
+  .hm-foot { z-index: 2; }
+  .hm-flora { left: -13vw; bottom: 150px; width: 28vw; }
+  .hm-person { height: min(140vw, 580px); }
+}
+@media (max-width: 900px) {
+  .hm-inner { position: static; }
+  .hm-stage { z-index: 1; left: 51vw; }
+  .hm-desk { z-index: 2; }
+  .hm-copy { z-index: 3; }
+  .hm-leaf-l { left: 44vw; top: 120px; width: 12vw; opacity: 0.85; }
+  .hm h1 { text-shadow: 0 0 12px #FBF8EF, 0 0 4px #FBF8EF; }
+}
+@media (max-width: 900px) { .hm-visual { z-index: auto; } }
