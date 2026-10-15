@@ -1,7 +1,7 @@
-:HL["/_next/static/chunks/1__8scmg2t570.css","style"]
+:HL["/_next/static/chunks/3uaxsdjoofimo.css","style"]
 :HL["/_next/static/chunks/02-et55a95ior.css","style"]
 :HL["/_next/static/media/manrope_latin_400_normal-s.p.2xa18tgv2np2i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/manrope_latin_600_normal-s.p.2ybi4mo9-3upl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/marcellus_latin_400_normal-s.p.3bt6-98rl8drt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/chunks/0undydtpi6sbo.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"shop","param":null,"prefetchHints":4160,"slots":{"children":{"name":"products","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"selenite-charging-box-3-inches-296284","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"IOXmIHWLckLTQr4Zp98SB"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"shop","param":null,"prefetchHints":4160,"slots":{"children":{"name":"products","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"selenite-charging-box-3-inches-296284","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"q40Xu9g4F5ztmYqELwXk4"}
