@@ -1,15 +1,15 @@
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
-import { asset, assetSet } from "@/lib/assets";
+import { asset } from "@/lib/assets";
 import { areas, areaTopics, figures, site } from "@/content/site";
 
 /*
- * The homepage hero (Oct 15 redesign, from the approved "Mystical Astrology Consultation" banner): a cream page with
- * soft leaves; on the left the practices, the heading, two actions, a note and her figures; on the right her
- * photograph in an arch inside a slowly turning golden zodiac ring with constellations, moons and stars; across the
- * foot a curved band with the four areas of life. On phones the same pieces stack: words, portrait, figures, areas.
+ * The homepage hero (Oct 15 redesign, from the approved "Spiritual Guidance in Bloom" banner): a cream page with soft
+ * leaves; on the left the practices, the heading, a lotus rule, two actions, a note and her figures; on the right her
+ * room, softly out of focus, with a slowly turning golden zodiac ring and Narayani standing in front of it (a cut-out of
+ * her real photograph); across the foot a deep green wave with the four areas of life. On phones the same pieces stack.
  */
 
-const practices = ["Psychic Reader", "Astrologer", "Numerologist", "Vastu"];
+const practices = ["Brainology", "Numerology", "Vastulogy", "Astrology"];
 
 const svg = (d: string) =>
   `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -102,6 +102,11 @@ export function HomeHero() {
           <h1 id="hero-title">
             Let’s talk about <em>what’s on your mind.</em>
           </h1>
+          <div className="hm-rule" aria-hidden="true">
+            <i />
+            <span dangerouslySetInnerHTML={html(icons.lotus)} />
+            <i />
+          </div>
           <p className="hm-lead">
             Bring your questions about health, relationship, money or career. Explore it with spiritual guidance and mindset work.
           </p>
@@ -129,11 +134,6 @@ export function HomeHero() {
             <span className="hm-dot" aria-hidden="true" />
             Ask the team for the next available appointment
           </p>
-          <div className="hm-rule" aria-hidden="true">
-            <i />
-            <span dangerouslySetInnerHTML={html(icons.lotus)} />
-            <i />
-          </div>
           <dl className="hm-figures" aria-label="Narayani's experience">
             {figures.map((figure, i) => (
               <div key={figure.label} style={{ "--i": i } as React.CSSProperties}>
@@ -149,30 +149,31 @@ export function HomeHero() {
           <div className="hm-stage">
             <span className="hm-sky-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sky())} />
             <span className="hm-ring-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(ring())} />
-            <div className="hm-arch">
-              <picture>
-                <source type="image/avif" srcSet={assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 360px" />
-                <img
-                  src={asset("/images/narayani-portrait-684.webp")}
-                  srcSet={assetSet("/images/narayani-portrait-480.webp 480w, /images/narayani-portrait-684.webp 684w")}
-                  sizes="(max-width: 900px) 62vw, 360px"
-                  alt={`Narayani Garg, ${site.title}`}
-                  width={684}
-                  height={1000}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
-                />
-              </picture>
-            </div>
+            <img
+              className="hm-person"
+              src={asset("/images/hero-narayani-cut.webp")}
+              alt={`Narayani Garg, ${site.title}`}
+              width={296}
+              height={818}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+            />
           </div>
         </div>
       </div>
 
       <nav className="hm-areas" aria-label="Enquire about an area of life">
-        <svg className="hm-hills" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 70C200 30 360 40 560 66s420 40 620 6c120-20 200-24 260-14V120H0Z" />
-          <path d="M0 92C260 64 500 74 760 88s480 16 680-10V120H0Z" />
+        <svg className="hm-wave" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="hm-wave-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#1F5640" />
+              <stop offset="1" stopColor="#0E3325" />
+            </linearGradient>
+          </defs>
+          <path className="hm-wave-body" d="M0 44C180 14 380 14 560 40S860 70 1010 46 1300 0 1440 18V170H0Z" />
+          <path className="hm-wave-line" d="M0 44C180 14 380 14 560 40S860 70 1010 46 1300 0 1440 18" />
+          <path className="hm-wave-line hm-wave-line-2" d="M0 158C240 140 470 150 720 160s480 6 720-14" />
         </svg>
         <ul>
           {areas.map((area, i) => (

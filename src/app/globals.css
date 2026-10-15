@@ -17451,3 +17451,77 @@ footer.site-footer.ft {
   .hm-area-label { font-size: 12.5px; }
   .hm-figures dt { font-size: 11px; }
 }
+
+/* Homepage hero, pass 2 (Oct 15, "Spiritual Guidance in Bloom" banner): her room behind the right side, the zodiac ring
+   behind her, Narayani standing in front of it (cut-out of her real photograph), a lotus rule under the heading, a line
+   above the figures, and a deep green wave with the four areas across the foot. */
+.hm-room {
+  inset: 0 0 0 38%;
+  filter: none;
+  opacity: 1;
+  transform: none;
+  background: url("/images/hero-room.webp") 50% 40% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.55) 22%, #000 48%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.55) 22%, #000 48%);
+}
+.hm-inner { padding-bottom: 0; align-items: center; }
+.hm-copy { padding-bottom: 96px; }
+.hm-rule { max-width: 600px; margin-top: clamp(10px, 1.6vh, 16px); }
+.hm-rule + .hm-lead { margin-top: clamp(10px, 1.6vh, 16px); }
+.hm-figures { margin-top: clamp(14px, 2.2vh, 22px); padding-top: clamp(14px, 2.2vh, 20px); border-top: 1px solid rgb(169 121 46 / 0.28); }
+
+.hm-visual { align-self: stretch; }
+.hm-stage { position: absolute; left: 50%; top: 4%; width: min(100%, 620px, 76vh); transform: translateX(-50%); }
+.hm-ring { filter: drop-shadow(0 0 8px rgb(255 238 196 / 0.95)) drop-shadow(0 0 2px rgb(255 255 255 / 0.9)); }
+.hm-person {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 13%;
+  height: 128%;
+  width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 24px 30px rgb(60 44 20 / 0.28));
+}
+
+/* The deep green wave across the foot; her figure stands behind it. */
+.hm-areas { z-index: 3; margin-top: -84px; padding: 0; }
+.hm-wave { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
+.hm-wave-body { fill: url(#hm-wave-fill); }
+.hm-wave-line { fill: none; stroke: #C9A256; stroke-width: 1.6; vector-effect: non-scaling-stroke; }
+.hm-wave-line-2 { stroke-width: 1; opacity: 0.55; }
+.hm-areas ul { width: var(--wrap); padding: 62px 0 22px; border-radius: 0; background: none; box-shadow: none; backdrop-filter: none; }
+.hm-area { color: #FFFFFF; }
+.hm-area-icon { color: #DDB86A; }
+.hm-area-label { color: #FFFFFF; }
+.hm-area-label::after { background: #C9A256; }
+.hm-sep { color: #DDB86A; }
+
+@keyframes hm-person-in { from { opacity: 0; translate: 0 26px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hm-person { animation: hm-person-in 1.2s var(--ease) 0.2s both; }
+}
+
+@media (max-width: 1180px) {
+  .hm-copy { padding-bottom: 88px; }
+}
+
+@media (max-width: 900px) {
+  .hm-room { inset: auto 0 0 0; height: 560px; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 34%); mask-image: linear-gradient(180deg, transparent 0%, #000 34%); }
+  .hm-copy { padding-bottom: 0; }
+  .hm-rule { order: 4; max-width: 280px; margin: 12px auto 0; }
+  .hm-lead { order: 5; }
+  .hm-rule + .hm-lead { margin-top: 10px; }
+  .hm-actions { order: 6; }
+  .hm-note { order: 7; }
+  .hm-figures { order: 8; margin-top: 18px; padding-top: 16px; }
+  .hm-visual { order: 9; height: min(108vw, 470px); margin-top: 14px; }
+  .hm-stage { top: 0; width: min(86vw, 380px); }
+  .hm-person { top: 12%; height: 122%; }
+  .hm-areas { margin-top: -52px; }
+  .hm-areas ul { width: calc(100% - 12px); padding: 44px 0 14px; }
+  .hm-wave { height: 100%; }
+}
+.hm-person { height: 134%; }
+.hm-leaves-bl { left: -120px; bottom: -30px; opacity: 0.35; }

@@ -13,18 +13,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
 import { homeQuotes, otherFilms, storyFilms } from "@/content/voices";
 import { bookTitle } from "@/content/about";
-import { asset, assetSet } from "@/lib/assets";
+import { asset } from "@/lib/assets";
 import { faqSchema, personSchema } from "@/lib/schema";
 
 export default function HomePage() {
-  // Preload hero portrait
-  preload(asset("/images/narayani-portrait-480.avif"), {
-    as: "image",
-    type: "image/avif",
-    fetchPriority: "high",
-    imageSrcSet: assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w"),
-    imageSizes: "(max-width: 900px) 62vw, 360px",
-  });
+  // Preload the hero's cut-out portrait.
+  preload(asset("/images/hero-narayani-cut.webp"), { as: "image", type: "image/webp", fetchPriority: "high" });
 
   return (
     <>
