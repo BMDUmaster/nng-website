@@ -79,3 +79,22 @@ Route::get('/clear-cache', function () {
     }
 });
 Route::get('/consultation/', [PageController::class, 'consultation']);
+
+// Old landing-page addresses used in ads (Apache also redirects these in public/.htaccess).
+Route::redirect('/landing/psychic-reader/{any?}', '/landing/brainology/', 301)->where('any', '.*');
+Route::redirect('/landing/vastu/{any?}', '/landing/vastulogy/', 301)->where('any', '.*');
+
+// Every other page of the redesigned website (services, landing pages, shop, resources...) is a folder in public/
+// with an index.html. Serve it from here too, so it works without Apache's DirectoryIndex (e.g. `php artisan serve`
+// or a URL without the trailing slash). Anything else gets the website's own 404 page.
+Route::fallback(function () {
+    $page = PageController::staticPage(request()->path());
+    if ($page) {
+        return $page;
+    }
+    $notFound = public_path('404.html');
+    if (is_file($notFound)) {
+        return response(file_get_contents($notFound), 404)->header('Content-Type', 'text/html; charset=UTF-8');
+    }
+    abort(404);
+});

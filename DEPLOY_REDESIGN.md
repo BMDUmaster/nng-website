@@ -26,6 +26,21 @@ enquiry store and blog keep working with the same database.
 
 The root `.htaccess` lists `public/index.html` first for the same reason when the repository root is the document root.
 
+Laravel serves the same pages itself too, so the new design also shows without Apache (for example locally with
+`php artisan serve`, or on nginx): `PageController` and the fallback route in `routes/web.php` return the folder's
+`index.html` from `public/`, and the project-root `server.php` (used by `php artisan serve`) passes folder URLs such
+as `/contact/` to Laravel instead of answering them with the home page. Unknown addresses get `public/404.html`.
+
+## Running it locally
+
+```
+composer install          # only if vendor/ is missing
+php artisan serve
+```
+
+Open http://127.0.0.1:8000/ for the website and http://127.0.0.1:8000/admin/login for the admin. The local `.env`
+needs a working database for the admin and the contact form; the website pages themselves need none.
+
 ## Putting it live on Hostinger
 
 1. Take a backup of the current site files and the database (hPanel → Backups).
