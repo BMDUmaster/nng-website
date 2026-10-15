@@ -149,6 +149,7 @@ export function HomeHero() {
           <div className="hm-stage">
             <span className="hm-sky-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(sky())} />
             <span className="hm-ring-wrap" aria-hidden="true" dangerouslySetInnerHTML={html(ring())} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="hm-person"
               src={asset("/images/hero-narayani-cut.webp")}
