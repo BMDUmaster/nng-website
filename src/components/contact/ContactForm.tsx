@@ -7,7 +7,8 @@ import { whatsappUrl } from "@/lib/whatsapp";
 /**
  * The contact page enquiry form. Its fields match the admin's enquiry store (name, phone, email, guidance_with,
  * based_in, message, source_page), so a sent form lands in Customer Enquiries as a new enquiry.
- * NEXT_PUBLIC_ENQUIRY_ENDPOINT is the address it posts to; until it is set, the form says so and offers WhatsApp.
+ * NEXT_PUBLIC_ENQUIRY_ENDPOINT is the address it posts to (/enquiry/store on nngarg.com, where the Laravel app answers in
+ * JSON); until it is set, as on the Vercel preview, the form says so and offers WhatsApp.
  */
 const ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT ?? "";
 
@@ -19,16 +20,18 @@ export const GUIDANCE = [
   "Personalised Hand Holding Program",
 ];
 
-type Status = "idle" | "sending" | "sent" | "error" | "offline";
+type Status = "idle" | "sending" | "sent" | "error" | "offline" | "invalid";
 type Errors = Partial<Record<"name" | "phone" | "email", string>>;
 
 function check(data: FormData): Errors {
   const errors: Errors = {};
   const name = String(data.get("name") ?? "").trim();
-  const phone = String(data.get("phone") ?? "").replace(/[^\d+]/g, "");
+  const phone = String(data.get("phone") ?? "").trim();
   const email = String(data.get("email") ?? "").trim();
   if (name.length < 2) errors.name = "Please enter your name.";
-  if (phone.replace(/\D/g, "").length < 8) errors.phone = "Please enter a phone or WhatsApp number.";
+  // The same rule as the admin's enquiry store: 10 to 15 characters of digits, spaces, +, - or brackets.
+  if (!phone) errors.phone = "Please enter a phone or WhatsApp number.";
+  else if (!/^[0-9+\s\-()]{10,15}$/.test(phone)) errors.phone = "Please enter a valid phone or WhatsApp number, e.g. +91 98765 43210.";
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Please check this email address.";
   return errors;
 }
@@ -36,6 +39,7 @@ function check(data: FormData): Errors {
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
+  const [serverMessage, setServerMessage] = useState("");
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -53,8 +57,17 @@ export function ContactForm() {
     }
     setStatus("sending");
     try {
-      const response = await fetch(ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
-      if (!response.ok) throw new Error(String(response.status));
+      const response = await fetch(ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json", "X-Requested-With": "XMLHttpRequest" } });
+      const reply = await response.json().catch(() => ({})) as { success?: boolean; message?: string; errors?: Record<string, string[]> };
+      if (response.status === 422) {
+        const fromServer: Errors = {};
+        for (const key of ["name", "phone", "email"] as const) if (reply.errors?.[key]?.[0]) fromServer[key] = reply.errors[key][0];
+        setErrors(fromServer);
+        setServerMessage(Object.keys(fromServer).length ? "" : reply.message ?? "");
+        setStatus("invalid");
+        return;
+      }
+      if (!response.ok || reply.success === false) throw new Error(String(response.status));
       track(EVENTS.callbackSubmit, { topic: String(data.get("guidance_with") ?? "") });
       form.reset();
       setStatus("sent");
@@ -122,6 +135,7 @@ export function ContactForm() {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 6h7M6.5 3l3 3-3 3" /></svg>
         </span>
       </button>
+      {status === "invalid" && serverMessage && <p className="cf-note cf-note-warn" role="alert">{serverMessage}</p>}
       {(status === "error" || status === "offline") && (
         <p className="cf-note cf-note-warn" role="alert">
           {status === "error" ? "Your enquiry could not be sent just now." : "The form is being connected to the team’s inbox."}{" "}
