@@ -19819,3 +19819,20 @@ section.cn-begin.cb { position: relative; isolation: isolate; overflow: hidden; 
 .cb .cn-area p { max-width: 13.5em; text-shadow: 0 1px 6px rgb(0 0 0 / 0.5); }
 .cb .cn-area h3 { text-shadow: 0 1px 8px rgb(0 0 0 / 0.5); }
 @media (max-width: 680px) { .cb::before { width: 130px; height: 165px; opacity: 0.6; } .cb::after { width: 150px; height: 130px; } .cb .cn-area { min-height: 190px; } }
+.cx-short { display: none; }
+@media (max-width: 900px) {
+  .cx-hero .cx-long { display: none; }
+  .cx-hero .cx-short { display: inline; }
+  .cx-hero .cn-lead { max-width: 50%; font-size: 14px; }
+  .cx-hero .cn-actions { width: 50%; }
+  .cx-hero .cn-cta { width: 100%; justify-content: space-between; min-height: 48px; padding: 4px 4px 4px 18px; font-size: 14px; }
+  .cx-hero .cn-cta .cn-arrow { width: 38px; height: 38px; }
+  .cx-hero .cn-ghost { width: 100%; justify-content: space-between; min-height: 46px; padding: 0 4px 0 18px; font-size: 13.5px; box-sizing: border-box; }
+  .cx-ghost-arrow { width: 36px; height: 36px; }
+  .cx-visual { height: min(118vw, 470px); }
+  .cx-hero .cn-formats { margin-top: 22px; gap: 10px; }
+  .cx-hero .cn-formats li { flex-direction: column; justify-content: center; align-items: center; gap: 6px; min-height: 0; padding: 12px 8px; border-radius: 16px; text-align: center; font-size: 12.5px; background: linear-gradient(180deg, rgb(255 255 255 / 0.07), rgb(255 255 255 / 0.02)); box-shadow: inset 0 0 0 1px rgb(225 190 112 / 0.5); }
+  .cx-hero .cn-formats svg { box-sizing: content-box; width: 18px; height: 18px; padding: 8px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFF6DE, #EAD6A6); color: #123A2B; }
+}
+@media (max-width: 900px) { .cx-visual { height: 104vw; max-height: 420px; } .cx-hero .cn-formats { margin-top: 30px; align-items: stretch; } .cx-hero .cn-ghost { white-space: nowrap; } .cx-hero .cn-formats li { justify-content: flex-start; } }
+@media (max-width: 380px) { .cx-hero .cn-actions { width: 54%; } .cx-hero .cn-ghost, .cx-hero .cn-cta { font-size: 12.5px; padding-left: 14px; } }

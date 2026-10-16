@@ -79,15 +79,18 @@ export default function ConsultationsPage() {
               Start with what is <em>on your mind</em>
             </h1>
             <p className="cn-lead">
-              You do not need to choose a practice first. Bring your question. Narayani considers your circumstances and thought patterns, with astrology, numerology or Vastu where relevant.
+              <span className="cx-long">You do not need to choose a practice first. Bring your question. Narayani considers your circumstances and thought patterns, with astrology, numerology or Vastu where relevant.</span>
+              <span className="cx-short">No need to choose a practice first. Just bring your question.</span>
             </p>
             <div className="cn-actions">
               <EnquiryTrigger className="cn-cta" source="consultations-hero" primary>
-                <span>Enquire about a consultation</span>
+                <span className="cx-long">Enquire about a consultation</span>
+                <span className="cx-short">Enquire now</span>
                 <Arrow />
               </EnquiryTrigger>
               <a className="cn-ghost" href="#fees">
-                See session options
+                <span className="cx-long">See session options</span>
+                <span className="cx-short">Session options</span>
                 <span className="cx-ghost-arrow" aria-hidden="true">→</span>
               </a>
             </div>
