@@ -20054,3 +20054,104 @@ section.cn-how.ch { background: #F8F2E6; }
 .ch .cn-head > p:not(.cn-kicker) { max-width: 40em; }
 @media (min-width: 901px) { .ch .cn-inner { padding-top: 26px; } }
 @media (max-width: 900px) { .ch .cn-steps li { padding-right: 40px; } }
+
+/* Contact page redesign (Oct 16): the consultations look. Green hero with her photo (cx- styles), the form in a
+   two-panel card (kf-), three ways to reach the team (kw-), next steps as arched cards (ch-) and a cream quote card. */
+.kt-hero .cx-photo img { object-position: 50% 12%; }
+.kt-reach li:first-child .cx-p-icon svg { width: 24px; height: 24px; }
+
+/* Enquiry: green side panel + form. */
+section.cf.kf { background: linear-gradient(180deg, #FBF7EE, #F6F0E2); }
+.kf .cn-inner { padding-block: clamp(30px, 4.5vh, 50px); }
+.kf-card { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); overflow: hidden; border-radius: 26px; background: #FFFDF8; box-shadow: 0 0 0 1.2px rgb(201 162 86 / 0.55), 0 34px 60px -40px rgb(60 44 20 / 0.55); }
+.kf-side { position: relative; isolation: isolate; display: flex; flex-direction: column; padding: clamp(30px, 3.4vw, 50px); background: radial-gradient(70% 60% at 0% 0%, #1F4A36, transparent 70%), linear-gradient(180deg, #123A2B, #0B2A1F); color: #FFFFFF; }
+.kf-side::after { content: ""; position: absolute; z-index: -1; right: 0; bottom: 0; width: 170px; aspect-ratio: 161 / 153; background: url("/images/how-leaf-br.webp") 100% 100% / contain no-repeat; opacity: 0.55; }
+.kf-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #E1BE70; }
+.kf-lotus { display: block; width: 30px; color: #E1BE70; }
+.kf-lotus svg, .kf-points span svg, .kf-mail span svg { display: block; width: 100%; height: auto; }
+.practice-site main .kf h2 { margin: 12px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(32px, 3vw, 48px); line-height: 1.06; color: #FFFFFF; }
+.kf h2 em { font-style: italic; font-weight: 500; color: #E1BE70; }
+.practice-site main .kf .kf-lead { margin: 12px 0 0; max-width: 30em; font-size: 15px; line-height: 1.6; color: rgb(255 255 255 / 0.82); }
+.kf-points { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
+.kf-points li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; line-height: 1.4; color: rgb(255 255 255 / 0.92); }
+.kf-points span { flex: none; width: 24px; color: #E1BE70; }
+.kf-mail { display: inline-flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 26px; color: #F2D592; font-size: 15px; text-decoration: none; }
+.kf-mail span { width: 22px; }
+.kf-form { padding: clamp(24px, 3vw, 44px); }
+.kf .cf-card { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+.kf .cf-field label { color: #123A2B; }
+.kf .cf-field input, .kf .cf-field select, .kf .cf-field textarea { background: #FBF7EE; border-color: rgb(201 162 86 / 0.45); }
+.kf .cf-field textarea { min-height: 96px; }
+.kf .cf-submit { min-height: 54px; padding-left: 26px; background: linear-gradient(180deg, #1D4F3A, #123A2B); color: #FFFFFF; font-weight: 600; box-shadow: 0 0 0 1.5px rgb(201 162 86 / 0.6), 0 16px 28px -16px rgb(18 58 43 / 0.9); }
+.kf .cf-submit .cn-arrow { background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; }
+.kf .cf-done-mark { background: #123A2B; color: #F2D592; }
+.kf .cf-done h3 { font-family: var(--font-display), var(--serif); color: #123A2B; }
+
+/* Ways to reach the team. */
+section.ct-ways.kw { position: relative; isolation: isolate; overflow: hidden; background: #F8F2E6; border-bottom: 0; }
+.kw .cn-inner { padding-block: clamp(30px, 4.5vh, 48px); }
+.kw .cn-head .cn-kicker::before { display: none; }
+.kw .cn-head .cn-kicker { color: #123A2B; }
+.practice-site main .kw h2 { font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(30px, 3vw, 48px); line-height: 1.06; color: #123A2B; }
+.kw h2 em { font-style: italic; font-weight: 500; color: #B58A44; }
+.kw-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 26px 0 0; padding: 0; list-style: none; }
+.kw-card { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 26px; border-radius: 22px; background: rgb(255 252 245 / 0.9); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.45), 0 20px 36px -28px rgb(60 44 20 / 0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.kw-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 1.4px #C9A256, 0 26px 44px -28px rgb(60 44 20 / 0.6); }
+.kw-icon { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFF8E8, #F0E1BE); color: #123A2B; }
+.kw-icon svg { width: 28px; height: 28px; }
+.practice-site main .kw-card h3 { margin: 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 22px; color: #123A2B; }
+.practice-site main .kw-card p { margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: #4A463E; }
+.kw-text { flex: 1; }
+.kw-link, .kw-link-wrap .text-link { display: inline-flex; align-items: center; gap: 10px; padding: 0 0 4px; border: 0; border-bottom: 1px solid rgb(184 138 69 / 0.6); background: none; color: #123A2B; font: inherit; font-size: 14.5px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.kw-main { background: radial-gradient(70% 70% at 0% 0%, #1F4A36, transparent 70%), linear-gradient(180deg, #123A2B, #0B2A1F); box-shadow: 0 0 0 1.2px rgb(201 162 86 / 0.6), 0 24px 40px -26px rgb(18 58 43 / 0.8); }
+.practice-site main .kw-main h3 { color: #FFFFFF; }
+.practice-site main .kw-main p { color: rgb(255 255 255 / 0.8); }
+.kw-main .kw-icon { background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; }
+.kw-main .kw-link { color: #F2D592; border-color: rgb(242 213 146 / 0.6); }
+
+/* After you enquire: three arched steps, then the quote card. */
+.ct-next .cn-steps { grid-template-columns: repeat(3, 1fr); max-width: 1120px; margin-inline: auto; }
+.ct-next::after { display: none; }
+.kq { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr); max-width: 1120px; margin: 30px auto 0; overflow: hidden; border-radius: 24px; background: #FFFCF5; box-shadow: 0 0 0 1.2px rgb(201 162 86 / 0.55), 0 30px 50px -36px rgb(60 44 20 / 0.5); }
+.kq .ct-quote-photo { min-height: 240px; }
+.kq .ct-quote-photo span { background: #123A2B; color: #F2D592; }
+.kq .ct-quote-body { display: flex; flex-direction: column; justify-content: center; padding: 28px 40px; }
+.kq .ct-quote-mark { height: 40px; font-family: var(--font-display), var(--serif); color: #C9A256; }
+.kq blockquote p { font-family: var(--font-display), var(--serif); font-size: clamp(19px, 1.6vw, 25px); line-height: 1.4; color: #123A2B; }
+.kq figcaption { border-color: rgb(201 162 86 / 0.35); }
+.kq figcaption strong { color: #123A2B; }
+.kq figcaption span { color: #6A6458; }
+
+@media (max-width: 900px) {
+  .kf .cn-inner, .kw .cn-inner { width: calc(100% - 24px); padding-block: 22px; }
+  .kf-card { grid-template-columns: 1fr; border-radius: 22px; }
+  .kf-side { padding: 24px 20px 22px; }
+  .kf-side::after { width: 110px; }
+  .practice-site main .kf h2 { font-size: clamp(30px, 8.4vw, 36px); }
+  .practice-site main .kf .kf-lead { font-size: 14px; }
+  .kf-points { gap: 9px; margin-top: 16px; }
+  .kf-points li { font-size: 13.5px; }
+  .kf-points span { width: 20px; }
+  .kf-mail { padding-top: 16px; font-size: 14px; }
+  .kf-form { padding: 20px 16px 22px; }
+  .kf .cf-submit { justify-self: stretch; }
+  .practice-site main .kw h2 { font-size: clamp(28px, 8vw, 34px); }
+  .kw-cards { grid-template-columns: 1fr; gap: 10px; margin-top: 18px; }
+  .kw-card { display: grid; grid-template-columns: auto 1fr; grid-template-areas: "icon text" "icon link"; align-items: center; column-gap: 14px; row-gap: 6px; padding: 14px 16px; border-radius: 18px; }
+  .kw-icon { grid-area: icon; width: 52px; height: 52px; }
+  .kw-icon svg { width: 24px; height: 24px; }
+  .kw-text { grid-area: text; }
+  .kw-link, .kw-link-wrap { grid-area: link; justify-self: start; }
+  .practice-site main .kw-card h3 { font-size: 18px; }
+  .practice-site main .kw-card p { margin-top: 2px; font-size: 13px; }
+  .kw-link, .kw-link-wrap .text-link { font-size: 13.5px; }
+  .ct-next .cn-steps { grid-template-columns: 1fr; }
+  .kq { grid-template-columns: 1fr; margin-top: 20px; border-radius: 20px; }
+  .kq .ct-quote-photo { min-height: 210px; }
+  .kq .ct-quote-body { padding: 20px 20px 22px; }
+  .kq blockquote p { font-size: 18px; }
+}
+.kf .cf-card { gap: 14px; }
+.kf .cf-field input, .kf .cf-field select { min-height: 48px; }
+.kw-link-wrap .text-link::after { display: none; }
+@media (max-width: 900px) { .kf .cf-card { gap: 12px; } .kf .cf-row { gap: 12px; } }
