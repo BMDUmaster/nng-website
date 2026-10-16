@@ -19681,3 +19681,7 @@ section.fq .fq-inner { align-items: center; }
   section.fq .fq-intro { text-align: left; }
   section.fq .fq-ask { width: auto !important; margin: 14px 0 0 !important; }
 }
+/* 6 months badge: everything sits inside the circle. */
+section.pg .pg-medal { padding: 14px; box-sizing: border-box; gap: 2px; }
+section.pg .pg-medal span { letter-spacing: 0.18em; }
+section.pg .pg-medal small { max-width: 80%; font-size: 8.5px; line-height: 1.35; letter-spacing: 0.14em; text-align: center; }
