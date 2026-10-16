@@ -20891,3 +20891,41 @@ section.au-book.bkx { background: linear-gradient(180deg, #FBF7EE, #F5EEDF); }
 }
 .au .cw::after { -webkit-mask-image: radial-gradient(80% 60% at 100% 50%, #000 45%, transparent 100%); mask-image: radial-gradient(80% 60% at 100% 50%, #000 45%, transparent 100%); }
 @media (max-width: 900px) { .au .cw::before { width: 64px; opacity: 0.7; } .au .cw::after { width: 62px; top: 110px; opacity: 0.7; } }
+
+/* Services dropdown (Oct 16), matched to the reference: an intro panel with leaves on the left, four service cards with
+   a coloured disc icon, name, a line and a round arrow, and "All services" below. Other dropdowns keep the plain list. */
+.nh-menu.is-grid { display: grid; grid-template-columns: 250px minmax(0, 1fr); width: 940px; left: -330px; padding: 0; overflow: visible; border-radius: 22px; background: #FBF6EC; box-shadow: 0 40px 70px -34px rgb(40 30 15 / 0.45), 0 0 0 1px rgb(201 162 86 / 0.35); }
+.nh-menu.is-grid[hidden] { display: none; }
+.nh-menu.is-grid::before { left: 356px; background: #FBF6EC; }
+.nh-menu-intro { display: flex; flex-direction: column; justify-content: center; padding: 34px 30px 60px 36px; border-radius: 22px 0 0 22px; background: url("/images/menu-flora.webp") center / cover no-repeat, #F6EFE1; box-shadow: inset -1px 0 0 rgb(201 162 86 / 0.3); }
+.nh-menu-lotus { display: block; width: 40px; color: #B88A45; }
+.nh-menu-lotus svg { display: block; width: 100%; height: auto; }
+.nh-menu-title { margin: 12px 0 0; font-family: var(--font-display), var(--serif); font-weight: 500; font-size: 32px; line-height: 1.08; color: #1E2A22; }
+.nh-menu-title em { display: block; font-style: italic; font-weight: 500; color: #A9792E; }
+.nh-menu-rule { margin-top: 10px; font-size: 18px; line-height: 1; color: #B88A45; }
+.nh-menu-lead { margin: 14px 0 0; font-size: 16px; line-height: 1.6; color: #5A554C; }
+.nh-menu-body { position: relative; padding: 24px 24px 10px; }
+.nh-menu-body::after { content: ""; position: absolute; right: 30px; bottom: 6px; width: 110px; height: 70px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23C9A256' stroke-width='0.7'%3E%3Cpath d='M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z'/%3E%3Cpath d='M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6'/%3E%3C/svg%3E") center / contain no-repeat; opacity: 0.35; pointer-events: none; }
+.nh-menu.is-grid ul { gap: 14px; }
+.nh-menu.is-grid ul a { align-items: center; gap: 16px; min-height: 112px; padding: 18px 18px; border-radius: 16px; background: #FFFCF6; border: 1px solid rgb(201 162 86 / 0.3); font-family: inherit; font-size: inherit; box-shadow: 0 10px 24px -20px rgb(60 44 20 / 0.5); transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.nh-menu.is-grid ul a:hover, .nh-menu.is-grid ul a:focus-visible { background: #FFFFFF; border-color: rgb(201 162 86 / 0.7); transform: translateY(-2px); box-shadow: 0 16px 30px -20px rgb(60 44 20 / 0.6); }
+.nh-menu.is-grid .nh-menu-icon { width: 64px; height: 64px; background: #4A1E4B; box-shadow: 0 0 0 3px #FFFCF6, 0 0 0 4px rgb(201 162 86 / 0.45); color: #FFFFFF; }
+.nh-menu.is-grid li:nth-child(2) .nh-menu-icon { background: #123A2B; }
+.nh-menu.is-grid li:nth-child(3) .nh-menu-icon { background: linear-gradient(180deg, #D4A24C, #A9772C); }
+.nh-menu.is-grid li:nth-child(4) .nh-menu-icon { background: #4A1E4B; }
+.nh-menu.is-grid .nh-menu-icon .ic { --ic-size: 34px; color: #FFFFFF; }
+.nh-menu.is-grid .nh-menu-icon svg { color: #FFFFFF; stroke: currentColor; }
+.nh-menu-text { display: grid; gap: 6px; flex: 1; min-width: 0; }
+.nh-menu-name { font-size: 18px; font-weight: 500; color: #1E1A16; }
+.nh-menu-text small { font-size: 14.5px; line-height: 1.45; color: #6A6458; }
+.nh-menu-go { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #F6ECD8; color: #A9792E; font-size: 17px; transition: background 0.2s ease, color 0.2s ease; }
+.nh-menu.is-grid ul a:hover .nh-menu-go { background: #123A2B; color: #F2D592; }
+.nh-menu.is-grid .nh-menu-all { justify-content: flex-start; gap: 14px; min-height: 58px; margin-top: 18px; padding: 0 10px; border-top-color: rgb(201 162 86 / 0.3); font-size: 17px; font-weight: 600; letter-spacing: 0; color: #8A5A2B; }
+@media (max-width: 1240px) { .nh-menu.is-grid { width: 860px; left: -300px; } .nh-menu.is-grid::before { left: 326px; } }
+.nh-menu.is-grid ul a { min-height: 104px; padding: 16px 16px; gap: 14px; }
+.nh-menu-name { white-space: nowrap; font-size: 17.5px; }
+.nh-menu-text small { font-size: 14px; }
+.nh-menu.is-grid .nh-menu-icon { width: 58px; height: 58px; }
+.nh-menu-go { width: 40px; height: 40px; }
+.nh-menu:not(.is-grid) .nh-menu-body { padding: 0; }
+.nh-menu:not(.is-grid) .nh-menu-body::after { display: none; }

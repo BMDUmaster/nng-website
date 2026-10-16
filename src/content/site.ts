@@ -34,7 +34,7 @@ export const figures = [
   { value: "5+", label: "Countries served" },
 ] as const;
 
-export type NavChild = { label: string; href: string };
+export type NavChild = { label: string; href: string; note?: string };
 export type NavItem = { label: string; href: string; short?: string; overviewLabel?: string; children?: NavChild[]; excludePaths?: string[]; dropdownOnly?: boolean };
 
 /**
@@ -61,10 +61,10 @@ export const nav: NavItem[] = [
     excludePaths: ["/services/stones-and-rudraksh/"],
     // The same order as the service cards: she starts with the mind.
     children: [
-      { label: "Psychic Reader", href: "/services/brain-training/" },
-      { label: "Astrology", href: "/services/astrology/" },
-      { label: "Numerology", href: "/services/numerology/" },
-      { label: "Vastu", href: "/services/vastu/" },
+      { label: "Brainology Program", href: "/services/brain-training/", note: "Understand the mind behind your choices." },
+      { label: "Astrology", href: "/services/astrology/", note: "Planetary influences for a better you." },
+      { label: "Numerology", href: "/services/numerology/", note: "Discover the power of your numbers." },
+      { label: "Vastu", href: "/services/vastu/", note: "Harmony in your home and space." },
     ],
   },
   {
@@ -96,7 +96,7 @@ export const enquiryTopics = [
   { value: "a consultation on a relationship", label: "Relationship", group: "An area of life" },
   { value: "a consultation on money", label: "Money", group: "An area of life" },
   { value: "a consultation on my career", label: "Career", group: "An area of life" },
-  { value: "Psychic Reader", label: "Psychic Reader", group: "A service" },
+  { value: "Brainology Program", label: "Brainology Program", group: "A service" },
   { value: "Numerology", label: "Numerology", group: "A service" },
   { value: "Vastu", label: "Vastu", group: "A service" },
   { value: "Astrology", label: "Astrology", group: "A service" },

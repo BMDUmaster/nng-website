@@ -29,6 +29,9 @@ type Icons = Record<string, ReactNode>;
 /** A group shows as a grid of drawn icons when every page in it has one (the four services). */
 const iconsFor = (item: NavItem, icons: Icons) => !!item.children?.length && item.children.every((child) => icons[child.href]);
 
+const menuLotus =
+  '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>';
+
 function Chevron() {
   return (
     <svg className="nh-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -121,22 +124,42 @@ function NavGroup({ item, pathname, icons }: { item: NavItem; pathname: string; 
         <Chevron />
       </button>
       <div className={`nh-menu${grid ? " is-grid" : ""}`} id={id} hidden={!open}>
-        <ul>
-          {item.children?.map((child) => (
-            <li key={child.href}>
-              <Link prefetch={false} href={child.href} aria-current={same(pathname, child.href) ? "page" : undefined} onClick={closeAll}>
-                {grid && <span className="nh-menu-icon">{icons[child.href]}</span>}
-                <span>{child.label}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        {!item.dropdownOnly && (
-          <Link prefetch={false} className="nh-menu-all" href={item.href} onClick={closeAll}>
-            <span>{item.overviewLabel ?? `All ${item.label.toLowerCase()}`}</span>
-            <span aria-hidden="true">→</span>
-          </Link>
+        {grid && (
+          <div className="nh-menu-intro" aria-hidden="true">
+            <span className="nh-menu-lotus" dangerouslySetInnerHTML={{ __html: menuLotus }} />
+            <p className="nh-menu-title">
+              Explore Her <em>{item.label}</em>
+            </p>
+            <span className="nh-menu-rule">⟶</span>
+            <p className="nh-menu-lead">Guidance for a more balanced, peaceful and purposeful life.</p>
+          </div>
         )}
+        <div className="nh-menu-body">
+          <ul>
+            {item.children?.map((child) => (
+              <li key={child.href}>
+                <Link prefetch={false} href={child.href} aria-current={same(pathname, child.href) ? "page" : undefined} onClick={closeAll}>
+                  {grid && <span className="nh-menu-icon">{icons[child.href]}</span>}
+                  {grid ? (
+                    <span className="nh-menu-text">
+                      <span className="nh-menu-name">{child.label}</span>
+                      {child.note && <small>{child.note}</small>}
+                    </span>
+                  ) : (
+                    <span>{child.label}</span>
+                  )}
+                  {grid && <span className="nh-menu-go" aria-hidden="true">→</span>}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {!item.dropdownOnly && (
+            <Link prefetch={false} className="nh-menu-all" href={item.href} onClick={closeAll}>
+              <span>{item.overviewLabel ?? `All ${item.label.toLowerCase()}`}</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ export const choiceGroups: ChoiceGroup[] = [
     choices: [
       { say: "I want to understand my stress patterns and rhythms", href: "/services/astrology/health-and-wellbeing/" },
       { say: "I want to change a habit or calm a racing mind", href: "/services/brain-training/" },
-      { say: "I want to explore a recurring pattern with a Psychic Reader", href: "/services/brain-training/nlp/" },
+      { say: "I want to explore a recurring pattern through the Brainology Program", href: "/services/brain-training/nlp/" },
       { say: "I am not sure where to begin, or what I should be asking", href: "/services/brain-training/discovery-session/" },
       { say: "I want a guided session to settle myself and the space around me", href: "/services/vastu/energy-balancing/" },
     ],

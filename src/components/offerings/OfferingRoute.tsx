@@ -33,8 +33,8 @@ import { ReadingGuide, duplicateDirectories, sectionTakeaways, stoneTakeaways } 
 export function offeringMetadata(hub: HubSlug, slug: string): Metadata {
   const page = getOffering(hub, slug);
   return {
-    title: { absolute: `${hub === "brain-training" ? "Psychic Reader" : page.metaTitle} | Narayani Garg` },
-    description: hub === "brain-training" ? "Personal and spiritual guidance with Narayani Garg. Explore six Psychic Reader consultation choices and enquire with the team." : shortGuidance[slug ? `${hub}/${slug}` : hub]?.lead ?? page.metaDescription,
+    title: { absolute: `${hub === "brain-training" ? "Brainology Program" : page.metaTitle} | Narayani Garg` },
+    description: hub === "brain-training" ? "Personal and spiritual guidance with Narayani Garg. Explore six Brainology Program consultation choices and enquire with the team." : shortGuidance[slug ? `${hub}/${slug}` : hub]?.lead ?? page.metaDescription,
     alternates: { canonical: hub === "brain-training" ? "/services/brain-training/" : offeringPath(page) },
   };
 }

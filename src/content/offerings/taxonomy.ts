@@ -65,7 +65,7 @@ export const hubs: HubInfo[] = [
   },
   {
     slug: "brain-training",
-    name: "Psychic Reader",
+    name: "Brainology Program",
     blurb: "Personal and spiritual guidance around recurring patterns, thoughts and beliefs.",
     icon: "hub-brain-training",
     groups: [

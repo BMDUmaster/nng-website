@@ -25,8 +25,8 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "brain-training",
-    name: "Psychic Reader",
-    topic: "Psychic Reader",
+    name: "Brainology Program",
+    topic: "Brainology Program",
     card: "The beliefs and habits behind a recurring concern. Where she starts.",
     lead: "A look at the beliefs, habits and reactions that shape how you respond to the question you bring.",
     quote: "Couldn’t Krishna have fixed the vastu and ended the war between the brothers? He didn’t. He worked on Arjuna’s mind.",

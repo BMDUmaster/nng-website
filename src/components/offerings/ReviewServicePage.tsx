@@ -27,9 +27,9 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
   const isHub = !page.slug || psychic;
   const key = page.slug ? `${page.hub}/${page.slug}` : page.hub;
   const content = shortGuidance[key] ?? shortGuidance[page.hub];
-  const title = psychic ? "Psychic Reader" : page.title;
-  const topic = psychic ? "Psychic Reader" : page.enquiryTopic;
-  const family = psychic ? "Psychic Reader" : page.hub === "vastu" ? "Vastu" : "Numerology";
+  const title = psychic ? "Brainology Program" : page.title;
+  const topic = psychic ? "Brainology Program" : page.enquiryTopic;
+  const family = psychic ? "Brainology Program" : page.hub === "vastu" ? "Vastu" : "Numerology";
   const children = childPages(page.hub);
   return <div className={`${styles.page} svd svd-review`}>
     <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", name: title, serviceType: family, provider: personSchema(), description: psychic ? "Spiritual guidance around recurring patterns, thoughts and beliefs." : content.lead }} />
@@ -45,7 +45,7 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
 
     {psychic ? <section className={`section-wrap ${styles.section}`} id="pages" aria-labelledby="choices-title">
       <h2 id="choices-title">Choose your consultation</h2><p>Six starting points. Ask the team which one fits your question.</p>
-      <div className={styles.cards}>{psychicChoices.map(choice => <article key={choice.name} className={styles.card}><Icon id={choice.icon} /><h3>{choice.name}</h3><p>{choice.line}</p><p className={styles.pending}>Details and fee to be confirmed</p><EnquiryTrigger topic={`Psychic Reader: ${choice.name}`} source="psychic-choice" className="text-link">Enquire on WhatsApp</EnquiryTrigger></article>)}</div>
+      <div className={styles.cards}>{psychicChoices.map(choice => <article key={choice.name} className={styles.card}><Icon id={choice.icon} /><h3>{choice.name}</h3><p>{choice.line}</p><p className={styles.pending}>Details and fee to be confirmed</p><EnquiryTrigger topic={`Brainology Program: ${choice.name}`} source="psychic-choice" className="text-link">Enquire on WhatsApp</EnquiryTrigger></article>)}</div>
       <p className={styles.limit}>These are personal and spiritual consultations, not medical or mental health treatment. No health, relationship, financial or career outcome is guaranteed.</p>
     </section> : <>
       {isHub && <section className={`section-wrap ${styles.section}`} id="pages" aria-labelledby="choices-title"><h2 id="choices-title">{page.hub === "vastu" ? "Find the right Vastu consultation" : "Choose what you want to understand"}</h2>
