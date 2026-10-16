@@ -13,7 +13,7 @@ import { faqs } from "@/content/faq";
 import { method, serviceHref, consultationServices as services } from "@/content/services";
 import { site } from "@/content/site";
 import { voicePoster, voices } from "@/content/voices";
-import { asset, assetSet } from "@/lib/assets";
+import { asset } from "@/lib/assets";
 import { faqSchema, personSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -36,6 +36,21 @@ const steps = [
   { title: "The next step", text: "Discuss what to work on next and whether ongoing guidance would suit you." },
 ];
 
+const svIco = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const svIcons = {
+  lotus: svIco('<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/>'),
+  "brain-training": svIco('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22M12 11H9.5M12 17h-3M20 13h2.5M20 19h3"/>'),
+  astrology: svIco('<path d="M16 4l3.2 7.4 8 .7-6 5.3 1.8 7.8L16 21.2l-7 4 1.8-7.8-6-5.3 8-.7Z"/><circle cx="16" cy="15" r="2.5"/>'),
+  numerology: svIco('<path d="M16 16c0-1.7 1.3-3 3-3s3 1.3 3 3.2c0 3.4-3.2 5.8-6.5 5.8-4 0-7-3.3-7-7.4C8.5 9.4 12 6 16.6 6 21.5 6 26 9.8 26 15.4"/>'),
+  vastu: svIco('<path d="M5 15 16 5l11 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/>'),
+};
+const svValues = [
+  { title: "Personalised Guidance", text: "For your own situation", icon: svIcons.lotus },
+  { title: "Clarity & Direction", text: "Understand your patterns", icon: svIco('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
+  { title: "Practical Solutions", text: "For real-life situations", icon: svIco('<circle cx="16" cy="16" r="5.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>') },
+  { title: "Supportive Approach", text: "With empathy and insight", icon: svIco('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
+];
+
 function Arrow() {
   return (
     <span className="cn-arrow" aria-hidden="true">
@@ -56,49 +71,69 @@ export default function ServicesPage() {
     <div className="cn sv">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), ...serviceSchema(services), faqSchema(faqs.services)] }} />
 
-      <section className="cn-hero" aria-labelledby="page-title">
-        <div className="cn-hero-inner">
-          <div className="cn-hero-copy" data-reveal="">
-            <nav className="cn-crumbs" aria-label="Breadcrumb">
+      <section className="svh" aria-labelledby="page-title">
+        <div className="svh-inner">
+          <div className="svh-copy" data-reveal="">
+            <nav className="cn-crumbs svh-crumbs" aria-label="Breadcrumb">
               <Link prefetch={false} href="/">Home</Link>
               <span aria-hidden="true">/</span>
               <span aria-current="page">Services</span>
             </nav>
-            <p className="cn-kicker">Her practices</p>
+            <p className="svh-kicker">
+              <span className="svh-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
+              Her practices
+            </p>
             <h1 id="page-title">
               Begin with the question <em>you’re facing</em>
             </h1>
-            <p className="cn-lead">Bring your question. Narayani considers your situation and thought patterns, using numerology, Vastu or astrology where relevant.</p>
-            <div className="cn-actions">
-              <EnquiryTrigger className="cn-cta" source="services-hero" primary>
-                <span>Enquire about a consultation</span>
-                <Arrow />
+            <span className="svh-rule" aria-hidden="true" />
+            <p className="svh-lead">Bring your question. Narayani considers your situation and thought patterns, using numerology, Vastu or astrology where relevant.</p>
+            <div className="svh-actions">
+              <EnquiryTrigger className="svh-cta" source="services-hero" primary>
+                <span className="cx-long">Enquire about a consultation</span>
+                <span className="cx-short">Enquire now</span>
+                <span className="svh-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
-              <Link prefetch={false} className="cn-ghost" href="/consultations/">
-                Consultation options and how to begin
+              <Link prefetch={false} className="svh-ghost" href="/consultations/">
+                <span className="cx-long">Consultation options and how to begin</span>
+                <span className="cx-short">Options</span>
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
-            <ul className="sv-jump" aria-label="The four practices">
+            <ul className="svh-jump" aria-label="The four practices">
               {services.map((service) => (
                 <li key={service.slug}>
-                  <a href={`#${service.slug}`}>{service.name}</a>
+                  <a href={`#${service.slug}`}>
+                    <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons[service.slug as keyof typeof svIcons] ?? svIcons.lotus }} />
+                    {service.name}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="cn-hero-visual" data-reveal="">
-            <div className="cn-arch">
-              <picture>
-                <source type="image/avif" srcSet={assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 380px" />
-                <img src={asset("/images/narayani-portrait-684.webp")} alt={`Narayani Garg, ${site.title}`} width={684} height={1000} fetchPriority="high" />
-              </picture>
+          <div className="svh-visual" data-reveal="">
+            <div className="svh-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/faq-narayani.webp")} alt={`Narayani Garg, ${site.title}`} width={760} height={964} fetchPriority="high" />
             </div>
-            <p className="cn-badge">
+            <p className="svh-badge">
+              <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
               <span>Narayani Garg</span>
               <small>Personal guidance</small>
             </p>
           </div>
         </div>
+        <ul className="svh-values" aria-label="How she guides">
+          {svValues.map((v) => (
+            <li key={v.title}>
+              <span className="svh-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
+              <span>
+                <strong>{v.title}</strong>
+                <small>{v.text}</small>
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <nav className="cn-chips" aria-label="Services on this page">
