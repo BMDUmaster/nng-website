@@ -18307,4 +18307,52 @@ footer.site-footer.ft {
   .cw-dot[aria-current="true"]::before { width: 8px; background: #123A2B; }
 }
 @media (min-width: 1024px) { .cw-card-shade { background: linear-gradient(180deg, transparent 45%, rgb(28 22 16 / 0.82) 100%); } }
-@media (max-width: 1023px) { .cw-slide blockquote em { font-style: inherit; color: inherit; } .cw h2 em { font-style: inherit; } }
+
+/* Client stories, phones and tablets (Oct 16, mobile banner): faces column beside a square film, the quote below with a
+   gold closing line, the person, then arrows and dots; soft green wave at the foot. Desktop untouched. */
+@media (max-width: 1023px) {
+  .cw { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(180deg, #FBF8EF 0%, #F7F2E4 100%); border: 0; }
+  .cw::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 70' preserveAspectRatio='none'%3E%3Cpath d='M0 10C90 40 170 66 260 62S360 46 400 40V70H0Z' fill='%23E3EAD8'/%3E%3Cpath d='M0 30C70 50 150 70 220 70H0Z' fill='%234E7A55'/%3E%3Cpath d='M0 10C90 40 170 66 260 62S360 46 400 40' fill='none' stroke='%23C9A256' stroke-width='1.2'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+  }
+  .cw-inner { padding-block: 34px 70px; }
+  .cw-kicker { font-size: 11.5px; letter-spacing: 0.24em; color: #123A2B; }
+  .cw-kicker::before, .cw-kicker::after { background: #123A2B; }
+  .practice-site main .cw h2 { margin-top: 8px; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(32px, 9.6vw, 42px); line-height: 1.05; letter-spacing: -0.02em; color: #123A2B; }
+  .cw h2 em { font-style: italic; font-weight: 500; color: #A9792E; }
+  .cw-head .clientele-note { margin-top: 10px; font-size: 13.5px; line-height: 1.55; color: #5B564C; }
+
+  .cw-slider { display: grid; grid-template-columns: 58px minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: 14px; row-gap: 0; align-items: center; margin-top: 22px; text-align: left; }
+  .cw-faces { display: flex; grid-column: 1; grid-row: 1; flex-direction: column; align-items: center; gap: 14px; }
+  .cw-face { display: block; width: 52px; height: 52px; padding: 0; border: 0; border-radius: 50%; overflow: hidden; background: #EFE6CE; box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35); opacity: 0.7; cursor: pointer; }
+  .cw-face img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .cw-face[aria-current="true"] { opacity: 1; box-shadow: 0 0 0 2px #FBF8EF, 0 0 0 4px #C9A256; }
+  .cw-card { grid-column: 2; grid-row: 1; width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; background: #1E2A22; box-shadow: 0 22px 40px -24px rgb(30 40 30 / 0.65); }
+  .cw-card-frame { display: none; }
+  .cw-card-shade { background: linear-gradient(180deg, transparent 45%, rgb(28 22 16 / 0.82) 100%); }
+  .cw-card-time { background: rgb(30 30 30 / 0.55); color: #FFFFFF; }
+  .cw-card-play { background: rgb(255 255 255 / 0.92); color: #123A2B; }
+  .cw-card-hook { font-family: var(--font-display), var(--serif); font-weight: 500; font-size: 18px; color: #FFFFFF; }
+  .cw-card-name { font-size: 12.5px; color: #E2BE6E; font-weight: 600; }
+
+  .cw-slide { grid-column: 1 / -1; grid-row: 2; margin-top: 18px; padding: 0 6px; text-align: left; }
+  .cw-mark { display: block; height: 40px; font-family: var(--font-display), serif; font-size: 72px; line-height: 0.9; color: #C9A256; text-align: left; }
+  .cw-slide blockquote p { margin: 0; font-family: var(--font-display), var(--serif); font-weight: 500; font-size: clamp(20px, 6vw, 26px); line-height: 1.3; color: #123A2B; text-align: left; }
+  .cw-slide blockquote em { font-style: italic; color: #A9792E; }
+  .cw-person { justify-content: flex-start; margin-top: 16px; gap: 12px; text-align: left; }
+  .cw-person img { width: 50px; height: 50px; box-shadow: 0 0 0 2px #FBF8EF, 0 0 0 3px rgb(201 162 86 / 0.6); }
+  .cw-person strong { font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 17px; color: #123A2B; }
+  .cw-person small { font-size: 12.5px; color: #5B564C; }
+  .cw-nav { grid-column: 1 / -1; grid-row: 3; justify-self: center; gap: 22px; margin-top: 18px; }
+  .cw-arrow { width: 46px; height: 46px; border-radius: 50%; box-shadow: inset 0 0 0 1.3px #C9A256; background: transparent; color: #123A2B; }
+  .cw-dot::before { background: rgb(18 58 43 / 0.25); }
+  .cw-dot[aria-current="true"]::before { width: 8px; background: #123A2B; }
+}
+@media (max-width: 1023px) { .cw-slide blockquote p { font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 5.8vw, 25px); line-height: 1.32; } .cw-slide blockquote em { font-family: var(--font-display), var(--serif); font-weight: 500; } }
