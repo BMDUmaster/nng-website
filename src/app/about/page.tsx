@@ -116,6 +116,13 @@ export default function AboutPage() {
       </section>
 
       <section className="au-story" id="story" aria-labelledby="story-title">
+        {["l", "r"].map((side) => (
+          <div key={side} className={`au-leaf au-leaf-${side}`} aria-hidden="true">
+            <span className="wd-dew au-dew-1" />
+            <span className="wd-dew au-dew-2" />
+            <span className="wd-drop au-drop-1" />
+          </div>
+        ))}
         <div className="au-story-inner">
           <div className="au-portrait" data-reveal="">
             <div className="au-portrait-arch au-video">
