@@ -396,7 +396,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <HomeFaq items={faqs.services} source="services-faq" />
+      <HomeFaq items={faqs.services} source="services-faq" intro="A few things you may want to know first. These answers are here to help you feel more confident before you book." rich />
       <Reveal />
     </div>
   );

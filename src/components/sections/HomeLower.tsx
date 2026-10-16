@@ -106,14 +106,16 @@ export function HomeFaq({
   title = "Before you enquire",
   intro = "A few things you may want to know first.",
   source = "home-faq",
+  rich = false,
 }: {
   items: Faq[];
   title?: string;
   intro?: string;
   source?: string;
+  rich?: boolean;
 }) {
   return (
-    <section className="fq" id="faq" aria-labelledby="faq-title">
+    <section className={`fq${rich ? " fq-rich" : ""}`} id="faq" aria-labelledby="faq-title">
       <div className="fq-inner">
         <div className="fq-intro">
           <div className="fq-top">
@@ -145,6 +147,7 @@ export function HomeFaq({
             <details key={item.q} className="fq-item" name={source}>
               <summary>
                 <span className="fq-num">{String(i + 1).padStart(2, "0")}</span>
+                {rich && <span className="fq-topic" aria-hidden="true" dangerouslySetInnerHTML={{ __html: faqIcon(item.q) }} />}
                 <span className="fq-q">{item.q}</span>
                 <span className="fq-icon" aria-hidden="true" />
               </summary>
@@ -156,6 +159,17 @@ export function HomeFaq({
     </section>
   );
 }
+
+const faqIcons: [RegExp, string][] = [
+  [/fee|cost|price|pay/i, ico('<path d="M10 7h13M10 12h13M10 7c7 0 9 2 9 5s-3 5-9 5l10 9"/>')],
+  [/medical|professional|doctor|replace/i, ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/><path d="M7 16h5l2-3 3 6 2-3h6"/>')],
+  [/outside|abroad|india|country|online/i, ico('<circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3.5 3 5 7 5 11s-1.5 8-5 11c-3.5-3-5-7-5-11s1.5-8 5-11Z"/>')],
+  [/teach|course|class|learn/i, ico('<path d="M3 12 16 6l13 6-13 6z"/><path d="M8 14.5V21c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-6.5"/>')],
+  [/remed/i, lotusSvg],
+  [/share|asked|bring|need/i, ico('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 15h8M13 19h8M13 23h5"/>')],
+  [/.*/, ico('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>')],
+];
+const faqIcon = (q: string) => faqIcons.find(([re]) => re.test(q))![1];
 
 /** Her most-viewed Instagram reels (or YouTube videos) as tall cards drifting in a loop; a pointer holds the row. */
 export function InstagramReels({ platform = "instagram" }: { platform?: "instagram" | "youtube" }) {
