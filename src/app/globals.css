@@ -21451,3 +21451,53 @@ section.au-book.bkx { background: linear-gradient(180deg, #FBF7EE, #F5EEDF); }
 }
 .svh-photo img { object-position: 40% 0%; }
 @media (min-width: 901px) { .svh-photo img { object-position: 30% 0%; } .svh-photo::after { display: none; } }
+
+/* Services hero, phones (Oct 16), matched to the mobile design: words first on green with a gold arch and leaves at
+   the right, two buttons only as wide as their labels, her room photograph rising out of the green, the name card on
+   it, four values in one row, and the four practices in one row under "Explore her practices". */
+.svh-explore, .svh-m-deco { display: none; }
+@media (max-width: 900px) {
+  .svh { background: radial-gradient(70% 40% at 20% 20%, #1A4D37, transparent 70%), linear-gradient(180deg, #123A2B 0%, #0E3324 100%); }
+  .svh-m-deco { display: block; position: absolute; z-index: 0; right: 0; top: 0; width: 26vw; max-width: 140px; aspect-ratio: 211 / 750; background: url("/images/svh-m-deco.webp") 100% 0 / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent, #000 35%), linear-gradient(180deg, #000 80%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 35%); pointer-events: none; }
+  .svh-inner { position: relative; z-index: 1; }
+  .svh-copy { order: 1; padding: 22px 18px 0; }
+  .svh-crumbs { display: flex; font-size: 13px; }
+  .svh-kicker { margin-top: 14px; font-size: 12px; letter-spacing: 0.24em; }
+  .practice-site main .svh h1 { margin-top: 12px; max-width: 11em; font-size: clamp(34px, 10vw, 42px); line-height: 1.04; }
+  .svh-rule { width: 52px; margin-top: 14px; }
+  .practice-site main .svh .svh-lead { max-width: 30em; margin-top: 14px; padding-right: 8vw; font-size: 15px; line-height: 1.5; }
+  .svh-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 18px; }
+  .svh-cta, .svh-ghost { width: auto; min-height: 46px; gap: 14px; font-size: 14.5px; }
+  .svh-cta { padding: 4px 4px 4px 20px; }
+  .svh-go { width: 38px; height: 38px; font-size: 16px; }
+  .svh-ghost { justify-content: flex-start; padding: 0 18px; }
+  .svh .cx-long { display: inline; }
+  .svh .cx-short { display: none; }
+  .svh-copy .svh-jump { display: none; }
+  .svh-visual { order: 2; height: auto; margin-top: -40px; aspect-ratio: 851 / 570; }
+  .svh-photo { border-radius: 0; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%); mask-image: linear-gradient(180deg, transparent 0%, #000 22%); }
+  .svh-photo::before, .svh-photo::after { display: none; }
+  .svh-photo img { object-position: 50% 100%; }
+  .svh-badge { right: 3%; left: auto; bottom: 16%; padding: 8px 20px 7px; transform: none; }
+  .svh-badge-lotus { top: -20px; width: 28px; color: #E1BE70; }
+  .svh-badge span:not(.svh-badge-lotus) { font-size: 16px; }
+  .svh-badge small { font-size: 9px; letter-spacing: 0.22em; }
+  .svh-values { grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: -46px; padding: 46px 6px 10px; }
+  .svh-values li { padding: 0 4px; gap: 6px; }
+  .svh-values li + li { border-left: 1px solid rgb(201 162 86 / 0.45); }
+  .svh-values li:nth-child(3) { border-left: 1px solid rgb(201 162 86 / 0.45); }
+  .svh-v-icon { width: 46px; height: 46px; padding: 11px; }
+  .svh-values strong { font-size: 13px; line-height: 1.2; }
+  .svh-values small { margin-top: 3px; font-size: 10.5px; line-height: 1.3; }
+  .svh-explore { display: block; position: relative; z-index: 4; padding: 10px 10px 18px; background: #FBF7EE; text-align: center; }
+  .svh-explore-kicker { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #6A5A3E; }
+  .svh-jump-m { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 12px 0 0; }
+  .svh-jump-m a { justify-content: center; gap: 5px; min-height: 42px; padding: 0 6px; box-shadow: inset 0 0 0 1px rgb(201 162 86 / 0.65); font-size: 11.5px; line-height: 1.15; color: #1E1A16; white-space: normal; text-align: left; }
+  .svh-jump-m a span { flex: none; width: 18px; color: #A9792E; }
+}
+@media (max-width: 900px) {
+  .svh-m-deco { -webkit-mask-image: radial-gradient(130% 75% at 100% 30%, #000 45%, transparent 85%); mask-image: radial-gradient(130% 75% at 100% 30%, #000 45%, transparent 85%); }
+  .svh-visual { margin-top: -6px; }
+  .svh-cta, .svh-ghost { min-height: 44px; font-size: 14px; }
+  .svh-go { width: 36px; height: 36px; }
+}

@@ -72,6 +72,7 @@ export default function ServicesPage() {
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), ...serviceSchema(services), faqSchema(faqs.services)] }} />
 
       <section className="svh" aria-labelledby="page-title">
+        <span className="svh-m-deco" aria-hidden="true" />
         <div className="svh-inner">
           <div className="svh-copy" data-reveal="">
             <nav className="cn-crumbs svh-crumbs" aria-label="Breadcrumb">
@@ -118,7 +119,10 @@ export default function ServicesPage() {
             <span className="svh-photo-leaves" aria-hidden="true" />
             <div className="svh-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("/images/services-hero-room.webp")} alt={`Narayani Garg, ${site.title}`} width={1544} height={1396} fetchPriority="high" />
+              <picture>
+                <source media="(max-width: 900px)" srcSet={asset("/images/services-hero-room-m.webp")} />
+                <img src={asset("/images/services-hero-room.webp")} alt={`Narayani Garg, ${site.title}`} width={1544} height={1396} fetchPriority="high" />
+              </picture>
             </div>
             <p className="svh-badge">
               <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
@@ -139,6 +143,19 @@ export default function ServicesPage() {
             </li>
           ))}
         </ul>
+        <div className="svh-explore">
+          <p className="svh-explore-kicker">Explore her practices</p>
+          <ul className="svh-jump svh-jump-m" aria-label="The four practices">
+            {services.map((service) => (
+              <li key={service.slug}>
+                <a href={`#${service.slug}`}>
+                  <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons[service.slug as keyof typeof svIcons] ?? svIcons.lotus }} />
+                  {service.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <nav className="cn-chips" aria-label="Services on this page">
