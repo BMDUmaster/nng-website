@@ -18637,3 +18637,86 @@ footer.site-footer.ft {
   .ab-person { left: 52%; top: 9%; height: 95%; }
   .ab-quote { right: 2.4%; bottom: 17%; width: 22vw; }
 }
+
+/* Her approach, phones and tablets (Oct 16, "Mindful Astrology Consultation Hero" mobile banner): words on the left
+   with the three steps stacked (icon, number, word, line); Narayani on the right before a turning zodiac wheel in her
+   room; the action full width; her line in a card at the foot. Desktop unchanged. */
+@media (max-width: 1099px) {
+  section#approach.ab { display: flex; flex-direction: column; isolation: isolate; padding: 0 0 22px; background: linear-gradient(180deg, #FBF7EE 0%, #F6EFE2 100%); border: 0; }
+  .ab-stage { display: block; position: absolute; z-index: 0; top: 0; right: 0; width: 58%; height: min(118vw, 560px); overflow: hidden; pointer-events: none; }
+  .ab-room { display: block; position: absolute; inset: 0; background: url("/images/approach-bg.webp") 30% 20% / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%), linear-gradient(180deg, #000 70%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 45%), linear-gradient(180deg, #000 70%, transparent); mask-composite: intersect; }
+  .ab-glow { position: absolute; left: 58%; top: 24%; width: 110%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgb(255 226 160 / 0.55), transparent); transform: translate(-50%, -50%); }
+  .ab-wheel-wrap { position: absolute; left: 62%; top: 22%; width: 100%; aspect-ratio: 1; transform: translate(-50%, -50%); }
+  .ab-wheel { width: 100%; height: 100%; overflow: visible; color: #D9B464; opacity: 0.95; filter: drop-shadow(0 0 4px rgb(255 214 140 / 0.9)); }
+  .ab-wheel text { fill: #C9A256; stroke: none; font-size: 40px; text-anchor: middle; dominant-baseline: central; font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Apple Symbols", serif; }
+  .ab-person { position: absolute; left: 54%; top: 13%; height: 100%; width: auto; max-width: none; transform: translateX(-50%); -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent); mask-image: linear-gradient(180deg, #000 80%, transparent); }
+  .ab-leaves { display: block; position: absolute; z-index: 0; right: -30px; bottom: 60px; width: 40%; height: auto; transform: scaleX(-1); opacity: 0.8; pointer-events: none; }
+
+  .ab-inner { position: relative; z-index: 1; order: 1; width: 100%; margin: 0; padding: 28px 0 0 18px; }
+  .ab-copy { max-width: none; text-align: left; }
+  .ab-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 0.26em; color: #3E3A33; }
+  .ab-kicker::before { display: none; }
+  .ab-kicker::after { content: "\2726"; display: inline; width: auto; height: auto; background: none; font-size: 12px; letter-spacing: 0; color: #B88A45; }
+  .practice-site main .ab h2 { max-width: 47%; margin: 12px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(30px, 9vw, 40px); line-height: 1.04; letter-spacing: -0.02em; color: #1E2A22; text-align: left; }
+  .ab h2 em { color: #B58A44; }
+  .ab-lead { max-width: 47%; margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #4A463E; text-align: left; }
+
+  .ab-steps { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 52%; margin: 16px 0 0; padding: 0; }
+  .ab-steps::before, .ab-steps::after { display: none; }
+  .ab-steps > li { display: grid; grid-template-columns: auto 1fr; grid-template-areas: "icon word" "icon text"; column-gap: 14px; align-items: center; justify-items: start; padding: 0; text-align: left; opacity: 1; transform: none; }
+  .ab-steps > li + li::before { content: ""; position: absolute; left: 31px; top: -12px; width: 1px; height: 10px; background: #C9A256; }
+  .ab-steps > li + li::after { display: none; }
+  .ab-icon { grid-area: icon; position: relative; width: 62px; height: 62px; background: radial-gradient(circle at 40% 35%, #FFFFFF, #F4ECDA); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.4), 0 0 0 5px rgb(244 236 218 / 0.6); color: #1E2A22; animation: none !important; }
+  .ab-icon svg { width: 30px; height: 30px; }
+  .ab-steps li:nth-child(2) .ab-icon { color: #1E2A22; }
+  .ab-num { display: grid; place-items: center; position: absolute; top: -6px; right: -6px; width: 24px; height: 24px; border-radius: 50%; background: #123A2B; color: #FFFFFF; font-size: 10px; font-weight: 600; box-shadow: 0 0 0 2px #FAF6EC; }
+  .ab-steps h3 { grid-area: word; align-self: end; margin: 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 19px; color: #1E2A22; }
+  .ab-steps > li > p { grid-area: text; align-self: start; margin: 2px 0 0; font-size: 12.5px; line-height: 1.35; color: #4A463E; }
+  .ab-points { display: none !important; }
+
+  .ab-actions { display: grid; justify-items: start; gap: 10px; margin: 18px 18px 0 0; }
+  .ab-cta { justify-content: space-between; width: min(100%, 340px); min-height: 52px; padding: 0 22px 0 26px; background: linear-gradient(180deg, #1D4F3A, #123A2B); color: #FFFFFF; font-size: 14.5px; font-weight: 600; box-shadow: 0 0 0 1.5px rgb(201 162 86 / 0.7), 0 14px 24px -14px rgb(18 58 43 / 0.9); }
+  .ab-cta svg { color: #DDB86A; }
+  .ab-more { max-width: none; }
+  .ab-more summary { margin: 0 0 0 10px; font-size: 13.5px; color: #123A2B; }
+
+  /* Her line, in a card at the foot. */
+  .ab-photo { position: relative; z-index: 1; order: 2; aspect-ratio: auto; overflow: visible; margin: 18px 14px 0; background: none; }
+  .ab-photo img, .ab-photo::after { display: none; }
+  .ab-quote { position: relative; left: auto; right: auto; bottom: auto; max-width: none; margin: 0; padding: 18px 18px 16px 64px; border-radius: 18px; background: rgb(252 248 239 / 0.92); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35), 0 18px 34px -24px rgb(60 44 20 / 0.5); }
+  .ab-quote::before { left: 18px; top: 10px; font-family: var(--font-display), serif; font-size: 56px; color: #B88A45; }
+  .ab-quote p { font-family: var(--font-display), var(--serif); font-style: italic; font-weight: 500; font-size: 18px; line-height: 1.3; color: #123A2B; }
+}
+@media (max-width: 1099px) and (prefers-reduced-motion: no-preference) {
+  .ab-wheel { animation: ab-turn 120s linear infinite; }
+}
+@keyframes ab-turn { to { rotate: 360deg; } }
+@media (min-width: 681px) and (max-width: 1099px) {
+  .ab-stage { height: 620px; width: 52%; }
+  .practice-site main .ab h2, .ab-lead { max-width: 50%; }
+}
+@media (max-width: 1099px) {
+  .ab-stage { width: 60%; height: min(150vw, 600px); -webkit-mask-image: linear-gradient(180deg, #000 74%, transparent 98%); mask-image: linear-gradient(180deg, #000 74%, transparent 98%); }
+  .ab-person { -webkit-mask-image: none; mask-image: none; top: 12%; height: 92%; left: 56%; }
+  .ab-wheel { color: #D2A851; }
+  .ab-steps { max-width: 50%; gap: 12px; }
+  .ab-steps h3 { font-size: 17px; }
+  .ab-steps > li > p { font-size: 12px; }
+  .ab-icon { width: 54px; height: 54px; }
+  .ab-icon svg { width: 26px; height: 26px; }
+  .ab-steps > li + li::before { left: 27px; }
+  .ab-steps > li { column-gap: 12px; }
+}
+@media (max-width: 1099px) {
+  .ab-stage { width: 56%; }
+  .ab-person { left: 62%; height: 86%; }
+  .practice-site main .ab h2 { max-width: 46%; font-size: clamp(28px, 8.4vw, 38px); }
+  .ab-lead { max-width: 44%; font-size: 12.5px; }
+  .ab-steps { max-width: 46%; }
+  .ab-steps h3 { font-size: 16px; }
+  .ab-steps > li > p { font-size: 11.5px; }
+  .ab-icon { width: 48px; height: 48px; }
+  .ab-steps > li + li::before { left: 24px; }
+  .ab-num { width: 22px; height: 22px; font-size: 9.5px; }
+  .ab-lead, .ab-steps p, .ab-steps h3 { text-shadow: 0 0 6px #FAF6EC, 0 0 3px #FAF6EC; }
+}
