@@ -22366,3 +22366,53 @@ section.fq.fq-rich h2 em { display: block; }
 .bx-blur-l { z-index: 0; width: 90px; }
 .bx-inner { padding-left: clamp(0px, calc((1440px - 100vw) / 4), 40px); }
 @media (max-width: 1360px) and (min-width: 901px) { .bx-copy { width: 52%; } .practice-site main .bx h1 { font-size: clamp(48px, 5vw, 70px); } .bx-values li { gap: 14px; padding: 0 14px; } .bx-v-icon { width: 62px; height: 62px; padding: 16px; } .bx-values strong { font-size: 18px; } .bx-values small { font-size: 13px; } }
+
+/* Brainology hero, exact pass: the right side is the approved banner's own photograph panel (room, gold arcs and the
+   leaf vine), fading into the same deep green; blurred leaves at the left edge and bottom right; the values card
+   overlaps the photo's foot. */
+.bx { background: radial-gradient(45% 60% at 30% 45%, #12401F, transparent 75%), #072A17; padding-bottom: 34px; }
+.bx-photo { top: 0; right: 0; bottom: 96px; left: auto; width: 62.5%; overflow: visible; }
+.bx-photo-clip { clip-path: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%); mask-image: linear-gradient(90deg, transparent 0%, #000 14%); }
+.bx-photo-clip img { object-fit: cover; object-position: 0% 30%; }
+.bx-ring, .bx-vine { display: none; }
+.bx-blur-l { z-index: 3; width: 150px; background-image: url("/images/brainology-blur-l.webp"); -webkit-mask-image: linear-gradient(90deg, #000 35%, transparent); mask-image: linear-gradient(90deg, #000 35%, transparent); }
+.bx-blur-r { display: block; z-index: 5; right: 0; bottom: 0; width: 160px; height: 340px; background: url("/images/brainology-blur-r.webp") 100% 100% / cover no-repeat; -webkit-mask-image: linear-gradient(270deg, #000 40%, transparent); mask-image: linear-gradient(270deg, #000 40%, transparent); }
+.bx-anim { display: none; }
+.bx-crumbs { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.bx-inner { width: min(1460px, calc(100% - 96px)); padding-left: 0; min-height: clamp(560px, 70vw * 0.4, 680px); }
+.bx-copy { width: min(46%, 640px); padding: 60px 0 150px 40px; }
+.bx-kicker { margin-top: 0; font-size: 15px; letter-spacing: 0.24em; }
+.bx-lotus { width: 44px; }
+.bx-kicker-line { width: 70px; }
+.practice-site main .bx h1 { font-size: clamp(56px, 6vw, 104px); line-height: 0.95; }
+.bx-rule { width: 80px; height: 3px; margin-top: 14px; }
+.practice-site main .bx .bx-lead { max-width: 28em; font-size: clamp(16px, 1.4vw, 22px); }
+.bx-info li { color: rgb(255 255 255 / 0.92); }
+.bx-info li:last-child { max-width: 200px; }
+.bx-values { width: min(1500px, calc(100% - 96px)); margin-top: -150px; padding: 28px 30px; border-radius: 34px 34px 30px 30px; background: linear-gradient(180deg, #FFFCF4, #F7EFDE); }
+.bx-values::before { content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: -26px; height: 60px; border-radius: 50% 50% 0 0 / 100% 100% 0 0; background: #FFFCF4; box-shadow: 0 -1px 0 rgb(201 162 86 / 0.45); }
+@media (max-width: 1360px) and (min-width: 901px) { .bx-copy { width: 48%; padding-left: 10px; } .practice-site main .bx h1 { font-size: clamp(50px, 5.6vw, 76px); } }
+@media (max-width: 900px) {
+  .bx { padding-bottom: 20px; }
+  .bx-inner { width: calc(100% - 32px); min-height: 0; }
+  .bx-copy { width: 100%; padding: 26px 0 18px; }
+  .bx-kicker { font-size: 12px; }
+  .bx-lotus { width: 30px; }
+  .practice-site main .bx h1 { font-size: clamp(44px, 13vw, 56px); }
+  .bx-photo { position: relative; width: 100%; height: 360px; bottom: auto; overflow: hidden; }
+  .bx-photo::before { display: none; }
+  .bx-photo-clip { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 75%, transparent 98%); mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 75%, transparent 98%); }
+  .bx-photo-clip img { object-position: 62% 20%; }
+  .bx-blur-r { display: none; }
+  .bx-values { margin-top: -60px; }
+  .bx-values::before { display: none; }
+}
+@media (min-width: 901px) { .bx-copy { padding-bottom: 190px; } .bx-blur-l { width: 105px; } .bx-blur-r { height: 240px; bottom: 30px; width: 150px; } }
+@media (min-width: 901px) {
+  .bx-blur-l { z-index: 1; top: 0; bottom: 0; background-size: 100% 100%; }
+  .bx-photo { bottom: 40px; }
+  .bx-blur-r { display: none; }
+  .bx-copy { padding-left: 40px; }
+}
+@media (max-width: 1360px) and (min-width: 901px) { .bx-copy { padding-left: 60px; } }
+@media (min-width: 901px) { .bx-photo { bottom: 0; } .bx-info { flex-wrap: nowrap; } }

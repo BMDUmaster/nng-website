@@ -208,7 +208,7 @@ export function ServiceHero({
           <span className="bx-ring bx-ring-2" />
           <div className="bx-photo-clip">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={asset("/images/brainology-room.webp")} alt="" width={1440} height={1280} fetchPriority="high" />
+            <img src={asset("/images/brainology-room.webp")} alt="" width={2000} height={1280} fetchPriority="high" />
           </div>
           <span className="bx-vine" />
         </div>
