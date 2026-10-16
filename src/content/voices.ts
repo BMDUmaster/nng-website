@@ -134,10 +134,19 @@ export const addedFilms: Voice[] = [
   { id: "five-years", clip: "/videos/stories/five-years.mp4", name: "A client's reflection", context: "Five years of guidance", headline: "", quote: "", hook: "Through the best and worst", poster: "/images/testimonials/new-2.webp", film: { driveId: "1UHLdIA7SysXyW_dM1NHw7DCwC4H2xL-X", duration: "0:46", label: "Someone to turn to" } },
   { id: "family-decisions", clip: "/videos/stories/family-decisions.mp4", name: "A client's reflection", context: "Two years of guidance", headline: "", quote: "", hook: "Before the big decisions", poster: "/images/testimonials/new-4.webp", film: { driveId: "1IIG1FfXqAcNhiEJFncXJzjO5KxPxh_Wd", duration: "0:56", label: "Guidance for him and his family" } },
   { id: "difficult-year", clip: "/videos/stories/difficult-year.mp4", name: "A client's reflection", context: "Through a difficult time", headline: "", quote: "", hook: "We couldn't see a way forward", poster: "/images/testimonials/new-5.webp", film: { driveId: "1uU8Ol2Bbk3o_FG7k2-K9_-qxAlKsldVl", duration: "1:05", label: "Finding a way through" } },
+  // Added 16 Oct 2026 from the same Drive folder; hooks paraphrase what each client says on film (machine-translated from Hindi, check by ear).
+  { id: "sagar", clip: "/videos/stories/sagar.mp4", name: "Sagar", context: "Three years with Narayani", headline: "", quote: "", hook: "From no confidence to a business that runs well", poster: "/images/testimonials/sagar.webp", film: { driveId: "1NEKcUoH2BqDSQzA4i8lrvXGYfBUV3p_7", duration: "0:51", label: "Changing his mindset" } },
+  { id: "hina", clip: "/videos/stories/hina.mp4", name: "Hina", context: "Moradabad · since 2022", headline: "", quote: "", hook: "Learning to think positively", poster: "/images/testimonials/hina.webp", film: { driveId: "1McT1s83HNsaZI1dky84O_ZX7syLS9uPM", duration: "0:53", label: "A more positive outlook" } },
+  { id: "ramneet", clip: "/videos/stories/ramneet.mp4", name: "Ramneet", context: "London", headline: "", quote: "", hook: "Out of a sad phase, into a life that feels aligned", poster: "/images/testimonials/ramneet.webp", film: { driveId: "1km8JZyVt9e6zLb7qGpsflOlS96isfBrc", duration: "2:18", label: "Her gratitude" } },
   { id: "neha", name: "Neha", context: "Melbourne", headline: "", quote: "", hook: "Why I reached out", poster: "/images/testimonials/new-0.webp", film: { driveId: "1y7JLLC2r_2v364UxD7y-rZLOXeUVq9Sl", duration: "3:02", label: "Her personal experience" } },
 ];
 /** Films with a local recording: they preview silently on hover (or in view on phones) in "Hear the whole story". */
-export const storyFilms: Voice[] = [voices.navleen, voices.shelley, voices.deepa, voices.manish, ...addedFilms.filter((voice) => voice.clip)];
+const newest = ["sagar", "hina", "ramneet"];
+export const storyFilms: Voice[] = [
+  ...addedFilms.filter((voice) => newest.includes(voice.id)),
+  voices.navleen, voices.shelley, voices.deepa, voices.manish,
+  ...addedFilms.filter((voice) => voice.clip && !newest.includes(voice.id)),
+];
 /** The remaining recordings, still played from Drive. */
 export const otherFilms: Voice[] = [voices.shashi, voices.renu, voices.vanshika, ...addedFilms.filter((voice) => !voice.clip)];
 
