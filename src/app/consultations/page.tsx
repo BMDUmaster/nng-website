@@ -49,6 +49,18 @@ const cxPractices = [
   { name: "Personal Guidance", note: "Support for mind and life", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
 ];
 
+const feePoints = [
+  { title: "Flexible Formats", text: "Online or in person", icon: cxIcon('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2" stroke-width="2"/>') },
+  { title: "Custom Duration", text: "Choose as per your need", icon: cxIcon('<circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/>') },
+  { title: "Transparent Fees", text: "Get details before you book", icon: cxIcon('<path d="M9 7h14M9 12h14M9 7c7 0 9 2 9 5s-3 5-9 5l10 9"/>') },
+];
+const stepIcons = [
+  cxIcon('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>'),
+  cxIcon('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 15h8M13 19h8M13 23h5"/>'),
+  cxIcon('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2" stroke-width="2"/>'),
+  cxIcon('<path d="M6 26V20M12 26V16M18 26V12M24 26V8M18 6h6v6"/>'),
+];
+
 function Arrow() {
   return (
     <span className="cn-arrow" aria-hidden="true">
@@ -163,10 +175,12 @@ export default function ConsultationsPage() {
           </ul>
           <div className="cn-begin-foot" data-reveal="">
             <EnquiryTrigger className="cn-ghost cn-ghost-dark" topic="choosing the right service" source="consultations-unsure">
-              I am not sure where to begin
+              <span className="cx-long">I am not sure where to begin</span>
+              <span className="cx-short">Not sure? Ask</span>
             </EnquiryTrigger>
             <Link prefetch={false} className="cn-text cb-explore" href="/services/">
-              Explore the practices <span aria-hidden="true">→</span>
+              <span className="cx-long">Explore the practices</span>
+              <span className="cx-short">Practices</span> <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -177,35 +191,51 @@ export default function ConsultationsPage() {
       ) : (
         <section className="cn-sec cn-fees" id="fees" aria-labelledby="fees-title">
           <div className="cn-inner">
-            <div className="cn-fees-card" data-reveal="">
-              <div className="cn-fees-icon" aria-hidden="true">
-                <Icon id="gen-fees" />
-              </div>
+            <div className="cn-fees-card cf2" data-reveal="">
               <div className="cn-fees-copy">
                 <p className="cn-kicker cn-kicker-dark">Options and fees</p>
-                <h2 id="fees-title">Discuss your consultation options</h2>
+                <h2 id="fees-title">
+                  Discuss your <em>consultation</em> options
+                </h2>
                 <p>Format, duration and fees are being finalised. Ask the team about the service you need before you book.</p>
               </div>
-              <EnquiryTrigger className="cn-cta" topic="a personal consultation" source="consultations-fees">
-                <span>Ask about options and fees</span>
-                <Arrow />
-              </EnquiryTrigger>
+              <div className="cf2-mid">
+                <ul className="cf2-points">
+                  {feePoints.map((f) => (
+                    <li key={f.title}>
+                      <span className="cf2-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: f.icon }} />
+                      <strong>{f.title}</strong>
+                      <small>{f.text}</small>
+                    </li>
+                  ))}
+                </ul>
+                <EnquiryTrigger className="cn-cta cf2-cta" topic="a personal consultation" source="consultations-fees">
+                  <span>Ask about options and fees</span>
+                  <Arrow />
+                </EnquiryTrigger>
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="cf2-art" src={asset("/images/fees-calendar.webp")} alt="" width={508} height={390} loading="lazy" aria-hidden="true" />
             </div>
           </div>
         </section>
       )}
 
-      <section className="cn-sec cn-how" id="how" aria-labelledby="how-title">
+      <section className="cn-sec cn-how ch" id="how" aria-labelledby="how-title">
         <div className="cn-inner">
           <header className="cn-head" data-reveal="">
             <p className="cn-kicker cn-kicker-dark">How it works</p>
-            <h2 id="how-title">From your question to an appointment</h2>
+            <h2 id="how-title">
+              From your question <br />
+              to an <em>appointment</em>
+            </h2>
             <p>An enquiry starts a conversation with the team. It does not book or pay for a session.</p>
           </header>
           <ol className="cn-steps" data-reveal="">
             {steps.map((step, i) => (
               <li key={step.title} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
                 <span className="cn-step-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="ch-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: stepIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </li>

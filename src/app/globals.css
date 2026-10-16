@@ -19836,3 +19836,99 @@ section.cn-begin.cb { position: relative; isolation: isolate; overflow: hidden; 
 }
 @media (max-width: 900px) { .cx-visual { height: 104vw; max-height: 420px; } .cx-hero .cn-formats { margin-top: 30px; align-items: stretch; } .cx-hero .cn-ghost { white-space: nowrap; } .cx-hero .cn-formats li { justify-content: flex-start; } }
 @media (max-width: 380px) { .cx-hero .cn-actions { width: 54%; } .cx-hero .cn-ghost, .cx-hero .cn-cta { font-size: 12.5px; padding-left: 14px; } }
+
+/* Where to begin, phones: cards in one swiped row with snap; both actions on one line. */
+@media (max-width: 680px) {
+  .cb .cn-inner { padding-inline: 0; width: 100%; }
+  .cb .cn-head { padding: 0 16px; }
+  .cb .cn-areas { display: flex; grid-template-columns: none; gap: 12px; margin-top: 20px; padding: 4px 16px 10px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: none; }
+  .cb .cn-areas::-webkit-scrollbar { display: none; }
+  .cb .cn-area { flex: none; width: 80vw; min-height: 230px; scroll-snap-align: start; }
+  .cb .cn-begin-foot { flex-direction: row; align-items: center; gap: 8px; margin-top: 16px; padding: 0 16px; }
+  .cb .cn-ghost.cn-ghost-dark, .cb .cb-explore { flex: 1; min-width: 0; min-height: 48px; padding: 0 10px; gap: 6px; font-size: 12.5px; white-space: nowrap; justify-content: center; }
+  .cb .cn-ghost.cn-ghost-dark::before { width: 16px; height: 16px; flex: none; }
+}
+
+/* Options and fees (cf2-): one cream banner with words, three points and a button, and the calendar picture. */
+.cn-fees .cn-inner { padding-block: clamp(28px, 4vh, 44px); }
+.cn-fees-card.cf2 { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 0.62fr); align-items: center; gap: 30px; overflow: hidden; padding: 0 0 0 clamp(28px, 3.4vw, 56px); border-radius: 26px; background: url("/images/fees-leaves.webp") left center / auto 100% no-repeat, linear-gradient(90deg, #FBF7EC, #F6F1E2); box-shadow: 0 0 0 1.2px rgb(201 162 86 / 0.55), 0 30px 50px -36px rgb(60 44 20 / 0.5); }
+.cf2 .cn-fees-copy { padding: 30px 0 30px 4%; text-align: left; }
+.practice-site main .cf2 h2 { margin: 8px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(30px, 2.8vw, 46px); line-height: 1.06; color: #123A2B; }
+.cf2 h2 em { font-weight: 500; color: #B58A44; }
+.cf2 .cn-fees-copy p:not(.cn-kicker) { margin-top: 10px; font-size: 14.5px; line-height: 1.55; color: #4A463E; }
+.cf2-mid { display: grid; justify-items: center; gap: 20px; padding: 26px 0; }
+.cf2-points { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; margin: 0; padding: 0; list-style: none; }
+.cf2-points li { display: grid; justify-items: center; gap: 4px; padding: 0 8px; text-align: center; border-left: 1px solid rgb(169 121 46 / 0.3); }
+.cf2-points li:first-child { border-left: 0; }
+.cf2-icon { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 4px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FBF5E3, #EFE4C6); color: #123A2B; }
+.cf2-icon svg { width: 26px; height: 26px; }
+.cf2-points strong { font-size: 14.5px; color: #123A2B; }
+.cf2-points small { font-size: 12.5px; color: #5B564C; }
+.cf2 .cf2-cta { background: linear-gradient(180deg, #1D4F3A, #123A2B); color: #FFFFFF; box-shadow: 0 0 0 1.5px rgb(201 162 86 / 0.6), 0 16px 28px -16px rgb(18 58 43 / 0.9); }
+.cf2 .cf2-cta .cn-arrow { background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; }
+.cf2-art { align-self: stretch; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; border-left: 2px solid #C9A256; border-radius: 50% 0 0 50% / 70% 0 0 70%; }
+@media (max-width: 900px) {
+  .cn-fees .cn-inner { width: calc(100% - 24px); padding-block: 22px; }
+  .cn-fees-card.cf2 { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .cf2 .cn-fees-copy { position: relative; z-index: 1; padding: 22px 42% 16px 18px; }
+  .practice-site main .cf2 h2 { font-size: clamp(26px, 7.4vw, 32px); }
+  .cf2 .cn-fees-copy p:not(.cn-kicker) { font-size: 13px; }
+  .cf2-art { position: absolute; top: 0; right: 0; width: 42%; height: 250px; border-radius: 0 0 0 60% / 0 0 0 40%; }
+  .cf2-mid { padding: 6px 10px 18px; gap: 14px; }
+  .cf2-points { padding: 14px 0; border-radius: 18px; background: rgb(255 255 255 / 0.6); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.25); }
+  .cf2-icon { width: 46px; height: 46px; }
+  .cf2-icon svg { width: 22px; height: 22px; }
+  .cf2-points strong { font-size: 12.5px; }
+  .cf2-points small { font-size: 11px; }
+  .cf2 .cf2-cta { width: 100%; justify-content: space-between; }
+}
+
+/* How it works (ch-): arched step cards, numbered badges, gold arrows; phones: a timeline of cards. */
+section.cn-how.ch { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(180deg, #FBF7EE, #F6F0E2); }
+.ch::before { content: ""; position: absolute; z-index: -1; left: 0; top: 0; width: 200px; aspect-ratio: 600 / 760; background: url("/images/hero-corner-tl.webp") 0 0 / contain no-repeat; opacity: 0.6; }
+.ch .cn-inner { padding-block: clamp(32px, 5vh, 52px); }
+.practice-site main .ch h2 { font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(32px, 3.4vw, 54px); line-height: 1.06; color: #123A2B; }
+.ch h2 em { font-style: italic; font-weight: 500; color: #1D4F3A; }
+.ch .cn-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 30px; }
+.ch .cn-steps li { position: relative; display: grid; justify-items: center; align-content: start; padding: 26px 18px 20px; border-radius: 120px 120px 18px 18px; background: rgb(253 251 245 / 0.92); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35), 0 20px 36px -28px rgb(60 44 20 / 0.5); text-align: left; }
+.ch .cn-steps li + li::before { content: "\2192"; position: absolute; left: -33px; top: 64px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; box-shadow: inset 0 0 0 1.2px #C9A256; background: #FBF7EE; font-size: 13px; color: #123A2B; }
+.ch .cn-step-num { position: absolute; left: -6px; top: -6px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #123A2B; color: #FFFFFF; font-size: 14px; }
+.ch-icon { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFBEE, #F2E3BC); color: #123A2B; box-shadow: 0 10px 20px -12px rgb(60 44 20 / 0.5); }
+.ch-icon svg { width: 32px; height: 32px; }
+.ch .cn-steps h3 { justify-self: stretch; margin-top: 18px; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 19px; color: #123A2B; }
+.ch .cn-steps p { justify-self: stretch; margin-top: 6px; font-size: 13.5px; line-height: 1.5; color: #4A463E; }
+.ch .cn-how-foot { justify-content: center; gap: 26px; margin-top: 26px; }
+.ch .cn-how-foot .cn-cta { background: linear-gradient(180deg, #1D4F3A, #123A2B); color: #FFFFFF; }
+.ch .cn-how-foot .cn-cta .cn-arrow { background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; }
+@media (max-width: 900px) {
+  .ch .cn-steps { position: relative; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; padding-left: 26px; }
+  .ch .cn-steps::before { content: ""; position: absolute; left: 13px; top: 20px; bottom: 20px; width: 1px; background: rgb(18 58 43 / 0.3); }
+  .ch .cn-steps li { grid-template-columns: auto 1fr; grid-template-areas: "icon h" "icon p"; column-gap: 14px; justify-items: start; padding: 14px; border-radius: 16px; }
+  .ch .cn-steps li + li::before { display: none; }
+  .ch .cn-step-num { left: -40px; top: 50%; width: 30px; height: 30px; font-size: 11px; transform: translateY(-50%); }
+  .ch-icon { grid-area: icon; width: 54px; height: 54px; }
+  .ch-icon svg { width: 24px; height: 24px; }
+  .ch .cn-steps h3 { grid-area: h; margin: 0; font-size: 16px; }
+  .ch .cn-steps p { grid-area: p; margin-top: 2px; font-size: 12.5px; }
+  .ch .cn-how-foot { flex-direction: column; gap: 12px; }
+  .practice-site main .ch h2 { font-size: clamp(28px, 8vw, 34px); }
+}
+
+/* Where to begin + fees, phones: short button labels; leaves kept small in the fees corner. */
+@media (max-width: 680px) {
+  .cb .cn-begin-foot .cx-long { display: none; }
+  .cb .cn-begin-foot .cx-short { display: inline; }
+  .cb .cn-ghost.cn-ghost-dark, .cb .cb-explore { font-size: 14px; }
+  .cb .cn-ghost.cn-ghost-dark::before { width: 18px; height: 18px; }
+}
+@media (max-width: 900px) {
+  .cn-fees-card.cf2 { background: url("/images/fees-leaves.webp") left top / 70px auto no-repeat, linear-gradient(180deg, #FBF7EC, #F6F1E2); }
+  .cf2 .cn-fees-copy { padding-left: 22px; }
+}
+
+@media (max-width: 900px) {
+  .cn-fees-card.cf2 { background-size: 38px auto, auto; }
+  .cf2 .cn-fees-copy { padding-left: 34px; }
+}
+.ch .cn-steps .cn-step-num { background: #123A2B; color: #FFFFFF; box-shadow: 0 0 0 3px #FBF7EE, 0 0 0 4px rgb(201 162 86 / 0.6); }
+@media (max-width: 900px) { .ch .cn-steps { padding-left: 32px; } .ch .cn-steps::before { left: 19px; } }
