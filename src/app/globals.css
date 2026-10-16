@@ -19015,3 +19015,157 @@ footer.site-footer.ft {
 .sf-name::before { content: ""; display: block; width: 36px; height: 1.5px; margin: 12px 0 10px; background: #D9B467; }
 .sf-card:not(.is-active) .sf-name::before { background: #C49A4A; }
 @media (min-width: 901px) { .sf-card .sf-name::before { background: #D9B467; } }
+
+/* Her book (bk2-), Oct 16 redesign. */
+.bk2 { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(45% 70% at 22% 40%, rgb(255 236 196 / 0.75), transparent 70%), linear-gradient(180deg, #FBF7EE 0%, #F6EFE1 100%); color: #1E2A22; }
+.bk2-leaves::before, .bk2-leaves::after { content: ""; position: absolute; z-index: -1; width: 240px; aspect-ratio: 600 / 760; background: url("/images/hero-corner-tl.webp") 0 0 / contain no-repeat; opacity: 0.75; pointer-events: none; }
+.bk2-leaves::before { left: 0; bottom: -40px; transform: scaleY(-1); }
+.bk2-leaves::after { right: 0; bottom: -40px; transform: rotate(180deg); }
+.bk2-inner { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); grid-template-areas: "stage copy" "stage foot"; column-gap: clamp(32px, 4vw, 72px); align-items: center; width: var(--wrap); margin-inline: auto; padding-block: clamp(40px, 6vh, 72px); }
+.bk2-copy { grid-area: copy; align-self: end; }
+.bk2-foot { grid-area: foot; align-self: start; }
+.bk2-stage { grid-area: stage; }
+
+.bk2-kicker { display: flex; align-items: center; gap: 14px; margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #123A2B; }
+.bk2-lotus { display: inline-grid; width: 40px; color: #B88A45; }
+.practice-site main .bk2 h2 { margin: 14px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(38px, 3.9vw, 66px); line-height: 1.04; letter-spacing: -0.02em; color: #123A2B; }
+.bk2 h2 em { font-style: italic; font-weight: 500; color: #B58A44; }
+.bk2-title { margin: 12px 0 0; font-family: var(--font-display), var(--serif); font-weight: 400; font-size: clamp(20px, 1.7vw, 28px); color: #4A4A42; }
+.bk2-lead { max-width: 36em; margin: 12px 0 0; font-size: clamp(14.5px, 1.05vw, 17px); line-height: 1.65; color: #4A463E; }
+.bk2-lead em { font-style: italic; }
+
+.bk2-figures { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0; margin: clamp(18px, 3vh, 28px) 0 0; padding: 0; list-style: none; }
+.bk2-figures li { display: flex; align-items: center; gap: 14px; padding: 0 24px; border-left: 1px solid rgb(169 121 46 / 0.3); }
+.bk2-figures li:first-child { padding-left: 0; border-left: 0; }
+.bk2-f-icon { display: grid; place-items: center; flex: none; width: 64px; height: 64px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFDF5, #F2E6CA); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.55); color: #A9792E; }
+.bk2-f-icon svg { width: 30px; height: 30px; }
+.bk2-f-text { display: grid; }
+.bk2-f-text strong { font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(20px, 1.6vw, 28px); line-height: 1.1; color: #123A2B; }
+.bk2-figures li:first-child strong { font-size: clamp(30px, 2.4vw, 40px); }
+.bk2-f-text small { font-size: 13.5px; color: #5B564C; }
+.bk2-author { display: grid; gap: 4px; margin: clamp(18px, 3vh, 28px) 0 0; }
+.bk2-author strong { font-family: var(--font-display), var(--serif); font-weight: 500; font-size: clamp(22px, 1.7vw, 28px); color: #123A2B; }
+.bk2-author span { font-size: 13px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #B88A45; }
+.bk2-cta { display: inline-flex; align-items: center; gap: 22px; min-height: 64px; margin-top: clamp(18px, 3vh, 26px); padding: 6px 8px 6px 34px; border-radius: 999px; background: linear-gradient(180deg, #1D4F3A, #123A2B); color: #FFFFFF; font-size: 17px; font-weight: 500; text-decoration: none; box-shadow: 0 0 0 1.5px rgb(201 162 86 / 0.55), 0 18px 30px -18px rgb(18 58 43 / 0.9); transition: transform 0.3s var(--ease); }
+.bk2-cta:hover { transform: translateY(-2px); }
+.bk2-cta-go { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; font-size: 20px; }
+
+/* The open book on a stone plinth. */
+.bk2-stage { position: relative; padding: 0 0 40px; perspective: 1600px; }
+.bk2-book { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; width: min(100%, 680px); margin: 0 auto; padding: 10px 10px 14px; border-radius: 6px; background: linear-gradient(180deg, #8A6A3E, #6E5230); box-shadow: 0 40px 60px -30px rgb(60 40 15 / 0.6), 0 0 0 1px rgb(0 0 0 / 0.05); transform: rotateX(8deg); transform-origin: 50% 100%; }
+.bk2-book::before { content: ""; position: absolute; left: 50%; top: 10px; bottom: 14px; width: 2px; background: rgb(0 0 0 / 0.18); transform: translateX(-50%); z-index: 2; }
+.bk2-page { position: relative; display: grid; align-content: start; justify-items: center; padding: clamp(18px, 2.2vw, 30px) clamp(14px, 1.8vw, 26px); background: linear-gradient(90deg, #F4ECDB, #FBF6EA 30%, #FBF6EA); box-shadow: inset 0 0 0 1px rgb(169 121 46 / 0.12); }
+.bk2-left { border-radius: 4px 0 0 4px; background: linear-gradient(270deg, #EADFC8 0%, #F6EFE0 10%, #FBF6EA 40%); }
+.bk2-right { border-radius: 0 4px 4px 0; background: linear-gradient(90deg, #EADFC8 0%, #F6EFE0 10%, #FBF6EA 40%); text-align: center; }
+.bk2-photo { width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border: 6px solid #FFFFFF; box-shadow: 0 0 0 1px rgb(169 121 46 / 0.25), 0 10px 18px -12px rgb(60 40 15 / 0.5); }
+.bk2-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 40% 18%; }
+.bk2-sign { margin: 12px 0 0; font-family: var(--font-script), cursive; font-size: clamp(22px, 1.9vw, 30px); line-height: 1; color: #7A5A28; }
+.bk2-orn { display: block; width: 22px; margin-top: 4px; color: #B88A45; }
+.bk2-chapter { margin: clamp(10px, 2vw, 26px) 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #B88A45; }
+.bk2-ch-title { display: grid; margin: 12px 0 0; font-family: var(--font-display), var(--serif); line-height: 1.05; }
+.bk2-ch-title span { font-weight: 600; font-size: clamp(24px, 2.4vw, 38px); color: #123A2B; }
+.bk2-ch-title small { font-size: clamp(14px, 1.2vw, 20px); color: #123A2B; }
+.bk2-ch-title em { font-style: italic; font-weight: 500; font-size: clamp(24px, 2.4vw, 38px); color: #B58A44; }
+.bk2-orn-rule { width: 100%; height: 22px; margin: 14px 0; background: linear-gradient(90deg, transparent, rgb(169 121 46 / 0.5) 30%, transparent 44%, transparent 56%, rgb(169 121 46 / 0.5) 70%, transparent) center / 100% 1px no-repeat; }
+.bk2-orn-rule svg { display: block; width: 22px; height: 22px; margin: 0 auto; }
+.bk2-ch-text { max-width: 22ch; margin: 0; font-size: clamp(12px, 0.95vw, 15px); line-height: 1.7; color: #4A463E; }
+.bk2-folio { margin: auto 0 0; padding-top: 14px; font-size: 11px; color: #8A847A; }
+.bk2-plinth { position: absolute; left: 6%; right: 6%; bottom: 0; height: 64px; border-radius: 6px; background: linear-gradient(180deg, #E7DCC8 0%, #D6C6A8 55%, #C4B08C 100%); box-shadow: 0 30px 40px -24px rgb(60 40 15 / 0.5); }
+.bk2-plinth::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: repeating-linear-gradient(115deg, transparent 0 40px, rgb(255 255 255 / 0.18) 40px 42px, transparent 42px 90px); }
+@keyframes bk2-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: no-preference) { .bk2-book { animation: bk2-float 6s ease-in-out infinite; } }
+
+/* Phones and tablets: words, book, figures, name, action. */
+@media (max-width: 900px) {
+  .bk2-inner { grid-template-columns: 1fr; grid-template-areas: "copy" "stage" "foot"; width: calc(100% - 32px); padding-block: 34px 34px; text-align: center; }
+  .bk2-kicker { flex-direction: column; justify-content: center; gap: 6px; font-size: 11.5px; }
+  .bk2-lotus { width: 32px; }
+  .practice-site main .bk2 h2 { font-size: clamp(32px, 9.6vw, 42px); }
+  .bk2-title { font-size: 19px; }
+  .bk2-lead { margin-inline: auto; font-size: 14px; }
+  .bk2-stage { margin-top: 22px; padding-bottom: 30px; }
+  .bk2-plinth { height: 44px; }
+  .bk2-page { padding: 12px 10px; }
+  .bk2-ch-text { font-size: 10.5px; line-height: 1.6; }
+  .bk2-chapter { font-size: 9px; margin-top: 8px; }
+  .bk2-sign { font-size: 18px; }
+  .bk2-foot { display: grid; justify-items: center; }
+  .bk2-figures { grid-template-columns: repeat(3, 1fr); width: 100%; margin-top: 18px; padding: 16px 6px; border-radius: 20px; background: rgb(253 251 245 / 0.92); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.25), 0 16px 30px -24px rgb(60 44 20 / 0.5); }
+  .bk2-figures li { flex-direction: column; gap: 8px; padding: 0 6px; text-align: center; }
+  .bk2-figures li:first-child { padding-left: 6px; }
+  .bk2-f-icon { width: 50px; height: 50px; }
+  .bk2-f-icon svg { width: 24px; height: 24px; }
+  .bk2-f-text strong, .bk2-figures li:first-child strong { font-size: 17px; }
+  .bk2-figures li:first-child strong { font-size: 26px; }
+  .bk2-f-text small { font-size: 11.5px; }
+  .bk2-author { justify-items: center; margin-top: 18px; }
+  .bk2-author strong { font-size: 22px; }
+  .bk2-author span { font-size: 11px; letter-spacing: 0.24em; }
+  .bk2-cta { min-height: 56px; margin-top: 16px; padding-left: 28px; font-size: 16px; }
+  .bk2-cta-go { width: 44px; height: 44px; }
+  .bk2-leaves::before, .bk2-leaves::after { width: 150px; }
+}
+/* Book: lighter field (beats the old #meet rule), a real page stack and curved pages. */
+section#meet.bk2 { background: radial-gradient(45% 70% at 24% 45%, rgb(255 240 210 / 0.9), transparent 70%), linear-gradient(180deg, #FCF9F2 0%, #F8F2E6 100%); }
+.bk2-book { padding: 0; background: none; box-shadow: none; }
+.bk2-book::before { top: 0; bottom: 0; width: 18px; background: linear-gradient(90deg, transparent, rgb(120 90 50 / 0.22) 45%, rgb(120 90 50 / 0.3) 50%, rgb(120 90 50 / 0.22) 55%, transparent); }
+.bk2-left { border-radius: 10px 2px 2px 14px; background: linear-gradient(270deg, #E2D4B8 0%, #F3EADA 6%, #FBF7EE 30%, #FAF4E8 100%); box-shadow: -2px 2px 0 #EFE6D4, -4px 4px 0 #E6DAC2, -6px 6px 0 #EFE6D4, -8px 8px 0 #DCCDB0, -10px 10px 0 #8E6E44, -10px 18px 30px -10px rgb(60 40 15 / 0.45); transform: skewY(1.2deg); transform-origin: 100% 0; }
+.bk2-right { border-radius: 2px 10px 14px 2px; background: linear-gradient(90deg, #E2D4B8 0%, #F3EADA 6%, #FBF7EE 30%, #FAF4E8 100%); box-shadow: 2px 2px 0 #EFE6D4, 4px 4px 0 #E6DAC2, 6px 6px 0 #EFE6D4, 8px 8px 0 #DCCDB0, 10px 10px 0 #8E6E44, 10px 18px 30px -10px rgb(60 40 15 / 0.45); transform: skewY(-1.2deg); transform-origin: 0 0; }
+.bk2-plinth { left: 2%; right: 2%; height: 70px; background: linear-gradient(180deg, #EFE6D6 0%, #DDCFB5 40%, #CDBB98 100%); }
+@media (max-width: 900px) { .bk2-plinth { height: 46px; } }
+/* Story films, phones: the two actions side by side. */
+@media (max-width: 900px) {
+  .sf-foot { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sf-dots { grid-column: 1 / -1; }
+  .sf-more, .sf-enquire { justify-content: center; gap: 8px; min-height: 50px; padding: 4px 10px; font-size: 13px; line-height: 1.2; text-align: center; }
+  .sf-more { padding-left: 4px; }
+  .sf-more-disc { width: 34px; height: 34px; }
+  .sf-more span.sf-more-count { min-width: 0; height: 28px; padding: 0 8px; font-size: 12px; }
+  .sf-enquire span { font-size: 16px; }
+}
+@media (max-width: 900px) { .sf-note { padding: 0 18px; font-size: 11.5px; } }
+
+/* Her book: the opening animation kept (Oct 16). The cover and two leaves sit over the right page and turn on the spine
+   in turn; the left page appears as the cover swings back. Loops while in view; still and open with reduced motion. */
+.bk2-book { transform-style: preserve-3d; }
+.bk2-left, .bk2-right { transform: none; }
+.bk2-leaf { position: absolute; z-index: 3; left: 50%; top: 0; bottom: 0; width: 50%; transform-style: preserve-3d; transform-origin: 0 50%; }
+.bk2-cover { transform: translateZ(3px); }
+.bk2-leaf-1 { transform: translateZ(2px); }
+.bk2-leaf-2 { transform: translateZ(1px); }
+.bk2-face { position: absolute; inset: 0; display: grid; align-content: start; justify-items: center; padding: clamp(18px, 2.2vw, 30px) clamp(14px, 1.8vw, 26px); backface-visibility: hidden; -webkit-backface-visibility: hidden; text-align: center; background: linear-gradient(90deg, #E2D4B8 0%, #F3EADA 6%, #FBF7EE 30%, #FAF4E8 100%); border-radius: 2px 10px 14px 2px; box-shadow: inset 0 0 0 1px rgb(169 121 46 / 0.1); }
+.bk2-back { transform: rotateY(180deg); background: linear-gradient(270deg, #E2D4B8 0%, #F3EADA 6%, #FBF7EE 30%, #FAF4E8 100%); border-radius: 10px 2px 2px 14px; }
+.bk2-cover-front { padding: 0; overflow: hidden; border-radius: 4px 12px 12px 4px; background: #123A2B; box-shadow: 6px 8px 20px -8px rgb(40 30 15 / 0.6); }
+.bk2-cover-front img { width: 100%; height: 100%; object-fit: cover; }
+.bk2-plate { align-content: center; gap: 6px; }
+.bk2-plate img { width: 46%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 20%; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 5px rgb(169 121 46 / 0.4); }
+.bk2-quote-page { align-content: center; gap: 12px; }
+.bk2-quote { margin: 0; font-family: var(--font-display), var(--serif); font-style: italic; font-size: clamp(15px, 1.4vw, 22px); line-height: 1.35; color: #123A2B; }
+.bk2-quote-cite { margin: 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #B88A45; }
+.bk2-big { margin: 8px 0 0; font-family: var(--font-display), var(--serif); font-size: clamp(56px, 6vw, 96px); line-height: 1; color: #123A2B; }
+.bk2-method { margin: 0; font-family: var(--font-display), var(--serif); font-style: italic; font-size: clamp(14px, 1.2vw, 19px); color: #B58A44; }
+.bk2-face .bk2-ch-title { margin-top: 12px; }
+.bk2-face .bk2-ch-title em { font-size: clamp(18px, 1.7vw, 28px); }
+
+/* Open by default (no motion): every leaf turned. */
+.bk2-leaf { rotate: y -180deg; }
+
+@keyframes bk2-cover { 0%, 8% { rotate: y 0deg; } 18%, 92% { rotate: y -180deg; } 98%, 100% { rotate: y 0deg; } }
+@keyframes bk2-leaf1 { 0%, 26% { rotate: y 0deg; } 36%, 87% { rotate: y -180deg; } 92%, 100% { rotate: y 0deg; } }
+@keyframes bk2-leaf2 { 0%, 44% { rotate: y 0deg; } 54%, 82% { rotate: y -180deg; } 87%, 100% { rotate: y 0deg; } }
+@keyframes bk2-leftpage { 0%, 10% { opacity: 0; } 16%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .bk2-stage .bk2-leaf { rotate: y 0deg; }
+  .bk2-stage .bk2-left { opacity: 0; }
+  .bk2-stage.is-on .bk2-cover { animation: bk2-cover 16s cubic-bezier(0.45, 0.05, 0.25, 1) infinite; }
+  .bk2-stage.is-on .bk2-leaf-1 { animation: bk2-leaf1 16s cubic-bezier(0.45, 0.05, 0.25, 1) infinite; }
+  .bk2-stage.is-on .bk2-leaf-2 { animation: bk2-leaf2 16s cubic-bezier(0.45, 0.05, 0.25, 1) infinite; }
+  .bk2-stage.is-on .bk2-left { animation: bk2-leftpage 16s ease infinite; }
+}
+@media (max-width: 900px) {
+  .bk2-face { padding: 12px 10px; }
+  .bk2-big { font-size: 46px; }
+  .bk2-quote { font-size: 13.5px; }
+  .bk2-quote-cite { font-size: 9px; }
+}
+.bk2-stage .bk2-left { visibility: hidden; animation: none !important; }
