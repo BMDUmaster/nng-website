@@ -15,6 +15,10 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
   const [index, setIndex] = useState(0);
   const [held, setHeld] = useState(false);
   const voice = voices[index];
+  // The last sentence of the quote is set in gold italic (desktop); a one-sentence quote stays plain.
+  const cut = voice.quote.search(/[.!?]["”’]?\s+(?=[^.!?]+[.!?]["”’]?$)/);
+  const lead = cut > 0 ? voice.quote.slice(0, cut + 2) : voice.quote;
+  const last = cut > 0 ? voice.quote.slice(cut + 2) : "";
   const go = (step: number) => setIndex((i) => (i + step + voices.length) % voices.length);
 
   // Phones: the film card plays its silent preview while on screen.
@@ -39,7 +43,9 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
       <div className="cw-inner">
         <header className="cw-head">
           <p className="cw-kicker">Client stories</p>
-          <h2 id="testimonial-title">In their own words</h2>
+          <h2 id="testimonial-title">
+            In their <em>own words</em>
+          </h2>
           {note}
         </header>
 
@@ -52,6 +58,14 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
           onFocus={() => setHeld(true)}
           onBlur={() => setHeld(false)}
         >
+          <div className="cw-faces" role="group" aria-label="Choose a client story">
+            {voices.map((item, i) => (
+              <button key={item.id} type="button" className="cw-face" aria-label={item.name} aria-current={i === index ? "true" : undefined} onClick={() => setIndex(i)}>
+                <img src={voicePoster(item)} alt="" width={80} height={80} decoding="async" />
+              </button>
+            ))}
+          </div>
+
           {voice.film && (
             <button
               type="button"
@@ -102,7 +116,7 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
           <figure className="cw-slide" key={voice.id} aria-live="polite">
             <span className="cw-mark" aria-hidden="true">“</span>
             <blockquote>
-              <p>{voice.quote}</p>
+              <p>{lead}{last && <em>{last}</em>}</p>
             </blockquote>
             <figcaption className="cw-person">
               <img src={voicePoster(voice)} alt="" width={56} height={56} decoding="async" />
