@@ -19575,3 +19575,77 @@ footer.ft .ft-col-title { align-items: flex-end; }
   footer.ft::before { top: 70px; }
   footer.ft .ft-inner { padding-top: 0; }
 }
+
+/* Compact pass, phones (Oct 16): Hand Holding, FAQ, Instagram, footer. */
+@media (max-width: 900px) {
+  .pg-inner { padding-block: 22px; }
+  section.pg .pg-visual { height: 76vw; max-height: 340px; margin: 12px 12px 0; }
+  section.pg .pg-arch { border-radius: 150px 150px 20px 20px; }
+  section.pg .pg-arch img { border-radius: 146px 146px 16px 16px; object-position: 50% 15%; }
+  section.pg .pg-medal { width: 96px; height: 96px; bottom: -26px; }
+  section.pg .pg-medal strong { font-size: 32px; }
+  section.pg .pg-medal span { font-size: 9px; }
+  section.pg .pg-medal small, .pg-medal-lotus { display: none; }
+  section.pg .pg-copy { padding: 26px 18px 20px; }
+  .practice-site main section.pg h2 { margin-top: 8px; font-size: clamp(28px, 8.2vw, 36px); }
+  section.pg .pg-lead { font-size: 14px; margin-top: 6px; }
+  section.pg .pg-list { gap: 8px; margin-top: 14px; }
+  section.pg .pg-list li { font-size: 13.5px; }
+  .pg-li-icon { width: 36px; height: 36px; }
+  .pg-li-icon svg { width: 18px; height: 18px; }
+  section.pg .pg-actions { margin-top: 14px; gap: 10px; }
+  section.pg .pg-cta { min-height: 50px; font-size: 15px; }
+  section.pg .pg-cta-arrow { width: 38px; height: 38px; }
+  section.pg .pg-notes { margin-top: 12px; padding: 10px 12px; column-gap: 12px; }
+  .pg-notes-icon { width: 40px; height: 40px; }
+  .pg-notes-icon svg { width: 20px; height: 20px; }
+  section.pg .pg-notes p { font-size: 13px; }
+  section.pg .pg-notes p + p { font-size: 12px; }
+
+  .fq-photo { width: 52%; height: 300px; }
+  section.fq .fq-inner { gap: 10px; padding-block: 18px 24px; }
+  section.fq .fq-intro { padding-left: 44%; }
+  .practice-site main section.fq h2 { font-size: clamp(28px, 8.4vw, 36px); }
+  section.fq .lx-lead { font-size: 13px; }
+  section.fq .fq-ask { margin-top: 70px; padding: 12px; column-gap: 12px; }
+  .fq-ask-icon { width: 42px; height: 42px; }
+  .fq-ask-icon svg { width: 22px; height: 22px; }
+  section.fq .fq-ask strong { font-size: 16px; }
+  section.fq .fq-ask small { font-size: 12px; }
+  section.fq .fq-ask-btn { min-height: 42px; margin-top: 8px; font-size: 14px; }
+  section.fq .fq-ask-btn span { width: 32px; height: 32px; }
+  section.fq .fq-list { gap: 8px; }
+  section.fq .fq-item summary { min-height: 58px; padding: 6px 12px; gap: 10px; }
+  section.fq .fq-num { width: 38px; height: 38px; font-size: 15px; }
+  section.fq .fq-q { padding-left: 10px; font-size: 15px; }
+  section.fq .fq-icon { width: 32px; height: 32px; }
+  section.fq .fq-icon::before, section.fq .fq-icon::after { width: 13px; }
+
+  section.ig .ig-inner { padding-block: 28px 18px; }
+  .practice-site main section.ig h2 { font-size: clamp(28px, 8.4vw, 36px); }
+  section.ig .ig-head { gap: 10px; }
+  section.ig .ig-profile { min-height: 46px; font-size: 14.5px; padding: 0 20px; }
+  section.ig .ig-title { padding: 10px 12px 12px; font-size: 14.5px; }
+
+  footer.site-footer.ft { background: linear-gradient(180deg, #F8F2E6 0, #F8F2E6 120px, #0F3326 120px, #0B2A1F 100%) !important; }
+  footer.ft::before { top: 120px; }
+  footer.ft .ft-cta > div { padding: 18px 38% 0 18px; }
+  footer.ft .ft-kicker { font-size: 8.5px; }
+  .ft-lotus { width: 24px; }
+  footer.ft .ft-cta h2 { margin-top: 4px; font-size: clamp(24px, 7vw, 30px); }
+  footer.ft .ft-cta p:not(.ft-kicker) { margin-top: 6px; font-size: 13px; line-height: 1.5; }
+  footer.ft .ft-cta-btn { min-height: 46px; margin: 12px 14px 16px; padding-left: 18px; font-size: 14px; }
+  footer.ft .ft-cta-arrow { width: 34px; height: 34px; }
+  footer.ft .ft-grid { margin-top: 24px; }
+  footer.ft .ft-brand img { width: 120px; height: auto; }
+  footer.ft .ft-brand strong { font-size: 22px; }
+  footer.ft .ft-social a { width: 40px; height: 40px; }
+  footer.ft .ft-col-title { font-size: 11px; }
+  footer.ft .ft-col a { font-size: 13.5px; }
+  .ft-top { width: 44px; height: 44px; }
+}
+@media (max-width: 900px) {
+  .fq-photo { height: 290px; }
+  section.fq .fq-intro { padding-top: 24px; }
+  section.fq .fq-ask { width: calc(100vw - 28px); margin: 34px 0 0 calc((100vw - 28px) * -0.44); box-sizing: border-box; }
+}
