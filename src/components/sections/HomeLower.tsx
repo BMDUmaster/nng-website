@@ -183,7 +183,7 @@ export function InstagramReels({ platform = "instagram" }: { platform?: "instagr
           <div>
             <p className="lx-kicker ig-kicker"><Lotus className="ig-lotus" />{name}</p>
             <h2 id={`${platform}-title`}>{youtube ? <>Watch <em>Narayani</em> on YouTube</> : <>From <em>Narayani’s</em> Instagram</>}</h2>
-            <p className="lx-lead">{youtube ? "Five of her videos with the most views." : "Her five Instagram reels with the most views."}</p>
+            <p className="lx-lead">{youtube ? "Five of her videos with the most views." : "Her most-watched reels, and her latest."}</p>
           </div>
           <a className="ig-profile" href={site.social[platform]} target="_blank" rel="noopener noreferrer">
             <SocialLogo platform={platform} />
@@ -192,7 +192,14 @@ export function InstagramReels({ platform = "instagram" }: { platform?: "instagr
           </a>
         </header>
         <LoopRail label={`${name} posts`} className="ig-loop" speed={0.03}>
-          {posts.map((post) => (
+          {posts.map((post) => post.video ? (
+            <div className="ig-card ig-card-video" key={post.id}>
+              <span className="ig-image">
+                <video src={asset(post.video)} poster={asset(post.image)} controls playsInline preload="none" aria-label={post.title} />
+              </span>
+              <span className="ig-title">{post.title}</span>
+            </div>
+          ) : (
             <a className="ig-card" key={post.id} href={post.url} target="_blank" rel="noopener noreferrer">
               <span className="ig-image">
                 <img src={asset(post.image)} alt="" width={360} height={540} loading="lazy" decoding="async" />

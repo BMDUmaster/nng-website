@@ -22447,3 +22447,10 @@ section.fq.fq-rich h2 em { display: block; }
 /* Brainology photo: no blurred fill; the real photo covers the panel. */
 .sh-brain-training .svh-photo::after { display: none !important; }
 .sh-brain-training .svh-photo img { position: absolute; inset: 0; left: 0; right: 0; width: 100%; height: 100%; max-width: 100%; transform: none; object-fit: cover; object-position: 50% 12%; -webkit-mask-image: none; mask-image: none; }
+.ig-card-video video { display: block; width: 100%; height: 100%; object-fit: cover; background: #0B2A1F; }
+/* Services practice cards on phones: show the whole picture (its own proportions) instead of a cropped strip. */
+@media (max-width: 900px) {
+  .sv-practice-art.sp-photo, .sp.is-flipped .sp-photo { height: auto; aspect-ratio: 3 / 2; border-radius: 22px; }
+  .sp-photo img { transform: none; object-fit: cover; object-position: 50% 50%; }
+  .sp#brain-training .sp-photo { aspect-ratio: 928 / 776; }
+}
