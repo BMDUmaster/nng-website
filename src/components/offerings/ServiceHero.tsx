@@ -42,7 +42,7 @@ const looks: Record<HubSlug, { photo: string; mPhoto?: string; w: number; h: num
     { title: "Beliefs", text: "What sits underneath", icon: i.leaf },
     { title: "Situations", text: "Where it shows up", icon: i.sun },
   ] },
-  numerology: { photo: "/images/program-narayani.webp", w: 1000, h: 1265, values: [
+  numerology: { photo: "/images/numerology-hero.webp", w: 1800, h: 1124, values: [
     { title: "Date of birth", text: "Your personal numbers", icon: i.calendar },
     { title: "Name", text: "Its spelling and sound", icon: i.name },
     { title: "Mobile & home", text: "Numbers you live with", icon: i.phone },
@@ -54,7 +54,7 @@ const looks: Record<HubSlug, { photo: string; mPhoto?: string; w: number; h: num
     { title: "Layout", text: "Rooms, doors and flow", icon: i.plan },
     { title: "Daily use", text: "How you live in it", icon: i.home },
   ] },
-  astrology: { photo: "/images/faq-narayani.webp", w: 760, h: 964, values: [
+  astrology: { photo: "/images/astrology-hero.webp", w: 1340, h: 840, values: [
     { title: "Birth chart", text: "Read around your question", icon: i.chart },
     { title: "Timing", text: "Periods and transits", icon: i.clock },
     { title: "Your question", text: "What you want to know", icon: i.chat },
