@@ -18479,3 +18479,28 @@ footer.site-footer.ft {
   .sa .sa-topics li, .sa .sa-topics a { font-size: 11.5px; }
   .sa-explore { white-space: nowrap; font-size: 13px; }
 }
+
+/* What she works with, phones (Oct 16): swiped by hand, snapping card to card; cards ease in as they arrive. */
+@media (max-width: 1023px) {
+  .sa-inner { overflow: visible; }
+  .sa-cards {
+    animation: none !important;
+    width: auto;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 16px 14px;
+  }
+  .sa-cards::-webkit-scrollbar { display: none; }
+  .sa-card { scroll-snap-align: start; scroll-snap-stop: always; }
+  .sa-dup { display: none !important; }
+}
+@supports (animation-timeline: view()) {
+  @media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+    .sa-card { animation: sa-arrive linear both; animation-timeline: view(inline); animation-range: entry 0% cover 40%; }
+  }
+}
+@keyframes sa-arrive { from { opacity: 0.55; transform: scale(0.94); } to { opacity: 1; transform: none; } }
