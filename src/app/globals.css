@@ -22416,3 +22416,13 @@ section.fq.fq-rich h2 em { display: block; }
 }
 @media (max-width: 1360px) and (min-width: 901px) { .bx-copy { padding-left: 60px; } }
 @media (min-width: 901px) { .bx-photo { bottom: 0; } .bx-info { flex-wrap: nowrap; } }
+
+/* Brainology hero: the photo panel keeps the banner's proportions (fit to height, anchored right) and ends just
+   above the values card, so she shows from head to hands as in the banner. */
+@media (min-width: 901px) {
+  .bx-photo { bottom: 118px; width: 64%; }
+  .bx-photo-clip { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%); }
+  .bx-photo-clip img { position: absolute; top: 0; right: 0; left: auto; width: auto; max-width: none; height: 100%; object-fit: fill; }
+  .bx-inner { min-height: clamp(600px, 44vw, 780px); }
+  .bx-values { margin-top: -132px; }
+}
