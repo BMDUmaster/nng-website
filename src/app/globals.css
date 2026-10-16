@@ -18862,3 +18862,30 @@ footer.site-footer.ft {
 .ab-pic .ab-wheel :is(circle, path) { stroke-width: 1.8; }
 .ab-pic .ab-wheel text { fill: #D9A441; font-size: 44px; paint-order: stroke; stroke: rgb(255 248 230 / 0.7); stroke-width: 2px; }
 .ab-pic .ab-wheel-wrap::before { background: radial-gradient(circle, rgb(255 236 190 / 0.5), rgb(255 236 190 / 0.25) 70%, transparent 74%); }
+
+/* What she works with, phones: show that the row swipes — the next card peeks in, a nudge on arrival, and a hint. */
+.sa-swipe { display: none; }
+@media (max-width: 1023px) {
+  .sa-card { width: 80vw; }
+  .sa-swipe { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; color: #8A6A2E; }
+  .sa-swipe-hand { display: grid; color: #B88A45; }
+  .sa-swipe-arrows { letter-spacing: -1px; color: #C9A256; }
+  @keyframes sa-nudge { 0%, 70%, 100% { transform: translateX(0); } 80% { transform: translateX(-46px); } 90% { transform: translateX(-10px); } }
+  @keyframes sa-hand { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
+  @media (prefers-reduced-motion: no-preference) {
+    .sa-cards > li:first-child { animation: sa-nudge 3.2s ease-in-out 1s 2; }
+    .sa-swipe-hand { animation: sa-hand 1.4s ease-in-out infinite; }
+  }
+}
+
+/* Her approach desktop, pass 5: one clean photograph panel on the right that melts into the cream; no blurred strip. */
+@media (min-width: 1100px) {
+  .ab-stage { width: 46%; -webkit-mask-image: none; mask-image: none; }
+  .ab-stage::before { display: none; }
+  .ab-pic { inset: 0 0 auto auto; width: 38vw; max-width: 720px; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.65) 14%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.65) 14%, #000 30%); }
+  .ab-pic img { object-fit: cover; object-position: 50% 0; height: auto; aspect-ratio: 900 / 1500; }
+  .ab-pic .ab-wheel-wrap { left: 57.5%; top: 25%; width: 96%; }
+  .ab-quote { right: 2%; bottom: 6%; width: 17vw; padding: 14px 16px 12px 52px; }
+  .ab-quote p { font-size: clamp(15px, 1.05vw, 19px); }
+}
+@media (min-width: 1100px) { .ab-pic { width: 31vw; } .ab-pic .ab-wheel-wrap { width: 104%; top: 24%; } .ab-quote { width: 16vw; right: 1.6%; } }

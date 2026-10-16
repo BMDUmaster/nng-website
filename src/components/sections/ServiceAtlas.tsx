@@ -93,6 +93,13 @@ export function ServiceAtlas() {
             );
           })}
         </ul>
+        <p className="sa-swipe" aria-hidden="true">
+          <span className="sa-swipe-hand">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-4-2l-3.1-4.1a1.5 1.5 0 0 1 2.3-1.9L9 14" /></svg>
+          </span>
+          Swipe to see all four practices
+          <span className="sa-swipe-arrows">›››</span>
+        </p>
       </div>
     </section>
   );
