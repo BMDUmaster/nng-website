@@ -5,7 +5,7 @@ export const page: OfferingPage = {
   slug: "office-and-shop",
   title: "Vastulogy for an office, shop, clinic or studio",
   metaTitle: "Vastulogy for an office, shop or clinic",
-  metaDescription: "Where the owner sits, how teams are seated and how cash and customers move: what Vastulogy tradition suggests for a workplace, and where its sources differ.",
+  metaDescription: "Where the owner sits, how teams are seated and how cash and customers move: what Vastulogy suggests for a workplace, and where its sources differ.",
   lead: "Look at how people work, customers move and space is used. Consider Vastulogy alongside your business needs, without promises of sales or profit.",
   card: "When you open, run or move an office, shop, clinic or studio and want its layout read.",
   icon: "page-office-and-shop",

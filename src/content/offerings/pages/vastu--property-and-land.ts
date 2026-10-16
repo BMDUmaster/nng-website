@@ -5,7 +5,7 @@ export const page: OfferingPage = {
   slug: "property-and-land",
   title: "Choosing a property or a plot",
   metaTitle: "Vastulogy for choosing a property or plot",
-  metaDescription: "Weighing a plot or comparing two homes: how shape, slope, road and soil read in Vastulogy, plus timing and building in phases, as support for your decision.",
+  metaDescription: "Weighing a plot or comparing two homes: how shape, slope, road and soil read in Vastulogy, plus timing and building in phases, to support your decision.",
   lead: "Compare the Vastulogy considerations of a home or plot before deciding. This supports your assessment; it does not replace legal or financial checks.",
   card: "When you are choosing between two homes, buying a plot or reviewing a property.",
   icon: "page-property-and-land",

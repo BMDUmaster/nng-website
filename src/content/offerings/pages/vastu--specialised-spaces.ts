@@ -4,7 +4,7 @@ export const page: OfferingPage = {
   hub: "vastu",
   slug: "specialised-spaces",
   title: "Vastulogy for specialised spaces",
-  metaTitle: "Vastulogy for factories, hotels and hospitals",
+  metaTitle: "Vastulogy for factories, hotels, hospitals",
   metaDescription: "How Vastulogy tradition reads factories, hotels, clinics, schools, temples, farms, gardens and cash and stock areas, with code and safety always first.",
   lead: "Factories, hotels, hospitals and schools have different needs. Narayani considers the space’s purpose, with safety and statutory requirements taking priority.",
   card: "When your space is a factory, hotel, hospital, school, temple, farm or garden.",

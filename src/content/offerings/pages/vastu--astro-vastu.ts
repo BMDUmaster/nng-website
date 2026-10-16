@@ -4,7 +4,7 @@ export const page: OfferingPage = {
   hub: "vastu",
   slug: "astro-vastu",
   title: "Astro-Vastulogy, with your chart beside your space",
-  metaTitle: "Astro-Vastulogy: chart and space read together",
+  metaTitle: "Astro-Vastulogy: chart and space together",
   metaDescription:
     "How Narayani reads a home or workplace beside your birth chart: lagna, Moon, dasha, two direction schemes, and changes that need no building work.",
   lead: "Consider your space alongside your birth chart. Astro-Vastulogy combines two interpretive traditions; its recommendations remain choices to assess, not proven requirements for wellbeing.",

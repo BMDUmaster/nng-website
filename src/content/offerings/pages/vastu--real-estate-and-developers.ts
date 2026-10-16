@@ -5,7 +5,7 @@ export const page: OfferingPage = {
   slug: "real-estate-and-developers",
   title: "Vastulogy for real estate and developers",
   metaTitle: "Vastulogy for developers and real estate",
-  metaDescription: "Vastulogy at project scale for builders, architects and developers: reading the site, placing towers, gates and amenities, and keeping the building code first.",
+  metaDescription: "Vastulogy at project scale for builders and developers: reading the site, placing towers, gates and amenities, and keeping the building code first.",
   lead: "A project is largely decided before it is sold: on the plot, in the master plan, at approval. Narayani brings the Vastulogy question into that conversation early, alongside your architect and inside the building code.",
   card: "When a builder, architect or institution wants Vastulogy considered at the planning stage.",
   icon: "page-real-estate-and-developers",
