@@ -113,7 +113,8 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
         hub={hub}
         actions={<>
           <EnquiryTrigger className="cn-cta" topic={page.enquiryTopic} source={`${source}-hero`} primary>
-            <span>{page.cta}</span>
+            <span className="cx-long">{page.cta}</span>
+            <span className="cx-short">Enquire now</span>
             <HeroArrow />
           </EnquiryTrigger>
           <a className="cn-ghost" href={isHub ? "#pages" : "#ready"}>

@@ -22223,3 +22223,43 @@ section.fq.fq-rich h2 em { display: block; }
   .svd-review .sx-split > div:first-child, .svd-review .sx-split > div:last-child { padding: 18px; }
   .practice-site main .svd-review .sx-split h2 { font-size: 24px; }
 }
+
+/* Service page heroes in the services landing style (svh-svc): the same green, curved gold photo edge, sprigs, name
+   badge and cream values strip; the practice animation sits faintly behind the words. Phones: words first, then the
+   photo rising out of the green, then the four values in two rows. */
+.svh-svc .svh-copy { position: relative; isolation: isolate; }
+.svh-anim { position: absolute; z-index: -1; inset: 0 -6% 0 30%; opacity: 0.55; pointer-events: none; }
+.svh-anim .bh-neural { position: absolute; inset: 0; left: 0; width: 100%; height: 100%; }
+.svh-anim .sh-compass, .svh-anim .sh-zodiac { left: 62%; top: 50%; width: 520px; }
+.svh-anim .sh-digits, .svh-anim .sh-stars { inset: 0; }
+.svh-svc h1 em { display: inline; }
+.svh-svc .svh-photo img { object-position: 50% 12%; }
+.svh-svc .sh-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.svh-svc .sh-actions .cn-cta, .svh-svc .sh-actions .cn-ghost { min-height: 50px; font-size: 15px; }
+.svh-svc .svd-note, .svh-svc .svd-person { margin-top: 14px; font-size: 13px; color: rgb(255 255 255 / 0.72); }
+.svh-svc .svd-person { display: flex; align-items: center; gap: 10px; }
+.svh-svc .svd-person img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #C9A256; }
+.svh-svc .svd-person strong { color: #F2D592; }
+@media (min-width: 901px) {
+  .svh-svc .svh-inner { min-height: clamp(500px, calc(100vh - 88px - 150px), 640px); }
+  .svh-svc .svh-copy { padding-bottom: 96px; }
+  .practice-site main .svh-svc h1 { font-size: clamp(38px, 3.6vw, 64px); }
+}
+@media (max-width: 900px) {
+  .svh-anim { inset: 0; opacity: 0.35; }
+  .svh-anim .sh-compass, .svh-anim .sh-zodiac { left: 80%; top: 30%; width: 300px; }
+  .svh-svc .svh-copy { padding: 22px 18px 6px; }
+  .svh-svc .svh-crumbs { display: flex; flex-wrap: wrap; font-size: 12.5px; }
+  .practice-site main .svh-svc h1 { font-size: clamp(32px, 9.4vw, 40px); }
+  .svh-svc .sh-actions { flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 16px; }
+  .svh-svc .sh-actions .cn-cta, .svh-svc .sh-actions .cn-ghost { min-height: 44px; font-size: 13.5px; }
+  .svh-svc .sh-actions .cn-ghost { display: inline-flex; }
+  .svh-svc .svh-visual { height: auto; aspect-ratio: 4 / 3.4; margin-top: 10px; }
+  .svh-svc .svh-photo img { object-position: 50% 10%; }
+  .svh-svc .svh-values { grid-template-columns: repeat(2, 1fr); gap: 14px 0; }
+  .svh-svc .svh-values li:nth-child(3) { border-left: 0; }
+  .svh-svc .svh-values strong { font-size: 14px; }
+  .svh-svc .svh-values small { font-size: 11.5px; }
+}
+.sh-brain-training .svh-photo img { object-position: 50% 4%; }
+@media (max-width: 900px) { .svh.svh-svc .sh-actions .cx-long { display: none; } .svh.svh-svc .sh-actions .cx-short { display: inline; } }

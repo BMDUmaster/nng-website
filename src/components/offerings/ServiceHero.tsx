@@ -13,12 +13,59 @@ import type { Crumb } from "./Breadcrumbs";
 const lotus =
   '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>';
 
-const looks: Record<HubSlug, { photo: string; w: number; h: number; steps: string[]; quote: string }> = {
-  "brain-training": { photo: "/images/about-hero.webp", w: 900, h: 1255, steps: ["Patterns", "Thoughts", "Beliefs", "Situations"], quote: "A remedy works when the mind works." },
-  numerology: { photo: "/images/program-narayani.webp", w: 1000, h: 1265, steps: ["Date of birth", "Name", "Mobile & home", "Business"], quote: "When you change your mind, you change your world." },
-  vastu: { photo: "/images/consult-hero.webp", w: 944, h: 1300, steps: ["Directions", "Elements", "Layout", "Daily use"], quote: "Even a vastu remedy only works when your brain is working." },
-  astrology: { photo: "/images/faq-narayani.webp", w: 760, h: 964, steps: ["Birth chart", "Timing", "Your question", "Choices"], quote: "The spirit who is doing a ritual is spiritual." },
-  "stones-and-rudraksh": { photo: "/images/narayani-portrait-684.webp", w: 684, h: 1000, steps: ["Crystals", "Gemstones", "Rudraksha", "Guidance"], quote: "A remedy works when the mind works." },
+const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const i = {
+  lotus: lotus,
+  heart: ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'),
+  leaf: ico('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>'),
+  sun: ico('<circle cx="16" cy="16" r="5.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>'),
+  brain: ico('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22"/>'),
+  calendar: ico('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/>'),
+  name: ico('<rect x="4" y="8" width="24" height="16" rx="3"/><path d="M9 20l3-8 3 8M10 17.5h4M19 12v8M19 12h3a2 2 0 0 1 0 4h-3"/>'),
+  phone: ico('<rect x="10" y="4" width="12" height="24" rx="2.5"/><path d="M14.5 24h3"/>'),
+  shop: ico('<path d="M5 12h22l-2-6H7Z"/><path d="M7 12v14h18V12M13 26v-7h6v7"/>'),
+  compass: ico('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/>'),
+  elements: ico('<path d="M16 4c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z"/><path d="M5 26h22"/>'),
+  plan: ico('<rect x="5" y="5" width="22" height="22" rx="1"/><path d="M5 15h10V5M15 21h12M20 15v6"/>'),
+  home: ico('<path d="M5 15 16 5l11 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/>'),
+  chart: ico('<rect x="4" y="4" width="24" height="24"/><path d="M4 4l24 24M28 4 4 28M16 4 4 16l12 12 12-12Z"/>'),
+  clock: ico('<circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/>'),
+  chat: ico('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>'),
+  path: ico('<path d="M6 26V20M12 26V16M18 26V12M24 26V8"/>'),
+  gem: ico('<path d="M9 5h14l5 7-12 15L4 12Z"/><path d="M4 12h24M12 5l-3 7 7 15 7-15-3-7"/>'),
+};
+type Value = { title: string; text: string; icon: string };
+const looks: Record<HubSlug, { photo: string; mPhoto?: string; w: number; h: number; values: Value[] }> = {
+  "brain-training": { photo: "/images/brainology-hero.webp", w: 900, h: 1568, values: [
+    { title: "Patterns", text: "What keeps repeating", icon: i.brain },
+    { title: "Thoughts", text: "What runs through the mind", icon: i.chat },
+    { title: "Beliefs", text: "What sits underneath", icon: i.leaf },
+    { title: "Situations", text: "Where it shows up", icon: i.sun },
+  ] },
+  numerology: { photo: "/images/program-narayani.webp", w: 1000, h: 1265, values: [
+    { title: "Date of birth", text: "Your personal numbers", icon: i.calendar },
+    { title: "Name", text: "Its spelling and sound", icon: i.name },
+    { title: "Mobile & home", text: "Numbers you live with", icon: i.phone },
+    { title: "Business", text: "Names, logos and dates", icon: i.shop },
+  ] },
+  vastu: { photo: "/images/consult-hero.webp", w: 944, h: 1300, values: [
+    { title: "Directions", text: "How the space is placed", icon: i.compass },
+    { title: "Elements", text: "Balance in the space", icon: i.elements },
+    { title: "Layout", text: "Rooms, doors and flow", icon: i.plan },
+    { title: "Daily use", text: "How you live in it", icon: i.home },
+  ] },
+  astrology: { photo: "/images/faq-narayani.webp", w: 760, h: 964, values: [
+    { title: "Birth chart", text: "Read around your question", icon: i.chart },
+    { title: "Timing", text: "Periods and transits", icon: i.clock },
+    { title: "Your question", text: "What you want to know", icon: i.chat },
+    { title: "Choices", text: "The next step to take", icon: i.path },
+  ] },
+  "stones-and-rudraksh": { photo: "/images/narayani-portrait-684.webp", w: 684, h: 1000, values: [
+    { title: "Crystals", text: "Meanings and care", icon: i.gem },
+    { title: "Gemstones", text: "Traditional guidance", icon: i.gem },
+    { title: "Rudraksha", text: "Faces and wearing", icon: i.lotus },
+    { title: "Guidance", text: "Before you choose", icon: i.heart },
+  ] },
 };
 
 function Backdrop({ hub }: { hub: HubSlug }) {
@@ -75,6 +122,62 @@ function Backdrop({ hub }: { hub: HubSlug }) {
       </div>
     );
   }
+  if (hub === "brain-training") {
+    return (
+    <svg className="bh-neural" viewBox="0 0 600 640" aria-hidden="true">
+      <path className="bh-links" d="M548 299L502 249 M548 299L581 256 M548 299L573 362 M63 197L8 139 M63 197L76 271 M63 197L14 230 M61 513L18 576 M61 513L74 565 M413 34L317 45 M413 34L461 55 M582 610L567 537 M582 610L502 570 M100 17L177 52 M100 17L90 101 M100 17L31 46 M317 45L227 69 M26 297L51 401 M26 297L76 271 M26 297L52 349 M26 297L14 230 M177 52L227 69 M502 249L535 205 M567 537L571 481 M567 537L522 505 M567 537L502 570 M8 139L90 101 M581 256L535 205 M51 401L52 349 M571 481L581 418 M571 481L522 505 M76 271L14 230 M507 409L581 418 M507 409L573 362 M67 625L18 576 M67 625L74 565 M544 135L562 62 M544 135L535 205 M581 418L573 362 M18 576L74 565 M518 34L562 62 M518 34L461 55 M522 505L502 570 M90 101L31 46" />
+      <path className="bh-pulse" style={{ animationDelay: "0.00s" }} d="M548 299L502 249" />
+      <path className="bh-pulse" style={{ animationDelay: "1.23s" }} d="M63 197L8 139" />
+      <path className="bh-pulse" style={{ animationDelay: "2.46s" }} d="M61 513L18 576" />
+      <path className="bh-pulse" style={{ animationDelay: "3.69s" }} d="M413 34L461 55" />
+      <path className="bh-pulse" style={{ animationDelay: "4.92s" }} d="M100 17L177 52" />
+      <path className="bh-pulse" style={{ animationDelay: "0.15s" }} d="M317 45L227 69" />
+      <path className="bh-pulse" style={{ animationDelay: "1.38s" }} d="M26 297L52 349" />
+      <path className="bh-pulse" style={{ animationDelay: "2.61s" }} d="M502 249L535 205" />
+      <path className="bh-pulse" style={{ animationDelay: "3.84s" }} d="M567 537L502 570" />
+      <path className="bh-pulse" style={{ animationDelay: "5.07s" }} d="M51 401L52 349" />
+      <path className="bh-pulse" style={{ animationDelay: "0.30s" }} d="M76 271L14 230" />
+      <path className="bh-pulse" style={{ animationDelay: "1.53s" }} d="M67 625L18 576" />
+      <path className="bh-pulse" style={{ animationDelay: "2.76s" }} d="M544 135L535 205" />
+      <path className="bh-pulse" style={{ animationDelay: "3.99s" }} d="M518 34L562 62" />
+      <path className="bh-pulse" style={{ animationDelay: "5.22s" }} d="M90 101L31 46" />
+      <circle className="bh-node" style={{ animationDelay: "0.00s" }} cx="548" cy="299" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "0.53s" }} cx="63" cy="197" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "1.06s" }} cx="61" cy="513" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "1.59s" }} cx="413" cy="34" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "2.12s" }} cx="582" cy="610" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "2.65s" }} cx="100" cy="17" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "3.18s" }} cx="317" cy="45" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "3.71s" }} cx="26" cy="297" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "4.24s" }} cx="177" cy="52" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "4.77s" }} cx="502" cy="249" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "0.30s" }} cx="567" cy="537" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "0.83s" }} cx="8" cy="139" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "1.36s" }} cx="581" cy="256" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "1.89s" }} cx="51" cy="401" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "2.42s" }} cx="571" cy="481" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "2.95s" }} cx="76" cy="271" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "3.48s" }} cx="507" cy="409" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "4.01s" }} cx="67" cy="625" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "4.54s" }} cx="544" cy="135" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "0.07s" }} cx="581" cy="418" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "0.60s" }} cx="18" cy="576" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "1.13s" }} cx="52" cy="349" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "1.66s" }} cx="518" cy="34" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "2.19s" }} cx="522" cy="505" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "2.72s" }} cx="90" cy="101" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "3.25s" }} cx="562" cy="62" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "3.78s" }} cx="502" cy="570" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "4.31s" }} cx="535" cy="205" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "4.84s" }} cx="14" cy="230" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "0.37s" }} cx="227" cy="69" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "0.90s" }} cx="573" cy="362" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "1.43s" }} cx="74" cy="565" r="2.6" />
+      <circle className="bh-node" style={{ animationDelay: "1.96s" }} cx="31" cy="46" r="4" />
+      <circle className="bh-node" style={{ animationDelay: "2.49s" }} cx="461" cy="55" r="2.6" />
+    </svg>
+    );
+  }
   return null;
 }
 
@@ -97,41 +200,56 @@ export function ServiceHero({
 }) {
   const look = looks[hub];
   return (
-    <section className={`bh sh sh-${hub}`} aria-labelledby="page-title">
-      <span className="bh-leaf" aria-hidden="true" />
-      <div className="bh-inner">
-        <div className="bh-copy">
-          <nav className="cn-crumbs bh-crumbs" aria-label="Breadcrumb">
-            {trail.map((crumb, i) => (
+    <section className={`svh svh-svc sh-${hub}`} aria-labelledby="page-title">
+      <div className="svh-inner">
+        <div className="svh-copy">
+          <div className="svh-anim" aria-hidden="true"><Backdrop hub={hub} /></div>
+          <nav className="cn-crumbs svh-crumbs" aria-label="Breadcrumb">
+            {trail.map((crumb, n) => (
               <Fragment key={crumb.label}>
-                {i > 0 && <span aria-hidden="true">/</span>}
+                {n > 0 && <span aria-hidden="true">/</span>}
                 {crumb.href ? <Link prefetch={false} href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
               </Fragment>
             ))}
           </nav>
-          <p className="bh-kicker"><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />{kicker}</p>
+          <p className="svh-kicker">
+            <span className="svh-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+            {kicker}
+          </p>
           <h1 id="page-title">{title}</h1>
-          <p className="bh-lead">{lead}</p>
-          <ol className="bh-steps" aria-label="What she looks at">
-            {look.steps.map((step, i) => <li key={step}><span>{i + 1}</span>{step}</li>)}
-          </ol>
-          <div className="bh-actions sh-actions">{actions}</div>
+          <span className="svh-rule" aria-hidden="true" />
+          <p className="svh-lead">{lead}</p>
+          <div className="svh-actions sh-actions">{actions}</div>
           {note}
         </div>
-        <div className="bh-visual">
-          <span className="bh-ring" aria-hidden="true" />
-          <Backdrop hub={hub} />
-          <div className="bh-arch">
+        <div className="svh-visual">
+          <span className="svh-frame" aria-hidden="true" />
+          <span className="svh-sprig svh-sprig-1" aria-hidden="true" />
+          <span className="svh-sprig svh-sprig-2" aria-hidden="true" />
+          <span className="svh-photo-leaves" aria-hidden="true" />
+          <div className="svh-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset(look.photo)} alt="Narayani Garg" width={look.w} height={look.h} fetchPriority="high" />
           </div>
-          <figure className="bh-quote">
-            <span aria-hidden="true">“</span>
-            <blockquote><p>{look.quote}</p></blockquote>
-            <figcaption>Narayani Garg</figcaption>
-          </figure>
+          <p className="svh-badge">
+            <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+            <span>Narayani Garg</span>
+            <small>Personal guidance</small>
+          </p>
         </div>
       </div>
+      <span className="svh-blur-leaf" aria-hidden="true" />
+      <ul className="svh-values" aria-label="What she looks at">
+        {look.values.map((v) => (
+          <li key={v.title}>
+            <span className="svh-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
+            <span>
+              <strong>{v.title}</strong>
+              <small>{v.text}</small>
+            </span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
