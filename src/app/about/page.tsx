@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { ClientWords } from "@/components/sections/ClientWords";
+import { BookStage } from "@/components/sections/BookSection";
 import { ClienteleNote } from "@/components/sections/ClienteleNote";
 import { InstagramReels } from "@/components/sections/HomeLower";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -9,7 +10,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { beliefs, bookTitle, story } from "@/content/about";
 import { site } from "@/content/site";
 import { voices } from "@/content/voices";
-import { asset, assetSet } from "@/lib/assets";
+import { asset } from "@/lib/assets";
 import { personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -31,6 +32,12 @@ const principleIcons = [
   ico('<path d="M12 27v-4.5A8.5 8.5 0 1 1 25 15l2 4h-2.5v3a2 2 0 0 1-2 2H20v3"/><path d="M13 13a3 3 0 0 1 5.5-1.6M15 17h4"/>'),
   ico('<path d="M16 4 6 8v7c0 6.3 4.2 11 10 13 5.8-2 10-6.7 10-13V8z"/><path d="m11.5 16 3.2 3.2 6-6.4"/>'),
   ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'),
+];
+const bookTags = [
+  { label: "21 days", icon: lotusSvg },
+  { label: "Chakras", icon: ico('<circle cx="16" cy="16" r="4"/><path d="M16 4c2 3 2 5 0 8-2-3-2-5 0-8ZM16 20c2 3 2 5 0 8-2-3-2-5 0-8ZM4 16c3-2 5-2 8 0-3 2-5 2-8 0ZM20 16c3-2 5-2 8 0-3 2-5 2-8 0ZM7.5 7.5c3.4.6 4.8 2 5.2 5.2-3.4-.4-4.8-1.8-5.2-5.2ZM19.3 19.3c3.4.4 4.8 1.8 5.2 5.2-3.4-.6-4.8-2-5.2-5.2ZM24.5 7.5c-.6 3.4-2 4.8-5.2 5.2.4-3.4 1.8-4.8 5.2-5.2ZM12.7 19.3c-.4 3.4-1.8 4.8-5.2 5.2.6-3.4 2-4.8 5.2-5.2Z"/>') },
+  { label: "EFT", icon: ico('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
+  { label: "Ho’oponopono", icon: ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
 ];
 const credentialIcons = [
   ico('<path d="M3 12 16 6l13 6-13 6z"/><path d="M8 14.5V21c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-6.5M29 12v7"/>'),
@@ -197,28 +204,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="au-book" aria-labelledby="book-title">
-        <div className="au-book-inner">
-          <div className="au-book-cover" data-reveal="">
-            <img src={asset("/images/book-cover-660.webp")} srcSet={assetSet("/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w")} sizes="(max-width: 680px) 52vw, 300px" width={660} height={934} alt={`The cover of ${bookTitle}, by Narayani Garg`} loading="lazy" />
+      <section className="au-book bkx" aria-labelledby="book-title">
+        <div className="bkx-card">
+          <div className="bkx-visual">
+            <span className="bkx-arc" aria-hidden="true" />
+            <span className="bkx-leaves" aria-hidden="true" />
+            <BookStage bookTitle={bookTitle} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="bkx-lotus" src={asset("/images/book-lotus.webp")} alt="" width={176} height={176} loading="lazy" aria-hidden="true" />
           </div>
-          <div className="au-book-copy" data-reveal="">
+          <div className="bkx-copy" data-reveal="">
             <p className="au-kicker au-kicker-dark">
               <span className="au-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
               Her book
             </p>
-            <h2 id="book-title">{bookTitle}</h2>
-            <p className="au-book-lead">A 21 day companion for reflection and inner practice, exploring the chakras, EFT and Ho’oponopono.</p>
-            <ul className="au-book-tags" aria-label="Inside the book">
-              <li>21 days</li>
-              <li>Chakras</li>
-              <li>EFT</li>
-              <li>Ho’oponopono</li>
+            <h2 id="book-title">
+              {bookTitle.split(", ")[0]},<em>{bookTitle.split(", ")[1]}</em>
+            </h2>
+            <p className="bkx-lead">A 21 day companion for reflection and inner practice, exploring the chakras, EFT and Ho’oponopono.</p>
+            <ul className="bkx-tags" aria-label="Inside the book">
+              {bookTags.map((t) => (
+                <li key={t.label}>
+                  <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: t.icon }} />
+                  {t.label}
+                </li>
+              ))}
             </ul>
-            <blockquote className="au-book-quote">
+            <blockquote className="bkx-quote">
               <p>“When you change your mind, you change your world.”</p>
               <cite>From the book</cite>
+              <span className="bkx-quote-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
             </blockquote>
+            <div className="bkx-actions">
+              <EnquiryTrigger className="au-cta bkx-cta" topic="a copy of her book" source="about-book">
+                <span>Get your copy</span>
+                <span className="au-go" aria-hidden="true">→</span>
+              </EnquiryTrigger>
+            </div>
           </div>
         </div>
       </section>

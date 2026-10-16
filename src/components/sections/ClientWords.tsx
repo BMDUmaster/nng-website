@@ -59,11 +59,17 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
           onBlur={() => setHeld(false)}
         >
           <div className="cw-faces" role="group" aria-label="Choose a client story">
+            <button type="button" className="cw-face-arrow" onClick={() => go(-1)} aria-label="Previous client story">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10l5-5 5 5" /></svg>
+            </button>
             {voices.map((item, i) => (
               <button key={item.id} type="button" className="cw-face" aria-label={item.name} aria-current={i === index ? "true" : undefined} onClick={() => setIndex(i)}>
                 <img src={voicePoster(item)} alt="" width={80} height={80} decoding="async" />
               </button>
             ))}
+            <button type="button" className="cw-face-arrow" onClick={() => go(1)} aria-label="Next client story">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5" /></svg>
+            </button>
           </div>
 
           {voice.film && (
@@ -107,7 +113,9 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
                 </svg>
               </span>
               <span className="cw-card-copy">
-                <span className="cw-card-hook">{voice.hook ?? voice.film.label}</span>
+                <span className="cw-card-hook">
+                  {(voice.hook ?? voice.film.label).split(" ").slice(0, -1).join(" ")} <span className="cw-hook-last">{(voice.hook ?? voice.film.label).split(" ").slice(-1)}</span>
+                </span>
                 <span className="cw-card-name">{voice.name} · Watch their story</span>
               </span>
             </button>

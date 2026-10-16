@@ -20,16 +20,6 @@ const figures = [
 const html = (markup: string) => ({ __html: markup });
 
 export function BookSection({ bookTitle }: { bookTitle: string }) {
-  // While the book is on screen it opens: the cover swings back and two leaves turn, then it rests open, closes and
-  // begins again.
-  const stage = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = stage.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => el.classList.toggle("is-on", entry.isIntersecting), { threshold: 0.35 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section className="bk2" id="meet" aria-labelledby="meet-title">
@@ -50,87 +40,7 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
           </p>
         </div>
 
-        <div
-          className="bk2-stage"
-          aria-hidden="true"
-          ref={stage}
-          onPointerDown={() => stage.current?.classList.add("is-held")}
-          onPointerUp={() => window.setTimeout(() => stage.current?.classList.remove("is-held"), 1500)}
-          onPointerCancel={() => stage.current?.classList.remove("is-held")}
-        >
-          <div className="bk2-book">
-            <span className="bk2-shadow" />
-            <div className="bk2-page bk2-left">
-              <div className="bk2-photo">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset("/images/approach-narayani-900.webp")} alt="" loading="lazy" decoding="async" />
-              </div>
-              <p className="bk2-sign">Narayani Garg</p>
-              <span className="bk2-orn" dangerouslySetInnerHTML={html(icon(lotus))} />
-            </div>
-            <div className="bk2-page bk2-right">
-              <p className="bk2-run">{bookTitle}</p>
-              <p className="bk2-chapter">Chapter 02</p>
-              <p className="bk2-ch-title">
-                <span>Direction</span>
-                <small>for a</small>
-                <em>Brighter You</em>
-              </p>
-              <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
-              <p className="bk2-ch-text">Work out what matters now and the next step you can take to bring more clarity, peace and positivity to your life.</p>
-              <p className="bk2-folio">— 05 —</p>
-            </div>
-            <div className="bk2-leaf bk2-leaf-2">
-              <div className="bk2-face bk2-front">
-                <p className="bk2-run">{bookTitle}</p>
-                <p className="bk2-chapter">Before you begin</p>
-                <p className="bk2-big">21</p>
-                <p className="bk2-ch-text">days of reflection and everyday inner practice</p>
-                <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
-                <p className="bk2-method">{site.method}</p>
-                <p className="bk2-folio">— 03 —</p>
-              </div>
-              <div className="bk2-face bk2-back bk2-left-face">
-                <div className="bk2-photo">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset("/images/approach-narayani-900.webp")} alt="" loading="lazy" decoding="async" />
-                </div>
-                <p className="bk2-sign">Narayani Garg</p>
-                <span className="bk2-orn" dangerouslySetInnerHTML={html(icon(lotus))} />
-              </div>
-            </div>
-            <div className="bk2-leaf bk2-leaf-1">
-              <div className="bk2-face bk2-front">
-                <p className="bk2-run">{bookTitle}</p>
-                <p className="bk2-chapter">Chapter 01</p>
-                <p className="bk2-ch-title"><span>Mind</span><em>comes first</em></p>
-                <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
-                <p className="bk2-ch-text bk2-drop">Notice the thoughts and habits that recur in the situation you bring. Change begins where you look first.</p>
-                <p className="bk2-folio">— 01 —</p>
-              </div>
-              <div className="bk2-face bk2-back bk2-left-face bk2-quote-page">
-                <span className="bk2-qmark" aria-hidden="true">“</span>
-                <p className="bk2-quote" lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p>
-                <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
-                <p className="bk2-quote-cite">A remedy works when the mind works.</p>
-                <p className="bk2-sign bk2-sign-sm">Narayani Garg</p>
-              </div>
-            </div>
-            <div className="bk2-leaf bk2-cover">
-              <div className="bk2-face bk2-front bk2-cover-front">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset("/images/book-cover-660.webp")} srcSet={assetSet("/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w")} sizes="(max-width: 900px) 46vw, 340px" alt="" loading="lazy" decoding="async" />
-              </div>
-              <div className="bk2-face bk2-back bk2-left-face bk2-plate">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset("/images/narayani-portrait-480.webp")} alt="" loading="lazy" decoding="async" />
-                <p className="bk2-sign">{site.person}</p>
-                <p className="bk2-quote-cite">{site.title}</p>
-              </div>
-            </div>
-          </div>
-          <div className="bk2-plinth" />
-        </div>
+        <BookStage bookTitle={bookTitle} />
 
         <div className="bk2-foot">
           <ul className="bk2-figures">
@@ -155,5 +65,103 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
         </div>
       </div>
     </section>
+  );
+}
+
+/** The opening book on its plinth, shared by the homepage and the about page. */
+export function BookStage({ bookTitle }: { bookTitle: string }) {
+  // While the book is on screen it opens: the cover swings back and two leaves turn, then it rests open, closes and
+  // begins again.
+  const stage = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = stage.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => el.classList.toggle("is-on", entry.isIntersecting), { threshold: 0.35 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      className="bk2-stage"
+      aria-hidden="true"
+      ref={stage}
+      onPointerDown={() => stage.current?.classList.add("is-held")}
+      onPointerUp={() => window.setTimeout(() => stage.current?.classList.remove("is-held"), 1500)}
+      onPointerCancel={() => stage.current?.classList.remove("is-held")}
+    >
+      <div className="bk2-book">
+        <span className="bk2-shadow" />
+        <div className="bk2-page bk2-left">
+          <div className="bk2-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/images/approach-narayani-900.webp")} alt="" loading="lazy" decoding="async" />
+          </div>
+          <p className="bk2-sign">Narayani Garg</p>
+          <span className="bk2-orn" dangerouslySetInnerHTML={html(icon(lotus))} />
+        </div>
+        <div className="bk2-page bk2-right">
+          <p className="bk2-run">{bookTitle}</p>
+          <p className="bk2-chapter">Chapter 02</p>
+          <p className="bk2-ch-title">
+            <span>Direction</span>
+            <small>for a</small>
+            <em>Brighter You</em>
+          </p>
+          <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
+          <p className="bk2-ch-text">Work out what matters now and the next step you can take to bring more clarity, peace and positivity to your life.</p>
+          <p className="bk2-folio">— 05 —</p>
+        </div>
+        <div className="bk2-leaf bk2-leaf-2">
+          <div className="bk2-face bk2-front">
+            <p className="bk2-run">{bookTitle}</p>
+            <p className="bk2-chapter">Before you begin</p>
+            <p className="bk2-big">21</p>
+            <p className="bk2-ch-text">days of reflection and everyday inner practice</p>
+            <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
+            <p className="bk2-method">{site.method}</p>
+            <p className="bk2-folio">— 03 —</p>
+          </div>
+          <div className="bk2-face bk2-back bk2-left-face">
+            <div className="bk2-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/approach-narayani-900.webp")} alt="" loading="lazy" decoding="async" />
+            </div>
+            <p className="bk2-sign">Narayani Garg</p>
+            <span className="bk2-orn" dangerouslySetInnerHTML={html(icon(lotus))} />
+          </div>
+        </div>
+        <div className="bk2-leaf bk2-leaf-1">
+          <div className="bk2-face bk2-front">
+            <p className="bk2-run">{bookTitle}</p>
+            <p className="bk2-chapter">Chapter 01</p>
+            <p className="bk2-ch-title"><span>Mind</span><em>comes first</em></p>
+            <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
+            <p className="bk2-ch-text bk2-drop">Notice the thoughts and habits that recur in the situation you bring. Change begins where you look first.</p>
+            <p className="bk2-folio">— 01 —</p>
+          </div>
+          <div className="bk2-face bk2-back bk2-left-face bk2-quote-page">
+            <span className="bk2-qmark" aria-hidden="true">“</span>
+            <p className="bk2-quote" lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p>
+            <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
+            <p className="bk2-quote-cite">A remedy works when the mind works.</p>
+            <p className="bk2-sign bk2-sign-sm">Narayani Garg</p>
+          </div>
+        </div>
+        <div className="bk2-leaf bk2-cover">
+          <div className="bk2-face bk2-front bk2-cover-front">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/images/book-cover-660.webp")} srcSet={assetSet("/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w")} sizes="(max-width: 900px) 46vw, 340px" alt="" loading="lazy" decoding="async" />
+          </div>
+          <div className="bk2-face bk2-back bk2-left-face bk2-plate">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/images/narayani-portrait-480.webp")} alt="" loading="lazy" decoding="async" />
+            <p className="bk2-sign">{site.person}</p>
+            <p className="bk2-quote-cite">{site.title}</p>
+          </div>
+        </div>
+      </div>
+      <div className="bk2-plinth" />
+    </div>
   );
 }
