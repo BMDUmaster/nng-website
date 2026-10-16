@@ -62,9 +62,9 @@ export const nav: NavItem[] = [
     // The same order as the service cards: she starts with the mind.
     children: [
       { label: "Brainology Program", href: "/services/brain-training/", note: "Understand the mind behind your choices." },
-      { label: "Astrology", href: "/services/astrology/", note: "Planetary influences for a better you." },
       { label: "Numerology", href: "/services/numerology/", note: "Discover the power of your numbers." },
-      { label: "Vastu", href: "/services/vastu/", note: "Harmony in your home and space." },
+      { label: "Vastulogy", href: "/services/vastu/", note: "Harmony in your home and space." },
+      { label: "Astrology", href: "/services/astrology/", note: "Planetary influences for a better you." },
     ],
   },
   {
@@ -98,7 +98,7 @@ export const enquiryTopics = [
   { value: "a consultation on my career", label: "Career", group: "An area of life" },
   { value: "Brainology Program", label: "Brainology Program", group: "A service" },
   { value: "Numerology", label: "Numerology", group: "A service" },
-  { value: "Vastu", label: "Vastu", group: "A service" },
+  { value: "Vastulogy", label: "Vastulogy", group: "A service" },
   { value: "Astrology", label: "Astrology", group: "A service" },
   { value: "Crystals, Stones and Rudraksha", label: "Crystals, Stones and Rudraksha", group: "A service" },
   { value: "the Personalised Hand Holding Program", label: "Personalised Hand Holding Program", group: "A service" },
@@ -123,6 +123,6 @@ export const topicGroups = ["Where to begin", "An area of life", "A service"] as
 
 export const legal = {
   disclaimer:
-    "Psychic guidance is personal and spiritual. Numerology, Vastu and astrology are interpretive traditions. Guidance here is personal and spiritual, not medical, mental health, legal or financial advice.",
+    "Psychic guidance is personal and spiritual. Numerology, Vastulogy and astrology are interpretive traditions. Guidance here is personal and spiritual, not medical, mental health, legal or financial advice.",
   copyright: "© 2026 Transformation with NNG",
 };

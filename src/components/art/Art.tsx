@@ -1,7 +1,7 @@
 /**
  * Line drawings in the NNG style: a shared stroke family, Verdigris ink, no ornamental fills. The four service drawings
  * were redrawn on 23 and 24 Sept 2026 so a practitioner would recognise them: five threads gathering into
- * one line for the mind, the Lo Shu square in its true order, a home's plan for vastu, and the North Indian birth chart.
+ * one line for the mind, the Lo Shu square in its true order, a home's plan for Vastulogy, and the North Indian birth chart.
  * Colour and stroke come from the CSS of the container (.service-art svg, .triad-art svg and so on),
  * so each drawing works in every place it is used. Every drawing carries data-draw: it draws itself
  * in the first time it scrolls into view (Motion.tsx), then settles. Reduced motion and PDF
@@ -50,7 +50,7 @@ export function NumerologyArt({ className = "" }: ArtProps) {
 }
 
 /**
- * Vastu: the plan of a home, the way she receives it. An outline, one inner wall, the doorway with its
+ * Vastulogy: the plan of a home, the way she receives it. An outline, one inner wall, the doorway with its
  * swing, the centre (brahmasthan) kept open, the mandir marked in the north-east, and north above.
  */
 export function VastuArt({ className }: ArtProps) {
@@ -95,7 +95,7 @@ export function DirectionArt({ className }: ArtProps) {
   );
 }
 
-/** Alignment: three points sharing one direction, not a second Vastu floor plan. */
+/** Alignment: three points sharing one direction, not a second Vastulogy floor plan. */
 export function AlignmentArt({ className }: ArtProps) {
   return (
     <svg viewBox="0 0 120 120" className={className} {...svgProps} data-art="alignment">

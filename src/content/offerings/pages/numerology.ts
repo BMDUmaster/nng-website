@@ -146,7 +146,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "So a conversation about your numbers does not stop at a number. It moves on to what surrounds the question: the beliefs, habits and reactions that have gathered around it. That is the Brain Training side of her work, and it is where she starts. Numbers are one of the ways she looks for direction, with astrology and Vastu alongside where they bear on the question.",
+          text: "So a conversation about your numbers does not stop at a number. It moves on to what surrounds the question: the beliefs, habits and reactions that have gathered around it. That is the Brain Training side of her work, and it is where she starts. Numbers are one of the ways she looks for direction, with astrology and Vastulogy alongside where they bear on the question.",
         },
       ],
     },

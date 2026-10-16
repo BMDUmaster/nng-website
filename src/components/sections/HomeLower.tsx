@@ -60,7 +60,7 @@ export function HomeProgram() {
             </h2>
             <p className="pg-lead">Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
             <ul className="pg-list">
-              {["Astrology, numerology and Vastu assessment", "Psychic guidance for recurring patterns", "Direct guidance across health, relationships, money and career"].map((t, i) => (
+              {["Numerology, Vastulogy and astrology assessment", "Psychic guidance for recurring patterns", "Direct guidance across health, relationships, money and career"].map((t, i) => (
                 <li key={t}>
                   <span className="pg-li-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: pgIcons[i] }} />
                   {t}

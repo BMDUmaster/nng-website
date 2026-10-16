@@ -9,11 +9,11 @@ export const psychicChoices = [
 ] as const;
 
 export const vastuChoices = [
-  { name: "Residential Vastu", icon: "page-home", line: "Your home, its layout and the way your household uses it.", href: "/services/vastu/home/" },
-  { name: "Commercial Vastu", icon: "page-office-and-shop", line: "Offices, shops, factories, clinics and other working spaces.", href: "/services/vastu/office-and-shop/" },
-  { name: "Property Selection Vastu", icon: "page-property-and-land", line: "A separate conversation before choosing a property or plot.", href: "/services/vastu/property-and-land/" },
-  { name: "Body Vastu", icon: "group-energy", line: "शरीर का वास्तु. Ask Narayani’s team about the scope of this consultation." },
-  { name: "Office Desk Vastu", icon: "group-workplaces", line: "Desk-focused guidance for job professionals. Discuss the scope before booking." },
+  { name: "Residential Vastulogy", icon: "page-home", line: "Your home, its layout and the way your household uses it.", href: "/services/vastu/home/" },
+  { name: "Commercial Vastulogy", icon: "page-office-and-shop", line: "Offices, shops, factories, clinics and other working spaces.", href: "/services/vastu/office-and-shop/" },
+  { name: "Property Selection Vastulogy", icon: "page-property-and-land", line: "A separate conversation before choosing a property or plot.", href: "/services/vastu/property-and-land/" },
+  { name: "Body Vastulogy", icon: "group-energy", line: "शरीर का वास्तु. Ask Narayani’s team about the scope of this consultation." },
+  { name: "Office Desk Vastulogy", icon: "group-workplaces", line: "Desk-focused guidance for job professionals. Discuss the scope before booking." },
 ] as const;
 
 export const shortGuidance: Record<string, { lead: string; points: string[] }> = {
@@ -32,11 +32,11 @@ export const shortGuidance: Record<string, { lead: string; points: string[] }> =
   "vastu/home": { lead: "A room-by-room conversation about your home, its layout and the way you live in it.", points: ["Entrance and living room", "Kitchen, bedroom and study", "Sleep direction, toilets and stairs"] },
   "vastu/property-and-land": { lead: "Before buying, discuss the property or plot you are considering. Selection guidance is separate from a review of an existing home.", points: ["Residential, commercial or plot selection", "Entrance, orientation and layout", "Your intended use and practical constraints"] },
   "vastu/office-and-shop": { lead: "Consider the arrangement of your workplace alongside the way people work and move through it.", points: ["Office, shop, factory, clinic or studio", "Entrances, seating and work areas", "A full review or desk-focused enquiry"] },
-  "vastu/real-estate-and-developers": { lead: "Discuss Vastu within a larger property project, alongside the planning and professional constraints already in place.", points: ["Site layout and intended uses", "Project stage and available plans", "Coordination with your professional team"] },
+  "vastu/real-estate-and-developers": { lead: "Discuss Vastulogy within a larger property project, alongside the planning and professional constraints already in place.", points: ["Site layout and intended uses", "Project stage and available plans", "Coordination with your professional team"] },
   "vastu/specialised-spaces": { lead: "A space with a specific purpose needs a conversation about its users, layout and everyday demands.", points: ["Education, care or other specialised premises", "How people use the space", "Safety and operational requirements"] },
   "vastu/astro-vastu": { lead: "Explore a space and relevant chart themes together around the concern you bring.", points: ["Your layout and daily routines", "Relevant birth details", "The question behind the review"] },
   "vastu/vastu-remedies": { lead: "Understand the reasoning behind a suggested change before deciding what is practical for your space.", points: ["The concern and existing layout", "What can reasonably change", "Traditional suggestions alongside practical needs"] },
   "vastu/directions-and-elements": { lead: "Direction and the five elements form a traditional way to think about space. Start with the layout and everyday use.", points: ["Earth, water, fire, air and space", "Direction and room use", "Balance within practical constraints"] },
   "vastu/energy-balancing": { lead: "Ask about Narayani’s spiritual approach to the person and the space, with the scope explained before you book.", points: ["Your concern and surroundings", "Personal and spiritual practice", "What this consultation includes"] },
-  "vastu/ongoing-guidance": { lead: "Working through a move or project over time? Ask whether ongoing Vastu guidance fits the support you need.", points: ["Your project and its stages", "The questions that need review", "Format and frequency agreed with the team"] },
+  "vastu/ongoing-guidance": { lead: "Working through a move or project over time? Ask whether ongoing Vastulogy guidance fits the support you need.", points: ["Your project and its stages", "The questions that need review", "Format and frequency agreed with the team"] },
 };

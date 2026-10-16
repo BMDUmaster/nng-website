@@ -2,7 +2,7 @@
  * Background drawings, in hairline ink on the ivory paper. The idea comes from the way the best sites
  * in this field draw quiet orbits around the person, but every figure here is taken from her own
  * practice: the nine grahas and the numbers that belong to them, the North Indian birth chart and
- * the vastu grid. All are decorative and hidden from screen readers.
+ * the Vastulogy grid. All are decorative and hidden from screen readers.
  */
 
 type Props = { className?: string };
@@ -150,7 +150,7 @@ export function KundliBackdrop({ className = "" }: Props) {
   );
 }
 
-/** The vastu grid: nine by nine squares, the centre (brahmasthan) marked, and the eight directions. */
+/** The Vastulogy grid: nine by nine squares, the centre (brahmasthan) marked, and the eight directions. */
 export function VastuBackdrop({ className = "" }: Props) {
   const step = 240 / 9;
   const lines = Array.from({ length: 8 }, (_, i) => 30 + step * (i + 1));

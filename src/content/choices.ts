@@ -96,7 +96,7 @@ export const choiceGroups: ChoiceGroup[] = [
       { say: "I want my office, shop, clinic or showroom looked at", href: "/services/vastu/office-and-shop/" },
       { say: "I am a builder, architect or developer planning a project", href: "/services/vastu/real-estate-and-developers/" },
       { say: "I run a factory, a hotel, a school, a hospital or a farm", href: "/services/vastu/specialised-spaces/" },
-      { say: "I want steady Vastu support through a project or a year", href: "/services/vastu/ongoing-guidance/" },
+      { say: "I want steady Vastulogy support through a project or a year", href: "/services/vastu/ongoing-guidance/" },
     ],
   },
   {

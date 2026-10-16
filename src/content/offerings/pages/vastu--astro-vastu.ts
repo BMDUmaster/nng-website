@@ -3,11 +3,11 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   hub: "vastu",
   slug: "astro-vastu",
-  title: "Astro-Vastu, with your chart beside your space",
-  metaTitle: "Astro-Vastu: chart and space read together",
+  title: "Astro-Vastulogy, with your chart beside your space",
+  metaTitle: "Astro-Vastulogy: chart and space read together",
   metaDescription:
     "How Narayani reads a home or workplace beside your birth chart: lagna, Moon, dasha, two direction schemes, and changes that need no building work.",
-  lead: "Consider your space alongside your birth chart. Astro-Vastu combines two interpretive traditions; its recommendations remain choices to assess, not proven requirements for wellbeing.",
+  lead: "Consider your space alongside your birth chart. Astro-Vastulogy combines two interpretive traditions; its recommendations remain choices to assess, not proven requirements for wellbeing.",
   card: "When you want a home or workplace read beside your own chart, with no building work.",
   icon: "page-astro-vastu",
   group: "chart-space",
@@ -21,12 +21,12 @@ export const page: OfferingPage = {
     "Rented flats and shared homes",
   ],
   art: { kind: "plan", variant: "astro" },
-  enquiryTopic: "Vastu: Astro-Vastu",
-  cta: "Enquire about an Astro-Vastu reading",
+  enquiryTopic: "Vastulogy: Astro-Vastulogy",
+  cta: "Enquire about an Astro-Vastulogy reading",
   intro: [
     {
       type: "p",
-      text: "Vastu reads a building through its directions, its elements and its layout. Jyotish, the Indian tradition of reading a birth chart, reads a person through the sky at their birth. Astro-Vastu sets the two side by side: the plan of the space, and the chart of whoever sleeps, works or prays in it.",
+      text: "Vastulogy reads a building through its directions, its elements and its layout. Jyotish, the Indian tradition of reading a birth chart, reads a person through the sky at their birth. Astro-Vastulogy sets the two side by side: the plan of the space, and the chart of whoever sleeps, works or prays in it.",
     },
     {
       type: "p",
@@ -37,16 +37,16 @@ export const page: OfferingPage = {
     {
       id: "adds",
       chip: "What it adds",
-      heading: "What the chart adds to an ordinary Vastu reading",
+      heading: "What the chart adds to an ordinary Vastulogy reading",
       icon: "astro-yoga",
       blocks: [
         {
           type: "p",
-          text: "Ordinary Vastu puts the same questions to every building: where the entrance is, which way the plot faces, where the kitchen, the prayer corner and the toilet sit. The answers come from directions, elements and layout, and they stay the same whoever lives inside.",
+          text: "Ordinary Vastulogy puts the same questions to every building: where the entrance is, which way the plot faces, where the kitchen, the prayer corner and the toilet sit. The answers come from directions, elements and layout, and they stay the same whoever lives inside.",
         },
         {
           type: "p",
-          text: "Astro-Vastu adds the person. Take a couple who share a bedroom. The bed has one position and so one head direction, while their two charts may point to two different directions. The chart cannot settle that. The room can: who rises first, who works late, which side holds the cupboard, which wall takes the morning light. What the chart contributes is a suggestion about which of those matters to raise first.",
+          text: "Astro-Vastulogy adds the person. Take a couple who share a bedroom. The bed has one position and so one head direction, while their two charts may point to two different directions. The chart cannot settle that. The room can: who rises first, who works late, which side holds the cupboard, which wall takes the morning light. What the chart contributes is a suggestion about which of those matters to raise first.",
         },
         {
           type: "p",
@@ -211,7 +211,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "A home carries numbers too. Numerology reads a house or flat number by adding its digits down to one, as the numerology pages on house and mobile numbers explain. Some practitioners join that to Vastu: each digit is tied to a planet, each planet to a direction, and so the number is said to point somewhere.",
+          text: "A home carries numbers too. Numerology reads a house or flat number by adding its digits down to one, as the numerology pages on house and mobile numbers explain. Some practitioners join that to Vastulogy: each digit is tied to a planet, each planet to a direction, and so the number is said to point somewhere.",
         },
         {
           type: "p",
@@ -227,7 +227,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "We found no test of Astro-Vastu as a system, and none of the planet-to-direction pairings in the table above. What is known about each half, Vastu and Jyotish, is set out on the Vastu and astrology pages, and this page claims nothing beyond it.",
+          text: "We found no test of Astro-Vastulogy as a system, and none of the planet-to-direction pairings in the table above. What is known about each half, Vastulogy and Jyotish, is set out on the Vastulogy and astrology pages, and this page claims nothing beyond it.",
         },
         {
           type: "p",
@@ -252,7 +252,7 @@ export const page: OfferingPage = {
     ],
   },
   bring: {
-    heading: "Before an Astro-Vastu reading: what to gather",
+    heading: "Before an Astro-Vastulogy reading: what to gather",
     icon: "gen-bring-details",
     items: [
       { icon: "astro-birth-time", text: "Your birth date, time and place: the lagna, Moon sign and running period are worked out from them" },
@@ -263,15 +263,15 @@ export const page: OfferingPage = {
   },
   faqs: [
     {
-      q: "Is Astro-Vastu different from ordinary Vastu?",
-      a: "Yes. The difference is the person. Ordinary Vastu gives one reading of a building. Astro-Vastu also takes in the chart of one resident, which is why a single flat can be read two ways for two people. The planet pairings are the part that is modern and disputed.",
+      q: "Is Astro-Vastulogy different from ordinary Vastulogy?",
+      a: "Yes. The difference is the person. Ordinary Vastulogy gives one reading of a building. Astro-Vastulogy also takes in the chart of one resident, which is why a single flat can be read two ways for two people. The planet pairings are the part that is modern and disputed.",
     },
     {
       q: "Do I need my birth time?",
       a: "Yes, for anything that rests on the lagna. A new sign rises roughly every two hours, and the divisional charts turn over faster still. The Moon sign holds better, though the Moon crosses into another sign on about four days in ten, so a date alone cannot always pin it down. Tell her at the start if the time is a guess or unknown. She will mark which parts of the reading lose reliability, and the room can still be looked at.",
     },
     {
-      q: "Can I do Astro-Vastu in a rented flat?",
+      q: "Can I do Astro-Vastulogy in a rented flat?",
       a: "You can discuss a rented flat, but the lease and building restrictions remain the starting point. The conversation may concern movable furniture, lighting or storage rather than entrances and plumbing. A chart does not expand your rights as a tenant. Obtain any required permission before drilling or fixing anything, and do not undertake structural changes on the strength of a reading.",
     },
     {
@@ -279,7 +279,7 @@ export const page: OfferingPage = {
       a: "No single list exists, because the two schemes disagree. A date alone gives little, since the lagna needs a time. With a full chart, tradition ties your planets to directions, and each scheme then names candidates. Narayani sets those candidates beside how each part of your space is used, and where you put a bed or a desk remains your call.",
     },
     {
-      q: "Can Vastu support or weaken what my chart shows?",
+      q: "Can Vastulogy support or weaken what my chart shows?",
       a: "A chart is set at the moment of birth, and no house changes it. Some practitioners go further and say a place can suit a person well or badly, so that a home supports or weakens what the chart describes. We know of no test of that idea, and Narayani makes no promise about it. A home does shape your day. A dim desk, a noisy bedroom or a cluttered entrance changes what is easy to do, and you can judge that for yourself.",
     },
     {

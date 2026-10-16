@@ -4,9 +4,9 @@ export const page: OfferingPage = {
   hub: "vastu",
   slug: "property-and-land",
   title: "Choosing a property or a plot",
-  metaTitle: "Vastu for choosing a property or plot",
-  metaDescription: "Weighing a plot or comparing two homes: how shape, slope, road and soil read in Vastu, plus timing and building in phases, as support for your decision.",
-  lead: "Compare the Vastu considerations of a home or plot before deciding. This supports your assessment; it does not replace legal or financial checks.",
+  metaTitle: "Vastulogy for choosing a property or plot",
+  metaDescription: "Weighing a plot or comparing two homes: how shape, slope, road and soil read in Vastulogy, plus timing and building in phases, as support for your decision.",
+  lead: "Compare the Vastulogy considerations of a home or plot before deciding. This supports your assessment; it does not replace legal or financial checks.",
   card: "When you are choosing between two homes, buying a plot or reviewing a property.",
   icon: "page-property-and-land",
   group: "homes",
@@ -20,12 +20,12 @@ export const page: OfferingPage = {
     "Rented homes, no demolition",
   ],
   art: { kind: "plan", variant: "site" },
-  enquiryTopic: "Vastu: choosing a property or plot",
+  enquiryTopic: "Vastulogy: choosing a property or plot",
   cta: "Enquire about a property or plot review",
   intro: [
     {
       type: "p",
-      text: "People usually ask about Vastu at the moment a choice is hardest to undo. They have two flats at nearly the same price, one facing east and one south, or a corner plot that suits the budget, or a builder’s brochure whose north arrow points somewhere unexpected.",
+      text: "People usually ask about Vastulogy at the moment a choice is hardest to undo. They have two flats at nearly the same price, one facing east and one south, or a corner plot that suits the budget, or a builder’s brochure whose north arrow points somewhere unexpected.",
     },
     {
       type: "p",
@@ -49,12 +49,12 @@ export const page: OfferingPage = {
             },
             {
               term: "Sellers",
-              text: "The same reading shows how the home may look to a buyer who follows Vastu, and which of the questions they ask have a simple answer.",
+              text: "The same reading shows how the home may look to a buyer who follows Vastulogy, and which of the questions they ask have a simple answer.",
               icon: "astro-property-sell",
             },
             {
               term: "Investors",
-              text: "Some tenants and buyers will ask about Vastu, so a reading shows what they may notice. It is not a valuation, and it says nothing about price or return.",
+              text: "Some tenants and buyers will ask about Vastulogy, so a reading shows what they may notice. It is not a valuation, and it says nothing about price or return.",
               icon: "gen-investor",
             },
             {
@@ -148,19 +148,19 @@ export const page: OfferingPage = {
     {
       id: "phased-build",
       chip: "Building in phases",
-      heading: "Planning Vastu in phases when you build",
+      heading: "Planning Vastulogy in phases when you build",
       icon: "re-phased-build",
       blocks: [
         {
           type: "p",
-          text: "For a new build, the advice follows the order of the work and covers the plot, the plan, the timing and the rites, read through Vastu. Each step has its own Vastu question, and the plan is easiest to shape before any of it is built.",
+          text: "For a new build, the advice follows the order of the work and covers the plot, the plan, the timing and the rites, read through Vastulogy. Each step has its own Vastulogy question, and the plan is easiest to shape before any of it is built.",
         },
         {
           type: "steps",
           items: [
             {
               title: "Read the plot",
-              text: "Mark north on the plot plan, and set out its shape, slope, road and what stands opposite the entrance. If the ground is in doubt, an engineer’s soil investigation comes before any Vastu question.",
+              text: "Mark north on the plot plan, and set out its shape, slope, road and what stands opposite the entrance. If the ground is in doubt, an engineer’s soil investigation comes before any Vastulogy question.",
               icon: "re-overlay",
             },
             {
@@ -185,7 +185,7 @@ export const page: OfferingPage = {
             },
             {
               title: "Griha Pravesh",
-              text: "The house-warming is held at an hour chosen with a priest, and in some families it includes a *Vastu Shanti*, a rite of worship for the home. Both are family customs, and the family decides whether to keep them.",
+              text: "The house-warming is held at an hour chosen with a priest, and in some families it includes a *Vastulogy Shanti*, a rite of worship for the home. Both are family customs, and the family decides whether to keep them.",
               icon: "astro-remedy-worship",
             },
           ],
@@ -246,12 +246,12 @@ export const page: OfferingPage = {
   },
   faqs: [
     {
-      q: "Can Vastu corrections be made in a rented home?",
-      a: "Some, within limits, and the limits come from the building and the lease. Keep each change reversible so you can leave the flat as you found it, and read the lease before you paint, drill or replace a fitting. The page on Vastu for your home lists what a flat lets you rearrange. A fault that would need building work stays as it is, which is a good reason to read the plan before you sign the lease.",
+      q: "Can Vastulogy corrections be made in a rented home?",
+      a: "Some, within limits, and the limits come from the building and the lease. Keep each change reversible so you can leave the flat as you found it, and read the lease before you paint, drill or replace a fitting. The page on Vastulogy for your home lists what a flat lets you rearrange. A fault that would need building work stays as it is, which is a good reason to read the plan before you sign the lease.",
     },
     {
       q: "What should I check before buying a plot or a home?",
-      a: "Start with the papers, which a lawyer should check: the title, the approvals and, for a larger project, its RERA registration and the promoter’s published details. Ask an engineer about soil and drainage. Then weigh the household’s needs: the commute, the schools, the light, the noise and the budget. A Vastu reading comes after those checks, as a further comparison, and it replaces none of them.",
+      a: "Start with the papers, which a lawyer should check: the title, the approvals and, for a larger project, its RERA registration and the promoter’s published details. Ask an engineer about soil and drainage. Then weigh the household’s needs: the commute, the schools, the light, the noise and the budget. A Vastulogy reading comes after those checks, as a further comparison, and it replaces none of them.",
     },
     {
       q: "Can a property be reviewed before I commit?",
@@ -259,10 +259,10 @@ export const page: OfferingPage = {
     },
     {
       q: "Can you tell me whether to buy?",
-      a: "No. A reading is decision support, and you make the decision. Narayani can say how a property reads in Vastu and what it would ask of your household. Whether to buy depends on the price, the papers, your finances and your family, none of which a compass can judge. If one option has a feature that worries you, she will say how seriously tradition counts it and what could be done without building work.",
+      a: "No. A reading is decision support, and you make the decision. Narayani can say how a property reads in Vastulogy and what it would ask of your household. Whether to buy depends on the price, the papers, your finances and your family, none of which a compass can judge. If one option has a feature that worries you, she will say how seriously tradition counts it and what could be done without building work.",
     },
     {
-      q: "The seller says the property is Vastu compliant. Should I rely on that?",
+      q: "The seller says the property is Vastulogy compliant. Should I rely on that?",
       a: "Ask what the claim rests on, as you would for any other. Ask which guide it complies with and which plan was used, since guides disagree with each other and a brochure’s north arrow may show plan north, which differs from true north. Ask for the plan, take a compass reading on site, and have it read against the household that will live there. A reading can show what the claim means in practice.",
     },
     {
@@ -275,11 +275,11 @@ export const page: OfferingPage = {
     },
     {
       q: "I have already bought. Is a review still useful?",
-      a: "Yes. A review of a home you already own looks at what can be rearranged and at the questions you have about the layout. Many choices were sensible when made, and a purchase is never a Vastu verdict. Where the plan is still open, such as an extension or an unbuilt floor, the reading can feed into it.",
+      a: "Yes. A review of a home you already own looks at what can be rearranged and at the questions you have about the layout. Many choices were sensible when made, and a purchase is never a Vastulogy verdict. Where the plan is still open, such as an extension or an unbuilt floor, the reading can feed into it.",
     },
     {
-      q: "Does Vastu apply to land I am buying only as an investment?",
-      a: "Vastu is about how a space is used, so for land you will never occupy, a reading says little beyond how the plot would read to a future owner who follows the tradition. It does not predict price or return, and it is not financial advice. For an investment the questions that matter are the papers, the location and the market, and a lawyer and a valuer answer them.",
+      q: "Does Vastulogy apply to land I am buying only as an investment?",
+      a: "Vastulogy is about how a space is used, so for land you will never occupy, a reading says little beyond how the plot would read to a future owner who follows the tradition. It does not predict price or return, and it is not financial advice. For an investment the questions that matter are the papers, the location and the market, and a lawyer and a valuer answer them.",
     },
   ],
   related: [

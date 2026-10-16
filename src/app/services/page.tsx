@@ -18,7 +18,7 @@ import { faqSchema, personSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Psychic guidance, astrology, numerology and Vastu with Narayani Garg, brought together around your question. Online or in person.",
+  description: "Psychic guidance, numerology, Vastulogy and astrology with Narayani Garg, brought together around your question. Online or in person.",
   alternates: { canonical: "/services/" },
 };
 
@@ -99,7 +99,7 @@ export default function ServicesPage() {
               Begin with the question <em>you’re facing</em>
             </h1>
             <span className="svh-rule" aria-hidden="true" />
-            <p className="svh-lead">Bring your question. Narayani considers your situation and thought patterns, using numerology, Vastu or astrology where relevant.</p>
+            <p className="svh-lead">Bring your question. Narayani considers your situation and thought patterns, using numerology, Vastulogy or astrology where relevant.</p>
             <div className="svh-actions">
               <EnquiryTrigger className="svh-cta" source="services-hero" primary>
                 <span className="cx-long">Enquire about a consultation</span>

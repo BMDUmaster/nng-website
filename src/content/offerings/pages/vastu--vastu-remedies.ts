@@ -3,10 +3,10 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   hub: "vastu",
   slug: "vastu-remedies",
-  title: "Vastu corrections without demolition",
-  metaTitle: "Vastu corrections without demolition",
+  title: "Vastulogy corrections without demolition",
+  metaTitle: "Vastulogy corrections without demolition",
   metaDescription:
-    "Lighting, mirrors, furniture, colour, plants, salt, copper, crystals and routines: what Vastu suggests, what is known, and how to judge a change.",
+    "Lighting, mirrors, furniture, colour, plants, salt, copper, crystals and routines: what Vastulogy suggests, what is known, and how to judge a change.",
   lead: "Start with how a room is used, furnished and lit. Narayani explains practical adjustments and their limits before considering structural changes.",
   card: "When you want to change how a home or workplace works, without breaking or rebuilding.",
   icon: "page-vastu-remedies",
@@ -21,8 +21,8 @@ export const page: OfferingPage = {
     "How to judge a change",
   ],
   art: { kind: "drawing", id: "hero-vastu-remedies" },
-  enquiryTopic: "Vastu: corrections without demolition",
-  cta: "Enquire about Vastu corrections",
+  enquiryTopic: "Vastulogy: corrections without demolition",
+  cta: "Enquire about Vastulogy corrections",
   intro: [
     {
       type: "p",
@@ -30,7 +30,7 @@ export const page: OfferingPage = {
     },
     {
       type: "p",
-      text: "That is where Narayani starts. A change of use can be tried for a few weeks and undone in a minute; a moved wall cannot. A correction on this page means a change to how a space is used, arranged or furnished. It does not repair a building, and no claim is made that it undoes a fault in one. What Vastu calls a defect is a departure from its own rules, not a measured fault.",
+      text: "That is where Narayani starts. A change of use can be tried for a few weeks and undone in a minute; a moved wall cannot. A correction on this page means a change to how a space is used, arranged or furnished. It does not repair a building, and no claim is made that it undoes a fault in one. What Vastulogy calls a defect is a departure from its own rules, not a measured fault.",
     },
     {
       type: "p",
@@ -83,7 +83,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "These four have a practical case that does not rest on Vastu. Daylight, fresh air and comfort do affect people, and small studies have looked at daylight and sleep, and at ventilation and thinking, in offices. That research says nothing about compass direction, and it does not show that one wall rather than another is right for a bed.",
+          text: "These four have a practical case that does not rest on Vastulogy. Daylight, fresh air and comfort do affect people, and small studies have looked at daylight and sleep, and at ventilation and thinking, in offices. That research says nothing about compass direction, and it does not show that one wall rather than another is right for a bed.",
         },
         {
           type: "terms",
@@ -169,7 +169,7 @@ export const page: OfferingPage = {
             [
               "Yantras",
               "A geometric figure, often of interlaced triangles inside a square frame, long used as a focus in worship. Modern advice also places yantras at entrances and in corners.",
-              "As an object of worship a yantra belongs to devotion. As a Vastu correction it is advised without cited tests. If your family keeps one, keep it with respect, and do not buy one under pressure.",
+              "As an object of worship a yantra belongs to devotion. As a Vastulogy correction it is advised without cited tests. If your family keeps one, keep it with respect, and do not buy one under pressure.",
             ],
           ],
           icons: ["rem-mirrors", "rem-plants", "rem-water-feature", "rem-copper", "rem-salt", "rem-crystals", "rem-sound", "rem-pyramid", "rem-yantra"],
@@ -234,7 +234,7 @@ export const page: OfferingPage = {
         },
         {
           type: "quote",
-          text: "Even a vastu remedy only works when your brain is working.",
+          text: "Even a Vastulogy remedy only works when your brain is working.",
           source: "Narayani Garg, translated from Hindi",
         },
         {
@@ -294,7 +294,7 @@ export const page: OfferingPage = {
   },
   faqs: [
     {
-      q: "Do crystals and salt work as Vastu remedies?",
+      q: "Do crystals and salt work as Vastulogy remedies?",
       a: "The people who advise them cite no study, and we know of no independent, controlled research showing that a crystal or a bowl of salt changes a space or the people in it. The same holds for crystal grids, singing bowls and stones laid at a door to protect a home: they are sold with claims and with no tests behind them. If an object makes a room feel cared for, that is a fair reason to keep it, and it is no evidence about the object. None of Narayani’s advice depends on buying one.",
     },
     {
@@ -306,7 +306,7 @@ export const page: OfferingPage = {
       a: "Most modern guides keep a toilet out of the north-east, and practitioners differ on what to do when one is already there. Ordinary care comes first: keep the room clean, dry and well ventilated, and the door closed when it is not in use. One practitioner holds that a serious north-east fault needs physical change. Moving a toilet is plumbing and structural work, so it belongs with a plumber and an engineer, and in a flat with the society.",
     },
     {
-      q: "Do I need to rebuild to follow Vastu?",
+      q: "Do I need to rebuild to follow Vastulogy?",
       a: "No. Rebuilding is the last of the four steps, and many homes cannot be rebuilt at all: a rented flat, a floor in a shared building. What you can change is how the home is used, arranged and furnished, and the sections above set out how. Nor can an object stand in for building work: a pyramid or a stone cannot strengthen a wall. If structure is ever worth considering, an engineer and the local rules decide, and no compass does.",
     },
     {

@@ -3,8 +3,8 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   "hub": "vastu",
   "slug": "ongoing-guidance",
-  "title": "Ongoing Vastu guidance",
-  "metaTitle": "Ongoing Vastu guidance over months",
+  "title": "Ongoing Vastulogy guidance",
+  "metaTitle": "Ongoing Vastulogy guidance over months",
   "metaDescription": "Questions to consider as a space changes over time, with scope, timing and access to confirm before choosing any arrangement.",
   "lead": "Plans can change across a renovation, move or build. Use this page to identify questions that may need another look, then ask what guidance is available.",
   "card": "When your space keeps changing and you want guidance over months, not one visit.",
@@ -22,8 +22,8 @@ export const page: OfferingPage = {
     "kind": "drawing",
     "id": "hero-ongoing-guidance"
   },
-  "enquiryTopic": "questions about Vastu guidance over time",
-  "cta": "Ask about available Vastu guidance",
+  "enquiryTopic": "questions about Vastulogy guidance over time",
+  "cta": "Ask about available Vastulogy guidance",
   "intro": [
     {
       "type": "p",
@@ -31,11 +31,11 @@ export const page: OfferingPage = {
     },
     {
       "type": "p",
-      "text": "This is educational background on reviewing a space over time. It does not confirm a Vastu retainer, periodic visits, an agreed message channel or access between appointments."
+      "text": "This is educational background on reviewing a space over time. It does not confirm a Vastulogy retainer, periodic visits, an agreed message channel or access between appointments."
     },
     {
       "type": "p",
-      "text": "Narayani offers Vastu alongside mindset guidance. Ask the team whether your question fits a single consultation or any available ongoing option, and confirm the scope, format and fee before booking."
+      "text": "Narayani offers Vastulogy alongside mindset guidance. Ask the team whether your question fits a single consultation or any available ongoing option, and confirm the scope, format and fee before booking."
     }
   ],
   "sections": [
@@ -185,7 +185,7 @@ export const page: OfferingPage = {
       "blocks": [
         {
           "type": "p",
-          "text": "The Personalised Hand Holding Program is a separate six-month option for personal guidance. This page does not establish a Vastu retainer or say that project reviews are included in that programme. Ask about the scope of each option before deciding."
+          "text": "The Personalised Hand Holding Program is a separate six-month option for personal guidance. This page does not establish a Vastulogy retainer or say that project reviews are included in that programme. Ask about the scope of each option before deciding."
         }
       ]
     },
@@ -218,11 +218,11 @@ export const page: OfferingPage = {
       "blocks": [
         {
           "type": "p",
-          "text": "Ongoing guidance is Vastu advice. It is not structural, engineering or legal advice, and it stands in for none of them. Your builder and your architect keep their responsibility for the design, the safety and the approvals, and her suggestions reach them as options they can take, change or leave. A structural question goes to an engineer, and a legal one to a lawyer. If a suggestion would break a rule or a lease, the rule or the lease stands."
+          "text": "Ongoing guidance is Vastulogy advice. It is not structural, engineering or legal advice, and it stands in for none of them. Your builder and your architect keep their responsibility for the design, the safety and the approvals, and her suggestions reach them as options they can take, change or leave. A structural question goes to an engineer, and a legal one to a lawyer. If a suggestion would break a rule or a lease, the rule or the lease stands."
         },
         {
           "type": "p",
-          "text": "She makes no promise about outcomes, and nothing in an arrangement promises sales, a sale price or health. The Vastu overview page sets out where the evidence for Vastu itself stands. Light, air and comfort are the parts of a reading that can be checked on the day."
+          "text": "She makes no promise about outcomes, and nothing in an arrangement promises sales, a sale price or health. The Vastulogy overview page sets out where the evidence for Vastulogy itself stands. Light, air and comfort are the parts of a reading that can be checked on the day."
         }
       ]
     }
@@ -299,7 +299,7 @@ export const page: OfferingPage = {
       "a": "Describe the question and whether the plan is likely to change. The team can confirm which options are available and what each covers."
     },
     {
-      "q": "Is a Vastu retainer available?",
+      "q": "Is a Vastulogy retainer available?",
       "a": "No separate retainer is confirmed by this page. Ask about scope, review stages, access, format and fees before choosing any arrangement."
     },
     {

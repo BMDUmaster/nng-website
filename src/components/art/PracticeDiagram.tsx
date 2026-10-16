@@ -10,7 +10,7 @@ export function PracticeDiagram({ hub }: { hub: string }) {
   </figure>;
   if (hub === "vastu") return <figure className="practice-example">
     <figcaption>A space is more than its direction</figcaption>
-    <Explainer kind="vastu" label="Illustrative floor plan: layout, daily use and north direction. Not a Vastu recommendation." />
+    <Explainer kind="vastu" label="Illustrative floor plan: layout, daily use and north direction. Not a Vastulogy recommendation." />
     <p className="diagram-caption">Bring a plan with the entrance and north marked. Room use, light, ventilation and structural constraints matter alongside the traditional reading.</p>
   </figure>;
   if (hub === "astrology") return <figure className="practice-example">

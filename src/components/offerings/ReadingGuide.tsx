@@ -5,7 +5,7 @@ const introductions: Partial<Record<string, string>> = {
   astrology: "Bring the decision you are facing. Narayani reads the relevant chart themes alongside your circumstances. The chart is an interpretive tradition, not a verdict on your future.",
   numerology: "Start with the number or name you want to understand. Narayani explains the interpretation and connects it with your choices. A number does not decide your life.",
   "brain-training": "Bring one situation that keeps repeating. Together, you look at your thoughts, reactions and habits, then discuss a practice that fits. NLP, EFT and Ho'oponopono are available for personal guidance, not treatment.",
-  vastu: "Tell her how you use the space and what you want to change. She considers the layout alongside everyday needs. Vastu guidance does not replace structural, safety or professional advice.",
+  vastu: "Tell her how you use the space and what you want to change. She considers the layout alongside everyday needs. Vastulogy guidance does not replace structural, safety or professional advice.",
   "stones-and-rudraksh": "Before choosing a stone or bead, discuss why you are considering it. Narayani explains the traditional reasoning without pressure to purchase. Authenticity and buying terms need separate checks.",
   "stones-and-rudraksh/gemstones": "A stone should come with an explanation, not a warning. Discuss why it was suggested, what it is and how to check it. The nine traditional pairings are in the catalogue below; none guarantees an outcome.",
   "stones-and-rudraksh/rudraksha": "Understand the bead before choosing it: its natural grooves, authenticity and care. Narayani can explain its place in personal practice. A higher price or mukhi count does not establish a health benefit.",
@@ -30,7 +30,7 @@ export const sectionTakeaways: Partial<Record<HubSlug, Record<string, string>>> 
     everyday: "Start small: a comfortable breathing practice, a believable sentence or one action you can repeat. Responses differ, and there is no universal routine or deadline.",
   },
   vastu: {
-    "what-it-is": "Vastu is a tradition for interpreting space. Your layout, daily use and practical constraints all matter when discussing a change.",
+    "what-it-is": "Vastulogy is a tradition for interpreting space. Your layout, daily use and practical constraints all matter when discussing a change.",
     ideas: "Direction, layout and the five elements form the traditional framework. Start with an accurate plan, not a list of supposed faults.",
     evidence: "Traditional associations are not proof of an effect on health or prosperity. Light, ventilation, safety and comfort still need practical attention.",
   },

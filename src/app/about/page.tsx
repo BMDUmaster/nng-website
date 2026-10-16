@@ -16,14 +16,14 @@ import { personSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "About Narayani Garg | Psychic Spiritual Mentor",
   description:
-    "Meet Narayani Garg, Psychic Spiritual Mentor. Her guidance in numerology, Vastu and astrology begins with the mind and the patterns behind your decisions.",
+    "Meet Narayani Garg, Psychic Spiritual Mentor. Her guidance in numerology, Vastulogy and astrology begins with the mind and the patterns behind your decisions.",
   alternates: { canonical: "/about/" },
 };
 
 const background = [
   // copy-lint-allow: doctorate subject explicitly confirmed by Aryan on 4 Oct 2026; no institution or date claimed.
   { number: "PhD", title: "Occult Sciences", desc: "A doctorate in Occult Sciences." },
-  { number: "15+ Years", title: "Professional experience", desc: "Personal guidance through astrology, numerology, Vastu and mindset work." },
+  { number: "15+ Years", title: "Professional experience", desc: "Personal guidance through numerology, Vastulogy, astrology and mindset work." },
 ];
 
 const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;

@@ -196,7 +196,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "Where it helps, the same question is then looked at with numerology or astrology, for direction, and with Vastu, for the space you live and work in. That is the order of her method: Mind, Direction, Alignment.",
+          text: "Where it helps, the same question is then looked at with numerology or astrology, for direction, and with Vastulogy, for the space you live and work in. That is the order of her method: Mind, Direction, Alignment.",
         },
         {
           type: "p",

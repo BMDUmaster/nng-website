@@ -3,10 +3,10 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   hub: "vastu",
   slug: "office-and-shop",
-  title: "Vastu for an office, shop, clinic or studio",
-  metaTitle: "Vastu for an office, shop or clinic",
-  metaDescription: "Where the owner sits, how teams are seated and how cash and customers move: what Vastu tradition suggests for a workplace, and where its sources differ.",
-  lead: "Look at how people work, customers move and space is used. Consider Vastu alongside your business needs, without promises of sales or profit.",
+  title: "Vastulogy for an office, shop, clinic or studio",
+  metaTitle: "Vastulogy for an office, shop or clinic",
+  metaDescription: "Where the owner sits, how teams are seated and how cash and customers move: what Vastulogy tradition suggests for a workplace, and where its sources differ.",
+  lead: "Look at how people work, customers move and space is used. Consider Vastulogy alongside your business needs, without promises of sales or profit.",
   card: "When you open, run or move an office, shop, clinic or studio and want its layout read.",
   icon: "page-office-and-shop",
   group: "workplaces",
@@ -20,12 +20,12 @@ export const page: OfferingPage = {
     "Ongoing support for a business",
   ],
   art: { kind: "plan", variant: "office" },
-  enquiryTopic: "Vastu: my office or shop",
-  cta: "Enquire about Vastu for my workplace",
+  enquiryTopic: "Vastulogy: my office or shop",
+  cta: "Enquire about Vastulogy for my workplace",
   intro: [
     {
       type: "p",
-      text: "Commercial Vastu applies the same tradition to places where people work and money moves: an office, a retail shop, a showroom, a clinic, a studio, a co-working floor or a floor of a corporate tower. What she asks about first changes from one to the next.",
+      text: "Commercial Vastulogy applies the same tradition to places where people work and money moves: an office, a retail shop, a showroom, a clinic, a studio, a co-working floor or a floor of a corporate tower. What she asks about first changes from one to the next.",
     },
     {
       type: "p",
@@ -133,7 +133,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "Flow is where Vastu comes closest to ordinary shop and office planning. Narayani follows four things across the plan with you, in this order.",
+          text: "Flow is where Vastulogy comes closest to ordinary shop and office planning. Narayani follows four things across the plan with you, in this order.",
         },
         {
           type: "steps",
@@ -186,7 +186,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "Structural changes need the landlord, the authority and an engineer, and she does not advise on them. Mirrors, salt bowls, pyramids and yantras are sold for workplaces; they rest on belief, no test of them has been found, and she attaches no result to them. The page on Vastu remedies goes into them. The changes most worth considering are the ordinary ones: arrangement, light and order.",
+          text: "Structural changes need the landlord, the authority and an engineer, and she does not advise on them. Mirrors, salt bowls, pyramids and yantras are sold for workplaces; they rest on belief, no test of them has been found, and she attaches no result to them. The page on Vastulogy remedies goes into them. The changes most worth considering are the ordinary ones: arrangement, light and order.",
         },
         {
           type: "p",
@@ -248,7 +248,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "The idea that money matters belong on the north side has not been shown to bear on any particular business, and no independent, controlled study has found a direction changing cash flow or sales. The Vastu overview page covers the wider evidence.",
+          text: "The idea that money matters belong on the north side has not been shown to bear on any particular business, and no independent, controlled study has found a direction changing cash flow or sales. The Vastulogy overview page covers the wider evidence.",
         },
         {
           type: "p",
@@ -256,7 +256,7 @@ export const page: OfferingPage = {
         },
         {
           type: "note",
-          text: "She does not promise sales, profit, footfall or hiring results. A Vastu review is not financial advice, and when sales or cash are under strain the accounts and your accountant come first.",
+          text: "She does not promise sales, profit, footfall or hiring results. A Vastulogy review is not financial advice, and when sales or cash are under strain the accounts and your accountant come first.",
         },
       ],
     },
@@ -268,7 +268,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "A shop adds a second counter, an office takes the floor above, a clinic rebuilds its waiting area, and each change shifts something the first reading looked at. For a business that keeps changing, guidance can be spread over months instead of given in one visit, so that each decision is looked at as it comes. Some call that a retainer. What it covers is agreed with the team, and the page on ongoing Vastu guidance describes the arrangement.",
+          text: "A shop adds a second counter, an office takes the floor above, a clinic rebuilds its waiting area, and each change shifts something the first reading looked at. For a business that keeps changing, guidance can be spread over months instead of given in one visit, so that each decision is looked at as it comes. Some call that a retainer. What it covers is agreed with the team, and the page on ongoing Vastulogy guidance describes the arrangement.",
         },
       ],
     },
@@ -322,8 +322,8 @@ export const page: OfferingPage = {
       a: "Lease terms, permitted use, approvals, access, light, parking, fire exits and cost come first, and they settle most choices of floor too, since no source gives a firm rule for which floor of a tower suits a workplace. Then ask how much of the unit is already set: orientation, the main door, lifts, shafts and toilets. A scaled plan with north marked lets Narayani read the unit before you commit.",
     },
     {
-      q: "What if my interior designer’s plan and the Vastu advice disagree?",
-      a: "It can happen, and it helps to ask what each is for. A designer works for how the space looks, feels and sells. A Vastu reading works from a tradition and, as Narayani offers it, never overrides safety, the lease or a layout the business needs in order to run. Share the designer’s plan with her, and look for the narrowest version of the disagreement: one wall, one desk, one door. A small change can sometimes meet both.",
+      q: "What if my interior designer’s plan and the Vastulogy advice disagree?",
+      a: "It can happen, and it helps to ask what each is for. A designer works for how the space looks, feels and sells. A Vastulogy reading works from a tradition and, as Narayani offers it, never overrides safety, the lease or a layout the business needs in order to run. Share the designer’s plan with her, and look for the narrowest version of the disagreement: one wall, one desk, one door. A small change can sometimes meet both.",
     },
     {
       q: "How do I find the directions of my premises?",

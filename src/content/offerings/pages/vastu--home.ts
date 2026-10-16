@@ -3,10 +3,10 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   hub: "vastu",
   slug: "home",
-  title: "Vastu for your home",
-  metaTitle: "Vastu for your home, room by room",
-  metaDescription: "Vastu for a home or flat, room by room: entrance, kitchen, bedrooms, prayer room, toilets, stairs and water, with honest limits and no demolition.",
-  lead: "Begin with how your household uses each room. Consider Vastu alongside comfort and practical constraints, including what can reasonably change in a flat or rented home.",
+  title: "Vastulogy for your home",
+  metaTitle: "Vastulogy for your home, room by room",
+  metaDescription: "Vastulogy for a home or flat, room by room: entrance, kitchen, bedrooms, prayer room, toilets, stairs and water, with honest limits and no demolition.",
+  lead: "Begin with how your household uses each room. Consider Vastulogy alongside comfort and practical constraints, including what can reasonably change in a flat or rented home.",
   card: "When you want your home or flat looked at room by room, without breaking walls.",
   icon: "page-home",
   group: "homes",
@@ -20,12 +20,12 @@ export const page: OfferingPage = {
     "Sleep, health and family life",
   ],
   art: { kind: "plan", variant: "home" },
-  enquiryTopic: "Vastu: my home",
-  cta: "Enquire about a home Vastu session",
+  enquiryTopic: "Vastulogy: my home",
+  cta: "Enquire about a home Vastulogy session",
   intro: [
     {
       type: "p",
-      text: "A home is where most people meet Vastu, and where the advice they collect often conflicts. One guide places the kitchen in the south-east, another allows the north-west, and a relative has a third idea. A home review starts by sorting what is tradition, what is common sense and what is one writer’s preference.",
+      text: "A home is where most people meet Vastulogy, and where the advice they collect often conflicts. One guide places the kitchen in the south-east, another allows the north-west, and a relative has a third idea. A home review starts by sorting what is tradition, what is common sense and what is one writer’s preference.",
     },
     {
       type: "p",
@@ -45,7 +45,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "What follows is what guides commonly say about each room, with the places where they differ. The Vastu page sets out how far the research goes.",
+          text: "What follows is what guides commonly say about each room, with the places where they differ. The Vastulogy page sets out how far the research goes.",
         },
         {
           type: "terms",
@@ -140,12 +140,12 @@ export const page: OfferingPage = {
             },
             {
               term: "Staircase",
-              text: "Common guides advise the south, south-west or west for the stairs, turning clockwise as they rise and with an odd number of steps, and advise against the north-east and the centre of the house. A table that uses sixteen zones puts the stairs in the north-west. Width, rise, headroom and escape in a fire are set by local building rules, which Vastu does not alter.",
+              text: "Common guides advise the south, south-west or west for the stairs, turning clockwise as they rise and with an odd number of steps, and advise against the north-east and the centre of the house. A table that uses sixteen zones puts the stairs in the north-west. Width, rise, headroom and escape in a fire are set by local building rules, which Vastulogy does not alter.",
               icon: "room-staircase",
             },
             {
               term: "Borewell and water tank",
-              text: "Modern guides place a borewell in the north-east or north, and one also allows the east or west. An overhead tank goes in the south-west or west. The Brihat Samhita counts water in the north and north-east as favourable and in every other direction, the south-west included, as poor. Where water is found depends on local geology, so a borewell has to go where the ground gives water, and Vastu is weighed afterwards.",
+              text: "Modern guides place a borewell in the north-east or north, and one also allows the east or west. An overhead tank goes in the south-west or west. The Brihat Samhita counts water in the north and north-east as favourable and in every other direction, the south-west included, as poor. Where water is found depends on local geology, so a borewell has to go where the ground gives water, and Vastulogy is weighed afterwards.",
               icon: "room-water-source",
             },
             {
@@ -175,7 +175,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "A building has its own Vastu: the way it faces, and where its gate, lift and stairs stand. Your flat has another inside it. You can read both, but you can only rearrange the second. The lift lobby and shared staircase outside your door were settled by the builder, so the useful question is how the door you open onto them reads, and what can be done inside.",
+          text: "A building has its own Vastulogy: the way it faces, and where its gate, lift and stairs stand. Your flat has another inside it. You can read both, but you can only rearrange the second. The lift lobby and shared staircase outside your door were settled by the builder, so the useful question is how the door you open onto them reads, and what can be done inside.",
         },
         {
           type: "table",
@@ -248,7 +248,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "In Vastu a layout “defect”, a *dosha*, means a room or feature that sits against a guide’s rule: a toilet in the north-east, a staircase at the centre, a kitchen away from the south-east. It marks a mismatch with a list, and nothing in the home has been measured. Because the lists are long and disagree, most real homes have several, and a defect that one guide counts as serious another never mentions.",
+          text: "In Vastulogy a layout “defect”, a *dosha*, means a room or feature that sits against a guide’s rule: a toilet in the north-east, a staircase at the centre, a kitchen away from the south-east. It marks a mismatch with a list, and nothing in the home has been measured. Because the lists are long and disagree, most real homes have several, and a defect that one guide counts as serious another never mentions.",
         },
         {
           type: "p",
@@ -332,8 +332,8 @@ export const page: OfferingPage = {
       a: "The one where you spend the most hours, or the one that gives the most trouble, usually a bedroom or a work corner. Change one thing at a time and live with it for a few weeks before you change the next. That is easier to keep up and easier to judge than a long list done at once. A room that already works needs nothing.",
     },
     {
-      q: "We are renovating. When should I ask about Vastu?",
-      a: "Before the plan is final. Moving a door or a kitchen on a drawing costs little, and the same move after the walls are built costs a great deal. Send the current plan and the proposed one, and say what you would like the home to do better. The structure, the approvals and the safety questions belong to your architect and engineer, who can weigh Vastu alongside them.",
+      q: "We are renovating. When should I ask about Vastulogy?",
+      a: "Before the plan is final. Moving a door or a kitchen on a drawing costs little, and the same move after the walls are built costs a great deal. Send the current plan and the proposed one, and say what you would like the home to do better. The structure, the approvals and the safety questions belong to your architect and engineer, who can weigh Vastulogy alongside them.",
     },
     {
       q: "My family has lived here happily for years. Do I need a review?",

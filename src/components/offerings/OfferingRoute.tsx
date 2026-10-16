@@ -108,7 +108,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
       <ServiceHero
         trail={trail}
         kicker={isHub ? "Her practice" : service.name}
-        title={<Rich text={personalVastu ? "Vastu for the way you live" : page.title} />}
+        title={<Rich text={personalVastu ? "Vastulogy for the way you live" : page.title} />}
         lead={isHub ? hub === "astrology" ? "Your birth chart, considered around your question. Narayani explores timing and choices without treating the chart as a verdict." : "Understand crystals, stones and Rudraksha before choosing a piece. Discuss traditional guidance, then confirm product details with the team." : page.card}
         portrait={isHub}
         art={<OfferArt spec={page.art} label={`${page.title}: a drawing made for this page`} />}

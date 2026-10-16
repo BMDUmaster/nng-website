@@ -31,7 +31,7 @@ export const page: OfferingPage = {
     },
     {
       "type": "p",
-      "text": "Narayani's guidance brings mindset work alongside astrology, numerology and Vastu. This page explores attention and reflection; it does not confirm a separate intuitive-consultation format or a psychic method."
+      "text": "Narayani's guidance brings mindset work alongside numerology, Vastulogy and astrology. This page explores attention and reflection; it does not confirm a separate intuitive-consultation format or a psychic method."
     },
     {
       "type": "p",

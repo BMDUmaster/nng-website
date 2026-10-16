@@ -3,9 +3,9 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   hub: "vastu",
   slug: "specialised-spaces",
-  title: "Vastu for specialised spaces",
-  metaTitle: "Vastu for factories, hotels and hospitals",
-  metaDescription: "How Vastu tradition reads factories, hotels, clinics, schools, temples, farms, gardens and cash and stock areas, with code and safety always first.",
+  title: "Vastulogy for specialised spaces",
+  metaTitle: "Vastulogy for factories, hotels and hospitals",
+  metaDescription: "How Vastulogy tradition reads factories, hotels, clinics, schools, temples, farms, gardens and cash and stock areas, with code and safety always first.",
   lead: "Factories, hotels, hospitals and schools have different needs. Narayani considers the space’s purpose, with safety and statutory requirements taking priority.",
   card: "When your space is a factory, hotel, hospital, school, temple, farm or garden.",
   icon: "page-specialised-spaces",
@@ -20,7 +20,7 @@ export const page: OfferingPage = {
     "Cash and stock areas",
   ],
   art: { kind: "drawing", id: "hero-specialised-spaces" },
-  enquiryTopic: "Vastu: a specialised space",
+  enquiryTopic: "Vastulogy: a specialised space",
   cta: "Enquire about a specialised space",
   intro: [
     {
@@ -29,7 +29,7 @@ export const page: OfferingPage = {
     },
     {
       type: "p",
-      text: "Each of these spaces answers first to something other than Vastu: safety law and the shape of a process, clinical need, the safety of children, a temple’s own canon, an insurer’s conditions. Her reading works inside those limits.",
+      text: "Each of these spaces answers first to something other than Vastulogy: safety law and the shape of a process, clinical need, the safety of children, a temple’s own canon, an insurer’s conditions. Her reading works inside those limits.",
     },
     {
       type: "p",
@@ -77,7 +77,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "Clinical and regulatory rules decide the layout of a clinic or a hospital, and Vastu does not reopen them. Operating theatres, wards, laboratories, imaging rooms and infection-control zones follow clinical planning. What is left is the part of a building that anyone could arrange: the entrance, reception, waiting area, administrative offices, the practitioner’s desk and the quiet rooms. No old text covers hospitals.",
+          text: "Clinical and regulatory rules decide the layout of a clinic or a hospital, and Vastulogy does not reopen them. Operating theatres, wards, laboratories, imaging rooms and infection-control zones follow clinical planning. What is left is the part of a building that anyone could arrange: the entrance, reception, waiting area, administrative offices, the practitioner’s desk and the quiet rooms. No old text covers hospitals.",
         },
         {
           type: "p",
@@ -97,7 +97,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "She reads the plan along a child’s day: the gate and the route from it to the classrooms, the assembly ground and its safety, the principal’s and the office’s seats, the library and laboratories, and how parents and buses arrive. Child-safety rules, the fire code and the norms of the education authority come before any Vastu preference. Bring floor plans, photographs of the gate and a classroom, and a note of the age range and the number of floors.",
+          text: "She reads the plan along a child’s day: the gate and the route from it to the classrooms, the assembly ground and its safety, the principal’s and the office’s seats, the library and laboratories, and how parents and buses arrive. Child-safety rules, the fire code and the norms of the education authority come before any Vastulogy preference. Bring floor plans, photographs of the gate and a classroom, and a note of the age range and the number of floors.",
         },
       ],
     },
@@ -173,7 +173,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "Code and safety always come first: fire, structural, electrical, environmental, licensing, accessibility and child-safety rules, and any condition set by an insurer or a regulator. Where Vastu and a rule collide, the rule stands, and the plan is reworked within it. She does not ask you to change anything that the law, the engineer or the clinician says to leave. No claim is made here about health, recovery, learning, occupancy, sales or profit.",
+          text: "Code and safety always come first: fire, structural, electrical, environmental, licensing, accessibility and child-safety rules, and any condition set by an insurer or a regulator. Where Vastulogy and a rule collide, the rule stands, and the plan is reworked within it. She does not ask you to change anything that the law, the engineer or the clinician says to leave. No claim is made here about health, recovery, learning, occupancy, sales or profit.",
         },
       ],
     },
@@ -204,10 +204,10 @@ export const page: OfferingPage = {
   faqs: [
     {
       q: "How do I know whether my kind of space is one she can take on?",
-      a: "The team confirms it once you describe the space and share a plan. A few lines help: what the place is for, its size and stage, and what you would like looked at. Some parts of some buildings, such as a temple’s sanctum or an operating theatre, follow canons and clinical rules that sit outside a Vastu reading, and she says so when a question falls there.",
+      a: "The team confirms it once you describe the space and share a plan. A few lines help: what the place is for, its size and stage, and what you would like looked at. Some parts of some buildings, such as a temple’s sanctum or an operating theatre, follow canons and clinical rules that sit outside a Vastulogy reading, and she says so when a question falls there.",
     },
     {
-      q: "Can Vastu make a clinic or hospital better for patients?",
+      q: "Can Vastulogy make a clinic or hospital better for patients?",
       a: "No claim is made that it can. A calm reception, privacy at the desk, daylight and fresh air are good for anyone, and she reads those. Whether a compass direction changes anyone’s health has not been shown, and this is not medical advice. Clinical planning, infection control and safety rules come first, and her reading never asks for any of them to be relaxed.",
     },
     {
@@ -219,12 +219,12 @@ export const page: OfferingPage = {
       a: "They usually do. Rooms along a corridor face opposite ways, so no single bed direction can suit all of them, and consultants disagree anyway about which way a sleeper’s head should point. Narayani looks at what a guest meets instead: the lobby, the corridor, the room’s entrance, the desk and the light. Where a few rooms or the owner’s own suite can follow a chosen facing, that can be considered. No claim is made about occupancy or ratings.",
     },
     {
-      q: "What if our temple’s priests say something different from a Vastu consultant?",
+      q: "What if our temple’s priests say something different from a Vastulogy consultant?",
       a: "The temple’s own tradition leads. Its priests and builders know the canon the temple is built to, and her questions work alongside it. Where a question falls outside it, such as a car park, a meditation hall, the approach or the open ground, she can offer a view. If two readings differ, ask each for its reason and its source. The decision belongs to the trust.",
     },
     {
-      q: "What is the Vastu Purusha mandala, and does it apply to modern buildings?",
-      a: "It is a diagram from the building tradition: a square grid, often of 64 or 81 cells, with a deity assigned to each cell, and a mythic being, the Vastu Purusha, said to lie across it with Brahma at the centre. Scholars disagree about how far it shaped real plans: one study finds almost no textual evidence that it was used to lay out buildings, while another reads it as a ritual and planning grid in temple building. Modern guides echo it when they ask for an open centre.",
+      q: "What is the Vastulogy Purusha mandala, and does it apply to modern buildings?",
+      a: "It is a diagram from the building tradition: a square grid, often of 64 or 81 cells, with a deity assigned to each cell, and a mythic being, the Vastulogy Purusha, said to lie across it with Brahma at the centre. Scholars disagree about how far it shaped real plans: one study finds almost no textual evidence that it was used to lay out buildings, while another reads it as a ritual and planning grid in temple building. Modern guides echo it when they ask for an open centre.",
     },
     {
       q: "Can a space I am still designing be read, or only a finished one?",

@@ -43,9 +43,9 @@ const chips = [
 
 const cxIcon = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const cxPractices = [
-  { name: "Astrology", note: "Clarity in life situations", icon: cxIcon('<path d="M16 3c.9 6.8 6.2 12.1 13 13-6.8.9-12.1 6.2-13 13-.9-6.8-6.2-12.1-13-13 6.8-.9 12.1-6.2 13-13Z"/>') },
   { name: "Numerology", note: "Understand your patterns", icon: '<svg viewBox="0 0 32 32"><text x="16" y="17" text-anchor="middle" dominant-baseline="central" fill="currentColor" font-size="11" font-family="serif">123</text></svg>' },
-  { name: "Vastu", note: "Harmonise your space and energy", icon: cxIcon('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>') },
+  { name: "Vastulogy", note: "Harmonise your space and energy", icon: cxIcon('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>') },
+  { name: "Astrology", note: "Clarity in life situations", icon: cxIcon('<path d="M16 3c.9 6.8 6.2 12.1 13 13-6.8.9-12.1 6.2-13 13-.9-6.8-6.2-12.1-13-13 6.8-.9 12.1-6.2 13-13Z"/>') },
   { name: "Personal Guidance", note: "Support for mind and life", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
 ];
 
@@ -103,7 +103,7 @@ export default function ConsultationsPage() {
               Start with what is <em>on your mind</em>
             </h1>
             <p className="cn-lead">
-              <span className="cx-long">You do not need to choose a practice first. Bring your question. Narayani considers your circumstances and thought patterns, with astrology, numerology or Vastu where relevant.</span>
+              <span className="cx-long">You do not need to choose a practice first. Bring your question. Narayani considers your circumstances and thought patterns, with numerology, Vastulogy or astrology where relevant.</span>
               <span className="cx-short">No need to choose a practice first. Just bring your question.</span>
             </p>
             <div className="cn-actions">

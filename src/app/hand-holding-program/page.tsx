@@ -14,12 +14,12 @@ import { faqSchema, personSchema, programSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Personalised Hand Holding Program",
   description:
-    "Six months of personal guidance with Narayani Garg, combining astrology, numerology, vastu and psychic guidance across health, relationships, money and career.",
+    "Six months of personal guidance with Narayani Garg, combining numerology, Vastulogy, astrology and psychic guidance across health, relationships, money and career.",
   alternates: { canonical: "/hand-holding-program/" },
 };
 
 const inclusions = [
-  "Astrology, numerology and Vastu assessment",
+  "Numerology, Vastulogy and astrology assessment",
   "Psychic guidance for recurring patterns",
   "Direct guidance across health, relationships, money and career",
 ];
@@ -182,7 +182,7 @@ export default function ProgramPage() {
               <h3>Hand Holding Program</h3>
               <p>Six months of guidance, with all four areas looked at together.</p>
               <ul>
-                <li>Astrology, numerology and vastu assessment</li>
+                <li>Numerology, Vastulogy and astrology assessment</li>
                 <li>Psychic guidance and direct guidance across six months</li>
               </ul>
               <EnquiryTrigger className="cn-cta" topic="the Personalised Hand Holding Program" source="program-compare-program">

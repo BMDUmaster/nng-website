@@ -55,7 +55,7 @@ export function PageHero({
   );
 }
 
-/** Questions and answers: intro on the left, open questions on the right, the vastu grid faint behind. */
+/** Questions and answers: intro on the left, open questions on the right, the Vastulogy grid faint behind. */
 export function FaqSection({
   id = "faq",
   title = "Before you enquire",
@@ -113,7 +113,7 @@ export function ProgramPanel({ asHero = false }: { asHero?: boolean }) {
         {asHero && <div className="program-person"><img src={asset("/images/narayani-cover-portrait-96.webp")} width={52} height={52} alt="" /><span>Personally guided by <strong>Narayani Garg</strong></span></div>}
         <p>Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
         <ul className="program-inclusions">
-          <li>Astrology, numerology and Vastu assessment</li>
+          <li>Numerology, Vastulogy and astrology assessment</li>
           <li>Psychic guidance for recurring patterns</li>
           <li>Direct guidance across health, relationships, money and career</li>
         </ul>

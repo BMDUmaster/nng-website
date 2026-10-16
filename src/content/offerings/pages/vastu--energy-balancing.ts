@@ -31,7 +31,7 @@ export const page: OfferingPage = {
     },
     {
       "type": "p",
-      "text": "Narayani's guidance brings mindset work alongside Vastu. This page offers questions about your experience of a room; it does not confirm a separate energy-balancing session, a healing method or a sequence of breathing, tapping and phrases."
+      "text": "Narayani's guidance brings mindset work alongside Vastulogy. This page offers questions about your experience of a room; it does not confirm a separate energy-balancing session, a healing method or a sequence of breathing, tapping and phrases."
     }
   ],
   "sections": [
@@ -65,7 +65,7 @@ export const page: OfferingPage = {
             },
             {
               "term": "In physics",
-              "text": "Energy is a measured quantity with a unit, such as the joule. The word as Vastu or breath practice uses it is something else, and nothing in this page claims to measure it or transfer it.",
+              "text": "Energy is a measured quantity with a unit, such as the joule. The word as Vastulogy or breath practice uses it is something else, and nothing in this page claims to measure it or transfer it.",
               "icon": "gen-limits"
             }
           ]
@@ -157,14 +157,14 @@ export const page: OfferingPage = {
             },
             {
               "term": "The way in",
-              "text": "How you arrive: the door, the threshold, what you see first, where you put your keys and shoes. Which way a main door faces is a Vastu question, and the Vastu pages deal with it. Here the question is simpler: whether the way in gives you a place to pause.",
+              "text": "How you arrive: the door, the threshold, what you see first, where you put your keys and shoes. Which way a main door faces is a Vastulogy question, and the Vastulogy pages deal with it. Here the question is simpler: whether the way in gives you a place to pause.",
               "icon": "room-main-entrance"
             }
           ]
         },
         {
           "type": "p",
-          "text": "Changes to the building itself are not part of this. The Vastu corrections page covers furniture, objects and routines in a space, with the status of each."
+          "text": "Changes to the building itself are not part of this. The Vastulogy corrections page covers furniture, objects and routines in a space, with the status of each."
         }
       ]
     },
@@ -200,7 +200,7 @@ export const page: OfferingPage = {
         },
         {
           "type": "p",
-          "text": "Ask the team about the available Vastu and mindset guidance. The appointment's scope, format and preparation can be confirmed before booking."
+          "text": "Ask the team about the available Vastulogy and mindset guidance. The appointment's scope, format and preparation can be confirmed before booking."
         }
       ]
     }
@@ -264,7 +264,7 @@ export const page: OfferingPage = {
   "faqs": [
     {
       "q": "Is this a separate energy-balancing appointment?",
-      "a": "This page does not confirm a separate session. Ask the team which Vastu or mindset guidance relates to your question."
+      "a": "This page does not confirm a separate session. Ask the team which Vastulogy or mindset guidance relates to your question."
     },
     {
       "q": "Is this Reiki or remote healing?",
@@ -284,7 +284,7 @@ export const page: OfferingPage = {
     },
     {
       "q": "How is this related to Brain Training?",
-      "a": "Brain Training explains patterns of thought and reaction. The Vastu pages discuss spaces. Narayani brings mindset work alongside the interpretive traditions; ask which specific practices are offered."
+      "a": "Brain Training explains patterns of thought and reaction. The Vastulogy pages discuss spaces. Narayani brings mindset work alongside the interpretive traditions; ask which specific practices are offered."
     },
     {
       "q": "Is a result guaranteed?",

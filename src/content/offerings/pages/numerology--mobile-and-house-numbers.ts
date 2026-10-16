@@ -213,8 +213,8 @@ export const page: OfferingPage = {
     },
     {
       id: "household",
-      chip: "Household and Vastu",
-      heading: "Whose numbers the door number sits beside, and where Vastu takes over",
+      chip: "Household and Vastulogy",
+      heading: "Whose numbers the door number sits beside, and where Vastulogy takes over",
       icon: "room-main-entrance",
       blocks: [
         {
@@ -223,7 +223,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "A house number also says nothing about direction. Which way the door faces, where the kitchen sits and how the morning light comes in belong to Vastu, and the page on Vastu for the home covers how they are read.",
+          text: "A house number also says nothing about direction. Which way the door faces, where the kitchen sits and how the morning light comes in belong to Vastulogy, and the page on Vastulogy for the home covers how they are read.",
         },
       ],
     },
@@ -330,7 +330,7 @@ export const page: OfferingPage = {
     },
     {
       q: "How is a house number read in numerology?",
-      a: "The digits of the number are added and reduced to one, in the same way as for a phone. The total is then compared with the Mulank and Bhagyank of the people who live there. The answer depends on choices made along the way: whether a letter counts, whether the flat number or the building number is used, and whether 11 is kept as a master number. Direction is a separate matter, and it belongs to Vastu.",
+      a: "The digits of the number are added and reduced to one, in the same way as for a phone. The total is then compared with the Mulank and Bhagyank of the people who live there. The answer depends on choices made along the way: whether a letter counts, whether the flat number or the building number is used, and whether 11 is kept as a master number. Direction is a separate matter, and it belongs to Vastulogy.",
     },
     {
       q: "Is a house number important in numerology?",
@@ -346,7 +346,7 @@ export const page: OfferingPage = {
     },
     {
       q: "Can a house number affect the main door or the people living there?",
-      a: "A number is a written label, and nothing shows it affecting a door or anyone behind it. Numerology reads it as a theme to reflect on beside the residents’ own numbers. The main door raises a different question, about direction and layout, and that belongs to Vastu. The Vastu page on the home explains how a door is read.",
+      a: "A number is a written label, and nothing shows it affecting a door or anyone behind it. Numerology reads it as a theme to reflect on beside the residents’ own numbers. The main door raises a different question, about direction and layout, and that belongs to Vastulogy. The Vastulogy page on the home explains how a door is read.",
     },
     {
       q: "How can I find a lucky house number for a new home?",

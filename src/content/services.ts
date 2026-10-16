@@ -29,7 +29,7 @@ export const services: Service[] = [
     topic: "Brainology Program",
     card: "The beliefs and habits behind a recurring concern. Where she starts.",
     lead: "A look at the beliefs, habits and reactions that shape how you respond to the question you bring.",
-    quote: "Couldn’t Krishna have fixed the vastu and ended the war between the brothers? He didn’t. He worked on Arjuna’s mind.",
+    quote: "Couldn’t Krishna have fixed the Vastulogy and ended the war between the brothers? He didn’t. He worked on Arjuna’s mind.",
     look: [
       "The patterns that keep returning in health, relationships, money or career",
       "How you respond under pressure, and what you tell yourself",
@@ -51,8 +51,8 @@ export const services: Service[] = [
   },
   {
     slug: "vastu",
-    name: "Vastu",
-    topic: "Vastu",
+    name: "Vastulogy",
+    topic: "Vastulogy",
     card: "Your home, office or shop, and where things belong in it.",
     lead: "A look at how your home or workplace is arranged and used by the people in it.",
     look: [

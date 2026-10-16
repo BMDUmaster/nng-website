@@ -3,11 +3,11 @@ import type { OfferingPage } from "../types";
 export const page: OfferingPage = {
   hub: "vastu",
   slug: "real-estate-and-developers",
-  title: "Vastu for real estate and developers",
-  metaTitle: "Vastu for developers and real estate",
-  metaDescription: "Vastu at project scale for builders, architects and developers: reading the site, placing towers, gates and amenities, and keeping the building code first.",
-  lead: "A project is largely decided before it is sold: on the plot, in the master plan, at approval. Narayani brings the Vastu question into that conversation early, alongside your architect and inside the building code.",
-  card: "When a builder, architect or institution wants Vastu considered at the planning stage.",
+  title: "Vastulogy for real estate and developers",
+  metaTitle: "Vastulogy for developers and real estate",
+  metaDescription: "Vastulogy at project scale for builders, architects and developers: reading the site, placing towers, gates and amenities, and keeping the building code first.",
+  lead: "A project is largely decided before it is sold: on the plot, in the master plan, at approval. Narayani brings the Vastulogy question into that conversation early, alongside your architect and inside the building code.",
+  card: "When a builder, architect or institution wants Vastulogy considered at the planning stage.",
   icon: "page-real-estate-and-developers",
   group: "workplaces",
   covers: [
@@ -20,12 +20,12 @@ export const page: OfferingPage = {
     "Working inside the building code",
   ],
   art: { kind: "plan", variant: "township" },
-  enquiryTopic: "Vastu: a real estate project",
-  cta: "Enquire about Vastu for a project",
+  enquiryTopic: "Vastulogy: a real estate project",
+  cta: "Enquire about Vastulogy for a project",
   intro: [
     {
       type: "p",
-      text: "Real estate Vastu is Vastu at the scale of a plot, a campus or a tower. This page is for builders, architects and developers, and for hotel groups, hospitals and institutions planning a new campus. It sets out the questions Vastu raises at project scale, what a conversation with Narayani can cover, and where the building code and your design team stay in charge.",
+      text: "Real estate Vastulogy is Vastulogy at the scale of a plot, a campus or a tower. This page is for builders, architects and developers, and for hotel groups, hospitals and institutions planning a new campus. It sets out the questions Vastulogy raises at project scale, what a conversation with Narayani can cover, and where the building code and your design team stay in charge.",
     },
     {
       type: "p",
@@ -48,17 +48,17 @@ export const page: OfferingPage = {
           items: [
             {
               term: "Builders",
-              text: "A place to take the Vastu question once, early, instead of at every site visit and every sales meeting.",
+              text: "A place to take the Vastulogy question once, early, instead of at every site visit and every sales meeting.",
               icon: "re-builder",
             },
             {
               term: "Architects",
-              text: "A second reading of a plan from the Vastu side, in a form that can be accepted, adapted or set aside.",
+              text: "A second reading of a plan from the Vastulogy side, in a form that can be accepted, adapted or set aside.",
               icon: "re-architect",
             },
             {
               term: "Real estate developers",
-              text: "A township, a tower or a run of launches, with the Vastu view kept in step with each phase.",
+              text: "A township, a tower or a run of launches, with the Vastulogy view kept in step with each phase.",
               icon: "re-developer",
             },
             {
@@ -200,7 +200,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "Narayani does not design buildings and does not instruct an architect. Her part is a second reading of the plan from the Vastu side, offered as questions and options. Where a Vastu preference collides with the work of anyone listed below, theirs stands.",
+          text: "Narayani does not design buildings and does not instruct an architect. Her part is a second reading of the plan from the Vastulogy side, offered as questions and options. Where a Vastulogy preference collides with the work of anyone listed below, theirs stands.",
         },
         {
           type: "list",
@@ -210,7 +210,7 @@ export const page: OfferingPage = {
             "Structural and services engineers: safety, loads, fire, power and water systems.",
             "Legal and regulatory advisers: title, approvals and registration.",
             "The developer: the decisions, the budget and the programme.",
-            "Narayani: a Vastu reading, advice, and the reasoning behind it.",
+            "Narayani: a Vastulogy reading, advice, and the reasoning behind it.",
           ],
         },
         {
@@ -222,20 +222,20 @@ export const page: OfferingPage = {
     {
       id: "code",
       chip: "Approvals and code",
-      heading: "Vastu and the building code",
+      heading: "Vastulogy and the building code",
       icon: "gen-limits",
       blocks: [
         {
           type: "p",
-          text: "Vastu never overrides the building code. Setbacks, height and density limits, fire access and exits, parking and stair widths, accessibility and structural safety are set by rules, and by the engineers who answer for them. A Vastu preference lives inside what those rules leave open: which side the main gate takes, where a tank sits, how units are arranged on a floor, which colours and materials are used.",
+          text: "Vastulogy never overrides the building code. Setbacks, height and density limits, fire access and exits, parking and stair widths, accessibility and structural safety are set by rules, and by the engineers who answer for them. A Vastulogy preference lives inside what those rules leave open: which side the main gate takes, where a tank sits, how units are arranged on a floor, which colours and materials are used.",
         },
         {
           type: "p",
-          text: "Where the code leaves room, the two sit together. Where they conflict, the code wins, and the Vastu question changes to the next best arrangement the code allows. The plan a developer files is the plan the authority sanctions, and a change afterwards means a revision, which is the practical case for raising Vastu before filing.",
+          text: "Where the code leaves room, the two sit together. Where they conflict, the code wins, and the Vastulogy question changes to the next best arrangement the code allows. The plan a developer files is the plan the authority sanctions, and a change afterwards means a revision, which is the practical case for raising Vastulogy before filing.",
         },
         {
           type: "note",
-          text: "This is general background, not legal or engineering advice. Registration under the Real Estate (Regulation and Development) Act, 2016, where it applies, and the project details a promoter must publish are the developer’s legal duties, and your lawyer should see any wording that describes a project as following Vastu.",
+          text: "This is general background, not legal or engineering advice. Registration under the Real Estate (Regulation and Development) Act, 2016, where it applies, and the project details a promoter must publish are the developer’s legal duties, and your lawyer should see any wording that describes a project as following Vastulogy.",
         },
       ],
     },
@@ -264,7 +264,7 @@ export const page: OfferingPage = {
             },
             {
               term: "A view from the buyer’s side",
-              text: "The questions a buyer may ask about Vastu in a home like yours: which way the main door faces, where the kitchen and prayer corner sit, what can still be arranged after purchase. It can help a sales team answer plainly and without overclaiming.",
+              text: "The questions a buyer may ask about Vastulogy in a home like yours: which way the main door faces, where the kitchen and prayer corner sit, what can still be arranged after purchase. It can help a sales team answer plainly and without overclaiming.",
               icon: "re-buyer-view",
             },
             {
@@ -274,7 +274,7 @@ export const page: OfferingPage = {
             },
             {
               term: "Periodic review",
-              text: "A return to the project at agreed points, as phases launch or once a year, to check expansions and adjustments against the first reading. The page on ongoing Vastu guidance describes how that works.",
+              text: "A return to the project at agreed points, as phases launch or once a year, to check expansions and adjustments against the first reading. The page on ongoing Vastulogy guidance describes how that works.",
               icon: "re-annual-review",
             },
           ],
@@ -307,27 +307,27 @@ export const page: OfferingPage = {
   },
   faqs: [
     {
-      q: "Does Vastu affect buyer interest or resale value?",
-      a: "Some buyers in India ask whether a home follows Vastu, so a sales team meets the question whether or not the developer shares the interest. A survey reported in the press says many buyers prefer such homes, but it showed no method, so it proves little. Whether following Vastu changes buyer interest, price or resale value has not been shown. Narayani does not claim that a Vastu-planned project sells faster or for more, and a developer should not claim it either. A sales team is better served by describing the layout accurately.",
+      q: "Does Vastulogy affect buyer interest or resale value?",
+      a: "Some buyers in India ask whether a home follows Vastulogy, so a sales team meets the question whether or not the developer shares the interest. A survey reported in the press says many buyers prefer such homes, but it showed no method, so it proves little. Whether following Vastulogy changes buyer interest, price or resale value has not been shown. Narayani does not claim that a Vastulogy-planned project sells faster or for more, and a developer should not claim it either. A sales team is better served by describing the layout accurately.",
     },
     {
-      q: "Can a project be certified as Vastu-compliant?",
+      q: "Can a project be certified as Vastulogy-compliant?",
       a: "Narayani does not issue a certificate, and nothing in the approval process certifies one. Consultants differ on the rules, so a blanket label means whatever its author intends, and a brochure that claims more than it can support can fall foul of the consumer-protection rules on advertising. It is safer, and more useful to a buyer, to say what is true and specific: the main gate faces east, the prayer corner is in the north-east of each flat, the kitchens are on the south-east side. Your lawyer should see the wording.",
     },
     {
-      q: "Does the approving authority look at Vastu, and is it a legal requirement?",
-      a: "Approval is about the building code and planning rules: setbacks, height, density, fire and structural safety. Vastu is a voluntary design choice and not a legal requirement, and an approval does not test for it. The authority sees the plan, which is why a Vastu-driven change to a filed plan goes through the same revision process as any other change. This is general background, not legal advice.",
+      q: "Does the approving authority look at Vastulogy, and is it a legal requirement?",
+      a: "Approval is about the building code and planning rules: setbacks, height, density, fire and structural safety. Vastulogy is a voluntary design choice and not a legal requirement, and an approval does not test for it. The authority sees the plan, which is why a Vastulogy-driven change to a filed plan goes through the same revision process as any other change. This is general background, not legal advice.",
     },
     {
       q: "Is annual or ongoing support available for a project?",
-      a: "It can be agreed with the team. A project that opens in phases, adds towers or changes its amenities can have its reading looked at again at each stage, or once a year, so that expansions and adjustments are checked against the first one. How often, and for which phases, is settled with the team. The page on ongoing Vastu guidance describes what such an arrangement covers.",
+      a: "It can be agreed with the team. A project that opens in phases, adds towers or changes its amenities can have its reading looked at again at each stage, or once a year, so that expansions and adjustments are checked against the first one. How often, and for which phases, is settled with the team. The page on ongoing Vastulogy guidance describes what such an arrangement covers.",
     },
     {
       q: "Is it too late once construction has begun?",
       a: "Not for everything, but the options narrow with each stage. Before the structure rises, towers, gates and open space can still move on paper. Once it stands, orientation, floor plates and the structural core are settled, and what remains are interiors, planting, lighting, signage, the sales gallery and how units are arranged. Narayani tells you which comments can still be acted on. Anything structural goes to your engineer.",
     },
     {
-      q: "What if two Vastu consultants disagree about the same plan?",
+      q: "What if two Vastulogy consultants disagree about the same plan?",
       a: "It happens, because the sources themselves differ. Consultants give the kitchen the south-east or the east-south-east, and put a borewell in different corners. Ask each for the reason and the source behind every point, and for what a change would cost. A suggestion that cannot be explained can be left. She will tell you whether a given point rests on an old text or on a modern consultant’s convention, and the decision stays with you and your architect.",
     },
     {
@@ -335,7 +335,7 @@ export const page: OfferingPage = {
       a: "With a short account of the project: what it is, which stage it has reached and the one or two questions you most want looked at. A site plan with north marked helps, and a sketch is enough if that is all there is. The team and Narayani then agree what the review will cover, in what form, and who on your side receives her comments.",
     },
     {
-      q: "What happens when the architect revises the plan after the Vastu reading?",
+      q: "What happens when the architect revises the plan after the Vastulogy reading?",
       a: "Plans change, and a reading is tied to the plan it was made on. A revision that moves a gate, a tower or a core is worth sending back for a second look, and one that changes only finishes may not be. The useful question is what the change does to the earlier comments. For a project that revises often, an ongoing arrangement can be agreed for this purpose.",
     },
   ],

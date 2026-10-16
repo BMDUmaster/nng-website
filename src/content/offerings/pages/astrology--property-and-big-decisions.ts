@@ -34,7 +34,7 @@ export const page: OfferingPage = {
     },
     {
       type: "p",
-      text: "The title, the loan terms, the approvals and the building itself are for the people qualified to check them, and they come first. This page covers the chart side, which is the person and the time. The space itself, with its plan and directions, belongs to Vastu: see the pages on property and land and on real estate and developers.",
+      text: "The title, the loan terms, the approvals and the building itself are for the people qualified to check them, and they come first. This page covers the chart side, which is the person and the time. The space itself, with its plan and directions, belongs to Vastulogy: see the pages on property and land and on real estate and developers.",
     },
   ],
   sections: [
@@ -83,7 +83,7 @@ export const page: OfferingPage = {
             },
             {
               term: "Moving an office",
-              text: "When a business changes premises there are several moments: the day the keys change hands, the day work begins, the day the owner sits down at the new desk. Each can carry its own window. For the layout of the new space, the Vastu page on offices and shops is the place to look.",
+              text: "When a business changes premises there are several moments: the day the keys change hands, the day work begins, the day the owner sits down at the new desk. Each can carry its own window. For the layout of the new space, the Vastulogy page on offices and shops is the place to look.",
               icon: "work-relocation",
             },
           ],
