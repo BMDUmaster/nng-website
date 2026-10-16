@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { asset } from "@/lib/assets";
-import { legal, nav, site } from "@/content/site";
+import { nav, site } from "@/content/site";
 
 const whatsapp = `https://wa.me/${site.whatsappNumber}?text=Hello%20Narayani%20Garg%20team,%20I%20would%20like%20to%20enquire%20about%20a%20consultation.`;
 
@@ -123,7 +123,6 @@ export function Footer() {
         </div>
 
         <div className="ft-bottom">
-          <p>{legal.disclaimer}</p>
           <p>© 2026 Transformation with NNG. All rights reserved.</p>
           <button type="button" className="ft-top" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10l5-5 5 5" /></svg>

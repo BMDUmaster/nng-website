@@ -81,15 +81,11 @@ export function HomeProgram() {
             <div className="pg-notes">
               <span className="pg-notes-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: calendar }} />
               <p>Format and fees are discussed before you decide.</p>
-              <p>
-                <span className="pg-dot" aria-hidden="true" />
-                Ask the team about the next available start date
-              </p>
             </div>
           </div>
           <div className="pg-visual">
             <div className="pg-arch">
-              <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="Narayani Garg" width={684} height={855} loading="lazy" decoding="async" />
+              <img src={asset("/images/program-narayani.webp")} alt="Narayani Garg" width={1000} height={1265} loading="lazy" decoding="async" />
             </div>
             <div className="pg-medal" aria-hidden="true">
               <strong>6</strong>
@@ -118,14 +114,21 @@ export function HomeFaq({
 }) {
   return (
     <section className="fq" id="faq" aria-labelledby="faq-title">
-      <div className="fq-photo" aria-hidden="true" />
       <div className="fq-inner">
         <div className="fq-intro">
+          <div className="fq-top">
+            <span className="fq-portrait" aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/faq-narayani.webp")} alt="" width={760} height={964} loading="lazy" />
+            </span>
+            <div>
           <p className="lx-kicker fq-kicker"><Lotus className="fq-lotus" />Questions</p>
           <h2 id="faq-title">
             {title.split(" ").slice(0, -1).join(" ")} <em>{title.split(" ").slice(-1)}</em>
           </h2>
           <p className="lx-lead">{intro}</p>
+            </div>
+          </div>
           <div className="fq-ask">
             <span className="fq-ask-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: chat }} />
             <p>

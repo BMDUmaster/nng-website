@@ -189,7 +189,6 @@ export function StoryFilms({
             <span className="sf-enq-go" aria-hidden="true">→</span>
           </EnquiryTrigger>
         </div>
-        <p className="sf-note">These are personal experiences, not promises of the same outcome.</p>
       </div>
 
       <dialog ref={viewer} className="sf-viewer" onClose={() => setPlaying(null)} onClick={(e) => e.target === e.currentTarget && close()} aria-label={playing ? `${playing.name}: ${playing.film?.label ?? "client film"}` : "Client film"}>

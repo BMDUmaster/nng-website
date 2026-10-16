@@ -186,10 +186,6 @@ export function HomeHero() {
               <span className="hm-arrow" aria-hidden="true">→</span>
             </a>
           </div>
-          <p className="hm-note">
-            <span className="hm-dot" aria-hidden="true" />
-            Ask the team for the next available appointment
-          </p>
           <dl className="hm-figures" aria-label="Narayani's experience">
             {figures.map((figure, i) => (
               <div key={figure.label} style={{ "--i": i } as React.CSSProperties}>

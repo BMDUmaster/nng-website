@@ -19649,3 +19649,35 @@ footer.ft .ft-col-title { align-items: flex-end; }
   section.fq .fq-intro { padding-top: 24px; }
   section.fq .fq-ask { width: calc(100vw - 28px); margin: 34px 0 0 calc((100vw - 28px) * -0.44); box-sizing: border-box; }
 }
+
+/* Oct 16 tidy: smaller hero figures; book lead hidden on phones; program photo; FAQ portrait row. */
+@media (min-width: 901px) {
+  .hm-figures { padding-block: 14px; }
+  .hm-fig-icon { width: clamp(30px, 2.4vw, 40px); }
+  .hm-figures dd { font-size: clamp(24px, 2vw, 34px); }
+  .hm-figures dt { font-size: clamp(12px, 0.85vw, 14px); }
+}
+@media (max-width: 900px) {
+  .hm-figures dd { font-size: 19px; }
+  .hm-figures dt { font-size: 10.5px; }
+  .hm-fig-icon { width: 24px; }
+  .bk2-lead { display: none; }
+}
+section.pg .pg-arch img { object-position: 30% 22%; }
+section.pg .pg-notes { grid-template-columns: auto 1fr; }
+.pg-notes-icon { grid-row: auto; }
+
+.fq-top { display: flex; align-items: center; gap: 22px; }
+.fq-portrait { flex: none; width: 150px; aspect-ratio: 3 / 4; padding: 4px; border-radius: 90px 90px 18px 18px; background: linear-gradient(160deg, #F2D592, #C49A4A 50%, #EAD49A); box-shadow: 0 18px 30px -20px rgb(60 44 20 / 0.6); }
+.fq-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; border-radius: 86px 86px 14px 14px; }
+section.fq .fq-intro { padding-top: 0 !important; padding-left: 0 !important; align-self: center; }
+section.fq .fq-inner { align-items: center; }
+@media (max-width: 900px) {
+  .fq-top { gap: 14px; }
+  .fq-portrait { width: 108px; border-radius: 60px 60px 14px 14px; }
+  .fq-portrait img { border-radius: 56px 56px 10px 10px; }
+  .fq-kicker { flex-direction: row !important; justify-content: flex-start !important; }
+  .fq-lotus { width: 26px; }
+  section.fq .fq-intro { text-align: left; }
+  section.fq .fq-ask { width: auto !important; margin: 14px 0 0 !important; }
+}
