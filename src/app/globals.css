@@ -18749,3 +18749,32 @@ footer.site-footer.ft {
   .ab-room { width: 82%; aspect-ratio: auto; background-size: cover; background-position: 100% 40%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.7) 18%, #000 34%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.7) 18%, #000 34%); }
   .ab-wheel-wrap::before { background: radial-gradient(circle, rgb(70 70 45 / 0.22), rgb(70 70 45 / 0.08) 70%, transparent 74%); }
 }
+
+/* Her approach, phones pass 2 (Oct 16): closer to the banner — warm room clearly behind her, a bright gold wheel with
+   a dark inner field behind her head, lighter heading, roomier steps, a lotus in the quote card. Desktop unchanged. */
+@media (max-width: 1099px) {
+  .ab-stage { width: 64%; height: min(150vw, 600px); -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 97%); mask-image: linear-gradient(180deg, #000 70%, transparent 97%); }
+  .ab-room { background-position: 62% 30%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.85) 26%, #000 40%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.85) 26%, #000 40%); }
+  .ab-glow { left: 60%; top: 20%; width: 95%; background: radial-gradient(closest-side, rgb(255 222 150 / 0.55), transparent); }
+  .ab-wheel-wrap { left: 60%; top: 19%; width: 88%; }
+  .ab-wheel-wrap::before { content: ""; position: absolute; inset: 5%; border-radius: 50%; background: radial-gradient(circle, rgb(46 54 34 / 0.45), rgb(46 54 34 / 0.25) 70%, transparent 74%); }
+  .ab-wheel { position: relative; color: #E8C374; opacity: 1; filter: drop-shadow(0 0 4px rgb(255 214 140 / 0.9)); }
+  .ab-wheel text { fill: #F2D28B; font-size: 46px; }
+  .ab-person { left: 60%; top: 14%; height: 84%; }
+  .ab-leaves { left: -40px; right: auto; bottom: 30%; width: 34%; transform: none; opacity: 0.7; }
+
+  .practice-site main .ab h2 { font-weight: 400; font-size: clamp(31px, 9vw, 40px); line-height: 1.05; }
+  .ab h2 em { font-weight: 500; }
+  .ab-lead { font-size: 13px; }
+  .ab-steps { gap: 18px; margin-top: 18px; }
+  .ab-icon { width: 54px; height: 54px; }
+  .ab-icon svg { width: 26px; height: 26px; }
+  .ab-steps > li + li::before { left: 27px; top: -16px; height: 12px; }
+  .ab-steps > li + li::after { content: ""; display: block; position: absolute; left: 25px; top: -11px; width: 5px; height: 5px; border-radius: 50%; background: #B88A45; }
+  .ab-steps h3 { font-weight: 400; font-size: 18px; }
+  .ab-steps > li > p { font-size: 12.5px; }
+  .ab-quote { overflow: hidden; }
+  .ab-quote::after { content: ""; position: absolute; right: 10px; bottom: 6px; width: 92px; height: 70px; opacity: 0.4; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24' fill='none' stroke='%23C9A256' stroke-width='.6'%3E%3Cpath d='M16 22c-3-3-5-6.5-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.9-2 7.4-5 10.4Z'/%3E%3Cpath d='M16 22c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 22c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6'/%3E%3Cpath d='M15.4 22.2C8.8 22.6 3.6 20 1.6 16.4M16.6 22.2c6.6.4 11.8-2.2 13.8-5.8'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .ab-quote p, .ab-quote footer { position: relative; z-index: 1; }
+}
+@media (max-width: 1099px) { .ab-leaves { display: none; } .ab-steps { max-width: 45%; } .ab-steps h3 { font-size: 17px; } }
