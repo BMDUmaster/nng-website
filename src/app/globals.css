@@ -18720,3 +18720,32 @@ footer.site-footer.ft {
   .ab-num { width: 22px; height: 22px; font-size: 9.5px; }
   .ab-lead, .ab-steps p, .ab-steps h3 { text-shadow: 0 0 6px #FAF6EC, 0 0 3px #FAF6EC; }
 }
+
+/* Her approach, desktop pass 3 (Oct 16): matched to the banner's proportions — lighter type, Narayani at banner scale
+   (head to waist) on the right, the room at its natural size, a clearer wheel behind her head. */
+@media (min-width: 1100px) {
+  .ab-room { inset: 0 0 0 auto; width: auto; height: 100%; aspect-ratio: 792 / 941; background: url("/images/approach-bg.webp") center / 100% 100% no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.6) 14%, #000 32%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.6) 14%, #000 32%); }
+  .ab-glow { left: 41.5%; top: 35%; width: 58%; background: radial-gradient(closest-side, rgb(255 228 165 / 0.45), transparent); }
+  .ab-wheel-wrap { left: 41.5%; top: 35%; width: 64.6%; }
+  .ab-wheel-wrap::before { content: ""; position: absolute; inset: 4%; border-radius: 50%; background: radial-gradient(circle, rgb(40 52 38 / 0.32), rgb(40 52 38 / 0.12) 70%, transparent 74%); }
+  .ab-wheel { position: relative; color: #E6C47A; opacity: 1; filter: drop-shadow(0 0 5px rgb(255 214 140 / 0.85)); }
+  .ab-wheel text { fill: #F3D798; font-size: 44px; }
+  .ab-person { left: 52%; top: 11%; bottom: auto; height: 86%; -webkit-mask-image: linear-gradient(180deg, #000 86%, transparent 100%); mask-image: linear-gradient(180deg, #000 86%, transparent 100%); }
+
+  .practice-site main .ab h2 { font-weight: 400; font-size: clamp(44px, 4.3vw, 80px); line-height: 1.04; color: #1E2A22; }
+  .ab h2 em { font-weight: 500; }
+  .ab-lead { font-size: clamp(15px, 1.2vw, 20px); color: #55514A; }
+  .ab-steps { max-width: 46vw; }
+  .ab-icon { width: clamp(76px, 6.2vw, 104px); height: clamp(76px, 6.2vw, 104px); }
+  .ab-steps h3 { font-weight: 400; font-size: clamp(20px, 1.6vw, 28px); }
+  .ab-steps > li > p { font-size: clamp(13px, 1vw, 16px); }
+  .ab-steps .ab-points li { font-size: clamp(12.5px, 0.95vw, 15.5px); }
+  .ab-steps .ab-points li::before { content: "\2756"; font-size: 12px; }
+  .ab-cta { min-height: 56px; font-size: clamp(14.5px, 1.05vw, 17px); font-weight: 500; }
+  .ab-quote { width: 23vw; bottom: 18%; }
+  .ab-quote p { font-weight: 400; font-size: clamp(17px, 1.35vw, 23px); }
+}
+@media (min-width: 1100px) {
+  .ab-room { width: 82%; aspect-ratio: auto; background-size: cover; background-position: 100% 40%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.7) 18%, #000 34%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.7) 18%, #000 34%); }
+  .ab-wheel-wrap::before { background: radial-gradient(circle, rgb(70 70 45 / 0.22), rgb(70 70 45 / 0.08) 70%, transparent 74%); }
+}

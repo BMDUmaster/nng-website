@@ -35,6 +35,7 @@ export const sansDeva = localFont({
 // Display serif for the homepage hero heading (Oct 15 redesign). Upright 600 and italic 500 only.
 export const displayLatin = localFont({
   src: [
+    { path: "../fonts/brand/playfair-display-latin-400-normal.woff2", weight: "400", style: "normal" },
     { path: "../fonts/brand/playfair-display-latin-600-normal.woff2", weight: "600", style: "normal" },
     { path: "../fonts/brand/playfair-display-latin-500-italic.woff2", weight: "500", style: "italic" },
   ],
