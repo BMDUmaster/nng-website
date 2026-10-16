@@ -49,10 +49,10 @@ export const nav: NavItem[] = [
     href: "/consultations/",
     overviewLabel: "Consultation overview",
     children: [
-      { label: "Where to begin", href: "/consultations/#choose" },
-      { label: "Options and fees", href: "/consultations/#fees" },
-      { label: "How it works", href: "/consultations/#how" },
-      { label: "Hand Holding Program", href: "/hand-holding-program/" },
+      { label: "Where to begin", href: "/consultations/#choose", note: "Find the right consultation for your current situation." },
+      { label: "Options and fees", href: "/consultations/#fees", note: "Consultation formats, duration and fee details." },
+      { label: "How it works", href: "/consultations/#how", note: "Simple steps to book and what to expect." },
+      { label: "Hand Holding Program", href: "/hand-holding-program/", note: "Ongoing guidance and support over six months." },
     ],
   },
   {
