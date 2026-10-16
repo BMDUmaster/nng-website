@@ -45,6 +45,19 @@ export default function AboutPage() {
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema()] }} />
 
       <section className="ah" aria-labelledby="about-hero-title">
+        <div className="ah-leaf" aria-hidden="true">
+          <span className="ah-dew ah-dew-1" />
+          <span className="ah-dew ah-dew-2" />
+          <span className="ah-dew ah-dew-3" />
+          <span className="ah-drop ah-drop-1" />
+          <span className="ah-drop ah-drop-2" />
+          <span className="ah-drop ah-drop-3" />
+        </div>
+        <div className="ah-dust" aria-hidden="true">
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+            <span key={i} />
+          ))}
+        </div>
         <div className="ah-inner">
           <div className="ah-copy" data-reveal="">
             <nav className="cn-crumbs au-crumbs" aria-label="Breadcrumb">
