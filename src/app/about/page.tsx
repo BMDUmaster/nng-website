@@ -167,22 +167,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="au-beliefs" aria-labelledby="beliefs-title">
-        <div className="au-beliefs-inner">
-          <header className="au-beliefs-head" data-reveal="">
-            <span className="au-lotus au-lotus-c" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
-            <p className="au-kicker">Her principles</p>
+      <section className="au-beliefs pr" aria-labelledby="beliefs-title">
+        <div className="pr-card">
+          <span className="pr-leaf pr-leaf-tl" aria-hidden="true" />
+          <span className="pr-leaf pr-leaf-tr" aria-hidden="true" />
+          <span className="pr-ghost pr-ghost-l" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+          <span className="pr-ghost pr-ghost-r" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+          <header className="pr-head" data-reveal="">
+            <span className="pr-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+            <p className="pr-kicker">Her principles</p>
             <h2 id="beliefs-title">
               What she <em>holds to</em>
             </h2>
+            <p className="pr-lead">Three core values guide her work and every consultation.</p>
           </header>
-          <ul className="au-principles">
+          <ul className="pr-list">
             {beliefs.map((belief, i) => (
               <li key={belief.title} data-reveal="" style={{ "--d": `${i * 100}ms` } as React.CSSProperties}>
-                <span className="au-p-num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="au-p-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: principleIcons[i] }} />
-                <h3>{belief.title}</h3>
-                <p>{belief.text}</p>
+                <span className="pr-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="pr-sprig" aria-hidden="true" />
+                <span className="pr-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: principleIcons[i] }} />
+                <div className="pr-text">
+                  <h3>{belief.title}</h3>
+                  <p>{belief.text.replace(/^[“"]|[”"]$/g, "")}</p>
+                </div>
               </li>
             ))}
           </ul>
