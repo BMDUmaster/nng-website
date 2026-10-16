@@ -90,11 +90,15 @@ export function Approach() {
       </div>
 
       <div className="ab-stage" aria-hidden="true">
+        <span className="ab-room" />
         <span className="ab-glow" />
         <span className="ab-wheel-wrap" dangerouslySetInnerHTML={{ __html: wheel() }} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="ab-person" src={asset("/images/approach-cut.webp")} alt="" width={494} height={1023} loading="lazy" decoding="async" />
+        <img className="ab-person" src={asset("/images/approach-cut.webp")} alt="" width={562} height={1150} loading="lazy" decoding="async" />
       </div>
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="ab-leaves" src={asset("/images/approach-leaves.webp")} alt="" width={600} height={842} aria-hidden="true" loading="lazy" />
 
       <div className="ab-inner">
         <div className="ab-copy">
@@ -126,7 +130,7 @@ export function Approach() {
 
           <div className="ab-actions">
             <EnquiryTrigger className="ab-cta" source="home-who-for">
-              <span>Explore her approach</span>
+              <span>Tell her team what is on your mind</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>

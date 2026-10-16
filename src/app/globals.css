@@ -18561,3 +18561,79 @@ footer.site-footer.ft {
 }
 @media (min-width: 1100px) { .ab-steps .ab-points li { text-align: left; } .ab-steps .ab-points li::before { top: 1px; } }
 @media (min-width: 1100px) { .ab-copy { max-width: 800px; } .practice-site main .ab h2 { font-size: clamp(38px, 3.4vw, 58px); } }
+
+/* Her approach, desktop pass 2 (Oct 16, "Mindful Astrology: Notice, Understand, Practise" banner). One wide banner: cream
+   words on the left; on the right her room (from the banner, its figure and wheel removed), a golden zodiac wheel
+   turning slowly, Narayani (real photograph, IMG_5352) and her line in a card. Phones unchanged. */
+.ab-leaves, .ab-room { display: none; }
+@media (min-width: 1100px) {
+  section#approach.ab { display: block; position: relative; isolation: isolate; overflow: hidden; height: clamp(700px, 56.3vw, 900px); background: #FAF6EC; }
+  .ab-leaves { display: block; position: absolute; z-index: 0; left: 0; bottom: 0; width: 18%; height: auto; pointer-events: none; }
+
+  /* Right: room, glow, wheel, Narayani. */
+  .ab-stage { position: absolute; z-index: 0; inset: 0 0 0 auto; width: 57.4%; overflow: hidden; }
+  .ab-room { display: block; position: absolute; inset: 0; background: url("/images/approach-bg.webp") 0 50% / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.5) 12%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.5) 12%, #000 30%); }
+  .ab-glow { left: 29%; top: 35%; width: 62%; background: radial-gradient(closest-side, rgb(255 226 160 / 0.5), transparent); }
+  .ab-wheel-wrap { left: 29%; top: 35%; width: min(68%, 120vh); aspect-ratio: 1; }
+  .ab-wheel { color: #E9C77E; opacity: 0.9; filter: drop-shadow(0 0 6px rgb(255 214 140 / 0.9)); }
+  .ab-wheel text { fill: #F2D592; font-size: 40px; }
+  .ab-person { left: 40%; bottom: -12%; top: auto; height: 118%; transform: translateX(-50%); filter: drop-shadow(0 24px 34px rgb(0 0 0 / 0.35)); }
+
+  /* Her line, over the right edge of the photograph. */
+  .ab-photo { position: absolute; z-index: 2; inset: 0 0 0 auto; width: 57.4%; min-height: 0; background: none; pointer-events: none; }
+  .ab-photo img, .ab-photo::after { display: none; }
+  .ab-quote { pointer-events: auto; left: auto; right: 2.6%; bottom: 18%; width: 23.5vw; max-width: 400px; padding: 22px 22px 18px 72px; border-radius: 22px; background: rgb(252 248 239 / 0.9); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35), 0 24px 44px -26px rgb(0 0 0 / 0.5); }
+  .ab-quote p { font-family: var(--font-display), var(--serif); font-style: italic; font-weight: 500; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.28; color: #123A2B; }
+  .ab-quote::before { left: 22px; top: 14px; font-family: var(--font-display), serif; font-size: 64px; color: #B88A45; }
+
+  /* Left: the words. */
+  .ab-inner { position: relative; z-index: 1; display: block; width: 52%; height: 100%; margin: 0; padding: clamp(48px, 7vh, 88px) 0 0 6.6vw; }
+  .ab-copy { max-width: none; }
+  .ab-kicker { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.3em; color: #3E3A33; }
+  .ab-kicker::after { content: "\2726"; display: inline; width: auto; height: auto; background: none; color: #B88A45; font-size: 16px; letter-spacing: 0; }
+  .ab-kicker::before { display: none; }
+  .practice-site main .ab h2 { margin-top: clamp(14px, 2.2vh, 24px); font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(48px, 4.6vw, 82px); line-height: 1.02; letter-spacing: -0.02em; color: #1E2A22; }
+  .ab h2 em { color: #B58A44; }
+  .ab-lead { max-width: 33em; margin-top: clamp(12px, 2vh, 20px); font-size: clamp(16px, 1.25vw, 20px); line-height: 1.55; color: #4A463E; }
+
+  .ab-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(22px, 3.4vh, 36px); max-width: 760px; }
+  .ab-steps > li { padding: 0 16px; }
+  .ab-steps > li + li { border-left: 0; }
+  .ab-steps > li + li::after { content: ""; position: absolute; left: 0; top: 96px; bottom: 6px; width: 1px; background: rgb(169 121 46 / 0.28); }
+  .ab-steps > li + li::before { content: ""; top: 52px; width: 68px; height: 12px; padding: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 12'%3E%3Cpath d='M0 6h64M58 1l6 5-6 5' fill='none' stroke='%23B88A45' stroke-width='1.4'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .ab-icon { position: relative; width: clamp(80px, 6.6vw, 108px); height: clamp(80px, 6.6vw, 108px); background: radial-gradient(circle at 40% 35%, #FFFFFF, #F4ECDA); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.4), 0 0 0 7px rgb(244 236 218 / 0.6), 0 14px 26px -18px rgb(60 44 20 / 0.6); }
+  .ab-icon svg { width: 52%; height: 52%; color: #1E2A22; }
+  .ab-steps > li:nth-child(3) .ab-icon svg { color: #B88A45; }
+  .ab-num { display: grid; place-items: center; position: absolute; top: 0; right: -6px; width: 30px; height: 30px; border-radius: 50%; background: #123A2B; color: #FFFFFF; font-size: 12px; font-weight: 600; box-shadow: 0 0 0 3px #FAF6EC; }
+  .ab-steps h3 { margin-top: 14px; font-size: clamp(22px, 1.8vw, 30px); color: #1E2A22; }
+  .ab-steps > li > p { font-size: clamp(13.5px, 1.05vw, 16.5px); color: #4A463E; }
+  .ab-points { margin-top: 14px; padding-top: 0; border: 0; gap: 8px; }
+  .ab-steps .ab-points li { padding-left: 24px; font-size: clamp(13px, 1vw, 16px); color: #3E3A33; }
+  .ab-steps .ab-points li::before { content: "\25C6"; top: 0; font-size: 11px; color: #B88A45; }
+
+  .ab-actions { display: flex; align-items: center; flex-wrap: nowrap; gap: 28px; margin-top: clamp(22px, 3.6vh, 40px); }
+  .ab-cta { min-height: 60px; padding: 0 30px 0 36px; gap: 18px; font-size: clamp(15px, 1.15vw, 18px); white-space: nowrap; box-shadow: 0 18px 30px -16px rgb(18 58 43 / 0.75); }
+  .ab-more { padding-left: 28px; border-left: 1px solid rgb(169 121 46 / 0.45); }
+  .ab-more summary { padding-bottom: 6px; border-bottom: 1px solid rgb(169 121 46 / 0.6); font-size: clamp(13.5px, 1vw, 15.5px); }
+}
+@media (min-width: 1100px) and (max-width: 1440px) {
+  .ab-inner { width: 54%; padding-left: 5vw; }
+  .ab-steps > li { padding: 0 10px; }
+  .ab-steps > li + li::before { width: 44px; top: 46px; }
+  .ab-actions { gap: 18px; }
+  .ab-more { padding-left: 18px; }
+}
+@media (min-width: 1100px) {
+  .ab-room { background: url("/images/approach-bg.webp") right center / auto 100% no-repeat, linear-gradient(90deg, #E9DCC4, #D9C4A0); }
+  .ab-glow { left: 41.5%; top: 35%; width: 70%; }
+  .ab-wheel-wrap { left: 41.5%; top: 35%; width: 66%; }
+  .ab-person { left: 51%; top: 10%; bottom: auto; height: 104%; }
+  section#approach .ab-points { justify-items: start; }
+  section#approach .ab-points li { text-align: left !important; }
+  .ab-lead { max-width: 30em; }
+}
+@media (min-width: 1100px) {
+  .ab-room { background: url("/images/approach-bg.webp") 100% 30% / cover no-repeat; }
+  .ab-person { left: 52%; top: 9%; height: 95%; }
+  .ab-quote { right: 2.4%; bottom: 17%; width: 22vw; }
+}
