@@ -230,6 +230,7 @@ export default function ConsultationsPage() {
       <section className="cn-sec cn-how ch" id="how" aria-labelledby="how-title">
         <div className="cn-inner">
           <header className="cn-head" data-reveal="">
+            <span className="ch-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
             <p className="cn-kicker cn-kicker-dark">How it works</p>
             <h2 id="how-title">
               From your question <br />
@@ -241,6 +242,8 @@ export default function ConsultationsPage() {
             {steps.map((step, i) => (
               <li key={step.title} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
                 <span className="cn-step-num">{String(i + 1).padStart(2, "0")}</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="ch-sprig" src={asset("/images/how-sprig.webp")} alt="" width={104} height={128} loading="lazy" aria-hidden="true" />
                 <span className="ch-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: stepIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>

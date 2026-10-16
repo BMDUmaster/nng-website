@@ -20015,3 +20015,42 @@ section.cn-support.cs { background: linear-gradient(180deg, #FBF7EE, #F6F0E2); b
   .cs-points li:first-child { padding-left: 4px; }
 }
 @media (max-width: 900px) { .cs-photo img { object-position: 50% 30%; } }
+
+/* How it works, second pass to match the botanical reference: leaf corners, lotus over the label, flatter arched
+   cards with a leaf sprig behind each icon, compact height. */
+section.cn-how.ch { background: #F8F2E6; }
+.ch::before { left: 0; top: 0; width: 220px; aspect-ratio: 220 / 223; background: url("/images/how-leaf-tl.webp") 0 0 / contain no-repeat; opacity: 1; mix-blend-mode: multiply; }
+.ch::after { content: ""; position: absolute; z-index: -1; right: 0; bottom: 0; width: 193px; aspect-ratio: 1; background: url("/images/how-leaf-br.webp") 100% 100% / contain no-repeat; mix-blend-mode: multiply; pointer-events: none; }
+.ch-lotus { display: block; width: 46px; margin: 0 auto 2px; color: #B88A45; }
+.ch-lotus svg { display: block; width: 100%; height: auto; }
+.ch .cn-head .cn-kicker::before { display: none; }
+.ch .cn-head .cn-kicker { color: #123A2B; }
+.ch .cn-head > p:not(.cn-kicker) { max-width: 34em; margin-inline: auto; color: #4A463E; }
+.ch-sprig { position: absolute; z-index: 0; width: 52px; height: auto; mix-blend-mode: multiply; pointer-events: none; }
+.ch-icon { position: relative; z-index: 1; }
+@media (min-width: 901px) {
+  .ch .cn-inner { padding-block: 34px 38px; }
+  .practice-site main .ch h2 { font-size: clamp(32px, 3vw, 50px); }
+  .ch .cn-steps { gap: 44px; margin-top: 26px; }
+  .ch .cn-steps li { justify-items: center; padding: 22px 22px 22px; border-radius: 50% 50% 16px 16px / 74px 74px 16px 16px; background: rgb(255 252 245 / 0.75); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.45), 0 18px 30px -26px rgb(60 44 20 / 0.45); }
+  .ch .cn-steps li + li::before { left: -36px; top: 46px; width: 28px; height: 28px; background: #FBF7EE; }
+  .ch .cn-steps .cn-step-num { left: -8px; top: -8px; width: 42px; height: 42px; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+  .ch-sprig { left: calc(50% - 74px); top: 30px; }
+  .ch-icon { width: 70px; height: 70px; }
+  .ch .cn-steps h3 { margin-top: 18px; font-size: 19px; }
+  .ch .cn-steps p { font-size: 13.5px; }
+  .ch .cn-how-foot { margin-top: 24px; }
+}
+@media (max-width: 900px) {
+  .ch::before { width: 120px; }
+  .ch::after { width: 110px; }
+  .ch-lotus { width: 38px; }
+  .ch-sprig { right: 4px; top: 6px; width: 32px; opacity: 0.85; }
+  .ch .cn-steps li { padding-right: 30px; }
+}
+.ch::before, .ch::after, .ch-sprig { mix-blend-mode: normal; }
+.ch::after { width: 161px; aspect-ratio: 161 / 153; }
+@media (max-width: 900px) { .ch::before { width: 96px; } .ch::after { width: 90px; } }
+.ch .cn-head > p:not(.cn-kicker) { max-width: 40em; }
+@media (min-width: 901px) { .ch .cn-inner { padding-top: 26px; } }
+@media (max-width: 900px) { .ch .cn-steps li { padding-right: 40px; } }
