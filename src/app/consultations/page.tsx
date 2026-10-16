@@ -88,6 +88,7 @@ export default function ConsultationsPage() {
               </EnquiryTrigger>
               <a className="cn-ghost" href="#fees">
                 See session options
+                <span className="cx-ghost-arrow" aria-hidden="true">→</span>
               </a>
             </div>
             <ul className="cn-formats" aria-label="Online, including from abroad, or in person by appointment">
@@ -109,6 +110,7 @@ export default function ConsultationsPage() {
                 </li>
               ))}
             </ul>
+            <p className="cx-quote">A safe space to ask, understand and move forward with clarity.</p>
           </div>
           <div className="cn-hero-visual cx-visual" data-reveal="">
             <div className="cx-photo">

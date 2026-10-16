@@ -19733,3 +19733,37 @@ section.cn-hero.cx-hero { isolation: isolate; background: radial-gradient(40% 50
 .cx-practices li:nth-child(2) .cx-p-icon svg { width: 34px; height: 34px; }
 .cx-hero .cx-visual { justify-self: stretch; width: auto; max-width: none; margin: 0; aspect-ratio: auto; }
 @media (max-width: 900px) { .cx-hero .cx-visual { width: 100%; } }
+
+/* Consultations hero, phones (Emerald Lotus banner): words left, her photograph top-right in a curved panel, stacked
+   actions, two format cards, four practice cards, a quote on cream. Desktop untouched. */
+.cx-quote, .cx-ghost-arrow { display: none; }
+@media (max-width: 900px) {
+  section.cn-hero.cx-hero { overflow: hidden; }
+  .cx-hero .cn-hero-inner { position: relative; display: block; }
+  .cx-hero .cn-crumbs { display: none; }
+  .cx-visual { position: absolute; z-index: 0; top: 0; right: 0; width: 58% !important; height: 128vw; max-height: 560px; }
+  .cx-photo { clip-path: none; border-radius: 0 0 0 46% / 0 0 0 26%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+  .cx-photo::after { display: none; }
+  .cx-photo img { object-position: 46% 10%; }
+  .cx-badge { display: none; }
+  .cx-hero .cn-hero-copy { position: relative; z-index: 1; padding: 26px 16px 0; }
+  .cx-hero .cn-kicker { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 10.5px; letter-spacing: 0.22em; }
+  .practice-site main .cx-hero h1 { max-width: 60%; font-size: clamp(32px, 9.6vw, 40px); line-height: 1.02; }
+  .cx-hero .cn-lead { max-width: 52%; font-size: 13.5px; line-height: 1.5; }
+  .cx-hero .cn-actions { display: grid; justify-items: start; gap: 10px; margin-top: 18px; }
+  .cx-hero .cn-cta { min-height: 52px; font-size: 14.5px; }
+  .cx-hero .cn-ghost { min-height: 48px; gap: 14px; padding: 0 6px 0 22px; font-size: 14.5px; }
+  .cx-ghost-arrow { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; box-shadow: inset 0 0 0 1.2px rgb(225 190 112 / 0.7); color: #E1BE70; }
+  .cx-hero .cn-formats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; }
+  .cx-hero .cn-formats li { justify-content: flex-start; gap: 10px; min-height: 54px; padding: 8px 12px; border-radius: 14px; font-size: 12.5px; line-height: 1.3; text-align: left; }
+  .cx-practices { grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 14px; row-gap: 0; }
+  .cx-practices li { gap: 2px; padding: 12px 4px 14px; border: 0 !important; border-radius: 14px; box-shadow: inset 0 0 0 1px rgb(225 190 112 / 0.35); background: rgb(255 255 255 / 0.03); }
+  .cx-p-icon { width: 44px; height: 44px; margin-bottom: 4px; background: radial-gradient(circle at 40% 35%, #FFF6DE, #EAD6A6); box-shadow: none; color: #123A2B; }
+  .cx-p-icon svg { width: 22px; height: 22px; }
+  .cx-practices li:nth-child(2) .cx-p-icon svg { width: 30px; height: 30px; }
+  .cx-practices strong { font-size: 13px; line-height: 1.15; }
+  .cx-practices small { font-size: 10.5px; }
+  .cx-quote { display: block; margin: 24px -16px 0; padding: 26px 30px 26px 56px; position: relative; background: #FBF7EE; border-radius: 50% 50% 0 0 / 28px 28px 0 0; font-family: var(--font-display), var(--serif); font-style: italic; font-size: 17px; line-height: 1.35; color: #123A2B; }
+  .cx-quote::before { content: "\201C"; position: absolute; left: 20px; top: 16px; font-size: 48px; line-height: 1; color: #B88A45; }
+}
+@media (max-width: 900px) { .cx-visual { width: 54% !important; } .practice-site main .cx-hero h1 { font-size: clamp(30px, 8.6vw, 36px); max-width: 62%; text-shadow: 0 2px 12px rgb(11 42 31 / 0.6); } .cx-photo { -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.6) 18%, #000 38%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.6) 18%, #000 38%); } }
