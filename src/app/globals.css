@@ -21501,3 +21501,153 @@ section.au-book.bkx { background: linear-gradient(180deg, #FBF7EE, #F5EEDF); }
   .svh-cta, .svh-ghost { min-height: 44px; font-size: 14px; }
   .svh-go { width: 36px; height: 36px; }
 }
+
+/* Services, Where to begin (wb-), matched to the reference: cream with a green swoosh, a diya and leaves on the left,
+   gold line leaves at the right, a lotus over the label, a two-line heading, and two columns of cards (cream icon disc,
+   a hairline, the concern and its first line, a gold arrow). The card still opens to its list of choices. */
+section.sv-choose.wb { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(60% 70% at 55% 30%, #FFFBF1, transparent 70%), #F7F0E2; }
+.wb-left { position: absolute; z-index: -1; left: 0; top: 0; bottom: 0; width: 236px; background: url("/images/choose-left.webp") 0 0 / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); }
+.wb-right { position: absolute; z-index: -1; right: 0; top: 0; width: 272px; aspect-ratio: 272 / 380; background: url("/images/choose-right.webp") 100% 0 / contain no-repeat; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(100% 100% at 100% 0, #000 55%, transparent 100%); mask-image: radial-gradient(100% 100% at 100% 0, #000 55%, transparent 100%); }
+.wb-br { position: absolute; z-index: -1; right: 0; bottom: 0; width: 192px; aspect-ratio: 192 / 441; background: url("/images/choose-br.webp") 100% 100% / contain no-repeat; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(100% 100% at 100% 100%, #000 45%, transparent 95%); mask-image: radial-gradient(100% 100% at 100% 100%, #000 45%, transparent 95%); }
+.wb .cn-inner { padding-block: clamp(30px, 4.5vh, 50px); }
+.wb-head { text-align: center; }
+.wb-lotus { display: block; width: 40px; margin: 0 auto 4px; color: #B88A45; }
+.wb-lotus svg, .hm2-lotus svg, .hm2-link svg, .hm2-icon svg, .sv-pk-icon svg { display: block; width: 100%; height: auto; }
+.wb-kicker { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #3E4A40; }
+.practice-site main .wb h2 { margin: 10px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(36px, 3.9vw, 64px); line-height: 1.04; color: #123A2B; }
+.wb h2 em { display: block; font-style: italic; font-weight: 500; color: #B58A44; }
+.practice-site main .wb .wb-lead { max-width: 34em; margin: 14px auto 0; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.5; color: #5A554C; }
+.wb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; max-width: 1180px; margin: 26px auto 0; }
+.wb-card { border-radius: 16px; background: rgb(255 253 248 / 0.88); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35), 0 12px 26px -22px rgb(60 44 20 / 0.5); }
+.wb-card[open] { box-shadow: 0 0 0 1.3px #C9A256, 0 18px 32px -24px rgb(60 44 20 / 0.6); }
+.wb-card summary { grid-template-columns: auto 1fr auto; gap: 22px; min-height: 104px; padding: 14px 20px; }
+.wb-icon { position: relative; width: 82px; height: 82px; background: radial-gradient(circle at 40% 35%, #FFF8E8, #F1E5C9); box-shadow: none; }
+.wb-icon::after { content: ""; position: absolute; right: -12px; top: 12px; bottom: 12px; width: 1px; background: rgb(201 162 86 / 0.4); }
+.wb-icon .ic { --ic-size: 38px; }
+.wb-text strong { font-family: var(--font-display), var(--serif); font-size: 21px; font-weight: 500; color: #123A2B; }
+.wb-text span { font-size: 14.5px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #5A554C; }
+.wb-go { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(180deg, #F2D592, #D9B064); color: #123A2B; font-size: 18px; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+.wb-card[open] .wb-go { transform: rotate(90deg); background: #123A2B; color: #F2D592; }
+.wb-card ul { margin: 0; padding: 0 20px 16px 124px; list-style: none; }
+.wb-card ul a { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid rgb(201 162 86 / 0.25); font-size: 14.5px; color: #123A2B; text-decoration: none; }
+.wb-card ul a span { color: #B58A44; }
+@media (max-width: 900px) {
+  .wb-left { width: 70px; opacity: 0.8; }
+  .wb-right { width: 120px; }
+  .wb-br { display: none; }
+  .wb .cn-inner { width: calc(100% - 24px); padding-block: 26px; }
+  .wb-lotus { width: 32px; }
+  .wb-kicker { font-size: 11px; }
+  .practice-site main .wb h2 { font-size: clamp(30px, 8.6vw, 38px); }
+  .practice-site main .wb .wb-lead { font-size: 14px; }
+  .wb-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 18px; }
+  .wb-card summary { gap: 14px; min-height: 0; padding: 10px 12px; }
+  .wb-icon { width: 52px; height: 52px; }
+  .wb-icon::after { right: -8px; top: 8px; bottom: 8px; }
+  .wb-icon .ic { --ic-size: 26px; }
+  .wb-text strong { font-size: 16.5px; }
+  .wb-text span { font-size: 12.5px; }
+  .wb-go { width: 34px; height: 34px; font-size: 15px; }
+  .wb-card ul { padding: 0 12px 12px 78px; }
+  .wb-card ul a { font-size: 13px; }
+}
+
+/* Her method (hm2-), matched to the reference: deep green with leaves in three corners, lotus over the label, three
+   cards each with an arched photograph, a gold number, a lotus link between cards, a cream body with an icon disc,
+   the word, its line, a short gold rule and practice pills; a cream wave with a star at the foot. */
+section.sv-method.hm2 { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(50% 60% at 50% 20%, #1D5A3E, transparent 70%), linear-gradient(180deg, #154A33 0%, #0E3524 100%); color: #FFFFFF; }
+.hm2-tl, .hm2-tr, .hm2-bl { position: absolute; z-index: -1; pointer-events: none; }
+.hm2-tl { left: 0; top: 0; width: 250px; aspect-ratio: 250 / 300; background: url("/images/method-tl.webp") 0 0 / contain no-repeat; -webkit-mask-image: radial-gradient(100% 100% at 0 0, #000 55%, transparent 100%); mask-image: radial-gradient(100% 100% at 0 0, #000 55%, transparent 100%); }
+.hm2-tr { right: 0; top: 0; width: 242px; aspect-ratio: 242 / 300; background: url("/images/method-tr.webp") 100% 0 / contain no-repeat; -webkit-mask-image: radial-gradient(100% 100% at 100% 0, #000 55%, transparent 100%); mask-image: radial-gradient(100% 100% at 100% 0, #000 55%, transparent 100%); }
+.hm2-bl { left: 0; bottom: 60px; width: 190px; aspect-ratio: 190 / 340; background: url("/images/method-bl.webp") 0 100% / contain no-repeat; -webkit-mask-image: radial-gradient(100% 100% at 0 70%, #000 50%, transparent 100%); mask-image: radial-gradient(100% 100% at 0 70%, #000 50%, transparent 100%); }
+.hm2 .cn-inner { position: relative; padding-block: clamp(30px, 4.5vh, 48px) 90px; }
+.hm2-head { text-align: center; }
+.hm2-lotus { display: block; width: 46px; margin: 0 auto 4px; color: #D9B064; }
+.hm2-kicker { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: #D9B064; }
+.practice-site main .hm2 h2 { margin: 8px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(36px, 3.9vw, 64px); line-height: 1.06; color: #FFFFFF; }
+.hm2 h2 em { font-style: italic; font-weight: 500; color: #E1BE70; }
+.practice-site main .hm2 .hm2-lead { max-width: 40em; margin: 12px auto 0; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.55; color: rgb(255 255 255 / 0.9); }
+.hm2-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(30px, 5vw, 80px); max-width: 1300px; margin: 32px auto 0; padding: 0; list-style: none; }
+.hm2-cards > li { position: relative; display: flex; flex-direction: column; padding: 0; border-radius: 210px 210px 22px 22px / 130px 130px 22px 22px; background: none; box-shadow: 0 0 0 1.3px rgb(210 169 84 / 0.7), 0 0 0 8px rgb(210 169 84 / 0.06), 0 30px 50px -30px rgb(0 0 0 / 0.7); text-align: left; }
+.hm2-photo { position: relative; overflow: hidden; aspect-ratio: 398 / 234; border-radius: 210px 210px 0 0 / 130px 130px 0 0; }
+.hm2-photo img { width: 100%; height: 100%; object-fit: cover; }
+.hm2-num { position: absolute; left: 22px; top: 34px; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #F7E3AE, #D9B064); box-shadow: 0 0 0 3px rgb(18 58 43 / 0.4); font-family: var(--font-display), var(--serif); font-size: 24px; color: #123A2B; }
+.hm2-link { position: absolute; z-index: 2; right: calc(-1 * clamp(30px, 5vw, 80px) / 2 - 14px); top: 32%; width: 28px; color: #D9B064; }
+.hm2-link::before { content: ""; position: absolute; right: 50%; top: 50%; width: clamp(30px, 5vw, 80px); height: 1px; background: rgb(210 169 84 / 0.5); transform: translateX(50%); z-index: -1; }
+.hm2-body { flex: 1; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-content: start; padding: 22px 26px 26px; border-radius: 0 0 22px 22px; background: linear-gradient(180deg, #FDF8EE, #F7EFDD); }
+.hm2-icon { display: grid; place-items: center; width: 74px; height: 74px; padding: 18px; border-radius: 50%; background: #FFFCF5; box-shadow: inset 0 0 0 1.2px rgb(201 162 86 / 0.6); color: #A9792E; }
+.practice-site main .hm2-text h3 { margin: 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(24px, 2vw, 34px); color: #123A2B; }
+.practice-site main .hm2-text p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #4A463E; }
+.hm2-rule { display: block; width: 32px; height: 1.5px; margin-top: 14px; background: #C9A256; }
+.hm2-tags { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.hm2-tags a { display: inline-flex; align-items: center; gap: 12px; min-height: 42px; padding: 0 18px 0 22px; border-radius: 999px; background: #FBF2DE; box-shadow: inset 0 0 0 1px rgb(201 162 86 / 0.6); font-size: 14px; font-weight: 500; color: #1E1A16; text-decoration: none; transition: background 0.2s ease; }
+.hm2-tags a:hover { background: #F3E2BC; }
+.hm2-wave { position: absolute; left: 0; right: 0; bottom: 0; height: 70px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 30C300 0 600 10 900 24S1300 46 1440 20V70H0Z' fill='%23F7F0E2'/%3E%3Cpath d='M0 30C300 0 600 10 900 24S1300 46 1440 20' fill='none' stroke='%23D2A954' stroke-width='1.2'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
+.hm2-wave::after { content: "✦"; position: absolute; left: 50%; bottom: 12px; font-size: 16px; color: #C9A256; transform: translateX(-50%); }
+@media (max-width: 1100px) and (min-width: 901px) { .hm2-body { grid-template-columns: 1fr; } .hm2-icon { width: 56px; height: 56px; padding: 13px; } }
+@media (max-width: 900px) {
+  .hm2-tl { width: 120px; } .hm2-tr { width: 110px; } .hm2-bl { display: none; }
+  .hm2 .cn-inner { width: calc(100% - 24px); padding-block: 26px 60px; }
+  .hm2-lotus { width: 36px; }
+  .hm2-kicker { font-size: 11px; }
+  .practice-site main .hm2 h2 { font-size: clamp(30px, 8.6vw, 38px); }
+  .practice-site main .hm2 .hm2-lead { font-size: 14px; }
+  .hm2-cards { grid-template-columns: 1fr; gap: 18px; margin-top: 20px; }
+  .hm2-cards > li { flex-direction: row; border-radius: 18px; overflow: hidden; }
+  .hm2-photo { flex: none; width: 34%; aspect-ratio: auto; border-radius: 0; }
+  .hm2-num { left: 8px; top: 8px; width: 36px; height: 36px; font-size: 15px; }
+  .hm2-link { display: none; }
+  .hm2-body { grid-template-columns: 1fr; gap: 4px; padding: 14px; border-radius: 0; }
+  .hm2-icon { display: none; }
+  .practice-site main .hm2-text h3 { font-size: 20px; }
+  .practice-site main .hm2-text p { font-size: 13px; }
+  .hm2-rule { margin-top: 8px; }
+  .hm2-tags { gap: 6px; margin-top: 10px; }
+  .hm2-tags a { min-height: 34px; gap: 8px; padding: 0 12px 0 14px; font-size: 12.5px; }
+  .hm2-wave { height: 40px; }
+}
+
+/* The practices: cream with leaves, white cards with an arched art panel, a gold number disc, an icon before the
+   kicker, Playfair names, gold ticks, compact buttons. */
+section.sv-practices { position: relative; isolation: isolate; overflow: hidden; background: #F7F0E2; }
+section.sv-practices::before { content: ""; position: absolute; z-index: -1; right: 0; top: 0; width: 240px; aspect-ratio: 272 / 380; background: url("/images/choose-right.webp") 100% 0 / contain no-repeat; mix-blend-mode: multiply; opacity: 0.8; }
+.sv-practices .cn-inner { gap: 24px; padding-block: 34px 44px; }
+.sv-practice { border-radius: 26px; background: #FFFCF6; box-shadow: 0 0 0 1px rgb(201 162 86 / 0.4), 0 30px 50px -40px rgb(60 44 20 / 0.6); }
+.sv-practice-art { margin: 14px; border-radius: 200px 200px 18px 18px / 120px 120px 18px 18px; background: radial-gradient(circle at 50% 45%, #FFFFFF 0%, #F3E8D0 75%); box-shadow: inset 0 0 0 1px rgb(201 162 86 / 0.45); }
+.sv-practice-num { left: 16px; top: 16px; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #F7E3AE, #D9B064); font-family: var(--font-display), var(--serif); font-size: 20px; color: #123A2B; }
+.sv-practice-kicker { display: inline-flex; align-items: center; gap: 10px; color: #8A6A32; }
+.sv-pk-icon { display: block; width: 22px; color: #B58A44; }
+.practice-site main .sv-practice h2 { font-family: var(--font-display), var(--serif); font-weight: 600; color: #123A2B; }
+.sv-practice-quote { border-radius: 16px; background: #F8F0DE; box-shadow: none; border-left: 3px solid #C9A256; }
+.sv-practice-quote p { font-family: var(--font-display), var(--serif); }
+.sv-look li::before { left: 0; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: #123A2B url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23F2D592' stroke-width='2'%3E%3Cpath d='m4.5 8.3 2.3 2.3 4.7-5'/%3E%3C/svg%3E") center / 12px no-repeat; transform: none; }
+.sv-practice-actions .cn-cta { background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; font-weight: 600; }
+
+/* How it works on services: the arched cards, four across. */
+.sv-how.ch .cn-steps { grid-template-columns: repeat(4, 1fr); }
+.sv-formats { background: #FFFCF6; box-shadow: 0 0 0 1px rgb(201 162 86 / 0.4); }
+.sv-formats-intro h3, .sv-format h4 { font-family: var(--font-display), var(--serif); font-weight: 600; }
+.sv-format .ct-icon { background: radial-gradient(circle at 40% 35%, #FFF8E8, #F1E5C9); color: #123A2B; }
+@media (max-width: 900px) { .sv-how.ch .cn-steps { grid-template-columns: 1fr; } }
+
+/* Compact call-to-action buttons on phones, site-wide: labels as short as the page allows, no full-width bars. */
+@media (max-width: 680px) {
+  .cn-cta, .svh-cta, .au-cta, .kh-cta, .cs-cta, .jm-cta, .bk2-cta, .sf-enquire, .cf-submit, .hm-cta, .ft-cta-btn, .pg-cta, .cn-ghost, .svh-ghost, .au-ghost, .kh-ghost, .cs-ghost { min-height: 44px; font-size: 14px; }
+  .cn-cta .cn-arrow, .svh-go, .au-go, .kh-go, .cs-go, .jm-cta-go, .bk2-cta-go { width: 34px; height: 34px; font-size: 14px; }
+  .svh-ghost { display: none; }
+  .svh-cta { padding: 4px 4px 4px 20px; gap: 14px; }
+}
+.hm2-bl { display: none; }
+section.sv-practices::before { -webkit-mask-image: radial-gradient(100% 100% at 100% 0, #000 50%, transparent 100%); mask-image: radial-gradient(100% 100% at 100% 0, #000 50%, transparent 100%); }
+@media (min-width: 681px) { .sv-practice-art { align-self: center; min-height: 0; height: calc(100% - 28px); max-height: 440px; } .sv-practice-body { padding-block: 30px; } }
+.sv-client .cn-inner { padding-block: 30px; }
+@media (max-width: 900px) {
+  .svh .svh-cta .cx-long { display: none; }
+  .svh .svh-cta .cx-short { display: inline; }
+  .wb-left { display: none; }
+  .sv-practice-art { min-height: 0; height: 190px; margin: 10px; }
+  .practice-site .sv-practice-art .service-symbol { max-width: 170px; }
+  .sv-practice-num { width: 40px; height: 40px; font-size: 16px; }
+  .sv-practice-body { padding: 14px 18px 22px; }
+}
+@media (max-width: 900px) { .sv-how.ch .cn-steps li::after, .sv-how .cn-steps::after { display: none; } }

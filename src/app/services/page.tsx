@@ -44,6 +44,17 @@ const svIcons = {
   numerology: svIco('<path d="M16 16c0-1.7 1.3-3 3-3s3 1.3 3 3.2c0 3.4-3.2 5.8-6.5 5.8-4 0-7-3.3-7-7.4C8.5 9.4 12 6 16.6 6 21.5 6 26 9.8 26 15.4"/>'),
   vastu: svIco('<path d="M5 15 16 5l11 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/>'),
 };
+const methodIcons = [
+  svIco('<path d="M13 27v-4a8 8 0 1 1 11-7.4l2 3.4h-2v3a2 2 0 0 1-2 2h-3v3"/><path d="M14 12.5a3 3 0 0 1 5.5-1.4M15 16.5h4"/>'),
+  svIco('<path d="M16 3l2.6 10.4L29 16l-10.4 2.6L16 29l-2.6-10.4L3 16l10.4-2.6Z"/><path d="M16 9v14M9 16h14" stroke-width="0.8"/>'),
+  svIcons.lotus,
+];
+const howIcons = [
+  svIco('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>'),
+  svIco('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 15h8M13 19h8M13 23h5"/>'),
+  svIco('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2" stroke-width="2"/>'),
+  svIco('<path d="M6 26V20M12 26V16M18 26V12M24 26V8M18 6h6v6"/>'),
+];
 const svValues = [
   { title: "Personalised Guidance", text: "For your unique journey", icon: svIcons.lotus },
   { title: "Clarity & Direction", text: "Understand your patterns", icon: svIco('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
@@ -92,7 +103,7 @@ export default function ServicesPage() {
             <div className="svh-actions">
               <EnquiryTrigger className="svh-cta" source="services-hero" primary>
                 <span className="cx-long">Enquire about a consultation</span>
-                <span className="cx-short">Enquire now</span>
+                <span className="cx-short">Enquire</span>
                 <span className="svh-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
               <Link prefetch={false} className="svh-ghost" href="/consultations/">
@@ -170,25 +181,31 @@ export default function ServicesPage() {
       </nav>
 
       {/* Start from what you are facing. */}
-      <section className="cn-sec sv-choose" id="choose" aria-labelledby="choose-title">
+      <section className="cn-sec sv-choose wb" id="choose" aria-labelledby="choose-title">
+        <span className="wb-left" aria-hidden="true" />
+        <span className="wb-right" aria-hidden="true" />
+        <span className="wb-br" aria-hidden="true" />
         <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <p className="cn-kicker cn-kicker-dark">Where to begin</p>
-            <h2 id="choose-title">Start from what you are facing</h2>
-            <p>Choose a concern. You do not need to know which practice to ask for.</p>
+          <header className="wb-head" data-reveal="">
+            <span className="wb-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
+            <p className="wb-kicker">Where to begin</p>
+            <h2 id="choose-title">
+              Start from what <em>you are facing</em>
+            </h2>
+            <p className="wb-lead">Choose a concern. You do not need to know which practice to ask for. Her team will guide you from there.</p>
           </header>
-          <div className="sv-concerns">
+          <div className="sv-concerns wb-grid">
             {choiceGroups.map((group, i) => (
-              <details key={group.heading} className="sv-concern" name="consultation-concern" data-reveal="" style={{ "--d": `${(i % 2) * 70}ms` } as React.CSSProperties}>
+              <details key={group.heading} className="sv-concern wb-card" name="consultation-concern" data-reveal="" style={{ "--d": `${(i % 2) * 70}ms` } as React.CSSProperties}>
                 <summary>
-                  <span className="sv-concern-icon">
+                  <span className="sv-concern-icon wb-icon">
                     <Icon id={group.icon} />
                   </span>
-                  <span className="sv-concern-text">
+                  <span className="sv-concern-text wb-text">
                     <strong>{group.heading}</strong>
                     <span>{group.choices[0].say}</span>
                   </span>
-                  <span className="fq-icon" aria-hidden="true" />
+                  <span className="wb-go" aria-hidden="true">→</span>
                 </summary>
                 <ul>
                   {group.choices.map((choice) => (
@@ -206,35 +223,51 @@ export default function ServicesPage() {
       </section>
 
       {/* Mind. Direction. Alignment. */}
-      <section className="cn-sec sv-method" id="method" aria-labelledby="method-title">
+      <section className="cn-sec sv-method hm2" id="method" aria-labelledby="method-title">
+        <span className="hm2-tl" aria-hidden="true" />
+        <span className="hm2-tr" aria-hidden="true" />
+        <span className="hm2-bl" aria-hidden="true" />
         <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <p className="cn-kicker">Her method</p>
+          <header className="hm2-head" data-reveal="">
+            <span className="hm2-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
+            <p className="hm2-kicker">Her method</p>
             <h2 id="method-title">
               Mind. Direction. <em>Alignment.</em>
             </h2>
-            <p>Understand the pattern, choose your next step and bring it into daily life. The other practices add context to the question you bring.</p>
+            <p className="hm2-lead">Understand the pattern, choose your next step and bring it into daily life. The other practices add context to the question you bring.</p>
           </header>
-          <ol className="sv-triad">
+          <ol className="sv-triad hm2-cards">
             {method.map((step, i) => (
               <li key={step.word} data-reveal="" style={{ "--d": `${i * 120}ms` } as React.CSSProperties}>
-                <span className="sv-triad-num">{String(i + 1).padStart(2, "0")}</span>
-                <h3>{step.word}</h3>
-                <p>{step.text}</p>
-                <div className="sv-tags">
-                  {step.services.map((slug) => {
-                    const service = services.find((s) => s.slug === slug)!;
-                    return (
-                      <a key={slug} href={`#${slug}`}>
-                        {service.name}
-                      </a>
-                    );
-                  })}
+                <div className="hm2-photo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(`/images/method-${i + 1}.webp`)} alt="" width={796} height={468} loading="lazy" />
+                  <span className="hm2-num">{String(i + 1).padStart(2, "0")}</span>
+                </div>
+                {i < method.length - 1 && <span className="hm2-link" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />}
+                <div className="hm2-body">
+                  <span className="hm2-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: methodIcons[i] }} />
+                  <div className="hm2-text">
+                    <h3>{step.word}</h3>
+                    <p>{step.text}</p>
+                    <span className="hm2-rule" aria-hidden="true" />
+                  </div>
+                  <div className="sv-tags hm2-tags">
+                    {step.services.map((slug) => {
+                      const service = services.find((s) => s.slug === slug)!;
+                      return (
+                        <a key={slug} href={`#${slug}`}>
+                          {service.name} <span aria-hidden="true">→</span>
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </li>
             ))}
           </ol>
         </div>
+        <span className="hm2-wave" aria-hidden="true" />
       </section>
 
       {/* The practices. */}
@@ -247,7 +280,7 @@ export default function ServicesPage() {
                 <ServiceIllustration hub={service.slug} />
               </div>
               <div className="sv-practice-body">
-                <p className="sv-practice-kicker">{subtitles[service.slug]}</p>
+                <p className="sv-practice-kicker"><span className="sv-pk-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons[service.slug as keyof typeof svIcons] ?? svIcons.lotus }} />{subtitles[service.slug]}</p>
                 <h2 id={`${service.slug}-title`}>{service.name}</h2>
                 <p className="sv-practice-lead">{service.lead}</p>
                 {service.quote && (
@@ -282,17 +315,23 @@ export default function ServicesPage() {
       {feesPublic && <FeeOptions topic="a personal consultation" source="services-fees" />}
 
       {/* How a consultation works. */}
-      <section className="cn-sec cn-how sv-how" id="how" aria-labelledby="how-title">
+      <section className="cn-sec cn-how ch sv-how" id="how" aria-labelledby="how-title">
         <div className="cn-inner">
           <header className="cn-head" data-reveal="">
+            <span className="ch-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
             <p className="cn-kicker cn-kicker-dark">How it works</p>
-            <h2 id="how-title">How a consultation works</h2>
+            <h2 id="how-title">
+              How a consultation <em>works</em>
+            </h2>
             <p>The team explains the options and fees before you book.</p>
           </header>
           <ol className="cn-steps" data-reveal="">
             {steps.map((step, i) => (
               <li key={step.title} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
                 <span className="cn-step-num">{String(i + 1).padStart(2, "0")}</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="ch-sprig" src={asset("/images/how-sprig.webp")} alt="" width={104} height={128} loading="lazy" aria-hidden="true" />
+                <span className="ch-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: howIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </li>
@@ -328,7 +367,7 @@ export default function ServicesPage() {
       {/* A client's words. */}
       <section className="cn-sec sv-client" aria-label="A client’s words">
         <div className="cn-inner">
-          <figure className="ct-quote" data-reveal="">
+          <figure className="ct-quote kq" data-reveal="">
             <div className="ct-quote-photo">
               <img src={voicePoster(deepa)} alt="Deepa K., sharing her experience with Narayani Garg" width={380} height={320} loading="lazy" />
               <span>Client experience</span>
