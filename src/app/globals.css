@@ -20522,3 +20522,18 @@ section.ct-ways.kw { position: relative; isolation: isolate; overflow: hidden; b
   .ah-copy { margin-top: -70px; }
   .au-video-note { white-space: nowrap; letter-spacing: 0.12em; }
 }
+
+/* Contact hero: a faint gold mandala turning very slowly behind the photographs, and the lotus breathing, so the open
+   space beside the arch is not empty. Still with reduced motion. */
+.kh-visual::before { content: ""; position: absolute; z-index: 0; left: -22%; top: 8%; width: 82%; aspect-ratio: 1; background: url("/images/mandala-gold.svg") center / contain no-repeat; opacity: 0.55; pointer-events: none; }
+.kh-arch, .kh-face, .kh-badge { z-index: 1; }
+.kh-face { position: absolute; }
+@keyframes kh-turn { to { transform: rotate(360deg); } }
+@keyframes kh-breathe { 0%, 100% { transform: translateY(0) scale(1); opacity: 0.55; } 50% { transform: translateY(-6px) scale(1.06); opacity: 0.9; } }
+@media (prefers-reduced-motion: no-preference) {
+  .kh-visual::before { animation: kh-turn 90s linear infinite; }
+  .kh-lotus-art { animation: kh-breathe 6s ease-in-out infinite; }
+}
+@media (max-width: 900px) {
+  .kh-visual::before { left: -14%; top: 2%; width: 78%; opacity: 0.6; }
+}
