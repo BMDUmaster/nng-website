@@ -19287,3 +19287,10 @@ section#meet.bk2 { background: radial-gradient(45% 70% at 24% 45%, rgb(255 240 2
   .bk2-sign-sm { font-size: 15px; }
   .bk2-shadow { bottom: -10px; height: 22px; }
 }
+/* Her book: the stone plinth appears only as the book opens (and fades as it closes), like a real shadowed stand. */
+@keyframes bk2-plinth { 0%, 9% { opacity: 0; transform: scaleX(0.55); } 20%, 90% { opacity: 1; transform: scaleX(1); } 98%, 100% { opacity: 0; transform: scaleX(0.55); } }
+@media (prefers-reduced-motion: no-preference) {
+  .bk2-stage .bk2-plinth { opacity: 0; transform: scaleX(0.55); transform-origin: 50% 0; }
+  .bk2-stage.is-on .bk2-plinth { animation: bk2-plinth 16s cubic-bezier(0.45, 0.05, 0.25, 1) infinite; }
+  .bk2-stage:hover .bk2-plinth, .bk2-stage.is-held .bk2-plinth { animation-play-state: paused; }
+}
