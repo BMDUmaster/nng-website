@@ -362,24 +362,34 @@ export default function ServicesPage() {
       </section>
 
       {/* A client's words. */}
-      <section className="cn-sec sv-client" aria-label="A client’s words">
+      <section className="cn-sec sv-client tq" aria-label="A client’s words">
         <div className="cn-inner">
-          <figure className="ct-quote kq" data-reveal="">
-            <div className="ct-quote-photo">
+          <figure className="tq-card" data-reveal="">
+            <span className="tq-leaf-l" aria-hidden="true" />
+            <span className="tq-leaf-r" aria-hidden="true" />
+            <div className="tq-photo">
               <img src={voicePoster(deepa)} alt="Deepa K., sharing her experience with Narayani Garg" width={380} height={320} loading="lazy" />
-              <span>Client experience</span>
+              <span className="tq-badge">
+                <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIco('<circle cx="16" cy="12" r="5"/><path d="M7 27c0-5 4-9 9-9s9 4 9 9"/>') }} />
+                Client experience
+              </span>
             </div>
-            <div className="ct-quote-body">
-              <span className="ct-quote-mark" aria-hidden="true">“</span>
+            <div className="tq-body">
+              <p className="tq-kicker">Real stories, real guidance</p>
+              <span className="tq-mark" aria-hidden="true">“</span>
               <blockquote>
                 <p>{deepa.quote}</p>
               </blockquote>
-              <figcaption>
-                <strong>Deepa K.</strong>
-                <span>Client since 2020 · Translated from Hindi</span>
+              <figcaption className="tq-person">
+                <span className="tq-initials" aria-hidden="true">DK</span>
+                <span>
+                  <strong>Deepa K.</strong>
+                  <small>Client since 2020 · Translated from Hindi</small>
+                </span>
               </figcaption>
-              <Link prefetch={false} className="cn-text sv-program-link" href="/hand-holding-program/">
-                Need more than one conversation? Read about the program lasting six months <span aria-hidden="true">→</span>
+              <Link prefetch={false} className="tq-link" href="/hand-holding-program/">
+                <span>Need more than one conversation? Read about the program lasting six months</span>
+                <span className="tq-go" aria-hidden="true">→</span>
               </Link>
             </div>
           </figure>

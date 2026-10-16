@@ -21831,3 +21831,50 @@ section.sv-how.hw { position: relative; isolation: isolate; overflow: hidden; ba
 .hw-meet-intro::before { content: ""; position: absolute; z-index: -1; left: 0; bottom: 0; width: 120px; aspect-ratio: 584 / 502; background: url("/images/begin-leaves-br.webp") 100% 100% / contain no-repeat; transform: scaleX(-1); mix-blend-mode: lighten; opacity: 0.9; }
 @media (max-width: 900px) { .hw-leaf-l, .hw-leaf-r { width: 100px; } .hw-meet-intro { padding-left: 90px; } .hw-meet-intro::before { width: 90px; } }
 .hw-meet-intro::before { -webkit-mask-image: radial-gradient(100% 100% at 0 100%, #000 40%, transparent 85%); mask-image: radial-gradient(100% 100% at 0 100%, #000 40%, transparent 85%); }
+
+/* Client words on services (tq-), matched to the botanical testimonial: a cream card, her video still in a large
+   rounded frame with a green curve behind and a green badge, a kicker, a gold quote mark, the quote in Playfair
+   italic, initials with name and context, and the program link with a gold arrow; leaves at both ends. */
+section.sv-client.tq { background: #F7F0E2; }
+.tq .cn-inner { max-width: 1240px; padding-block: 26px 30px; }
+.tq-card { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); align-items: center; gap: 34px; margin: 0; padding: 18px 60px 18px 18px; border-radius: 30px; background: #FFFCF6; box-shadow: 0 0 0 1px rgb(201 162 86 / 0.3), 0 30px 50px -40px rgb(60 44 20 / 0.6); }
+.tq-leaf-l { position: absolute; z-index: 2; left: -22px; top: -14px; width: 70px; aspect-ratio: 80 / 470; background: url("/images/tq-leaf-l.webp") 0 0 / contain no-repeat; mix-blend-mode: multiply; pointer-events: none; }
+.tq-leaf-r { position: absolute; z-index: 0; right: 0; bottom: 0; width: 150px; aspect-ratio: 218 / 500; background: url("/images/tq-leaf-r.webp") 100% 100% / contain no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%); mask-image: linear-gradient(90deg, transparent 0%, #000 40%); pointer-events: none; }
+.tq-photo { position: relative; aspect-ratio: 16 / 10.5; overflow: hidden; border-radius: 40px; box-shadow: -10px 10px 0 -2px #123A2B; }
+.tq-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.tq-badge { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 8px; border-radius: 999px; background: #123A2B; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.tq-badge span { display: grid; place-items: center; width: 26px; height: 26px; padding: 5px; border-radius: 50%; background: #FFFFFF; color: #123A2B; }
+.tq-badge svg, .tq-go svg { display: block; width: 100%; height: auto; }
+.tq-body { position: relative; z-index: 1; }
+.tq-kicker { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #A9792E; }
+.tq-mark { display: block; height: 44px; margin-top: 10px; font-family: var(--font-display), var(--serif); font-size: 76px; line-height: 1; color: #C9A256; }
+.tq blockquote { margin: 0; }
+.practice-site main .tq blockquote p { margin: 0; font-family: var(--font-display), var(--serif); font-style: italic; font-size: clamp(20px, 1.9vw, 30px); line-height: 1.3; color: #123A2B; }
+.tq-person { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+.tq-initials { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #F5EAD3; box-shadow: inset 0 0 0 1px rgb(201 162 86 / 0.6); font-family: var(--font-display), var(--serif); font-size: 18px; color: #123A2B; }
+.tq-person strong { display: block; font-size: 17px; font-weight: 600; color: #123A2B; }
+.tq-person small { display: block; margin-top: 2px; font-size: 13px; color: #6A6458; }
+.tq-link { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding: 10px 0 0; border-top: 1px solid rgb(201 162 86 / 0.3); color: #123A2B; font-size: 14px; text-decoration: none; }
+.tq-go { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(180deg, #F2D592, #D9B064); color: #123A2B; transition: transform 0.2s ease; }
+.tq-link:hover .tq-go { transform: translateX(3px); }
+@media (max-width: 900px) {
+  .tq .cn-inner { width: calc(100% - 24px); padding-block: 20px 24px; }
+  .tq-card { grid-template-columns: 1fr; gap: 16px; padding: 12px 14px 18px; border-radius: 22px; }
+  .tq-leaf-l { width: 44px; left: -12px; }
+  .tq-leaf-r { width: 90px; }
+  .tq-photo { border-radius: 24px; box-shadow: -6px 6px 0 -2px #123A2B; }
+  .tq-badge { left: 10px; bottom: 10px; font-size: 10.5px; }
+  .tq-kicker { font-size: 10.5px; }
+  .tq-mark { height: 30px; margin-top: 6px; font-size: 54px; }
+  .practice-site main .tq blockquote p { font-size: 18px; }
+  .tq-initials { width: 42px; height: 42px; font-size: 15px; }
+  .tq-person strong { font-size: 15px; }
+  .tq-person small { font-size: 12px; }
+  .tq-link { font-size: 12.5px; }
+  .tq-go { width: 34px; height: 34px; }
+}
+.tq-photo img { object-position: 50% 85%; }
+.tq-leaf-l { -webkit-mask-image: linear-gradient(90deg, #000 60%, transparent), linear-gradient(180deg, #000 70%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, #000 60%, transparent); mix-blend-mode: darken; }
+.tq-leaf-r { -webkit-mask-image: radial-gradient(90% 70% at 70% 65%, #000 40%, transparent 80%); mask-image: radial-gradient(90% 70% at 70% 65%, #000 40%, transparent 80%); mix-blend-mode: darken; }
+.tq-photo img { object-position: 50% 42%; }
+.tq-leaf-l { display: none; }
