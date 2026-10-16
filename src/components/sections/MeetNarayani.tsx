@@ -188,14 +188,6 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
               <span>Get to know Narayani</span>
               <span aria-hidden="true">→</span>
             </Link>
-            <button type="button" className="mn-watch" onClick={playWithSound}>
-              <span className="mn-watch-disc" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="14" height="14">
-                  <path fill="currentColor" d="M8 5.5v13l10-6.5-10-6.5Z" />
-                </svg>
-              </span>
-              <span>Watch her story</span>
-            </button>
           </div>
         </div>
       </div>

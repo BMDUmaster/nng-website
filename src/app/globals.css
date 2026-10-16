@@ -22093,3 +22093,61 @@ section.fq.fq-rich h2 em { display: block; }
 .bh-neural { left: -30%; width: 160%; }
 @media (max-width: 900px) { .bh-neural { left: -14%; width: 128%; } }
 .bh-neural { max-width: none; height: 100%; }
+
+/* Homepage (Oct 16): the figures as a slim strip (width to its content, small icons, number and label side by side),
+   and every call to action at a normal button size. */
+.hm .hm-figures, section .hm-figures { width: auto !important; max-width: 560px; justify-content: start; margin-top: 18px; padding: 10px 18px !important; border-radius: 16px; background: rgb(255 253 248 / 0.85); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35), 0 14px 26px -22px rgb(60 44 20 / 0.5); }
+.hm-figures > div { column-gap: 10px !important; padding: 0 16px !important; }
+.hm-figures > div:first-child { padding-left: 0 !important; }
+.hm-fig-icon { width: 30px; height: 30px; }
+.hm-fig-icon svg { width: 100%; height: 100%; }
+.hm-figures dd { font-size: 24px !important; }
+.hm-figures dt { max-width: 130px; margin-top: 2px; font-size: 12px !important; line-height: 1.3; }
+
+@media (min-width: 681px) {
+  .hm-cta, .hm-ghost { min-height: 52px !important; gap: 12px !important; padding: 4px 20px 4px 4px !important; font-size: 15px !important; }
+  .hm-cta-wa, .hm-play { width: 42px !important; height: 42px !important; }
+  .hm-cta-wa svg, .hm-play svg { width: 20px; height: 20px; }
+  .hm-actions { gap: 14px !important; }
+  .mn-link, .sf-enquire, .sf-more, .bk2-cta, .jm-cta, .pg-cta, .ig-profile, .fq-ask-btn, .ft-cta-btn { min-height: 50px !important; font-size: 15px !important; }
+  .bk2-cta-go, .jm-cta-go, .pg-cta-arrow, .ft-cta-arrow { width: 38px !important; height: 38px !important; }
+}
+@media (max-width: 680px) {
+  .hm .hm-figures, section .hm-figures { max-width: none; padding: 10px 6px !important; }
+  .hm-figures > div { padding: 0 4px !important; }
+  .hm-fig-icon { width: 24px; height: 24px; }
+  .hm-figures dd { font-size: 18px !important; }
+  .hm-figures dt { font-size: 10.5px !important; }
+  .hm-cta, .hm-ghost { min-height: 44px !important; padding: 3px 14px 3px 3px !important; font-size: 13px !important; }
+  .hm-cta-wa, .hm-play { width: 36px !important; height: 36px !important; }
+  .mn-link, .sf-enquire, .sf-more, .bk2-cta, .jm-cta, .pg-cta, .ig-profile, .fq-ask-btn, .ft-cta-btn { min-height: 44px !important; font-size: 13.5px !important; }
+}
+
+/* Brainology choice cards on phones: one column, photo on the left, compact. */
+@media (max-width: 680px) {
+  .bt-cards { grid-template-columns: 1fr; gap: 10px; }
+  .bt-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
+  .bt-card-photo { height: 100%; min-height: 150px; }
+  .bt-card-icon { left: auto; right: -18px; top: 12px; bottom: auto; width: 36px; height: 36px; }
+  .bt-card-icon svg { width: 22px; height: 22px; }
+  .bt-card-body { padding: 12px 14px 12px 26px; }
+  .practice-site main .bt-card h3 { font-size: 16px; }
+  .practice-site main .bt-card p { font-size: 12.5px; }
+  .practice-site main .bt-card .bt-card-note { font-size: 11px; }
+}
+@media (max-width: 680px) {
+  .bt-card-photo { height: auto; min-height: 0; }
+  .bt-card-photo img { position: absolute; inset: 0; }
+  .bt-card { align-items: stretch; }
+  .hm-actions { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; }
+  .hm-br-m { display: none !important; }
+  .hm-cta, .hm-ghost { flex: none; min-height: 42px !important; padding: 3px 12px 3px 3px !important; gap: 8px !important; font-size: 12.5px !important; white-space: nowrap !important; }
+  .hm-cta-wa, .hm-play { width: 34px !important; height: 34px !important; }
+  .hm-cta .hm-arrow, .hm-ghost .hm-arrow { display: none; }
+  .hm-figures > div { grid-template-columns: auto auto !important; grid-template-areas: "icon value" "label label" !important; justify-content: center; column-gap: 6px !important; row-gap: 0 !important; }
+  .hm-fig-icon { width: 20px; height: 20px; }
+}
+@media (max-width: 680px) {
+  .hm-actions { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+  .hm .hm-figures, section .hm-figures { box-sizing: border-box; width: 100% !important; max-width: 100%; }
+}

@@ -33,17 +33,17 @@ export default function HomePage() {
 
       <ServiceAtlas />
 
+      <JourneyMoments />
+
       <Approach />
 
       <StoryFilms voices={storyFilms} more={otherFilms} />
 
-      <BookSection bookTitle={bookTitle} />
-
-      <JourneyMoments />
       <HomeProgram />
       <HomeFaq items={faqs.home} />
       <PracticeReturnPrompt />
       <InstagramReels />
+      <BookSection bookTitle={bookTitle} />
     </>
   );
 }
