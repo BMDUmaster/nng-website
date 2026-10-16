@@ -90,11 +90,13 @@ export function Approach() {
       </div>
 
       <div className="ab-stage" aria-hidden="true">
-        <span className="ab-room" />
-        <span className="ab-glow" />
-        <span className="ab-wheel-wrap" dangerouslySetInnerHTML={{ __html: wheel() }} />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="ab-person" src={asset("/images/approach-cut.webp")} alt="" width={562} height={1150} loading="lazy" decoding="async" />
+        <div className="ab-pic">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="ab-pic-bg" src={asset("/images/approach-photo.webp")} alt="" width={900} height={1500} loading="lazy" decoding="async" />
+          <span className="ab-wheel-wrap" dangerouslySetInnerHTML={{ __html: wheel() }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="ab-pic-cut" src={asset("/images/approach-photo-cut.webp")} alt="" width={900} height={1500} loading="lazy" decoding="async" />
+        </div>
       </div>
 
       {/* eslint-disable-next-line @next/next/no-img-element */}

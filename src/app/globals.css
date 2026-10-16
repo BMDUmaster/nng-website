@@ -18778,3 +18778,87 @@ footer.site-footer.ft {
   .ab-quote p, .ab-quote footer { position: relative; z-index: 1; }
 }
 @media (max-width: 1099px) { .ab-leaves { display: none; } .ab-steps { max-width: 45%; } .ab-steps h3 { font-size: 17px; } }
+
+/* Her approach, pass 4 (Oct 16): her real photograph (IMG_5352) in its own room, with the zodiac wheel placed between the
+   photograph and a cut-out of the same photograph, so the wheel sits behind her head and nothing looks pasted.
+   Compact: about one screen on desktop. */
+.ab-pic { position: relative; }
+.ab-pic img { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ab-pic .ab-wheel-wrap { position: absolute; left: 57%; top: 31%; width: 96%; aspect-ratio: 1; transform: translate(-50%, -50%); }
+.ab-pic .ab-wheel-wrap::before { content: ""; position: absolute; inset: 4%; border-radius: 50%; background: radial-gradient(circle, rgb(255 236 190 / 0.35), rgb(255 236 190 / 0.12) 70%, transparent 74%); }
+.ab-pic .ab-wheel { position: relative; width: 100%; height: 100%; overflow: visible; color: #D2A64F; opacity: 1; filter: drop-shadow(0 0 3px rgb(255 240 200 / 0.95)); }
+.ab-pic .ab-wheel text { fill: #B88634; stroke: none; font-size: 40px; text-anchor: middle; dominant-baseline: central; font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Apple Symbols", serif; }
+@media (prefers-reduced-motion: no-preference) { .ab-pic .ab-wheel { animation: ab-turn 120s linear infinite; } }
+
+@media (min-width: 1100px) {
+  section#approach.ab { height: auto; min-height: 0; }
+  .ab-stage { position: absolute; z-index: 0; inset: 0 0 0 auto; width: 46%; overflow: hidden; -webkit-mask-image: none; mask-image: none; }
+  .ab-pic { position: absolute; inset: 0; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%); }
+  .ab-pic img { object-position: 50% 12%; }
+  .ab-pic .ab-wheel-wrap { left: 56%; top: 30%; width: min(78%, 560px); }
+  .ab-photo { width: 46%; }
+  .ab-quote { right: 3%; bottom: 7%; width: 20vw; max-width: 340px; padding: 16px 18px 14px 58px; }
+  .ab-quote::before { left: 18px; top: 10px; font-size: 50px; }
+  .ab-quote p { font-size: clamp(16px, 1.15vw, 20px); }
+
+  .ab-inner { width: 56%; height: auto; padding: clamp(36px, 5vh, 56px) 0 clamp(36px, 5vh, 56px) 6.6vw; }
+  .practice-site main .ab h2 { margin-top: 10px; font-size: clamp(40px, 3.5vw, 62px); }
+  .ab-lead { margin-top: 10px; font-size: clamp(15px, 1.05vw, 18px); }
+  .ab-steps { margin-top: 22px; max-width: 46vw; }
+  .ab-icon { width: clamp(68px, 5vw, 88px); height: clamp(68px, 5vw, 88px); }
+  .ab-steps > li + li::before { top: 38px; }
+  .ab-steps > li + li::after { top: 80px; }
+  .ab-steps h3 { margin-top: 10px; font-size: clamp(19px, 1.45vw, 25px); }
+  .ab-steps > li > p { font-size: clamp(12.5px, 0.9vw, 15px); }
+  .ab-points { margin-top: 10px; gap: 6px; }
+  .ab-steps .ab-points li { font-size: clamp(12.5px, 0.88vw, 14.5px); }
+  .ab-actions { margin-top: 24px; }
+  .ab-cta { min-height: 52px; }
+}
+
+@media (max-width: 1099px) {
+  .ab-stage { width: 60%; height: auto; aspect-ratio: auto; -webkit-mask-image: none; mask-image: none; overflow: visible; }
+  .ab-pic { width: 100%; aspect-ratio: 900 / 1500; max-height: 640px; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(180deg, #000 78%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(180deg, #000 78%, transparent 100%); mask-composite: intersect; }
+  .ab-pic img { object-position: 50% 0; }
+  .ab-pic .ab-wheel-wrap { left: 58%; top: 25%; width: 100%; }
+  .ab-pic .ab-wheel text { font-size: 44px; }
+  .ab-steps { max-width: 46%; }
+}
+@media (min-width: 1100px) {
+  section#approach.ab { min-height: 640px; }
+  .ab-stage { width: 48%; background: url("/images/approach-photo.webp") 50% 20% / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+  .ab-stage::after { content: ""; position: absolute; inset: 0; backdrop-filter: blur(14px) brightness(1.04); -webkit-backdrop-filter: blur(14px) brightness(1.04); }
+  .ab-pic { z-index: 1; inset: 0 7% 0 auto; width: auto; height: 100%; aspect-ratio: 900 / 1500; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%); }
+  .ab-pic img { object-position: 50% 0; }
+  .ab-pic .ab-wheel-wrap { left: 56%; top: 27%; width: 112%; }
+  .ab-quote { bottom: 8%; right: 2.5%; }
+}
+@media (min-width: 1100px) {
+  .ab-stage { background: url("/images/approach-room-blur.webp") center / cover no-repeat; }
+  .ab-stage::after { display: none; }
+}
+/* Desktop pass 4b: her real photograph fills the right panel (its own room: plants and the Buddha wall), the wheel sits
+   behind her head, the panel melts into the cream on its left. */
+@media (min-width: 1100px) {
+  .ab-stage { width: 40%; background: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%); mask-image: linear-gradient(90deg, transparent 0%, #000 24%); }
+  .ab-pic { inset: 0; width: auto; height: auto; aspect-ratio: auto; -webkit-mask-image: none; mask-image: none; }
+  .ab-pic img { object-fit: cover; object-position: 50% 0; }
+  .ab-pic .ab-wheel-wrap { left: 57.5%; top: 18.9vw; width: 34vw; }
+  .ab-photo { width: 40%; }
+  .ab-inner { width: 60%; }
+  .ab-quote { right: 2%; bottom: 6%; width: 18vw; }
+}
+@media (min-width: 1100px) {
+  .ab-stage { width: 44%; }
+  .ab-stage::before { content: ""; position: absolute; inset: -60px; background: url("/images/approach-photo.webp") 50% 30% / cover no-repeat; filter: blur(22px) brightness(1.05) saturate(0.85); opacity: 0.9; }
+  .ab-pic { inset: 0 6% auto auto; width: min(28vw, 520px); height: auto; aspect-ratio: 900 / 1500; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); }
+  .ab-pic img { object-fit: contain; object-position: 50% 0; }
+  .ab-pic .ab-wheel-wrap { left: 57.5%; top: 26%; width: 128%; }
+  .ab-photo { width: 44%; }
+  .ab-inner { width: 57%; }
+  .ab-quote { right: 2%; bottom: 7%; width: 17vw; }
+}
+.ab-pic .ab-wheel { color: #E2B254; filter: drop-shadow(0 0 2px rgb(90 60 10 / 0.5)) drop-shadow(0 0 8px rgb(255 230 170 / 0.9)); }
+.ab-pic .ab-wheel :is(circle, path) { stroke-width: 1.8; }
+.ab-pic .ab-wheel text { fill: #D9A441; font-size: 44px; paint-order: stroke; stroke: rgb(255 248 230 / 0.7); stroke-width: 2px; }
+.ab-pic .ab-wheel-wrap::before { background: radial-gradient(circle, rgb(255 236 190 / 0.5), rgb(255 236 190 / 0.25) 70%, transparent 74%); }
