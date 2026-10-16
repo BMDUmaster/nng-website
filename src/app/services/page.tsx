@@ -304,50 +304,58 @@ export default function ServicesPage() {
       {feesPublic && <FeeOptions topic="a personal consultation" source="services-fees" />}
 
       {/* How a consultation works. */}
-      <section className="cn-sec cn-how ch sv-how" id="how" aria-labelledby="how-title">
+      <section className="cn-sec sv-how hw" id="how" aria-labelledby="how-title">
+        <span className="hw-leaf hw-leaf-l" aria-hidden="true" />
+        <span className="hw-leaf hw-leaf-r" aria-hidden="true" />
         <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <span className="ch-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
-            <p className="cn-kicker cn-kicker-dark">How it works</p>
+          <header className="hw-head" data-reveal="">
+            <span className="hw-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
+            <p className="hw-kicker">How it works</p>
             <h2 id="how-title">
               How a consultation <em>works</em>
             </h2>
-            <p>The team explains the options and fees before you book.</p>
+            <p className="hw-lead">The team explains the options and fees before you book.</p>
           </header>
-          <ol className="cn-steps" data-reveal="">
+          <ol className="hw-steps" data-reveal="">
             {steps.map((step, i) => (
-              <li key={step.title} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
-                <span className="cn-step-num">{String(i + 1).padStart(2, "0")}</span>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="ch-sprig" src={asset("/images/how-sprig.webp")} alt="" width={104} height={128} loading="lazy" aria-hidden="true" />
-                <span className="ch-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: howIcons[i] }} />
+              <li key={step.title}>
+                <span className="hw-num">{String(i + 1).padStart(2, "0")}</span>
+                {i < steps.length - 1 && <span className="hw-arrow" aria-hidden="true">→</span>}
+                <div className="hw-photo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(`/images/how-step-${i + 1}.webp`)} alt="" width={740} height={444} loading="lazy" />
+                </div>
+                <span className="hw-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: howIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
+                <span className="hw-rule" aria-hidden="true" />
               </li>
             ))}
           </ol>
-          <div className="sv-formats" data-reveal="">
-            <div className="sv-formats-intro">
-              <p className="cn-kicker cn-kicker-dark">Two ways to meet</p>
-              <h3>Choose what suits you.</h3>
+          <div className="hw-meet" data-reveal="">
+            <div className="hw-meet-intro">
+              <p className="hw-meet-kicker">✦ Two ways to meet</p>
+              <h3>
+                Choose what suits <em>you.</em>
+              </h3>
             </div>
-            <div className="sv-format">
-              <span className="ct-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
-              </span>
-              <div>
-                <h4>Online</h4>
-                <p>Join from wherever you are. Share your country and time zone when you enquire.</p>
-              </div>
-            </div>
-            <div className="sv-format">
-              <span className="ct-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
-              </span>
-              <div>
-                <h4>In person</h4>
-                <p>At her practice, by appointment. The team shares the details when you book.</p>
-              </div>
+            <div className="hw-meet-options">
+              <EnquiryTrigger className="hw-option" topic="an online consultation" source="services-online">
+                <span className="hw-option-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIco('<rect x="5" y="7" width="22" height="15" rx="2"/><path d="M3 25h26"/>') }} />
+                <span className="hw-option-text">
+                  <strong>Online</strong>
+                  <small>Join from wherever you are. Share your country and time zone when you enquire.</small>
+                </span>
+                <span className="hw-option-go" aria-hidden="true">→</span>
+              </EnquiryTrigger>
+              <EnquiryTrigger className="hw-option" topic="an in-person consultation" source="services-in-person">
+                <span className="hw-option-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIco('<path d="M16 28s-9-7.8-9-14a9 9 0 0 1 18 0c0 6.2-9 14-9 14Z"/><circle cx="16" cy="14" r="3.2"/>') }} />
+                <span className="hw-option-text">
+                  <strong>In person</strong>
+                  <small>At her practice, by appointment. The team shares the details when you book.</small>
+                </span>
+                <span className="hw-option-go" aria-hidden="true">→</span>
+              </EnquiryTrigger>
             </div>
           </div>
         </div>
