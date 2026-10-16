@@ -25,103 +25,119 @@ const background = [
   { number: "15+ Years", title: "Professional experience", desc: "Personal guidance through astrology, numerology, Vastu and mindset work." },
 ];
 
-function Arrow() {
-  return (
-    <span className="cn-arrow" aria-hidden="true">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2.5 6h7M6.5 3l3 3-3 3" />
-      </svg>
-    </span>
-  );
-}
+const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const lotusSvg = ico('<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/>');
+const principleIcons = [
+  ico('<path d="M12 27v-4.5A8.5 8.5 0 1 1 25 15l2 4h-2.5v3a2 2 0 0 1-2 2H20v3"/><path d="M13 13a3 3 0 0 1 5.5-1.6M15 17h4"/>'),
+  ico('<path d="M16 4 6 8v7c0 6.3 4.2 11 10 13 5.8-2 10-6.7 10-13V8z"/><path d="m11.5 16 3.2 3.2 6-6.4"/>'),
+  ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'),
+];
+const credentialIcons = [
+  ico('<path d="M3 12 16 6l13 6-13 6z"/><path d="M8 14.5V21c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-6.5M29 12v7"/>'),
+  ico('<circle cx="16" cy="13" r="7"/><path d="m11.5 18.5-2.5 9 7-3 7 3-2.5-9"/>'),
+];
 
-/** About: a plum opening with her film, her background, her story, what she holds to, her book, client words, YouTube. */
+/** About: green opening with her film and credentials, her story beside her portrait, what she holds to, her book,
+ * client words, YouTube. Same look as the consultations and contact pages. */
 export default function AboutPage() {
   return (
-    <div className="cn ab2">
+    <div className="cn ab2 au">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema()] }} />
 
-      <section className="cn-hero" aria-labelledby="about-hero-title">
-        <div className="cn-hero-inner">
-          <div className="cn-hero-copy" data-reveal="">
-            <nav className="cn-crumbs" aria-label="Breadcrumb">
+      <section className="au-hero" aria-labelledby="about-hero-title">
+        <div className="au-hero-inner">
+          <div className="au-hero-copy" data-reveal="">
+            <nav className="cn-crumbs au-crumbs" aria-label="Breadcrumb">
               <Link prefetch={false} href="/">Home</Link>
               <span aria-hidden="true">/</span>
               <span aria-current="page">About</span>
             </nav>
-            <p className="cn-kicker">{site.title}</p>
+            <p className="au-kicker">
+              <span className="au-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+              {site.title}
+            </p>
             <h1 id="about-hero-title">
               Meet <em>Narayani Garg</em>
             </h1>
-            <p className="cn-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
-            <blockquote className="ab2-hero-quote">
+            <p className="au-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
+            <blockquote className="au-hero-quote">
               <p>“The spirit who is doing a ritual is spiritual.”</p>
             </blockquote>
-            <div className="cn-actions">
-              <EnquiryTrigger className="cn-cta" source="about-hero" primary>
-                <span>Enquire about a consultation</span>
-                <Arrow />
+            <div className="au-actions">
+              <EnquiryTrigger className="au-cta" source="about-hero" primary>
+                <span className="cx-long">Enquire about a consultation</span>
+                <span className="cx-short">Enquire now</span>
+                <span className="au-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
-              <a className="cn-ghost" href="#story">
-                Read her story
+              <a className="au-ghost" href="#story">
+                Read her story <span aria-hidden="true">→</span>
               </a>
             </div>
+            <ul className="au-creds" id="experience" aria-label="Her background">
+              {background.map((item, i) => (
+                <li key={item.title}>
+                  <span className="au-cred-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: credentialIcons[i] }} />
+                  <span>
+                    <strong>{item.number}</strong>
+                    <small>{item.title}</small>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <figure className="ab2-film" data-reveal="">
-            <div className="ab2-film-frame">
+          <figure className="au-film" data-reveal="">
+            <div className="au-film-frame">
               <video controls playsInline preload="metadata" poster={asset("/images/narayani-about-authentic-560.webp")} aria-label="Introduction to Narayani Garg">
                 <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
-            <figcaption>Watch Narayani’s introduction</figcaption>
+            <figcaption>
+              <span className="au-play" aria-hidden="true">▶</span>
+              Watch Narayani’s introduction
+            </figcaption>
+            <span className="au-film-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
           </figure>
         </div>
       </section>
 
-      <section className="cn-sec ab2-bg" id="experience" aria-labelledby="experience-title">
-        <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <p className="cn-kicker cn-kicker-dark">Credentials</p>
-            <h2 id="experience-title">Her background</h2>
-          </header>
-          <ul className="ab2-stats">
-            {background.map((item, i) => (
-              <li key={item.title} data-reveal="" style={{ "--d": `${i * 100}ms` } as React.CSSProperties}>
-                <strong>{item.number}</strong>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="cn-sec ab2-story" id="story" aria-labelledby="story-title">
-        <div className="cn-inner ab2-story-grid">
-          <div className="ab2-story-visual" data-reveal="">
-            <div className="cn-arch">
+      <section className="au-story" id="story" aria-labelledby="story-title">
+        <div className="au-story-inner">
+          <div className="au-portrait" data-reveal="">
+            <div className="au-portrait-arch">
               <picture>
                 <source type="image/avif" srcSet={assetSet("/images/narayani-cover-portrait-480.avif 480w, /images/narayani-cover-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 360px" />
                 <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="" width={684} height={855} loading="lazy" />
               </picture>
             </div>
+            <p className="au-portrait-badge">
+              <span>Simmi</span>
+              <span className="au-arrow-sm" aria-hidden="true">→</span>
+              <em>Narayani</em>
+            </p>
           </div>
-          <div>
-            <header className="cn-head ab2-left" data-reveal="">
-              <p className="cn-kicker cn-kicker-dark">Her story</p>
-              <h2 id="story-title">The story behind her name and practice</h2>
-              <p>In her book, Narayani shares the personal moments that shaped her sense of purpose.</p>
+          <div className="au-story-copy">
+            <header data-reveal="">
+              <p className="au-kicker au-kicker-dark">
+                <span className="au-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+                Her story
+              </p>
+              <h2 id="story-title">
+                The story behind <em>her name</em> and practice
+              </h2>
+              <p className="au-story-lead">In her book, Narayani shares the personal moments that shaped her sense of purpose.</p>
             </header>
-            <ol className="ab2-timeline" data-reveal="">
+            <ol className="au-timeline" data-reveal="">
               {story
                 .filter((item) => item.step !== "The book" && item.step !== "The practice")
                 .map((item, i) => (
-                  <li key={item.step} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
-                    <span className="ab2-dot" aria-hidden="true" />
-                    <span className="ab2-step">{item.step}</span>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
+                  <li key={item.step}>
+                    <span className="au-num">{String(i + 1).padStart(2, "0")}</span>
+                    <div>
+                      <span className="au-step">{item.step}</span>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
                   </li>
                 ))}
             </ol>
@@ -129,16 +145,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="cn-sec ab2-beliefs" aria-labelledby="beliefs-title">
-        <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <p className="cn-kicker">Her principles</p>
-            <h2 id="beliefs-title">What she holds to</h2>
+      <section className="au-beliefs" aria-labelledby="beliefs-title">
+        <div className="au-beliefs-inner">
+          <header className="au-beliefs-head" data-reveal="">
+            <span className="au-lotus au-lotus-c" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+            <p className="au-kicker">Her principles</p>
+            <h2 id="beliefs-title">
+              What she <em>holds to</em>
+            </h2>
           </header>
-          <ul className="ab2-principles">
+          <ul className="au-principles">
             {beliefs.map((belief, i) => (
               <li key={belief.title} data-reveal="" style={{ "--d": `${i * 100}ms` } as React.CSSProperties}>
-                <span className="ab2-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="au-p-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="au-p-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: principleIcons[i] }} />
                 <h3>{belief.title}</h3>
                 <p>{belief.text}</p>
               </li>
@@ -147,18 +167,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="cn-sec ab2-book" aria-labelledby="book-title">
-        <div className="cn-inner ab2-book-grid">
-          <div className="ab2-book-cover" data-reveal="">
-            <img src={asset("/images/book-cover-660.webp")} srcSet={assetSet("/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w")} sizes="(max-width: 680px) 60vw, 320px" width={660} height={934} alt={`The cover of ${bookTitle}, by Narayani Garg`} loading="lazy" />
+      <section className="au-book" aria-labelledby="book-title">
+        <div className="au-book-inner">
+          <div className="au-book-cover" data-reveal="">
+            <img src={asset("/images/book-cover-660.webp")} srcSet={assetSet("/images/book-cover-440.webp 440w, /images/book-cover-660.webp 660w")} sizes="(max-width: 680px) 52vw, 300px" width={660} height={934} alt={`The cover of ${bookTitle}, by Narayani Garg`} loading="lazy" />
           </div>
-          <div data-reveal="">
-            <p className="cn-kicker cn-kicker-dark">Her book</p>
-            <h2 id="book-title">
-              <em>{bookTitle}</em>
-            </h2>
-            <p className="ab2-book-lead">A 21 day companion for reflection and inner practice, exploring the chakras, EFT and Ho’oponopono.</p>
-            <blockquote className="ab2-book-quote">
+          <div className="au-book-copy" data-reveal="">
+            <p className="au-kicker au-kicker-dark">
+              <span className="au-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+              Her book
+            </p>
+            <h2 id="book-title">{bookTitle}</h2>
+            <p className="au-book-lead">A 21 day companion for reflection and inner practice, exploring the chakras, EFT and Ho’oponopono.</p>
+            <ul className="au-book-tags" aria-label="Inside the book">
+              <li>21 days</li>
+              <li>Chakras</li>
+              <li>EFT</li>
+              <li>Ho’oponopono</li>
+            </ul>
+            <blockquote className="au-book-quote">
               <p>“When you change your mind, you change your world.”</p>
               <cite>From the book</cite>
             </blockquote>
