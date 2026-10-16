@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ServiceIllustration } from "@/components/art/ServiceBanner";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { Icon } from "@/components/icons/Icon";
 import { FeeOptions } from "@/components/offerings/FeeOptions";
@@ -61,16 +60,6 @@ const svValues = [
   { title: "Practical Solutions", text: "For real-life situations", icon: svIco('<circle cx="16" cy="16" r="5.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>') },
   { title: "Supportive Approach", text: "With empathy and insight", icon: svIco('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
 ];
-
-function Arrow() {
-  return (
-    <span className="cn-arrow" aria-hidden="true">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2.5 6h7M6.5 3l3 3-3 3" />
-      </svg>
-    </span>
-  );
-}
 
 /**
  * Services: a plum opening, concerns to start from, her method, each practice in turn, how a consultation works,
@@ -274,10 +263,11 @@ export default function ServicesPage() {
       <section className="cn-sec sv-practices" id="practices" aria-label="The practices">
         <div className="cn-inner">
           {services.map((service, i) => (
-            <article key={service.slug} id={service.slug} className={`sv-practice${i % 2 ? " is-flipped" : ""}`} aria-labelledby={`${service.slug}-title`} data-reveal="">
-              <div className="sv-practice-art">
+            <article key={service.slug} id={service.slug} className={`sv-practice sp${i % 2 ? " is-flipped" : ""}`} aria-labelledby={`${service.slug}-title`} data-reveal="">
+              <div className="sv-practice-art sp-photo">
                 <span className="sv-practice-num">{String(i + 1).padStart(2, "0")}</span>
-                <ServiceIllustration hub={service.slug} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={asset(`/images/practice-${service.slug}-photo.webp`)} alt="" width={928} height={680} loading="lazy" />
               </div>
               <div className="sv-practice-body">
                 <p className="sv-practice-kicker"><span className="sv-pk-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons[service.slug as keyof typeof svIcons] ?? svIcons.lotus }} />{subtitles[service.slug]}</p>
@@ -291,20 +281,19 @@ export default function ServicesPage() {
                     <figcaption>Narayani Garg · Translated from Hindi</figcaption>
                   </figure>
                 )}
-                <p className="sv-look-label">What you look at together</p>
                 <ul className="sv-look">
                   {service.look.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
                 <div className="sv-practice-actions">
-                  <EnquiryTrigger className="cn-cta" topic={service.topic} source={`services-${service.slug}`}>
-                    <span>Enquire about {service.name}</span>
-                    <Arrow />
-                  </EnquiryTrigger>
-                  <Link prefetch={false} className="cn-text" href={serviceHref(service.slug)}>
-                    Read about {service.name} <span aria-hidden="true">→</span>
+                  <Link prefetch={false} className="sp-cta" href={serviceHref(service.slug)}>
+                    <span>Explore {service.name}</span>
+                    <span className="sp-go" aria-hidden="true">→</span>
                   </Link>
+                  <EnquiryTrigger className="sp-more" topic={service.topic} source={`services-${service.slug}`}>
+                    Ask about {service.name.replace(" Program", "")} <span aria-hidden="true">→</span>
+                  </EnquiryTrigger>
                 </div>
               </div>
             </article>

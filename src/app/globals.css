@@ -21712,3 +21712,52 @@ section.sv-practices::before { -webkit-mask-image: radial-gradient(100% 100% at 
   .hm2-wave { height: 32px; }
 }
 @media (min-width: 901px) { .hm2-num { left: 50%; top: 10px; transform: translateX(-50%); } }
+
+/* The practices (sp), matched to the four-part reference: cream cards, a photograph with a large rounded outer corner
+   and a gold number disc, a kicker with an icon, the name, a line, the quote card, ticks, a gold "Explore" pill and a
+   text link; gold line leaves at the right edge. Alternating sides; compact. */
+section.sv-practices { background: linear-gradient(180deg, #FBF7EE, #F6EFDF); }
+section.sv-practices::before { display: none; }
+.sv-practices .cn-inner { gap: 18px; max-width: 1180px; padding-block: 30px 36px; }
+.sp { position: relative; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 0; overflow: visible; border-radius: 26px; background: #FFFCF6; box-shadow: 0 0 0 1px rgb(201 162 86 / 0.28), 0 24px 44px -36px rgb(60 44 20 / 0.6); }
+.sp::after { content: ""; position: absolute; right: -6px; top: 50%; width: 60px; height: 200px; background: url("/images/practice-gold-leaf.webp") right center / contain no-repeat; mix-blend-mode: multiply; opacity: 0.8; transform: translateY(-50%); pointer-events: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 50%); mask-image: linear-gradient(90deg, transparent, #000 50%); }
+.sp.is-flipped::after { display: none; }
+.sv-practice-art.sp-photo { position: relative; align-self: stretch; height: auto; min-height: 300px; max-height: none; margin: 12px; padding: 0; overflow: hidden; border-radius: 120px 26px 18px 18px; background: #E9DDC4; box-shadow: none; }
+.sp.is-flipped .sp-photo { border-radius: 26px 120px 18px 18px; }
+.sp-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sp .sv-practice-num { z-index: 1; left: 18px; top: 18px; width: 54px; height: 54px; font-size: 20px; box-shadow: 0 0 0 3px rgb(255 252 246 / 0.6); }
+.sp .sv-practice-body { padding: 22px 34px 24px 26px; }
+.sp.is-flipped .sv-practice-body { padding: 22px 26px 24px 34px; }
+.sp .sv-practice-kicker { gap: 10px; font-size: 11px; letter-spacing: 0.2em; }
+.sp .sv-pk-icon { width: 26px; }
+.practice-site main .sp h2 { margin-top: 6px; font-size: clamp(28px, 2.6vw, 42px); line-height: 1.05; }
+.sp .sv-practice-lead { margin-top: 8px; font-size: 15px; line-height: 1.55; color: #4A463E; }
+.sp .sv-practice-quote { margin-top: 14px; padding: 12px 16px; }
+.sp .sv-practice-quote p { font-size: 15.5px; line-height: 1.45; }
+.sp .sv-practice-quote figcaption { margin-top: 4px; font-size: 11.5px; }
+.sp .sv-look { gap: 6px; margin-top: 14px; }
+.sp .sv-look li { padding-left: 28px; font-size: 14.5px; line-height: 1.45; color: #2E2A24; }
+.sp .sv-look li::before { width: 18px; height: 18px; top: 1px; background-size: 12px; }
+.sp .sv-practice-actions { gap: 12px 26px; margin-top: 18px; }
+.sp-cta { display: inline-flex; align-items: center; gap: 18px; min-height: 50px; padding: 4px 5px 4px 22px; border-radius: 999px; background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; font-size: 14.5px; font-weight: 600; text-decoration: none; box-shadow: 0 12px 24px -16px rgb(150 110 40 / 0.9); transition: transform 0.25s ease; }
+.sp-cta:hover { transform: translateY(-2px); }
+.sp-go { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #123A2B; color: #F2D592; }
+.sp-more { display: inline-flex; align-items: center; gap: 10px; padding: 0 0 4px; border: 0; border-bottom: 1px solid #C9A256; background: none; color: #123A2B; font: inherit; font-size: 13.5px; font-weight: 500; cursor: pointer; }
+@media (max-width: 900px) {
+  .sv-practices .cn-inner { gap: 14px; width: calc(100% - 24px); padding-block: 22px 26px; }
+  .sp { grid-template-columns: 1fr; }
+  .sp::after { display: none; }
+  .sv-practice-art.sp-photo, .sp.is-flipped .sp-photo { order: -1; min-height: 0; height: 190px; margin: 10px 10px 0; border-radius: 80px 20px 14px 14px; }
+  .sp .sv-practice-num { width: 40px; height: 40px; font-size: 16px; left: 12px; top: 12px; }
+  .sp .sv-practice-body, .sp.is-flipped .sv-practice-body { padding: 14px 16px 18px; }
+  .practice-site main .sp h2 { font-size: clamp(25px, 7vw, 30px); }
+  .sp .sv-practice-lead { font-size: 13.5px; }
+  .sp .sv-practice-quote p { font-size: 14px; }
+  .sp .sv-look li { font-size: 13px; }
+  .sp .sv-practice-actions { gap: 10px 18px; margin-top: 14px; }
+  .sp-cta { min-height: 42px; gap: 12px; padding-left: 16px; font-size: 13.5px; }
+  .sp-go { width: 34px; height: 34px; }
+  .sp-more { font-size: 12.5px; }
+}
+.sp::after { display: none; }
+.sp-photo img { transform: scale(1.05); }
