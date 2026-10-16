@@ -21935,3 +21935,27 @@ section.fq.fq-rich .fq-q { padding-left: 16px; text-align: left; }
 section.fq.fq-rich h2 { white-space: nowrap; }
 section.fq.fq-rich h2 em { display: block; }
 @media (min-width: 901px) { .fq-rich .fq-top { gap: 24px; } .fq-rich .fq-portrait { width: clamp(190px, 15vw, 240px); } }
+
+/* Phones: practice chips in a 2x2 grid; her-method cards as photo-on-top arches, two across for the first two. */
+@media (max-width: 900px) {
+  .svh-jump-m { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .svh-jump-m a { justify-content: flex-start; min-height: 40px; padding: 0 12px; font-size: 13px; white-space: nowrap; }
+  .svh-jump-m a span { width: 20px; }
+  .hm2-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hm2-cards > li { flex-direction: column; border-radius: 70px 70px 16px 16px / 50px 50px 16px 16px; }
+  .hm2-cards > li:last-child { grid-column: 1 / -1; flex-direction: row; border-radius: 16px; }
+  .hm2-photo { width: 100%; height: 110px; aspect-ratio: auto; border-radius: 70px 70px 0 0 / 50px 50px 0 0; }
+  .hm2-cards > li:last-child .hm2-photo { width: 38%; height: auto; border-radius: 0; }
+  .hm2-num { left: 50%; top: 6px; transform: translateX(-50%); width: 30px; height: 30px; font-size: 12px; }
+  .hm2-cards > li:last-child .hm2-num { left: 8px; transform: none; }
+  .hm2-body { padding: 10px 10px 12px; }
+  .practice-site main .hm2-text h3 { font-size: 17px; }
+  .practice-site main .hm2-text p { font-size: 12px; line-height: 1.4; }
+  .hm2-rule { margin-top: 6px; }
+  .hm2-tags { gap: 5px; margin-top: 8px; }
+  .hm2-tags a { min-height: 28px; gap: 5px; padding: 0 9px; font-size: 11.5px; }
+  .hm2 .cn-inner { padding-bottom: 38px; }
+  .hm2-wave { height: 26px; }
+  .hm2-wave::after { bottom: 4px; font-size: 12px; }
+}
+@media (max-width: 900px) { .svh-jump-m li { display: flex; } .svh-jump-m a { flex: 1; justify-content: center; } }
