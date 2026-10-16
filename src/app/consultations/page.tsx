@@ -6,7 +6,7 @@ import { Icon } from "@/components/icons/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { feesPublic } from "@/content/consultation";
 import { areas, areaTopics, legal, site } from "@/content/site";
-import { asset, assetSet } from "@/lib/assets";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Personal consultation with Narayani Garg",
@@ -41,6 +41,14 @@ const chips = [
   { id: "support", label: "Ongoing support" },
 ];
 
+const cxIcon = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const cxPractices = [
+  { name: "Astrology", note: "Clarity in life situations", icon: cxIcon('<path d="M16 3c.9 6.8 6.2 12.1 13 13-6.8.9-12.1 6.2-13 13-.9-6.8-6.2-12.1-13-13 6.8-.9 12.1-6.2 13-13Z"/>') },
+  { name: "Numerology", note: "Understand your patterns", icon: '<svg viewBox="0 0 32 32"><text x="16" y="17" text-anchor="middle" dominant-baseline="central" fill="currentColor" font-size="11" font-family="serif">123</text></svg>' },
+  { name: "Vastu", note: "Harmonise your space and energy", icon: cxIcon('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>') },
+  { name: "Personal Guidance", note: "Support for mind and life", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
+];
+
 function Arrow() {
   return (
     <span className="cn-arrow" aria-hidden="true">
@@ -58,7 +66,7 @@ function Arrow() {
 export default function ConsultationsPage() {
   return (
     <div className="cn">
-      <section className="cn-hero" aria-labelledby="page-title">
+      <section className="cn-hero cx-hero" aria-labelledby="page-title">
         <div className="cn-hero-inner">
           <div className="cn-hero-copy" data-reveal="">
             <nav className="cn-crumbs" aria-label="Breadcrumb">
@@ -92,15 +100,22 @@ export default function ConsultationsPage() {
                 In person by appointment
               </li>
             </ul>
+            <ul className="cx-practices" aria-label="What she works with">
+              {cxPractices.map((p) => (
+                <li key={p.name}>
+                  <span className="cx-p-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: p.icon }} />
+                  <strong>{p.name}</strong>
+                  <small>{p.note}</small>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="cn-hero-visual" data-reveal="">
-            <div className="cn-arch">
-              <picture>
-                <source type="image/avif" srcSet={assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 380px" />
-                <img src={asset("/images/narayani-portrait-684.webp")} alt={`Narayani Garg, ${site.title}`} width={684} height={1000} fetchPriority="high" />
-              </picture>
+          <div className="cn-hero-visual cx-visual" data-reveal="">
+            <div className="cx-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/consult-hero.webp")} alt={`Narayani Garg, ${site.title}`} width={944} height={1300} fetchPriority="high" />
             </div>
-            <p className="cn-badge">
+            <p className="cn-badge cx-badge">
               <span>Narayani Garg</span>
               <small>Personal guidance</small>
             </p>
