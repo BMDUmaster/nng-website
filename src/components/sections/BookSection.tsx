@@ -50,8 +50,16 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
           </p>
         </div>
 
-        <div className="bk2-stage" aria-hidden="true" ref={stage}>
+        <div
+          className="bk2-stage"
+          aria-hidden="true"
+          ref={stage}
+          onPointerDown={() => stage.current?.classList.add("is-held")}
+          onPointerUp={() => window.setTimeout(() => stage.current?.classList.remove("is-held"), 1500)}
+          onPointerCancel={() => stage.current?.classList.remove("is-held")}
+        >
           <div className="bk2-book">
+            <span className="bk2-shadow" />
             <div className="bk2-page bk2-left">
               <div className="bk2-photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -61,6 +69,7 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
               <span className="bk2-orn" dangerouslySetInnerHTML={html(icon(lotus))} />
             </div>
             <div className="bk2-page bk2-right">
+              <p className="bk2-run">{bookTitle}</p>
               <p className="bk2-chapter">Chapter 02</p>
               <p className="bk2-ch-title">
                 <span>Direction</span>
@@ -69,16 +78,17 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
               </p>
               <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
               <p className="bk2-ch-text">Work out what matters now and the next step you can take to bring more clarity, peace and positivity to your life.</p>
-              <p className="bk2-folio">05</p>
+              <p className="bk2-folio">— 05 —</p>
             </div>
             <div className="bk2-leaf bk2-leaf-2">
               <div className="bk2-face bk2-front">
+                <p className="bk2-run">{bookTitle}</p>
                 <p className="bk2-chapter">Before you begin</p>
                 <p className="bk2-big">21</p>
                 <p className="bk2-ch-text">days of reflection and everyday inner practice</p>
                 <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
                 <p className="bk2-method">{site.method}</p>
-                <p className="bk2-folio">03</p>
+                <p className="bk2-folio">— 03 —</p>
               </div>
               <div className="bk2-face bk2-back bk2-left-face">
                 <div className="bk2-photo">
@@ -91,16 +101,19 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
             </div>
             <div className="bk2-leaf bk2-leaf-1">
               <div className="bk2-face bk2-front">
+                <p className="bk2-run">{bookTitle}</p>
                 <p className="bk2-chapter">Chapter 01</p>
                 <p className="bk2-ch-title"><span>Mind</span><em>comes first</em></p>
                 <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
-                <p className="bk2-ch-text">Notice the thoughts and habits that recur in the situation you bring.</p>
-                <p className="bk2-folio">01</p>
+                <p className="bk2-ch-text bk2-drop">Notice the thoughts and habits that recur in the situation you bring. Change begins where you look first.</p>
+                <p className="bk2-folio">— 01 —</p>
               </div>
               <div className="bk2-face bk2-back bk2-left-face bk2-quote-page">
-                <span className="bk2-orn" dangerouslySetInnerHTML={html(icon(lotus))} />
-                <p className="bk2-quote" lang="hi-Latn">“Upay tab kaam karta hai jab dimaag kaam karta hai.”</p>
+                <span className="bk2-qmark" aria-hidden="true">“</span>
+                <p className="bk2-quote" lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p>
+                <span className="bk2-orn bk2-orn-rule" dangerouslySetInnerHTML={html(icon(lotus))} />
                 <p className="bk2-quote-cite">A remedy works when the mind works.</p>
+                <p className="bk2-sign bk2-sign-sm">Narayani Garg</p>
               </div>
             </div>
             <div className="bk2-leaf bk2-cover">

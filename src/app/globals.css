@@ -19250,3 +19250,40 @@ section#meet.bk2 { background: radial-gradient(45% 70% at 24% 45%, rgb(255 240 2
 .sf-more span.sf-l-long, .sf-more span.sf-l-short { padding: 0; border-radius: 0; background: none; color: inherit; font-size: inherit; }
 @media (max-width: 900px) { .sf-foot { padding: 0 16px; } .sf-more { font-size: 15px; } }
 @media (max-width: 900px) { .sf-foot { width: 100%; box-sizing: border-box; } .sf-more, .sf-enquire { min-width: 0; width: 100%; box-sizing: border-box; } .sf-more { gap: 6px; font-size: 14px; } .sf-enquire { font-size: 14px; padding-left: 14px; } }
+
+/* Her book, pass 3 (Oct 16): the closed book sits centred and slides open; its shadow follows the book (half width when
+   closed, full when open); a pointer on the book holds the pages still (touch: press). Pages typeset like a book. */
+.bk2-book { animation: none !important; }
+.bk2-shadow { position: absolute; z-index: -1; left: 2%; right: 2%; bottom: -14px; height: 34px; border-radius: 50%; background: radial-gradient(closest-side, rgb(60 40 15 / 0.38), transparent); transform: translateZ(-2px); }
+.bk2-plinth { box-shadow: 0 18px 26px -22px rgb(60 40 15 / 0.45); }
+@keyframes bk2-slide { 0%, 8% { translate: -25% 0; } 18%, 92% { translate: 0 0; } 98%, 100% { translate: -25% 0; } }
+@keyframes bk2-shadow { 0%, 8% { left: 51%; right: 1%; } 18%, 92% { left: 2%; right: 2%; } 98%, 100% { left: 51%; right: 1%; } }
+@media (prefers-reduced-motion: no-preference) {
+  .bk2-stage .bk2-book { translate: -25% 0; }
+  .bk2-stage .bk2-shadow { left: 51%; right: 1%; }
+  .bk2-stage.is-on .bk2-book { animation: bk2-slide 16s cubic-bezier(0.45, 0.05, 0.25, 1) infinite !important; }
+  .bk2-stage.is-on .bk2-shadow { animation: bk2-shadow 16s cubic-bezier(0.45, 0.05, 0.25, 1) infinite; }
+  .bk2-stage:hover .bk2-book, .bk2-stage:hover .bk2-shadow, .bk2-stage:hover .bk2-leaf,
+  .bk2-stage.is-held .bk2-book, .bk2-stage.is-held .bk2-shadow, .bk2-stage.is-held .bk2-leaf { animation-play-state: paused !important; }
+}
+.bk2-stage { cursor: grab; }
+
+/* Page typography. */
+.bk2-run { margin: 0; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #A89A80; }
+.bk2-page .bk2-chapter, .bk2-face .bk2-chapter { margin-top: clamp(12px, 1.8vw, 24px); }
+.bk2-drop::first-letter { float: left; margin: 4px 6px 0 0; font-family: var(--font-display), var(--serif); font-size: 3.1em; line-height: 0.8; color: #B58A44; }
+.bk2-drop { text-align: left; max-width: 24ch; }
+.bk2-folio { margin-top: auto; letter-spacing: 0.1em; }
+.bk2-face { display: flex; flex-direction: column; align-items: center; }
+.bk2-page.bk2-right { display: flex; flex-direction: column; align-items: center; }
+.bk2-qmark { font-family: var(--font-display), serif; font-size: clamp(54px, 5vw, 84px); line-height: 0.6; color: #C9A256; }
+.bk2-quote-page .bk2-quote { max-width: 16ch; }
+.bk2-sign-sm { margin-top: 2px; font-size: clamp(18px, 1.5vw, 24px); }
+.bk2-quote-page .bk2-orn-rule { margin: 6px 0; }
+@media (max-width: 900px) {
+  .bk2-run { font-size: 7px; letter-spacing: 0.12em; }
+  .bk2-drop { font-size: 10px; }
+  .bk2-qmark { font-size: 40px; }
+  .bk2-sign-sm { font-size: 15px; }
+  .bk2-shadow { bottom: -10px; height: 22px; }
+}
