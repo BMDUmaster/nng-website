@@ -22492,3 +22492,12 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .hw-steps { gap: 16px; }
   .hw-arrow { right: -20px; }
 }
+@media (max-width: 1200px) and (min-width: 901px) {
+  .bk2-figures { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .bk2-figures li { min-width: 0; padding-inline: 12px; gap: 10px; }
+  .bk2-figures li:first-child { padding-left: 0; }
+  .bk2-f-icon { width: 50px; height: 50px; flex: none; }
+  .bk2-f-text strong { font-size: 19px; }
+}
+@media (max-width: 340px) { .sf-l-short { font-size: 12.5px; } .sf-enquire { gap: 4px; padding-left: 10px; } }
+@media (max-width: 1200px) and (min-width: 901px) { .bk2-f-text strong { font-size: 17px; } .bk2-f-icon { width: 44px; height: 44px; } .bk2-f-icon svg { width: 22px; height: 22px; } .bk2-figures li { gap: 8px; padding-inline: 10px; } }
