@@ -2,7 +2,6 @@ import Link from "next/link";
 import { asset } from "@/lib/assets";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { Icon } from "@/components/icons/Icon";
-import { ServiceIllustration } from "@/components/art/ServiceBanner";
 import { OfferArt } from "@/components/art/OfferArt";
 import { childPages, offeringPath } from "@/content/offerings";
 import type { OfferingPage } from "@/content/offerings/types";
@@ -131,7 +130,7 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
       lead={psychic ? "Bring a situation that keeps repeating. Narayani helps you explore the thoughts, beliefs and responses around it." : content.lead}
       actions={<EnquiryTrigger className="cn-cta" topic={topic} source={`review-${key}-hero`} primary><span>Ask about {family}</span><HeroArrow /></EnquiryTrigger>}
       note={<p className="svd-note">Format, duration and fees to be confirmed with the team.</p>}
-      art={!isHub ? <OfferArt spec={page.art} label={`Illustration for ${title}`} /> : <ServiceIllustration hub={page.hub} />}
+      hub={page.hub}
     />}
 
     {psychic ? <section className={`section-wrap ${styles.section}`} id="pages" aria-labelledby="choices-title">

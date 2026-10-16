@@ -22151,3 +22151,55 @@ section.fq.fq-rich h2 em { display: block; }
   .hm-actions { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
   .hm .hm-figures, section .hm-figures { box-sizing: border-box; width: 100% !important; max-width: 100%; }
 }
+
+/* Shared service hero (sh-), built on the Brainology hero (bh-): compact gold/outline buttons and a background
+   animation per practice. All motion stops with reduced motion. */
+.sh h1 em { font-style: italic; font-weight: 500; color: #E8C985; }
+.sh-actions { gap: 12px; }
+.sh-actions .cn-cta { min-height: 50px; gap: 14px; padding: 4px 5px 4px 22px; border-radius: 999px; background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; font-size: 15px; font-weight: 600; box-shadow: 0 16px 28px -16px rgb(0 0 0 / 0.6); }
+.sh-actions .cn-cta .cn-arrow { width: 40px; height: 40px; background: #123A2B; color: #F2D592; }
+.sh-actions .cn-ghost { display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 999px; box-shadow: inset 0 0 0 1.2px rgb(225 190 112 / 0.7); color: #FFFFFF; font-size: 14.5px; }
+.sh .svd-note, .sh .svd-person { margin-top: 14px; font-size: 13px; color: rgb(255 255 255 / 0.72); }
+.sh .svd-person { display: flex; align-items: center; gap: 10px; }
+.sh .svd-person img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #C9A256; }
+.sh .svd-person strong { color: #F2D592; }
+.sh .bh-arch img { object-position: 50% 10%; }
+
+/* Numerology: gold digits drifting up around the arch. */
+.sh-digits { position: absolute; z-index: 0; inset: -10% -45% 0; pointer-events: none; }
+.sh-digits span { position: absolute; bottom: 0; font-family: var(--font-display), var(--serif); color: rgb(225 190 112 / 0.35); opacity: 0; }
+@keyframes sh-rise { 0% { opacity: 0; transform: translateY(0) rotate(-6deg); } 15% { opacity: 1; } 80% { opacity: 0.8; } 100% { opacity: 0; transform: translateY(-460px) rotate(6deg); } }
+
+/* Vastulogy: a gold compass rose turning slowly behind the arch. */
+.sh-compass { position: absolute; z-index: 0; left: 50%; top: 44%; width: 150%; max-width: none; height: auto; fill: none; stroke: rgb(225 190 112 / 0.32); stroke-width: 1; transform: translate(-50%, -50%); pointer-events: none; }
+.sh-compass .sh-compass-n { fill: rgb(225 190 112 / 0.25); }
+@keyframes sh-turn { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+/* Astrology: a zodiac ring turning, and stars twinkling. */
+.sh-zodiac { position: absolute; z-index: 0; left: 50%; top: 44%; width: 150%; max-width: none; height: auto; fill: none; stroke: rgb(225 190 112 / 0.32); stroke-width: 1; transform: translate(-50%, -50%); pointer-events: none; }
+.sh-zodiac text { fill: rgb(232 201 133 / 0.6); stroke: none; font-size: 18px; text-anchor: middle; }
+.sh-stars { position: absolute; z-index: 0; inset: -6% -40% 0; pointer-events: none; }
+.sh-stars span { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #F6DA9C; box-shadow: 0 0 8px 2px rgb(246 218 156 / 0.8); opacity: 0.3; }
+.sh-stars span:nth-child(3n) { width: 6px; height: 6px; }
+.sh-gems span { width: 10px; height: 10px; border-radius: 0; background: none; box-shadow: none; }
+.sh-gems span::before { content: "✦"; position: absolute; inset: -6px; font-size: 16px; line-height: 1; color: #F6DA9C; text-shadow: 0 0 10px rgb(246 218 156 / 0.9); }
+@keyframes sh-twinkle { 0%, 100% { opacity: 0.2; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1.15); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sh-compass { animation: sh-turn 120s linear infinite; }
+  .sh-zodiac { animation: sh-turn 160s linear infinite; }
+}
+@media (prefers-reduced-motion: reduce) { .sh-digits span { opacity: 0.5; } }
+@media (max-width: 900px) {
+  .sh-actions .cn-cta { min-height: 44px; padding-left: 16px; font-size: 13.5px; }
+  .sh-actions .cn-cta .cn-arrow { width: 34px; height: 34px; }
+  .sh-actions .cn-ghost { min-height: 44px; padding: 0 16px; font-size: 13px; }
+  .sh-digits, .sh-stars { inset: -6% -14% 0; }
+  .sh-compass, .sh-zodiac { width: 128%; }
+}
+.sh-zodiac text { font-family: "Segoe UI Symbol", "Noto Sans Symbols", serif; font-variant-emoji: text; }
+.sh-digits span { color: rgb(232 201 133 / 0.55); }
+@media (prefers-reduced-motion: no-preference) {
+  .sh-digits span { animation-name: sh-rise; animation-timing-function: linear; animation-iteration-count: infinite; }
+  .sh-stars span { animation-name: sh-twinkle; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+}
