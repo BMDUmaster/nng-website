@@ -21449,3 +21449,5 @@ section.au-book.bkx { background: linear-gradient(180deg, #FBF7EE, #F5EEDF); }
   .svh-blur-leaf { width: 190px; -webkit-mask-image: radial-gradient(90% 85% at 0% 100%, #000 45%, transparent 100%); mask-image: radial-gradient(90% 85% at 0% 100%, #000 45%, transparent 100%); }
   .svh-values::after { width: 140px; -webkit-mask-image: radial-gradient(90% 90% at 100% 60%, #000 45%, transparent 100%); mask-image: radial-gradient(90% 90% at 100% 60%, #000 45%, transparent 100%); }
 }
+.svh-photo img { object-position: 40% 0%; }
+@media (min-width: 901px) { .svh-photo img { object-position: 30% 0%; } .svh-photo::after { display: none; } }

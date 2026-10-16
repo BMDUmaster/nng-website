@@ -118,7 +118,7 @@ export default function ServicesPage() {
             <span className="svh-photo-leaves" aria-hidden="true" />
             <div className="svh-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("/images/faq-narayani.webp")} alt={`Narayani Garg, ${site.title}`} width={760} height={964} fetchPriority="high" />
+              <img src={asset("/images/services-hero-room.webp")} alt={`Narayani Garg, ${site.title}`} width={1544} height={1396} fetchPriority="high" />
             </div>
             <p className="svh-badge">
               <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
