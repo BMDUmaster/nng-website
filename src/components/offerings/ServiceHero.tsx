@@ -199,6 +199,66 @@ export function ServiceHero({
   hub?: HubSlug;
 }) {
   const look = looks[hub];
+  if (hub === "brain-training") {
+    return (
+      <section className="bx" aria-labelledby="page-title">
+        <span className="bx-blur bx-blur-l" aria-hidden="true" />
+        <div className="bx-photo" aria-hidden="true">
+          <span className="bx-ring bx-ring-1" />
+          <span className="bx-ring bx-ring-2" />
+          <div className="bx-photo-clip">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/images/brainology-room.webp")} alt="" width={1440} height={1280} fetchPriority="high" />
+          </div>
+          <span className="bx-vine" />
+        </div>
+        <span className="bx-blur bx-blur-r" aria-hidden="true" />
+        <div className="bx-inner">
+          <div className="bx-copy">
+            <div className="svh-anim bx-anim" aria-hidden="true"><Backdrop hub={hub} /></div>
+            <nav className="cn-crumbs bx-crumbs" aria-label="Breadcrumb">
+              {trail.map((crumb, n) => (
+                <Fragment key={crumb.label}>
+                  {n > 0 && <span aria-hidden="true">/</span>}
+                  {crumb.href ? <Link prefetch={false} href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
+                </Fragment>
+              ))}
+            </nav>
+            <p className="bx-kicker">
+              <span className="bx-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+              {kicker}
+              <span className="bx-kicker-line" aria-hidden="true" />
+            </p>
+            <h1 id="page-title">{title}</h1>
+            <span className="bx-rule" aria-hidden="true" />
+            <p className="bx-lead">{lead}</p>
+            <div className="bx-actions sh-actions">{actions}</div>
+            <ul className="bx-info">
+              <li>
+                <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: i.calendar }} />
+                Format, duration and fees to be confirmed with the team.
+              </li>
+              <li>
+                <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: ico('<circle cx="16" cy="10" r="4"/><path d="M8 25c0-4.4 3.6-8 8-8s8 3.6 8 8"/><circle cx="7.5" cy="13" r="2.8"/><circle cx="24.5" cy="13" r="2.8"/><path d="M2.5 24c0-3 2.2-5.4 5-5.4M29.5 24c0-3-2.2-5.4-5-5.4"/>') }} />
+                1:1 Guidance with Narayani
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul className="bx-values" aria-label="What she looks at">
+          {look.values.map((v) => (
+            <li key={v.title}>
+              <span className="bx-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
+              <span>
+                <strong>{v.title}</strong>
+                <small>{v.text}</small>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
   return (
     <section className={`svh svh-svc sh-${hub}`} aria-labelledby="page-title">
       <div className="svh-inner">

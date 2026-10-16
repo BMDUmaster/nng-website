@@ -22263,3 +22263,106 @@ section.fq.fq-rich h2 em { display: block; }
 }
 .sh-brain-training .svh-photo img { object-position: 50% 4%; }
 @media (max-width: 900px) { .svh.svh-svc .sh-actions .cx-long { display: none; } .svh.svh-svc .sh-actions .cx-short { display: inline; } }
+
+/* Brainology hero (bx-), matched to the approved banner: deep green, blurred leaves at the edges, words on the left
+   (lotus kicker with a short line, white "Brainology" over gold italic "Program", a gold rule, the lead, one gold
+   button, two info notes); her photograph in the room on the right behind an elliptical gold double edge with a leaf
+   vine; a floating cream card of four values with short gold rules. Phones: words, then the photo, then the card. */
+.bx { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(50% 70% at 25% 40%, #1C5038, transparent 70%), linear-gradient(180deg, #123F2C 0%, #0D3324 100%); color: #FFFFFF; padding-bottom: 28px; }
+.bx-inner { position: relative; z-index: 2; width: min(1340px, calc(100% - 96px)); margin-inline: auto; min-height: clamp(520px, calc(100vh - 88px - 170px), 640px); display: flex; align-items: center; }
+.bx-copy { position: relative; width: min(48%, 640px); padding: 36px 0 110px; }
+.bx-anim { inset: 0 -30% 0 10%; opacity: 0.35; }
+.bx-crumbs, .bx-crumbs a { color: rgb(255 255 255 / 0.72); font-size: 12.5px; }
+.bx-kicker { display: flex; align-items: center; gap: 14px; margin: 18px 0 0; font-size: 14px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #E1BE70; }
+.bx-lotus { display: block; width: 40px; color: #E1BE70; }
+.bx-lotus svg, .bx-info span svg, .bx-v-icon svg { display: block; width: 100%; height: auto; }
+.bx-kicker-line { width: 70px; height: 1px; background: rgb(225 190 112 / 0.7); }
+.practice-site main .bx h1 { margin: 14px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(52px, 5.4vw, 92px); line-height: 0.98; letter-spacing: -0.02em; color: #FFFFFF; }
+.bx h1 em { display: block; font-style: italic; font-weight: 600; color: #E8C985; }
+.bx-rule { display: block; width: 78px; height: 3px; margin-top: 18px; border-radius: 2px; background: #D2A954; }
+.practice-site main .bx .bx-lead { max-width: 30em; margin: 18px 0 0; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.5; color: rgb(255 255 255 / 0.92); }
+.bx-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.bx-actions .cn-cta { min-height: 56px; gap: 18px; padding: 5px 6px 5px 28px; border-radius: 999px; background: linear-gradient(180deg, #F2D592, #D2A954); color: #123A2B; font-size: 17px; font-weight: 500; box-shadow: 0 0 0 2px rgb(210 169 84 / 0.4), 0 16px 28px -16px rgb(0 0 0 / 0.6); }
+.bx-actions .cn-cta .cn-arrow { width: 46px; height: 46px; background: #123A2B; color: #F2D592; }
+.bx-info { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 0; margin: 28px 0 0; padding: 0; list-style: none; }
+.bx-info li { display: flex; align-items: center; gap: 14px; max-width: 260px; padding-right: 26px; font-size: 14.5px; line-height: 1.45; color: rgb(255 255 255 / 0.9); }
+.bx-info li + li { padding-left: 26px; border-left: 1px solid rgb(225 190 112 / 0.5); }
+.bx-info span { flex: none; width: 34px; color: #E1BE70; }
+
+.bx-photo { position: absolute; z-index: 1; top: 0; right: 0; bottom: 120px; left: 46%; }
+.bx-photo-clip { position: absolute; inset: 0; overflow: hidden; clip-path: ellipse(84% 100% at 100% 46%); }
+.bx-photo-clip img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 8%; }
+.bx-ring { position: absolute; left: -68%; top: -54%; width: 168%; height: 200%; border-radius: 50%; pointer-events: none; }
+.bx-ring-1 { box-shadow: 0 0 0 2px #D2A954; z-index: 2; }
+.bx-ring-2 { left: calc(-68% - 22px); top: calc(-54% - 10px); width: calc(168% + 22px); height: calc(200% + 20px); box-shadow: 0 0 0 1px rgb(210 169 84 / 0.45); }
+.bx-vine { position: absolute; z-index: 3; left: 4%; top: 18%; width: 92px; aspect-ratio: 200 / 930; background: url("/images/brainology-vine.webp") 0 0 / contain no-repeat; -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent), linear-gradient(180deg, transparent, #000 10% 90%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); mix-blend-mode: lighten; pointer-events: none; }
+.bx-blur { position: absolute; z-index: 3; pointer-events: none; }
+.bx-blur-l { left: 0; top: 0; bottom: 0; width: 130px; background: url("/images/brainology-blur-l.webp") 0 0 / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent); mask-image: linear-gradient(90deg, #000 40%, transparent); }
+.bx-blur-r { right: 0; bottom: 0; width: 170px; height: 420px; background: url("/images/brainology-blur-r.webp") 100% 100% / cover no-repeat; -webkit-mask-image: linear-gradient(270deg, #000 40%, transparent); mask-image: linear-gradient(270deg, #000 40%, transparent); }
+
+.bx-values { position: relative; z-index: 4; display: grid; grid-template-columns: repeat(4, 1fr); width: min(1500px, calc(100% - 96px)); margin: -112px auto 0; padding: 26px 30px; list-style: none; border-radius: 30px; background: linear-gradient(180deg, #FFFCF5, #F8F1E3); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.35), 0 30px 50px -30px rgb(0 0 0 / 0.45); color: #1E1A16; }
+.bx-values li { display: flex; align-items: center; gap: 22px; padding: 0 24px; }
+.bx-values li + li { border-left: 1px solid rgb(201 162 86 / 0.35); }
+.bx-v-icon { flex: none; display: grid; place-items: center; width: 78px; height: 78px; padding: 20px; border-radius: 50%; background: #FFFDF8; box-shadow: inset 0 0 0 1.2px rgb(201 162 86 / 0.6), 0 8px 18px -12px rgb(60 44 20 / 0.5); color: #123A2B; }
+.bx-values strong { display: block; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 21px; color: #123A2B; }
+.bx-values small { display: block; margin-top: 6px; font-size: 15px; color: #5A554C; }
+.bx-values small::after { content: ""; display: block; width: 32px; height: 3px; margin-top: 12px; border-radius: 2px; background: #D2A954; }
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .bx-values li { flex-direction: column; align-items: flex-start; gap: 10px; padding: 0 14px; }
+  .bx-v-icon { width: 60px; height: 60px; padding: 15px; }
+}
+@media (max-width: 900px) {
+  .bx { padding-bottom: 20px; }
+  .bx-blur { display: none; }
+  .bx-inner { display: block; width: calc(100% - 32px); min-height: 0; }
+  .bx-copy { width: 100%; padding: 22px 0 18px; }
+  .bx-anim { inset: 0; }
+  .bx-crumbs { display: flex; flex-wrap: wrap; }
+  .bx-kicker { margin-top: 12px; font-size: 11.5px; gap: 10px; }
+  .bx-lotus { width: 28px; }
+  .bx-kicker-line { width: 44px; }
+  .practice-site main .bx h1 { font-size: clamp(42px, 12.5vw, 54px); }
+  .practice-site main .bx .bx-lead { font-size: 15px; }
+  .bx-actions .cn-cta { min-height: 46px; gap: 12px; padding-left: 18px; font-size: 14px; }
+  .bx-actions .cn-cta .cn-arrow { width: 36px; height: 36px; }
+  .bx-info { margin-top: 18px; gap: 0; flex-wrap: nowrap; }
+  .bx-info li { gap: 8px; padding-right: 12px; font-size: 12px; }
+  .bx-info li + li { padding-left: 12px; }
+  .bx-info span { width: 26px; }
+  .bx-photo { position: relative; inset: auto; height: 320px; margin: 0 0 0 0; }
+  .bx-photo-clip { clip-path: ellipse(100% 90% at 50% 100%); }
+  .bx-photo-clip img { object-position: 50% 6%; }
+  .bx-ring { left: 0; top: 10%; width: 100%; height: 180%; }
+  .bx-ring-2 { left: -8px; top: calc(10% - 10px); width: calc(100% + 16px); height: calc(180% + 20px); }
+  .bx-vine { display: none; }
+  .bx-values { grid-template-columns: 1fr 1fr; gap: 16px 0; width: calc(100% - 24px); margin-top: -44px; padding: 18px 10px; border-radius: 22px; }
+  .bx-values li { flex-direction: column; align-items: center; gap: 8px; padding: 0 8px; text-align: center; }
+  .bx-values li:nth-child(3) { border-left: 0; }
+  .bx-v-icon { width: 54px; height: 54px; padding: 13px; }
+  .bx-values strong { font-size: 16px; }
+  .bx-values small { font-size: 12px; }
+  .bx-values small::after { margin: 8px auto 0; }
+}
+/* bx fixes: rings follow the photo's own ellipse and stay inside its box; no vine or right blur. */
+.bx-photo { overflow: hidden; }
+.bx-ring { left: 16%; top: -54%; width: 168%; height: 200%; }
+.bx-ring-1 { box-shadow: inset 0 0 0 2px #D2A954; }
+.bx-ring-2 { left: calc(16% - 18px); top: calc(-54% - 9px); width: calc(168% + 36px); height: calc(200% + 18px); box-shadow: inset 0 0 0 1px rgb(210 169 84 / 0.5); }
+.bx-vine, .bx-blur-r { display: none; }
+.bx-info li { max-width: 320px; }
+@media (max-width: 900px) {
+  .bx { display: flex; flex-direction: column; }
+  .bx-inner { order: 1; }
+  .bx-photo { order: 2; height: 330px; overflow: hidden; }
+  .bx-values { order: 3; }
+  .bx-photo-clip { clip-path: ellipse(85% 100% at 50% 100%); }
+  .bx-ring { display: none; }
+  .bx-photo::before { content: ""; position: absolute; z-index: 2; left: -35%; top: 0; width: 170%; height: 200%; border-radius: 50%; box-shadow: inset 0 0 0 2px #D2A954; pointer-events: none; }
+  .bx-info li { max-width: none; }
+}
+@media (min-width: 901px) { .bx-copy { padding-bottom: 150px; } .bx-photo { bottom: 70px; } }
+@media (max-width: 900px) { .bx-photo-clip { -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 96%); mask-image: linear-gradient(180deg, #000 72%, transparent 96%); } .bx-values { margin-top: -70px; } }
+.bx-blur-l { z-index: 0; width: 90px; }
+.bx-inner { padding-left: clamp(0px, calc((1440px - 100vw) / 4), 40px); }
+@media (max-width: 1360px) and (min-width: 901px) { .bx-copy { width: 52%; } .practice-site main .bx h1 { font-size: clamp(48px, 5vw, 70px); } .bx-values li { gap: 14px; padding: 0 14px; } .bx-v-icon { width: 62px; height: 62px; padding: 16px; } .bx-values strong { font-size: 18px; } .bx-values small { font-size: 13px; } }
