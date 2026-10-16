@@ -22070,3 +22070,26 @@ section.fq.fq-rich h2 em { display: block; }
   .bt-go { width: 32px; height: 32px; }
 }
 .bt-begin::after { -webkit-mask-image: radial-gradient(100% 100% at 100% 100%, #000 40%, transparent 85%); mask-image: radial-gradient(100% 100% at 100% 100%, #000 40%, transparent 85%); }
+
+/* Brainology hero: a faint gold neural network around the arch. Nodes glow in turn and small signals run along the
+   links; still with reduced motion. */
+.bh-neural { position: absolute; z-index: 0; left: -22%; top: 0; width: 144%; height: 100%; overflow: visible; pointer-events: none; }
+.bh-links { fill: none; stroke: rgb(225 190 112 / 0.22); stroke-width: 1; }
+.bh-node { fill: #E1BE70; opacity: 0.45; filter: drop-shadow(0 0 4px rgb(242 213 146 / 0.9)); }
+.bh-pulse { fill: none; stroke: #F6DA9C; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 10 600; stroke-dashoffset: 610; opacity: 0; filter: drop-shadow(0 0 3px rgb(246 218 156 / 0.9)); }
+@keyframes bh-glow { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+@keyframes bh-run { 0% { stroke-dashoffset: 10; opacity: 0; } 10% { opacity: 1; } 70% { opacity: 1; } 100% { stroke-dashoffset: -200; opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .bh-node { animation: bh-glow 4.5s ease-in-out infinite; }
+  .bh-pulse { animation: bh-run 3.8s ease-in-out infinite; }
+}
+@media (max-width: 900px) { .bh-neural { left: -14%; width: 128%; } }
+.bh-links { stroke: rgb(225 190 112 / 0.38); stroke-width: 1.1; }
+.bh-node { opacity: 0.6; }
+.bh-pulse { stroke-width: 2.4; }
+@keyframes bh-glow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+.bh-neural { left: -50%; width: 200%; }
+@media (max-width: 900px) { .bh-neural { left: -50%; width: 200%; } }
+.bh-neural { left: -30%; width: 160%; }
+@media (max-width: 900px) { .bh-neural { left: -14%; width: 128%; } }
+.bh-neural { max-width: none; height: 100%; }
