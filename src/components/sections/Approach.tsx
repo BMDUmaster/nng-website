@@ -62,6 +62,20 @@ function wheel() {
   return `<svg class="ab-wheel" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
 }
 
+/** Desktop ornament between the words and her photograph: a fine gold lotus mandala and her three words. */
+function mandala() {
+  const c = 200;
+  const out: string[] = ['<circle cx="200" cy="200" r="196" stroke-width=".8"/><circle cx="200" cy="200" r="184" stroke-width=".5" stroke-dasharray="2 6"/><circle cx="200" cy="200" r="120" stroke-width=".7"/><circle cx="200" cy="200" r="46" stroke-width=".8"/>'];
+  for (let i = 0; i < 16; i++) {
+    const a = (i * 22.5 * Math.PI) / 180;
+    const x = (c + 120 * Math.cos(a)).toFixed(1), y = (c + 120 * Math.sin(a)).toFixed(1);
+    out.push(`<path d="M${c} ${c}Q${(c + 70 * Math.cos(a - 0.35)).toFixed(1)} ${(c + 70 * Math.sin(a - 0.35)).toFixed(1)} ${x} ${y}Q${(c + 70 * Math.cos(a + 0.35)).toFixed(1)} ${(c + 70 * Math.sin(a + 0.35)).toFixed(1)} ${c} ${c}Z" stroke-width=".6"/>`);
+    const x2 = (c + 184 * Math.cos(a + 0.196)).toFixed(1), y2 = (c + 184 * Math.sin(a + 0.196)).toFixed(1);
+    out.push(`<path d="M${(c + 120 * Math.cos(a)).toFixed(1)} ${(c + 120 * Math.sin(a)).toFixed(1)}Q${(c + 170 * Math.cos(a + 0.05)).toFixed(1)} ${(c + 170 * Math.sin(a + 0.05)).toFixed(1)} ${x2} ${y2}" stroke-width=".5"/>`);
+  }
+  return `<svg class="ab-mandala" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
+}
+
 /**
  * "Why she starts with the mind" as one wide banner: her words, the three steps and the enquiry on the left; her
  * photograph in the meditation room fills the right edge, with her line on it. On phones the photograph leads.
@@ -89,6 +103,14 @@ export function Approach() {
         </blockquote>
       </div>
 
+      <div className="ab-orn" aria-hidden="true">
+        <span dangerouslySetInnerHTML={{ __html: mandala() }} />
+        <p className="ab-orn-words">
+          <span>Mind</span>
+          <span>Direction</span>
+          <span>Alignment</span>
+        </p>
+      </div>
       <div className="ab-stage" aria-hidden="true">
         <div className="ab-pic">
           {/* eslint-disable-next-line @next/next/no-img-element */}
