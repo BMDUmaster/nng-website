@@ -49,6 +49,12 @@ const cxPractices = [
   { name: "Personal Guidance", note: "Support for mind and life", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
 ];
 
+const chipIcons: Record<string, string> = {
+  choose: cxIcon('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/>'),
+  fees: cxIcon('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/>'),
+  how: cxIcon('<path d="M6 26V20M12 26V16M18 26V12M24 26V8"/>'),
+  support: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'),
+};
 const feePoints = [
   { title: "Flexible Formats", text: "Online or in person", icon: cxIcon('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2" stroke-width="2"/>') },
   { title: "Custom Duration", text: "Choose as per your need", icon: cxIcon('<circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/>') },
@@ -150,6 +156,7 @@ export default function ConsultationsPage() {
         <div className="cn-chips-inner">
           {chips.map((chip) => (
             <a key={chip.id} href={`#${chip.id}`}>
+              <span className="cn-chip-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: chipIcons[chip.id] }} />
               {chip.label}
             </a>
           ))}

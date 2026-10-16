@@ -62,53 +62,63 @@ export default function ContactPage() {
     <div className="cn ct">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), faqSchema(faqs.contact)] }} />
 
-      <section className="cn-hero cx-hero kt-hero" aria-labelledby="page-title">
-        <div className="cn-hero-inner">
-          <div className="cn-hero-copy" data-reveal="">
-            <nav className="cn-crumbs" aria-label="Breadcrumb">
+      <section className="kh" aria-labelledby="page-title">
+        <div className="kh-inner">
+          <div className="kh-visual" data-reveal="">
+            <div className="kh-arch">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/contact-full.webp")} alt={`Narayani Garg, ${site.title}`} width={720} height={1129} fetchPriority="high" />
+            </div>
+            <div className="kh-face">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/contact-face.webp")} alt="" width={420} height={420} loading="lazy" />
+            </div>
+            <p className="kh-badge">
+              <span>{site.person}</span>
+              <small>Personal guidance</small>
+            </p>
+            <span className="kh-lotus-art" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+          </div>
+          <div className="kh-copy" data-reveal="">
+            <nav className="cn-crumbs kh-crumbs" aria-label="Breadcrumb">
               <Link prefetch={false} href="/">Home</Link>
               <span aria-hidden="true">/</span>
               <span aria-current="page">Contact</span>
             </nav>
-            <p className="cn-kicker">Contact</p>
+            <p className="kh-kicker">
+              <span className="kf-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+              Contact
+            </p>
             <h1 id="page-title">
               What is <em>on your mind?</em>
             </h1>
-            <p className="cn-lead">
+            <p className="kh-lead">
               <span className="cx-long">You do not need to have it all worked out before you enquire. Tell her team a little about what brings you here.</span>
               <span className="cx-short">You do not need to have it all worked out. Just tell her team what brings you here.</span>
             </p>
-            <div className="cn-actions">
-              <EnquiryTrigger className="cn-cta" source="contact-hero" primary>
+            <div className="kh-actions">
+              <EnquiryTrigger className="kh-cta" source="contact-hero" primary>
                 <span className="cx-long">Message on WhatsApp</span>
                 <span className="cx-short">WhatsApp</span>
-                <Arrow />
+                <span className="kh-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
-              <a className="cn-ghost" href="#enquiry">
+              <a className="kh-ghost" href="#enquiry">
                 <span className="cx-long">Send an enquiry</span>
                 <span className="cx-short">Enquiry form</span>
-                <span className="cx-ghost-arrow" aria-hidden="true">→</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
-            <ul className="cx-practices kt-reach" aria-label="Ways to reach the team">
+            <ul className="kh-reach" aria-label="Ways to reach the team">
               {reach.map((r) => (
                 <li key={r.name}>
-                  <span className="cx-p-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: r.icon }} />
-                  <strong>{r.name}</strong>
-                  <small>{r.note}</small>
+                  <span className="kh-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: r.icon }} />
+                  <span>
+                    <strong>{r.name}</strong>
+                    <small>{r.note}</small>
+                  </span>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="cn-hero-visual cx-visual" data-reveal="">
-            <div className="cx-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("/images/contact-hero.webp")} alt={`Narayani Garg, ${site.title}`} width={944} height={1300} fetchPriority="high" />
-            </div>
-            <p className="cn-badge cx-badge">
-              <span>{site.person}</span>
-              <small>Personal guidance</small>
-            </p>
           </div>
         </div>
       </section>
