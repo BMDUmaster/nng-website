@@ -5,6 +5,7 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { EVENTS, track } from "@/lib/analytics";
 import { voicePoster, type Voice } from "@/content/voices";
 import { asset } from "@/lib/assets";
+import { useDriftRail } from "@/lib/useDriftRail";
 
 /**
  * "Hear the whole story": client films as tall cards in a row. A film previews silently while the pointer is on
@@ -26,42 +27,11 @@ export function StoryFilms({
   title?: string;
   lead?: string;
 }) {
-  const rail = useRef<HTMLUListElement>(null);
   const viewer = useRef<HTMLDialogElement>(null);
   const [playing, setPlaying] = useState<Voice | null>(null);
   const [showMore, setShowMore] = useState(false);
 
-  // Which card is in front: on phones the card nearest the middle, on desktop the first fully shown. Drives the
-  // dots and the larger centre card on phones.
-  const [active, setActive] = useState(0);
-  useEffect(() => {
-    const el = rail.current;
-    if (!el) return;
-    const onScroll = () => {
-      const cards = Array.from(el.children) as HTMLElement[];
-      const mid = el.scrollLeft + el.clientWidth / 2;
-      const wide = window.matchMedia("(min-width: 901px)").matches;
-      let best = 0;
-      let dist = Infinity;
-      cards.forEach((card, i) => {
-        const d = wide ? Math.abs(card.offsetLeft - el.scrollLeft) : Math.abs(card.offsetLeft + card.offsetWidth / 2 - mid);
-        if (d < dist) { dist = d; best = i; }
-      });
-      setActive(best);
-    };
-    onScroll();
-    el.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => { el.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
-  }, []);
-
-  const goTo = (i: number) => {
-    const el = rail.current;
-    const card = el?.children[i] as HTMLElement | undefined;
-    if (!el || !card) return;
-    const wide = window.matchMedia("(min-width: 901px)").matches;
-    el.scrollTo({ left: wide ? card.offsetLeft - el.offsetLeft * 0 : card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior: "smooth" });
-  };
+  const { rail, active, goTo, step, handlers } = useDriftRail(voices.length);
 
   // Phones: the card nearest the middle of the rail plays its silent preview.
   useEffect(() => {
@@ -119,10 +89,10 @@ export function StoryFilms({
     setPlaying(null);
   };
 
-  const scroll = (step: number) => goTo(Math.max(0, Math.min(voices.length - 1, active + step)));
+  const scroll = step;
 
-  const renderCard = (voice: Voice, i = -1) => (
-            <li key={voice.id} className={i === active ? "sf-card is-active" : "sf-card"} onMouseEnter={(e) => preview(e.currentTarget, true)} onMouseLeave={(e) => preview(e.currentTarget, false)}>
+  const renderCard = (voice: Voice, i = -1, dup = false) => (
+            <li key={dup ? `${voice.id}-dup` : voice.id} className={`sf-card${i === active && !dup ? " is-active" : ""}${dup ? " sf-dup" : ""}`} aria-hidden={dup || undefined} inert={dup || undefined} onMouseEnter={(e) => preview(e.currentTarget, true)} onMouseLeave={(e) => preview(e.currentTarget, false)}>
               <button type="button" className="sf-film" onClick={(e) => open(voice, e.currentTarget)}>
                 <img src={voicePoster(voice)} alt="" loading="lazy" decoding="async" />
                 {voice.clip && <video src={asset(voice.clip)} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} onPlaying={(e) => e.currentTarget.classList.add("is-on")} onPause={(e) => e.currentTarget.classList.remove("is-on")} />}
@@ -169,8 +139,10 @@ export function StoryFilms({
           className="sf-rail"
           ref={rail}
           aria-label="Client films"
+          {...handlers}
         >
           {voices.map((voice, i) => renderCard(voice, i))}
+          {voices.map((voice, i) => renderCard(voice, i, true))}
         </ul>
 
         {showMore && (
@@ -195,7 +167,9 @@ export function StoryFilms({
               <span className="sf-more-disc" aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3v10l8-5z" /></svg>
               </span>
-              {showMore ? "Show fewer recordings" : "More client recordings"} <span className="sf-more-count">{showMore ? "−" : `+${more.length}`}</span>
+              <span className="sf-l-long">{showMore ? "Show fewer recordings" : "More client recordings"}</span>
+              <span className="sf-l-short">{showMore ? "Fewer stories" : "More stories"}</span>
+              <span className="sf-more-count">{showMore ? "−" : `+${more.length}`}</span>
             </button>
           )}
           <div className="sf-dots" role="group" aria-label="Choose a film">
@@ -210,7 +184,9 @@ export function StoryFilms({
             </button>
           </div>
           <EnquiryTrigger className="sf-enquire" source="home-films">
-            Start your own enquiry <span aria-hidden="true">→</span>
+            <span className="sf-l-long">Start your own enquiry</span>
+            <span className="sf-l-short">Start enquiry</span>
+            <span className="sf-enq-go" aria-hidden="true">→</span>
           </EnquiryTrigger>
         </div>
         <p className="sf-note">These are personal experiences, not promises of the same outcome.</p>

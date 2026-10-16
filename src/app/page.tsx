@@ -4,7 +4,8 @@ import { Approach } from "@/components/sections/Approach";
 import { BookSection } from "@/components/sections/BookSection";
 import { ClientWords } from "@/components/sections/ClientWords";
 import { HomeHero } from "@/components/sections/HomeHero";
-import { HomeFaq, HomeProgram, InstagramReels, JourneyPhotos } from "@/components/sections/HomeLower";
+import { HomeFaq, HomeProgram, InstagramReels } from "@/components/sections/HomeLower";
+import { JourneyMoments } from "@/components/sections/JourneyMoments";
 import { StoryFilms } from "@/components/sections/StoryFilms";
 import { MeetNarayani } from "@/components/sections/MeetNarayani";
 import { ServiceAtlas } from "@/components/sections/ServiceAtlas";
@@ -38,7 +39,7 @@ export default function HomePage() {
 
       <BookSection bookTitle={bookTitle} />
 
-      <JourneyPhotos />
+      <JourneyMoments />
       <HomeProgram />
       <HomeFaq items={faqs.home} />
       <PracticeReturnPrompt />
