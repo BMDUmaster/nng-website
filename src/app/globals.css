@@ -21402,3 +21402,50 @@ section.au-book.bkx { background: linear-gradient(180deg, #FBF7EE, #F5EEDF); }
   .svh-v-icon { width: 46px; height: 46px; padding: 11px; }
   .svh-values strong { font-size: 14px; }
 }
+
+/* Services hero, second pass to match the reference exactly on desktop: hero and values fit one screen; the photo
+   starts at about half the width with a rounded top-left corner, a second thin gold arc outside it, gold line-art
+   sprigs on the arc, real leaves over its lower edge, blurred leaves at the left, gold line-art leaves at both ends of
+   the values strip. */
+@media (min-width: 901px) {
+  .svh-inner { position: relative; display: block; min-height: clamp(540px, calc(100vh - 88px - 120px), 700px); margin: 0; }
+  .svh-copy { width: min(48vw, 760px); margin-left: max(calc((100vw - 1340px) / 2), 56px); padding: 34px 20px 96px 0; }
+  .svh-visual { position: absolute; top: 0; right: 0; bottom: 0; left: 52%; }
+  .svh-photo { inset: 0; border-radius: 210px 0 0 0; box-shadow: none; }
+  .svh-photo::before { border-width: 2px; border-color: #D2A954; }
+  .svh-photo img { object-position: 50% 14%; }
+  .svh-frame { position: absolute; z-index: 1; left: -16px; top: 0; bottom: 0; right: 0; border-left: 1.3px solid rgb(210 169 84 / 0.75); border-top: 1.3px solid rgb(210 169 84 / 0.75); border-radius: 226px 0 0 0; transform: translateY(-16px); pointer-events: none; }
+  .svh-sprig { position: absolute; z-index: 2; width: 70px; height: 120px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 120' fill='none' stroke='%23D2A954' stroke-width='1'%3E%3Cpath d='M40 118C36 90 34 60 42 6'/%3E%3Cpath d='M38 92c-14-2-24-12-26-26 14 2 24 12 26 26ZM37 66c-12-4-20-14-20-28 12 4 20 14 20 28ZM39 40c-9-6-13-16-11-28 9 6 13 16 11 28ZM39 80c12-4 20-14 22-28-12 4-20 14-22 28ZM40 54c10-6 16-16 16-28-10 6-16 16-16 28Z'/%3E%3Cpath d='M38 92 20 72M37 66 22 44M39 40 30 18M39 80l17-21M40 54l13-20' stroke-width='0.6'/%3E%3C/svg%3E") center / contain no-repeat; opacity: 0.85; pointer-events: none; }
+  .svh-sprig-1 { left: -64px; top: 40px; transform: rotate(-24deg); }
+  .svh-sprig-2 { left: -58px; top: 52%; width: 56px; height: 96px; transform: rotate(8deg); opacity: 0.7; }
+  .svh-photo-leaves { position: absolute; z-index: 2; left: -40px; bottom: 30px; width: 220px; aspect-ratio: 584 / 502; background: url("/images/begin-leaves-br.webp") 0 100% / contain no-repeat; transform: scaleX(-1); mix-blend-mode: lighten; opacity: 0.95; -webkit-mask-image: radial-gradient(100% 100% at 100% 100%, #000 50%, transparent 95%); mask-image: radial-gradient(100% 100% at 100% 100%, #000 50%, transparent 95%); pointer-events: none; }
+  .svh-badge { right: 4%; bottom: 120px; }
+  .svh::before { width: 230px; opacity: 0.55; filter: blur(1.5px); }
+  .svh-blur-leaf { position: absolute; z-index: 5; left: 0; bottom: 0; width: 210px; aspect-ratio: 320 / 332; background: url("/images/svh-gold-l.webp") 0 100% / contain no-repeat; mix-blend-mode: multiply; pointer-events: none; }
+  .svh-values { margin-top: -84px; padding-top: 66px; padding-bottom: 26px; }
+  .svh-values::after { content: ""; position: absolute; right: 0; bottom: 6px; width: 150px; aspect-ratio: 304 / 220; background: url("/images/svh-gold-r.webp") 100% 100% / contain no-repeat; mix-blend-mode: multiply; pointer-events: none; }
+  .practice-site main .svh h1 { font-size: clamp(42px, 4.3vw, 76px); }
+  .svh-jump { margin-top: 22px; }
+  .svh-actions { margin-top: 26px; }
+}
+@media (max-width: 900px) { .svh-frame, .svh-sprig, .svh-photo-leaves, .svh-blur-leaf { display: none; } }
+@media (min-width: 901px) {
+  .svh-inner { min-height: clamp(520px, calc(100vh - 88px - 150px), 680px); }
+  .svh-copy { width: calc(43.5vw - 36px); margin-left: 8.5vw; padding: 26px 0 92px; }
+  .practice-site main .svh h1 { font-size: clamp(40px, 3.9vw, 76px); }
+  .practice-site main .svh .svh-lead { font-size: clamp(15px, 1.05vw, 19px); }
+  .svh-actions { flex-wrap: nowrap; gap: 14px; }
+  .svh-cta, .svh-ghost { min-height: clamp(50px, 3.2vw, 60px); font-size: clamp(13.5px, 0.92vw, 17px); gap: 14px; }
+  .svh-cta { padding-left: clamp(18px, 1.5vw, 30px); }
+  .svh-ghost { padding: 0 clamp(16px, 1.4vw, 28px); }
+  .svh-go { width: clamp(38px, 2.4vw, 46px); height: clamp(38px, 2.4vw, 46px); }
+  .svh-jump { flex-wrap: nowrap; gap: 10px; }
+  .svh-jump a { min-height: clamp(42px, 2.6vw, 50px); padding: 0 clamp(12px, 1.1vw, 22px) 0 clamp(10px, 0.8vw, 16px); font-size: clamp(12.5px, 0.82vw, 15px); white-space: nowrap; }
+  .svh-jump a span { width: clamp(20px, 1.3vw, 26px); }
+  .svh-photo-leaves { -webkit-mask-image: radial-gradient(60% 60% at 35% 65%, #000 35%, transparent 72%); mask-image: radial-gradient(60% 60% at 35% 65%, #000 35%, transparent 72%); }
+  .svh-blur-leaf { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%); mask-image: linear-gradient(180deg, transparent 0%, #000 35%); }
+}
+@media (min-width: 901px) {
+  .svh-blur-leaf { width: 190px; -webkit-mask-image: radial-gradient(90% 85% at 0% 100%, #000 45%, transparent 100%); mask-image: radial-gradient(90% 85% at 0% 100%, #000 45%, transparent 100%); }
+  .svh-values::after { width: 140px; -webkit-mask-image: radial-gradient(90% 90% at 100% 60%, #000 45%, transparent 100%); mask-image: radial-gradient(90% 90% at 100% 60%, #000 45%, transparent 100%); }
+}

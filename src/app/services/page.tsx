@@ -45,7 +45,7 @@ const svIcons = {
   vastu: svIco('<path d="M5 15 16 5l11 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/>'),
 };
 const svValues = [
-  { title: "Personalised Guidance", text: "For your own situation", icon: svIcons.lotus },
+  { title: "Personalised Guidance", text: "For your unique journey", icon: svIcons.lotus },
   { title: "Clarity & Direction", text: "Understand your patterns", icon: svIco('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
   { title: "Practical Solutions", text: "For real-life situations", icon: svIco('<circle cx="16" cy="16" r="5.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>') },
   { title: "Supportive Approach", text: "With empathy and insight", icon: svIco('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
@@ -112,6 +112,10 @@ export default function ServicesPage() {
             </ul>
           </div>
           <div className="svh-visual" data-reveal="">
+            <span className="svh-frame" aria-hidden="true" />
+            <span className="svh-sprig svh-sprig-1" aria-hidden="true" />
+            <span className="svh-sprig svh-sprig-2" aria-hidden="true" />
+            <span className="svh-photo-leaves" aria-hidden="true" />
             <div className="svh-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={asset("/images/faq-narayani.webp")} alt={`Narayani Garg, ${site.title}`} width={760} height={964} fetchPriority="high" />
@@ -123,6 +127,7 @@ export default function ServicesPage() {
             </p>
           </div>
         </div>
+        <span className="svh-blur-leaf" aria-hidden="true" />
         <ul className="svh-values" aria-label="How she guides">
           {svValues.map((v) => (
             <li key={v.title}>
