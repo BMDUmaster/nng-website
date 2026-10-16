@@ -40,6 +40,13 @@ export function JourneyPhotos() {
   );
 }
 
+const lotusSvg = `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>`;
+const Lotus = ({ className }: { className: string }) => <span className={className} aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />;
+const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const pgIcons = [ico('<path d="M16 3c.9 6.8 6.2 12.1 13 13-6.8.9-12.1 6.2-13 13-.9-6.8-6.2-12.1-13-13 6.8-.9 12.1-6.2 13-13Z"/>'), ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'), lotusSvg];
+const calendar = ico('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2" stroke-width="2"/>');
+const chat = ico('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>');
+
 /** The six-month program on the homepage: a plum invitation beside her portrait. */
 export function HomeProgram() {
   return (
@@ -47,15 +54,18 @@ export function HomeProgram() {
       <div className="pg-inner">
         <div className="pg-card">
           <div className="pg-copy">
-            <p className="pg-label">Six months of personal guidance</p>
+            <p className="pg-label"><Lotus className="pg-lotus" />Six months of personal guidance</p>
             <h2 id="program-title">
               Personalised <em>Hand Holding</em> Program
             </h2>
             <p className="pg-lead">Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
             <ul className="pg-list">
-              <li>Astrology, numerology and Vastu assessment</li>
-              <li>Psychic guidance for recurring patterns</li>
-              <li>Direct guidance across health, relationships, money and career</li>
+              {["Astrology, numerology and Vastu assessment", "Psychic guidance for recurring patterns", "Direct guidance across health, relationships, money and career"].map((t, i) => (
+                <li key={t}>
+                  <span className="pg-li-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: pgIcons[i] }} />
+                  {t}
+                </li>
+              ))}
             </ul>
             <div className="pg-actions">
               <EnquiryTrigger className="pg-cta" topic="the Personalised Hand Holding Program" source="home-program">
@@ -69,6 +79,7 @@ export function HomeProgram() {
               </Link>
             </div>
             <div className="pg-notes">
+              <span className="pg-notes-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: calendar }} />
               <p>Format and fees are discussed before you decide.</p>
               <p>
                 <span className="pg-dot" aria-hidden="true" />
@@ -83,6 +94,8 @@ export function HomeProgram() {
             <div className="pg-medal" aria-hidden="true">
               <strong>6</strong>
               <span>months</span>
+              <small>Personal guidance</small>
+              <Lotus className="pg-medal-lotus" />
             </div>
           </div>
         </div>
@@ -105,13 +118,20 @@ export function HomeFaq({
 }) {
   return (
     <section className="fq" id="faq" aria-labelledby="faq-title">
+      <div className="fq-photo" aria-hidden="true" />
       <div className="fq-inner">
         <div className="fq-intro">
-          <p className="lx-kicker">Questions</p>
-          <h2 id="faq-title">{title}</h2>
+          <p className="lx-kicker fq-kicker"><Lotus className="fq-lotus" />Questions</p>
+          <h2 id="faq-title">
+            {title.split(" ").slice(0, -1).join(" ")} <em>{title.split(" ").slice(-1)}</em>
+          </h2>
           <p className="lx-lead">{intro}</p>
           <div className="fq-ask">
-            <p>Something else on your mind?</p>
+            <span className="fq-ask-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: chat }} />
+            <p>
+              <strong>Something else on your mind?</strong>
+              <small>If you have any other questions, feel free to ask. We’re here to help.</small>
+            </p>
             <EnquiryTrigger className="fq-ask-btn" source={source}>
               Ask something else <span aria-hidden="true">→</span>
             </EnquiryTrigger>
@@ -144,8 +164,8 @@ export function InstagramReels({ platform = "instagram" }: { platform?: "instagr
       <div className="ig-inner">
         <header className="ig-head">
           <div>
-            <p className="lx-kicker">{name}</p>
-            <h2 id={`${platform}-title`}>{youtube ? "Watch Narayani on YouTube" : "From Narayani’s Instagram"}</h2>
+            <p className="lx-kicker ig-kicker"><Lotus className="ig-lotus" />{name}</p>
+            <h2 id={`${platform}-title`}>{youtube ? <>Watch <em>Narayani</em> on YouTube</> : <>From <em>Narayani’s</em> Instagram</>}</h2>
             <p className="lx-lead">{youtube ? "Five of her videos with the most views." : "Her five Instagram reels with the most views."}</p>
           </div>
           <a className="ig-profile" href={site.social[platform]} target="_blank" rel="noopener noreferrer">

@@ -8,6 +8,8 @@ import { legal, nav, site } from "@/content/site";
 
 const whatsapp = `https://wa.me/${site.whatsappNumber}?text=Hello%20Narayani%20Garg%20team,%20I%20would%20like%20to%20enquire%20about%20a%20consultation.`;
 
+const lotus = `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>`;
+
 const socials = [
   {
     name: "YouTube",
@@ -46,9 +48,9 @@ export function Footer() {
       <div className="ft-inner">
         <div className="ft-cta">
           <div>
-            <p className="ft-kicker">{site.method}</p>
-            <h2>{shop ? "A question about your selection?" : "Start with one conversation"}</h2>
-            <p>{shop ? "The team can confirm the piece, options and order details." : "Tell her team what is on your mind."}</p>
+            <p className="ft-kicker"><span className="ft-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />{site.method.replace(/\. /g, " · ").replace(/\.$/, "")}</p>
+            <h2>{shop ? "A question about your selection?" : <>Start with <em>one conversation</em></>}</h2>
+            <p>{shop ? "The team can confirm the piece, options and order details." : "Tell her team what is on your mind. Get clarity, guidance and the right next steps."}</p>
           </div>
           {shop ? (
             <a className="ft-cta-btn" href={`https://wa.me/${site.whatsappNumber}?text=Hello%20NNG%20team,%20I%20have%20a%20question%20about%20the%20stone%20and%20Rudraksha%20collection.`} target="_blank" rel="noopener noreferrer">
@@ -63,6 +65,8 @@ export function Footer() {
               </span>
             </EnquiryTrigger>
           )}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="ft-cta-art" src={asset("/images/footer-lotus-bowl.webp")} alt="" width={1050} height={786} loading="lazy" aria-hidden="true" />
         </div>
 
         <div className="ft-grid">
@@ -91,7 +95,7 @@ export function Footer() {
           <nav className="ft-nav" aria-label="Footer links">
             {groups.map((item) => (
               <div key={item.href} className="ft-col">
-                <p className="ft-col-title">{item.dropdownOnly ? item.label : <Link prefetch={false} href={item.href}>{item.label}</Link>}</p>
+                <p className="ft-col-title"><span className="ft-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />{item.dropdownOnly ? item.label : <Link prefetch={false} href={item.href}>{item.label}</Link>}</p>
                 <ul>
                   {item.children!.map((child) => (
                     <li key={child.href}>
@@ -104,7 +108,7 @@ export function Footer() {
               </div>
             ))}
             <div className="ft-col">
-              <p className="ft-col-title">Explore</p>
+              <p className="ft-col-title"><span className="ft-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />Explore</p>
               <ul>
                 {singles.map((item) => (
                   <li key={item.href}>
@@ -121,6 +125,9 @@ export function Footer() {
         <div className="ft-bottom">
           <p>{legal.disclaimer}</p>
           <p>© 2026 Transformation with NNG. All rights reserved.</p>
+          <button type="button" className="ft-top" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10l5-5 5 5" /></svg>
+          </button>
         </div>
       </div>
     </footer>
