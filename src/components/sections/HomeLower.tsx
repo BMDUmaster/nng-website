@@ -190,7 +190,6 @@ export function InstagramReels({ platform = "instagram" }: { platform?: "instagr
             </a>
           ))}
         </LoopRail>
-        <p className="ig-note">Selected by public views · 25 September 2026</p>
       </div>
     </section>
   );

@@ -19501,3 +19501,77 @@ footer.ft .ft-col-title { align-items: flex-end; }
 @media (max-width: 900px) { footer.site-footer.ft .ft-cta .ft-cta-art { width: 42% !important; min-width: 42%; max-width: none; height: 100% !important; right: 0; left: auto; top: 0; } }
 @media (max-width: 900px) { footer.site-footer.ft .ft-cta .ft-cta-art { grid-column: auto; grid-row: auto; } }
 .bk2 .bk2-cover-front img { object-position: 100% 50%; }
+
+/* Compact pass (Oct 16): Hand Holding, FAQ and footer sized to their content. */
+@media (min-width: 901px) {
+  .pg-inner { padding-block: 32px; }
+  section.pg .pg-copy { padding: 34px 40px 32px; }
+  .practice-site main section.pg h2 { margin-top: 10px; font-size: clamp(34px, 3vw, 50px); }
+  section.pg .pg-lead { margin-top: 8px; font-size: 16px; }
+  section.pg .pg-list { margin-top: 18px; }
+  section.pg .pg-list li { font-size: 13.5px; gap: 8px; }
+  .pg-li-icon { width: 44px; height: 44px; }
+  .pg-li-icon svg { width: 22px; height: 22px; }
+  section.pg .pg-actions { margin-top: 18px; }
+  section.pg .pg-cta { min-height: 52px; font-size: 15.5px; gap: 20px; padding-left: 26px; }
+  section.pg .pg-cta-arrow { width: 40px; height: 40px; }
+  section.pg .pg-notes { margin-top: 16px; padding: 10px 16px; }
+  .pg-notes-icon { width: 46px; height: 46px; }
+  section.pg .pg-notes p { font-size: 14px; }
+  section.pg .pg-arch { inset: 0 0 0 4%; border-radius: 180px 26px 26px 26px; }
+  section.pg .pg-arch img { border-radius: 176px 22px 22px 22px; }
+  section.pg .pg-medal { width: 128px; height: 128px; left: -40px; bottom: 10%; }
+  section.pg .pg-medal strong { font-size: 44px; }
+  section.pg .pg-medal span { font-size: 11px; }
+  section.pg .pg-card { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); }
+
+  section.fq .fq-inner { padding-block: 36px; gap: 56px; }
+  .fq-photo { width: 36%; background-size: auto 100%; background-position: 15% 0; -webkit-mask-image: linear-gradient(90deg, #000 45%, transparent 100%); mask-image: linear-gradient(90deg, #000 45%, transparent 100%); }
+  .fq-photo::after { background: linear-gradient(180deg, transparent 22%, rgb(251 247 238 / 0.94) 44%); }
+  section.fq .fq-intro { padding-top: 140px; }
+  .practice-site main section.fq h2 { font-size: clamp(36px, 3.2vw, 54px); }
+  section.fq .fq-ask { margin-top: 16px; padding: 16px; }
+  .fq-ask-icon { width: 50px; height: 50px; }
+  section.fq .fq-ask strong { font-size: 19px; }
+  section.fq .fq-ask small { font-size: 13px; }
+  section.fq .fq-ask-btn { min-height: 46px; font-size: 15px; gap: 18px; padding-left: 22px; margin-top: 10px; }
+  section.fq .fq-ask-btn span { width: 36px; height: 36px; }
+  section.fq .fq-list { gap: 10px; }
+  section.fq .fq-item summary { min-height: 64px; padding: 8px 20px; gap: 16px; }
+  section.fq .fq-num { width: 44px; height: 44px; font-size: 17px; }
+  section.fq .fq-q { padding-left: 16px; font-size: 17px; }
+  section.fq .fq-icon { width: 36px; height: 36px; }
+  section.fq .fq-item p { padding: 0 20px 16px 98px; font-size: 14px; }
+
+  footer.site-footer.ft { background: linear-gradient(180deg, #F8F2E6 0, #F8F2E6 90px, #0F3326 90px, #0B2A1F 100%) !important; }
+  footer.ft::before { top: 90px; }
+  footer.ft .ft-cta { grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr); }
+  footer.ft .ft-cta > div { padding: 28px 40px 0; }
+  footer.ft .ft-kicker { font-size: 11px; }
+  .ft-lotus { width: 30px; }
+  footer.ft .ft-cta h2 { margin-top: 6px; font-size: clamp(30px, 2.6vw, 42px); }
+  footer.ft .ft-cta p:not(.ft-kicker) { margin-top: 6px; font-size: 15px; }
+  footer.ft .ft-cta-btn { min-height: 48px; margin: 14px 0 28px 40px; padding-left: 24px; gap: 20px; font-size: 15px; }
+  footer.ft .ft-cta-arrow { width: 38px; height: 38px; }
+  footer.ft .ft-cta::after { left: 64%; }
+  footer.ft .ft-grid { margin-top: 30px; }
+  footer.ft .ft-brand strong { font-size: 24px; }
+  footer.ft .ft-social a { width: 42px; height: 42px; }
+}
+@media (min-width: 901px) {
+  .fq-photo { left: 0; width: 34%; background-size: auto 88%; background-position: 20% 0; -webkit-mask-image: linear-gradient(90deg, #000 55%, transparent 100%); mask-image: linear-gradient(90deg, #000 55%, transparent 100%); }
+  .fq-photo::after { background: linear-gradient(180deg, transparent 26%, rgb(251 247 238 / 0.96) 46%); }
+  section.fq .fq-intro { padding-top: 220px; }
+  section.ig .ig-inner { padding-bottom: 36px; }
+  footer.ft .ft-cta { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
+  footer.ft .ft-cta-art { max-height: 260px; }
+  footer.ft .ft-cta-btn { margin-top: 18px; }
+}
+@media (min-width: 901px) {
+  .fq-photo { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 55%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 55%, transparent 100%); }
+  section.ig { padding-bottom: 0; }
+  section.ig .ig-inner { padding-bottom: 20px; }
+  footer.site-footer.ft { background: linear-gradient(180deg, #F8F2E6 0, #F8F2E6 70px, #0F3326 70px, #0B2A1F 100%) !important; padding-top: 0; }
+  footer.ft::before { top: 70px; }
+  footer.ft .ft-inner { padding-top: 0; }
+}
