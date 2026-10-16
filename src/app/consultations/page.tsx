@@ -5,7 +5,7 @@ import { FeeOptions } from "@/components/offerings/FeeOptions";
 import { Icon } from "@/components/icons/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { feesPublic } from "@/content/consultation";
-import { areas, areaTopics, legal, site } from "@/content/site";
+import { areas, areaTopics, site } from "@/content/site";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
@@ -135,16 +135,18 @@ export default function ConsultationsPage() {
         </div>
       </nav>
 
-      <section className="cn-sec cn-begin" id="choose" aria-labelledby="choose-title">
+      <section className="cn-sec cn-begin cb" id="choose" aria-labelledby="choose-title">
         <div className="cn-inner">
           <header className="cn-head" data-reveal="">
             <p className="cn-kicker cn-kicker-dark">Where to begin</p>
-            <h2 id="choose-title">Begin with one question</h2>
+            <h2 id="choose-title">
+              Begin with <em>one question</em>
+            </h2>
             <p>Choose an area below, or ask the team to help you find a starting point.</p>
           </header>
           <ul className="cn-areas">
             {areas.map((area, i) => (
-              <li key={area} className="cn-area" data-reveal="" style={{ "--d": `${i * 80}ms` } as React.CSSProperties}>
+              <li key={area} className="cn-area" data-reveal="" style={{ "--d": `${i * 80}ms`, "--art": `url(${asset(`/images/area-${area.toLowerCase()}.webp`)})` } as React.CSSProperties}>
                 <span className="cn-area-icon">
                   <Icon id={concernIcons[area]} />
                 </span>
@@ -160,11 +162,10 @@ export default function ConsultationsPage() {
             <EnquiryTrigger className="cn-ghost cn-ghost-dark" topic="choosing the right service" source="consultations-unsure">
               I am not sure where to begin
             </EnquiryTrigger>
-            <Link prefetch={false} className="cn-text" href="/services/">
+            <Link prefetch={false} className="cn-text cb-explore" href="/services/">
               Explore the practices <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <p className="cn-disclaimer">{legal.disclaimer}</p>
         </div>
       </section>
 
