@@ -54,6 +54,12 @@ const feePoints = [
   { title: "Custom Duration", text: "Choose as per your need", icon: cxIcon('<circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/>') },
   { title: "Transparent Fees", text: "Get details before you book", icon: cxIcon('<path d="M9 7h14M9 12h14M9 7c7 0 9 2 9 5s-3 5-9 5l10 9"/>') },
 ];
+const lotusSvg = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>';
+const supportPoints = [
+  { title: "Personal Guidance", text: "One-on-one support", icon: cxIcon('<circle cx="16" cy="10" r="4"/><path d="M8 25c0-4.4 3.6-8 8-8s8 3.6 8 8"/><circle cx="7.5" cy="13" r="2.8"/><circle cx="24.5" cy="13" r="2.8"/><path d="M2.5 24c0-3 2.2-5.4 5-5.4M29.5 24c0-3-2.2-5.4-5-5.4"/>') },
+  { title: "Long-term Support", text: "For your growth journey", icon: cxIcon('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
+  { title: "Compassionate Approach", text: "A safe and supportive space", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
+];
 const stepIcons = [
   cxIcon('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>'),
   cxIcon('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 15h8M13 19h8M13 23h5"/>'),
@@ -253,27 +259,39 @@ export default function ConsultationsPage() {
         </div>
       </section>
 
-      <section className="cn-sec cn-support" id="support" aria-labelledby="support-title">
+      <section className="cn-sec cn-support cs" id="support" aria-labelledby="support-title">
         <div className="cn-inner">
-          <div className="cn-support-card" data-reveal="">
-            <div className="cn-support-copy">
-              <p className="cn-kicker">Ongoing support</p>
-              <h2 id="support-title">A session or ongoing support?</h2>
-              <p>
+          <div className="cs-card" data-reveal="">
+            <span className="cs-lotus-art" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+            <div className="cs-copy">
+              <p className="cn-kicker cs-kicker"><span className="cs-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />Ongoing support</p>
+              <h2 id="support-title">A session or <br /><em>ongoing</em> support?</h2>
+              <p className="cs-lead">
                 Start with a consultation for the question in front of you. If you want to keep working on your habits and choices, explore the Personalised Hand Holding Program.
               </p>
-              <div className="cn-actions">
-                <Link prefetch={false} className="cn-cta" href="/hand-holding-program/">
+              <div className="cs-actions">
+                <Link prefetch={false} className="cs-cta" href="/hand-holding-program/">
                   <span>Explore the Hand Holding Program</span>
-                  <Arrow />
+                  <span className="cs-go" aria-hidden="true">→</span>
                 </Link>
-                <Link prefetch={false} className="cn-ghost" href="/about/">
-                  Get to know Narayani
+                <Link prefetch={false} className="cs-ghost" href="/about/">
+                  Get to know Narayani <span aria-hidden="true">→</span>
                 </Link>
               </div>
+              <ul className="cs-points">
+                {supportPoints.map((f) => (
+                  <li key={f.title}>
+                    <span className="cs-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: f.icon }} />
+                    <span>
+                      <strong>{f.title}</strong>
+                      <small>{f.text}</small>
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="cn-support-visual">
-              <img src={asset("/images/approach-narayani-900.webp")} alt="" width={900} height={768} loading="lazy" decoding="async" />
+            <div className="cs-photo">
+              <img src={asset("/images/support-narayani.webp")} alt="Narayani Garg" width={924} height={1400} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

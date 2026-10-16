@@ -19932,3 +19932,86 @@ section.cn-how.ch { position: relative; isolation: isolate; overflow: hidden; ba
 }
 .ch .cn-steps .cn-step-num { background: #123A2B; color: #FFFFFF; box-shadow: 0 0 0 3px #FBF7EE, 0 0 0 4px rgb(201 162 86 / 0.6); }
 @media (max-width: 900px) { .ch .cn-steps { padding-left: 32px; } .ch .cn-steps::before { left: 19px; } }
+
+/* Ongoing support (cs-): cream card, words and points on the left, her photo in a gold-edged arch on the right.
+   Phones: photo on top with a soft curved edge, words below, buttons full width, points in three columns. */
+section.cn-support.cs { background: linear-gradient(180deg, #FBF7EE, #F6F0E2); border-top: 0; }
+.cs .cn-inner { padding-block: clamp(30px, 4.5vh, 50px); }
+.cs-card { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); overflow: hidden; border-radius: 26px; background: url("/images/support-leaves.webp") left center / auto 100% no-repeat, radial-gradient(60% 80% at 30% 40%, #FFFBF1, transparent), #F8F1E2; box-shadow: 0 0 0 1.2px rgb(201 162 86 / 0.55), 0 34px 60px -40px rgb(60 44 20 / 0.55); }
+.cs-lotus-art { position: absolute; z-index: 0; left: 51%; top: 8%; width: 150px; color: rgb(201 162 86 / 0.38); pointer-events: none; }
+.cs-lotus-art svg { display: block; width: 100%; height: auto; }
+.cs-copy { position: relative; z-index: 1; padding: clamp(30px, 3.6vw, 56px) 20px clamp(26px, 3vw, 44px) clamp(70px, 7.4vw, 120px); }
+.cs .cs-kicker { display: inline-flex; align-items: center; gap: 10px; color: #8A6A32; }
+.cs .cs-kicker::before { display: none; }
+.cs-lotus { display: block; width: 30px; color: #B88A45; }
+.cs-lotus svg { display: block; width: 100%; height: auto; }
+.practice-site main .cs h2 { margin: 10px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(34px, 3.5vw, 58px); line-height: 1.04; letter-spacing: -0.015em; color: #2E1230; }
+.cs h2 em { font-style: italic; font-weight: 500; color: #B58A44; }
+.practice-site main .cs .cs-lead { max-width: 40em; margin: 14px 0 0; font-size: clamp(14.5px, 1.1vw, 17px); line-height: 1.6; color: #4A4048; }
+.cs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 24px; }
+.cs-cta, .cs-ghost { display: inline-flex; align-items: center; justify-content: space-between; min-height: 56px; border-radius: 999px; font-weight: 500; font-size: 15.5px; text-decoration: none; white-space: nowrap; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.cs-cta { gap: 22px; padding: 6px 7px 6px 28px; background: linear-gradient(180deg, #4A1E4B, #2E1230); color: #FFFFFF; box-shadow: 0 0 0 1.5px rgb(201 162 86 / 0.55), 0 18px 30px -18px rgb(46 18 48 / 0.9); }
+.cs-go { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(180deg, #F2D592, #D2A954); color: #2E1230; font-size: 17px; }
+.cs-ghost { gap: 18px; padding: 0 28px; background: rgb(255 255 255 / 0.55); box-shadow: inset 0 0 0 1.3px #2E1230; color: #2E1230; }
+.cs-cta:hover, .cs-ghost:hover { transform: translateY(-2px); }
+.cs-points { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; margin: 30px 0 0; padding: 0; list-style: none; }
+.cs-points li { display: flex; align-items: center; gap: 12px; padding: 0 22px; border-left: 1px solid rgb(169 121 46 / 0.3); }
+.cs-points li:first-child { padding-left: 0; border-left: 0; }
+.cs-icon { flex: none; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFF8E8, #F0E1BE); color: #2E1230; }
+.cs-icon svg { width: 26px; height: 26px; }
+.cs-points strong { display: block; font-size: 14.5px; font-weight: 600; color: #2E1230; }
+.cs-points small { display: block; margin-top: 2px; font-size: 12.5px; color: #6A5F66; }
+.cs-photo { position: relative; z-index: 1; overflow: hidden; border-left: 3px solid #C9A256; border-radius: 50% 0 0 50% / 62% 0 0 62%; box-shadow: -10px 0 0 -4px rgb(201 162 86 / 0.25); }
+.cs-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .cs-points { grid-template-columns: 1fr; gap: 12px; }
+  .cs-points li { padding: 0; border-left: 0; }
+}
+@media (max-width: 900px) {
+  .cs .cn-inner { width: calc(100% - 24px); padding-block: 22px; }
+  .cs-card { grid-template-columns: 1fr; background: url("/images/support-leaves.webp") left 60% / 34px auto no-repeat, #F8F1E2; }
+  .cs-photo { order: -1; height: 300px; border-left: 0; border-radius: 0; box-shadow: none; }
+  .cs-photo::after { content: ""; position: absolute; left: -5%; right: -5%; bottom: -40px; height: 80px; border-top: 2px solid #C9A256; border-radius: 0 100% 0 0 / 0 100% 0 0; background: #F8F1E2; }
+  .cs-photo img { object-position: 50% 12%; }
+  .cs-lotus-art { left: auto; right: 10px; top: 360px; width: 80px; }
+  .cs-copy { padding: 4px 18px 20px 26px; }
+  .cs-lotus { width: 24px; }
+  .cs .cs-kicker { font-size: 11px; }
+  .practice-site main .cs h2 { font-size: clamp(30px, 8.6vw, 36px); }
+  .practice-site main .cs .cs-lead { margin-top: 10px; font-size: 14px; }
+  .cs-actions { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 18px; }
+  .cs-cta { min-height: 52px; padding-left: 22px; font-size: 15px; }
+  .cs-ghost { justify-content: center; min-height: 50px; font-size: 15px; }
+  .cs-points { grid-template-columns: repeat(3, 1fr); margin-top: 20px; }
+  .cs-points li { flex-direction: column; gap: 6px; padding: 0 6px; text-align: center; }
+  .cs-points li:first-child { padding-left: 6px; }
+  .cs-icon { width: 44px; height: 44px; }
+  .cs-icon svg { width: 22px; height: 22px; }
+  .cs-points strong { font-size: 12.5px; line-height: 1.25; }
+  .cs-points small { font-size: 11px; line-height: 1.3; }
+}
+
+/* Ongoing support: fit pass. */
+@media (min-width: 901px) {
+  .cs-card { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr); }
+  .cs-copy { padding: 44px 30px 38px clamp(64px, 6vw, 100px); }
+}
+.cs-lotus-art { left: 54%; top: 10%; width: 130px; color: rgb(201 162 86 / 0.3); }
+.cs-points { grid-template-columns: repeat(3, auto); }
+.cs-points li { padding: 0 20px; }
+.cs-points strong, .cs-points small { white-space: nowrap; }
+.cs-photo img { object-position: 50% 0%; }
+@media (max-width: 1200px) and (min-width: 901px) { .cs-points strong, .cs-points small { white-space: normal; } }
+@media (max-width: 900px) {
+  .cs-card { background: #F8F1E2; }
+  .cs-photo { height: 290px; }
+  .cs-photo img { object-position: 50% 0%; }
+  .cs-photo::after { bottom: -46px; border-radius: 100% 0 0 0 / 100% 0 0 0; }
+  .cs-lotus-art { left: auto; right: 12px; top: 420px; width: 64px; color: rgb(201 162 86 / 0.25); }
+  .cs-copy { padding: 2px 18px 20px; }
+  .cs-points strong, .cs-points small { white-space: normal; }
+  .cs-points li { padding: 0 4px; }
+  .cs-points li:first-child { padding-left: 4px; }
+}
+@media (max-width: 900px) { .cs-photo img { object-position: 50% 30%; } }
