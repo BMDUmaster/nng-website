@@ -72,8 +72,8 @@ export const nav: NavItem[] = [
     href: "/resources/",
     dropdownOnly: true,
     children: [
-      { label: "Crystals, Stones and Rudraksha", href: "/services/stones-and-rudraksh/" },
-      { label: "Blogs", href: "/resources/blogs/" },
+      { label: "Crystals, Stones and Rudraksha", href: "/services/stones-and-rudraksh/", note: "Explore natural crystals, stones and sacred rudraksha." },
+      { label: "Blogs", href: "/resources/blogs/", note: "Read articles on spirituality, astrology and self-growth." },
     ],
   },
   // The shop shows a coming-soon note for now, so it is a single link.

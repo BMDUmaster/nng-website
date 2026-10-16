@@ -32,6 +32,13 @@ const iconsFor = (item: NavItem, icons: Icons) => !!item.children?.length && ite
 const menuLotus =
   '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>';
 
+const featureIcon = (d: string) =>
+  `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const featureIcons: Record<string, string> = {
+  "/services/stones-and-rudraksh/": featureIcon('<path d="M10 27 7 15l4-8 4 8-3 12M22 27l3-12-4-8-4 8 3 12"/><path d="M16 27l-3-10 3-9 3 9-3 10Z"/><path d="M5 27h22"/>'),
+  "/resources/blogs/": featureIcon('<rect x="7" y="4" width="18" height="24" rx="2"/><path d="M11 9h10M11 13h10M11 17h6M11 21h8"/>'),
+};
+
 function Chevron() {
   return (
     <svg className="nh-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -94,6 +101,7 @@ function NavGroup({ item, pathname, icons }: { item: NavItem; pathname: string; 
 
   const id = `nh-menu-${slug(item.label)}`;
   const grid = iconsFor(item, icons);
+  const feature = !grid && item.dropdownOnly && item.children?.every((child) => child.note);
 
   return (
     <div
@@ -123,7 +131,12 @@ function NavGroup({ item, pathname, icons }: { item: NavItem; pathname: string; 
         {item.dropdownOnly && item.label}
         <Chevron />
       </button>
-      <div className={`nh-menu${grid ? " is-grid" : ""}`} id={id} hidden={!open}>
+      <div className={`nh-menu${grid ? " is-grid" : ""}${feature ? " is-feature" : ""}`} id={id} hidden={!open}>
+        {feature && (
+          <div className="nh-menu-photo" aria-hidden="true">
+            <span className="nh-menu-lotus" dangerouslySetInnerHTML={{ __html: menuLotus }} />
+          </div>
+        )}
         {grid && (
           <div className="nh-menu-intro" aria-hidden="true">
             <span className="nh-menu-lotus" dangerouslySetInnerHTML={{ __html: menuLotus }} />
@@ -140,7 +153,8 @@ function NavGroup({ item, pathname, icons }: { item: NavItem; pathname: string; 
               <li key={child.href}>
                 <Link prefetch={false} href={child.href} aria-current={same(pathname, child.href) ? "page" : undefined} onClick={closeAll}>
                   {grid && <span className="nh-menu-icon">{icons[child.href]}</span>}
-                  {grid ? (
+                  {feature && <span className="nh-menu-icon" dangerouslySetInnerHTML={{ __html: featureIcons[child.href] ?? menuLotus }} />}
+                  {grid || feature ? (
                     <span className="nh-menu-text">
                       <span className="nh-menu-name">{child.label}</span>
                       {child.note && <small>{child.note}</small>}
@@ -148,11 +162,18 @@ function NavGroup({ item, pathname, icons }: { item: NavItem; pathname: string; 
                   ) : (
                     <span>{child.label}</span>
                   )}
-                  {grid && <span className="nh-menu-go" aria-hidden="true">→</span>}
+                  {(grid || feature) && <span className="nh-menu-go" aria-hidden="true">→</span>}
                 </Link>
               </li>
             ))}
           </ul>
+          {feature && (
+            <Link prefetch={false} className="nh-menu-all nh-menu-explore" href={item.href} onClick={closeAll}>
+              <span className="nh-menu-explore-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: menuLotus }} />
+              <span>Explore {item.label.toLowerCase()}</span>
+              <span aria-hidden="true">⟶</span>
+            </Link>
+          )}
           {!item.dropdownOnly && (
             <Link prefetch={false} className="nh-menu-all" href={item.href} onClick={closeAll}>
               <span>{item.overviewLabel ?? `All ${item.label.toLowerCase()}`}</span>
