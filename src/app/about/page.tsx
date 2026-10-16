@@ -44,39 +44,38 @@ export default function AboutPage() {
     <div className="cn ab2 au">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema()] }} />
 
-      <section className="au-hero" aria-labelledby="about-hero-title">
-        <div className="au-hero-inner">
-          <div className="au-hero-copy" data-reveal="">
+      <section className="ah" aria-labelledby="about-hero-title">
+        <div className="ah-inner">
+          <div className="ah-copy" data-reveal="">
             <nav className="cn-crumbs au-crumbs" aria-label="Breadcrumb">
               <Link prefetch={false} href="/">Home</Link>
               <span aria-hidden="true">/</span>
               <span aria-current="page">About</span>
             </nav>
-            <p className="au-kicker">
+            <p className="au-kicker ah-kicker">
               <span className="au-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
               {site.title}
             </p>
             <h1 id="about-hero-title">
               Meet <em>Narayani Garg</em>
             </h1>
-            <p className="au-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
-            <blockquote className="au-hero-quote">
-              <p>“The spirit who is doing a ritual is spiritual.”</p>
+            <p className="ah-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
+            <blockquote className="ah-quote">
+              <p>The spirit who is doing a ritual is spiritual.”</p>
             </blockquote>
-            <div className="au-actions">
-              <EnquiryTrigger className="au-cta" source="about-hero" primary>
-                <span className="cx-long">Enquire about a consultation</span>
-                <span className="cx-short">Enquire now</span>
+            <div className="ah-actions">
+              <EnquiryTrigger className="au-cta ah-cta" source="about-hero" primary>
+                <span>Enquire about a consultation</span>
                 <span className="au-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
-              <a className="au-ghost" href="#story">
+              <a className="au-ghost ah-ghost" href="#story">
                 Read her story <span aria-hidden="true">→</span>
               </a>
             </div>
-            <ul className="au-creds" id="experience" aria-label="Her background">
+            <ul className="ah-creds" id="experience" aria-label="Her background">
               {background.map((item, i) => (
                 <li key={item.title}>
-                  <span className="au-cred-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: credentialIcons[i] }} />
+                  <span className="ah-cred-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: credentialIcons[i] }} />
                   <span>
                     <strong>{item.number}</strong>
                     <small>{item.title}</small>
@@ -85,36 +84,39 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-          <figure className="au-film" data-reveal="">
-            <div className="au-film-frame">
-              <video controls playsInline preload="metadata" poster={asset("/images/narayani-about-authentic-560.webp")} aria-label="Introduction to Narayani Garg">
-                <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
-                Your browser does not support video playback.
-              </video>
+          <div className="ah-visual">
+            <span className="ah-ring" aria-hidden="true" />
+            <div className="ah-arch">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/about-hero.webp")} alt={`Narayani Garg, ${site.title}`} width={900} height={1255} fetchPriority="high" />
             </div>
-            <figcaption>
-              <span className="au-play" aria-hidden="true">▶</span>
-              Watch Narayani’s introduction
-            </figcaption>
-            <span className="au-film-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
-          </figure>
+            <span className="ah-arch-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+          </div>
+          <ul className="ah-words" aria-hidden="true">
+            <li className="ah-words-lotus" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+            <li>Guidance</li>
+            <li>Clarity</li>
+            <li>Healing</li>
+            <li>Inner growth</li>
+          </ul>
         </div>
       </section>
 
       <section className="au-story" id="story" aria-labelledby="story-title">
         <div className="au-story-inner">
           <div className="au-portrait" data-reveal="">
-            <div className="au-portrait-arch">
-              <picture>
-                <source type="image/avif" srcSet={assetSet("/images/narayani-cover-portrait-480.avif 480w, /images/narayani-cover-portrait-684.avif 684w")} sizes="(max-width: 900px) 62vw, 360px" />
-                <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="" width={684} height={855} loading="lazy" />
-              </picture>
+            <div className="au-portrait-arch au-video">
+              <video controls playsInline preload="metadata" poster={asset("/images/narayani-about-authentic-560.webp")} aria-label="Introduction to Narayani Garg">
+                <source src={asset("/videos/narayani-introduction.mp4")} type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
             </div>
             <p className="au-portrait-badge">
               <span>Simmi</span>
               <span className="au-arrow-sm" aria-hidden="true">→</span>
               <em>Narayani</em>
             </p>
+            <p className="au-video-note">Watch Narayani’s introduction</p>
           </div>
           <div className="au-story-copy">
             <header data-reveal="">
