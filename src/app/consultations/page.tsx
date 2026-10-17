@@ -234,35 +234,40 @@ export default function ConsultationsPage() {
         </section>
       )}
 
-      <section className="cn-sec cn-how ch" id="how" aria-labelledby="how-title">
+      <section className="cn-sec sv-how hw cx-how" id="how" aria-labelledby="how-title">
+        <span className="hw-leaf hw-leaf-l" aria-hidden="true" />
+        <span className="hw-leaf hw-leaf-r" aria-hidden="true" />
         <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <span className="ch-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
-            <p className="cn-kicker cn-kicker-dark">How it works</p>
+          <header className="hw-head" data-reveal="">
+            <span className="hw-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
+            <p className="hw-kicker">How it works</p>
             <h2 id="how-title">
-              From your question <br />
-              to an <em>appointment</em>
+              From your question to an <em>appointment</em>
             </h2>
-            <p>An enquiry starts a conversation with the team. It does not book or pay for a session.</p>
+            <p className="hw-lead">An enquiry starts a conversation with the team. It does not book or pay for a session.</p>
           </header>
-          <ol className="cn-steps" data-reveal="">
+          <ol className="hw-steps" data-reveal="">
             {steps.map((step, i) => (
-              <li key={step.title} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
-                <span className="cn-step-num">{String(i + 1).padStart(2, "0")}</span>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="ch-sprig" src={asset("/images/how-sprig.webp")} alt="" width={104} height={128} loading="lazy" aria-hidden="true" />
-                <span className="ch-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: stepIcons[i] }} />
+              <li key={step.title}>
+                <span className="hw-num">{String(i + 1).padStart(2, "0")}</span>
+                {i < steps.length - 1 && <span className="hw-arrow" aria-hidden="true">→</span>}
+                <div className="hw-photo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(`/images/how-step-${i + 1}.webp`)} alt="" width={740} height={444} loading="lazy" />
+                </div>
+                <span className="hw-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: stepIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
+                <span className="hw-rule" aria-hidden="true" />
               </li>
             ))}
           </ol>
-          <div className="cn-how-foot" data-reveal="">
-            <EnquiryTrigger className="cn-cta" source="consultations-how">
+          <div className="cx-how-foot" data-reveal="">
+            <EnquiryTrigger className="cx-how-cta" source="consultations-how">
               <span>Speak to the team</span>
-              <Arrow />
+              <span className="bt-go" aria-hidden="true">→</span>
             </EnquiryTrigger>
-            <Link prefetch={false} className="cn-text" href="/contact/">
+            <Link prefetch={false} className="cx-how-link" href="/contact/">
               Call or email instead <span aria-hidden="true">→</span>
             </Link>
           </div>
