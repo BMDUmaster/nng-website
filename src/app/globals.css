@@ -22562,3 +22562,21 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
 }
 @media (max-width: 1023px) { .sa-photo-brain-training img { object-position: 82% 50%; } }
 @media (min-width: 901px) { .hm .hm-figures, section .hm-figures { margin-left: 0 !important; width: min(100%, 520px) !important; } .hm-figures dd { font-size: 26px !important; } .hm-figures dt { font-size: 12.5px !important; } }
+
+/* Hero figures, compact (Oct 17): one slim strip, small gold icon beside the number, short label under the number. */
+.hm .hm-figures, section .hm-figures { display: flex !important; align-items: center; width: fit-content !important; max-width: 100%; margin-top: 18px !important; padding: 10px 6px !important; border-radius: 14px; background: rgb(255 253 248 / 0.92); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.4), 0 12px 24px -20px rgb(60 44 20 / 0.5); }
+.hm .hm-figures::before, section .hm-figures::before { display: none; }
+.hm-figures > div { display: grid !important; grid-template-columns: auto auto !important; grid-template-areas: "icon value" "icon label" !important; justify-items: start; align-items: center; column-gap: 8px !important; row-gap: 0 !important; padding: 0 14px !important; text-align: left; }
+.hm-fig-icon { width: 22px !important; height: 22px !important; padding: 0; background: none; color: #B88A45; }
+.hm-figures dd { margin: 0; font-size: 21px !important; }
+.hm-figures dt { max-width: none; margin: 1px 0 0; font-size: 11.5px !important; line-height: 1.2; white-space: nowrap; }
+@media (max-width: 680px) {
+  .hm .hm-figures, section .hm-figures { width: 100% !important; justify-content: space-between; padding: 9px 4px !important; }
+  .hm-figures > div { flex: 1; justify-content: center; column-gap: 6px !important; padding: 0 6px !important; }
+  .hm-fig-icon { width: 18px !important; height: 18px !important; }
+  .hm-figures dd { font-size: 17px !important; }
+  .hm-figures dt { font-size: 10px !important; }
+}
+@media (max-width: 360px) { .hm-fig-icon { display: none !important; } .hm-figures > div { grid-template-columns: auto !important; grid-template-areas: "value" "label" !important; } }
+@media (min-width: 901px) { .hm-figures dd { font-size: 24px !important; } .hm-figures dt { font-size: 12.5px !important; } .hm-fig-icon { width: 26px !important; height: 26px !important; } .hm-figures > div { padding: 2px 18px !important; } }
+@media (max-width: 360px) { .practice-site main .mn h2 { font-size: 34px; } }

@@ -10,6 +10,8 @@ import { areas, areaTopics, figures, site } from "@/content/site";
  * her real photograph); across the foot a deep green wave with the four areas of life. On phones the same pieces stack.
  */
 
+const shortFigure: Record<string, string> = { "Years of professional experience": "Years of experience", "Countries served": "Countries" };
+
 const practices = ["Brainology", "Numerology", "Vastulogy", "Astrology"];
 
 const svg = (d: string) =>
@@ -188,7 +190,7 @@ export function HomeHero() {
             {figures.map((figure, i) => (
               <div key={figure.label} style={{ "--i": i } as React.CSSProperties}>
                 <span className="hm-fig-icon" aria-hidden="true" dangerouslySetInnerHTML={html(figureIcon[i] ?? icons.people)} />
-                <dt>{figure.label}</dt>
+                <dt title={figure.label}>{shortFigure[figure.label] ?? figure.label}</dt>
                 <dd>{figure.value}</dd>
               </div>
             ))}
