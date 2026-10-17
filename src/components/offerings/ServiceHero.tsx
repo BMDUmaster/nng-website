@@ -199,6 +199,52 @@ export function ServiceHero({
   hub?: HubSlug;
 }) {
   const look = looks[hub];
+  if (hub === "brain-training") {
+    return (
+      <section className="bz" aria-labelledby="page-title">
+        <span className="bz-leaf" aria-hidden="true" />
+        <div className="bz-photo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={asset("/images/brainology-hero2.webp")} alt="Narayani Garg" width={963} height={723} fetchPriority="high" />
+        </div>
+        <div className="bz-inner">
+          <div className="bz-copy">
+            <nav className="cn-crumbs bz-crumbs" aria-label="Breadcrumb">
+              {trail.map((crumb, n) => (
+                <Fragment key={crumb.label}>
+                  {n > 0 && <span aria-hidden="true">/</span>}
+                  {crumb.href ? <Link prefetch={false} href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
+                </Fragment>
+              ))}
+            </nav>
+            <p className="bz-kicker">
+              <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+              {kicker}
+              <span className="bz-kicker-line" aria-hidden="true" />
+            </p>
+            <h1 id="page-title">
+              Brainology <em>Program</em>
+            </h1>
+            <p className="bz-lead">Bring a situation that keeps repeating. Narayani helps you explore the thoughts, beliefs and responses around it, so you can create clarity and move forward with confidence.</p>
+            <div className="bz-actions sh-actions">{actions}</div>
+            {note}
+          </div>
+          <ol className="bz-steps" aria-label="What she looks at">
+            {look.values.map((v, n) => (
+              <li key={v.title}>
+                <span className="bz-icon" aria-hidden="true">
+                  <span dangerouslySetInnerHTML={{ __html: v.icon }} />
+                  <b>{String(n + 1).padStart(2, "0")}</b>
+                </span>
+                <strong>{v.title}</strong>
+                <small>{v.text}</small>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className={`svh svh-svc sh-${hub}`} aria-labelledby="page-title">
       <div className="svh-inner">

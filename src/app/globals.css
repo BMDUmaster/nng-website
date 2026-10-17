@@ -23069,3 +23069,64 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .au .cw::after { top: 240px; opacity: 0.45; }
   .au .cw::before { opacity: 0.55; }
 }
+
+/* Brainology hero (bz-), matched to the approved banner: deep green with leaves at the left; the words, one gold
+   button and a note on the left; her photograph panel (gold arch, name, books and lotus) on the right half; four steps
+   along the foot as gold-ringed icons joined by a line, each with a number badge. */
+.bz { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(50% 70% at 30% 40%, #0F4027, transparent 75%), #062A18; color: #FFFFFF; }
+.bz-leaf { position: absolute; z-index: -1; left: 0; top: 0; width: 170px; aspect-ratio: 170 / 478; background: url("/images/brainology-leaf-l.webp") 0 0 / 100% 100% no-repeat; opacity: 0.85; -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent), linear-gradient(180deg, #000 70%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, #000 40%, transparent), linear-gradient(180deg, #000 70%, transparent); mask-composite: intersect; }
+.bz-photo { position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; width: 50.7%; }
+.bz-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 30%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 9%); mask-image: linear-gradient(90deg, transparent 0%, #000 9%); }
+.bz-inner { position: relative; z-index: 1; width: min(1580px, calc(100% - 96px)); margin-inline: auto; padding: 32px 0 26px clamp(0px, 4vw, 86px); min-height: clamp(560px, 41vw, 760px); display: flex; flex-direction: column; }
+.bz-copy { max-width: 600px; }
+.bz-crumbs, .bz-crumbs a { color: rgb(255 255 255 / 0.85); font-size: 15px; }
+.bz-kicker { display: flex; align-items: center; gap: 14px; margin: 26px 0 0; font-size: 15px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #E1BE70; }
+.bz-kicker > span:first-child { display: block; width: 40px; color: #E1BE70; }
+.bz-kicker svg, .bz-icon svg { display: block; width: 100%; height: auto; }
+.bz-kicker-line { width: 56px; height: 1.5px; background: #D2A954; }
+.practice-site main .bz h1 { margin: 8px 0 0; font-family: var(--font-display), var(--serif); font-weight: 700; font-size: clamp(56px, 5.6vw, 104px); line-height: 0.92; letter-spacing: -0.02em; color: #FFFFFF; }
+.bz h1 em { display: block; font-style: italic; font-weight: 700; color: #E8C46F; }
+.practice-site main .bz .bz-lead { max-width: 31em; margin: 22px 0 0; font-size: clamp(16px, 1.25vw, 21px); line-height: 1.45; color: #FFFFFF; }
+.bz-actions { display: flex; margin-top: 30px; }
+.bz-actions .cn-cta { min-height: 58px; gap: 20px; padding: 5px 6px 5px 26px; border-radius: 999px; background: linear-gradient(180deg, #F4D98F, #D9B160); color: #123A2B; font-size: 17px; font-weight: 600; box-shadow: 0 0 0 2px rgb(217 177 96 / 0.4), 0 16px 28px -16px rgb(0 0 0 / 0.6); }
+.bz-actions .cn-cta .cn-arrow { width: 46px; height: 46px; background: #123A2B; color: #FFFFFF; }
+.bz .svd-note { margin: 14px 0 0; font-size: 14px; color: rgb(255 255 255 / 0.75); }
+.bz-steps { --g: 24px; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--g); width: min(860px, calc(48vw - max(48px, (100vw - 1580px) / 2) - 24px)); margin: auto 0 0 calc(-1 * clamp(0px, 4vw, 86px)); padding: 30px 0 0; list-style: none; }
+.bz-steps li { position: relative; display: grid; justify-items: start; align-content: start; }
+.bz-steps li:not(:last-child)::after { content: ""; position: absolute; left: calc(var(--ic) + 12px); right: calc(12px - var(--g)); top: calc(var(--ic) / 2); height: 1px; background: rgb(217 177 96 / 0.7); }
+.bz-steps { --ic: clamp(70px, 4.4vw, 84px); }
+.bz-icon { position: relative; display: grid; place-items: center; width: var(--ic); height: var(--ic); border-radius: 50%; box-shadow: inset 0 0 0 1.6px #D9B160; color: #E8C46F; }
+.bz-icon > span { display: block; width: 40px; }
+.bz-icon b { position: absolute; right: -6px; bottom: -6px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #D9B160; color: #123A2B; font-size: 12px; font-weight: 700; }
+.bz-steps strong { margin-top: 14px; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(19px, 1.25vw, 24px); color: #FFFFFF; }
+.bz-steps small { margin-top: 4px; font-size: clamp(13px, 0.8vw, 15px); line-height: 1.35; color: rgb(255 255 255 / 0.88); }
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .bz-inner { padding-left: 0; }
+  .bz-steps { margin-left: 0; width: 46vw; --g: 12px; --ic: 58px; }
+  .bz-copy { max-width: 46%; }
+}
+@media (max-width: 900px) {
+  .bz { display: flex; flex-direction: column; }
+  .bz-leaf { width: 90px; }
+  .bz-inner { display: contents; }
+  .bz-copy { order: 1; max-width: none; padding: 22px 18px 20px; }
+  .bz-crumbs, .bz-crumbs a { font-size: 12.5px; }
+  .bz-kicker { margin-top: 14px; font-size: 12px; }
+  .bz-kicker > span:first-child { width: 30px; }
+  .practice-site main .bz h1 { font-size: clamp(46px, 13.5vw, 60px); }
+  .practice-site main .bz .bz-lead { font-size: 15px; }
+  .bz-actions { margin-top: 20px; }
+  .bz-actions .cn-cta { min-height: 48px; font-size: 14.5px; gap: 12px; padding-left: 20px; }
+  .bz-actions .cn-cta .cn-arrow { width: 38px; height: 38px; }
+  .bz .svd-note { font-size: 12.5px; }
+  .bz-photo { order: 2; position: relative; inset: auto; width: 100%; aspect-ratio: 963 / 723; }
+  .bz-photo img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 10%); mask-image: linear-gradient(180deg, transparent 0%, #000 10%); }
+  .bz-steps { order: 3; --g: 6px; --ic: 54px; width: auto; margin: 0; padding: 18px 10px 22px; }
+  .bz-steps li { justify-items: center; text-align: center; }
+  .bz-steps li:not(:last-child)::after { left: calc(50% + 32px); right: calc(-50% + 30px); top: 27px; }
+  .bz-icon > span { width: 26px; }
+  .bz-icon b { width: 20px; height: 20px; font-size: 9.5px; right: -4px; bottom: -4px; }
+  .bz-steps strong { margin-top: 10px; font-size: 15px; }
+  .bz-steps small { font-size: 11px; }
+}
