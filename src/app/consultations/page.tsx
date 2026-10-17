@@ -174,7 +174,7 @@ export default function ConsultationsPage() {
           </header>
           <ul className="cn-areas">
             {areas.map((area, i) => (
-              <li key={area} className="cn-area" data-reveal="" style={{ "--d": `${i * 80}ms`, "--art": `url(${asset(`/images/area-${area.toLowerCase()}.webp`)})` } as React.CSSProperties}>
+              <li key={area} className="cn-area" data-reveal="" style={{ "--d": `${i * 80}ms`, "--art": `url(${asset(`/images/area2-${area.toLowerCase()}.webp`)})` } as React.CSSProperties}>
                 <span className="cn-area-icon">
                   <Icon id={concernIcons[area]} />
                 </span>

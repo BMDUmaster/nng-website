@@ -22580,3 +22580,6 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
 @media (max-width: 360px) { .hm-fig-icon { display: none !important; } .hm-figures > div { grid-template-columns: auto !important; grid-template-areas: "value" "label" !important; } }
 @media (min-width: 901px) { .hm-figures dd { font-size: 24px !important; } .hm-figures dt { font-size: 12.5px !important; } .hm-fig-icon { width: 26px !important; height: 26px !important; } .hm-figures > div { padding: 2px 18px !important; } }
 @media (max-width: 360px) { .practice-site main .mn h2 { font-size: 34px; } }
+/* Where to begin: real photographs on the right, a deep green wash keeps the words clear on the left. */
+.cb .cn-area { background: linear-gradient(90deg, rgb(12 38 28 / 0.97) 0%, rgb(12 38 28 / 0.9) 38%, rgb(12 38 28 / 0.55) 62%, rgb(12 38 28 / 0.12) 100%), linear-gradient(0deg, rgb(12 38 28 / 0.55), transparent 45%), var(--art) right center / cover no-repeat, #163F2F !important; }
+.cb .cn-area { background: linear-gradient(90deg, rgb(12 38 28 / 0.98) 0%, rgb(12 38 28 / 0.94) 45%, rgb(12 38 28 / 0.45) 72%, rgb(12 38 28 / 0.05) 100%), linear-gradient(0deg, rgb(12 38 28 / 0.5), transparent 40%), var(--art) 78% center / cover no-repeat, #163F2F !important; }
