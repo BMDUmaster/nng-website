@@ -22727,3 +22727,10 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .practice-site main .bt-card-b p:not(.bt-card-note) { font-size: 13.5px; }
   .bt-card-num { width: 34px; height: 34px; font-size: 13px; }
 }
+
+/* Numerology/Vastulogy choices share the Brainology card; full-width cream section. */
+.svd-review section#pages:has(.bt-card-b) .bt-cards { max-width: 1200px; margin-inline: auto; }
+.bt-card-b .bt-card-note { font-size: 12px; color: #8A6A32; }
+.bt-card-b .bt-card-more { margin-top: 0; }
+.bt-card-b .bt-card-actions.bt-card-foot { gap: 12px; }
+@media (min-width: 901px) { .svd-review #pages h2 { font-size: clamp(30px, 2.8vw, 46px); } }
