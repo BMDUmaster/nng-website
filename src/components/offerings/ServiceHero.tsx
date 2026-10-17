@@ -24,8 +24,8 @@ const i = {
   name: ico('<rect x="4" y="8" width="24" height="16" rx="3"/><path d="M9 20l3-8 3 8M10 17.5h4M19 12v8M19 12h3a2 2 0 0 1 0 4h-3"/>'),
   phone: ico('<rect x="10" y="4" width="12" height="24" rx="2.5"/><path d="M14.5 24h3"/>'),
   shop: ico('<path d="M5 12h22l-2-6H7Z"/><path d="M7 12v14h18V12M13 26v-7h6v7"/>'),
-  compass: ico('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/>'),
-  elements: ico('<path d="M16 4c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z"/><path d="M5 26h22"/>'),
+  compass: ico('<path d="M26 6 13.5 13.5 6 26l12.5-7.5Z"/><path d="M13.5 13.5 18.5 18.5"/>'),
+  elements: ico('<path d="M16 26c-5.5 0-9-3.6-9-8.5 3.4 0 6.6 1.6 9 4.4 2.4-2.8 5.6-4.4 9-4.4 0 4.9-3.5 8.5-9 8.5Z"/><path d="M16 21.9c-2.8-3.3-2.8-8.6 0-14.4 2.8 5.8 2.8 11.1 0 14.4Z"/>'),
   plan: ico('<rect x="5" y="5" width="22" height="22" rx="1"/><path d="M5 15h10V5M15 21h12M20 15v6"/>'),
   home: ico('<path d="M5 15 16 5l11 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/>'),
   chart: ico('<rect x="4" y="4" width="24" height="24"/><path d="M4 4l24 24M28 4 4 28M16 4 4 16l12 12 12-12Z"/>'),
@@ -67,6 +67,51 @@ const looks: Record<HubSlug, { photo: string; mPhoto?: string; w: number; h: num
     { title: "Guidance", text: "Before you choose", icon: i.heart },
   ] },
 };
+
+/* The gold line art beside the photograph on the Vastulogy and Astrology heroes: a compass rose, or a zodiac wheel with
+   two small constellations. Drawn in the approved banner's own coordinates so it sits where the banner has it. */
+function PzArt({ hub }: { hub: HubSlug }) {
+  if (hub === "vastu") {
+    const ticks = Array.from({ length: 72 }, (_, n) => n);
+    return (
+      <svg className="pz-art" viewBox="530 140 370 400" aria-hidden="true">
+        <g transform="translate(713 339)">
+          <circle r="165" />
+          <circle r="150" />
+          <circle r="118" strokeDasharray="1.5 5" />
+          <circle r="40" />
+          {ticks.map((n) => <line key={n} y1={-150} y2={n % 2 ? -142 : -136} transform={`rotate(${n * 5})`} />)}
+          <path className="pz-art-fill" d="M0 -150 10 -10 0 0 -10 -10Z M0 150 10 10 0 0 -10 10Z M-150 0 -10 -10 0 0 -10 10Z M150 0 10 -10 0 0 10 10Z" />
+          <path d="M0 -150 -10 -10 M0 150 -10 10 M-150 0 -10 10 M150 0 10 10" />
+          <path className="pz-art-fill" d="M64 -64 8 -2 0 0 2 -8Z M-64 64 -8 2 0 0 -2 8Z M-64 -64 -2 -8 0 0 -8 2Z M64 64 2 8 0 0 8 2Z" />
+          <text y="-170" textAnchor="middle">N</text>
+          <text y="186" textAnchor="middle">S</text>
+        </g>
+      </svg>
+    );
+  }
+  const signs = ["\u2648", "\u2649", "\u264A", "\u264B", "\u264C", "\u264D", "\u264E", "\u264F", "\u2650", "\u2651", "\u2652", "\u2653"];
+  const rays = Array.from({ length: 32 }, (_, n) => n);
+  return (
+    <svg className="pz-art" viewBox="560 93 470 547" aria-hidden="true">
+      <path className="pz-art-thin" d="M569 230 630 157 686 186 M870 121 943 192 993 182 1040 160 M630 640 655 610" />
+      {[[569, 230], [630, 157], [686, 186], [870, 121], [943, 192], [993, 182]].map(([x, y]) => <circle key={`${x}`} className="pz-art-star" cx={x} cy={y} r="2.6" />)}
+      <g transform="translate(816 389)">
+        <circle r="210" />
+        <circle r="152" />
+        <circle r="104" />
+        <circle r="16" />
+        {signs.map((g, n) => (
+          <g key={g} transform={`rotate(${n * 30})`}>
+            <line y1={-104} y2={-210} transform="rotate(15)" />
+            <text y="-168" textAnchor="middle" dominantBaseline="middle">{g + "\uFE0E"}</text>
+          </g>
+        ))}
+        {rays.map((n) => <path key={n} className="pz-art-fill" d={n % 2 ? "M-2 -18 0 -62 2 -18Z" : "M-3 -18 0 -92 3 -18Z"} transform={`rotate(${n * 11.25})`} />)}
+      </g>
+    </svg>
+  );
+}
 
 function Backdrop({ hub }: { hub: HubSlug }) {
   if (hub === "numerology") {
@@ -289,6 +334,66 @@ export function ServiceHero({
             {look.values.map((v) => (
               <li key={v.title}>
                 <span className="nz-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
+                <span>
+                  <strong>{v.title}</strong>
+                  <small>{v.text}</small>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    );
+  }
+  if (hub === "vastu" || hub === "astrology") {
+    const art = hub === "vastu"
+      ? { photo: "/images/vastu-hero2.webp", w: 912, h: 583, name: ["Vastu", "logy"] }
+      : { photo: "/images/astrology-hero2.webp", w: 682, h: 607, name: ["Astr", "ology"] };
+    const isHub = kicker.toLowerCase() === "her practice";
+    return (
+      <section className={`pz pz-${hub}`} aria-labelledby="page-title">
+        <div className="pz-top">
+          <span className="pz-leaf" aria-hidden="true" />
+          <div className="pz-photo">
+            <PzArt hub={hub} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset(art.photo)} alt="Narayani Garg" width={art.w} height={art.h} fetchPriority="high" />
+          </div>
+          <div className="pz-copy">
+            <nav className="cn-crumbs pz-crumbs" aria-label="Breadcrumb">
+              {trail.map((crumb, n) => (
+                <Fragment key={crumb.label}>
+                  {n > 0 && <span aria-hidden="true">/</span>}
+                  {crumb.href ? <Link prefetch={false} href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
+                </Fragment>
+              ))}
+            </nav>
+            <p className="pz-kicker">
+              <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+              {kicker}
+            </p>
+            {hub === "vastu" && <span className="pz-kicker-rule" aria-hidden="true" />}
+            {isHub
+              ? <h1 id="page-title">{art.name[0]}<em>{art.name[1]}</em></h1>
+              : <h1 id="page-title" className="pz-long">{title}</h1>}
+            {hub === "astrology" && (
+              <svg className="pz-swoosh" viewBox="0 0 360 30" aria-hidden="true">
+                <path d="M2 15 H358" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M184 2 L188 11 L198 15 L188 19 L184 28 L180 19 L170 15 L180 11 Z" fill="currentColor" />
+              </svg>
+            )}
+            <p className="pz-lead">{lead}</p>
+            <div className="pz-actions sh-actions">{actions}</div>
+            {note}
+          </div>
+        </div>
+        <div className="pz-band">
+          <span className="pz-leaf-bl" aria-hidden="true" />
+          <span className="pz-leaf-br" aria-hidden="true" />
+          <ul className="pz-values" aria-label="What she looks at">
+            {look.values.map((v) => (
+              <li key={v.title}>
+                <span className="pz-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
                 <span>
                   <strong>{v.title}</strong>
                   <small>{v.text}</small>

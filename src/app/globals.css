@@ -23202,3 +23202,91 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .nz-leaf-br { display: none; }
   .nz-values strong, .nz-values small { white-space: normal; }
 }
+
+/* Vastulogy and Astrology heroes (pz-), matched to the approved banners: green with soft leaves, the words and the
+   buttons on the left, gold line art (a compass, or a zodiac wheel) beside her photograph on the right, then a cream
+   card holding four values. --pw is the photograph's share of the width, --ar its height over width. */
+.pz { --pw: 54.55%; --pwn: 54.55; --ar: 0.6393; position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(180deg, #FAF4E9, #F6EEE1); }
+.pz-astrology { --pw: 40.79%; --pwn: 40.79; --ar: 0.89; }
+.pz-top { position: relative; isolation: isolate; min-height: calc(var(--pwn) * var(--ar) * 1vw); background: radial-gradient(45% 60% at 30% 45%, #0C3D27, transparent 75%), #022A1C; color: #FFFFFF; }
+.pz-astrology .pz-top { background: radial-gradient(40% 55% at 45% 40%, #0F3F2C, transparent 75%), #022B20; }
+.pz-leaf { position: absolute; z-index: -1; left: 0; top: 0; width: clamp(80px, 7.5vw, 125px); aspect-ratio: 125 / 579; background: url("/images/vastu-leaf-l.webp") 0 0 / 100% 100% no-repeat; -webkit-mask-image: linear-gradient(90deg, #000 55%, transparent), linear-gradient(180deg, #000 72%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, #000 55%, transparent), linear-gradient(180deg, #000 72%, transparent); mask-composite: intersect; }
+.pz-astrology .pz-leaf { width: clamp(80px, 7.8vw, 130px); aspect-ratio: 130 / 607; background-image: url("/images/astrology-leaf-l.webp"); }
+.pz-photo { position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; width: var(--pw); }
+.pz-photo img { position: relative; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 100% 0; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%); mask-image: linear-gradient(90deg, transparent 0%, #000 7%); }
+.pz-art { position: absolute; left: -25.22%; top: 8.75%; width: 40.57%; height: auto; fill: none; stroke: #C9A256; stroke-width: 1; opacity: 0.42; pointer-events: none; }
+.pz-astrology .pz-art { left: -63.05%; top: 0; width: 68.91%; opacity: 0.6; }
+.pz-art text { fill: #C9A256; stroke: none; font-family: var(--font-display), var(--serif); font-size: 22px; }
+.pz-astrology .pz-art text { font-family: "Segoe UI Symbol", "Noto Sans Symbols", "DejaVu Sans", sans-serif; font-size: 36px; }
+.pz-art .pz-art-fill { fill: rgb(201 162 86 / 0.55); }
+.pz-art .pz-art-thin { stroke-width: 0.8; stroke-dasharray: 2 3; }
+.pz-art .pz-art-star { fill: #F2D592; stroke: none; }
+.pz-copy { position: relative; width: min(1400px, calc(100% - 96px)); margin-inline: auto; padding: clamp(24px, 3.5vw, 64px) 0 clamp(28px, 3vw, 54px); }
+.pz-copy > * { max-width: min(640px, 41vw); }
+.pz-crumbs, .pz-crumbs a { color: rgb(255 255 255 / 0.9); font-size: clamp(14px, 1.1vw, 19px); }
+.pz-kicker { display: flex; align-items: center; gap: clamp(12px, 1.2vw, 20px); margin: clamp(18px, 2.4vw, 44px) 0 0; font-size: clamp(14px, 1.3vw, 22px); font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: #E8C985; }
+.pz-kicker > span:first-child { display: block; flex: none; width: clamp(34px, 2.9vw, 50px); color: #E1BE70; }
+.pz-kicker svg, .pz-v-icon svg { display: block; width: 100%; height: auto; }
+.pz-kicker-rule { display: block; width: clamp(44px, 3.9vw, 66px); height: 2px; margin: clamp(8px, 0.9vw, 14px) 0 0 calc(clamp(34px, 2.9vw, 50px) + clamp(12px, 1.2vw, 20px)); background: #D2A954; }
+.practice-site main .pz h1 { margin: clamp(4px, 0.6vw, 12px) 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(54px, 6.7vw, 124px); line-height: 1.02; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; max-width: none; }
+.practice-site main .pz-astrology h1 { font-weight: 500; }
+.practice-site main .pz h1.pz-long { white-space: normal; max-width: min(640px, 41vw); font-size: clamp(38px, 3.8vw, 68px); line-height: 1.06; }
+.pz h1 em { font-style: normal; color: #E2BC6A; background: linear-gradient(180deg, #F0D28E, #D4A752); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.pz-swoosh { display: block; width: min(360px, 21.5vw); height: auto; margin: clamp(0px, 0.3vw, 6px) 0 0; color: #D9B160; }
+.practice-site main .pz .pz-lead { margin: clamp(8px, 0.8vw, 16px) 0 0; max-width: min(640px, 40vw); font-size: clamp(16px, 1.36vw, 24px); line-height: 1.45; color: #FFFFFF; }
+.pz-actions { display: flex; flex-wrap: wrap; gap: clamp(12px, 1.4vw, 24px); margin-top: clamp(20px, 2vw, 34px); max-width: none !important; }
+.pz-actions .cn-cta { min-height: clamp(52px, 4.2vw, 72px); gap: 22px; padding: 5px 6px 5px clamp(22px, 1.8vw, 30px); border-radius: 999px; background: linear-gradient(90deg, #F2D69A, #DDB264); color: #123A2B; font-size: clamp(16px, 1.3vw, 22px); font-weight: 600; box-shadow: 0 0 0 3px rgb(242 214 154 / 0.3), 0 16px 28px -16px rgb(0 0 0 / 0.6); }
+.pz-actions .cn-cta .cn-arrow { width: clamp(42px, 3.8vw, 64px); height: clamp(42px, 3.8vw, 64px); background: #0E2A1E; color: #FFFFFF; }
+.pz-actions .cn-ghost { display: inline-flex; align-items: center; min-height: clamp(52px, 3.8vw, 64px); padding: 0 clamp(20px, 1.9vw, 32px); border: 1.5px solid rgb(232 196 111 / 0.8); border-radius: 999px; background: rgb(2 42 28 / 0.35); color: #FFFFFF; font-size: clamp(15px, 1.15vw, 19px); font-weight: 500; text-decoration: none; }
+.pz .svd-note { margin: clamp(12px, 1.2vw, 20px) 0 0; font-size: clamp(13px, 1vw, 17px); color: rgb(255 255 255 / 0.85); }
+
+.pz-band { position: relative; padding: 0 0 clamp(24px, 3vw, 52px); }
+.pz-leaf-bl { -webkit-mask-image: linear-gradient(90deg, #000 60%, transparent); mask-image: linear-gradient(90deg, #000 60%, transparent); position: absolute; z-index: -1; left: 0; top: 0; width: clamp(0px, calc((100vw - min(1520px, 100vw - 9.4vw)) / 2 - 2px), 78px); aspect-ratio: 76 / 273; background: url("/images/vastu-leaf-bl.webp") 0 0 / 100% 100% no-repeat; }
+.pz-leaf-br { -webkit-mask-image: linear-gradient(270deg, #000 60%, transparent); mask-image: linear-gradient(270deg, #000 60%, transparent); position: absolute; z-index: -1; right: 0; top: 0; width: clamp(0px, calc((100vw - min(1520px, 100vw - 9.4vw)) / 2 - 2px), 76px); aspect-ratio: 75 / 251; background: url("/images/vastu-leaf-br.webp") 0 0 / 100% 100% no-repeat; }
+.pz-astrology .pz-leaf-bl { aspect-ratio: 78 / 241; background-image: url("/images/astrology-leaf-bl.webp"); }
+.pz-astrology .pz-leaf-br { aspect-ratio: 75 / 236; background-image: url("/images/astrology-leaf-br.webp"); }
+.pz-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(1520px, calc(100% - 9.4vw)); margin: 0 auto; padding: clamp(18px, 2.2vw, 38px) clamp(18px, 3vw, 54px); list-style: none; border-radius: clamp(26px, 2.7vw, 46px); background: linear-gradient(180deg, #FCF7EE, #F8F0E3); box-shadow: inset 0 0 0 1.5px rgb(217 177 96 / 0.75), 0 34px 44px -32px rgb(80 60 20 / 0.4); }
+.pz-values li { display: flex; align-items: center; gap: clamp(12px, 1.7vw, 30px); padding: 4px clamp(12px, 2vw, 36px); }
+.pz-values li:first-child { padding-left: 0; }
+.pz-values li + li { border-left: 1px solid rgb(201 162 86 / 0.45); }
+.pz-v-icon { flex: none; display: grid; place-items: center; width: clamp(58px, 5.75vw, 98px); height: clamp(58px, 5.75vw, 98px); padding: clamp(16px, 1.55vw, 27px); border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FBF2E0, #F1E2C4); box-shadow: inset 0 0 0 1.2px rgb(217 177 96 / 0.55); color: #B8873C; }
+.pz-values strong { display: block; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(17px, 1.55vw, 27px); line-height: 1.2; color: #123A2B; white-space: nowrap; }
+.pz-astrology .pz-values strong { font-weight: 500; }
+.pz-values small { display: block; margin-top: clamp(6px, 0.8vw, 14px); font-size: clamp(13px, 1.06vw, 18px); line-height: 1.35; color: #3D4B43; white-space: nowrap; }
+
+@media (max-width: 1240px) and (min-width: 901px) {
+  .pz-values li { flex-direction: column; align-items: flex-start; }
+  .pz-values strong, .pz-values small { white-space: normal; }
+}
+@media (max-width: 900px) {
+  .pz-top { display: flex; flex-direction: column; min-height: 0; }
+  .pz-leaf { width: 70px; }
+  .pz-copy { width: auto; margin: 0; padding: 22px 18px 24px; }
+  .pz-copy > *, .practice-site main .pz h1.pz-long, .practice-site main .pz .pz-lead { max-width: none; }
+  .pz-crumbs, .pz-crumbs a { font-size: 12.5px; }
+  .pz-kicker { margin-top: 16px; font-size: 12.5px; gap: 10px; }
+  .pz-kicker > span:first-child { width: 30px; }
+  .pz-kicker-rule { width: 44px; margin-left: 40px; }
+  .practice-site main .pz h1 { font-size: clamp(48px, 14vw, 64px); }
+  .practice-site main .pz h1.pz-long { font-size: clamp(32px, 9vw, 42px); }
+  .pz-swoosh { width: 200px; }
+  .practice-site main .pz .pz-lead { font-size: 15px; }
+  .pz-actions { margin-top: 20px; gap: 10px; }
+  .pz-actions .cn-cta { min-height: 48px; gap: 14px; padding-left: 22px; font-size: 15px; }
+  .pz-actions .cn-cta .cn-arrow { width: 38px; height: 38px; }
+  .pz-actions .cn-ghost { min-height: 46px; padding: 0 18px; font-size: 14px; }
+  .pz .svd-note { font-size: 12.5px; }
+  .pz-photo { order: 2; position: relative; width: 100%; aspect-ratio: 1 / var(--ar); }
+  .pz-photo img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%); mask-image: linear-gradient(180deg, transparent 0%, #000 12%); }
+  .pz-art { display: none; }
+  .pz-band { margin-top: -22px; padding-bottom: 20px; }
+  .pz-leaf-bl, .pz-leaf-br { display: none; }
+  .pz-values { grid-template-columns: 1fr 1fr; width: calc(100% - 24px); row-gap: 16px; padding: 18px 10px; border-radius: 24px; }
+  .pz-values li { flex-direction: column; align-items: center; gap: 8px; padding: 2px 8px; text-align: center; }
+  .pz-values li:first-child { padding-left: 8px; }
+  .pz-values li + li { border-left: 0; }
+  .pz-values li:nth-child(even) { border-left: 1px solid rgb(201 162 86 / 0.45); }
+  .pz-v-icon { width: 54px; height: 54px; padding: 15px; }
+  .pz-values strong { font-size: 17px; white-space: normal; }
+  .pz-values small { margin-top: 3px; font-size: 12.5px; white-space: normal; }
+}
