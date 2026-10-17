@@ -245,6 +245,61 @@ export function ServiceHero({
       </section>
     );
   }
+  if (hub === "numerology") {
+    return (
+      <section className="nz" aria-labelledby="page-title">
+        <div className="nz-top">
+          <span className="nz-leaf" aria-hidden="true" />
+          <div className="nz-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/images/numerology-hero2.webp")} alt="Narayani Garg" width={894} height={616} fetchPriority="high" />
+          </div>
+          <div className="nz-copy">
+            <nav className="cn-crumbs nz-crumbs" aria-label="Breadcrumb">
+              {trail.map((crumb, n) => (
+                <Fragment key={crumb.label}>
+                  {n > 0 && <span aria-hidden="true">/</span>}
+                  {crumb.href ? <Link prefetch={false} href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
+                </Fragment>
+              ))}
+            </nav>
+            <p className="nz-kicker">
+              <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+              {kicker}
+              <span className="nz-kicker-line" aria-hidden="true" />
+            </p>
+            <h1 id="page-title">Numerology</h1>
+            <svg className="nz-swoosh" viewBox="0 0 600 40" aria-hidden="true">
+              <path d="M2 30 C 120 6, 300 4, 430 22 S 540 30, 598 28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              <path d="M430 6 L434 18 L446 22 L434 26 L430 38 L426 26 L414 22 L426 18 Z" fill="currentColor" />
+            </svg>
+            <p className="nz-lead">{lead}</p>
+            <div className="nz-actions sh-actions">{actions}</div>
+            {note}
+          </div>
+        </div>
+        <div className="nz-strip">
+          <svg className="nz-wave" viewBox="0 0 1672 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 96 C 180 50, 380 18, 600 20 C 820 22, 960 82, 1150 78 C 1340 74, 1520 52, 1672 46 L1672 120 L0 120 Z" fill="#FBF6EE" />
+            <path d="M0 96 C 180 50, 380 18, 600 20 C 820 22, 960 82, 1150 78 C 1340 74, 1520 52, 1672 46" fill="none" stroke="#D9B160" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
+          </svg>
+          <span className="nz-leaf-bl" aria-hidden="true" />
+          <span className="nz-leaf-br" aria-hidden="true" />
+          <ul className="nz-values" aria-label="What she looks at">
+            {look.values.map((v) => (
+              <li key={v.title}>
+                <span className="nz-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
+                <span>
+                  <strong>{v.title}</strong>
+                  <small>{v.text}</small>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className={`svh svh-svc sh-${hub}`} aria-labelledby="page-title">
       <div className="svh-inner">

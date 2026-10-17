@@ -23130,3 +23130,75 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .bz-steps strong { margin-top: 10px; font-size: 15px; }
   .bz-steps small { font-size: 11px; }
 }
+
+/* Numerology hero (nz-), matched to the approved banner: green with soft leaves, the words and one gold button on the
+   left, her photograph with the gold number wheel and name card on the right, then a cream wave holding four values. */
+.nz { position: relative; isolation: isolate; background: #F7F2EA; }
+.nz-top { position: relative; isolation: isolate; overflow: hidden; min-height: calc(53.5vw * 616 / 894); background: radial-gradient(45% 60% at 28% 45%, #0E3A26, transparent 75%), #012119; color: #FFFFFF; }
+.nz-leaf { position: absolute; z-index: -1; left: 0; top: 0; width: clamp(90px, 9vw, 150px); aspect-ratio: 150 / 551; background: url("/images/numerology-leaf-l.webp") 0 0 / 100% 100% no-repeat; -webkit-mask-image: linear-gradient(90deg, #000 55%, transparent), linear-gradient(180deg, #000 75%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, #000 55%, transparent), linear-gradient(180deg, #000 75%, transparent); mask-composite: intersect; }
+.nz-photo { position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; width: 53.5%; }
+.nz-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 100% 0; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%); mask-image: linear-gradient(90deg, transparent 0%, #000 8%); }
+.nz-copy { position: relative; width: min(1340px, calc(100% - 96px)); margin-inline: auto; padding: clamp(26px, 3.2vw, 56px) 0 clamp(70px, 6.4vw, 120px); }
+.nz-copy > * { max-width: min(620px, 40vw); }
+.practice-site main .nz-copy > h1 { max-width: none; white-space: nowrap; }
+.nz-crumbs, .nz-crumbs a { color: rgb(255 255 255 / 0.88); font-size: clamp(14px, 1vw, 17px); }
+.nz-kicker { display: flex; align-items: center; gap: 14px; margin: clamp(22px, 2.6vw, 46px) 0 0; font-size: clamp(13px, 1vw, 17px); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #E1BE70; }
+.nz-kicker > span:first-child { display: block; flex: none; width: clamp(34px, 2.8vw, 48px); color: #E1BE70; }
+.nz-kicker svg, .nz-v-icon svg { display: block; width: 100%; height: auto; }
+.nz-kicker-line { flex: none; width: clamp(48px, 4vw, 66px); height: 1.5px; background: #D2A954; }
+.practice-site main .nz h1 { margin: clamp(6px, 0.9vw, 16px) 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(54px, 6.4vw, 118px); line-height: 1; letter-spacing: -0.02em; color: #FFFFFF; }
+.nz-swoosh { display: block; width: min(600px, 36vw); height: auto; margin: -2px 0 0 -6px; color: #D9B160; }
+.practice-site main .nz .nz-lead { margin: clamp(6px, 0.6vw, 12px) 0 0; font-size: clamp(16px, 1.3vw, 22px); line-height: 1.45; color: #FFFFFF; }
+.nz-actions { display: flex; margin-top: clamp(22px, 2.4vw, 40px); }
+.nz-actions .cn-cta { min-height: clamp(52px, 4vw, 68px); gap: 22px; padding: 5px 6px 5px 30px; border-radius: 999px; background: linear-gradient(90deg, #F2D69A, #E2B866); color: #123A2B; font-size: clamp(16px, 1.2vw, 20px); font-weight: 600; box-shadow: 0 0 0 3px rgb(242 214 154 / 0.35), 0 16px 28px -16px rgb(0 0 0 / 0.6); }
+.nz-actions .cn-cta .cn-arrow { width: clamp(42px, 3.4vw, 56px); height: clamp(42px, 3.4vw, 56px); background: #0E2A1E; color: #FFFFFF; }
+.nz .svd-note { margin: clamp(14px, 1.4vw, 22px) 0 0; font-size: clamp(13px, 0.95vw, 16px); color: rgb(255 255 255 / 0.82); }
+
+.nz-strip { position: relative; z-index: 1; margin-top: calc(-7.2vw + 2px); padding-bottom: clamp(26px, 2.6vw, 44px); }
+.nz-strip::before { content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: 7vw; bottom: 0; background: #FBF6EE; border-radius: 0 0 clamp(26px, 3vw, 56px) clamp(26px, 3vw, 56px); box-shadow: 0 26px 36px -26px rgb(60 44 20 / 0.32); }
+.nz-wave { display: block; width: 100%; height: 7.2vw; }
+.nz-leaf-bl { position: absolute; z-index: -1; left: 0; bottom: 0; width: clamp(0px, calc((100vw - 1340px) / 2 - 6px), 165px); aspect-ratio: 165 / 206; background: url("/images/numerology-leaf-bl.webp") 0 100% / 100% 100% no-repeat; -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%), linear-gradient(90deg, #000 62%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(180deg, transparent, #000 40%), linear-gradient(90deg, #000 62%, transparent); mask-composite: intersect; }
+.nz-leaf-br { position: absolute; z-index: -1; right: 0; bottom: 8%; width: clamp(0px, calc((100vw - 1340px) / 2 + 10px), 132px); aspect-ratio: 132 / 148; background: url("/images/numerology-leaf-br.webp") 0 0 / 100% 100% no-repeat; -webkit-mask-image: linear-gradient(180deg, transparent, #000 25%); mask-image: linear-gradient(180deg, transparent, #000 25%); }
+.nz-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(1340px, calc(100% - 96px)); margin: 0 auto; padding: 0; list-style: none; }
+.nz-values li { display: flex; align-items: center; gap: clamp(12px, 1.2vw, 22px); padding: 4px clamp(12px, 1.8vw, 34px); }
+.nz-values li:first-child { padding-left: 0; }
+.nz-values li + li { border-left: 1px solid rgb(201 162 86 / 0.45); }
+.nz-v-icon { flex: none; display: grid; place-items: center; width: clamp(60px, 4.6vw, 82px); height: clamp(60px, 4.6vw, 82px); padding: clamp(17px, 1.4vw, 24px); border-radius: 50%; background: #FDF9F1; box-shadow: inset 0 0 0 1.4px rgb(217 177 96 / 0.75), 0 10px 22px -12px rgb(150 110 40 / 0.45); color: #C9963F; }
+.nz-values strong { display: block; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: clamp(17px, 1.3vw, 23px); line-height: 1.2; white-space: nowrap; color: #123A2B; }
+.nz-values small { display: block; margin-top: clamp(6px, 0.8vw, 14px); font-size: clamp(13px, 0.9vw, 15.5px); white-space: nowrap; line-height: 1.35; color: #2F4A3E; }
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .nz-values li { flex-direction: column; align-items: flex-start; }
+  .nz-values small { white-space: normal; }
+}
+@media (max-width: 900px) {
+  .nz-top { display: flex; flex-direction: column; min-height: 0; }
+  .nz-leaf { width: 80px; }
+  .nz-copy { width: auto; margin: 0; padding: 22px 18px 22px; }
+  .nz-copy > * { max-width: none; }
+  .nz-crumbs, .nz-crumbs a { font-size: 12.5px; }
+  .nz-kicker { margin-top: 16px; font-size: 12px; gap: 10px; }
+  .practice-site main .nz h1 { font-size: clamp(46px, 13.5vw, 62px); }
+  .nz-swoosh { width: min(300px, 80%); }
+  .practice-site main .nz .nz-lead { font-size: 15px; }
+  .nz-actions { margin-top: 20px; }
+  .nz-actions .cn-cta { min-height: 48px; gap: 14px; padding-left: 22px; font-size: 15px; }
+  .nz-actions .cn-cta .cn-arrow { width: 38px; height: 38px; }
+  .nz .svd-note { font-size: 12.5px; }
+  .nz-photo { order: 2; position: relative; width: 100%; }
+  .nz-photo img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%); mask-image: linear-gradient(180deg, transparent 0%, #000 12%); }
+  .nz-strip { margin-top: -30px; padding-bottom: 20px; }
+  .nz-strip::before { top: 28px; border-radius: 0 0 26px 26px; }
+  .nz-wave { height: 32px; }
+  .nz-values { grid-template-columns: 1fr 1fr; width: calc(100% - 24px); row-gap: 16px; }
+  .nz-values li { flex-direction: column; align-items: center; gap: 8px; padding: 2px 8px; text-align: center; }
+  .nz-values li:first-child { padding-left: 8px; }
+  .nz-values li + li { border-left: 0; }
+  .nz-values li:nth-child(even) { border-left: 1px solid rgb(201 162 86 / 0.45); }
+  .nz-v-icon { width: 54px; height: 54px; padding: 15px; }
+  .nz-values strong { font-size: 17px; }
+  .nz-values small { margin-top: 3px; font-size: 12.5px; }
+  .nz-leaf-bl { display: none; }
+  .nz-leaf-br { display: none; }
+  .nz-values strong, .nz-values small { white-space: normal; }
+}
