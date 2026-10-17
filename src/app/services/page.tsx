@@ -127,7 +127,7 @@ export default function ServicesPage() {
             <p className="svh-badge">
               <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
               <span>Narayani Garg</span>
-              <small>Personal guidance</small>
+              <small>Psychic mentor</small>
             </p>
           </div>
         </div>
@@ -278,7 +278,7 @@ export default function ServicesPage() {
                     <blockquote>
                       <p>“{service.quote}”</p>
                     </blockquote>
-                    <figcaption>Narayani Garg · Translated from Hindi</figcaption>
+                    <figcaption>Narayani Garg</figcaption>
                   </figure>
                 )}
                 <ul className="sv-look">
@@ -384,7 +384,7 @@ export default function ServicesPage() {
                 <span className="tq-initials" aria-hidden="true">DK</span>
                 <span>
                   <strong>Deepa K.</strong>
-                  <small>Client since 2020 · Translated from Hindi</small>
+                  <small>Client since 2020</small>
                 </span>
               </figcaption>
               <Link prefetch={false} className="tq-link" href="/hand-holding-program/">

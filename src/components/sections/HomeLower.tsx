@@ -23,7 +23,6 @@ export function JourneyPhotos() {
         <header className="lx-head">
           <p className="lx-kicker">In person</p>
           <h2 id="spiritual-gallery-title">Moments from her journey</h2>
-          <p className="lx-lead">Photographs from Narayani’s meetings with spiritual teachers.</p>
         </header>
         <LoopRail label="Photographs of Narayani with spiritual teachers" className="jr-loop" speed={0.028}>
           {teachers.map(({ photo, name }) => (
@@ -54,11 +53,11 @@ export function HomeProgram() {
       <div className="pg-inner">
         <div className="pg-card">
           <div className="pg-copy">
-            <p className="pg-label"><Lotus className="pg-lotus" />Six months of personal guidance</p>
+            <p className="pg-label"><Lotus className="pg-lotus" />Six months with your psychic mentor</p>
             <h2 id="program-title">
               Personalised <em>Hand Holding</em> Program
             </h2>
-            <p className="pg-lead">Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
+            <p className="pg-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic mentor.</p>
             <ul className="pg-list">
               {["Numerology, Vastulogy and astrology assessment", "Psychic guidance for recurring patterns", "Direct guidance across health, relationships, money and career"].map((t, i) => (
                 <li key={t}>
@@ -69,13 +68,13 @@ export function HomeProgram() {
             </ul>
             <div className="pg-actions">
               <EnquiryTrigger className="pg-cta" topic="the Personalised Hand Holding Program" source="home-program">
-                <span>Enquire about the program</span>
+                <span>Ask about the program</span>
                 <span className="pg-cta-arrow" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 6h7M6.5 3l3 3-3 3" /></svg>
                 </span>
               </EnquiryTrigger>
               <Link prefetch={false} className="pg-link" href="/hand-holding-program/">
-                How the programme works <span aria-hidden="true">→</span>
+                See how it works <span aria-hidden="true">→</span>
               </Link>
             </div>
             <div className="pg-notes">
@@ -90,7 +89,7 @@ export function HomeProgram() {
             <div className="pg-medal" aria-hidden="true">
               <strong>6</strong>
               <span>months</span>
-              <small>Personal guidance</small>
+              <small>Psychic mentor</small>
               <Lotus className="pg-medal-lotus" />
             </div>
           </div>
@@ -138,7 +137,7 @@ export function HomeFaq({
               <small>If you have any other questions, feel free to ask. We’re here to help.</small>
             </p>
             <EnquiryTrigger className="fq-ask-btn" source={source}>
-              Ask something else <span aria-hidden="true">→</span>
+              Ask your question <span aria-hidden="true">→</span>
             </EnquiryTrigger>
           </div>
         </div>

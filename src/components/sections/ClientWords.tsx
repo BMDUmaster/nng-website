@@ -132,7 +132,7 @@ export function ClientWords({ voices, note }: { voices: Voice[]; note: React.Rea
                 <strong>{voice.name}</strong>
                 <small>
                   {voice.context}
-                  {voice.translated ? " · Translated from Hindi" : ""}
+                  
                 </small>
               </span>
             </figcaption>

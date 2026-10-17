@@ -130,7 +130,6 @@ export function Approach() {
           <h2 id="approach-title">
             Why she starts with the <em>mind</em>
           </h2>
-          <p className="ab-lead">Knowing what to change is one thing. Living differently is another. Her work brings the two together.</p>
 
           <ol className="ab-steps" data-draw-steps="">
             {steps.map((step, i) => (
@@ -154,7 +153,7 @@ export function Approach() {
 
           <div className="ab-actions">
             <EnquiryTrigger className="ab-cta" source="home-who-for">
-              <span>Tell her team what is on your mind</span>
+              <span>Share what’s on your mind</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>

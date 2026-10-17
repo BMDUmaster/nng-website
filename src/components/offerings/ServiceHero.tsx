@@ -441,7 +441,7 @@ export function ServiceHero({
           <p className="svh-badge">
             <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
             <span>Narayani Garg</span>
-            <small>Personal guidance</small>
+            <small>Psychic mentor</small>
           </p>
         </div>
       </div>

@@ -68,7 +68,7 @@ export const page: OfferingPage = {
           type: "p",
           text: "A chart is sometimes read out with a warning attached: do this, or that will follow. Narayani does not begin there, and she says so in her own words.",
         },
-        { type: "quote", text: "It is not a business of fear.", source: "Narayani Garg, translated from Hindi" },
+        { type: "quote", text: "It is not a business of fear.", source: "Narayani Garg" },
         {
           type: "p",
           text: "In her view a remedy works only when the mind is working with it, so the person who has to carry it comes before the planet. The chart comes in where it helps: it gives a structure for questions about timing, for why a stretch of time feels as it does, and for weighing a choice against the period you are in. A hard period is described plainly, along with how common it is and how traditions differ about it.",

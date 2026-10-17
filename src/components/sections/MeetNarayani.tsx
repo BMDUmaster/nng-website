@@ -12,9 +12,9 @@ const lotus = '<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5
 /** Four things she helps with (desktop band under the film). */
 /** Phones only: her figures under the feature cards. */
 const statIcons = [
-  icon('<circle cx="16" cy="10" r="4.2"/><path d="M8.5 25a7.5 7.5 0 0 1 15 0"/><circle cx="7" cy="12.5" r="3"/><path d="M2.5 23.5a5 5 0 0 1 6.5-4.7"/><circle cx="25" cy="12.5" r="3"/><path d="M29.5 23.5a5 5 0 0 0-6.5-4.7"/>'),
-  icon('<circle cx="16" cy="12" r="7.5"/><path d="m12.8 12 2.2 2.2 4.2-4.4"/><path d="m11 18.5-3 9 4.5-1.8L15 29l1-5M21 18.5l3 9-4.5-1.8L17 29"/>'),
   icon('<circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3.4 3.2 5 6.9 5 11s-1.6 7.8-5 11c-3.4-3.2-5-6.9-5-11s1.6-7.8 5-11Z"/><path d="M7 10.5h18M7 21.5h18"/>'),
+  icon('<circle cx="16" cy="12" r="7.5"/><path d="m12.8 12 2.2 2.2 4.2-4.4"/><path d="m11 18.5-3 9 4.5-1.8L15 29l1-5M21 18.5l3 9-4.5-1.8L17 29"/>'),
+  icon(lotus),
 ];
 const features = [
   { title: "Understand Your Patterns", text: "Gain clarity about your thoughts and emotions.", icon: icon(lotus) },
@@ -92,8 +92,8 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
           <h2 id="founder-film-title">
             Meet <span className="mn-name">Narayani</span>
           </h2>
-          <p className="mn-roles" aria-label="Spiritual guide, life mentor">
-            <span>Spiritual guide</span>
+          <p className="mn-roles" aria-label="Psychic spiritual mentor, life mentor">
+            <span>Psychic spiritual mentor</span>
             <span>Life mentor</span>
           </p>
           <blockquote className="mn-quote">
@@ -163,7 +163,8 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
                   <path d="M2.5 6h2.5L8.5 3v10L5 10H2.5z" fill="currentColor" stroke="none" />
                   <path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.8 3.5a6.3 6.3 0 0 1 0 9" />
                 </svg>
-                <span>Watch with sound</span>
+                <span className="mn-sound-long">Watch with sound</span>
+                <span className="mn-sound-short">Sound on</span>
               </button>
             )}
           </div>
@@ -185,7 +186,7 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
           </p>
           <div className="mn-actions">
             <Link prefetch={false} className="mn-link" href="/about/">
-              <span>Get to know Narayani</span>
+              <span>Discover her story</span>
               <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -197,7 +198,6 @@ export function MeetNarayani({ bookTitle }: { bookTitle: string }) {
           <li key={f.title}>
             <span className="mn-f-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: f.icon }} />
             <h3>{f.title}</h3>
-            <p>{f.text}</p>
           </li>
         ))}
       </ul>

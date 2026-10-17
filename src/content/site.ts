@@ -27,11 +27,11 @@ export const site = {
   },
 } as const;
 
-/** Confirmed by Aryan on 30 September 2026. Experience means total professional experience. */
+/** 10,000+ and 15+ confirmed by Aryan on 30 September 2026; the wording and 5K+ set by the team on 17 October 2026. */
 export const figures = [
-  { value: "10,000+", label: "Clients guided" },
-  { value: "15+", label: "Years of professional experience" },
-  { value: "5+", label: "Countries served" },
+  { value: "10,000+", label: "Worldwide" },
+  { value: "15+", label: "Years of experience" },
+  { value: "5K+", label: "Lives transformed" },
 ] as const;
 
 export type NavChild = { label: string; href: string; note?: string };

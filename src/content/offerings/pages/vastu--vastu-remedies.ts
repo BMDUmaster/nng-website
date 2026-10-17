@@ -235,7 +235,7 @@ export const page: OfferingPage = {
         {
           type: "quote",
           text: "Even a Vastulogy remedy only works when your brain is working.",
-          source: "Narayani Garg, translated from Hindi",
+          source: "Narayani Garg",
         },
         {
           type: "p",

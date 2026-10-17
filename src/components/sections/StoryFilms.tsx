@@ -167,7 +167,7 @@ export function StoryFilms({
               <span className="sf-more-disc" aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3v10l8-5z" /></svg>
               </span>
-              <span className="sf-l-long">{showMore ? "Show fewer recordings" : "More client recordings"}</span>
+              <span className="sf-l-long">{showMore ? "Show fewer stories" : "Watch more stories"}</span>
               <span className="sf-l-short">{showMore ? "Fewer stories" : "More stories"}</span>
               <span className="sf-more-count">{showMore ? "−" : `+${more.length}`}</span>
             </button>
@@ -184,8 +184,8 @@ export function StoryFilms({
             </button>
           </div>
           <EnquiryTrigger className="sf-enquire" source="home-films">
-            <span className="sf-l-long">Start your own enquiry</span>
-            <span className="sf-l-short">Start enquiry</span>
+            <span className="sf-l-long">Begin your enquiry</span>
+            <span className="sf-l-short">Enquire now</span>
             <span className="sf-enq-go" aria-hidden="true">→</span>
           </EnquiryTrigger>
         </div>

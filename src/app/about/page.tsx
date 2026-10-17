@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const background = [
   // copy-lint-allow: doctorate subject explicitly confirmed by Aryan on 4 Oct 2026; no institution or date claimed.
   { number: "PhD", title: "Occult Sciences", desc: "A doctorate in Occult Sciences." },
-  { number: "15+ Years", title: "Professional experience", desc: "Personal guidance through numerology, Vastulogy, astrology and mindset work." },
+  { number: "15+ Years", title: "Professional experience", desc: "Psychic mentoring through numerology, Vastulogy, astrology and mindset work." },
 ];
 
 const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;

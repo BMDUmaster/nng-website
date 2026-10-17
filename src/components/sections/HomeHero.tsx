@@ -10,7 +10,7 @@ import { areas, areaTopics, figures, site } from "@/content/site";
  * her real photograph); across the foot a deep green wave with the four areas of life. On phones the same pieces stack.
  */
 
-const shortFigure: Record<string, string> = { "Years of professional experience": "Years of experience", "Countries served": "Countries" };
+const shortFigure: Record<string, string> = {};
 
 const practices = ["Brainology", "Numerology", "Vastulogy", "Astrology"];
 
@@ -27,7 +27,7 @@ const icons = {
   case: svg('<rect x="4" y="10" width="24" height="16" rx="2.5"/><path d="M12 10V7.5A1.5 1.5 0 0 1 13.5 6h5A1.5 1.5 0 0 1 20 7.5V10M4 17h24M14 17v2.5h4V17"/>'),
 };
 const areaIcon: Record<string, string> = { Health: icons.lotus, Relationship: icons.heart, Money: icons.coins, Career: icons.case };
-const figureIcon = [icons.people, icons.award, icons.globe];
+const figureIcon = [icons.globe, icons.award, icons.lotus];
 
 const star = (cls: string) =>
   `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.7 6.4 5.6 11.3 12 12-6.4.7-11.3 5.6-12 12-.7-6.4-5.6-11.3-12-12C6.4 11.3 11.3 6.4 12 0Z"/></svg>`;
@@ -152,7 +152,7 @@ export function HomeHero() {
           <p className="hm-name">
             <span className="hm-name-star" aria-hidden="true" dangerouslySetInnerHTML={html(star("hm-star"))} />
             <span>
-              Personal guidance with <strong>Narayani Garg</strong>
+              Psychic mentor <strong>Narayani Garg</strong>
             </span>
           </p>
           <h1 id="hero-title">
@@ -182,7 +182,7 @@ export function HomeHero() {
                   <path fill="currentColor" d="M9.5 7.5v9l7-4.5-7-4.5Z" />
                 </svg>
               </span>
-              <span>How she works</span>
+              <span>See how she works</span>
               <span className="hm-arrow" aria-hidden="true">→</span>
             </a>
           </div>
@@ -260,7 +260,7 @@ export function HomeHero() {
               <span className="hm-pr-text">
                 <strong>{card.name}</strong>
               </span>
-              <span className="hm-pr-go" aria-hidden="true">→</span>
+              <span className="hm-pr-go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" /></svg></span>
             </a>
           </li>
         ))}

@@ -51,7 +51,6 @@ export function JourneyMoments() {
             Moments from <br className="jm-br" />
             her <em>journey</em>
           </h2>
-          <p className="jm-lead">Photographs from Narayani’s meetings with spiritual teachers.</p>
           <div className="jm-arrows">
             <button type="button" className="jm-arrow" onClick={() => step(-1)} aria-label="Previous photograph">{arrow("M10 3L5 8l5 5")}</button>
             <button type="button" className="jm-arrow" onClick={() => step(1)} aria-label="Next photograph">{arrow("M6 3l5 5-5 5")}</button>
@@ -70,7 +69,7 @@ export function JourneyMoments() {
             <button type="button" className="jm-arrow jm-arrow-m" onClick={() => step(1)} aria-label="Next photograph">{arrow("M6 3l5 5-5 5")}</button>
           </div>
           <Link prefetch={false} className="jm-cta" href="/about/">
-            <span>View more moments</span>
+            <span>See all moments</span>
             <span className="jm-cta-go" aria-hidden="true">→</span>
           </Link>
         </div>

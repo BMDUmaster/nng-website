@@ -4,9 +4,9 @@
 export function ClienteleNote() {
   return (
     <p className="clientele-note">
-      Her personal clientele includes banking professionals, CEOs of multinational and
-      core sector companies, women entrepreneurs, and people from the printing,
-      education and hospital sectors.
+      Narayani’s clients include banking professionals, CEOs of multinational and
+      core-sector companies, women entrepreneurs, and professionals from printing,
+      education and healthcare.
     </p>
   );
 }

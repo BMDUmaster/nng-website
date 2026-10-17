@@ -87,13 +87,13 @@ export default function ProgramPage() {
             </nav>
             <p className="svh-kicker">
               <span className="svh-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
-              Six months of personal guidance
+              Six months with your psychic mentor
             </p>
             <h1 id="page-title">
               Personalised <em>Hand Holding</em> Program
             </h1>
             <span className="svh-rule" aria-hidden="true" />
-            <p className="svh-lead">Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
+            <p className="svh-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic mentor.</p>
             <ul className="hx-incl">
               {inclusions.map((item) => (
                 <li key={item}>

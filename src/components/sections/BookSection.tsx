@@ -59,7 +59,7 @@ export function BookSection({ bookTitle }: { bookTitle: string }) {
             <span>{site.title}</span>
           </p>
           <Link prefetch={false} className="bk2-cta" href="/about/">
-            <span>Read her story</span>
+            <span>About the author</span>
             <span className="bk2-cta-go" aria-hidden="true">→</span>
           </Link>
         </div>

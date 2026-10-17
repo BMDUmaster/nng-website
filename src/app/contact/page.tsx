@@ -75,7 +75,7 @@ export default function ContactPage() {
             </div>
             <p className="kh-badge">
               <span>{site.person}</span>
-              <small>Personal guidance</small>
+              <small>Psychic mentor</small>
             </p>
             <span className="kh-lotus-art" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
           </div>
@@ -233,7 +233,7 @@ export default function ContactPage() {
               </blockquote>
               <figcaption>
                 <strong>{manish.name}</strong>
-                <span>On his experience · Translated from Hindi</span>
+                <span>On his experience</span>
               </figcaption>
             </div>
           </figure>

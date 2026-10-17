@@ -23413,3 +23413,63 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
 @media (max-width: 900px) { .bz-neural { opacity: 0.35; -webkit-mask-image: none; mask-image: none; } }
 .practice-site main .bz .bz-lead { margin-top: 20px; }
 @media (max-width: 900px) { .practice-site main .bz .bz-lead { margin-top: 16px; } }
+
+/* Home, Oct 17: the practice arrows as a drawn gold arrow in a ringed disc. On phones each disc breathes a soft halo
+   and its arrow nudges forward in turn, so the four read as "tap to open" without anything flashing. */
+.hm-pr-go svg { display: block; width: 58%; height: 58%; transition: transform 0.3s ease; }
+.hm-practices a:hover .hm-pr-go svg, .hm-practices a:focus-visible .hm-pr-go svg { transform: translateX(2px); }
+@keyframes hm-go-nudge { 0%, 70%, 100% { transform: translateX(0); } 80% { transform: translateX(3px); } 90% { transform: translateX(-1px); } }
+@keyframes hm-go-halo { 0% { box-shadow: 0 0 0 3px #123A2B, 0 0 0 3px rgb(240 208 138 / 0.55); } 70%, 100% { box-shadow: 0 0 0 3px #123A2B, 0 0 0 11px rgb(240 208 138 / 0); } }
+@media (max-width: 900px) {
+  .hm-pr-go { width: 30px; height: 30px; bottom: -14px; background: radial-gradient(circle at 35% 30%, #FBE3A6, #D9B160 60%, #B88A45); color: #0F3324; box-shadow: 0 0 0 3px #123A2B, 0 6px 14px -4px rgb(0 0 0 / 0.55); transition: transform 0.2s ease; }
+  .hm-practices a:active .hm-pr-go { transform: translateX(-50%) scale(0.9); }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .hm-pr-go { animation: hm-go-halo 2.8s ease-out infinite; animation-delay: calc(1.6s + var(--i, 0) * 0.35s); }
+  .hm-pr-go svg { animation: hm-go-nudge 2.8s ease-in-out infinite; animation-delay: calc(1.6s + var(--i, 0) * 0.35s); }
+  .hm-practices li:nth-child(1) .hm-pr-go, .hm-practices li:nth-child(1) .hm-pr-go svg { --i: 0; }
+  .hm-practices li:nth-child(2) .hm-pr-go, .hm-practices li:nth-child(2) .hm-pr-go svg { --i: 1; }
+  .hm-practices li:nth-child(3) .hm-pr-go, .hm-practices li:nth-child(3) .hm-pr-go svg { --i: 2; }
+  .hm-practices li:nth-child(4) .hm-pr-go, .hm-practices li:nth-child(4) .hm-pr-go svg { --i: 3; }
+}
+
+/* Home CTAs, Oct 17: the carousel sections centre their button under the dots, compact and not stretched. */
+.jm-foot { grid-template-columns: 1fr; justify-items: center; gap: 16px; }
+.jm-dots { grid-column: 1; }
+.jm-cta { grid-column: 1; justify-self: center; min-height: 52px; gap: 16px; padding: 5px 6px 5px 26px; font-size: 16px; }
+.sf-foot { grid-template-columns: auto auto; justify-content: center; gap: 14px; }
+.sf-dots { grid-column: 1 / -1; order: -1; }
+.sf-more, .sf-enquire { justify-self: center; min-height: 52px; }
+@media (max-width: 900px) {
+  .jm-cta { min-height: 46px; font-size: 15px; padding-left: 22px; }
+  .sf-foot { grid-template-columns: auto auto; padding: 0 12px; gap: 10px; }
+  .sf-more, .sf-enquire { width: auto; min-height: 46px; }
+}
+@media (max-width: 380px) { .sf-foot { grid-template-columns: 1fr; } }
+
+/* Meet Narayani, Oct 17: the sound button always fits inside the film frame. Phones show "Sound on". */
+.mn-sound { max-width: calc(100% - 20px); box-sizing: border-box; }
+.mn-sound-short { display: none; }
+@media (max-width: 900px) {
+  .mn-sound { bottom: 12px; min-height: 36px; padding: 0 12px 0 4px; gap: 6px; font-size: 12px; }
+  .mn-sound svg { width: 28px; height: 28px; padding: 7px; }
+  .mn-sound-long { display: none; }
+  .mn-sound-short { display: inline; }
+}
+@media (max-width: 900px) {
+  .mn-actions { justify-items: center; }
+  .mn-link { width: auto; padding: 0 22px; }
+  .mn-roles { letter-spacing: 0.14em; }
+  .mn-roles span { min-width: 0; white-space: normal; }
+}
+@media (max-width: 400px) {
+  .mn-stats dt { font-size: 9px; }
+  .mn-stats dd { font-size: 15px; }
+}
+/* Her approach, Oct 17: the lead under the heading is gone, so the steps take a little more air; the action stays compact. */
+.ab-copy h2 + .ab-steps { margin-top: clamp(22px, 2.6vw, 38px); }
+@media (max-width: 900px) {
+  .ab-copy h2 + .ab-steps { margin-top: 20px; }
+  .ab-actions { justify-items: start; }
+  .ab-cta { width: auto !important; justify-self: start; gap: 14px; padding-left: 22px; padding-right: 20px; }
+}
