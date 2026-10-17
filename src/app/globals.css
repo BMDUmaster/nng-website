@@ -23246,7 +23246,7 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
 .pz-astrology .pz-leaf-bl { aspect-ratio: 78 / 241; background-image: url("/images/astrology-leaf-bl.webp"); }
 .pz-astrology .pz-leaf-br { aspect-ratio: 75 / 236; background-image: url("/images/astrology-leaf-br.webp"); }
 .pz-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(1520px, calc(100% - 9.4vw)); margin: 0 auto; padding: clamp(18px, 2.2vw, 38px) clamp(18px, 3vw, 54px); list-style: none; border-radius: clamp(26px, 2.7vw, 46px); background: linear-gradient(180deg, #FCF7EE, #F8F0E3); box-shadow: inset 0 0 0 1.5px rgb(217 177 96 / 0.75), 0 34px 44px -32px rgb(80 60 20 / 0.4); }
-.pz-values li { display: flex; align-items: center; gap: clamp(12px, 1.7vw, 30px); padding: 4px clamp(12px, 2vw, 36px); }
+.pz-values li { display: flex; align-items: center; gap: clamp(12px, 1.4vw, 24px); padding: 4px clamp(12px, 1.6vw, 28px); }
 .pz-values li:first-child { padding-left: 0; }
 .pz-values li + li { border-left: 1px solid rgb(201 162 86 / 0.45); }
 .pz-v-icon { flex: none; display: grid; place-items: center; width: clamp(58px, 5.75vw, 98px); height: clamp(58px, 5.75vw, 98px); padding: clamp(16px, 1.55vw, 27px); border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FBF2E0, #F1E2C4); box-shadow: inset 0 0 0 1.2px rgb(217 177 96 / 0.55); color: #B8873C; }
@@ -23290,3 +23290,15 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .pz-values strong { font-size: 17px; white-space: normal; }
   .pz-values small { margin-top: 3px; font-size: 12.5px; white-space: normal; }
 }
+
+/* The four practice heroes (Brainology, Numerology, Vastulogy, Astrology): small buttons, Oct 17. */
+:is(.bz-actions, .nz-actions, .pz-actions) .cn-cta { min-height: 46px; gap: 14px; padding: 4px 5px 4px 20px; font-size: 15px; box-shadow: 0 0 0 2px rgb(242 214 154 / 0.28), 0 12px 22px -14px rgb(0 0 0 / 0.6); }
+:is(.bz-actions, .nz-actions, .pz-actions) .cn-cta .cn-arrow { width: 36px; height: 36px; }
+.pz-actions .cn-ghost { min-height: 46px; padding: 0 20px; font-size: 14.5px; }
+@media (max-width: 900px) {
+  :is(.bz-actions, .nz-actions, .pz-actions) .cn-cta { min-height: 42px; gap: 10px; padding-left: 16px; font-size: 14px; }
+  :is(.bz-actions, .nz-actions, .pz-actions) .cn-cta .cn-arrow { width: 32px; height: 32px; }
+  .pz-actions .cn-ghost { min-height: 42px; padding: 0 16px; font-size: 13.5px; }
+}
+/* The line art fades out where the words sit, so a glyph never runs through the title or the lead. */
+.pz-art { -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.25) 30%, #000 55%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.25) 30%, #000 55%); }
