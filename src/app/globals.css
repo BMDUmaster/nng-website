@@ -22005,7 +22005,7 @@ section.fq.fq-rich h2 em { display: block; }
 .bt-card-photo { position: relative; height: 170px; }
 .bt-card-photo img { width: 100%; height: 100%; object-fit: cover; }
 .bt-card-icon { position: absolute; left: 18px; bottom: -26px; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: #FFFCF6; box-shadow: 0 0 0 1px rgb(201 162 86 / 0.6), 0 10px 20px -12px rgb(60 44 20 / 0.6); }
-.bt-card-icon :global(svg), .bt-card-icon svg { width: 32px; height: 32px; }
+.bt-card-icon svg { width: 32px; height: 32px; }
 .bt-card-body { padding: 34px 20px 18px; }
 .practice-site main .bt-card h3 { margin: 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 20px; line-height: 1.2; color: #123A2B; }
 .practice-site main .bt-card p { margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #4A463E; }
