@@ -248,6 +248,7 @@ export function ServiceHero({
     return (
       <section className="bz" aria-labelledby="page-title">
         <span className="bz-leaf" aria-hidden="true" />
+        <span className="bz-neural" aria-hidden="true"><Backdrop hub="brain-training" /></span>
         <div className="bz-photo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={asset("/images/brainology-hero2.webp")} alt="Narayani Garg" width={963} height={723} fetchPriority="high" />
