@@ -22692,3 +22692,38 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .practice-site main .hx-card h3 { font-size: 21px; }
 }
 @media (max-width: 380px) { .hx-fit { grid-template-columns: 1fr; } }
+
+/* Brainology choices (Oct 17): sharp photographs, a gold number on each, equal-height cards with the note and the
+   Enquire button pinned to one line at the foot; a soft green section behind. */
+.svd-review section#pages:has(.bt-card-b) { width: 100%; max-width: none; padding-inline: max(calc((100% - 1200px) / 2), 32px); background: radial-gradient(60% 50% at 50% 0%, #FFFBF1, transparent 70%), #F6EFE0; }
+.bt-card-b { display: flex; flex-direction: column; border-radius: 24px; }
+.bt-card-b .bt-card-photo { height: 200px; overflow: visible; }
+.bt-card-b .bt-card-photo img { border-radius: 24px 24px 0 0; }
+.bt-card-b .bt-card-photo::after { content: ""; position: absolute; inset: 0; border-radius: 24px 24px 0 0; background: linear-gradient(180deg, transparent 55%, rgb(12 38 28 / 0.35)); pointer-events: none; }
+.bt-card-num { position: absolute; z-index: 1; left: 16px; top: 14px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: rgb(18 58 43 / 0.85); box-shadow: inset 0 0 0 1.2px #D9B064; font-family: var(--font-display), var(--serif); font-size: 15px; color: #F2D592; backdrop-filter: blur(4px); }
+.bt-card-b .bt-card-icon { z-index: 2; left: auto; right: 18px; bottom: -26px; width: 56px; height: 56px; background: radial-gradient(circle at 40% 35%, #FFFBEE, #F0DFB6); color: #123A2B; }
+.bt-card-b .bt-card-body { display: flex; flex: 1; flex-direction: column; padding: 22px 22px 20px; }
+.practice-site main .bt-card-b h3 { padding-right: 56px; font-size: 21px; }
+.practice-site main .bt-card-b p:not(.bt-card-note) { margin-top: 8px; font-size: 14.5px; line-height: 1.55; }
+.bt-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid rgb(201 162 86 / 0.3); }
+.bt-card-b .bt-card-foot { margin-top: 18px; }
+.bt-card-b .bt-card-body > p:last-of-type { margin-bottom: auto; }
+.practice-site main .bt-card-b .bt-card-note { margin: 0; font-size: 12px; color: #8A6A32; }
+.bt-card-b .bt-card-cta { flex: none; margin: 0; }
+.bt-card-b:hover .bt-card-photo img { transform: scale(1.04); }
+.bt-card-b .bt-card-photo img { transition: transform 0.6s ease; }
+.bt-card-b .bt-card-photo { overflow: hidden; border-radius: 24px 24px 0 0; }
+.bt-card-b .bt-card-photo:has(.bt-card-icon) { overflow: visible; }
+@media (max-width: 900px) {
+  .svd-review section#pages:has(.bt-card-b) { padding-inline: 12px; }
+}
+@media (max-width: 680px) {
+  .bt-card-b { display: flex; flex-direction: column; }
+  .bt-card-b .bt-card-photo { height: 170px; min-height: 0; }
+  .bt-card-b .bt-card-photo img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .bt-card-b .bt-card-icon { left: auto; right: 14px; top: auto; bottom: -22px; width: 46px; height: 46px; }
+  .bt-card-b .bt-card-body { padding: 18px 16px 16px; }
+  .practice-site main .bt-card-b h3 { font-size: 18px; }
+  .practice-site main .bt-card-b p:not(.bt-card-note) { font-size: 13.5px; }
+  .bt-card-num { width: 34px; height: 34px; font-size: 13px; }
+}

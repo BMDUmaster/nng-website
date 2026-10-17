@@ -18,7 +18,7 @@ function ElementsDiagram() {
 
 const btLotus = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>';
 const btTick = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 8.3 2.3 2.3 4.7-5"/></svg>';
-const btPhotos = ["/images/method-1.webp", "/images/bt-health.webp", "/images/bt-relationship.webp", "/images/bt-money.webp", "/images/bt-career.webp", "/images/practice-brain-training-photo.webp"];
+const btPhotos = ["/images/how-step-2.webp", "/images/bt2-health.webp", "/images/bt2-relationship.webp", "/images/bt2-money.webp", "/images/bt2-career.webp", "/images/practice-brain-training-photo.webp"];
 const numberPhotos = ["/images/practice-numerology-photo.webp", "/images/fees-calendar.webp", "/images/method-1.webp", "/images/how-step-2.webp", "/images/bt-money.webp", "/images/method-2.webp", "/images/bt-career.webp", "/images/how-step-1.webp", "/images/practice-astrology-photo.webp", "/images/method-3.webp"];
 const vastuPhotos = ["/images/practice-vastu-photo.webp", "/images/bt-career.webp", "/images/method-2.webp"];
 
@@ -47,17 +47,20 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
       <span className="bt-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: btLotus }} />
       <p className="bt-kicker">Six starting points</p>
       <h2 id="choices-title">Choose your <em>consultation</em></h2><p>Ask the team which one fits your question.</p>
-      <div className="bt-cards">{psychicChoices.map((choice, i) => <article key={choice.name} className="bt-card">
+      <div className="bt-cards">{psychicChoices.map((choice, i) => <article key={choice.name} className="bt-card bt-card-b">
         <div className="bt-card-photo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={asset(btPhotos[i])} alt="" width={420} height={704} loading="lazy" />
+          <span className="bt-card-num">{String(i + 1).padStart(2, "0")}</span>
           <span className="bt-card-icon"><Icon id={choice.icon} /></span>
         </div>
         <div className="bt-card-body">
           <h3>{choice.name}</h3>
           <p>{choice.line}</p>
-          <p className="bt-card-note">Details and fee to be confirmed</p>
-          <EnquiryTrigger topic={`Brainology Program: ${choice.name}`} source="psychic-choice" className="bt-card-cta">Enquire <span aria-hidden="true">→</span></EnquiryTrigger>
+          <div className="bt-card-foot">
+            <p className="bt-card-note">Details and fee to be confirmed</p>
+            <EnquiryTrigger topic={`Brainology Program: ${choice.name}`} source="psychic-choice" className="bt-card-cta">Enquire <span aria-hidden="true">→</span></EnquiryTrigger>
+          </div>
         </div>
       </article>)}</div>
     </section> : <>
