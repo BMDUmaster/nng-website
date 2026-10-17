@@ -22518,3 +22518,47 @@ main h1, main h2, main h3, main p, main li { overflow-wrap: break-word; }
   .sa-medal { width: 44px; height: 44px; right: -20px; }
   .sa-medal svg { width: 21px; height: 21px; }
 }
+
+/* Home, Oct 17 ----------------------------------------------------------------------------------------------- */
+/* Hero practices: name only, so the arched cards are shorter. */
+.hm-pr-text small { display: none !important; }
+@media (max-width: 900px) {
+  .hm-practices a { padding-bottom: 24px !important; }
+  .hm-pr-text strong::after { margin-bottom: 0 !important; }
+}
+
+/* Hero figures: one cream panel with a gold top line; each figure an icon disc, the number in Playfair green and a
+   short label under it, separated by hairlines. */
+.hm .hm-figures, section .hm-figures { position: relative; display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; width: min(100%, 560px) !important; max-width: none; margin-top: 20px; padding: 14px 8px 12px !important; overflow: hidden; border-radius: 18px; background: linear-gradient(180deg, #FFFDF8, #F8F1E2); box-shadow: 0 0 0 1px rgb(201 162 86 / 0.4), 0 18px 32px -24px rgb(60 44 20 / 0.55); }
+.hm .hm-figures::before, section .hm-figures::before { content: ""; position: absolute; left: 18%; right: 18%; top: 0; height: 2px; border-radius: 0 0 2px 2px; background: linear-gradient(90deg, transparent, #C9A256, transparent); }
+.hm-figures > div { display: grid !important; grid-template-columns: 1fr !important; grid-template-areas: "icon" "value" "label" !important; justify-items: center; row-gap: 2px !important; padding: 0 6px !important; border-left: 1px solid rgb(201 162 86 / 0.3); text-align: center; }
+.hm-figures > div:first-child { border-left: 0; }
+.hm-fig-icon { grid-area: icon; display: grid; place-items: center; width: 34px !important; height: 34px !important; padding: 7px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFF8E8, #F0E1BE); color: #A9792E; }
+.hm-figures dd { grid-area: value; margin: 4px 0 0; font-family: var(--font-display), var(--serif); font-weight: 600; font-size: 24px !important; line-height: 1; color: #123A2B; }
+.hm-figures dt { grid-area: label; max-width: 140px; margin: 3px 0 0; font-size: 11.5px !important; line-height: 1.3; color: #5B564C; }
+@media (max-width: 680px) {
+  .hm .hm-figures, section .hm-figures { width: 100% !important; padding: 12px 4px 10px !important; }
+  .hm-fig-icon { width: 30px !important; height: 30px !important; padding: 6px; }
+  .hm-figures dd { font-size: 19px !important; }
+  .hm-figures dt { font-size: 10.5px !important; }
+}
+
+/* Meet Narayani, phones: the words under the film run the full width. */
+@media (max-width: 900px) {
+  .mn { grid-template-areas: "head film" "p1 p1" "p2 p2" "feat feat" "stats stats" "acts acts" !important; }
+  .mn-body > p:nth-of-type(1) { margin-top: 18px; }
+}
+
+/* Real stories, phones: the words sit under the picture, so faces stay clear. */
+@media (max-width: 900px) {
+  .sf-card.is-active .sf-film { display: flex; flex-direction: column; aspect-ratio: auto; }
+  .sf-card.is-active .sf-film > img { position: relative; inset: auto; flex: none; width: 100%; height: auto; aspect-ratio: 4 / 5; object-position: 50% 30%; }
+  .sf-card.is-active .sf-film > video { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 5; object-position: 50% 30%; }
+  .sf-card.is-active .sf-shade { display: none; }
+  .sf-card.is-active .sf-copy { position: relative; inset: auto; padding: 14px 16px 16px; background: linear-gradient(180deg, #2A2116, #1C150D); }
+  .sf-card.is-active .sf-center { top: 40%; }
+  .sf-card.is-active .sf-hook { font-size: 18px; -webkit-line-clamp: 2; }
+  .sf-card.is-active .sf-hook::after { margin: 8px 0 8px; }
+}
+@media (max-width: 1023px) { .sa-photo-brain-training img { object-position: 82% 50%; } }
+@media (min-width: 901px) { .hm .hm-figures, section .hm-figures { margin-left: 0 !important; width: min(100%, 520px) !important; } .hm-figures dd { font-size: 26px !important; } .hm-figures dt { font-size: 12.5px !important; } }

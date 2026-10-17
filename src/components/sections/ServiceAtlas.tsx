@@ -6,7 +6,7 @@ import { asset } from "@/lib/assets";
 
 /** Desktop cards: a photograph in an arch and a small line icon in a medallion. */
 const art: Record<string, { photo: string; mobile: string; icon: string }> = {
-  "brain-training": { photo: "/images/practice-mind.webp", mobile: "/images/practice-mind-m.webp", icon: '<path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="4"/><circle cx="16" cy="16" r="1.3" fill="currentColor"/>' },
+  "brain-training": { photo: "/images/practice-mind2.webp", mobile: "/images/practice-mind-m3.webp", icon: '<path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="4"/><circle cx="16" cy="16" r="1.3" fill="currentColor"/>' },
   astrology: { photo: "/images/practice-astro.webp", mobile: "/images/practice-astro-m.webp", icon: '<path d="M20 5.5A11 11 0 1 0 26.5 22 9 9 0 0 1 20 5.5Z"/><path d="m23 8 .9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9Z"/>' },
   numerology: { photo: "/images/practice-num.webp", mobile: "/images/practice-num-m.webp", icon: '<rect x="6" y="6" width="8" height="8" rx="1.5"/><rect x="18" y="6" width="8" height="8" rx="1.5"/><rect x="6" y="18" width="8" height="8" rx="1.5"/><rect x="18" y="18" width="8" height="8" rx="1.5"/>' },
   vastu: { photo: "/images/practice-vastu.webp", mobile: "/images/practice-vastu-m.webp", icon: '<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>' },
@@ -46,7 +46,7 @@ export function ServiceAtlas() {
                   <ServiceIllustration hub={service.slug} thumbnail />
                 </Link>
                 {art[service.slug] && (
-                  <Link prefetch={false} className="sa-photo" href={serviceHref(service.slug)} tabIndex={-1} aria-hidden="true">
+                  <Link prefetch={false} className={`sa-photo sa-photo-${service.slug}`} href={serviceHref(service.slug)} tabIndex={-1} aria-hidden="true">
                     <picture>
                       <source media="(max-width: 1023px)" srcSet={asset(art[service.slug].mobile)} />
                       { }

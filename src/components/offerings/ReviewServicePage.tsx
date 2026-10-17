@@ -60,7 +60,6 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
           <EnquiryTrigger topic={`Brainology Program: ${choice.name}`} source="psychic-choice" className="bt-card-cta">Enquire <span aria-hidden="true">→</span></EnquiryTrigger>
         </div>
       </article>)}</div>
-      <p className={styles.limit}>These are personal and spiritual consultations, not medical or mental health treatment. No health, relationship, financial or career outcome is guaranteed.</p>
     </section> : <>
       {isHub && <section className={`section-wrap ${styles.section}`} id="pages" aria-labelledby="choices-title">
         <span className="bt-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: btLotus }} />
