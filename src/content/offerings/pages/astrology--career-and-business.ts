@@ -218,7 +218,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "Neighbouring questions have pages of their own. A business name is a numerology question, covered on the business name page, and the AstroNumerology page describes how chart and numbers are read together for a venture, including a view across several years. Premises belong with the page on property and big decisions, and the layout of an office or shop with the Vastu page on offices and shops.",
+          text: "Neighbouring questions have pages of their own. A business name is a numerology question, covered on the business name page, and the AstroNumerology page describes how chart and numbers are read together for a venture, including a view across several years. Premises belong with the page on property and big decisions, and the layout of an office or shop with the Vastulogy page on offices and shops.",
         },
       ],
     },

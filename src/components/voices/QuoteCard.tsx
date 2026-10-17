@@ -14,7 +14,6 @@ export function QuoteCard({ voice, quote }: { voice: Voice; quote?: string }) {
         {voice.poster && <img className="practice-client-still" src={asset(voice.poster)} width={56} height={56} alt="" loading="lazy" decoding="async" />}
         <div>
           {voice.name}
-          {voice.translated && <small>Translated from Hindi</small>}
         </div>
       </footer>
       <VoiceFilmButton voice={voice} />
@@ -37,7 +36,7 @@ export function QuoteBand({ voice, quote }: { voice: Voice; quote?: string }) {
           {voice.name}
           <small>
             {voice.context}
-            {voice.translated ? " · Translated from Hindi" : ""}
+            
           </small>
         </div>
       </figcaption>

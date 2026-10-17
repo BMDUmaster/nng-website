@@ -25,8 +25,8 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "brain-training",
-    name: "Psychic Reader",
-    topic: "Psychic Reader",
+    name: "Brainology Program",
+    topic: "Brainology Program",
     card: "The beliefs and habits behind a recurring concern. Where she starts.",
     lead: "A look at the beliefs, habits and reactions that shape how you respond to the question you bring.",
     quote: "Couldn’t Krishna have fixed the vastu and ended the war between the brothers? He didn’t. He worked on Arjuna’s mind.",
@@ -51,8 +51,8 @@ export const services: Service[] = [
   },
   {
     slug: "vastu",
-    name: "Vastu",
-    topic: "Vastu",
+    name: "Vastulogy",
+    topic: "Vastulogy",
     card: "Your home, office or shop, and where things belong in it.",
     lead: "A look at how your home or workplace is arranged and used by the people in it.",
     look: [
@@ -108,8 +108,8 @@ export const method = [
   },
 ] as const;
 
-/** Service order confirmed by Aryan on 8 October 2026. */
-const displayOrder: HubSlug[] = ["brain-training", "astrology", "numerology", "vastu", "stones-and-rudraksh"];
+/** Service order: Brainology, Numerology, Vastulogy, Astrology (16 October 2026). */
+const displayOrder: HubSlug[] = ["brain-training", "numerology", "vastu", "astrology", "stones-and-rudraksh"];
 services.sort((a, b) => displayOrder.indexOf(a.slug) - displayOrder.indexOf(b.slug));
 
 /** Educational stone material is a resource, not a bookable practice (8 October 2026). */

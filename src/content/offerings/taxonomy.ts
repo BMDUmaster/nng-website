@@ -51,7 +51,7 @@ export const hubs: HubInfo[] = [
   },
   {
     slug: "vastu",
-    name: "Vastu",
+    name: "Vastulogy",
     blurb: "Direction, elements and layout in a home, a workplace or a whole project, with practical corrections where they are needed.",
     icon: "hub-vastu",
     groups: [
@@ -65,7 +65,7 @@ export const hubs: HubInfo[] = [
   },
   {
     slug: "brain-training",
-    name: "Psychic Reader",
+    name: "Brainology Program",
     blurb: "Personal and spiritual guidance around recurring patterns, thoughts and beliefs.",
     icon: "hub-brain-training",
     groups: [

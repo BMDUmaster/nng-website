@@ -48,7 +48,7 @@ export default function ConsultationLandingPage() {
       <section className="cn-hero" aria-labelledby="ads-title">
         <div className="cn-hero-inner">
           <div className="cn-hero-copy hero-copy" data-reveal="">
-            <p className="cn-kicker">Personal consultation · Astrology, numerology &amp; Vastu</p>
+            <p className="cn-kicker">Personal consultation · Numerology, Vastulogy &amp; astrology</p>
             <p className="svd-person">
               <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
               <span>With <strong>Narayani Garg</strong></span>
@@ -93,7 +93,7 @@ export default function ConsultationLandingPage() {
             <h2 id="ads-mind">
               Why she starts with the <em>mind</em>
             </h2>
-            <p>Narayani begins with the thoughts, habits and reactions behind a situation. Astrology, numerology and vastu support that conversation. The work continues in the choices made afterwards.</p>
+            <p>Narayani begins with the thoughts, habits and reactions behind a situation. Numerology, Vastulogy and astrology support that conversation. The work continues in the choices made afterwards.</p>
             <p>
               She shares her approach to daily reflection and practice in her book, <em>{bookTitle}</em>.
             </p>

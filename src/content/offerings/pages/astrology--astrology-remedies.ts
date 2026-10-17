@@ -78,7 +78,7 @@ export const page: OfferingPage = {
             },
             {
               term: "Direction",
-              text: "Tradition cares which way you face. Japa is often done facing east, toward the sunrise, and a home shrine usually sits in the north-east. Lists that give each planet its own direction differ from one source to the next, so treat a direction as a convenience. The Vastu page on directions and elements explains how direction is read there.",
+              text: "Tradition cares which way you face. Japa is often done facing east, toward the sunrise, and a home shrine usually sits in the north-east. Lists that give each planet its own direction differ from one source to the next, so treat a direction as a convenience. The Vastulogy page on directions and elements explains how direction is read there.",
               icon: "astro-remedy-direction",
             },
             {

@@ -14,12 +14,12 @@ import { faqSchema, personSchema, programSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Personalised Hand Holding Program",
   description:
-    "Six months of personal guidance with Narayani Garg, combining astrology, numerology, vastu and psychic guidance across health, relationships, money and career.",
+    "Six months of personal guidance with Narayani Garg, combining numerology, Vastulogy, astrology and psychic guidance across health, relationships, money and career.",
   alternates: { canonical: "/hand-holding-program/" },
 };
 
 const inclusions = [
-  "Astrology, numerology and Vastu assessment",
+  "Numerology, Vastulogy and astrology assessment",
   "Psychic guidance for recurring patterns",
   "Direct guidance across health, relationships, money and career",
 ];
@@ -42,169 +42,223 @@ const months = [
 
 const areas = ["Health", "Relationship", "Money", "Career"];
 
-function Arrow() {
-  return (
-    <span className="cn-arrow" aria-hidden="true">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2.5 6h7M6.5 3l3 3-3 3" />
-      </svg>
-    </span>
-  );
-}
+const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const lotus = ico('<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/>');
+const tick = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 8.3 2.3 2.3 4.7-5"/></svg>';
+const areaIcons: Record<string, string> = {
+  Health: ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/><path d="M7 16h5l2-3 3 6 2-3h6"/>'),
+  Relationship: ico('<circle cx="11" cy="11" r="4"/><circle cx="21" cy="11" r="4"/><path d="M4 26c0-4 3-7 7-7s7 3 7 7M14 26c0-4 3-7 7-7s7 3 7 7"/>'),
+  Money: ico('<ellipse cx="16" cy="9" rx="9" ry="3.5"/><path d="M7 9v6c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5V9M7 15v6c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-6"/>'),
+  Career: ico('<path d="M6 26V20M12 26V16M18 26V12M24 26V8M18 6h6v6"/>'),
+};
+const areaNotes: Record<string, string> = {
+  Health: "Wellbeing and habits",
+  Relationship: "People close to you",
+  Money: "Choices around money",
+  Career: "Work and direction",
+};
+const monthPhotos = ["/images/method-2.webp", "/images/method-1.webp", "/images/method-3.webp", "/images/how-step-4.webp"];
+const monthIcons = [
+  ico('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/>'),
+  ico('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22"/>'),
+  ico('<path d="M16 26c-3-2.6-5-6-5-9.4 0-3 1.7-5.8 5-7.8 3.3 2 5 4.8 5 7.8 0 3.4-2 6.8-5 9.4Z"/><path d="M4 18c2 0 4 1 5 3l3 3M28 18c-2 0-4 1-5 3l-3 3"/>'),
+  ico('<circle cx="11" cy="11" r="4"/><circle cx="21" cy="11" r="4"/><path d="M4 26c0-4 3-7 7-7s7 3 7 7M14 26c0-4 3-7 7-7s7 3 7 7"/>'),
+];
 
 /**
- * The six-month program: a plum opening with her portrait and the six-month medal, who it is for, how the months
- * work, a consultation compared with the program, client films and questions.
+ * The six-month program, in the site's green and gold: an opening with her photograph and the six-month medal over a
+ * strip of the four areas of life, who it is for, how the months work as photo cards, a consultation compared with
+ * the program, a client's words, client films and questions.
  */
 export default function ProgramPage() {
   const navleen = voices.navleen;
   return (
-    <div className="cn hh">
+    <div className="cn hh hx">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personSchema(), programSchema(), faqSchema(faqs.program)] }} />
       <PracticeReturnPrompt />
 
-      <section className="cn-hero" aria-labelledby="page-title">
-        <div className="cn-hero-inner">
-          <div className="cn-hero-copy" data-reveal="">
-            <nav className="cn-crumbs" aria-label="Breadcrumb">
+      <section className="svh svh-svc hx-hero" aria-labelledby="page-title">
+        <div className="svh-inner">
+          <div className="svh-copy">
+            <nav className="cn-crumbs svh-crumbs" aria-label="Breadcrumb">
               <Link prefetch={false} href="/">Home</Link>
               <span aria-hidden="true">/</span>
               <span aria-current="page">Hand Holding Program</span>
             </nav>
-            <p className="cn-kicker">Six months of personal guidance</p>
+            <p className="svh-kicker">
+              <span className="svh-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+              Six months with your psychic mentor
+            </p>
             <h1 id="page-title">
               Personalised <em>Hand Holding</em> Program
             </h1>
-            <p className="svd-person hh-person">
-              <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
-              <span>Personally guided by <strong>Narayani Garg</strong></span>
-            </p>
-            <p className="cn-lead">Work on the questions and patterns that keep returning, with Narayani’s personal guidance.</p>
-            <ul className="pg-list hh-list">
+            <span className="svh-rule" aria-hidden="true" />
+            <p className="svh-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic mentor.</p>
+            <ul className="hx-incl">
               {inclusions.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />
+                  {item}
+                </li>
               ))}
             </ul>
-            <div className="cn-actions">
-              <EnquiryTrigger className="cn-cta" topic="the Personalised Hand Holding Program" source="program-hero" primary>
-                <span>Enquire about the program</span>
-                <Arrow />
+            <div className="svh-actions hx-actions">
+              <EnquiryTrigger className="svh-cta" topic="the Personalised Hand Holding Program" source="program-hero" primary>
+                <span className="cx-long">Enquire about the program</span>
+                <span className="cx-short">Enquire now</span>
+                <span className="svh-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
             </div>
-            <div className="pg-notes hh-notes">
-              <p>Format and fees are discussed before you decide.</p>
-              <p>
-                <span className="pg-dot" aria-hidden="true" />
-                Ask the team about the next available start date
-              </p>
-            </div>
+            <p className="hx-note">Format and fees are discussed before you decide.</p>
           </div>
-          <div className="cn-hero-visual hh-visual" data-reveal="">
-            <div className="cn-arch">
-              <img src={asset("/images/narayani-cover-portrait-684.webp")} alt="Narayani Garg" width={684} height={855} fetchPriority="high" />
+          <div className="svh-visual">
+            <span className="svh-frame" aria-hidden="true" />
+            <span className="svh-sprig svh-sprig-1" aria-hidden="true" />
+            <span className="svh-sprig svh-sprig-2" aria-hidden="true" />
+            <div className="svh-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/images/program-narayani.webp")} alt="Narayani Garg" width={1000} height={1265} fetchPriority="high" />
             </div>
-            <div className="pg-medal hh-medal" aria-hidden="true">
+            <div className="hx-medal" aria-hidden="true">
               <strong>6</strong>
               <span>months</span>
             </div>
           </div>
         </div>
+        <ul className="svh-values" aria-label="The four areas of life">
+          {areas.map((area) => (
+            <li key={area}>
+              <span className="svh-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: areaIcons[area] }} />
+              <span>
+                <strong>{area}</strong>
+                <small>{areaNotes[area]}</small>
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      <section className="cn-sec hh-for" aria-labelledby="for-title">
-        <div className="cn-inner hh-for-grid">
-          <header className="cn-head ab2-left" data-reveal="">
-            <p className="cn-kicker cn-kicker-dark">Is it for you?</p>
-            <h2 id="for-title">Who the program is for</h2>
+      <section className="hx-for" aria-labelledby="for-title">
+        <span className="hw-leaf hw-leaf-r" aria-hidden="true" />
+        <div className="hx-for-inner">
+          <header className="hx-for-head" data-reveal="">
+            <p className="hx-kicker">
+              <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+              Is it for you?
+            </p>
+            <h2 id="for-title">
+              Who the program <em>is for</em>
+            </h2>
             <p>Some questions need more than one conversation. This program gives you room to return to them over six months.</p>
-            <div className="hh-areas" aria-hidden="true">
-              {areas.map((area) => (
-                <span key={area}>{area}</span>
-              ))}
-            </div>
-          </header>
-          <div data-reveal="">
-            <ul className="hh-fit">
-              {forYou.map((line, i) => (
-                <li key={line}>
-                  <span className="ab2-num">{String(i + 1).padStart(2, "0")}</span>
-                  <p>{line}</p>
-                </li>
-              ))}
-            </ul>
-            <EnquiryTrigger className="cn-text hh-ask" topic="the Personalised Hand Holding Program" source="program-for-you">
+            <EnquiryTrigger className="hx-ask" topic="the Personalised Hand Holding Program" source="program-for-you">
               Ask whether it suits you <span aria-hidden="true">→</span>
             </EnquiryTrigger>
-          </div>
+          </header>
+          <ul className="hx-fit" data-reveal="">
+            {forYou.map((line, i) => (
+              <li key={line}>
+                <span className="hx-fit-num">{String(i + 1).padStart(2, "0")}</span>
+                <p>{line}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="cn-sec cn-how hh-how" aria-labelledby="how-title">
+      <section className="cn-sec sv-how hw hx-how" id="how" aria-labelledby="how-title">
+        <span className="hw-leaf hw-leaf-l" aria-hidden="true" />
+        <span className="hw-leaf hw-leaf-r" aria-hidden="true" />
         <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <p className="cn-kicker cn-kicker-dark">How it works</p>
-            <h2 id="how-title">How the six months work</h2>
-            <p>The program combines an assessment of your circumstances with work on the thinking patterns behind recurring questions. The team explains the personal format before you commit.</p>
+          <header className="hw-head" data-reveal="">
+            <span className="hw-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+            <p className="hw-kicker">How it works</p>
+            <h2 id="how-title">
+              How the six months <em>work</em>
+            </h2>
+            <p className="hw-lead">An assessment of your circumstances, with work on the thinking patterns behind recurring questions.</p>
           </header>
-          <ol className="cn-steps" data-reveal="">
+          <ol className="hw-steps" data-reveal="">
             {months.map((step, i) => (
-              <li key={step.title} style={{ "--d": `${200 + i * 220}ms` } as React.CSSProperties}>
-                <span className="cn-step-num">{String(i + 1).padStart(2, "0")}</span>
+              <li key={step.title}>
+                <span className="hw-num">{String(i + 1).padStart(2, "0")}</span>
+                {i < months.length - 1 && <span className="hw-arrow" aria-hidden="true">→</span>}
+                <div className="hw-photo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(monthPhotos[i])} alt="" width={740} height={444} loading="lazy" />
+                </div>
+                <span className="hw-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: monthIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
+                <span className="hw-rule" aria-hidden="true" />
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="cn-sec hh-compare" aria-labelledby="compare-title">
-        <div className="cn-inner">
-          <header className="cn-head" data-reveal="">
-            <p className="cn-kicker cn-kicker-dark">Choose what fits</p>
-            <h2 id="compare-title">A consultation or the program?</h2>
-            <p>Not sure which suits you? Ask, and the team will tell you honestly.</p>
+      <section className="hx-compare" aria-labelledby="compare-title">
+        <div className="hx-compare-inner">
+          <header className="hw-head" data-reveal="">
+            <span className="hw-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
+            <p className="hw-kicker">Choose what fits</p>
+            <h2 id="compare-title">
+              A consultation or <em>the program?</em>
+            </h2>
+            <p className="hw-lead">Not sure which suits you? Ask, and the team will tell you honestly.</p>
           </header>
-          <div className="hh-cards">
-            <div className="hh-card" data-reveal="">
+          <div className="hx-cards">
+            <div className="hx-card" data-reveal="">
+              <span className="hx-card-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: ico('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>') }} />
               <h3>Consultation</h3>
               <p>One focused conversation, around a single question.</p>
               <ul>
-                <li>Online or in person</li>
-                <li>A clear next step</li>
+                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Online or in person</li>
+                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />A clear next step</li>
               </ul>
-              <EnquiryTrigger className="cn-ghost cn-ghost-dark" source="program-compare-consultation">
-                Enquire about a consultation
+              <EnquiryTrigger className="hx-card-cta" source="program-compare-consultation">
+                Enquire about a consultation <span aria-hidden="true">→</span>
               </EnquiryTrigger>
             </div>
-            <div className="hh-card is-featured" data-reveal="" style={{ "--d": "120ms" } as React.CSSProperties}>
-              <span className="hh-badge">Six months</span>
+            <div className="hx-card is-featured" data-reveal="" style={{ "--d": "120ms" } as React.CSSProperties}>
+              <span className="hx-badge">Six months</span>
+              <span className="hx-card-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
               <h3>Hand Holding Program</h3>
               <p>Six months of guidance, with all four areas looked at together.</p>
               <ul>
-                <li>Astrology, numerology and vastu assessment</li>
-                <li>Psychic guidance and direct guidance across six months</li>
+                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Numerology, Vastulogy and astrology assessment</li>
+                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Psychic guidance and direct guidance across six months</li>
               </ul>
-              <EnquiryTrigger className="cn-cta" topic="the Personalised Hand Holding Program" source="program-compare-program">
-                <span>Enquire about the program</span>
-                <Arrow />
+              <EnquiryTrigger className="hx-card-cta" topic="the Personalised Hand Holding Program" source="program-compare-program">
+                Enquire about the program <span aria-hidden="true">→</span>
               </EnquiryTrigger>
             </div>
           </div>
+        </div>
+      </section>
 
-          <figure className="ct-quote hh-quote" data-reveal="">
-            <div className="ct-quote-photo">
+      <section className="cn-sec sv-client tq" aria-label="A client’s words">
+        <div className="cn-inner">
+          <figure className="tq-card" data-reveal="">
+            <span className="tq-leaf-r" aria-hidden="true" />
+            <div className="tq-photo">
               <img src={voicePoster(navleen)} alt={`${navleen.name}, a client`} width={380} height={320} loading="lazy" />
-              <span>Guidance that stays</span>
+              <span className="tq-badge">
+                <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: ico('<circle cx="16" cy="12" r="5"/><path d="M7 27c0-5 4-9 9-9s9 4 9 9"/>') }} />
+                Guidance that stays
+              </span>
             </div>
-            <div className="ct-quote-body">
-              <span className="ct-quote-mark" aria-hidden="true">“</span>
+            <div className="tq-body">
+              <p className="tq-kicker">Real stories, real guidance</p>
+              <span className="tq-mark" aria-hidden="true">“</span>
               <blockquote>
                 <p>{navleen.quote}</p>
               </blockquote>
-              <figcaption>
-                <strong>{navleen.name}</strong>
-                <span>{navleen.context}</span>
+              <figcaption className="tq-person">
+                <span className="tq-initials" aria-hidden="true">{navleen.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>
+                <span>
+                  <strong>{navleen.name}</strong>
+                  <small>{navleen.context}</small>
+                </span>
               </figcaption>
             </div>
           </figure>
@@ -220,7 +274,7 @@ export default function ProgramPage() {
         more={[voices.renu]}
       />
 
-      <HomeFaq items={faqs.program} source="program-faq" />
+      <HomeFaq items={faqs.program} source="program-faq" rich />
       <Reveal />
     </div>
   );

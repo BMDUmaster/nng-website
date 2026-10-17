@@ -4,9 +4,9 @@ export const page: OfferingPage = {
   hub: "vastu",
   slug: "directions-and-elements",
   title: "Directions and the five elements",
-  metaTitle: "Vastu directions and the five elements",
-  metaDescription: "Eight directions, the centre, sixteen zones and five elements in Vastu: what tradition links with each, where guides differ, and how to find north.",
-  lead: "Find north on your plan, then understand the directions and five elements used in Vastu. Traditional associations vary; they are not rules that override a safe, usable home.",
+  metaTitle: "Vastulogy directions and the five elements",
+  metaDescription: "Eight directions, the centre, sixteen zones and five elements in Vastulogy: what tradition links with each, where guides differ, and how to find north.",
+  lead: "Find north on your plan, then understand the directions and five elements used in Vastulogy. Traditional associations vary; they are not rules that override a safe, usable home.",
   card: "When you want to know what each direction and element means, and how to find north.",
   icon: "page-directions-and-elements",
   group: "foundations",
@@ -20,12 +20,12 @@ export const page: OfferingPage = {
     "How to find north",
   ],
   art: { kind: "plan", variant: "elements" },
-  enquiryTopic: "Vastu: directions and elements",
-  cta: "Enquire about a Vastu reading",
+  enquiryTopic: "Vastulogy: directions and elements",
+  cta: "Enquire about a Vastulogy reading",
   intro: [
     {
       type: "p",
-      text: "Vastu guides lean on two things: a compass and a list of five elements. Together they make the vocabulary the rest of the subject is written in, and once you know it, each room-by-room rule is easier to place and easier to question.",
+      text: "Vastulogy guides lean on two things: a compass and a list of five elements. Together they make the vocabulary the rest of the subject is written in, and once you know it, each room-by-room rule is easier to place and easier to question.",
     },
     {
       type: "p",
@@ -40,12 +40,12 @@ export const page: OfferingPage = {
     {
       id: "elements",
       chip: "Five elements",
-      heading: "The five elements and what Vastu links with each",
+      heading: "The five elements and what Vastulogy links with each",
       icon: "vastu-five-elements",
       blocks: [
         {
           type: "p",
-          text: "The five great elements, *panchabhuta*, are an old Indian way of sorting experience: earth, water, fire, air and space. They run through Indian thought well beyond Vastu. Vastu guides map them onto the compass and onto the parts of a home.",
+          text: "The five great elements, *panchabhuta*, are an old Indian way of sorting experience: earth, water, fire, air and space. They run through Indian thought well beyond Vastulogy. Vastulogy guides map them onto the compass and onto the parts of a home.",
         },
         {
           type: "table",
@@ -93,7 +93,7 @@ export const page: OfferingPage = {
         },
         {
           type: "p",
-          text: "The north-east draws the most attention. It is the corner where the old text puts the prayer room and counts water as favourable. It is also where Vastu Purusha’s head lies in the mandala, and the corner from which most modern guides keep toilets out. That history explains the attention. How far research supports any direction is set out on the Vastu page.",
+          text: "The north-east draws the most attention. It is the corner where the old text puts the prayer room and counts water as favourable. It is also where Vastulogy Purusha’s head lies in the mandala, and the corner from which most modern guides keep toilets out. That history explains the attention. How far research supports any direction is set out on the Vastulogy page.",
         },
       ],
     },
@@ -143,18 +143,18 @@ export const page: OfferingPage = {
     {
       id: "mandala",
       chip: "The mandala",
-      heading: "The Vastu Purusha Mandala in brief",
+      heading: "The Vastulogy Purusha Mandala in brief",
       icon: "vastu-mandala",
       blocks: [
         {
           type: "p",
-          text: "The mandala is the best-known diagram in the subject. It begins with a story: a vast being, Vastu Purusha, was pinned face down by the gods, and the grid drawn over a site is his body.",
+          text: "The mandala is the best-known diagram in the subject. It begins with a story: a vast being, Vastulogy Purusha, was pinned face down by the gods, and the grid drawn over a site is his body.",
         },
         {
           type: "terms",
           items: [
             {
-              term: "Vastu Purusha",
+              term: "Vastulogy Purusha",
               text: "The being in the story. In the Brihat Samhita he lies face down with his head in the north-east, and each god who holds him down has a place on his body.",
               icon: "vastu-purusha",
             },
@@ -185,7 +185,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "Vastu has no single authority. Texts from different centuries and regions, and writers today, give different answers to the same question. These are the points a reader meets most often.",
+          text: "Vastulogy has no single authority. Texts from different centuries and regions, and writers today, give different answers to the same question. These are the points a reader meets most often.",
         },
         {
           type: "table",
@@ -225,7 +225,7 @@ export const page: OfferingPage = {
       blocks: [
         {
           type: "p",
-          text: "A few writers point out that some Vastu rules overlap with ordinary building sense: morning sun from the east and north-east, and an open centre that lets air move through a home. Daylight and fresh air do affect people. A small pilot study of 49 office workers linked daylight at work with sleep, and a controlled study of 24 office workers found that ventilation affected how they scored on thinking tasks. Neither looked at direction, and the Vastu page sets out what small studies of Vastu-designed buildings have and have not shown.",
+          text: "A few writers point out that some Vastulogy rules overlap with ordinary building sense: morning sun from the east and north-east, and an open centre that lets air move through a home. Daylight and fresh air do affect people. A small pilot study of 49 office workers linked daylight at work with sleep, and a controlled study of 24 office workers found that ventilation affected how they scored on thinking tasks. Neither looked at direction, and the Vastulogy page sets out what small studies of Vastulogy-designed buildings have and have not shown.",
         },
         {
           type: "list",
@@ -326,8 +326,8 @@ export const page: OfferingPage = {
       a: "In the tradition it does. The centre, the *Brahmasthan*, is held by Brahma in the mandala, and modern guides keep it open and uncluttered. Some also give a practical reason that stands apart from belief: an open middle is said to help air move through a home. You can test that without accepting the belief, by looking at what sits in the middle of yours: anything heavy, crowded or in constant use.",
     },
     {
-      q: "What is the fire and water conflict in Vastu?",
-      a: "Tradition sets fire and water against each other. Some guides therefore ask that the stove, linked with fire and the south-east, and the sink, linked with water and the north-east, should not sit side by side or in line. One suggested correction is a partition between them, sometimes with a mirror, and the mirror rests on belief with no test behind it. Separately from Vastu, a little distance between hob and sink is ordinary kitchen planning.",
+      q: "What is the fire and water conflict in Vastulogy?",
+      a: "Tradition sets fire and water against each other. Some guides therefore ask that the stove, linked with fire and the south-east, and the sink, linked with water and the north-east, should not sit side by side or in line. One suggested correction is a partition between them, sometimes with a mirror, and the mirror rests on belief with no test behind it. Separately from Vastulogy, a little distance between hob and sink is ordinary kitchen planning.",
     },
     {
       q: "What if my plan has no north marked?",
@@ -339,19 +339,19 @@ export const page: OfferingPage = {
     },
     {
       q: "Are the five elements the chemical elements?",
-      a: "No. *Panchabhuta* is a classification from Indian philosophy that sorts experience into earth, water, fire, air and space, and it has nothing to do with laboratory substances. Vastu uses it as a vocabulary for what each part of a home is for: weight, water, heat, movement and openness. Read the pairings with particular corners as conventions; the guides that give them point to no early source.",
+      a: "No. *Panchabhuta* is a classification from Indian philosophy that sorts experience into earth, water, fire, air and space, and it has nothing to do with laboratory substances. Vastulogy uses it as a vocabulary for what each part of a home is for: weight, water, heat, movement and openness. Read the pairings with particular corners as conventions; the guides that give them point to no early source.",
     },
     {
       q: "What is the difference between the zone a room is in and the direction it faces?",
       a: "A zone is where a room sits in the plan, such as a kitchen in the south-east corner. A facing is the way a door, window or person looks, such as the cook facing east. Guides use both, and people often mix them up. An east-facing house usually means its entrance faces east, while a north-east room is a matter of place. Ask which one a rule means before you apply it.",
     },
     {
-      q: "Do I have to worship the direction guardians to follow Vastu?",
+      q: "Do I have to worship the direction guardians to follow Vastulogy?",
       a: "No. The guardians belong to the tradition’s stories and give the directions their names, and using the directions does not depend on any ritual. Where a family keeps one, such as a ground-worship before building, it is theirs to keep or leave. Narayani does not ask anyone to take on a ritual they do not hold.",
     },
     {
       q: "Do directions have planets as well as guardians?",
-      a: "Some modern guides give each direction a ruling planet, and a scheme in astrology texts, *digbala*, gives planets strength in particular directions. The two give different answers, and none of the early building texts is known to pair planets with directions. The Astro-Vastu page explains how the pairing is used and what it rests on.",
+      a: "Some modern guides give each direction a ruling planet, and a scheme in astrology texts, *digbala*, gives planets strength in particular directions. The two give different answers, and none of the early building texts is known to pair planets with directions. The Astro-Vastulogy page explains how the pairing is used and what it rests on.",
     },
   ],
   related: ["/services/vastu/home/", "/services/vastu/astro-vastu/", "/services/vastu/vastu-remedies/"],

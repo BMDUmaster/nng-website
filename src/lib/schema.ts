@@ -19,10 +19,10 @@ export function personSchema() {
     name: site.person,
     jobTitle: site.title,
     description:
-      "Narayani Garg offers personal guidance in numerology, vastu and astrology, beginning with the mind, and a hand holding program lasting six months.",
+      "Narayani Garg offers personal guidance in numerology, Vastulogy and astrology, beginning with the mind, and a hand holding program lasting six months.",
     url: site.url,
     image: `${site.url}/images/narayani-portrait-684.webp`,
-    knowsAbout: ["Numerology", "Vastu", "Astrology", "Brain training", "Gemstones", "Rudraksha"],
+    knowsAbout: ["Numerology", "Vastulogy", "Astrology", "Brain training", "Gemstones", "Rudraksha"],
     worksFor: { "@type": "Organization", "@id": orgId, name: site.name, url: site.url, sameAs },
     sameAs,
   };

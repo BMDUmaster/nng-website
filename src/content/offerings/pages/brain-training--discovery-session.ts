@@ -12,7 +12,7 @@ export const page: OfferingPage = {
   enquiryTopic: "help choosing where to begin", cta: "Ask the team where to begin",
   intro: [
     { type: "p", text: "You may have a clear question about work, a relationship or your home. You may simply feel that the same difficulty keeps returning. You do not need to choose a practice before asking about the available options." },
-    { type: "p", text: "Narayani offers personal guidance through astrology, numerology and Vastu alongside mindset work. These pages explain the areas of guidance. The team can confirm what is available, what an appointment involves and any fee before you decide." },
+    { type: "p", text: "Narayani offers personal guidance through numerology, Vastulogy and astrology alongside mindset work. These pages explain the areas of guidance. The team can confirm what is available, what an appointment involves and any fee before you decide." },
   ],
   sections: [
     { id: "your-question", chip: "Your question", heading: "Start with what is happening", icon: "gen-listen", blocks: [
@@ -24,7 +24,7 @@ export const page: OfferingPage = {
       { type: "p", text: "Ask the team which option relates to your question. Confirm the fee, format and preparation before booking. You can take time to decide." },
     ] },
     { id: "limits", chip: "Limits", heading: "Keep the limits clear", icon: "gen-limits", blocks: [
-      { type: "p", text: "Personal guidance does not promise a result or replace medical, mental health, legal or financial advice. Astrology, numerology and Vastu are interpretive traditions." },
+      { type: "p", text: "Personal guidance does not promise a result or replace medical, mental health, legal or financial advice. Numerology, Vastulogy and astrology are interpretive traditions." },
       { type: "p", text: "You do not need to include private records in an initial enquiry. Share only what helps you ask about an option." },
     ] },
   ],

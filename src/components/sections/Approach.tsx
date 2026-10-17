@@ -7,6 +7,7 @@ const steps = [
   {
     word: "Notice",
     text: "What keeps repeating?",
+    points: ["Understand patterns in your thoughts", "Spot emotional triggers", "See what’s holding you back"],
     icon: (
       <g>
         <path pathLength={1} d="M24 10v28" />
@@ -19,6 +20,7 @@ const steps = [
   {
     word: "Understand",
     text: "What influences your response?",
+    points: ["Remove limiting beliefs", "Understand your emotions", "Gain clarity on your next steps"],
     icon: (
       <g>
         <path pathLength={1} d="M12 36C10 20 20 10 38 10c0 18-8 28-24 26" />
@@ -29,6 +31,7 @@ const steps = [
   {
     word: "Practise",
     text: "Try a different response in daily life.",
+    points: ["Build new habits", "Shift your perspective", "Create lasting change"],
     icon: (
       <g>
         <circle pathLength={1} cx="24" cy="24" r="7" />
@@ -37,6 +40,41 @@ const steps = [
     ),
   },
 ];
+
+
+/** A large golden zodiac wheel (signs, twelve houses, fine rings) that turns slowly behind her on desktop. */
+function wheel() {
+  const signs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+  const c = 300;
+  const out: string[] = ['<circle cx="300" cy="300" r="294" stroke-width="1.6"/><circle cx="300" cy="300" r="286" stroke-width=".6"/><circle cx="300" cy="300" r="222" stroke-width="1.2"/><circle cx="300" cy="300" r="150" stroke-width=".8"/><circle cx="300" cy="300" r="70" stroke-width=".8"/>'];
+  for (let i = 0; i < 12; i++) {
+    const a = ((i * 30 - 90) * Math.PI) / 180;
+    out.push(`<path d="M${(c + 70 * Math.cos(a)).toFixed(1)} ${(c + 70 * Math.sin(a)).toFixed(1)}L${(c + 286 * Math.cos(a)).toFixed(1)} ${(c + 286 * Math.sin(a)).toFixed(1)}" stroke-width=".7"/>`);
+    const b = ((i * 30 - 75) * Math.PI) / 180;
+    const x = (c + 254 * Math.cos(b)).toFixed(1);
+    const y = (c + 254 * Math.sin(b)).toFixed(1);
+    out.push(`<text x="${x}" y="${y}" transform="rotate(${i * 30 + 15} ${x} ${y})">${signs[i]}&#xFE0E;</text>`);
+  }
+  for (let i = 0; i < 72; i++) {
+    const a = (i * 5 * Math.PI) / 180;
+    out.push(`<path d="M${(c + 216 * Math.cos(a)).toFixed(1)} ${(c + 216 * Math.sin(a)).toFixed(1)}L${(c + 222 * Math.cos(a)).toFixed(1)} ${(c + 222 * Math.sin(a)).toFixed(1)}" stroke-width=".6"/>`);
+  }
+  return `<svg class="ab-wheel" viewBox="0 0 600 600" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
+}
+
+/** Desktop ornament between the words and her photograph: a fine gold lotus mandala and her three words. */
+function mandala() {
+  const c = 200;
+  const out: string[] = ['<circle cx="200" cy="200" r="196" stroke-width=".8"/><circle cx="200" cy="200" r="184" stroke-width=".5" stroke-dasharray="2 6"/><circle cx="200" cy="200" r="120" stroke-width=".7"/><circle cx="200" cy="200" r="46" stroke-width=".8"/>'];
+  for (let i = 0; i < 16; i++) {
+    const a = (i * 22.5 * Math.PI) / 180;
+    const x = (c + 120 * Math.cos(a)).toFixed(1), y = (c + 120 * Math.sin(a)).toFixed(1);
+    out.push(`<path d="M${c} ${c}Q${(c + 70 * Math.cos(a - 0.35)).toFixed(1)} ${(c + 70 * Math.sin(a - 0.35)).toFixed(1)} ${x} ${y}Q${(c + 70 * Math.cos(a + 0.35)).toFixed(1)} ${(c + 70 * Math.sin(a + 0.35)).toFixed(1)} ${c} ${c}Z" stroke-width=".6"/>`);
+    const x2 = (c + 184 * Math.cos(a + 0.196)).toFixed(1), y2 = (c + 184 * Math.sin(a + 0.196)).toFixed(1);
+    out.push(`<path d="M${(c + 120 * Math.cos(a)).toFixed(1)} ${(c + 120 * Math.sin(a)).toFixed(1)}Q${(c + 170 * Math.cos(a + 0.05)).toFixed(1)} ${(c + 170 * Math.sin(a + 0.05)).toFixed(1)} ${x2} ${y2}" stroke-width=".5"/>`);
+  }
+  return `<svg class="ab-mandala" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">${out.join("")}</svg>`;
+}
 
 /**
  * "Why she starts with the mind" as one wide banner: her words, the three steps and the enquiry on the left; her
@@ -65,13 +103,33 @@ export function Approach() {
         </blockquote>
       </div>
 
+      <div className="ab-orn" aria-hidden="true">
+        <span dangerouslySetInnerHTML={{ __html: mandala() }} />
+        <p className="ab-orn-words">
+          <span>Mind</span>
+          <span>Direction</span>
+          <span>Alignment</span>
+        </p>
+      </div>
+      <div className="ab-stage" aria-hidden="true">
+        <div className="ab-pic">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="ab-pic-bg" src={asset("/images/approach-photo.webp")} alt="" width={900} height={1500} loading="lazy" decoding="async" />
+          <span className="ab-wheel-wrap" dangerouslySetInnerHTML={{ __html: wheel() }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="ab-pic-cut" src={asset("/images/approach-photo-cut.webp")} alt="" width={900} height={1500} loading="lazy" decoding="async" />
+        </div>
+      </div>
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="ab-leaves" src={asset("/images/approach-leaves.webp")} alt="" width={600} height={842} aria-hidden="true" loading="lazy" />
+
       <div className="ab-inner">
         <div className="ab-copy">
           <p className="ab-kicker">Her approach</p>
           <h2 id="approach-title">
             Why she starts with the <em>mind</em>
           </h2>
-          <p className="ab-lead">Knowing what to change is one thing. Living differently is another. Her work brings the two together.</p>
 
           <ol className="ab-steps" data-draw-steps="">
             {steps.map((step, i) => (
@@ -84,13 +142,18 @@ export function Approach() {
                 </span>
                 <h3>{step.word}</h3>
                 <p>{step.text}</p>
+                <ul className="ab-points">
+                  {step.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ol>
 
           <div className="ab-actions">
             <EnquiryTrigger className="ab-cta" source="home-who-for">
-              <span>Tell her team what is on your mind</span>
+              <span>Share what’s on your mind</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>

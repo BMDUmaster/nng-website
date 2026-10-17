@@ -33,8 +33,8 @@ import { ReadingGuide, duplicateDirectories, sectionTakeaways, stoneTakeaways } 
 export function offeringMetadata(hub: HubSlug, slug: string): Metadata {
   const page = getOffering(hub, slug);
   return {
-    title: { absolute: `${hub === "brain-training" ? "Psychic Reader" : page.metaTitle} | Narayani Garg` },
-    description: hub === "brain-training" ? "Personal and spiritual guidance with Narayani Garg. Explore six Psychic Reader consultation choices and enquire with the team." : shortGuidance[slug ? `${hub}/${slug}` : hub]?.lead ?? page.metaDescription,
+    title: { absolute: `${hub === "brain-training" ? "Brainology Program" : page.metaTitle} | Narayani Garg` },
+    description: hub === "brain-training" ? "Personal and spiritual guidance with Narayani Garg. Explore six Brainology Program consultation choices and enquire with the team." : shortGuidance[slug ? `${hub}/${slug}` : hub]?.lead ?? page.metaDescription,
     alternates: { canonical: hub === "brain-training" ? "/services/brain-training/" : offeringPath(page) },
   };
 }
@@ -108,13 +108,13 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
       <ServiceHero
         trail={trail}
         kicker={isHub ? "Her practice" : service.name}
-        title={<Rich text={personalVastu ? "Vastu for the way you live" : page.title} />}
+        title={<Rich text={personalVastu ? "Vastulogy for the way you live" : page.title} />}
         lead={isHub ? hub === "astrology" ? "Your birth chart, considered around your question. Narayani explores timing and choices without treating the chart as a verdict." : "Understand crystals, stones and Rudraksha before choosing a piece. Discuss traditional guidance, then confirm product details with the team." : page.card}
-        portrait={isHub}
-        art={<OfferArt spec={page.art} label={`${page.title}: a drawing made for this page`} />}
+        hub={hub}
         actions={<>
           <EnquiryTrigger className="cn-cta" topic={page.enquiryTopic} source={`${source}-hero`} primary>
-            <span>{page.cta}</span>
+            <span className="cx-long">{page.cta}</span>
+            <span className="cx-short">Enquire now</span>
             <HeroArrow />
           </EnquiryTrigger>
           <a className="cn-ghost" href={isHub ? "#pages" : "#ready"}>
@@ -123,7 +123,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
         </>}
         note={!isHub && <p className="svd-person">
           <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
-          <span>Personal guidance with <strong>Narayani Garg</strong></span>
+          <span>Psychic mentor <strong>Narayani Garg</strong></span>
         </p>}
       />
 

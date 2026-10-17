@@ -5,6 +5,7 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { EVENTS, track } from "@/lib/analytics";
 import { voicePoster, type Voice } from "@/content/voices";
 import { asset } from "@/lib/assets";
+import { useDriftRail } from "@/lib/useDriftRail";
 
 /**
  * "Hear the whole story": client films as tall cards in a row. A film previews silently while the pointer is on
@@ -15,7 +16,7 @@ export function StoryFilms({
   voices,
   more,
   id = "transformation",
-  kicker = "Client films",
+  kicker = "Real stories",
   title = "Hear the whole story",
   lead = "Conversations about family, belief in oneself and finding a way through.",
 }: {
@@ -26,43 +27,11 @@ export function StoryFilms({
   title?: string;
   lead?: string;
 }) {
-  const rail = useRef<HTMLUListElement>(null);
   const viewer = useRef<HTMLDialogElement>(null);
   const [playing, setPlaying] = useState<Voice | null>(null);
   const [showMore, setShowMore] = useState(false);
-  const held = useRef(false);
 
-  // The row drifts slowly and loops (the cards are drawn twice); a pointer or touch on it holds it still.
-  useEffect(() => {
-    const el = rail.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let frame = 0;
-    let last = 0;
-    let carry = 0;
-    let visible = false;
-    const observer = new IntersectionObserver(([entry]) => (visible = entry.isIntersecting), { threshold: 0.2 });
-    observer.observe(el);
-    const step = (time: number) => {
-      const dt = last ? Math.min(time - last, 64) : 16;
-      last = time;
-      if (visible && !held.current && !document.hidden && !viewer.current?.open) {
-        carry += dt * 0.035;
-        const whole = Math.floor(carry);
-        if (whole) {
-          el.scrollLeft += whole;
-          carry -= whole;
-        }
-        const half = el.scrollWidth / 2;
-        if (el.scrollLeft >= half) el.scrollLeft -= half;
-      }
-      frame = requestAnimationFrame(step);
-    };
-    frame = requestAnimationFrame(step);
-    return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-    };
-  }, []);
+  const { rail, active, goTo, step, handlers } = useDriftRail(voices.length);
 
   // Phones: the card nearest the middle of the rail plays its silent preview.
   useEffect(() => {
@@ -120,17 +89,10 @@ export function StoryFilms({
     setPlaying(null);
   };
 
-  const scroll = (step: number) => {
-    const el = rail.current;
-    const card = el?.firstElementChild as HTMLElement | null;
-    if (!el || !card) return;
-    const half = el.scrollWidth / 2;
-    if (step < 0 && el.scrollLeft < card.offsetWidth) el.scrollLeft += half;
-    el.scrollBy({ left: step * (card.offsetWidth + 16), behavior: "smooth" });
-  };
+  const scroll = step;
 
-  const renderCard = (voice: Voice, clone = false) => (
-            <li key={clone ? `${voice.id}-again` : voice.id} className="sf-card" aria-hidden={clone || undefined} inert={clone || undefined} onMouseEnter={(e) => preview(e.currentTarget, true)} onMouseLeave={(e) => preview(e.currentTarget, false)}>
+  const renderCard = (voice: Voice, i = -1, dup = false) => (
+            <li key={dup ? `${voice.id}-dup` : voice.id} className={`sf-card${i === active && !dup ? " is-active" : ""}${dup ? " sf-dup" : ""}`} aria-hidden={dup || undefined} inert={dup || undefined} onMouseEnter={(e) => preview(e.currentTarget, true)} onMouseLeave={(e) => preview(e.currentTarget, false)}>
               <button type="button" className="sf-film" onClick={(e) => open(voice, e.currentTarget)}>
                 <img src={voicePoster(voice)} alt="" loading="lazy" decoding="async" />
                 {voice.clip && <video src={asset(voice.clip)} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} onPlaying={(e) => e.currentTarget.classList.add("is-on")} onPause={(e) => e.currentTarget.classList.remove("is-on")} />}
@@ -140,7 +102,11 @@ export function StoryFilms({
                 <span className="sf-play" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3v10l8-5z" /></svg>
                 </span>
+                <span className="sf-center" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3v10l8-5z" /></svg>
+                </span>
                 <span className="sf-copy">
+                  <span className="sf-q" aria-hidden="true">“</span>
                   <span className="sf-hook">{voice.hook ?? voice.film?.label}</span>
                   <span className="sf-name">{voice.name}</span>
                   <span className="sf-context">{voice.context}</span>
@@ -156,7 +122,7 @@ export function StoryFilms({
         <header className="sf-head">
           <div>
             <p className="sf-kicker">{kicker}</p>
-            <h2 id={`${id}-title`}>{title}</h2>
+            <h2 id={`${id}-title`}>{title === "Hear the whole story" ? <>Hear the <em>whole</em> story</> : title}</h2>
             {lead && <p className="sf-lead">{lead}</p>}
           </div>
           <div className="sf-head-actions">
@@ -170,23 +136,19 @@ export function StoryFilms({
         </header>
 
         <ul
-          className="sf-rail is-looping"
+          className="sf-rail"
           ref={rail}
           aria-label="Client films"
-          onMouseEnter={() => (held.current = true)}
-          onMouseLeave={() => (held.current = false)}
-          onTouchStart={() => (held.current = true)}
-          onTouchEnd={() => window.setTimeout(() => (held.current = false), 2500)}
-          onFocus={() => (held.current = true)}
-          onBlur={() => (held.current = false)}
+          {...handlers}
         >
-          {voices.map((voice) => renderCard(voice))}
-          {voices.map((voice) => renderCard(voice, true))}
+          {voices.map((voice, i) => renderCard(voice, i))}
+          {voices.map((voice, i) => renderCard(voice, i, true))}
         </ul>
 
         {showMore && (
           <div className="sf-extra" id="sf-more-films">
             <p className="sf-extra-title">More client recordings</p>
+
             <ul className="sf-rail sf-rail-more" aria-label="More client recordings">
               {more.map((voice) => renderCard(voice))}
             </ul>
@@ -202,14 +164,31 @@ export function StoryFilms({
               aria-controls="sf-more-films"
               onClick={() => setShowMore((v) => !v)}
             >
-              {showMore ? "Show fewer recordings" : "More client recordings"} <span>{showMore ? "−" : `+${more.length}`}</span>
+              <span className="sf-more-disc" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3v10l8-5z" /></svg>
+              </span>
+              <span className="sf-l-long">{showMore ? "Show fewer stories" : "Watch more stories"}</span>
+              <span className="sf-l-short">{showMore ? "Fewer stories" : "More stories"}</span>
+              <span className="sf-more-count">{showMore ? "−" : `+${more.length}`}</span>
             </button>
           )}
+          <div className="sf-dots" role="group" aria-label="Choose a film">
+            <button type="button" className="sf-arrow sf-arrow-m" onClick={() => scroll(-1)} aria-label="Previous film">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10 3L5 8l5 5" /></svg>
+            </button>
+            {voices.map((voice, i) => (
+              <button key={voice.id} type="button" className="sf-dot" aria-label={`Film ${i + 1} of ${voices.length}`} aria-current={i === active ? "true" : undefined} onClick={() => goTo(i)} />
+            ))}
+            <button type="button" className="sf-arrow sf-arrow-m" onClick={() => scroll(1)} aria-label="Next film">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5" /></svg>
+            </button>
+          </div>
           <EnquiryTrigger className="sf-enquire" source="home-films">
-            Start your own enquiry <span aria-hidden="true">→</span>
+            <span className="sf-l-long">Begin your enquiry</span>
+            <span className="sf-l-short">Enquire now</span>
+            <span className="sf-enq-go" aria-hidden="true">→</span>
           </EnquiryTrigger>
         </div>
-        <p className="sf-note">These are personal experiences, not promises of the same outcome.</p>
       </div>
 
       <dialog ref={viewer} className="sf-viewer" onClose={() => setPlaying(null)} onClick={(e) => e.target === e.currentTarget && close()} aria-label={playing ? `${playing.name}: ${playing.film?.label ?? "client film"}` : "Client film"}>

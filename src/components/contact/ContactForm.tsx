@@ -15,7 +15,7 @@ const ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT ?? "";
 export const GUIDANCE = [
   "General Consultation",
   "Mind Training & Guidance",
-  "Numerology & Vastu",
+  "Numerology & Vastulogy",
   "Astrology Assessment",
   "Personalised Hand Holding Program",
 ];

@@ -44,7 +44,7 @@ export const choiceGroups: ChoiceGroup[] = [
     choices: [
       { say: "I want to understand my stress patterns and rhythms", href: "/services/astrology/health-and-wellbeing/" },
       { say: "I want to change a habit or calm a racing mind", href: "/services/brain-training/" },
-      { say: "I want to explore a recurring pattern with a Psychic Reader", href: "/services/brain-training/nlp/" },
+      { say: "I want to explore a recurring pattern through the Brainology Program", href: "/services/brain-training/nlp/" },
       { say: "I am not sure where to begin, or what I should be asking", href: "/services/brain-training/discovery-session/" },
       { say: "I want a guided session to settle myself and the space around me", href: "/services/vastu/energy-balancing/" },
     ],
@@ -96,7 +96,7 @@ export const choiceGroups: ChoiceGroup[] = [
       { say: "I want my office, shop, clinic or showroom looked at", href: "/services/vastu/office-and-shop/" },
       { say: "I am a builder, architect or developer planning a project", href: "/services/vastu/real-estate-and-developers/" },
       { say: "I run a factory, a hotel, a school, a hospital or a farm", href: "/services/vastu/specialised-spaces/" },
-      { say: "I want steady Vastu support through a project or a year", href: "/services/vastu/ongoing-guidance/" },
+      { say: "I want steady Vastulogy support through a project or a year", href: "/services/vastu/ongoing-guidance/" },
     ],
   },
   {

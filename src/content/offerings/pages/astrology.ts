@@ -68,7 +68,7 @@ export const page: OfferingPage = {
           type: "p",
           text: "A chart is sometimes read out with a warning attached: do this, or that will follow. Narayani does not begin there, and she says so in her own words.",
         },
-        { type: "quote", text: "It is not a business of fear.", source: "Narayani Garg, translated from Hindi" },
+        { type: "quote", text: "It is not a business of fear.", source: "Narayani Garg" },
         {
           type: "p",
           text: "In her view a remedy works only when the mind is working with it, so the person who has to carry it comes before the planet. The chart comes in where it helps: it gives a structure for questions about timing, for why a stretch of time feels as it does, and for weighing a choice against the period you are in. A hard period is described plainly, along with how common it is and how traditions differ about it.",
@@ -273,8 +273,8 @@ export const page: OfferingPage = {
       a: "In Jyotish the Moon star enters the comparison of two charts: four of the eight traditional matching scores come from the two birth nakshatras. So far as is known, whether those scores say anything about a real relationship has not been tested in a controlled way, and a score is never a verdict. A reading takes the star as one voice among several on temperament. The nakshatras page has the detail.",
     },
     {
-      q: "Can Vastu work with my chart?",
-      a: "They are separate traditions that can be read side by side. Jyotish reads the sky as it stood at your birth, and Vastu reads direction and layout in the place where you live or work. Where it helps the question, Narayani looks at both, the chart for timing and temperament and the space for how a day actually runs. No effect on events is claimed for either. The Vastu section has a page on reading a space beside a chart.",
+      q: "Can Vastulogy work with my chart?",
+      a: "They are separate traditions that can be read side by side. Jyotish reads the sky as it stood at your birth, and Vastulogy reads direction and layout in the place where you live or work. Where it helps the question, Narayani looks at both, the chart for timing and temperament and the space for how a day actually runs. No effect on events is claimed for either. The Vastulogy section has a page on reading a space beside a chart.",
     },
     {
       q: "How is Jyotish different from Western astrology?",

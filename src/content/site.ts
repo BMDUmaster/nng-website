@@ -27,14 +27,14 @@ export const site = {
   },
 } as const;
 
-/** Confirmed by Aryan on 30 September 2026. Experience means total professional experience. */
+/** 10,000+ and 15+ confirmed by Aryan on 30 September 2026; the wording and 5K+ set by the team on 17 October 2026. */
 export const figures = [
-  { value: "10,000+", label: "Clients guided" },
-  { value: "15+", label: "Years of professional experience" },
-  { value: "5+", label: "Countries served" },
+  { value: "10,000+", label: "Worldwide" },
+  { value: "15+", label: "Years of experience" },
+  { value: "5K+", label: "Lives transformed" },
 ] as const;
 
-export type NavChild = { label: string; href: string };
+export type NavChild = { label: string; href: string; note?: string };
 export type NavItem = { label: string; href: string; short?: string; overviewLabel?: string; children?: NavChild[]; excludePaths?: string[]; dropdownOnly?: boolean };
 
 /**
@@ -49,10 +49,10 @@ export const nav: NavItem[] = [
     href: "/consultations/",
     overviewLabel: "Consultation overview",
     children: [
-      { label: "Where to begin", href: "/consultations/#choose" },
-      { label: "Options and fees", href: "/consultations/#fees" },
-      { label: "How it works", href: "/consultations/#how" },
-      { label: "Hand Holding Program", href: "/hand-holding-program/" },
+      { label: "Where to begin", href: "/consultations/#choose", note: "Find the right consultation for your current situation." },
+      { label: "Options and fees", href: "/consultations/#fees", note: "Consultation formats, duration and fee details." },
+      { label: "How it works", href: "/consultations/#how", note: "Simple steps to book and what to expect." },
+      { label: "Hand Holding Program", href: "/hand-holding-program/", note: "Ongoing guidance and support over six months." },
     ],
   },
   {
@@ -61,10 +61,10 @@ export const nav: NavItem[] = [
     excludePaths: ["/services/stones-and-rudraksh/"],
     // The same order as the service cards: she starts with the mind.
     children: [
-      { label: "Psychic Reader", href: "/services/brain-training/" },
-      { label: "Astrology", href: "/services/astrology/" },
-      { label: "Numerology", href: "/services/numerology/" },
-      { label: "Vastu", href: "/services/vastu/" },
+      { label: "Brainology Program", href: "/services/brain-training/", note: "Understand the mind behind your choices." },
+      { label: "Numerology", href: "/services/numerology/", note: "Discover the power of your numbers." },
+      { label: "Vastulogy", href: "/services/vastu/", note: "Harmony in your home and space." },
+      { label: "Astrology", href: "/services/astrology/", note: "Planetary influences for a better you." },
     ],
   },
   {
@@ -72,8 +72,8 @@ export const nav: NavItem[] = [
     href: "/resources/",
     dropdownOnly: true,
     children: [
-      { label: "Crystals, Stones and Rudraksha", href: "/services/stones-and-rudraksh/" },
-      { label: "Blogs", href: "/resources/blogs/" },
+      { label: "Crystals, Stones and Rudraksha", href: "/services/stones-and-rudraksh/", note: "Explore natural crystals, stones and sacred rudraksha." },
+      { label: "Blogs", href: "/resources/blogs/", note: "Read articles on spirituality, astrology and self-growth." },
     ],
   },
   // The shop shows a coming-soon note for now, so it is a single link.
@@ -96,9 +96,9 @@ export const enquiryTopics = [
   { value: "a consultation on a relationship", label: "Relationship", group: "An area of life" },
   { value: "a consultation on money", label: "Money", group: "An area of life" },
   { value: "a consultation on my career", label: "Career", group: "An area of life" },
-  { value: "Psychic Reader", label: "Psychic Reader", group: "A service" },
+  { value: "Brainology Program", label: "Brainology Program", group: "A service" },
   { value: "Numerology", label: "Numerology", group: "A service" },
-  { value: "Vastu", label: "Vastu", group: "A service" },
+  { value: "Vastulogy", label: "Vastulogy", group: "A service" },
   { value: "Astrology", label: "Astrology", group: "A service" },
   { value: "Crystals, Stones and Rudraksha", label: "Crystals, Stones and Rudraksha", group: "A service" },
   { value: "the Personalised Hand Holding Program", label: "Personalised Hand Holding Program", group: "A service" },
@@ -123,6 +123,6 @@ export const topicGroups = ["Where to begin", "An area of life", "A service"] as
 
 export const legal = {
   disclaimer:
-    "Psychic guidance is personal and spiritual. Numerology, Vastu and astrology are interpretive traditions. Guidance here is personal and spiritual, not medical, mental health, legal or financial advice.",
+    "Psychic guidance is personal and spiritual. Numerology, Vastulogy and astrology are interpretive traditions. Guidance here is personal and spiritual, not medical, mental health, legal or financial advice.",
   copyright: "© 2026 Transformation with NNG",
 };

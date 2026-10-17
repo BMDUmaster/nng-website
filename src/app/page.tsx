@@ -1,11 +1,11 @@
 import { preload } from "react-dom";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
-import { AreasRibbon } from "@/components/sections/Sections";
 import { Approach } from "@/components/sections/Approach";
 import { BookSection } from "@/components/sections/BookSection";
 import { ClientWords } from "@/components/sections/ClientWords";
 import { HomeHero } from "@/components/sections/HomeHero";
-import { HomeFaq, HomeProgram, InstagramReels, JourneyPhotos } from "@/components/sections/HomeLower";
+import { HomeFaq, HomeProgram, InstagramReels } from "@/components/sections/HomeLower";
+import { JourneyMoments } from "@/components/sections/JourneyMoments";
 import { StoryFilms } from "@/components/sections/StoryFilms";
 import { MeetNarayani } from "@/components/sections/MeetNarayani";
 import { ServiceAtlas } from "@/components/sections/ServiceAtlas";
@@ -14,18 +14,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
 import { homeQuotes, otherFilms, storyFilms } from "@/content/voices";
 import { bookTitle } from "@/content/about";
-import { asset, assetSet } from "@/lib/assets";
+import { asset } from "@/lib/assets";
 import { faqSchema, personSchema } from "@/lib/schema";
 
 export default function HomePage() {
-  // Preload hero portrait
-  preload(asset("/images/narayani-portrait-480.avif"), {
-    as: "image",
-    type: "image/avif",
-    fetchPriority: "high",
-    imageSrcSet: assetSet("/images/narayani-portrait-480.avif 480w, /images/narayani-portrait-684.avif 684w"),
-    imageSizes: "(max-width: 900px) min(56vw, 250px), 300px",
-  });
+  // Preload the hero's cut-out portrait.
+  preload(asset("/images/hero-narayani-cut.webp"), { as: "image", type: "image/webp", fetchPriority: "high" });
 
   return (
     <>
@@ -33,25 +27,23 @@ export default function HomePage() {
 
       <HomeHero />
 
-      <AreasRibbon />
-
       <MeetNarayani bookTitle={bookTitle} />
 
       <ClientWords voices={homeQuotes} note={<ClienteleNote />} />
 
       <ServiceAtlas />
 
+      <JourneyMoments />
+
       <Approach />
 
       <StoryFilms voices={storyFilms} more={otherFilms} />
 
-      <BookSection bookTitle={bookTitle} />
-
-      <JourneyPhotos />
       <HomeProgram />
       <HomeFaq items={faqs.home} />
       <PracticeReturnPrompt />
       <InstagramReels />
+      <BookSection bookTitle={bookTitle} />
     </>
   );
 }
