@@ -22,7 +22,7 @@ const feIcons = [
 const feLines: Record<string, string> = {
   "Direction and layout": "How the space is placed",
   "Everyday use of the space": "Your daily routine and habits",
-  "Practical changes without fear": "Simple, practical suggestions",
+  "Practical changes without fear": "Simple and effective solutions",
 };
 
 function ElementsDiagram() {
