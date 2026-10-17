@@ -12,6 +12,19 @@ import styles from "./ReviewServicePage.module.css";
 import { HeroArrow, ServiceHero } from "./ServiceHero";
 import { ElementsOrbit } from "@/components/art/ElementsOrbit";
 
+/* The Vastulogy scope rows: a line icon each, and a short line under each point on the landing page. */
+const feIco = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const feIcons = [
+  feIco('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/><path d="M16 3v2M16 27v2M3 16h2M27 16h2"/>'),
+  feIco('<path d="M5 15 16 6l11 9"/><path d="M8 13v13h16V13"/><path d="M13.5 26v-7h5v7"/>'),
+  feIco('<path d="M6 26h20"/><path d="M8 26v-6M13 26v-9M18 26v-7M23 26V12"/><path d="m7 15 6-5 4 3 8-7M21 6h4v4"/>'),
+];
+const feLines: Record<string, string> = {
+  "Direction and layout": "How the space is placed",
+  "Everyday use of the space": "Your daily routine and habits",
+  "Practical changes without fear": "Simple, practical suggestions",
+};
+
 function ElementsDiagram() {
   return <ElementsOrbit />;
 }
@@ -101,10 +114,29 @@ export function ReviewServicePage({ page }: { page: OfferingPage }) {
         </div>
       </section>}
 
-      <section className={`section-wrap ${styles.section} ${styles.split} sx-split`} aria-labelledby="scope-title"><div><h2 id="scope-title">{isHub ? "The question comes first" : "What you look at together"}</h2><ul className={styles.scope}>{content.points.map(point => <li key={point}><Rich text={point} /></li>)}</ul>
+      {page.hub === "vastu" ? <section className="fe" aria-labelledby="scope-title">
+        <span className="fe-leaf" aria-hidden="true" />
+        <div className="fe-card">
+          <div className="fe-copy">
+            <p className="fe-kicker"><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: btLotus }} />The five elements<span className="fe-kicker-line" aria-hidden="true" /></p>
+            <h2 id="scope-title">{isHub ? <>The question comes <em>first</em></> : <>What you look at <em>together</em></>}</h2>
+            <ul className="fe-rows">{content.points.map((point, n) => <li key={point}>
+              <EnquiryTrigger topic={`Vastulogy: ${point}`} source={`review-${key}-scope`} className="fe-row">
+                <span className="fe-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: feIcons[n % feIcons.length] }} />
+                <span className="fe-text"><strong><Rich text={point} /></strong>{isHub && feLines[point] && <small>{feLines[point]}</small>}</span>
+                <span className="fe-go" aria-hidden="true">&#8250;</span>
+              </EnquiryTrigger>
+            </li>)}</ul>
+            <p className="fe-limit">Vastulogy is an interpretive tradition. Structural, medical, legal and investment decisions need qualified professional advice.</p>
+          </div>
+          <div className="fe-panel">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/images/vastu-elements.webp")} width={832} height={803} loading="lazy" alt="The five elements around balanced living: Earth, stability and support. Water, flow and emotions. Space, clarity and expansion. Fire, energy and motivation. Air, movement and growth. A way to discuss balance, not a biological model or proof of a health effect." />
+          </div>
+        </div>
+      </section> : <section className={`section-wrap ${styles.section} ${styles.split} sx-split`} aria-labelledby="scope-title"><div><h2 id="scope-title">{isHub ? "The question comes first" : "What you look at together"}</h2><ul className={styles.scope}>{content.points.map(point => <li key={point}><Rich text={point} /></li>)}</ul>
         {page.hub === "numerology" && <p className={styles.limit}>A traditional number reading is a perspective to reflect on, not a prediction or a measure of someone’s ability.</p>}
-        {page.hub === "vastu" && <p className={styles.limit}>Vastulogy is an interpretive tradition. Structural, medical, legal and investment decisions need qualified professional advice.</p>}
-      </div><div className={styles.context}>{page.hub === "numerology" ? <><h3>Numbers, in everyday life</h3><div className={styles.numberTiles}>{["Date of birth", "Name", "Mobile", "Home", "Business", "Important dates"].map(word => <span key={word}>{word}</span>)}</div><p>Methods can differ. Narayani considers the interpretation beside your circumstances and choices.</p></> : <ElementsDiagram />}</div></section>
+      </div><div className={styles.context}>{page.hub === "numerology" ? <><h3>Numbers, in everyday life</h3><div className={styles.numberTiles}>{["Date of birth", "Name", "Mobile", "Home", "Business", "Important dates"].map(word => <span key={word}>{word}</span>)}</div><p>Methods can differ. Narayani considers the interpretation beside your circumstances and choices.</p></> : <ElementsDiagram />}</div></section>}
 
       {(page.hub === "numerology" || page.slug === "home" || page.slug === "office-and-shop") && <section className={`section-wrap ${styles.section} ${styles.enquiryPanel} sx-panel`} aria-labelledby="report-title"><div><h2 id="report-title">{page.hub === "numerology" ? "A report or a personal consultation?" : page.slug === "home" ? "Ask about an online Home Vastulogy report" : "Desk guidance or a full workplace review?"}</h2><p>{page.hub === "numerology" ? "Ask about a report for this topic, or a conversation with Narayani. The report range, contents, fees and delivery details are being finalised." : page.slug === "home" ? "The video-based report is being planned. Ask about its scope first. Do not upload or send private home footage through this preview." : "Tell the team which level of guidance you need. Scope, format and fees will be discussed before you book."}</p></div><EnquiryTrigger topic={`${topic}: report or consultation options`} source={`review-${key}-options`} className="bt-begin-cta"><span>Discuss the options</span><span className="bt-go" aria-hidden="true">→</span></EnquiryTrigger></section>}
     </>}
