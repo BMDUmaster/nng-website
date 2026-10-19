@@ -1,9 +1,9 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { Icon } from "@/components/icons/Icon";
 import { FeeOptions } from "@/components/offerings/FeeOptions";
-import { HomeFaq } from "@/components/sections/HomeLower";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/ui/Reveal";
 import { choiceGroups } from "@/content/choices";
@@ -46,7 +46,7 @@ const svIcons = {
 const methodIcons = [
   svIco('<path d="M13 27v-4a8 8 0 1 1 11-7.4l2 3.4h-2v3a2 2 0 0 1-2 2h-3v3"/><path d="M14 12.5a3 3 0 0 1 5.5-1.4M15 16.5h4"/>'),
   svIco('<path d="M16 3l2.6 10.4L29 16l-10.4 2.6L16 29l-2.6-10.4L3 16l10.4-2.6Z"/><path d="M16 9v14M9 16h14" stroke-width="0.8"/>'),
-  svIcons.lotus,
+  svIco('<path d="M16 27s-9-5.6-9-11.6A4.8 4.8 0 0 1 16 13a4.8 4.8 0 0 1 9 2.4C25 21.4 16 27 16 27Z"/><path d="M10 7.5l1.5 1.5M16 4.5v2.2M22 7.5 20.5 9"/>'),
 ];
 const howIcons = [
   svIco('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>'),
@@ -55,7 +55,7 @@ const howIcons = [
   svIco('<path d="M6 26V20M12 26V16M18 26V12M24 26V8M18 6h6v6"/>'),
 ];
 const svValues = [
-  { title: "Personalised Guidance", text: "For your unique journey", icon: svIcons.lotus },
+  { title: "Personalised Guidance", text: "For your unique journey", icon: svIco('<circle cx="16" cy="10" r="4.2"/><path d="M8.5 26a7.5 7.5 0 0 1 15 0"/><path d="M24 6.5l1 2 2 .4-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L21 8.9l2-.4Z"/>') },
   { title: "Clarity & Direction", text: "Understand your patterns", icon: svIco('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
   { title: "Practical Solutions", text: "For real-life situations", icon: svIco('<circle cx="16" cy="16" r="5.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>') },
   { title: "Supportive Approach", text: "With empathy and insight", icon: svIco('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
@@ -87,20 +87,6 @@ export default function ServicesPage() {
             <h1 id="page-title">
               Begin with the question <em>you’re facing</em>
             </h1>
-            <span className="svh-rule" aria-hidden="true" />
-            <p className="svh-lead">Bring your question. Narayani considers your situation and thought patterns, using numerology, Vastulogy or astrology where relevant.</p>
-            <div className="svh-actions">
-              <EnquiryTrigger className="svh-cta" source="services-hero" primary>
-                <span className="cx-long">Enquire about a consultation</span>
-                <span className="cx-short">Enquire</span>
-                <span className="svh-go" aria-hidden="true">→</span>
-              </EnquiryTrigger>
-              <Link prefetch={false} className="svh-ghost" href="/consultations/">
-                <span className="cx-long">Consultation options and how to begin</span>
-                <span className="cx-short">Options</span>
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
             <ul className="svh-jump" aria-label="The four practices">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -127,7 +113,7 @@ export default function ServicesPage() {
             <p className="svh-badge">
               <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />
               <span>Narayani Garg</span>
-              <small>Psychic mentor</small>
+              <small>Psychic Spiritual Mentor</small>
             </p>
           </div>
         </div>
@@ -138,7 +124,6 @@ export default function ServicesPage() {
               <span className="svh-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: v.icon }} />
               <span>
                 <strong>{v.title}</strong>
-                <small>{v.text}</small>
               </span>
             </li>
           ))}
@@ -158,16 +143,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <nav className="cn-chips" aria-label="Services on this page">
-        <div className="cn-chips-inner">
-          <a href="#choose">Start from your question</a>
-          <a href="#method">Her method</a>
-          <a href="#practices">The practices</a>
-          {feesPublic && <a href="#fees">Session options</a>}
-          <a href="#how">How it works</a>
-          <a href="#faq">Questions</a>
-        </div>
-      </nav>
 
       {/* Start from what you are facing. */}
       <section className="cn-sec sv-choose wb" id="choose" aria-labelledby="choose-title">
@@ -230,8 +205,7 @@ export default function ServicesPage() {
               <li key={step.word} data-reveal="" style={{ "--d": `${i * 120}ms` } as React.CSSProperties}>
                 <div className="hm2-photo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset(`/images/method-${i + 1}.webp`)} alt="" width={796} height={468} loading="lazy" />
-                  <span className="hm2-num">{String(i + 1).padStart(2, "0")}</span>
+                  <img src={asset(`/images/method3-${i + 1}.webp`)} alt="" width={960} height={564} loading="lazy" />
                 </div>
                 {i < method.length - 1 && <span className="hm2-link" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svIcons.lotus }} />}
                 <div className="hm2-body">
@@ -239,7 +213,6 @@ export default function ServicesPage() {
                   <div className="hm2-text">
                     <h3>{step.word}</h3>
                     <p>{step.text}</p>
-                    <span className="hm2-rule" aria-hidden="true" />
                   </div>
                   <div className="sv-tags hm2-tags">
                     {step.services.map((slug) => {
@@ -265,7 +238,6 @@ export default function ServicesPage() {
           {services.map((service, i) => (
             <article key={service.slug} id={service.slug} className={`sv-practice sp${i % 2 ? " is-flipped" : ""}`} aria-labelledby={`${service.slug}-title`} data-reveal="">
               <div className="sv-practice-art sp-photo">
-                <span className="sv-practice-num">{String(i + 1).padStart(2, "0")}</span>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={asset(`/images/practice-${service.slug}-photo.webp`)} alt="" width={928} height={680} loading="lazy" />
               </div>
@@ -323,12 +295,11 @@ export default function ServicesPage() {
                 {i < steps.length - 1 && <span className="hw-arrow" aria-hidden="true">→</span>}
                 <div className="hw-photo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset(`/images/how-step-${i + 1}.webp`)} alt="" width={740} height={444} loading="lazy" />
+                  <img src={asset(i === 1 ? "/images/sv-how-2.webp" : `/images/how-step-${i + 1}.webp`)} alt="" width={740} height={444} loading="lazy" />
                 </div>
                 <span className="hw-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: howIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
-                <span className="hw-rule" aria-hidden="true" />
               </li>
             ))}
           </ol>
@@ -396,7 +367,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <HomeFaq items={faqs.services} source="services-faq" intro="A few things you may want to know first. These answers are here to help you feel more confident before you book." rich />
+      <HomeQuestions items={faqs.services} source="services-faq" />
       <Reveal />
     </div>
   );

@@ -4,12 +4,14 @@ import { Approach } from "@/components/sections/Approach";
 import { BookSection } from "@/components/sections/BookSection";
 import { ClientWords } from "@/components/sections/ClientWords";
 import { HomeHero } from "@/components/sections/HomeHero";
-import { HomeFaq, HomeProgram, InstagramReels } from "@/components/sections/HomeLower";
+import { HomeProgram, InstagramReels } from "@/components/sections/HomeLower";
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
 import { JourneyMoments } from "@/components/sections/JourneyMoments";
+import { SevaSection } from "@/components/sections/SevaSection";
+import { PureBlessings } from "@/components/sections/PureBlessings";
 import { StoryFilms } from "@/components/sections/StoryFilms";
 import { MeetNarayani } from "@/components/sections/MeetNarayani";
 import { ServiceAtlas } from "@/components/sections/ServiceAtlas";
-import { ClienteleNote } from "@/components/sections/ClienteleNote";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqs } from "@/content/faq";
 import { homeQuotes, otherFilms, storyFilms } from "@/content/voices";
@@ -27,20 +29,22 @@ export default function HomePage() {
 
       <HomeHero />
 
-      <MeetNarayani bookTitle={bookTitle} />
+      <MeetNarayani />
 
-      <ClientWords voices={homeQuotes} note={<ClienteleNote />} />
+      <ClientWords voices={homeQuotes} note={null} />
 
       <ServiceAtlas />
 
       <JourneyMoments />
+      <PureBlessings />
+      <SevaSection />
 
       <Approach />
 
       <StoryFilms voices={storyFilms} more={otherFilms} />
 
       <HomeProgram />
-      <HomeFaq items={faqs.home} />
+      <HomeQuestions items={faqs.home} />
       <PracticeReturnPrompt />
       <InstagramReels />
       <BookSection bookTitle={bookTitle} />

@@ -102,7 +102,7 @@ export function serviceVisual(p) {
     <path d="M265 112l10-23 10 23M269 104h12M297 93h72M297 104h55M297 115h62"/></g>
     <g data-visual-focus="2"><path class="accent" d="M258 187c19-47 31-50 19-13s-3 22 10-2 22-35 11-8 1 24 13 15c13-8 19 19 55-3M251 209h137"/></g>
     <g class="diagram-label"><text x="110" y="245">Lo Shu grid</text><text x="318" y="245">Signature &amp; identity</text></g>`),[['Birth date','Personal numbers'],['Name','Current or proposed'],['Identity','Personal or business']], 'The grid shows the traditional arrangement, not your personal calculation.');
-  if(p.slug==='vastulogy')return wrapper(p,svg('An illustrative room layout with entrance, seating, circulation and a north compass. It demonstrates what can be discussed, not an ideal layout or a Vastu prescription.',`
+  if(p.slug==='vastulogy')return wrapper(p,svg('An illustrative room layout with entrance, seating, circulation and a north compass. It demonstrates what can be discussed, not an ideal layout or a Vastulogy prescription.',`
     <path class="wash" d="m41 87 198-52 98 60v143l-201 47-95-60z"/>
     <path class="accent" d="m40 218 97 60 203-47M40 218v-6M137 278v-7M340 231v-8"/>
     <g data-visual-focus="1"><path d="M57 66h246v161H57zM161 66v161M57 139h104M238 66v73h65M161 174h29v53M161 174a29 29 0 0 0 29 29"/>
@@ -110,7 +110,7 @@ export function serviceVisual(p) {
     <g data-visual-focus="2"><path class="accent draw-line" pathLength="1" d="M181 237v-28l32-54 30-16"/></g>
     <g data-visual-focus="0"><circle class="paper" cx="351" cy="60" r="29"/><path class="accent" d="m351 40-8 26 8-7 8 7zM351 28v3"/></g>
     <g class="diagram-label"><text x="351" y="25">N</text><text x="108" y="55">Rooms</text><text x="245" y="219">Seating</text><text x="208" y="292">Entrance</text></g>`),[['Direction','Orientation & entrance'],['Arrangement','Rooms & seating'],['Daily use','People & routines']], 'An example plan, not an ideal arrangement or a prescription for your space.');
-  return wrapper(p,svg('Six-month personal guidance connecting psychic guidance, Astrology, Numerology and Vastu where relevant to the individual or couple. Not a fixed monthly schedule.',`
+  return wrapper(p,svg('Six-month personal guidance connecting psychic guidance, Astrology, Numerology and Vastulogy where relevant to the individual or couple. Not a fixed monthly schedule.',`
     <circle class="wash" cx="210" cy="139" r="104"/>
     <g data-visual-focus="2"><path class="accent draw-line" pathLength="1" d="M101 62 182 115M319 62 239 115M101 227 182 163M319 227 239 163"/></g>
     <g data-visual-focus="0"><circle class="paper" cx="210" cy="139" r="55"/>
@@ -120,7 +120,7 @@ export function serviceVisual(p) {
     <circle class="paper" cx="89" cy="54" r="28"/><circle class="paper" cx="331" cy="54" r="28"/>
     <circle class="paper" cx="89" cy="227" r="28"/><circle class="paper" cx="331" cy="227" r="28"/>
     ${at(70,35,'reflection',.8)}${at(312,35,'chart',.8)}${at(70,208,'grid',.8)}${at(312,208,'house',.8)}</g>
-    <g class="diagram-label"><text x="89" y="101">Psychic guidance</text><text x="331" y="101">Astrology</text><text x="89" y="277">Numerology</text><text x="331" y="277">Vastu</text></g>`),[['You','Individual or couple'],['4 perspectives','Brought together'],['6 months','Guidance to return to']], 'The practices come together where relevant, not as a fixed monthly sequence.');
+    <g class="diagram-label"><text x="89" y="101">Psychic guidance</text><text x="331" y="101">Astrology</text><text x="89" y="277">Numerology</text><text x="331" y="277">Vastulogy</text></g>`),[['You','Individual or couple'],['4 perspectives','Brought together'],['6 months','Guidance to return to']], 'The practices come together where relevant, not as a fixed monthly sequence.');
 }
 export function programmeContinuum() {
   return `<div class="programme-continuum" aria-label="Six months of personal guidance across health, relationships, money and career"><div class="continuum-title"><span>Six months of personal guidance</span><span>With Narayani</span></div><div class="continuum-line" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="life-areas">${[['wellbeing','Health'],['relationship','Relationships'],['money','Money'],['career','Career']].map(([a,b])=>`<span>${icon(a)}${b}</span>`).join('')}</div></div>`;

@@ -41,9 +41,9 @@ export function meetBrain(p, { esc, wa }) {
         <p class="m5-lead">Here, we don’t start with theory or a one-size-fits-all program. We start with the problem.</p>
       </div>
       <ul class="m5-facts">
-        <li><span>${I.people}</span><div><strong><b data-count="10000">10,000</b>+</strong><em>Clients guided</em></div></li>
-        <li><span>${I.leaf}</span><div><strong>6 Practices</strong><em>NLP, EFT &amp; more</em></div></li>
-        <li><span>${I.mind}</span><div><strong>Mind First</strong><em>Beliefs and habits before any remedy</em></div></li>
+        <li><span>${I.people}</span><div><strong><b data-count="10000">10,000</b>+</strong><em>Worldwide clients</em></div></li>
+        <li><span>${I.leaf}</span><div><strong>15+</strong><em>Years of experience</em></div></li>
+        <li><span>${I.mind}</span><div><strong>50K+</strong><em>Lives transformed</em></div></li>
       </ul>
       <blockquote class="m5-quote"><span class="m5-q" aria-hidden="true">“</span><div><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>Narayani Garg</cite></div><span class="m5-sprig" aria-hidden="true">${sprig}</span></blockquote>
       <div class="m5-actions">${wa('meet', 'Talk to Narayani’s team', 'm5-cta').replace('</a>', `<i class="m5-arrow" aria-hidden="true">${I.arrow}</i></a>`)}<a class="m5-ghost" href="#approach"><span aria-hidden="true">${I.play}</span>How Brainology works</a></div>

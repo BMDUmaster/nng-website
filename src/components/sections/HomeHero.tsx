@@ -26,8 +26,8 @@ const icons = {
   coins: svg('<ellipse cx="13" cy="8" rx="8" ry="3"/><path d="M5 8v4c0 1.7 3.6 3 8 3s8-1.3 8-3V8M5 12v4c0 1.7 3.6 3 8 3 1.2 0 2.4-.1 3.4-.3M5 16v4c0 1.7 3.6 3 8 3 .9 0 1.8 0 2.6-.2"/><ellipse cx="22" cy="19" rx="6.5" ry="2.6"/><path d="M15.5 19v4c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6v-4"/>'),
   case: svg('<rect x="4" y="10" width="24" height="16" rx="2.5"/><path d="M12 10V7.5A1.5 1.5 0 0 1 13.5 6h5A1.5 1.5 0 0 1 20 7.5V10M4 17h24M14 17v2.5h4V17"/>'),
 };
-const areaIcon: Record<string, string> = { Health: icons.lotus, Relationship: icons.heart, Money: icons.coins, Career: icons.case };
-const figureIcon = [icons.globe, icons.award, icons.lotus];
+const areaIcon: Record<string, string> = { Health: svg('<path d="M4 16h5l2.5-5 4 10 3-7 2 2H28"/>'), Relationship: icons.heart, Money: icons.coins, Career: icons.case };
+const figureIcon = [icons.globe, icons.award, icons.heart];
 
 const star = (cls: string) =>
   `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.7 6.4 5.6 11.3 12 12-6.4.7-11.3 5.6-12 12-.7-6.4-5.6-11.3-12-12C6.4 11.3 11.3 6.4 12 0Z"/></svg>`;
@@ -152,7 +152,7 @@ export function HomeHero() {
           <p className="hm-name">
             <span className="hm-name-star" aria-hidden="true" dangerouslySetInnerHTML={html(star("hm-star"))} />
             <span>
-              Psychic mentor <strong>Narayani Garg</strong>
+              Psychic Spiritual Mentor <strong>Narayani Garg</strong>
             </span>
           </p>
           <h1 id="hero-title">

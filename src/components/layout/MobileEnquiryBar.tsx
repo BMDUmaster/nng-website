@@ -12,15 +12,15 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
  */
 export function MobileEnquiryBar() {
   const pathname = usePathname();
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(true);
   const [topic, setTopic] = useState<string | undefined>();
 
   useEffect(() => {
     // The paid landing page has its own form and sticky action. Keep that single flow intact.
-    if (pathname.replace(/\/$/, "") === "/consultation" || pathname.startsWith("/shop")) return;
+    if (pathname.replace(/\/$/, "") === "/consultation") return;
     const primary = document.querySelector<HTMLElement>("[data-primary-cta][data-enquiry]");
-    // A visible in-page primary action (or the homepage hero) already does this job. Avoid competing gold buttons.
-    const targets = Array.from(document.querySelectorAll("[data-primary-cta], a.button[data-enquiry], .site-footer, .hx")).filter(target => !target.closest(".mobile-enquiry"));
+    // On every page (Oct 19); it only steps aside while the footer, with its own invitation, is on screen.
+    const targets = Array.from(document.querySelectorAll(".site-footer"));
     const onScreen = new Set<Element>();
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,14 +34,19 @@ export function MobileEnquiryBar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  if (pathname.replace(/\/$/, "") === "/consultation" || pathname.startsWith("/shop")) return null;
+  if (pathname.replace(/\/$/, "") === "/consultation") return null;
 
   return (
     <aside className={`mobile-enquiry${shown ? " is-shown" : ""}`} aria-label="Enquire" aria-hidden={!shown} inert={!shown}>
-      <span>
+      <span className="meb-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="16" cy="10" r="4" /><path d="M8.5 25a7.5 7.5 0 0 1 15 0" /><circle cx="7" cy="12.5" r="3" /><path d="M2.5 23.5a5 5 0 0 1 6.5-4.7" /><circle cx="25" cy="12.5" r="3" /><path d="M29.5 23.5a5 5 0 0 0-6.5-4.7" /></svg></span>
+      <span className="meb-text">
         <strong>Narayani’s team</strong>
+        <small>Replies personally</small>
       </span>
-      <EnquiryTrigger topic={topic} source="mobile-bar">Enquire</EnquiryTrigger>
+      <EnquiryTrigger topic={topic} source="mobile-bar" className="meb-cta">
+        <span>Enquire Now</span>
+        <span className="meb-go" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 6h7M6.5 3l3 3-3 3" /></svg></span>
+      </EnquiryTrigger>
     </aside>
   );
 }

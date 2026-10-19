@@ -23,8 +23,9 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/nng', [PageController::class, 'nngLanding'])->name('nng.landing');
 
 // Legal & Policy Pages
-Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy.policy');
-Route::get('/terms-conditions', [PageController::class, 'termsConditions'])->name('terms.conditions');
+// The redesigned legal pages are static folders; the old Blade pages redirect to them.
+Route::redirect('/privacy-policy', '/privacy-policy/', 301)->name('privacy.policy');
+Route::redirect('/terms-conditions', '/terms-conditions/', 301)->name('terms.conditions');
 
 // Public Customer Enquiry Form Submission Route
 Route::post('/enquiry/store', [EnquiryController::class, 'store'])->name('enquiry.store');

@@ -27,11 +27,11 @@ export const site = {
   },
 } as const;
 
-/** 10,000+ and 15+ confirmed by Aryan on 30 September 2026; the wording and 5K+ set by the team on 17 October 2026. */
+/** 10,000+ and 15+ confirmed by Aryan on 30 September 2026; the wording set by the team on 17 October 2026; 50K+ on 18 October 2026. */
 export const figures = [
-  { value: "10,000+", label: "Worldwide" },
+  { value: "10,000+", label: "Worldwide clients" },
   { value: "15+", label: "Years of experience" },
-  { value: "5K+", label: "Lives transformed" },
+  { value: "50K+", label: "Lives transformed" },
 ] as const;
 
 export type NavChild = { label: string; href: string; note?: string };
@@ -77,7 +77,7 @@ export const nav: NavItem[] = [
     ],
   },
   // The shop shows a coming-soon note for now, so it is a single link.
-  { label: "Shop", href: "/shop/" },
+  { label: "Mineralogy", href: "/shop/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];

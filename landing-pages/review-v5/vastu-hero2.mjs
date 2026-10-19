@@ -57,7 +57,7 @@ export function vastuScope(p, { esc, wa }) {
   const icons = [I.home, I.case, I.compass, I.desk];
   return `<section class="vs" id="ways" aria-labelledby="ways-title"><div class="vs-inner">
     <div class="vs-main">
-      <p class="vh-kicker"><span aria-hidden="true">${I.star}</span>Vastu consultation</p>
+      <p class="vh-kicker"><span aria-hidden="true">${I.star}</span>Vastulogy consultation</p>
       <h2 id="ways-title">${esc(a)}<br>${esc(bw.join(' '))} <em>${esc(tail)}</em></h2>
       <p class="vs-lead">${esc(p.scopeIntro)}</p>
       <ul class="vs-grid">${p.topics.map(([t, d], i) => `<li style="--i:${i}">

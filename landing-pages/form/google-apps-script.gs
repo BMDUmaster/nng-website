@@ -10,7 +10,7 @@
 
 const SHEET = 'Enquiries';
 const SETTINGS = 'Settings';
-const DEFAULT_EMAIL = 'aditya.webdeveloper.bmdu@gmail.com';
+const DEFAULT_EMAIL = 'nngmarketing2027@gmail.com';
 const HEADERS = ['Date and time (IST)', 'Page', 'Button', 'First name', 'Last name', 'Email', 'Country code', 'Mobile number',
   'Occupation', 'Reason for contact', 'Details', 'UTM source', 'UTM medium', 'UTM campaign', 'UTM content', 'UTM term',
   'Page URL', 'Referrer'];

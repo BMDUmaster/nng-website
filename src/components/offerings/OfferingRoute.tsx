@@ -1,3 +1,4 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
 import type { Metadata } from "next";
 import { ReviewServicePage } from "./ReviewServicePage";
 import { shortGuidance } from "@/content/review-release";
@@ -7,7 +8,6 @@ import { asset } from "@/lib/assets";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
 import { Icon } from "@/components/icons/Icon";
-import { HomeFaq } from "@/components/sections/HomeLower";
 import { SectionChips } from "@/components/sections/SectionChips";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Rich } from "@/components/ui/Rich";
@@ -123,7 +123,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
         </>}
         note={!isHub && <p className="svd-person">
           <img src={asset("/images/narayani-cover-portrait-96.webp")} width={44} height={44} alt="" />
-          <span>Psychic mentor <strong>Narayani Garg</strong></span>
+          <span>Psychic Spiritual Mentor <strong>Narayani Garg</strong></span>
         </p>}
       />
 
@@ -296,7 +296,7 @@ export function OfferingRoute({ hub, slug }: { hub: HubSlug; slug: string }) {
           <BlockList blocks={visualReading && section.id === "houses" ? section.blocks : section.blocks.filter(block => block.type !== "note" && block.type !== "quote")} />
         </section>)}
       </ReferenceReading>}
-      <HomeFaq items={isHub ? page.faqs.slice(0, 3) : page.faqs} title="Questions people ask" intro="If yours is not here, ask it when you enquire." source={`${source}-faq`} />
+      <HomeQuestions items={isHub ? page.faqs.slice(0, 3) : page.faqs} source={`${source}-faq`} />
     </div>
   );
 }

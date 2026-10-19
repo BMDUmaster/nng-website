@@ -1,9 +1,9 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CallLink } from "@/components/contact/CallLink";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
-import { HomeFaq } from "@/components/sections/HomeLower";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/ui/Reveal";
 import { faqs } from "@/content/faq";
@@ -75,7 +75,7 @@ export default function ContactPage() {
             </div>
             <p className="kh-badge">
               <span>{site.person}</span>
-              <small>Psychic mentor</small>
+              <small>Psychic Spiritual Mentor</small>
             </p>
             <span className="kh-lotus-art" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
           </div>
@@ -240,7 +240,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <HomeFaq items={faqs.contact} title="Before you write" intro="A few practical questions, before you share your details." source="contact-faq" />
+      <HomeQuestions items={faqs.contact} source="contact-faq" />
       <Reveal />
     </div>
   );

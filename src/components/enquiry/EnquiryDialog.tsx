@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EVENTS, track } from "@/lib/analytics";
-import { enquiryMessage, isPreviewNumber, whatsappUrl } from "@/lib/whatsapp";
+import { isPreviewNumber, whatsappUrl } from "@/lib/whatsapp";
 import { enquiryTopics, site } from "@/content/site";
 import { TopicOptions } from "./TopicOptions";
 
@@ -24,6 +24,10 @@ export function EnquiryDialog() {
   // A page-specific topic, kept in the list for as long as the dialog is open on this visit.
   const [pageTopic, setPageTopic] = useState<string | null>(null);
   const [region, setRegion] = useState<Region>("India");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [tried, setTried] = useState(false);
   const preview = isPreviewNumber();
 
   const open = useCallback((from: HTMLElement) => {
@@ -92,7 +96,20 @@ export function EnquiryDialog() {
     };
   }, []);
 
-  const message = enquiryMessage(topic, region);
+  const errors = {
+    name: name.trim() ? "" : "Please enter your name.",
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim()) ? "" : email.trim() ? "Please enter a valid email address." : "Please enter your email address.",
+    phone: phone.replace(/\D/g, "").length >= 7 ? "" : phone.trim() ? "Please enter a valid phone number." : "Please enter your phone number.",
+  };
+  const valid = !errors.name && !errors.email && !errors.phone;
+  // The WhatsApp text carries the visitor's details and choices; nothing else is written for them.
+  const message = [
+    `Hello, I would like to enquire about ${topic} with Narayani Garg.`,
+    `Name: ${name.trim()}`,
+    `Email: ${email.trim()}`,
+    `Phone: ${phone.trim()}`,
+    `Based: ${region === "India" ? "India" : "Outside India"}`,
+  ].join("\n");
 
   return (
     <dialog ref={dialog} className="enquiry" aria-labelledby="enquiry-title">
@@ -101,9 +118,16 @@ export function EnquiryDialog() {
       </button>
       <p className="kicker">Let’s begin</p>
       <h2 id="enquiry-title">What brings you here?</h2>
-      <p className="dialog-intro">Choose a starting point for your consultation enquiry.</p>
-      <p className="dialog-consent-note">Share your own details only. Obtain permission before sharing another person’s date of birth; a parent or guardian must consent for a child. Do not send private home footage or medical records in a first enquiry.</p>
       <form onSubmit={(event) => event.preventDefault()}>
+        <label htmlFor="enquiry-name">Your name <b aria-hidden="true">*</b></label>
+        <input id="enquiry-name" type="text" autoComplete="name" required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} aria-invalid={tried && !!errors.name} />
+        {tried && errors.name && <p className="enquiry-error">{errors.name}</p>}
+        <label htmlFor="enquiry-email">Email <b aria-hidden="true">*</b></label>
+        <input id="enquiry-email" type="email" autoComplete="email" inputMode="email" required maxLength={160} value={email} onChange={(e) => setEmail(e.target.value)} aria-invalid={tried && !!errors.email} />
+        {tried && errors.email && <p className="enquiry-error">{errors.email}</p>}
+        <label htmlFor="enquiry-phone">Phone number <b aria-hidden="true">*</b></label>
+        <input id="enquiry-phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={20} value={phone} onChange={(e) => setPhone(e.target.value)} aria-invalid={tried && !!errors.phone} />
+        {tried && errors.phone && <p className="enquiry-error">{errors.phone}</p>}
         <label htmlFor="enquiry-topic">I would like guidance with</label>
         <select id="enquiry-topic" ref={select} value={topic} onChange={(event) => setTopic(event.target.value)}>
           <TopicOptions extra={pageTopic} />
@@ -113,16 +137,16 @@ export function EnquiryDialog() {
           <option value="India">India</option>
           <option value="outside India">Outside India</option>
         </select>
-        <p className="message-label">Your message</p>
-        <p className="message-preview" aria-live="polite">
-          {message}
-        </p>
         <a
           className="button"
           href={whatsappUrl(message)}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => track(EVENTS.whatsappClick, { source: source.current, topic, region })}
+          aria-disabled={!valid}
+          onClick={(event) => {
+            if (!valid) { event.preventDefault(); setTried(true); return; }
+            track(EVENTS.whatsappClick, { source: source.current, topic, region });
+          }}
         >
           Continue on WhatsApp <span aria-hidden="true">↗</span>
         </a>
@@ -133,8 +157,8 @@ export function EnquiryDialog() {
         </div>
         <p className="dialog-note">
           {preview
-            ? "WhatsApp opens with this message ready to edit. In this preview no number is attached, so nothing reaches the practice."
-            : "WhatsApp opens with this message ready to edit. Nothing is sent from this page."}
+            ? "WhatsApp opens with your details ready to send. In this preview no number is attached, so nothing reaches the practice."
+            : "WhatsApp opens with your details ready to send."}
         </p>
       </form>
     </dialog>

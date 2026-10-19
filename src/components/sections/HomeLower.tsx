@@ -3,8 +3,8 @@ import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { LoopRail } from "@/components/ui/LoopRail";
 import { SocialLogo } from "@/components/brand/SocialLogo";
 import type { Faq } from "@/content/faq";
-import { instagramPosts, youtubePosts } from "@/content/social";
 import { site } from "@/content/site";
+import { ReelFilter } from "./ReelFilter";
 import { asset } from "@/lib/assets";
 
 const teachers = [
@@ -42,7 +42,11 @@ export function JourneyPhotos() {
 const lotusSvg = `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>`;
 const Lotus = ({ className }: { className: string }) => <span className={className} aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />;
 const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
-const pgIcons = [ico('<path d="M16 3c.9 6.8 6.2 12.1 13 13-6.8.9-12.1 6.2-13 13-.9-6.8-6.2-12.1-13-13 6.8-.9 12.1-6.2 13-13Z"/>'), ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'), lotusSvg];
+const pgIcons = [
+  ico('<circle cx="16" cy="16" r="11"/><path d="M16 5v22M5 16h22"/><circle cx="16" cy="16" r="5"/>'),
+  ico('<path d="M5 22c3-6 7-9 11-9s8 3 11 9"/><path d="M8 26c2.5-4 5-6 8-6s5.5 2 8 6"/><circle cx="16" cy="7.5" r="2.5"/>'),
+  ico('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/>'),
+];
 const calendar = ico('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2" stroke-width="2"/>');
 const chat = ico('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 15h.01M16 15h.01M21 15h.01" stroke-width="2.6"/>');
 
@@ -53,11 +57,11 @@ export function HomeProgram() {
       <div className="pg-inner">
         <div className="pg-card">
           <div className="pg-copy">
-            <p className="pg-label"><Lotus className="pg-lotus" />Six months with your psychic mentor</p>
+            <p className="pg-label">Six months with your psychic spiritual mentor</p>
             <h2 id="program-title">
               Personalised <em>Hand Holding</em> Program
             </h2>
-            <p className="pg-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic mentor.</p>
+            <p className="pg-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic spiritual mentor.</p>
             <ul className="pg-list">
               {["Numerology, Vastulogy and astrology assessment", "Psychic guidance for recurring patterns", "Direct guidance across health, relationships, money and career"].map((t, i) => (
                 <li key={t}>
@@ -89,7 +93,7 @@ export function HomeProgram() {
             <div className="pg-medal" aria-hidden="true">
               <strong>6</strong>
               <span>months</span>
-              <small>Psychic mentor</small>
+              <small>Psychic Spiritual Mentor</small>
               <Lotus className="pg-medal-lotus" />
             </div>
           </div>
@@ -123,7 +127,7 @@ export function HomeFaq({
               <img src={asset("/images/faq-narayani.webp")} alt="" width={760} height={964} loading="lazy" />
             </span>
             <div>
-          <p className="lx-kicker fq-kicker"><Lotus className="fq-lotus" />Questions</p>
+          <p className="lx-kicker fq-kicker">Questions</p>
           <h2 id="faq-title">
             {title.split(" ").slice(0, -1).join(" ")} <em>{title.split(" ").slice(-1)}</em>
           </h2>
@@ -174,15 +178,14 @@ const faqIcon = (q: string) => faqIcons.find(([re]) => re.test(q))![1];
 export function InstagramReels({ platform = "instagram" }: { platform?: "instagram" | "youtube" }) {
   const youtube = platform === "youtube";
   const name = youtube ? "YouTube" : "Instagram";
-  const posts = youtube ? youtubePosts : instagramPosts;
   return (
     <section className="ig" id={platform} aria-labelledby={`${platform}-title`}>
       <div className="ig-inner">
         <header className="ig-head">
           <div>
-            <p className="lx-kicker ig-kicker"><Lotus className="ig-lotus" />{name}</p>
-            <h2 id={`${platform}-title`}>{youtube ? <>Watch <em>Narayani</em> on YouTube</> : <>From <em>Narayani’s</em> Instagram</>}</h2>
-            <p className="lx-lead">{youtube ? "Five of her videos with the most views." : "Her most-watched reels, and her latest."}</p>
+            <p className="lx-kicker ig-kicker">{name}</p>
+            <h2 id={`${platform}-title`}>{youtube ? <>Watch <em>Narayani’s</em> reels</> : <>Watch <em>Narayani’s</em> reels</>}</h2>
+            <p className="lx-lead">{youtube ? "Short talks on the mind, numbers, Vastulogy and your rashi. Choose a topic." : "Short talks on the mind, numbers, Vastulogy and your rashi. Choose a topic."}</p>
           </div>
           <a className="ig-profile" href={site.social[platform]} target="_blank" rel="noopener noreferrer">
             <SocialLogo platform={platform} />
@@ -190,29 +193,7 @@ export function InstagramReels({ platform = "instagram" }: { platform?: "instagr
             <span aria-hidden="true">↗</span>
           </a>
         </header>
-        <LoopRail label={`${name} posts`} className="ig-loop" speed={0.03}>
-          {posts.map((post) => post.video ? (
-            <div className="ig-card ig-card-video" key={post.id}>
-              <span className="ig-image">
-                <video src={asset(post.video)} poster={asset(post.image)} controls playsInline preload="none" aria-label={post.title} />
-              </span>
-              <span className="ig-title">{post.title}</span>
-            </div>
-          ) : (
-            <a className="ig-card" key={post.id} href={post.url} target="_blank" rel="noopener noreferrer">
-              <span className="ig-image">
-                <img src={asset(post.image)} alt="" width={360} height={540} loading="lazy" decoding="async" />
-                <span className="ig-views">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M3.5 2v8l6.5-4z" /></svg>
-                  {post.views} views
-                </span>
-                <span className="ig-open" aria-hidden="true">↗</span>
-              </span>
-              <span className="ig-title">{post.title}</span>
-              <span className="visually-hidden"> (opens {name})</span>
-            </a>
-          ))}
-        </LoopRail>
+        <ReelFilter />
       </div>
     </section>
   );

@@ -71,7 +71,7 @@ export const numIcons = { grid, letter, pen, phone, building, star };
 
 export function astroMeet(p, { esc, wa }) {
   const c = CFG[p.slug] || CFG.astrology;
-  const facts = [[I.people, '<b data-count="10000">10,000</b>+', 'Clients guided'], [I.book, 'Author', 'Change Your Mind, Transform Your Life'], [I.globe, 'Worldwide', 'Online, or in person by appointment']];
+  const facts = [[I.globe, '<b data-count="10000">10,000</b>+', 'Worldwide clients'], [I.book, '15+', 'Years of experience'], [I.people, '50K+', 'Lives transformed']];
   return `<section class="am" aria-labelledby="meet-title"><div class="am-inner">
     <figure class="am-photo">
       <span class="am-arch"><img src="../_shared/hero/${c.meetImg[0]}" alt="${c.meetImg[3]}" width="${c.meetImg[1]}" height="${c.meetImg[2]}" loading="lazy"></span>

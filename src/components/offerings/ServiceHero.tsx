@@ -63,7 +63,7 @@ const looks: Record<HubSlug, { photo: string; mPhoto?: string; w: number; h: num
   "stones-and-rudraksh": { photo: "/images/narayani-portrait-684.webp", w: 684, h: 1000, values: [
     { title: "Crystals", text: "Meanings and care", icon: i.gem },
     { title: "Gemstones", text: "Traditional guidance", icon: i.gem },
-    { title: "Rudraksha", text: "Faces and wearing", icon: i.lotus },
+    { title: "Rudraksha", text: "Faces and wearing", icon: ico('<circle cx="16" cy="16" r="10"/><circle cx="16" cy="6" r="2"/><circle cx="26" cy="16" r="2"/><circle cx="16" cy="26" r="2"/><circle cx="6" cy="16" r="2"/><circle cx="23" cy="9" r="2"/><circle cx="9" cy="23" r="2"/><circle cx="23" cy="23" r="2"/><circle cx="9" cy="9" r="2"/>') },
     { title: "Guidance", text: "Before you choose", icon: i.heart },
   ] },
 };
@@ -97,17 +97,21 @@ function PzArt({ hub }: { hub: HubSlug }) {
       <path className="pz-art-thin" d="M569 230 630 157 686 186 M870 121 943 192 993 182 1040 160 M630 640 655 610" />
       {[[569, 230], [630, 157], [686, 186], [870, 121], [943, 192], [993, 182]].map(([x, y]) => <circle key={`${x}`} className="pz-art-star" cx={x} cy={y} r="2.6" />)}
       <g transform="translate(816 389)">
-        <circle r="210" />
-        <circle r="152" />
+        <g className="pza-ring">
+          <circle r="210" />
+          <circle r="152" />
+          {signs.map((g, n) => (
+            <g key={g} transform={`rotate(${n * 30})`}>
+              <line y1={-152} y2={-210} transform="rotate(15)" />
+              <text y="-181" textAnchor="middle" dominantBaseline="middle">{g + "\uFE0E"}</text>
+            </g>
+          ))}
+        </g>
         <circle r="104" />
-        <circle r="16" />
-        {signs.map((g, n) => (
-          <g key={g} transform={`rotate(${n * 30})`}>
-            <line y1={-104} y2={-210} transform="rotate(15)" />
-            <text y="-168" textAnchor="middle" dominantBaseline="middle">{g + "\uFE0E"}</text>
-          </g>
-        ))}
-        {rays.map((n) => <path key={n} className="pz-art-fill" d={n % 2 ? "M-2 -18 0 -62 2 -18Z" : "M-3 -18 0 -92 3 -18Z"} transform={`rotate(${n * 11.25})`} />)}
+        <g className="pza-rays">
+          <circle r="16" />
+          {rays.map((n) => <path key={n} className="pz-art-fill" d={n % 2 ? "M-2 -18 0 -62 2 -18Z" : "M-3 -18 0 -92 3 -18Z"} transform={`rotate(${n * 11.25})`} />)}
+        </g>
       </g>
     </svg>
   );
@@ -299,6 +303,33 @@ export function ServiceHero({
           <div className="nz-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset("/images/numerology-hero2.webp")} alt="Narayani Garg" width={894} height={616} fetchPriority="high" />
+            {/* Motion over the number wheel in the photograph: two turning rings, a travelling spark, and the numbers
+                glowing in turn. Same box and cropping as the photograph, so it stays on the wheel. */}
+            <svg className="nz-wheel" viewBox="0 0 894 616" preserveAspectRatio="xMaxYMin slice" aria-hidden="true">
+              <defs>
+                <radialGradient id="nzw-glow"><stop offset="0" stopColor="#FFE7A8" stopOpacity=".9" /><stop offset="1" stopColor="#FFE7A8" stopOpacity="0" /></radialGradient>
+                {/* Only the background beside her: the motion never crosses her hair or shoulders. */}
+                <filter id="nzw-soft"><feGaussianBlur stdDeviation="14" /></filter>
+                <mask id="nzw-bg" maskUnits="userSpaceOnUse" x="0" y="0" width="894" height="616">
+                  <path d="M-20 -20H318C306 60 300 150 292 250 286 300 250 340 190 372 160 420 140 470 110 640H-20Z" fill="#fff" filter="url(#nzw-soft)" />
+                </mask>
+              </defs>
+              <g mask="url(#nzw-bg)">
+              <g className="nzw-ring nzw-ring-a"><circle cx="255" cy="240" r="222" fill="none" stroke="#F2D592" strokeWidth="1.4" strokeDasharray="2 10" strokeLinecap="round" /></g>
+              <g className="nzw-ring nzw-ring-b"><circle cx="255" cy="240" r="186" fill="none" stroke="#F2D592" strokeWidth="1" strokeDasharray="60 26 6 26" opacity=".7" /></g>
+              <g className="nzw-orbit"><circle cx="255" cy="18" r="5" fill="#FFF3D0" /><circle cx="255" cy="18" r="16" fill="url(#nzw-glow)" /></g>
+              <g className="nzw-orbit nzw-orbit-b"><circle cx="255" cy="54" r="3.5" fill="#FFF3D0" /><circle cx="255" cy="54" r="11" fill="url(#nzw-glow)" /></g>
+              <circle className="nzw-num" cx="256" cy="92" r="36" fill="url(#nzw-glow)" />
+              <circle className="nzw-num" cx="113" cy="194" r="32" fill="url(#nzw-glow)" style={{ animationDelay: "1.6s" }} />
+              <circle className="nzw-num" cx="122" cy="310" r="30" fill="url(#nzw-glow)" style={{ animationDelay: "3.2s" }} />
+              <circle className="nzw-core" cx="255" cy="240" r="60" fill="url(#nzw-glow)" />
+              </g>
+            </svg>
+            <p className="nz-card" aria-hidden="true">
+              <span className="nz-card-lotus" dangerouslySetInnerHTML={{ __html: lotus }} />
+              <strong>Narayani Garg</strong>
+              <small>Psychic Spiritual Mentor</small>
+            </p>
           </div>
           <div className="nz-copy">
             <nav className="cn-crumbs nz-crumbs" aria-label="Breadcrumb">
@@ -441,7 +472,7 @@ export function ServiceHero({
           <p className="svh-badge">
             <span className="svh-badge-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
             <span>Narayani Garg</span>
-            <small>Psychic mentor</small>
+            <small>Psychic Spiritual Mentor</small>
           </p>
         </div>
       </div>

@@ -12,5 +12,5 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 /** Product links already shared keep working and show the coming-soon note until the shop opens. */
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; if (!products.some(p => p.slug === slug)) notFound();
-  return <ShopComingSoon crumb="Shop" />;
+  return <ShopComingSoon crumb="Mineralogy" />;
 }

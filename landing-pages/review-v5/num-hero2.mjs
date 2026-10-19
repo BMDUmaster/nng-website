@@ -66,7 +66,7 @@ export function numMeet(p, { esc, wa }) {
   const book = s('<path d="M8 4h13l4 4v20H8z"/><path d="M12 12h9M12 16h9M12 20h6"/>');
   const globe = s('<circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3.5 3.5 5 7 5 11s-1.5 7.5-5 11c-3.5-3.5-5-7-5-11s1.5-7.5 5-11Z"/>');
   const cal = s('<rect x="6" y="8" width="20" height="18" rx="2"/><path d="M6 13h20M11 5v5M21 5v5"/>');
-  const facts = [[people, '<b data-count="10000">10,000</b>+', 'clients guided'], [book, 'Author', 'Change Your Mind, Transform Your Life'], [globe, 'Worldwide', 'Online, or in person by appointment']];
+  const facts = [[globe, '<b data-count="10000">10,000</b>+', 'Worldwide clients'], [book, '15+', 'Years of experience'], [people, '50K+', 'Lives transformed']];
   const small = [[I.shield, 'Confidential<br>&amp; secure'], [cal, 'Flexible<br>appointments'], [I.people, 'Personalised<br>guidance']];
   const arc = [];
   const nums = [8, 7, 3, 3, 7, 1, 2, 9];

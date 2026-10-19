@@ -13,7 +13,7 @@
   let source = 'landing';
   const clean = (value, max = 80) => String(value || '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
   const interest = document.querySelector('#interest');
-  const offerNames = ['Psychic Reader', 'Astrology', 'Numerology', 'Vastu', 'Personalised Hand Holding Program', 'Help choosing'];
+  const offerNames = ['Psychic Reader', 'Astrology', 'Numerology', 'Vastulogy', 'Personalised Hand Holding Program', 'Help choosing'];
 
   function closeMenu() {
     nav.classList.remove('is-open');

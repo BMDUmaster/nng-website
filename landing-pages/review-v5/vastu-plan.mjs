@@ -1,4 +1,4 @@
-// Vastu: an illustrated floor plan for the approach section. Drawn as SVG so its parts can arrive in turn and
+// Vastulogy: an illustrated floor plan for the approach section. Drawn as SVG so its parts can arrive in turn and
 // light with the steps: 0 direction (compass, entrance), 1 rooms, 2 daily use (furniture).
 const plant = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><g class="vp-plant"><circle r="11" class="vp-pot"/>${[0, 72, 144, 216, 288].map((a) => `<ellipse rx="4.2" ry="9" transform="rotate(${a}) translate(0 -8)"/>`).join('')}<circle r="3" class="vp-pot-c"/></g></g>`;
 const chair = (x, y, w = 14, h = 10) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3"/>`;
@@ -20,7 +20,7 @@ export function vastuPlan() {
   const legend = [['compass', 'Direction', 'Orientation & entrance'], ['sofa', 'Arrangement', 'Rooms & seating'], ['people', 'Daily use', 'People & routines']];
   return `<figure class="consultation-art visual-explainer v5-plan" data-motion>
     <div class="visual-label"><span class="visual-kicker">Vastulogy / at a glance</span><span aria-hidden="true">✦</span></div>
-    <svg class="vp" viewBox="0 0 560 470" role="img" aria-labelledby="vp-title"><title id="vp-title">An example floor plan with bedroom, seating area, living and dining rooms, the entrance and north marked. It is not a Vastu assessment.</title>
+    <svg class="vp" viewBox="0 0 560 470" role="img" aria-labelledby="vp-title"><title id="vp-title">An example floor plan with bedroom, seating area, living and dining rooms, the entrance and north marked. It is not a Vastulogy assessment.</title>
       <rect class="vp-floor" x="40" y="30" width="430" height="370" rx="2"/>
       <g class="vp-rooms">
         <rect x="45" y="35" width="165" height="175"/><rect x="45" y="220" width="165" height="175"/>

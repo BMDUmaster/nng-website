@@ -1,8 +1,8 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
 import { PracticeReturnPrompt } from "@/components/enquiry/PracticeReturnPrompt";
-import { HomeFaq } from "@/components/sections/HomeLower";
 import { StoryFilms } from "@/components/sections/StoryFilms";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/ui/Reveal";
@@ -51,13 +51,7 @@ const areaIcons: Record<string, string> = {
   Money: ico('<ellipse cx="16" cy="9" rx="9" ry="3.5"/><path d="M7 9v6c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5V9M7 15v6c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-6"/>'),
   Career: ico('<path d="M6 26V20M12 26V16M18 26V12M24 26V8M18 6h6v6"/>'),
 };
-const areaNotes: Record<string, string> = {
-  Health: "Wellbeing and habits",
-  Relationship: "People close to you",
-  Money: "Choices around money",
-  Career: "Work and direction",
-};
-const monthPhotos = ["/images/method-2.webp", "/images/method-1.webp", "/images/method-3.webp", "/images/how-step-4.webp"];
+const monthPhotos = ["/images/hh-m1.webp", "/images/hh-m2.webp", "/images/hh-m3.webp", "/images/hh-m4.webp"];
 const monthIcons = [
   ico('<circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-3 6-6 3 3-6z"/>'),
   ico('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24"/><path d="M16 5v22"/>'),
@@ -85,15 +79,10 @@ export default function ProgramPage() {
               <span aria-hidden="true">/</span>
               <span aria-current="page">Hand Holding Program</span>
             </nav>
-            <p className="svh-kicker">
-              <span className="svh-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
-              Six months with your psychic mentor
-            </p>
             <h1 id="page-title">
               Personalised <em>Hand Holding</em> Program
             </h1>
-            <span className="svh-rule" aria-hidden="true" />
-            <p className="svh-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic mentor.</p>
+            <p className="svh-lead">Work on the questions and patterns that keep returning, with Narayani as your psychic spiritual mentor.</p>
             <ul className="hx-incl">
               {inclusions.map((item) => (
                 <li key={item}>
@@ -109,7 +98,6 @@ export default function ProgramPage() {
                 <span className="svh-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
             </div>
-            <p className="hx-note">Format and fees are discussed before you decide.</p>
           </div>
           <div className="svh-visual">
             <span className="svh-frame" aria-hidden="true" />
@@ -131,7 +119,6 @@ export default function ProgramPage() {
               <span className="svh-v-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: areaIcons[area] }} />
               <span>
                 <strong>{area}</strong>
-                <small>{areaNotes[area]}</small>
               </span>
             </li>
           ))}
@@ -175,7 +162,6 @@ export default function ProgramPage() {
             <h2 id="how-title">
               How the six months <em>work</em>
             </h2>
-            <p className="hw-lead">An assessment of your circumstances, with work on the thinking patterns behind recurring questions.</p>
           </header>
           <ol className="hw-steps" data-reveal="">
             {months.map((step, i) => (
@@ -189,49 +175,29 @@ export default function ProgramPage() {
                 <span className="hw-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: monthIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
-                <span className="hw-rule" aria-hidden="true" />
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="hx-compare" aria-labelledby="compare-title">
+      <section className="hx-compare hx-one" aria-labelledby="compare-title">
         <div className="hx-compare-inner">
-          <header className="hw-head" data-reveal="">
-            <span className="hw-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
-            <p className="hw-kicker">Choose what fits</p>
-            <h2 id="compare-title">
-              A consultation or <em>the program?</em>
-            </h2>
-            <p className="hw-lead">Not sure which suits you? Ask, and the team will tell you honestly.</p>
-          </header>
-          <div className="hx-cards">
-            <div className="hx-card" data-reveal="">
-              <span className="hx-card-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: ico('<path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>') }} />
-              <h3>Consultation</h3>
-              <p>One focused conversation, around a single question.</p>
-              <ul>
-                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Online or in person</li>
-                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />A clear next step</li>
-              </ul>
-              <EnquiryTrigger className="hx-card-cta" source="program-compare-consultation">
-                Enquire about a consultation <span aria-hidden="true">→</span>
-              </EnquiryTrigger>
-            </div>
-            <div className="hx-card is-featured" data-reveal="" style={{ "--d": "120ms" } as React.CSSProperties}>
-              <span className="hx-badge">Six months</span>
-              <span className="hx-card-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
-              <h3>Hand Holding Program</h3>
-              <p>Six months of guidance, with all four areas looked at together.</p>
+          <div className="hx-prog" data-reveal="">
+            <div className="hx-prog-medal" aria-hidden="true"><strong>6</strong><span>months</span></div>
+            <div className="hx-prog-copy">
+              <p className="hw-kicker">The program</p>
+              <h2 id="compare-title">Personalised <em>Hand Holding</em></h2>
               <ul>
                 <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Numerology, Vastulogy and astrology assessment</li>
-                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Psychic guidance and direct guidance across six months</li>
+                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />Psychic guidance for recurring patterns</li>
+                <li><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: tick }} />One conversation a month, with messages in between</li>
               </ul>
-              <EnquiryTrigger className="hx-card-cta" topic="the Personalised Hand Holding Program" source="program-compare-program">
-                Enquire about the program <span aria-hidden="true">→</span>
-              </EnquiryTrigger>
             </div>
+            <EnquiryTrigger className="hx-prog-cta" topic="the Personalised Hand Holding Program" source="program-compare-program">
+              <span>Enquire about the program</span>
+              <span className="hx-prog-go" aria-hidden="true">→</span>
+            </EnquiryTrigger>
           </div>
         </div>
       </section>
@@ -274,7 +240,7 @@ export default function ProgramPage() {
         more={[voices.renu]}
       />
 
-      <HomeFaq items={faqs.program} source="program-faq" rich />
+      <HomeQuestions items={faqs.program} source="program-faq" />
       <Reveal />
     </div>
   );

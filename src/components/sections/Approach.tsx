@@ -98,7 +98,6 @@ export function Approach() {
           <p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p>
           <footer>
             <strong>Narayani Garg</strong>
-            <small>A remedy works when the mind works.</small>
           </footer>
         </blockquote>
       </div>

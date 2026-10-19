@@ -1,3 +1,4 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
 import type { Metadata } from "next";
 import { AdsEnquiry } from "@/components/contact/AdsEnquiry";
 import { AdsSticky } from "@/components/contact/AdsSticky";
@@ -155,26 +156,7 @@ export default function ConsultationLandingPage() {
         </div>
       </section>
 
-      <section className="fq al-faq" aria-labelledby="ads-faq-title">
-        <div className="fq-inner">
-          <div className="fq-intro">
-            <p className="lx-kicker">Questions</p>
-            <h2 id="ads-faq-title">Before you enquire</h2>
-          </div>
-          <div className="fq-list">
-            {faqs.home.slice(1).map((item, i) => (
-              <details key={item.q} className="fq-item" name="ads-faq">
-                <summary>
-                  <span className="fq-num">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="fq-q">{item.q}</span>
-                  <span className="fq-icon" aria-hidden="true" />
-                </summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeQuestions items={faqs.home.slice(1)} source="ads-faq" />
 
       <footer className="al-footer">
         <div className="cn-inner">

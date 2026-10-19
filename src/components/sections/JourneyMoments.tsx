@@ -45,7 +45,6 @@ export function JourneyMoments() {
     <section className="jm" aria-labelledby="spiritual-gallery-title">
       <div className="jm-inner">
         <header className="jm-head">
-          <span className="jm-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotus }} />
           <p className="jm-kicker">In person</p>
           <h2 id="spiritual-gallery-title">
             Moments from <br className="jm-br" />

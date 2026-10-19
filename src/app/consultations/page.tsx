@@ -1,3 +1,5 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
+import { faqs } from "@/content/faq";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
@@ -43,10 +45,14 @@ const chips = [
 
 const cxIcon = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const cxPractices = [
-  { name: "Numerology", note: "Understand your patterns", icon: '<svg viewBox="0 0 32 32"><text x="16" y="17" text-anchor="middle" dominant-baseline="central" fill="currentColor" font-size="11" font-family="serif">123</text></svg>' },
-  { name: "Vastulogy", note: "Harmonise your space and energy", icon: cxIcon('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/>') },
-  { name: "Astrology", note: "Clarity in life situations", icon: cxIcon('<path d="M16 3c.9 6.8 6.2 12.1 13 13-6.8.9-12.1 6.2-13 13-.9-6.8-6.2-12.1-13-13 6.8-.9 12.1-6.2 13-13Z"/>') },
-  { name: "Psychic Mentor", note: "Support for mind and life", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
+  // A brain: the mind behind the pattern.
+  { name: "Brainology Program", icon: cxIcon('<path d="M12 6.5a3.5 3.5 0 0 0-6.6 1.6A3.8 3.8 0 0 0 4 15a3.6 3.6 0 0 0 2 5.6A3.6 3.6 0 0 0 12 24V6.5ZM20 6.5a3.5 3.5 0 0 1 6.6 1.6A3.8 3.8 0 0 1 28 15a3.6 3.6 0 0 1-2 5.6A3.6 3.6 0 0 1 20 24V6.5Z"/><path d="M12 11H9.5M12 17h-3M20 13h2.5M20 19h3"/>') },
+  // Three numbers in rings, as on the home page.
+  { name: "Numerology", icon: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="16" cy="10" r="6.5"/><circle cx="10" cy="21" r="6.5"/><circle cx="22" cy="21" r="6.5"/><g fill="currentColor" stroke="none" font-family="Georgia, serif" font-size="7.5" text-anchor="middle" dominant-baseline="central"><text x="16" y="10.5">3</text><text x="10" y="21.5">7</text><text x="22" y="21.5">9</text></g></svg>' },
+  // A house with a compass in it: direction in a space.
+  { name: "Vastulogy", icon: cxIcon('<path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><circle cx="16" cy="19.5" r="4.5"/><path d="m18 17.5-1.3 2.7-2.7 1.3 1.3-2.7Z"/>') },
+  // A planet with its ring and a star.
+  { name: "Astrology", icon: cxIcon('<circle cx="15" cy="17" r="6.5"/><path d="M6.5 22.5c-2.6 1.4-3.8 2.9-3.3 3.8.9 1.6 7.2-.7 13.9-5.1s11-9.6 10.1-11.2c-.5-.9-2.4-.8-5 .2"/><path d="M25 3.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/>') },
 ];
 
 const chipIcons: Record<string, string> = {
@@ -62,7 +68,7 @@ const feePoints = [
 ];
 const lotusSvg = '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/></svg>';
 const supportPoints = [
-  { title: "Psychic Mentor", text: "One-on-one support", icon: cxIcon('<circle cx="16" cy="10" r="4"/><path d="M8 25c0-4.4 3.6-8 8-8s8 3.6 8 8"/><circle cx="7.5" cy="13" r="2.8"/><circle cx="24.5" cy="13" r="2.8"/><path d="M2.5 24c0-3 2.2-5.4 5-5.4M29.5 24c0-3-2.2-5.4-5-5.4"/>') },
+  { title: "Brainology Program", text: "One-on-one support", icon: cxIcon('<circle cx="16" cy="10" r="4"/><path d="M8 25c0-4.4 3.6-8 8-8s8 3.6 8 8"/><circle cx="7.5" cy="13" r="2.8"/><circle cx="24.5" cy="13" r="2.8"/><path d="M2.5 24c0-3 2.2-5.4 5-5.4M29.5 24c0-3-2.2-5.4-5-5.4"/>') },
   { title: "Long-term Support", text: "For your growth journey", icon: cxIcon('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
   { title: "Compassionate Approach", text: "A safe and supportive space", icon: cxIcon('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
 ];
@@ -133,7 +139,6 @@ export default function ConsultationsPage() {
                 <li key={p.name}>
                   <span className="cx-p-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: p.icon }} />
                   <strong>{p.name}</strong>
-                  <small>{p.note}</small>
                 </li>
               ))}
             </ul>
@@ -146,7 +151,7 @@ export default function ConsultationsPage() {
             </div>
             <p className="cn-badge cx-badge">
               <span>Narayani Garg</span>
-              <small>Psychic mentor</small>
+              <small>Psychic Spiritual Mentor</small>
             </p>
           </div>
         </div>
@@ -174,14 +179,14 @@ export default function ConsultationsPage() {
           </header>
           <ul className="cn-areas">
             {areas.map((area, i) => (
-              <li key={area} className="cn-area" data-reveal="" style={{ "--d": `${i * 80}ms`, "--art": `url(${asset(`/images/area2-${area.toLowerCase()}.webp`)})` } as React.CSSProperties}>
+              <li key={area} className="cn-area" data-reveal="" style={{ "--d": `${i * 80}ms`, "--art": `url(${asset(`/images/area3-${area.toLowerCase()}.webp`)})` } as React.CSSProperties}>
                 <span className="cn-area-icon">
                   <Icon id={concernIcons[area]} />
                 </span>
                 <h3>{area}</h3>
                 <p>{concerns[area]}</p>
                 <EnquiryTrigger className="cn-area-link" topic={areaTopics[area]} source={`consultations-${area.toLowerCase()}`}>
-                  Ask about {area.toLowerCase()} <span aria-hidden="true">→</span>
+                  <span className="visually-hidden">Ask about {area.toLowerCase()}</span><span className="cb-go" aria-hidden="true"><span>Ask</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" /></svg></span>
                 </EnquiryTrigger>
               </li>
             ))}
@@ -210,7 +215,6 @@ export default function ConsultationsPage() {
                 <h2 id="fees-title">
                   Discuss your <em>consultation</em> options
                 </h2>
-                <p>Format, duration and fees are being finalised. Ask the team about the service you need before you book.</p>
               </div>
               <div className="cf2-mid">
                 <ul className="cf2-points">
@@ -223,7 +227,7 @@ export default function ConsultationsPage() {
                   ))}
                 </ul>
                 <EnquiryTrigger className="cn-cta cf2-cta" topic="a personal consultation" source="consultations-fees">
-                  <span>Ask about options and fees</span>
+                  <span>Ask about fees</span>
                   <Arrow />
                 </EnquiryTrigger>
               </div>
@@ -244,7 +248,6 @@ export default function ConsultationsPage() {
             <h2 id="how-title">
               From your question to an <em>appointment</em>
             </h2>
-            <p className="hw-lead">An enquiry starts a conversation with the team. It does not book or pay for a session.</p>
           </header>
           <ol className="hw-steps" data-reveal="">
             {steps.map((step, i) => (
@@ -253,12 +256,11 @@ export default function ConsultationsPage() {
                 {i < steps.length - 1 && <span className="hw-arrow" aria-hidden="true">→</span>}
                 <div className="hw-photo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset(`/images/how-step-${i + 1}.webp`)} alt="" width={740} height={444} loading="lazy" />
+                  <img src={asset(i === 1 ? "/images/how-step-2b.webp" : `/images/how-step-${i + 1}.webp`)} alt="" width={740} height={444} loading="lazy" />
                 </div>
                 <span className="hw-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: stepIcons[i] }} />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
-                <span className="hw-rule" aria-hidden="true" />
               </li>
             ))}
           </ol>
@@ -311,6 +313,7 @@ export default function ConsultationsPage() {
           </div>
         </div>
       </section>
+      <HomeQuestions items={faqs.home} source="consultations-faq" />
       <Reveal />
     </div>
   );

@@ -48,10 +48,9 @@ export function meetSection(p, { esc, wa }) {
       <h2 id="meet-title" data-reveal>${m.h}</h2>
       <p class="mt-lead" data-reveal>${m.lead}</p>
       <ul class="mt-facts" data-reveal>
-        <li><span>${icons.people}</span><strong><b data-count="10000">10,000</b>+</strong><em>clients guided</em></li>
-        ${m.brain ? `<li><span>${brainIc.leaf}</span><strong>6 practices</strong><em>NLP, EFT, Ho’oponopono and more</em></li>
-        <li><span>${brainIc.mind}</span><strong>Mind first</strong><em>Beliefs and habits before any remedy</em></li>` : `<li><span>${icons.book}</span><strong>Author</strong><em>Change Your Mind, Transform Your Life</em></li>
-        <li><span>${icons.globe}</span><strong>Worldwide</strong><em>Online, or in person by appointment</em></li>`}
+        <li><span>${icons.globe}</span><strong><b data-count="10000">10,000</b>+</strong><em>Worldwide clients</em></li>
+        <li><span>${icons.book}</span><strong>15+</strong><em>Years of experience</em></li>
+        <li><span>${icons.people}</span><strong>50K+</strong><em>Lives transformed</em></li>
       </ul>
       <blockquote class="mt-quote" data-reveal><span class="mt-qmark" aria-hidden="true">“</span><p lang="hi-Latn">Upay tab kaam karta hai jab dimaag kaam karta hai.</p><cite>A remedy works when the mind works. — Narayani Garg</cite></blockquote>
       <div class="mt-cta" data-reveal>${wa('meet', 'Talk to Narayani’s team', 'wa-btn')}</div>

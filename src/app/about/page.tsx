@@ -1,3 +1,5 @@
+import { HomeQuestions } from "@/components/sections/HomeQuestions";
+import { faqs } from "@/content/faq";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EnquiryTrigger } from "@/components/enquiry/EnquiryTrigger";
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
 const background = [
   // copy-lint-allow: doctorate subject explicitly confirmed by Aryan on 4 Oct 2026; no institution or date claimed.
   { number: "PhD", title: "Occult Sciences", desc: "A doctorate in Occult Sciences." },
-  { number: "15+ Years", title: "Professional experience", desc: "Psychic mentoring through numerology, Vastulogy, astrology and mindset work." },
+  { number: "15+ Years", title: "Professional experience", desc: "Psychic spiritual mentoring through numerology, Vastulogy, astrology and mindset work." },
 ];
 
 const ico = (d: string) => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
@@ -34,7 +36,7 @@ const principleIcons = [
   ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>'),
 ];
 const bookTags = [
-  { label: "21 days", icon: lotusSvg },
+  { label: "21 days", icon: ico('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/>') },
   { label: "Chakras", icon: ico('<circle cx="16" cy="16" r="4"/><path d="M16 4c2 3 2 5 0 8-2-3-2-5 0-8ZM16 20c2 3 2 5 0 8-2-3-2-5 0-8ZM4 16c3-2 5-2 8 0-3 2-5 2-8 0ZM20 16c3-2 5-2 8 0-3 2-5 2-8 0ZM7.5 7.5c3.4.6 4.8 2 5.2 5.2-3.4-.4-4.8-1.8-5.2-5.2ZM19.3 19.3c3.4.4 4.8 1.8 5.2 5.2-3.4-.6-4.8-2-5.2-5.2ZM24.5 7.5c-.6 3.4-2 4.8-5.2 5.2.4-3.4 1.8-4.8 5.2-5.2ZM12.7 19.3c-.4 3.4-1.8 4.8-5.2 5.2.6-3.4 2-4.8 5.2-5.2Z"/>') },
   { label: "EFT", icon: ico('<path d="M7 25C7 14 14 7 26 6c0 12-7 19-17 19"/><path d="M7 25 19 13"/>') },
   { label: "Ho’oponopono", icon: ico('<path d="M16 27S4 19.6 4 11.6A6.1 6.1 0 0 1 16 9a6.1 6.1 0 0 1 12 2.6C28 19.6 16 27 16 27Z"/>') },
@@ -72,20 +74,13 @@ export default function AboutPage() {
               <span aria-hidden="true">/</span>
               <span aria-current="page">About</span>
             </nav>
-            <p className="au-kicker ah-kicker">
-              <span className="au-lotus" aria-hidden="true" dangerouslySetInnerHTML={{ __html: lotusSvg }} />
-              {site.title}
-            </p>
             <h1 id="about-hero-title">
               Meet <em>Narayani Garg</em>
             </h1>
             <p className="ah-lead">Psychic Spiritual Mentor. Her guidance begins with the thoughts and patterns behind the question you bring.</p>
-            <blockquote className="ah-quote">
-              <p>The spirit who is doing a ritual is spiritual.”</p>
-            </blockquote>
             <div className="ah-actions">
               <EnquiryTrigger className="au-cta ah-cta" source="about-hero" primary>
-                <span>Enquire about a consultation</span>
+                <span>Enquire now</span>
                 <span className="au-go" aria-hidden="true">→</span>
               </EnquiryTrigger>
               <a className="au-ghost ah-ghost" href="#story">
@@ -246,6 +241,7 @@ export default function AboutPage() {
       </section>
 
       <ClientWords voices={[voices.shelley, voices.vanshika, voices.shashi]} note={<ClienteleNote />} />
+      <HomeQuestions items={faqs.home} source="about-faq" />
       <InstagramReels platform="youtube" />
       <Reveal />
     </div>

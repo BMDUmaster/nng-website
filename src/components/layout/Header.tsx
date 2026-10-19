@@ -39,7 +39,7 @@ const featureIcons: Record<string, string> = {
   "/consultations/#choose": featureIcon('<path d="M5 8a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6l-5 4v-4H8a3 3 0 0 1-3-3Z"/><path d="M25 12h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1v4l-4-4h-5"/><path d="M10 11h.01M13.5 11h.01M17 11h.01" stroke-width="2.4"/>'),
   "/consultations/#fees": featureIcon('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 15h8M13 19h8M13 23h5"/>'),
   "/consultations/#how": featureIcon('<circle cx="16" cy="16" r="4"/><circle cx="16" cy="16" r="9"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>'),
-  "/hand-holding-program/": featureIcon('<path d="M16 26c-3-2.6-5-6-5-9.4 0-3 1.7-5.8 5-7.8 3.3 2 5 4.8 5 7.8 0 3.4-2 6.8-5 9.4Z"/><path d="M4 18c2 0 4 1 5 3l3 3M28 18c-2 0-4 1-5 3l-3 3"/><path d="M4 18v4l6 6M28 18v4l-6 6"/>'),
+  "/hand-holding-program/": featureIcon('<path d="M16 17s-4.5-2.8-4.5-5.8a2.4 2.4 0 0 1 4.5-1.2 2.4 2.4 0 0 1 4.5 1.2c0 3-4.5 5.8-4.5 5.8Z"/><path d="M4 18c2 0 4 1 5 3l3 3M28 18c-2 0-4 1-5 3l-3 3"/><path d="M4 18v4l6 6M28 18v4l-6 6"/>'),
   "/resources/blogs/": featureIcon('<rect x="7" y="4" width="18" height="24" rx="2"/><path d="M11 9h10M11 13h10M11 17h6M11 21h8"/>'),
 };
 
@@ -207,7 +207,7 @@ function NavGroup({ item, pathname, icons }: { item: NavItem; pathname: string; 
 const drawerIcons: Record<string, string> = {
   "/": featureIcon('<path d="M5 15 16 5l11 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/>'),
   "/consultations/": featureIcon('<circle cx="16" cy="11" r="5"/><path d="M7 27c0-5 4-9 9-9s9 4 9 9"/>'),
-  "/services/": featureIcon('<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/>'),
+  "/services/": featureIcon('<rect x="5" y="5" width="9" height="9" rx="2"/><rect x="18" y="5" width="9" height="9" rx="2"/><rect x="5" y="18" width="9" height="9" rx="2"/><rect x="18" y="18" width="9" height="9" rx="2"/>'),
   "/resources/": featureIcon('<path d="M16 9c-3-2-7-3-11-2v18c4-1 8 0 11 2 3-2 7-3 11-2V7c-4-1-8 0-11 2Z"/><path d="M16 9v18"/>'),
   "/shop/": featureIcon('<path d="M7 11h18l-1.5 16h-15Z"/><path d="M12 11V9a4 4 0 0 1 8 0v2"/>'),
   "/about/": featureIcon('<circle cx="16" cy="11" r="5"/><path d="M7 27c0-5 4-9 9-9s9 4 9 9"/>'),
@@ -432,7 +432,7 @@ export function Header({ icons = {} }: { icons?: Icons }) {
           <p className="nh-drawer-kicker">Begin with a conversation</p>
           <div onClick={close}>
             <EnquiryTrigger className="nh-cta nh-cta-block" source="mobile-drawer">
-              <span>Enquire about a consultation</span>
+              <span>Enquire now</span>
               <Arrow />
             </EnquiryTrigger>
           </div>

@@ -14,8 +14,8 @@ const icon = (d: string) =>
 const lotus = '<path d="M16 25c-3.2-3-5-6.6-5-10.4 0-3.3 1.8-6.4 5-8.6 3.2 2.2 5 5.3 5 8.6 0 3.8-1.8 7.4-5 10.4Z"/><path d="M16 25c-4.6-.6-9.4-3.6-11-9.2 3.9-.8 7.6.6 10 3.6M16 25c4.6-.6 9.4-3.6 11-9.2-3.9-.8-7.6.6-10 3.6"/><path d="M15.4 25.2C8.8 25.6 3.6 23 1.6 19.4M16.6 25.2c6.6.4 11.8-2.2 13.8-5.8"/>';
 const figures = [
   { icon: icon('<rect x="5" y="7" width="22" height="20" rx="3"/><path d="M5 13h22M11 4v5M21 4v5"/><path d="M10 18h2M15 18h2M20 18h2M10 22h2M15 22h2M20 22h2" stroke-width="2"/>'), value: "21", label: "days" },
-  { icon: icon(lotus), value: "Reflection", label: "each day" },
-  { icon: icon('<path d="M6 22h20M9 22a7 7 0 0 1 14 0"/><path d="M16 8v4M7.5 12.5l2.8 2.8M24.5 12.5l-2.8 2.8M4 18h3M25 18h3"/>'), value: "Practice", label: "for everyday life" },
+  { icon: icon('<path d="M8 4h13l4 4v20H8z"/><path d="M12 12h9M12 16h9M12 20h5"/><path d="m22 24 5-9 2 1.2-5 9-2.4 1Z"/>'), value: "Reflection", label: "each day" },
+  { icon: icon('<path d="M25 11a10 10 0 1 0 1.5 7"/><path d="M26 5v6h-6"/><path d="m12 16 3 3 6-6"/>'), value: "Practice", label: "for everyday life" },
 ];
 const html = (markup: string) => ({ __html: markup });
 

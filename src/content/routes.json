@@ -4744,5 +4744,40 @@
     "priority": 0.5,
     "changeFrequency": "weekly",
     "controller": false
+  },
+  {
+    "path": "/privacy-policy/",
+    "view": "privacy-policy",
+    "indexable": true,
+    "priority": 0.3,
+    "changeFrequency": "yearly"
+  },
+  {
+    "path": "/terms-conditions/",
+    "view": "terms-conditions",
+    "indexable": true,
+    "priority": 0.3,
+    "changeFrequency": "yearly"
+  },
+  {
+    "path": "/legal/",
+    "view": "legal",
+    "indexable": true,
+    "priority": 0.3,
+    "changeFrequency": "yearly"
+  },
+  {
+    "path": "/cancellation-refunds/",
+    "view": "cancellation-refunds",
+    "indexable": true,
+    "priority": 0.3,
+    "changeFrequency": "yearly"
+  },
+  {
+    "path": "/disclaimer/",
+    "view": "disclaimer",
+    "indexable": true,
+    "priority": 0.3,
+    "changeFrequency": "yearly"
   }
 ]
