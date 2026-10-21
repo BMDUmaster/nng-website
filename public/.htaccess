@@ -12,7 +12,7 @@
     RewriteRule ^landing/vastu(/.*)?$ /landing/vastulogy/ [R=301,L]
 
     # Match trailing-slash canonicals
-    RewriteRule ^(about|services|hand-holding-program|contact|consultation|consultations|privacy-policy|terms-conditions|cancellation-refunds|disclaimer|legal)$ $1/ [L,R=301]
+    RewriteRule ^(about|services|hand-holding-program|contact|consultation|consultations|privacy-policy|terms-conditions|cancellation-refunds|disclaimer|legal)$ /$1/ [L,R=301]
 
     # Send Requests To Front Controller (Laravel owns all routes & views)
     RewriteCond %{REQUEST_FILENAME} !-d
