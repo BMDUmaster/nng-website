@@ -24684,7 +24684,7 @@ dialog.enquiry label { display: block; margin-top: 12px; }
 .bl-content ol li { padding-left: 4px; font-size: 16px; line-height: 1.6; color: #1D4F3A; }
 .bl-content ol li::before { content: none; }
 .bl-content ol li + li { margin-top: 8px; }
-.bl-content img { display: block; max-width: 100%; height: auto; margin: 22px auto 0; border-radius: 18px; }
+.bl-content img { display: block; max-width: 100%; max-height: 560px; width: auto; height: auto; object-fit: cover; margin: 22px auto 0; border-radius: 18px; }
 .bl-content figure { margin: 22px 0 0; }
 .bl-content figcaption { margin-top: 8px; text-align: center; font-size: 13px; color: color-mix(in srgb, #123A2B 60%, #FAF6F0); }
 .bl-content blockquote { margin: 22px 0 0; padding: 18px 20px 18px 24px; border-radius: 18px; background: color-mix(in srgb, #D7B86B 14%, #FAF6F0); box-shadow: inset 3px 0 0 #B88A45; font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.5; color: #1D4F3A; }
@@ -24703,8 +24703,8 @@ dialog.enquiry label { display: block; margin-top: 12px; }
 .bl-author { display: flex; align-items: center; gap: 16px; margin-top: 38px; padding: 18px 20px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 0 0 1px color-mix(in srgb, #B88A45 22%, transparent), 0 26px 48px -38px rgb(18 58 43 / 0.5); }
 .bl-author img { flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: center 20%; }
 .bl-author div { flex: 1; min-width: 0; }
-.bl-author strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 20px; color: #123A2B; }
-.bl-author span { display: block; margin-top: 2px; font-size: 13.5px; color: color-mix(in srgb, #123A2B 70%, #FAF6F0); }
+.bl-author div > strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 20px; color: #123A2B; }
+.bl-author div > span { display: block; margin-top: 2px; font-size: 13.5px; color: color-mix(in srgb, #123A2B 70%, #FAF6F0); }
 .bl-author .cn-cta { flex: none; }
 .bl .rr-back { margin-top: 26px; text-align: center; }
 @media (max-width: 600px) {
