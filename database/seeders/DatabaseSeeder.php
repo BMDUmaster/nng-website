@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Admin User Credentials
-        User::updateOrCreate(
+        // Admin user, created once. An existing admin keeps their password (change it with php artisan admin:password).
+        User::firstOrCreate(
             ['email' => 'admin@nngarg.com'],
             [
                 'name' => 'Admin NNG',
