@@ -55,10 +55,15 @@ class BlogController extends Controller
      */
     public function show($slug)
     {
-        $blog = Blog::where('slug', $slug)->firstOrFail();
+        // Drafts and hidden posts are visible only to a signed-in admin (for previewing).
+        $blog = Blog::where('slug', $slug)
+            ->when(!auth()->check(), fn ($q) => $q->where('status', 'published')->where('is_active', true))
+            ->firstOrFail();
 
-        // Increment view counter
-        $blog->increment('views');
+        // Increment view counter (not for the admin's own previews)
+        if (!auth()->check()) {
+            $blog->increment('views');
+        }
 
         // Related blogs
         $relatedBlogs = Blog::where('id', '!=', $blog->id)
