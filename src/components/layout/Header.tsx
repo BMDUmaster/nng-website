@@ -40,7 +40,7 @@ const featureIcons: Record<string, string> = {
   "/consultations/#fees": featureIcon('<path d="M9 4h10l6 6v18H9z"/><path d="M19 4v6h6M13 15h8M13 19h8M13 23h5"/>'),
   "/consultations/#how": featureIcon('<circle cx="16" cy="16" r="4"/><circle cx="16" cy="16" r="9"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/>'),
   "/hand-holding-program/": featureIcon('<path d="M16 17s-4.5-2.8-4.5-5.8a2.4 2.4 0 0 1 4.5-1.2 2.4 2.4 0 0 1 4.5 1.2c0 3-4.5 5.8-4.5 5.8Z"/><path d="M4 18c2 0 4 1 5 3l3 3M28 18c-2 0-4 1-5 3l-3 3"/><path d="M4 18v4l6 6M28 18v4l-6 6"/>'),
-  "/resources/blogs/": featureIcon('<rect x="7" y="4" width="18" height="24" rx="2"/><path d="M11 9h10M11 13h10M11 17h6M11 21h8"/>'),
+  "/blog/": featureIcon('<rect x="7" y="4" width="18" height="24" rx="2"/><path d="M11 9h10M11 13h10M11 17h6M11 21h8"/>'),
 };
 
 function Chevron() {

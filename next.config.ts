@@ -45,6 +45,8 @@ const nextConfig: NextConfig = {
       return [
         { source: "/landing/psychic-reader/:path*", destination: "/landing/brainology/", permanent: true },
         { source: "/landing/vastu/:path*", destination: "/landing/vastulogy/", permanent: true },
+        // On nngarg.com the blog is Laravel's /blog (admin-managed). Without Laravel, show the reading room instead.
+        { source: "/blog/:path*", destination: "/resources/blogs/", permanent: false },
       ];
     },
   }),

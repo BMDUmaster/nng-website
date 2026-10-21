@@ -35,7 +35,7 @@ const columns: { title: string; links: FooterLink[] }[] = [
   ] },
   { title: "Resources", links: [
     { label: "Crystals, Stones & Rudraksha", href: "/services/stones-and-rudraksh/" },
-    { label: "Blogs", href: "/resources/blogs/" },
+    { label: "Blog", href: "/blog/" },
     { label: "FAQs", href: "/#faq" },
     { label: "Reels", href: "/#instagram" },
     { label: "Legal & contact", href: "/legal/" },

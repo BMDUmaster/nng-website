@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const choices = [
   { kicker: "Subject guide", id: "reading-room-title", title: "Crystals, Stones and Rudraksha", text: "Meanings, materials, care and questions to ask before choosing a stone or bead.", href: stoneHubPath, cta: "Explore the reading room", banner: stoneArticles[2]?.banner },
-  { kicker: "Article library", id: "blogs-title", title: "Blogs", text: "Browse individual articles. Start with five demo guides prepared for Narayani’s review.", href: "/resources/blogs/", cta: "Browse the blogs", banner: stoneArticles[0]?.banner },
+  { kicker: "Article library", id: "blogs-title", title: "Blog", text: "Articles from Narayani Garg on Brainology, Numerology, Vastulogy and Astrology.", href: "/blog/", cta: "Read the blog", banner: stoneArticles[0]?.banner },
 ];
 
 export default function ResourcesPage() {
