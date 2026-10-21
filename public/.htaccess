@@ -11,6 +11,9 @@
     RewriteRule ^landing/psychic-reader(/.*)?$ /landing/brainology/ [R=301,L]
     RewriteRule ^landing/vastu(/.*)?$ /landing/vastulogy/ [R=301,L]
 
+    # The demo article list made way for the admin-managed blog
+    RewriteRule ^resources/blogs/?$ /blog/ [R=301,L]
+
     # Match trailing-slash canonicals
     RewriteRule ^(about|services|hand-holding-program|contact|consultation|consultations|privacy-policy|terms-conditions|cancellation-refunds|disclaimer|legal)$ /$1/ [L,R=301]
 
